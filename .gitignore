@@ -1,8 +1,8 @@
-# Bulk artifacts live in the sibling ../hardware-doc-archive - its own git repository,
+# Bulk artifacts live in the sibling ../repo-archive - its own git repository,
 # but normally unpublished/private because of its size. Each artifact moved there leaves
 # a *.ARCHIVED.md placeholder here carrying size, SHA-256 and recovery URLs.
 #
-# `archive` is a tracked symlink to it (relative: ../hardware-doc-archive), so the
+# `archive` is a tracked symlink to it (relative: ../repo-archive), so the
 # archive is reachable as ./archive/... when present. This entry stops the archive's
 # CONTENTS being committed here if the link is ever replaced by a real directory; it
 # does not (and cannot) affect the tracked symlink itself - .gitignore never applies to
