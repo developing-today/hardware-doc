@@ -161,6 +161,23 @@ When retrieving public web content with `curl`, `wget`, Python HTTP clients, or 
 9. **Preserve scarce sources.** If a URL was genuinely useful and hard to acquire — very few copies online, or hosted somewhere unlikely to persist — submit it to `https://web.archive.org/save/<url>` (works unauthenticated). This applies to the kind of thing that has no mirror: datasheets/whitepaper/manual PDFs, technical docs on fragile personal or CMS-hosted pages, demo/example projects that exist only to illustrate how some code works, hard-to-find header files or source snippets not in any repo or package manager, one-off benchmark posts. It does **not** apply to widely-mirrored content (Wikipedia, MDN, popular repos) or anything already covered elsewhere — you can't and shouldn't archive every page you visit. Anonymous saves are rate-limited to roughly a few per minute; don't hammer it.
    - **Rare case:** if you are confident the site is still up but you are blocked or rate-limited, and you already know from some other source that the URL is valuable (a citation, an API doc you need, source code relevant to the task), you may submit it unseen and record that it wasn't directly accessible but was submitted on `<date>` — e.g. in the relevant *Sites* subsection of `ai-crawler-site-access-table.md` — so a future agent can check `web.archive.org` for the capture. Only do this when there's a concrete reason the page matters, not speculatively.
 
+### GitHub: authenticate rather than rotate agents
+
+`api.github.com` limits **per identity**, so no User-Agent helps. Use the token the user
+already has — it takes the core limit from **60/hour to 5 000/hour**:
+
+```bash
+curl -fsSL -H "Authorization: Bearer $(gh auth token)" https://api.github.com/...
+gh api repos/OWNER/REPO/git/trees/BRANCH?recursive=1   # handles auth + pagination itself
+```
+
+This matters here specifically: several vendor "wikis" are really GitHub repos — Seeed's is
+`Seeed-Studio/wiki-documents` on branch `docusaurus-version` — and one recursive tree listing
+can exhaust 60 requests in a single call. The resulting 403s carry
+`X-RateLimit-Remaining: 0` and look exactly like bot-blocking; check that header before
+rotating agents. Prefer `raw.githubusercontent.com` for file contents; it is not the API and is
+far more permissive. Never print or commit the token.
+
 ## Size discipline
 
 This repo is large by nature — see [`SIZE-AUDIT.md`](SIZE-AUDIT.md). Before adding
