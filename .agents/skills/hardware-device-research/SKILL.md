@@ -76,23 +76,45 @@ Use lowercase, filesystem-safe slugs and exact manufacturer and part numbers. Pu
 
 This taxonomy is open: add a category when material genuinely fits none of the four, and say in the index why it exists.
 
-### The two sibling directories
+### The two sibling directories, and how to write paths
 
 ```
 <repo-parent>/
-├── hardware-doc/            ← this repository
-└── repo-archive/    ← bulk artifacts moved out of it (separate repo, usually unpublished)
+├── hardware-doc/     ← this repository
+└── repo-archive/     ← bulk artifacts moved out of it (own repo, usually unpublished)
+    ├── hardware-doc/          artifacts, mirroring this repo's own paths
+    └── scratch/hardware-doc/  working files
 ```
 
-Write `../repo-archive` — **relative to the repository root**, never `~/…`. The home-directory form is correct only when the repo happens to sit at `~/hardware-doc`, and is wrong under worktrees. Resolve it properly with the git *common* directory:
+**In records, always write `archive/…` and `scratch/…`.** Those are tracked symlinks at the
+root of this repository pointing at its own slice of the archive:
+
+| Write this | Resolves to |
+|---|---|
+| `archive/devices/<vendor>/<board>/artifacts/x.step` | `../repo-archive/hardware-doc/devices/…` |
+| `scratch/<subject>/…` | `../repo-archive/scratch/hardware-doc/<subject>/…` |
+
+The path after `archive/` is **the same path the artifact had in this repository** — nothing to
+recompute, and the archive can be renamed or moved by changing two symlinks instead of every
+record. Paths are relative to the repository root, so run restore commands from there.
+
+Do **not** write `../repo-archive/…` into a record, and do not write an absolute path. The
+sibling form appears in this skill only because it is explaining the layout.
+
+In a script, resolve the root rather than assuming a location:
 
 ```bash
 ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/repo-archive"
 ```
 
-`--git-common-dir` rather than `--show-toplevel`: inside a linked worktree the toplevel is the worktree, whose parent is the wrong directory; the common dir always points at the main repository's `.git`.
+`--git-common-dir` rather than `--show-toplevel`: inside a linked worktree the toplevel is the
+worktree, whose parent is the wrong directory.
 
-> **When invoked from a consuming repository** (this repo symlinked in as `doc/hardware`), resolve the symlink and work at the real root. Records are written here, not in the consumer.
+> **When invoked from a consuming repository** (this repo symlinked in as `doc/hardware`),
+> resolve the symlink and work at the real root — records belong here, not in the consumer.
+> That repo may have its own `archive/` and `doc/archive/` shortcuts; those are conveniences
+> for a human browsing it and **must never appear in a record written here**, because they do
+> not exist from this repository's perspective.
 
 ## Required Inputs
 
@@ -382,6 +404,10 @@ sources, BOMs, firmware images that are not byte-reproducible, and datasheets wh
 URLs are already dead or likely to rot. Size alone is not a reason to archive; *derivedness*
 is.
 
+[`SIZE-AUDIT.md`](../../../SIZE-AUDIT.md) works this through on the real tree — which
+categories proved reproducible, which are irreplaceable, and how much each costs. Read it
+before a large archiving pass; it will usually tell you the answer without re-deriving it.
+
 ##### What extraction looks like
 
 Not a summary of the document — the **facts a future reader needs**, restructured:
@@ -431,6 +457,24 @@ Beyond those shared fields, a placeholder also states:
 - **The archive path**, as a convenience for whoever *does* hold the archive
 
 Record failed or blocked reacquisition honestly (`automatic`, `manual`, `blocked`, `lost`) rather than omitting the instructions.
+
+**A placeholder is the minimum, not the limit.** Every archived artifact needs one. Beyond
+that, add whatever helps a reader:
+
+- **Extraction documents** — the write-up mined from the artifact before it left
+  ([see above](#mine-the-artifact-before-it-leaves--write-the-findings-up-as-their-own-document)).
+  These are the real reason the archive can be absent without loss.
+- **Several placeholders for one move** — a per-file note plus a directory-level `ARCHIVED-*.md`
+  summarising the set is often clearer than either alone.
+- **Cross-references** from the records that care. A pinout page should link the schematic
+  placeholder; a firmware page should link the image it parsed.
+- **Symlinks into the archive**, where a stable in-repo path is genuinely useful. `archive/`
+  and `scratch/` already exist for this; a deeper convenience link is fine as long as it is
+  relative and the placeholder still stands alone without it. Remember a symlink into an
+  absent archive dangles — it is a convenience, never the record.
+
+What must not happen is the reverse: an artifact moved out with *only* a path in a manifest,
+or a placeholder that assumes the reader holds the archive.
 
 **The archive path is a convenience, not the contract.** It should be kept accurate — if you reorganise the archive, grep the repository and repair the references in the same change, exactly as you would a breaking rename — but a reader without the archive must still be able to recover the file from the placeholder alone. Verification therefore tests the placeholder's completeness, not whether the path resolves on this machine.
 
