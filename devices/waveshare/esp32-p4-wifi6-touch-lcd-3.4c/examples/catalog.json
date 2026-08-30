@@ -1,0 +1,790 @@
+{
+  "schema_version": "1.0",
+  "device": "waveshare/esp32-p4-wifi6-touch-lcd-3.4c",
+  "also_applies_to": [
+    "waveshare/esp32-p4-wifi6-touch-lcd-4c"
+  ],
+  "generated": "2026-08-26",
+  "evidence_status": "Catalogued from source and repository metadata. NONE were built or run - no hardware and no toolchain run in this session. Every build_status is 'not-built-here'.",
+  "examples": [
+    {
+      "id": "off-01",
+      "title": "01_HowToCreateProject",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/01_HowToCreateProject",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/01_HowToCreateProject",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "build-system"
+      ],
+      "dependencies": {},
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "rejected",
+      "focus": "Minimal ESP-IDF project skeleton",
+      "notes": "Structural template only; exercises no board hardware."
+    },
+    {
+      "id": "off-02",
+      "title": "02_HelloWorld",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/02_HelloWorld",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/02_HelloWorld",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "serial"
+      ],
+      "dependencies": {},
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "selected",
+      "focus": "Toolchain and serial bring-up",
+      "notes": "Best first-run diagnostic: proves toolchain, USB and serial with nothing else in the way."
+    },
+    {
+      "id": "off-03",
+      "title": "03_i2c_tools",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/03_i2c_tools",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/03_i2c_tools",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "i2c",
+        "touch",
+        "audio"
+      ],
+      "dependencies": {},
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "selected",
+      "focus": "I2C scan and console tools",
+      "notes": "THE key diagnostic on this board. GPIO7/8 is shared by GT9271 touch, ES8311, ES7210 and the camera SCCB - four device families. Run before debugging any of them."
+    },
+    {
+      "id": "off-04",
+      "title": "04_wifistation",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/04_wifistation",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/04_wifistation",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "wifi",
+        "esp-hosted"
+      ],
+      "dependencies": {
+        "esp_wifi_remote": "IDF6: >=1.6,<2.0 | IDF5.5: 0.14.*",
+        "esp_hosted": "IDF6: >=2.12,<3.0 | IDF5.5: 1.4.*"
+      },
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "selected",
+      "focus": "Wi-Fi station via ESP32-C6 over SDIO",
+      "notes": "Only example exercising the split radio stack. Failure here with 01-03 passing implicates C6 firmware, not application code."
+    },
+    {
+      "id": "off-05",
+      "title": "05_sdmmc",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/05_sdmmc",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/05_sdmmc",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "storage"
+      ],
+      "dependencies": {},
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "selected",
+      "focus": "microSD / SDMMC access",
+      "notes": "Pins are correct (39-44) but by convergence with Espressif's reference, not board-specific config. Does NOT drive GPIO45, the card's power switch - see C13."
+    },
+    {
+      "id": "off-06",
+      "title": "06_I2SCodec",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/06_I2SCodec",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/06_I2SCodec",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "audio-out"
+      ],
+      "dependencies": {
+        "espressif/es8311": "^1.0.0"
+      },
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "selected",
+      "focus": "ES8311 I2S playback",
+      "notes": "Playback only. NO official example exercises ES7210 capture - the least-evidenced fitted feature."
+    },
+    {
+      "id": "off-07",
+      "title": "07_Displaycolorbar",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/07_Displaycolorbar",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/07_Displaycolorbar",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "display"
+      ],
+      "dependencies": {
+        "waveshare/esp32_p4_wifi6_touch_lcd_xc": "3.0.1"
+      },
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "selected",
+      "focus": "MIPI-DSI colour bars via JD9365",
+      "notes": "Minimal display bring-up. Uses the published BSP rather than hardcoded constants."
+    },
+    {
+      "id": "off-08",
+      "title": "08_lvgl_demo_v9",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/08_lvgl_demo_v9",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/08_lvgl_demo_v9",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "display",
+        "touch",
+        "lvgl"
+      ],
+      "dependencies": {
+        "waveshare/esp32_p4_wifi6_touch_lcd_xc": "3.0.1",
+        "lvgl/lvgl": "^9.*"
+      },
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "selected",
+      "focus": "LVGL 9 display + touch",
+      "notes": "Best integrated display+touch starting point. Touch is polling-only by design (C11)."
+    },
+    {
+      "id": "off-09",
+      "title": "09_video_lcd_display",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/09_video_lcd_display",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/09_video_lcd_display",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "camera",
+        "display",
+        "isp"
+      ],
+      "dependencies": {
+        "esp_video": "~2.0"
+      },
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "selected",
+      "focus": "MIPI-CSI camera to MIPI-DSI display",
+      "notes": "Exercises the whole video pipeline: CSI in, ISP, DSI out. If it runs, the headline capability works."
+    },
+    {
+      "id": "off-10",
+      "title": "10_mp4_player",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/10_mp4_player",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/10_mp4_player",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "storage",
+        "display",
+        "audio-out",
+        "codec"
+      ],
+      "dependencies": {
+        "esp_audio_codec": "2.5.0 (2.6+ needs P4 rev>=3.0)"
+      },
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "selected",
+      "focus": "MP4 / AVI playback",
+      "notes": "Best multi-subsystem stress case: SD + decode + display + audio together. Closest thing to a resource-limit test."
+    },
+    {
+      "id": "off-11",
+      "title": "11_esp_brookesia_phone",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/11_esp_brookesia_phone",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/11_esp_brookesia_phone",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "display",
+        "touch",
+        "lvgl",
+        "ui"
+      ],
+      "dependencies": {
+        "espressif/esp-brookesia": "unpinned"
+      },
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "catalogued",
+      "focus": "Phone-style UI shell",
+      "notes": "Largest integrated app. Not vendored (73 MiB) and esp-brookesia pins no version, so it is undiffable against upstream (C5)."
+    },
+    {
+      "id": "off-12",
+      "title": "12_usb_extend_screen",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/esp-idf/12_usb_extend_screen",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/esp-idf/12_usb_extend_screen",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-08-21",
+      "commit": "6948676d6451",
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "framework": "ESP-IDF",
+      "framework_versions_ci": [
+        "v5.5.5",
+        "v6.0.2"
+      ],
+      "license": "Apache-2.0",
+      "license_evidence": "repository LICENSE",
+      "features": [
+        "usb",
+        "display"
+      ],
+      "dependencies": {
+        "espressif/tinyusb": "0.17.0~2",
+        "espressif/usb_device_uac": "1.2.0"
+      },
+      "build_status": "not-built-here",
+      "test_environment": null,
+      "selection": "selected",
+      "focus": "USB external display",
+      "notes": "Only example exercising USB OTG HS as a device. Pins tinyusb 0.17.0~2 exactly to stop descriptor drift."
+    },
+    {
+      "id": "off-fw",
+      "title": "firmware/brookesia",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/firmware/brookesia",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/firmware/brookesia",
+      "retrieved": "2026-08-24",
+      "commit": "6948676d6451",
+      "framework": "ESP-IDF",
+      "license": "Apache-2.0",
+      "device": "3.4C / 4C",
+      "hw_revision": "rev1.1",
+      "features": [
+        "display",
+        "touch",
+        "audio",
+        "ui",
+        "storage"
+      ],
+      "build_status": "not-built-here",
+      "selection": "catalogued",
+      "focus": "Maintained delivery firmware; source of the published factory images",
+      "notes": "Builds rev3.x ONLY, two display profiles (3_4c, 4c). No rev1_3 profile exists, so pre-v3 silicon cannot run the published images as-is (C14)."
+    },
+    {
+      "id": "off-arduino",
+      "title": "examples/arduino",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/main/examples/arduino",
+      "immutable_url": "https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-XC/tree/6948676d6451/examples/arduino",
+      "retrieved": "2026-08-24",
+      "commit": "6948676d6451",
+      "framework": "Arduino",
+      "license": "Apache-2.0",
+      "device": "3.4C / 4C",
+      "features": [
+        "display",
+        "touch",
+        "lvgl"
+      ],
+      "build_status": "not-built-here",
+      "selection": "catalogued",
+      "focus": "Arduino sketches plus Waveshare's own 'displays' board library",
+      "notes": "The 'displays' library is the authoritative source for both JD9365 init tables and the pin map. BUT Waveshare's own docs warn: 'ESP32-P4 currently has limited adaptation on the Arduino platform... recommended to use ESP-IDF.' Also: Serial is USB CDC, not the CH343P UART."
+    },
+    {
+      "id": "com-embeddedwizard",
+      "title": "Embedded Wizard GUI on the 3.4C",
+      "author": "EmbeddedWizardGUI",
+      "source_class": "community",
+      "canonical_url": "https://github.com/EmbeddedWizardGUI/ESP32-P4-WIFI6-Touch-LCD-3.4C",
+      "immutable_url": "https://github.com/EmbeddedWizardGUI/ESP32-P4-WIFI6-Touch-LCD-3.4C/tree/57b7db463a64",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-07-20",
+      "commit": "57b7db463a64",
+      "stars": 4,
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C (exact match)",
+      "framework": "ESP-IDF",
+      "license": null,
+      "license_evidence": "No LICENSE file found - redistribution status unknown",
+      "features": [
+        "display",
+        "touch",
+        "ui"
+      ],
+      "build_status": "not-built-here",
+      "selection": "selected",
+      "focus": "A NON-LVGL commercial GUI stack running on this exact board",
+      "notes": "The most interesting community find: demonstrates an alternative to LVGL that no vendor material mentions. Vendor-affiliated (Embedded Wizard is a commercial product), so treat as a vendor demo of their own toolchain rather than independent community work."
+    },
+    {
+      "id": "com-claudebuddy",
+      "title": "Claude Desktop Buddy (BLE)",
+      "author": "Arno-Z",
+      "source_class": "community",
+      "canonical_url": "https://github.com/Arno-Z/WaveShare-ESP32-P4-Claude-Desktop-Buddy",
+      "immutable_url": "https://github.com/Arno-Z/WaveShare-ESP32-P4-Claude-Desktop-Buddy/tree/5b50bb9ae5b3",
+      "retrieved": "2026-08-24",
+      "repo_last_activity": "2026-04-23",
+      "commit": "5b50bb9ae5b3",
+      "stars": 1,
+      "device": "ESP32-P4-WIFI6-Touch-LCD-3.4C (exact match)",
+      "framework": "ESP-IDF",
+      "license": "MIT",
+      "features": [
+        "bluetooth",
+        "display"
+      ],
+      "build_status": "not-built-here",
+      "selection": "catalogued",
+      "focus": "BLE integration on the 3.4C",
+      "notes": "Only independent community project targeting this exact board. 1 star, single author, last touched 2026-04-23 - low-redundancy source."
+    },
+    {
+      "id": "adj-nina",
+      "title": "ESP32-P4 NINA astrophotography display",
+      "author": "chvvkumar",
+      "source_class": "community",
+      "canonical_url": "https://github.com/chvvkumar/ESP32-P4-NINA-Display",
+      "retrieved": "2026-08-26",
+      "repo_last_activity": "2026-08-26",
+      "stars": 46,
+      "device": "ESP32-P4-WIFI6-Touch-LCD-**4B** - DIFFERENT BOARD",
+      "framework": "ESP-IDF",
+      "license": null,
+      "features": [
+        "display",
+        "wifi",
+        "ui"
+      ],
+      "build_status": "not-built-here",
+      "selection": "rejected",
+      "focus": "Most-starred project in the P4 display family",
+      "notes": "REJECTED as device evidence: targets the 4B, a different panel and BSP variant. Retained because it is the most active project in the family and its Wi-Fi/display techniques transfer."
+    },
+    {
+      "id": "adj-boilerplate",
+      "title": "ESP32-P4 LVGL boilerplate",
+      "author": "RTechAI",
+      "source_class": "community",
+      "canonical_url": "https://github.com/RTechAI/ESP32-P4-LVGL-Boilerplate-3",
+      "retrieved": "2026-08-26",
+      "repo_last_activity": "2026-05-17",
+      "stars": 10,
+      "device": "ESP32-P4-WIFI6-Touch-LCD-**7B** - DIFFERENT BOARD",
+      "framework": "ESP-IDF",
+      "license": "NOASSERTION",
+      "features": [
+        "display",
+        "lvgl"
+      ],
+      "build_status": "not-built-here",
+      "selection": "rejected",
+      "focus": "Self-described production-ready LVGL + ESP-IDF starting point",
+      "notes": "REJECTED as device evidence (7B). License is NOASSERTION - GitHub could not identify it, so terms are effectively unknown."
+    },
+    {
+      "id": "adj-hadash",
+      "title": "Home Assistant dashboard",
+      "author": "blk96gt",
+      "source_class": "community",
+      "canonical_url": "https://github.com/blk96gt/ha_esp32_dashboard",
+      "retrieved": "2026-08-26",
+      "repo_last_activity": "2026-03-12",
+      "stars": 4,
+      "device": "ESP32-P4-WIFI6-Touch-LCD-**7B** - DIFFERENT BOARD",
+      "framework": "ESP-IDF",
+      "license": null,
+      "features": [
+        "display",
+        "wifi",
+        "ui"
+      ],
+      "build_status": "not-built-here",
+      "selection": "rejected",
+      "focus": "Home Assistant wall panel",
+      "notes": "REJECTED as device evidence (7B). Representative of the dominant real-world use case for this board class."
+    },
+    {
+      "id": "zip-legacy",
+      "title": "Demo ZIP examples (superseded numbering)",
+      "author": "Waveshare",
+      "source_class": "primary",
+      "canonical_url": "https://files.waveshare.com/wiki/ESP32-P4-WIFI6-Touch-LCD-XC/ESP32-P4-WIFI6-Touch-LCD-XC-Demo.zip",
+      "retrieved": "2026-08-24",
+      "sha256": "b5319593738e114270852d84be0fdd8ccdc21ef1dac897b15f4fad5069dd66b8",
+      "device": "3.4C / 4C",
+      "framework": "ESP-IDF + Arduino",
+      "license": null,
+      "license_evidence": "NO LICENSE file anywhere in the 5052-file archive",
+      "features": [
+        "all"
+      ],
+      "build_status": "not-built-here",
+      "selection": "superseded",
+      "focus": "The vendor ZIP linked from both product wikis",
+      "notes": "SUPERSEDED by the GitHub repository, which is newer, Apache-2.0 licensed and CI-tested. Numbering differs (ZIP has 06_/07_displaypanel per variant; repo has 07_Displaycolorbar using the BSP). Retained because it is the only source for the exact bytes and for the per-variant panel demos."
+    },
+    {
+      "id": "com-linux-xc",
+      "title": "Native RV32 NOMMU Linux port for the XC boards",
+      "author": "netseye",
+      "source_class": "community",
+      "canonical_url": "https://github.com/netseye/linux-waveshare-xc",
+      "retrieved": "2026-08-26",
+      "repo_last_activity": "2026-07-22",
+      "created": "2026-07-22",
+      "stars": 1,
+      "device": "ESP32-P4-WIFI6-Touch-LCD-XC \u2014 **both 3.4C and 4C** (exact match)",
+      "framework": "Linux (buildroot) + ESP-IDF boot shim",
+      "license": "NOASSERTION",
+      "license_evidence": "GitHub could not identify the licence; terms effectively unknown",
+      "features": [
+        "display",
+        "touch",
+        "wifi",
+        "bluetooth",
+        "audio-out",
+        "audio-in",
+        "storage"
+      ],
+      "build_status": "not-built-here",
+      "author_reported_status": "Ported, needs hardware test \u2014 author states physical-board validation is still required",
+      "selection": "selected",
+      "focus": "Boots native Linux on the P4; documents the ESP32-C6 SDIO link end to end",
+      "notes": "HIGHEST-VALUE community find. Independently documents: C6 SDIO pins (D0-D3 14-17, CLK 18, CMD 19, reset GPIO54 active-high); a complete ESP-Hosted-NG build+flash procedure for the C6 at offset 0x0; and states the P4 exposes ONE DW-MMC host, making microSD and Wi-Fi mutually exclusive in their build. Independently confirms this record's C11 (touch INT/RST are NC, so polling) and C12 (backlight GPIO26 active-low). Warns against flashing the WHY2025 badge C6 firmware, which expects different SPI wiring. Author is explicit that nothing is hardware-validated."
+    },
+    {
+      "id": "com-minimaps",
+      "title": "Video Game Mini Maps",
+      "author": "garagetinkering",
+      "source_class": "community",
+      "canonical_url": "https://github.com/garagetinkering/Video_Game_Mini_Maps",
+      "retrieved": "2026-08-26",
+      "repo_last_activity": "2025-12-05",
+      "stars": 256,
+      "device": "**3.4C** \u2014 `CONFIG_BSP_LCD_TYPE_800_800_3_4_INCH=y`",
+      "framework": "ESP-IDF",
+      "license": null,
+      "features": [
+        "display",
+        "ui",
+        "storage"
+      ],
+      "build_status": "not-built-here",
+      "selection": "selected",
+      "focus": "Most-starred project confirmed on this exact variant",
+      "notes": "256 stars, by far the largest community project verified on the 3.4C. No LICENSE file \u2014 redistribution status unknown. Last activity 2025-12-05.",
+      "variant_evidence": "CONFIG_BSP_LCD_TYPE_* in the project's sdkconfig"
+    },
+    {
+      "id": "com-p3a",
+      "title": "p3a \u2014 pixel art player",
+      "author": "fabkury",
+      "source_class": "community",
+      "canonical_url": "https://github.com/fabkury/p3a",
+      "retrieved": "2026-08-26",
+      "repo_last_activity": "2026-08-24",
+      "stars": 89,
+      "device": "**4C** \u2014 `CONFIG_BSP_LCD_TYPE_720_720_4_INCH=y`",
+      "framework": "ESP-IDF",
+      "license": "Apache-2.0",
+      "features": [
+        "display",
+        "storage",
+        "ui"
+      ],
+      "build_status": "not-built-here",
+      "selection": "selected",
+      "focus": "Largest project verified on the 4C variant",
+      "notes": "89 stars, Apache-2.0, actively maintained (2026-08-24). FIRST HARD EVIDENCE that people own and build for the 4C - an earlier pass wrongly recorded zero 4C projects.",
+      "variant_evidence": "CONFIG_BSP_LCD_TYPE_* in the project's sdkconfig"
+    },
+    {
+      "id": "com-cluster",
+      "title": "Digital gauge cluster",
+      "author": "traviscea",
+      "source_class": "community",
+      "canonical_url": "https://github.com/traviscea/center-cluster-esp32-p4",
+      "retrieved": "2026-08-26",
+      "repo_last_activity": "2026-07-08",
+      "stars": 54,
+      "device": "**3.4C** \u2014 `CONFIG_BSP_LCD_TYPE_800_800_3_4_INCH=y`",
+      "framework": "ESP-IDF",
+      "license": "NOASSERTION",
+      "features": [
+        "display",
+        "ui"
+      ],
+      "build_status": "not-built-here",
+      "selection": "selected",
+      "focus": "Automotive gauge cluster on the round panel",
+      "notes": "Description explicitly says 3.4 inch. Licence NOASSERTION - GitHub could not identify it, so terms are unknown.",
+      "variant_evidence": "CONFIG_BSP_LCD_TYPE_* in the project's sdkconfig"
+    },
+    {
+      "id": "com-betta",
+      "title": "BETTA Home Assistant panel",
+      "author": "cptkirki",
+      "source_class": "community",
+      "canonical_url": "https://github.com/cptkirki/BETTA-HA-PANEL",
+      "retrieved": "2026-08-26",
+      "repo_last_activity": "2026-05-09",
+      "stars": 23,
+      "device": "ESP32-P4, references the 3.4C macro",
+      "framework": "ESP-IDF",
+      "license": "NOASSERTION",
+      "features": [
+        "display",
+        "wifi",
+        "ui"
+      ],
+      "build_status": "not-built-here",
+      "selection": "selected",
+      "focus": "Runtime-configurable Home Assistant wall panel",
+      "notes": "Hit via sdkconfig.defaults.panel4. Variant not individually confirmed. Represents the dominant real-world use case for this board class.",
+      "variant_evidence": "CONFIG_BSP_LCD_TYPE_* in the project's sdkconfig"
+    },
+    {
+      "id": "com-adsb",
+      "title": "ADS-B aircraft radar",
+      "author": "Alex-developer",
+      "source_class": "community",
+      "canonical_url": "https://github.com/Alex-developer/ADSB-Radar",
+      "retrieved": "2026-08-26",
+      "repo_last_activity": "2026-06-14",
+      "stars": 3,
+      "device": "**4C** \u2014 `CONFIG_BSP_LCD_TYPE_720_720_4_INCH=y`",
+      "framework": "ESP-IDF",
+      "license": "MIT",
+      "features": [
+        "display",
+        "wifi",
+        "ui"
+      ],
+      "build_status": "not-built-here",
+      "selection": "catalogued",
+      "focus": "Virtual aircraft radar on the round display",
+      "notes": "Second confirmed 4C project. MIT licensed. Description says 'Use a Waveshare round display'.",
+      "variant_evidence": "CONFIG_BSP_LCD_TYPE_* in the project's sdkconfig"
+    },
+    {
+      "id": "com-fishagent",
+      "title": "FishAgent \u684c\u9762\u5c0f\u9c7c",
+      "author": "ShizhanQiao",
+      "source_class": "community",
+      "canonical_url": "https://github.com/ShizhanQiao/FishAgent",
+      "retrieved": "2026-08-26",
+      "repo_last_activity": "2026-07-24",
+      "stars": 3,
+      "device": "ESP32-P4, references the XC BSP",
+      "framework": "ESP-IDF",
+      "license": "MIT",
+      "features": [
+        "display",
+        "audio-out",
+        "audio-in",
+        "wifi",
+        "ui"
+      ],
+      "build_status": "not-built-here",
+      "selection": "catalogued",
+      "focus": "Chinese-language conversational desktop companion",
+      "notes": "A CHINESE-LANGUAGE project - partially closes the 'Chinese community unsearched' gap. Exercises audio in AND out plus a custom agent backend, so it is the closest thing found to an ES7210 capture example.",
+      "variant_evidence": "CONFIG_BSP_LCD_TYPE_* in the project's sdkconfig"
+    },
+    {
+      "id": "com-petercool",
+      "title": "waveshare-esp32-p4 examples",
+      "author": "petercool",
+      "source_class": "community",
+      "canonical_url": "https://github.com/petercool/waveshare-esp32-p4",
+      "retrieved": "2026-08-26",
+      "repo_last_activity": "2026-06-10",
+      "stars": 0,
+      "device": "XC \u2014 vendors `examples/touch-lcd-xc/10_mp4_player`",
+      "framework": "ESP-IDF",
+      "license": "BSD-3-Clause",
+      "features": [
+        "display",
+        "storage",
+        "audio-out"
+      ],
+      "build_status": "not-built-here",
+      "selection": "catalogued",
+      "focus": "Third-party mirror/rework of the XC examples",
+      "notes": "Contains examples/touch-lcd-xc/ with the vendored XC BSP. BSD-3-Clause. 0 stars - a personal working copy rather than a maintained project.",
+      "variant_evidence": "CONFIG_BSP_LCD_TYPE_* in the project's sdkconfig"
+    },
+    {
+      "id": "com-xiaozhi",
+      "title": "XiaoZhi ESP32 AI voice assistant \u2014 Waveshare P4 board support",
+      "author": "78 (\u867e\u54e5)",
+      "source_class": "community",
+      "canonical_url": "https://github.com/78/xiaozhi-esp32",
+      "board_config_path": "main/boards/waveshare/esp32-p4-wifi6-touch-lcd/config.h",
+      "retrieved": "2026-08-26",
+      "stars": null,
+      "device": "**3.4C and 4C** explicitly, via CONFIG_BOARD_TYPE_WAVESHARE_ESP32_P4_WIFI6_TOUCH_LCD_3_4C / _4C",
+      "framework": "ESP-IDF",
+      "license": "MIT (repo-level; verify)",
+      "features": [
+        "display",
+        "touch",
+        "audio-in",
+        "audio-out",
+        "wifi",
+        "ui"
+      ],
+      "build_status": "not-built-here",
+      "selection": "selected",
+      "focus": "Chinese AI voice-assistant firmware with first-class board support for nine Waveshare P4 boards",
+      "notes": "HIGH VALUE. 62 code hits across forks. Does NOT use the Waveshare BSP yet independently arrives at identical pins - a FOURTH independent confirmation of the pin map, the 1500 Mbps lane rate, and the active-low backlight (DISPLAY_BACKLIGHT_OUTPUT_INVERT true). Uniquely provides BOOT_BUTTON_GPIO GPIO_NUM_35 (the BSP declares BSP_CAPS_BUTTONS 0 and maps no buttons) and a working ES7210 capture config: 24 kHz in/out with AUDIO_INPUT_REFERENCE true for AEC - the closest thing to a capture reference implementation found anywhere. CAUTION: config.h is one #elif chain covering NINE boards; other variants use GPIO 33/32 for reset/backlight. Isolate the correct CONFIG_BOARD_TYPE block before reading any value.",
+      "variant_evidence": "Explicit per-variant #elif blocks naming 3_4C and 4C"
+    }
+  ],
+  "note_2026_08_26": "Expanded from 21 to 28 entries after AUTHENTICATED GitHub CODE SEARCH on the BSP macro and component name. Repository-name search had found 2 community projects; code search found a dozen, including a 256-star project. Technique documented in guides/research/finding-projects-that-use-a-board.md."
+}

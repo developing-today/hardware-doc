@@ -1,0 +1,796 @@
+# Texas Instruments TPS65186
+
+- **Category:** **PMIC for E Ink Vizplex-enabled electronic paper displays** — a single chip that turns one 3–6 V input into the complete multi-rail bias set an active-matrix EPD panel needs, plus a programmable VCOM driver, a panel-temperature ADC and a hardware power-sequencer
+- **Marked part:** **`TPS65186RGZ`** (reel suffix `R` on the schematic symbol), VQFN-48 with PowerPad
+- **Research status:** TI datasheet **SLVSB04A** held locally and read in full — pin table, all 17 registers, sequencing, VCOM kick-back procedure, electricals. Board wiring verified **pin by pin** against the resolved KiCad PCB netlists of all three boards that use it. Driver behaviour read out of the Inkplate Arduino library **v11.1.4** and the Inkplate MicroPython library, and **decoded against the register map**
+- **Retrieved:** 2026-08-24
+
+`U1` on the [Soldered Inkplate 5](../../../devices/soldered-electronics/inkplate-5/README.md), the [Inkplate 5 Gen 2](../../../devices/soldered-electronics/inkplate-5-gen2/README.md) and the [ZeroWriter Ink](../../../devices/zerowriter/zerowriter-ink/README.md) respin — the same designator, the same pinout and the same passives on all three.
+
+Two facts to internalise before writing any code against it:
+
+1. **This chip does not just "make voltages". It is a state machine with a hardware sequencer.** The order in which +22 V / +15 V / −15 V / −20 V arrive at the panel — and, more importantly, the order in which they *leave* — is programmed into registers `0x09`–`0x0C` and executed in hardware off a single `PWRUP` pin edge. Firmware does not toggle rails individually and must not try.
+2. **On the Inkplate family none of its three control pins reach the ESP32.** `WAKEUP`, `PWRUP` and `VCOM_CTRL` all hang off the [PCAL6416A I²C expander](../../nxp/pcal6416a/README.md) at `0x20`, so every sequencing step costs an I²C transaction. §6.1.
+
+---
+
+## Evidence labelling
+
+| Marker | Meaning |
+|---|---|
+| **[DOC]** | Stated by TI in `artifacts/tps65186-datasheet-slvsb04a.pdf` (SLVSB04A, July 2011, revised August 2015) |
+| **[SCH]** | Read out of the **resolved net names in the KiCad `.kicad_pcb`** design files listed in §16, using `devices/soldered-electronics/inkplate-5/tools/kicad_pcb_nets.py`. The PCB file stores resolved nets, so this is ground truth for connectivity |
+| **[SRC]** | Read out of the Inkplate Arduino library **v11.1.4** or the Inkplate MicroPython library, snapshot paths in §16 |
+| **[COM]** | Community / vendor-documentation evidence, attributed |
+| **[INF]** | Inference. Not established by the above |
+
+---
+
+## 1. Identity
+
+| Property | Value | Evidence |
+|---|---|---|
+| Manufacturer | Texas Instruments | **[DOC]** |
+| Part | **`TPS65186`** | **[DOC]** |
+| Schematic value | **`TPS65186RGZ`**, library symbol `TPS65186RGZR` | **[SCH]** `POWER.kicad_sch`, `U1` |
+| Package | **VQFN-48** (`RGZ`), 7 × 7 mm, 0.5 mm pitch, **plus PowerPad** | **[DOC]**; **[SCH]** footprint `VQFN-49` — the extra pad is the PowerPad, numbered 49 in Soldered's library |
+| Orderable | `TPS65186RGZR` (large reel) / `TPS65186RGZT` (small reel) | **[WEB]** ti.com product page, 2026-08-24 |
+| Datasheet | **SLVSB04A** — *"TPS65186 PMIC for E Ink Vizplex Enabled Electronic Paper Display"*, July 2011, **revised August 2015** | **[DOC]** |
+| Lifecycle | **ACTIVE** (`<meta name="status" content="ACTIVE">` on the TI product folder) | **[WEB]** 2026-08-24 |
+| I²C address | **`0x48`**, fixed — no address-select pin | **[DOC]** §8.5; **[SRC]** `TPS65186_I2C_ADDR 0x48` |
+| Silicon revision | Readable from `REVID` (`0x10`): `0x45` = 1p0, `0x55` = 1p1, `0x65` = 1p2 | **[DOC]** §8.6.17 |
+
+### 1.1 The family, and which parts are actually interchangeable
+
+TI's E-paper PMIC line is larger than it looks and **the members are not drop-in for each other**.
+
+| Part | Relationship | Notes |
+|---|---|---|
+| **TPS65186** | This part | 48-pin VQFN. Has **active discharge**, a VCOM driver with in-system kick-back measurement, EEPROM-backed VCOM default, thermistor ADC |
+| **TPS65185** | Closest sibling | TI's own product page cross-links it. Same application, **different pinout and package** — not a footprint swap **[WEB]** |
+| **TPS651851** | Variant of the TPS65185 | **[WEB]** |
+| **TPS65180B / TPS65181B / TPS65182B** | Older generation | Predecessors; different feature sets |
+
+TI's product-page tagline for this part is *"PMIC for E-Ink® Vizplex™ Enabled Electronic Paper Display **w/ Active Discharge**"* **[WEB]** — the active-discharge behaviour is what distinguishes it, and it matters: see §5.3.
+
+> ⚠ **Do not substitute a TPS65185 for a TPS65186 on an Inkplate.** Beyond the pinout, the Inkplate firmware writes sequencer registers by absolute address; a part with a different register map will accept the writes and mis-sequence the panel. **[INF]**
+
+---
+
+## 2. What it actually generates
+
+**[DOC]** §8.1–§8.2, cross-checked against **[SCH]**.
+
+| Rail | Generated by | Typical value on an Inkplate | Goes to | Max load |
+|---|---|---|---|---:|
+| `VB` | **DCDC1**, positive boost | **+16 V** internal intermediate | `VPOS_IN`, `VDDH_IN` | 250 mA |
+| `VN` | **DCDC2**, inverting buck-boost | **−16 V** internal intermediate | `VNEG_IN`, `VEE_IN`, `VCOM_PWR`, `PBKG`, PowerPad | 250 mA |
+| **`VPOS`** | LDO1 from `VB` | **+15.0 V** | Panel source drivers | **120 mA** |
+| **`VNEG`** | LDO2 from `VN` | **−15.0 V** | Panel source drivers | **120 mA** |
+| **`VDDH`** | CP1 charge pump from `VB` | **+22 V** | Panel gate drivers | **10 mA** |
+| **`VEE`** | CP2 charge pump from `VN` | **−20 V** | Panel gate drivers | **12 mA** |
+| **`VCOM`** | Dedicated amplifier from `VN` | **0 to −5.11 V**, panel-specific | Panel back-plane | **15 mA** |
+| **`V3P3`** | Load switch from `VIN3P3` | **+3.3 V** (`3V3-EINK` net) | Panel logic **and the `CL` clock buffer** | ~ limited by 10.5 Ω R<sub>DS(on)</sub> |
+
+`VPOS`/`VNEG` are set together by `VADJ[2:0]` — **±15.000 / ±14.750 / ±14.500 / ±14.250 V only**, and the three lowest codes are *invalid* **[DOC]** §8.6.3. `VDDH` and `VEE` are set by external feedback dividers, not by a register: on the Inkplate, `R13`/`R14` (1 M / 47.5 k) set `VDDH_FB` and `R15`/`R16` (1 M / 52.3 k) set `VEE_FB` **[SCH]**.
+
+> **The +22 V and −20 V rails are weak.** 10 mA and 12 mA respectively. They drive gate lines, which are almost purely capacitive, so this is normally fine — but it also means the charge pumps have no headroom for a wiring mistake, and a short on `VDDH` will simply fail power-good rather than blowing anything up. **[INF]**
+
+### 2.1 Key electrical limits
+
+**[DOC]** §7.1–§7.5.
+
+| Parameter | Value |
+|---|---|
+| `VIN` / `VIN_P` / `VIN3P3` operating | **3.0 – 6.0 V** (nom 3.7 V) — a single Li-ion cell |
+| `VIN` absolute max | 7 V |
+| UVLO | 2.9 V falling, 400 mV hysteresis |
+| Logic pins (`SDA`, `SCL`, `WAKEUP`, `PWRUP`, `VCOM_CTRL`, `PWR_GOOD`, `nINT`) | **0 – 3.6 V**. **Not 5 V tolerant** |
+| I<sub>Q</sub> switching, no load | 5.5 mA |
+| I<sub>STD</sub> STANDBY | **130 µA** |
+| I<sub>SLEEP</sub> | **3.5 µA typ, 10 µA max** |
+| Continuous total power dissipation | **2 W** |
+| T<sub>A</sub> operating | **−10 °C to +85 °C** |
+| T<sub>J</sub> operating | −10 °C to +125 °C |
+| R<sub>θJA</sub> | 30 °C/W (VQFN-48) |
+| VCOM accuracy | ±0.8 % at V<sub>IN</sub> 3.4–4.2 V; ±1.5 % over the full 3–6 V |
+| VCOM output impedance | 5 Ω driving; **150 MΩ** in Hi-Z (measurement) state |
+| DCDC1/DCDC2 switch current limit | 1.5 A, ±30 % |
+| Power-good time-out, every rail | **50 ms** |
+| **VCOM EEPROM write endurance** | **100 writes.** See §8.4 |
+
+> ⚠ **−10 °C is the lower operating limit of the PMIC**, which is *warmer* than the −40 °C of most of the rest of an Inkplate's silicon (the [PCAL6416A](../../nxp/pcal6416a/README.md) goes to −40 °C). On a cold-weather deployment the PMIC — not the panel, not the ESP32 — is the binding component. **[DOC]** + **[INF]**
+
+---
+
+## 3. Pin functions
+
+**[DOC]** pin table, reproduced with the **actual Inkplate net on each pin** from **[SCH]**. The three boards are identical here.
+
+| Pin | Name | I/O | Function | Inkplate net |
+|---:|---|---|---|---|
+| 1 | `VREF` | O | Filter pin, 2.25 V internal ADC reference | `VREF` (4.7 µF to GND) |
+| 2 | **`nINT`** | O | **Open-drain interrupt, active low** | `INT` → [expander](../../nxp/pcal6416a/README.md) **`P0_6`** |
+| 3 | **`VNEG`** | O | −15 V panel source-driver supply | `VNEG` → panel |
+| 4 | `VNEG_IN` | I | LDO2 input | `VN` |
+| 5 | **`WAKEUP`** | I | Active-high wake. **93.75 µs deglitch** | `WAKEUP` → expander **`P0_3`** |
+| 6 | `DGND` | — | Digital ground | `GND` |
+| 7 | `INT_LDO` | O | Filter pin, 2.7 V internal supply | `INT_LDO` (4.7 µF) |
+| 8 | `AGND1` | — | Analog ground | `GND` |
+| 9, 11, 13, 15, 19, 20, 21, 26, 38, 39 | `N/C` | — | Not internally connected | unconnected |
+| 10 | `VIN` | I | Input supply, general circuitry | `VIN` |
+| 12 | **`VCOM_CTRL`** | I | VCOM amplifier enable. **62.52 µs deglitch** | `VCOM_CTRL` → expander **`P0_5`** |
+| 14 | **`VCOM`** | I | VCOM filter pin / measurement node | `VCOM` → panel back-plane |
+| 16 | `VCOM_PWR` | I | Supply to the VCOM buffer — connect to DCDC2 out | `VN` |
+| 17 | `SCL` | I | I²C clock | `I2C_SCL` |
+| 18 | `SDA` | I/O | I²C data | `I2C_SDA` |
+| 22 | **`PWRUP`** | I | **Rising edge runs the power-up sequence; falling edge runs power-down.** 0 ns deglitch | `PWRUP` → expander **`P0_4`** |
+| 23 | `PBKG` | — | **Die substrate — connect to `VN` (−16 V), not ground** | `VN` |
+| 24 | **`PWR_GOOD`** | O | Open-drain, low when any of `VDDH`/`VPOS`/`VEE`/`VNEG` is off or out of regulation | `PWR_GOOD` → expander **`P0_7`** |
+| 25 | `VN_SW` | O | DCDC2 switch node | `VN_SW` → **`L1`** `LQH44PN4R7MP0L` **4.7 µH** → `GND` |
+| 27 | `VIN_P` | I | DCDC2 input | `VIN` |
+| 28 | `VN` | I | DCDC2 feedback / supply for LDO2, CP2, VCOM | `VN` |
+| 29 | `VEE_IN` | I | CP2 input | `VN` |
+| 30 | `VEE_DRV` | O | CP2 driver | `VEE_DRV` (`C16` 10 nF) |
+| 31 | `VEE_D` | I | CP2 base voltage | `VEE_D` |
+| 32 | `VEE_FB` | I | CP2 feedback | `VEE_FB` (`R15` 1 M / `R16` 52.3 k) |
+| 33 | `PGND2` | — | Charge-pump power ground | `GND` |
+| 34 | `VDDH_FB` | I | CP1 feedback | `VDDH_FB` (`R13` 1 M / `R14` 47.5 k) |
+| 35 | `VDDH_D` | O | CP1 base voltage | `VDDH_D` |
+| 36 | `VDDH_DRV` | O | CP1 driver | `VDDH_DRV` (`C17` 10 nF) |
+| 37 | `VDDH_IN` | I | CP1 input | `VB` |
+| 40 | `VB_SW` | O | DCDC1 switch node | `VB_SW` → **`L2`** `NR4012T2R2M` **2.2 µH** → `VIN` |
+| 41 | `PGND1` | — | DCDC1 power ground | `GND` |
+| 42 | `VB` | I | DCDC1 feedback / supply for LDO1, CP1 | `VB` |
+| 43 | `VPOS_IN` | I | LDO1 input | `VB` |
+| 44 | **`VPOS`** | O | +15 V panel source-driver supply | `VPOS` → panel |
+| 45 | `VIN3P3` | I | 3.3 V switch input | `3V3` |
+| 46 | **`V3P3`** | O | **3.3 V switch output** | `3V3-EINK` → panel **and the `CL` buffer** |
+| 47 | `TS` | I | Thermistor input — 10 kΩ NTC + 43 kΩ linearisation to `AGND2` | `TS` — **`R2`** NTC ∥ **`R3`** 43 kΩ, both to `GND` |
+| 48 | `AGND2` | — | Thermistor reference point | `GND` |
+| **49** | **PowerPad** | — | **Internally connected to `PBKG`. Connect to `VN` with a short wide trace. ⚠ MUST NOT be connected to ground** | **`VN`** — 13 stitching pads **[SCH]** |
+
+> ✅ **Soldered gets the PowerPad right.** The netlist shows the thermal pad tied to `VN`, not `GND`, over thirteen pads. Grounding it — the instinctive thing to do with a QFN thermal pad — shorts the −16 V substrate. If you respin this design, do not "fix" it. **[DOC]** + **[SCH]**
+
+---
+
+## 4. Operating modes
+
+**[DOC]** §8.4. Three modes, selected by `WAKEUP` and `PWRUP`.
+
+| Mode | Entered by | I²C? | Rails | Current |
+|---|---|---|---|---:|
+| **SLEEP** | `WAKEUP` low | ❌ **Registers are reset and the device does not answer I²C at all** | All off | 3.5 µA |
+| **STANDBY** | `WAKEUP` high, `PWRUP` low | ✅ | All off | 130 µA |
+| **ACTIVE** | `PWRUP` rising edge (or `ACTIVE` bit) | ✅ | One or more up | 5.5 mA + load |
+
+> ⚠ **The single most common bring-up failure: I²C to `0x48` NACKs because `WAKEUP` is low.** There is nothing wrong with your bus. In SLEEP the chip is electrically absent and its registers have been *reset* — so anything you wrote before sleeping (including a sequencer configuration) is gone. This is exactly why the Inkplate driver re-writes `UPSEQ0` and `DWNSEQ0` inside every `powerUp()` rather than trusting `begin()`. §7.2.
+
+The device also falls back to STANDBY on its own if input UVLO, `VB_UV` or `VN_UV` trips **[DOC]** §8.4.
+
+---
+
+## 5. ⚠ Power sequencing — the part that damages panels
+
+### 5.1 The hardware sequencer
+
+**[DOC]** §8.3.1 and Figure 20. You do **not** enable rails one at a time. You describe the order you want, then trigger it:
+
+1. `WAKEUP` high → STANDBY, I²C alive.
+2. Write `UPSEQ0` (which rail fires on which of STROBE1…STROBE4) and `UPSEQ1` (the delay between strobes).
+3. Write `DWNSEQ0` / `DWNSEQ1` for the reverse.
+4. `PWRUP` rising edge — **or** set the `ACTIVE` bit in `ENABLE`.
+5. Internally: `VN` (DCDC2) comes up first, then `VB` (DCDC1), gated by `VN`'s power-good. Once `VB` regulates, `UDLY1` elapses and **STROBE1** fires. Each subsequent strobe waits for the previous rail's power-good *and* its `UDLYn`.
+6. `PWRUP` falling edge (or the `STANDBY` bit) runs `DWNSEQ`. `VB` drops with STROBE4; **`VN` stays up for a further 50 ms**, then drops.
+
+Two behaviours worth knowing:
+
+- **Aborting mid-sequence is safe and defined.** Dropping `PWRUP` during power-up aborts and immediately starts power-down. Raising it during power-down completes the power-down first, then powers back up **[DOC]** §8.3.1.
+- **Every rail has a 50 ms power-good timeout.** DCDC1/DCDC2 failing → interrupt **and** a drop to STANDBY. An LDO or charge pump failing → interrupt only; **the device stays in ACTIVE with a dead rail** **[DOC]** §8.3.3. That asymmetry is why polling the `PG` register is not optional.
+
+### 5.2 Rail dependencies are enforced in hardware
+
+**[DOC]** §8.3.2 — these are internal gates, not advice:
+
+- DCDC2 (`VN`) must regulate before DCDC1 (`VB`) can enable.
+- DCDC1 must regulate before **LDO2 (`VNEG`)**, **VCOM**, **CP2 (`VEE`)** and **CP1 (`VDDH`)** can enable.
+- **LDO2 (`VNEG`) must regulate before LDO1 (`VPOS`) can enable.** Mirrored in the `ENABLE` register: *"VPOS cannot be enabled before VNEG is enabled"* and *"when VNEG is disabled VPOS will also be disabled"* **[DOC]** §8.6.2.
+
+So a nonsensical `UPSEQ0` will not blow the chip up — the hardware simply refuses to bring up the dependent rail, the 50 ms timeout expires, and you get an undervoltage interrupt and a `PG` that never reaches its target. **The failure mode of a bad power-up order is a silent no-refresh, not smoke.** **[INF]** from §8.3.2 + §8.3.3.
+
+### 5.3 …but power-**down** order is the one that can hurt the panel
+
+This is where the danger actually is, and the datasheet is oblique about it. `DWNSEQ1` carries a **`DFCTR`** bit that multiplies the inter-strobe delays by 16×, described as being there *"to allow the user to space out the power down of the rails to avoid crossing during discharge"* **[DOC]** §8.3.1.
+
+"Crossing" means a gate rail and a source rail passing each other on the way down, which puts the panel's TFTs into a bias combination the waveform never intended. The Inkplate driver's own comment is blunter:
+
+```c
+// its important to use this order when turning epaper on.
+// using wrong order can irreparably damage epaper
+```
+— `Inkplate5V2Driver.cpp:563` **[SRC]**
+
+and the display routines refuse to clock data at all if the rails did not come up:
+
+```c
+// If not, skip the update (if there is no power to the epaper,
+// sending data to it can damage the epaper!)
+if (!einkOn()) return;
+```
+— `Inkplate5V2Driver.cpp:268` **[SRC]**
+
+> **Evidence boundary.** That driving a panel with wrong or absent bias *destroys* it is asserted by Soldered **[SRC]** and is standard E Ink integration folklore **[COM]**. **TI's datasheet does not say it.** What TI does establish is (a) the hardware dependency gating, (b) the explicit `DFCTR` provision for avoiding rail crossing on discharge, and (c) the "active discharge" feature in the product title. Treat "wrong order kills panels" as **well-supported but not TI-documented**.
+
+### 5.4 Defaults are already correct for E Ink
+
+**[DOC]** §8.3.1: *"The default settings support the E Ink Vizplex panel and typically do not need to be changed."* The reset values are:
+
+| Register | Reset value | Meaning |
+|---|---|---|
+| `UPSEQ0` | **`0xE4`** | STROBE1 = `VNEG`, STROBE2 = `VEE`, STROBE3 = `VPOS`, STROBE4 = `VDDH` |
+| `UPSEQ1` | **`0x55`** | 6 ms between every strobe |
+| `DWNSEQ0` | **`0x1E`** | STROBE1 = `VDDH`, STROBE2 = `VPOS`, STROBE3 = `VNEG`, STROBE4 = `VEE` |
+| `DWNSEQ1` | **`0xE0`** | DDLY4 = 48 ms, DDLY3 = 24 ms, DDLY2 = 6 ms, DDLY1 = 3 ms, DFCTR = 1× |
+
+Negative rails first up, positive rails first down. Note the deliberately **long** default power-down spacing — 48 ms on the last gap. §7.3 shows that the Inkplate library shortens this considerably.
+
+---
+
+## 6. Exact wiring on the Inkplate family
+
+### 6.1 Control lines are on the I²C expander, not the ESP32
+
+**[SCH]**, confirmed on all three boards, and cross-checked against **[SRC]** `boards/Inkplate5/pins.h` and `boards/Inkplate5V2/pins.h` (which are byte-identical apart from the include guards).
+
+| TPS65186 pin | Net | [PCAL6416A](../../nxp/pcal6416a/README.md) pin | Library name | Used by firmware? |
+|---|---|---|---|---|
+| 5 `WAKEUP` | `WAKEUP` | **`P0_3`** | `#define WAKEUP 3` | ✅ output |
+| 22 `PWRUP` | `PWRUP` | **`P0_4`** | `#define PWRUP 4` | ✅ output |
+| 12 `VCOM_CTRL` | `VCOM_CTRL` | **`P0_5`** | `#define VCOM 5` | ✅ output |
+| 2 `nINT` | `INT` | **`P0_6`** | — | ⚠ only during VCOM programming — §8.3 |
+| 24 `PWR_GOOD` | `PWR_GOOD` | **`P0_7`** | — | ❌ **never read.** §6.3 |
+
+Each of `WAKEUP`, `PWRUP` and `VCOM_CTRL` also carries a **pull-down to ground** (`R5`, `R7`, `R6`) **[SCH]**, so on a board whose expander has not been initialised the PMIC sits safely in SLEEP with no rails. That is the right default and it is worth preserving in any respin.
+
+The MicroPython port names all of these explicitly, which is the clearest single confirmation of the mapping:
+
+```python
+cls.TPS_WAKEUP   = GpioPin(cls._PCAL6416A, 3, mode_output)
+cls.TPS_PWRUP    = GpioPin(cls._PCAL6416A, 4, mode_output)
+cls.TPS_VCOM     = GpioPin(cls._PCAL6416A, 5, mode_output)
+cls.TPS_INT      = GpioPin(cls._PCAL6416A, 6, mode_input)
+cls.TPS_PWR_GOOD = GpioPin(cls._PCAL6416A, 7, mode_input)
+```
+— `Inkplate-micropython/boards/inkplate5/inkplate5.py:116-131` **[SRC]**
+
+**The cost of this arrangement:** a power-up is `WAKEUP` high → I²C write → I²C write → I²C write → `PWRUP` high → poll `PG` over I²C every 1 ms. Every one of those is an expander transaction on the *same bus* as the PMIC. It frees eight ESP32 GPIOs for the parallel data bus, which is the whole point — see [Inkplate 5 § how the e-paper interface actually works](../../../devices/soldered-electronics/inkplate-5/README.md#how-the-e-paper-interface-actually-works).
+
+### 6.2 The `V3P3` switch gates more than you think
+
+`V3P3` (pin 46) drives the `3V3-EINK` net, which reaches **[SCH]**:
+
+- the panel connector — `K20.7` and `K20.9` on Inkplate 5, `K21.14` and `K21.15` on Gen 2 / ZeroWriter;
+- **`U8`, the `SN74LVC1G34` single buffer that drives the panel's `CL` source-driver (data) clock** — `U8.5 → 3V3-EINK` (V<sub>CC</sub>), `U8.2 ← Net-(JP7-Pad2)` (input, from ESP32 `GPIO0` through jumper `JP7`), `U8.4 → EPD_CL` (output);
+- `R48`, the 10 kΩ pull-up on the panel's `XON` line.
+
+So when `V3P3_EN` is 0, the `CL` buffer is **unpowered** and no pixel clock can reach the panel even if the ESP32's I2S peripheral is running. That is a genuinely nice interlock: the same register bit that removes panel logic power also removes the data clock. **[SCH]** + **[INF]**
+
+(That `GPIO0` is the source of `CL` is confirmed from the driver: `setI2S1pin(0, I2S1O_BCK_OUT_IDX, 0)` in `pinsAsOutputs()` routes the I2S bit clock to GPIO0 **[SRC]** `Inkplate5V2Driver.cpp:633`.)
+
+`RDIS`, the internal discharge path when `V3P3_EN = 0`, is 800–1200 Ω **[DOC]**, so `3V3-EINK` is actively pulled down rather than left floating.
+
+### 6.3 The NTC on `TS` is a **board** thermistor, not the panel's
+
+This one surprised us and is worth stating plainly.
+
+- `TS` (pin 47) is fed by **`R2` = `NCP18XH103F03RB`**, a 10 kΩ 0603 NTC **on the PCB**, with **`R3` = 43 kΩ** as the linearisation resistor, exactly as TI specifies **[SCH]** + **[DOC]**.
+- The **panel's own thermistor output** (`THERM`, `K20.11` on Inkplate 5 / `K21.37` on Gen 2) goes to **a broken-out header pad and nowhere else** — `K13.1` and `K19.1` respectively **[SCH]**.
+
+So `readTemperature()` reports the temperature of *the PCB next to the PMIC*, not of the electrophoretic film. Under self-heating, or with the board in a case and the panel exposed, those differ. Since E Ink waveforms are temperature-selected, this is a real (if usually small) source of error, and the panel's better sensor is sitting on an unpopulated pad. **[SCH]** + **[INF]**
+
+### 6.4 `nINT` and `PWR_GOOD` have no external pull-ups
+
+Both are **open-drain** outputs **[DOC]**, and the netlists show each net with exactly **two** nodes — the PMIC pin and the expander pin — with **no pull-up resistor anywhere** **[SCH]**:
+
+```
+INT       (2)  U1.2,  U9.7
+PWR_GOOD  (2)  U1.24, U9.8
+```
+
+Consequently:
+
+- **`PWR_GOOD` as a pin is unusable as shipped.** With no pull-up and the expander pin left as a plain input, a "good" state is a float. This is why the driver polls the **`PG` register over I²C** instead — `readPowerGood()` reads `0x0F` and compares against `PWR_GOOD_OK = 0b11111010` **[SRC]** (`defines.h:43`). Correct decision, and it also gets you per-rail detail the pin cannot give.
+- **`nINT` works only because the driver switches on the expander's internal pull-up** at the one place it needs it: `expander1.pinMode(6, INPUT_PULLUP)` at the top of `writeVCOMToPanelEEPROM()` **[SRC]** (`Inkplate5V2Driver.cpp:1072`). That selects the PCAL6416A's ~100 kΩ internal pull-up. **If you want interrupt-driven fault handling you must do the same** — nothing else on the board pulls this net up.
+
+### 6.5 ZeroWriter Ink
+
+The ZeroWriter respin leaves the PMIC block **completely untouched**: `U1` pin-for-pin identical, same `L1`/`L2`, same `R2`/`R3` NTC network, same expander mapping on `P0_0`–`P0_7` **[SCH]** (`Zerowriter Inkplate 5 Gen2.kicad_pcb`). The changes in that respin are in charging, USB and SD — see [ZeroWriter Ink § this is not a stock Inkplate 5](../../../devices/zerowriter/zerowriter-ink/README.md#the-second-important-fact-this-is-not-a-stock-inkplate-5).
+
+---
+
+## 7. Register map
+
+**[DOC]** §8.6, complete. 17 registers, `0x00`–`0x10`, single-byte, standard I²C register addressing at slave `0x48`.
+
+| Addr | Name | R/W | Reset | Purpose |
+|---|---|---|---|---|
+| `0x00` | `TMST_VALUE` | R | — | Temperature, **8-bit two's complement °C** |
+| `0x01` | `ENABLE` | R/W | `0x00` | Per-rail enables + `ACTIVE`/`STANDBY` transition bits |
+| `0x02` | `VADJ` | R/W | `0x23` | `VSET[2:0]` — `VPOS`/`VNEG` magnitude |
+| `0x03` | `VCOM1` | R/W | `0x7D` | `VCOM[7:0]` |
+| `0x04` | `VCOM2` | R/W | `0x04` | `ACQ`, `PROG`, `HiZ`, `AVG[1:0]`, `VCOM[8]` |
+| `0x05` | `INT_EN1` | R/W | `0x7F` | Enables for thermal / UVLO / VCOM-operation interrupts |
+| `0x06` | `INT_EN2` | R/W | `0xFF` | Enables for per-rail undervoltage + ADC EOC |
+| `0x07` | `INT1` | R | — | Status: `DTX`, `TSD`, `HOT`, `TMST_HOT`, `TMST_COLD`, `UVLO`, `ACQC`, `PRGC` |
+| `0x08` | `INT2` | R | — | Status: `VB_UV`, `VDDH_UV`, `VN_UV`, `VPOS_UV`, `VEE_UV`, `VCOMF`, `VNEG_UV`, `EOC` |
+| `0x09` | `UPSEQ0` | R/W | `0xE4` | Strobe assignment, power-up |
+| `0x0A` | `UPSEQ1` | R/W | `0x55` | Strobe delays, power-up |
+| `0x0B` | `DWNSEQ0` | R/W | `0x1E` | Strobe assignment, power-down |
+| `0x0C` | `DWNSEQ1` | R/W | `0xE0` | Strobe delays + `DFCTR`, power-down |
+| `0x0D` | `TMST1` | R/W | `0x20` | `READ_THERM`, `CONV_END`, `DT[1:0]` |
+| `0x0E` | `TMST2` | R/W | `0x78` | `TMST_COLD[3:0]`, `TMST_HOT[3:0]` thresholds |
+| `0x0F` | `PG` | R | `0x00` | Per-rail power-good |
+| `0x10` | `REVID` | R | — | Silicon revision |
+
+> ⚠ **Several reset values are marked in the datasheet as EEPROM-sourced, not hard-wired.** The `E2` superscripts appear on `VADJ`, `VCOM1`, `VCOM2`, `UPSEQ0/1` and `DWNSEQ0/1`. TI documents a programming path for **VCOM only** (§8.3.6.2). Whether a factory or a previous owner can have shifted the *sequencer* defaults on a given part is **[INF]** — but it is a reason to write the sequencers explicitly rather than trusting reset values, which is what the Inkplate driver does.
+
+### 7.1 The registers you will actually touch
+
+**`ENABLE` (`0x01`)** — bit 7 `ACTIVE` (self-clearing transition to ACTIVE), bit 6 `STANDBY` (self-clearing, **has priority over `ACTIVE`**), bit 5 `V3P3_EN`, bit 4 `VCOM_EN`, bit 3 `VDDH_EN`, bit 2 `VPOS_EN`, bit 1 `VEE_EN`, bit 0 `VNEG_EN`. *"Enable bits always reflect actual status of the corresponding rail"* — so this register doubles as a read-back.
+
+**`PG` (`0x0F`)** — bit 7 `VB_PG`, 6 `VDDH_PG`, 5 `VN_PG`, 4 `VPOS_PG`, 3 `VEE_PG`, **bit 2 unused**, 1 `VNEG_PG`, **bit 0 unused**. All rails good therefore reads **`0b11111010` = `0xFA`**, which is exactly the Inkplate library's `PWR_GOOD_OK`. **[DOC]** + **[SRC]** — a clean independent cross-check of both.
+
+**`VCOM1`/`VCOM2`** — `VCOM[8:0]`, **10 mV per LSB, negative**: `VCOM = VCOM[8:0] × −10 mV`, range 0 to −5.110 V. Factory default `0x07D` = **−1.25 V**.
+
+**`UPSEQ0`/`DWNSEQ0`** — four 2-bit fields, `[7:6]` = VDDH, `[5:4]` = VPOS, `[3:2]` = VEE, `[1:0]` = VNEG; each value 00–11 selects STROBE1–STROBE4.
+
+**`UPSEQ1`** — four 2-bit delays `UDLY4..UDLY1`, values **3 / 6 / 9 / 12 ms**. `UDLY1` is `VB` power-good → STROBE1.
+
+**`DWNSEQ1`** — `DDLY4..DDLY2` are 2-bit, values **6 / 12 / 24 / 48 ms**; `DDLY1` is a single bit (0 = 3 ms, 1 = 6 ms) measured from `WAKEUP` low to STROBE1; `DFCTR` multiplies DDLY2–4 by 16.
+
+**`TMST1`/`TMST_VALUE`** — set `READ_THERM` (bit 7) to start a conversion; it self-clears. `CONV_END` (bit 5) reads 1 when done, and `EOC` in `INT2` is set. `DT[1:0]` sets the temperature-change interrupt threshold (2/3/4/5 °C). ADC conversion takes **19 µs**; resolution 16.1 mV; accuracy ±1 LSB. Thresholds in `TMST2` span **−7…+8 °C** (cold) and **42…57 °C** (hot).
+
+---
+
+## 8. What the Inkplate driver actually does — decoded against the register map
+
+Source: `src/features/TPS65186/TPS65186.cpp`, Inkplate Arduino library **v11.1.4**. The MicroPython driver (`shared/drivers/tps65186.py`) is a line-for-line port and does the same things **[SRC]**.
+
+### 8.0 Which registers the library touches — the complete list
+
+Established by grepping every `writeReg`/`readReg`/`Wire.write` call against the PMIC across the whole library **[SRC]**:
+
+| Register | Written | Read | Note |
+|---|:--:|:--:|---|
+| `0x00` `TMST_VALUE` | — | ✅ | `readTemperature()` |
+| `0x01` `ENABLE` | ✅ `0x20` / `0x00` | — | `V3P3_EN` only |
+| **`0x02` `VADJ`** | ❌ | ❌ | **Never touched.** `VPOS`/`VNEG` stay at the reset default **±15.000 V** |
+| `0x03`/`0x04` `VCOM1`/`VCOM2` | ✅ | ✅ | VCOM programming only (§9.3) |
+| **`0x05`/`0x06` `INT_EN1`/`INT_EN2`** | ❌ | ❌ | **Never touched.** Masks stay at their permissive defaults |
+| `0x07` `INT1` | — | ✅ | Read **once**, only to clear `PRGC` after VCOM programming |
+| **`0x08` `INT2`** | ❌ | ❌ | **Never read.** All per-rail undervoltage and `VCOMF` events are discarded — §10 |
+| `0x09`/`0x0B` `UPSEQ0`/`DWNSEQ0` | ✅ | — | §8.1, §8.2 |
+| `0x0A`/`0x0C` `UPSEQ1`/`DWNSEQ1` | ✅ (in `begin()` only) | — | §8.1 |
+| `0x0D` `TMST1` | ✅ `0x80` | — | Start conversion; `CONV_END` never polled |
+| **`0x0E` `TMST2`** | ❌ | ❌ | **Never touched.** Hot/cold thresholds stay at 50 °C / 0 °C |
+| `0x0F` `PG` | — | ✅ | Polled in `powerUp()`/`powerDown()` |
+| **`0x10` `REVID`** | ❌ | ❌ | **Never read.** Silicon revision unknown to the firmware |
+
+Five of the seventeen registers are never accessed at all. That is a reasonable minimal driver, but it means **every fault-reporting feature of this chip is inert** unless you add the reads yourself.
+
+### 8.1 `begin()` — and the sequencer value that is exactly backwards
+
+```c
+_expander->digitalWrite(_wakeupPin, HIGH, true);
+delay(1);
+Wire.beginTransmission(TPS65186_I2C_ADDR);
+Wire.write(TPS65186_REG_UPSEQ0);
+Wire.write(0x1B); // Power up seq.
+Wire.write(0x00); // Power up delay (3 ms per rail)
+Wire.write(0x1B); // Power down seq.
+Wire.write(0x00); // Power down delay (6 ms per rail)
+Wire.endTransmission();
+delay(1);
+_expander->digitalWrite(_wakeupPin, LOW, true);
+```
+— `TPS65186.cpp:16-28` **[SRC]**
+
+Decoding those four bytes against §7 gives:
+
+| Byte | Register | Value | Decoded | vs. TI default |
+|---|---|---|---|---|
+| 1 | `UPSEQ0` | **`0x1B`** | S1 = **VDDH**, S2 = VPOS, S3 = VEE, S4 = **VNEG** | ⚠ **Exactly reversed** from the default `0xE4` |
+| 2 | `UPSEQ1` | `0x00` | 3 ms between all strobes | Faster than the 6 ms default |
+| 3 | `DWNSEQ0` | `0x1B` | S1 = VDDH, S2 = VPOS, S3 = VEE, S4 = VNEG | Default `0x1E` swaps VEE/VNEG; near-identical intent |
+| 4 | `DWNSEQ1` | `0x00` | 6 / 6 / 6 ms, DDLY1 3 ms, DFCTR 1× | ⚠ Much faster than the default **6 / 24 / 48 ms** |
+
+> ⚠ **`UPSEQ0 = 0x1B` asks for positive rails first and `VNEG` last.** Per §5.2 that is impossible — `VNEG` is gated by DCDC1 and `VPOS` is gated by `VNEG`, so a power-up executed with this configuration cannot complete. It never bites in practice **only because `powerUp()` overwrites `UPSEQ0` with `0xE4` on every single call before touching `PWRUP`** (§8.2), and because `begin()` drops `WAKEUP` again immediately, which returns the part to SLEEP and **resets the registers anyway** (§4).
+>
+> The `0x1B` write is therefore inert. But it is inert by accident, and it is the value a reader will copy. **If you are writing your own driver, use `0xE4`.** Status: the byte values and the register semantics are **[DOC]** + **[SRC]**; the "harmless because immediately overwritten and then reset" reading is **[INF]**.
+
+> ⚠ **The shortened power-down spacing is the more consequential change.** TI's default spaces the last two power-down strobes 24 ms and 48 ms apart, specifically to avoid rail crossing during discharge (§5.3). Soldered compresses all three gaps to 6 ms. On a warm, lightly-loaded panel with the chip's active discharge doing its job this is presumably fine — Soldered ships it in volume. But it is a **deliberate deviation from the vendor-recommended E Ink defaults in exactly the direction the datasheet warns about**, and if you are chasing intermittent panel artefacts on a custom board, restoring `DWNSEQ1 = 0xE0` is a one-line experiment worth running. **[DOC]** + **[SRC]**, consequence **[INF]**.
+
+### 8.2 `powerUp()`
+
+```c
+_expander->digitalWrite(_wakeupPin, HIGH, true);
+delay(5);
+enableRails(true);                    // ENABLE = 0x20
+writeReg(UPSEQ0,  0xE4);              // TI default order: VNEG, VEE, VPOS, VDDH
+writeReg(DWNSEQ0, 0x1B);
+_expander->digitalWrite(_pwrupPin, HIGH, true);
+do { delay(1); } while (readPowerGood() != PWR_GOOD_OK && millis()-timer < timeout);
+if (timed out) return false;
+_expander->digitalWrite(_vcomPin, HIGH, true);   // VCOM_CTRL last
+```
+— `TPS65186.cpp:54-89` **[SRC]**, called with `timeout = 500` from `einkOn()` (`Inkplate5V2Driver.cpp:583`)
+
+Three things this gets right and one worth noting:
+
+- ✅ **`ENABLE = 0x20` sets `V3P3_EN` only.** It does *not* pre-enable the high-voltage rails — those come up from the `PWRUP` edge under sequencer control. Turning on panel logic power (and, per §6.2, the `CL` buffer) before the bias rails is the correct order.
+- ✅ **`UPSEQ0 = 0xE4`** restores TI's E Ink default order, undoing §8.1.
+- ✅ **`VCOM_CTRL` is asserted last, after all four bias rails report good.** Matches TI's note that when `VCOM_CTRL` is strapped rather than driven, VCOM lands on STROBE4 anyway.
+- The 5 ms `WAKEUP`→I²C settle is generous against the 93.75 µs deglitch spec but there is no documented SLEEP→STANDBY register-ready time, so it is a reasonable margin. **[INF]**
+
+### 8.3 `powerDown()` and the discharge window
+
+```c
+_expander->digitalWrite(_vcomPin, LOW, true);    // VCOM off first
+_expander->digitalWrite(_pwrupPin, LOW, true);   // runs DWNSEQ
+do { delay(1); } while (readPowerGood() != 0 && millis()-timer < 250);
+_expander->digitalWrite(_wakeupPin, LOW, true);  // -> SLEEP
+enableRails(false);                              // ENABLE = 0x00 ... after WAKEUP low
+```
+— `TPS65186.cpp:96-110` **[SRC]**
+
+✅ Dropping `VCOM_CTRL` first is correct: with `VCOM_CTRL` low and `VN` still up, TI specifies that **VCOM discharge is enabled** **[DOC]** §8.6 note (2). The panel back-plane is actively bled rather than left charged.
+
+⚠ **The final `enableRails(false)` is issued *after* `WAKEUP` has been pulled low.** By §4 the part is then in SLEEP, does not answer I²C, and has already reset its registers. That write is a no-op that will NACK. Harmless — Arduino `Wire` swallows it — but it is dead code, and if you port this driver to a stack that raises on NACK it will throw. **[SRC]** + **[DOC]**, conclusion **[INF]**.
+
+### 8.4 `readTemperature()`
+
+```c
+if (!poweredUp) { WAKEUP high; PWRUP high; delay(5); }
+writeReg(TMST1, 0x80);   // READ_THERM = 1, DT = 2 degC
+delay(5);
+temp = readReg(TMST_VALUE);
+if (!poweredUp) { PWRUP low; WAKEUP low; delay(5); }
+```
+— `TPS65186.cpp:119-154` **[SRC]**
+
+- The result is **8-bit two's complement °C**, `0x00` = 0 °C, `0xFF` = −1 °C, `0xF6` = −10 °C or colder **[DOC]**. The library returns it as `int8_t`, which is exactly right.
+- The fixed `delay(5)` is ~260× the 19 µs conversion time, so it is safe, but **`CONV_END` (`TMST1` bit 5) is never polled**. A more careful driver would poll it or use the `EOC` interrupt. **[SRC]** + **[DOC]**
+- ⚠ **It asserts `PWRUP`, i.e. runs a full power-up sequence, just to read a thermistor.** Reading the temperature therefore brings all four high-voltage rails up and back down. STANDBY (`WAKEUP` high, `PWRUP` low) is sufficient for I²C and for the ADC. Calling `readTemperature()` in a loop is an unnecessarily expensive and panel-adjacent operation. **[SRC]**, assessment **[INF]**.
+
+---
+
+## 9. VCOM: what it is, how to measure it, how to store it
+
+### 9.1 Why it is panel-specific
+
+VCOM is the bias on the panel's common back-plane. The electrophoretic pixel sees the *difference* between its source-driver voltage and VCOM, so an incorrect VCOM offsets every pixel's drive symmetrically. The right value is a property of the individual panel lot — it comes from the manufacturing process, not from a formula.
+
+**Symptoms of a wrong VCOM** are not an obvious failure. They are: washed-out or grey-looking blacks, uneven background, greyscale steps compressed at one end, and **ghosting that a full refresh does not clear**. If a board displays *something* but never looks quite right, suspect VCOM before suspecting waveforms. **[COM]** + **[INF]**
+
+### 9.2 In-system kick-back measurement
+
+**[DOC]** §8.3.6.1 and Figure 22. The TPS65186 can measure the panel's kick-back voltage directly:
+
+1. `WAKEUP` high, `PWRUP` high — all rails up **except VCOM**.
+2. Set **`HiZ`** (bit 5 of `VCOM2`) — the `VCOM` pin goes to a 150 MΩ high-impedance state.
+3. **Drive the panel with the E Ink NULL waveform.** *(TI: "Refer to E Ink specification for detail." That specification is NDA-gated — see the [ED052TC4 record](../../e-ink/ed052tc4/README.md). This step is the reason nobody outside a panel-integration programme performs this measurement.)*
+4. Set **`ACQ`** (bit 7 of `VCOM2`) to start the A/D conversion. `AVG[1:0]` averages 1/2/4/8 acquisitions.
+5. Wait for the **`ACQC`** bit in `INT1` (`nINT` pulls low). `ACQ` self-clears.
+6. Read the result from `VCOM[8:0]` in `VCOM1`/`VCOM2`.
+
+The result is **not** automatically saved.
+
+### 9.3 Storing the power-up default
+
+**[DOC]** §8.3.6.2:
+
+1. Write the desired value to `VCOM[8:0]`.
+2. `PWRUP` low (STANDBY), `HiZ` = 0.
+3. Set **`PROG`** (bit 6 of `VCOM2`). *"First, all power rails are shut down, then the VCOM[8:0] value is committed to nonvolatile memory."* **Power must not be interrupted during this.**
+4. Wait for **`PRGC`** in `INT1`. `PROG` self-clears and the part enters STANDBY.
+5. **To verify:** write `VCOM[8:0] = 0x000`, pull `WAKEUP` low, pull it back high, and read `VCOM[8:0]`. The SLEEP transition reloads from EEPROM.
+
+The Inkplate implementation follows this closely — `writeVCOMToPanelEEPROM()` at `Inkplate5V2Driver.cpp:1069-1125` **[SRC]**:
+
+```c
+expander1.pinMode(6, INPUT_PULLUP);           // nINT needs a pull-up -- see 6.4
+int raw = abs((int)(v * 100.0)) & 0x1FF;      // 10 mV per LSB
+writeReg(0x03, raw & 0xFF);                   // VCOM1
+uint8_t r4 = readReg(0x04);
+r4 &= ~((1 << 0) | (1 << 6));                 // clear VCOM[8] and PROG
+r4 |= (raw >> 8) & 0x01;
+writeReg(0x04, r4);
+writeReg(0x04, r4 | (1 << 6));                // strobe PROG
+while (expander1.digitalRead(6)) delay(1);    // wait for nINT low = PRGC
+(void)readReg(0x07);                          // clear INT1
+// read back VCOM1/VCOM2 and compare
+```
+
+Two deviations from TI's procedure worth knowing **[SRC]** + **[DOC]**:
+
+- It calls `einkOn()` first, so `PWRUP` is **high** when `PROG` is strobed, where TI's flow drops to STANDBY first. The part shuts the rails down itself as part of the programming cycle, so this is probably benign, but it is not the documented order. **[INF]**
+- It verifies by **reading the registers back immediately**, not by TI's zero-write / `WAKEUP` cycle / re-read. An immediate read-back confirms the register, **not** the EEPROM cell. A genuine verification needs the sleep cycle.
+
+### 9.4 ⚠ 100 writes. That is the whole budget.
+
+**[DOC]** Electrical Characteristics, VCOM driver: *"Max number of EEPROM writes — VCOM calibration — **100**"*.
+
+Soldered's own example says the same thing in plainer words **[SRC]** (`Inkplate5V2_SetVCOM.ino:12-15, 40-41`):
+
+> *"VCOM is stored in EEPROM and can only be programmed a limited number of times. Do NOT run this sketch repeatedly or 'tune' VCOM by trial-and-error. Program it once (only if needed) and leave it unchanged."*
+
+**Do not put `setVCOM()` in `setup()`.** A board that reprograms VCOM on every boot exhausts its budget in a few days of development.
+
+### 9.5 Where the value lives, and the copy that is *not* authoritative
+
+There are three places a VCOM number can be on an Inkplate, and they are easy to confuse:
+
+| Location | Written by | Read by | Authoritative? |
+|---|---|---|---|
+| **TPS65186 internal EEPROM** | `PROG` bit | The chip itself, at every SLEEP→wake | ✅ **Yes.** This is what actually biases the panel |
+| **ESP32 EEPROM offset 0** | `setVCOM()` | **`getVCOMValue()`** | ❌ A cached copy for display purposes only |
+| Panel FPC SPI EEPROM | Factory | — | ❌ **Not wired to the ESP32 on any of these boards.** §9.6 |
+
+```c
+double EPDDriver::getVCOMValue() { EEPROM.begin(512); double vcom; EEPROM.get(0, vcom); return vcom; }
+```
+— `Inkplate5V2Driver.cpp:1134-1140` **[SRC]**
+
+> ⚠ **`getVCOMValue()` does not read the PMIC.** It reads a `double` out of ESP32 flash-emulated EEPROM that `setVCOM()` happened to leave there. On a board you did not personally program — including a factory-programmed one, if the factory tool did not also write ESP32 EEPROM — it returns garbage or zero while the panel is biased perfectly correctly. To read the *real* value, read `VCOM1`/`VCOM2` from the PMIC with `display.readReg(0x03)` / `readReg(0x04)` while it is awake. **[SRC]** + **[INF]**
+
+### 9.6 The panel's own EEPROM is not connected
+
+The E Ink FPC brings out an SPI bus that on a normal integration carries the panel's identity and its factory VCOM. On these boards it terminates on unpopulated header pads **[SCH]**:
+
+| Signal | Inkplate 5 (`K20`, 40-pin) | Gen 2 / ZeroWriter (`K21`, 50-pin) | Goes to |
+|---|---|---|---|
+| `SCL` | pin 33 | pin 25 | header pad only |
+| `NCS` | pin 34 | pin 27 | header pad only |
+| `SDI` | pin 35 | pin 24 | header pad only |
+| `SDO` | pin 36 | pin 26 | header pad only |
+
+So firmware **cannot** discover the correct VCOM for the panel it is attached to. It has to have been programmed into the PMIC at manufacture, or measured. If you swap a panel, you inherit the previous panel's VCOM. **[SCH]** + **[INF]**
+
+### 9.7 Diagnostic sketches Soldered ships
+
+| Example | Path | What it does |
+|---|---|---|
+| `Inkplate5V2_SetVCOM` | `examples/Inkplate5V2/Diagnostics/Inkplate5V2_SetVCOM/` | Serial prompt, accepts −5.0…0.0 V, programs it, draws an 8-step greyscale bar. **Run once.** |
+| `Inkplate5V2_Factory_Programming_VCOM` | `examples/Inkplate5V2/Diagnostics/Inkplate5V2_Factory_Programming_VCOM/` | Soldered's production-line variant, with an `InkplateEasyCTester` companion sketch |
+| Same two, `Inkplate5` prefix | `examples/Inkplate5/Diagnostics/` | Gen 1 equivalents |
+
+---
+
+## 10. Interrupts and fault reporting
+
+`nINT` (pin 2) is a single open-drain line asserted by any unmasked event in `INT1` or `INT2`. Masks live in `INT_EN1` / `INT_EN2` and **default to almost everything enabled** (`INT_EN1` = `0x7F`, `INT_EN2` = `0xFF`) **[DOC]**. Reading `INT1`/`INT2` clears them.
+
+| Group | Bits | Use |
+|---|---|---|
+| `INT1` | `DTX` (temperature moved ≥ `DT` threshold), `TSD` (thermal shutdown), `HOT` (approaching shutdown), `TMST_HOT`, `TMST_COLD`, `UVLO`, `ACQC`, `PRGC` | Thermal supervision, VCOM operations |
+| `INT2` | `VB_UV`, `VDDH_UV`, `VN_UV`, `VPOS_UV`, `VEE_UV`, **`VCOMF`**, `VNEG_UV`, `EOC` | Per-rail undervoltage, VCOM out of range, ADC done |
+
+**`VCOMF`** deserves attention: if VCOM leaves the −5.5 V…+1 V window, *"VCOM is shut down and the VCOMF interrupt is set"* **[DOC]**. That is a panel-protection behaviour you would otherwise never see, because the Inkplate firmware never reads `INT2`.
+
+> **On the Inkplate the entire interrupt system is unused.** `nINT` is wired to expander `P0_6` and read at exactly one place — the busy-wait inside VCOM programming (§9.3). `INT1`/`INT2` are read once, to clear `PRGC`. Nothing polls `INT2`, so **`VCOMF`, per-rail undervoltage and thermal-shutdown events are all invisible to the application.** If you are building something that must not silently mis-render, adding an `INT2` read after each `powerUp()` is cheap and is the single highest-value improvement available over the stock driver. **[SRC]** + **[INF]**
+
+### 10.1 Thermal supervision
+
+`TSD` is a genuine over-temperature shutdown; `HOT` is its early warning. The datasheet's design example places the hot trip at 50 °C and the escape at 45 °C **[DOC]** §7.5. With a 2 W dissipation ceiling and R<sub>θJA</sub> = 30 °C/W, the junction sits ~30 °C above ambient at 1 W — so in an enclosed case at 40 °C ambient, `HOT` is not a theoretical concern.
+
+---
+
+## 11. Failure symptoms and how to tell them apart
+
+**[INF]** unless marked, but each row is grounded in a specific documented mechanism.
+
+| Symptom | Likely cause | How to confirm |
+|---|---|---|
+| **Nothing at all; `begin()` succeeds** | `powerUp()` timed out; `einkOn()` returned 0 and every draw call silently returned **[SRC]** | Call `pmic.powerUp()` directly and check the return; read `PG` (`0x0F`) and see *which* bit is missing |
+| **I²C NACK at `0x48`** | `WAKEUP` low → SLEEP (§4). Or the expander was never initialised, so `P0_3` is an input and `R5` holds `WAKEUP` down | Assert expander `P0_3` high, wait 5 ms, retry |
+| **`PG` stalls at `0b1110_0000`-ish** | A specific rail is failing. Decode bit-by-bit per §7.1 | `VPOS_PG` = 0 with `VNEG_PG` = 0 ⇒ the LDO2→LDO1 gate (§5.2). `VDDH_PG` = 0 alone ⇒ CP1 / `R13`,`R14` / `C17` |
+| **Image appears but blacks are grey, whites dingy, and a full refresh does not fix it** | **VCOM wrong.** §9.1 | Read `VCOM1`/`VCOM2` from the PMIC (not `getVCOMValue()` — §9.5). Default `0x07D` = −1.25 V on a panel that wants something else |
+| **Ghosting that survives repeated full refreshes** | VCOM, or waveform/temperature mismatch. See [ED052TC4 § ghosting](../../e-ink/ed052tc4/README.md) | Check VCOM first; then check that `readTemperature()` returns something plausible (§6.3) |
+| **Partial updates degrade over minutes, full refresh recovers** | Normal. The library forces a full update every 10 partials by default **[SRC]** | Expected behaviour, not a fault |
+| **Works warm, fails or looks wrong cold** | Below −10 °C the PMIC is out of spec **[DOC]**; and the waveform is being selected from a board NTC, not the panel (§6.3) | Log `readTemperature()` alongside the failure |
+| **Intermittent artefacts on a custom board** | Compressed power-down spacing (§8.1) | Restore `DWNSEQ1 = 0xE0` and re-test |
+| **Panel visibly damaged / permanent marks** | Data clocked without bias, or rails crossed on discharge (§5.3) | Not recoverable. Check that nothing bypasses the `einkOn()` guard |
+
+---
+
+## 12. Driver and library guidance
+
+### 12.1 Arduino — the supported path
+
+**Inkplate Arduino library**, `InkplateLibrary` **v11.1.4** **[SRC]** (`library.properties`), from `github.com/SolderedElectronics/Inkplate-Arduino-library`. Select board **`Soldered Inkplate5`** (`ARDUINO_INKPLATE5`) or **`Soldered Inkplate5v2`** (`ARDUINO_INKPLATE5V2`).
+
+You normally never touch the PMIC — `Inkplate::begin()` initialises the expander and calls `pmicBegin()`, and every `display()` / `partialUpdate()` wraps itself in `einkOn()` / `einkOff()`. Where the API is exposed:
+
+| Call | Effect |
+|---|---|
+| `display.readReg(uint8_t reg)` | Raw TPS65186 register read (`EPDDriver::readReg` → `pmic.readReg`) |
+| `display.writeReg(uint8_t reg, float data)` | Raw register write — note the odd `float` parameter, cast to `uint8_t` internally **[SRC]** |
+| `display.readTemperature()` | §8.4 |
+| `display.setVCOM(double v)` | §9.3 — **once, ever** |
+| `display.getVCOMValue()` | ESP32 EEPROM cache, **not** the PMIC — §9.5 |
+| `display.einkOn()` / `einkOff()` | Manual rail control; `einkOn()` returns 0 on failure |
+| `display.setFullUpdateThreshold(n)` | Partial-updates-before-forced-full; default **10**. `0` disables |
+| `display.display(bool leaveOn)` etc. | `leaveOn = true` keeps rails up between updates, saving the ~100 ms sequencing cost |
+
+### 12.2 MicroPython
+
+**Inkplate MicroPython library**, `github.com/SolderedElectronics/Inkplate-micropython`. Driver at `shared/drivers/tps65186.py`, board glue at `boards/inkplate5/inkplate5.py`. Same register sequence, same `0x1B`/`0xE4` pattern, same `_PWR_GOOD_OK = 0b11111010` **[SRC]**.
+
+```python
+Inkplate.read_temperature()   # -> degrees C, via TPS65186.read_temperature()
+Inkplate.power_on()           # raises RuntimeError("TPS65186 power-up timed out (PWR_GOOD not OK)")
+```
+
+> ⚠ **The MicroPython port has no `set_vcom`.** If a MicroPython-only board needs VCOM programming, do it once from Arduino and then switch. **[SRC]**
+
+### 12.3 ESP-IDF
+
+**There is no TI-supplied and no Espressif-supplied TPS65186 component.** There is no entry in the ESP Component Registry and no `esp_lcd` vendor driver — the chip is a power-management part, not a display controller, so it falls outside `esp_lcd` entirely. **[WEB]**, 2026-08-24 — a negative search result, not proof of absence.
+
+If you are writing IDF firmware for an Inkplate-class board you write ~150 lines against `driver/i2c_master.h`. The complete recipe is §5 plus §7 of this document. Minimum viable sequence:
+
+```c
+// Preconditions: expander at 0x20 initialised; P0_3/P0_4/P0_5 outputs, all low.
+expander_set(P0_3, 1);                       // WAKEUP  -> STANDBY
+vTaskDelay(pdMS_TO_TICKS(5));
+tps_write(0x01, 0x20);                       // ENABLE: V3P3_EN only
+tps_write(0x09, 0xE4);                       // UPSEQ0  = TI E Ink default
+tps_write(0x0A, 0x55);                       // UPSEQ1  = 6 ms  (TI default; Soldered uses 0x00)
+tps_write(0x0B, 0x1E);                       // DWNSEQ0 = TI default
+tps_write(0x0C, 0xE0);                       // DWNSEQ1 = TI default -- see 8.1 before shortening
+expander_set(P0_4, 1);                       // PWRUP rising edge -> run UPSEQ
+int64_t t0 = esp_timer_get_time();
+while (tps_read(0x0F) != 0xFA) {             // PG: all four bias rails good
+    if (esp_timer_get_time() - t0 > 500000) goto fail;   // 500 ms, as einkOn() uses
+    vTaskDelay(pdMS_TO_TICKS(1));
+}
+expander_set(P0_5, 1);                       // VCOM_CTRL last
+uint8_t faults = tps_read(0x08);             // read INT2 -- the stock driver never does (10)
+```
+
+Power-down is the mirror: `P0_5` low, `P0_4` low, poll `PG` to 0, `P0_3` low. **Issue any `ENABLE` write before dropping `WAKEUP`, not after (§8.3).**
+
+---
+
+## 13. Pitfalls, ranked
+
+1. **Reading/writing registers with `WAKEUP` low.** The chip is asleep and its registers are reset. §4.
+2. **Putting `setVCOM()` in `setup()`.** 100 EEPROM writes total. §9.4.
+3. **Trusting `getVCOMValue()`.** It reads ESP32 EEPROM, not the PMIC. §9.5.
+4. **Copying `UPSEQ0 = 0x1B` out of `TPS65186::begin()`.** It is the reverse of the correct order and works only because it is immediately overwritten. §8.1.
+5. **Grounding the PowerPad on a respin.** It is `PBKG` at −16 V. §3.
+6. **Assuming `PWR_GOOD` (the pin) is readable.** No pull-up on any of these boards. Poll register `0x0F`. §6.4.
+7. **Never reading `INT2`.** Undervoltage, `VCOMF` and thermal events are silently discarded. §10.
+8. **Assuming `readTemperature()` reports panel temperature.** It reports board temperature; the panel's own thermistor is on an unconnected pad. §6.3.
+9. **Enabling rails individually via `ENABLE`.** They are hardware-gated (§5.2) and you will simply hang on power-good. Use `PWRUP`.
+10. **Calling `readTemperature()` in a loop.** It runs a full power-up/power-down cycle per call. §8.4.
+11. **Shortening `DWNSEQ1` further, or copying Soldered's `0x00` onto a differently-loaded panel.** §8.1.
+12. **Driving the panel data bus without checking `einkOn()`'s return value.** §5.3.
+13. **Expecting 5 V-tolerant logic.** `SDA`/`SCL`/`WAKEUP`/`PWRUP`/`VCOM_CTRL` are 3.6 V absolute max. §2.1.
+14. **Deploying below −10 °C.** Out of spec. §2.1.
+15. **Substituting a TPS65185.** Different pinout *and* different register map. §1.1.
+
+---
+
+## 14. Alternatives and equivalents
+
+| Part | Relationship | Drop-in for `U1`? |
+|---|---|---|
+| **TPS65186RGZT** | Same die, small reel | ✅ Identical |
+| **TPS65185 / TPS651851** | TI's sibling E-paper PMICs | ❌ Different package and pinout **[WEB]** |
+| TPS65180B / TPS65181B / TPS65182B | Previous generation | ❌ |
+| **MAX17135** (Analog Devices, ex-Maxim) | The main second source for E-paper PMICs; ±15 V / ±22 V, I²C, VCOM DAC, thermistor | ❌ **Not pin- or register-compatible.** A plausible respin target if TI supply fails, but the whole driver must be rewritten |
+| **SY7636A** (Silergy) | Newer, cheaper E-paper PMIC; has a mainline Linux driver (`drivers/regulator/sy7636a-regulator.c`) | ❌ Different part entirely; different register map |
+| Discrete boost + inverting buck-boost + charge pumps | What you build if none of the above is available | ❌ You also have to build the sequencer, the VCOM DAC and the thermistor ADC. This chip exists because that is a lot of work |
+
+**Practical position:** for anything Inkplate-derived, there is no alternative worth considering. The board, the library and the panel expect a TPS65186 at `0x48` with this register map. **[INF]**
+
+---
+
+## 15. Open questions
+
+| Question | Status |
+|---|---|
+| Does the compressed `DWNSEQ1 = 0x00` power-down spacing measurably increase artefacts or shorten panel life vs. TI's `0xE0`? | **Open.** Needs an instrumented A/B on real hardware. §8.1 |
+| Are the `E2`-marked sequencer reset values genuinely EEPROM-backed and factory-alterable, or is `E2` used loosely? | **Open.** TI documents a programming path for VCOM only. §7 |
+| What VCOM value does Soldered program at the factory for the `ED052TC2` / `ED052TC4`? | **Open.** Not published; per-panel-lot by construction. §9 |
+| Which silicon revision (`REVID` `0x45`/`0x55`/`0x65`) ships on Inkplate 5 boards? | **Open.** One I²C read on real hardware would settle it |
+| Does asserting `PROG` with `PWRUP` still high (§9.3) affect EEPROM programming reliability? | **Open.** Deviates from TI's documented flow; Soldered ships it |
+| Is the panel-side `THERM` line usable as a drop-in replacement for `R2` on a respin? | **Open.** Pad exists (`K13`/`K19`); electrical characteristics of the panel thermistor are NDA-gated. §6.3 |
+
+---
+
+## Manufacturer
+
+**Texas Instruments** — see the [Texas Instruments documentation-sourcing guide](../../../vendors/texas-instruments/README.md) for TI's document portals, `lit/ds` URL patterns, revision-pinning conventions and distribution channels.
+
+## Used By
+
+| Device | Designator | Notes |
+|---|---|---|
+| [Soldered Inkplate 5](../../../devices/soldered-electronics/inkplate-5/README.md) | **`U1`** | `TPS65186RGZ`, VQFN-49 footprint. Control via [PCAL6416A](../../nxp/pcal6416a/README.md) `U9` |
+| [Soldered Inkplate 5 Gen 2](../../../devices/soldered-electronics/inkplate-5-gen2/README.md) | **`U1`** | Identical block; expander is `U10` on this board |
+| [ZeroWriter Ink](../../../devices/zerowriter/zerowriter-ink/README.md) | **`U1`** | **Unchanged in the respin** — verified pin-by-pin against the ZeroWriter KiCad PCB |
+
+## Related components
+
+- [NXP PCAL6416A](../../nxp/pcal6416a/README.md) — carries `WAKEUP`, `PWRUP`, `VCOM_CTRL`, `nINT`, `PWR_GOOD`. Documents the same interface from the other side
+- [E Ink ED052TC4 / ED052TC2](../../e-ink/ed052tc4/README.md) — the panel these rails exist to drive; waveforms, refresh modes, ghosting
+- [Espressif ESP32-WROVER](../../espressif/esp32-wrover/README.md) — drives the parallel data bus that these rails make safe to use
+
+---
+
+## 16. Local artifacts and sources
+
+### Artifacts held
+
+| Document | Literature no. | Date band | Local path | Bytes | SHA-256 |
+|---|---|---|---|---:|---|
+| TPS65186 datasheet | **`SLVSB04A`** | JULY 2011 – REVISED AUGUST 2015 | `artifacts/tps65186-datasheet-slvsb04a.pdf` | 4,046,273 | `ad97de5f2d5e85bcac1e904805fa2a5a1549f7607b6de0b9c18b695b96cad240` |
+
+Validated 2026-08-24: `%PDF-1.6` magic; 56 pages; `pdfinfo` title *"TPS65186 PMIC for E Ink Vizplex Enabled Electronic Paper Display datasheet (Rev. A)"*, keywords `SLVSB04,SLVSB04A`.
+
+> TI serves the **same bytes** from `lit/ds/symlink/tps65186.pdf` and `lit/gpn/TPS65186` — both returned 4,046,273 bytes with identical SHA-256 on 2026-08-24. The `symlink` form always tracks the latest revision and will stop reproducing this hash when TI republishes; use the revision-pinned `lit/ds/slvsb04a/slvsb04a.pdf` form for reproducibility.
+
+#### Reacquire
+
+```bash
+# Revision-pinned (reproduces the hash above for as long as Rev A stands)
+curl -L -o tps65186-slvsb04a.pdf https://www.ti.com/lit/ds/slvsb04a/slvsb04a.pdf
+# Always-latest revision
+curl -L -o tps65186.pdf           https://www.ti.com/lit/ds/symlink/tps65186.pdf
+curl -L -o tps65186.pdf           https://www.ti.com/lit/gpn/TPS65186
+```
+
+### Design files read
+
+All under ``, all read with `devices/soldered-electronics/inkplate-5/tools/kicad_pcb_nets.py` (resolved nets) and `.../tools/parse_kicad_sch.py` (BOM):
+
+| File | What it established |
+|---|---|
+| `devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/Soldered Inkplate 5.kicad_pcb` | Complete `U1` 51-pad netlist; `U9` expander mapping; `K20` panel connector |
+| `.../CAD/V1.2.0/POWER.kicad_sch` | `U1` = `TPS65186RGZ`, `L1`/`L2`, `R2` NTC, `R3` 43 k, `R13`–`R16` feedback dividers |
+| `.../CAD/V1.2.0/E-paper.kicad_sch` | `U8` = `SN74LVC1G34DBV`, `K20` = `AXE540127`, `U11` = `ED052TC2` |
+| `devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/CAD/V1.1.0/Soldered Inkplate 5 Gen2.kicad_pcb` | Identical `U1` block; `U10` expander; `K21` 50-pin panel FPC |
+| `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/Zerowriter Inkplate 5 Gen2.kicad_pcb` | PMIC block unchanged in the ZeroWriter respin |
+
+### Source files read
+
+Under `devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/`:
+
+| File | Lines cited |
+|---|---|
+| `Inkplate-Arduino-library/library.properties` | version **11.1.4** |
+| `Inkplate-Arduino-library/src/features/TPS65186/TPS65186.h` | 9–20 (address, register defines) |
+| `Inkplate-Arduino-library/src/features/TPS65186/TPS65186.cpp` | 9–29 `begin()`, 35–44 `enableRails()`, 54–89 `powerUp()`, 96–110 `powerDown()`, 119–154 `readTemperature()`, 168–178 `readPowerGood()` |
+| `Inkplate-Arduino-library/src/system/defines.h` | 43 (`PWR_GOOD_OK 0b11111010`) |
+| `Inkplate-Arduino-library/src/boards/Inkplate5V2/Inkplate5V2Driver.cpp` | 560–591 `einkOn()` (comment at 563), 597–610 `einkOff()`, 617 `pmicBegin()`, 268 damage guard, 1043–1125 `setVCOM()`/`writeVCOMToPanelEEPROM()`, 1134–1140 `getVCOMValue()` |
+| `Inkplate-Arduino-library/src/boards/Inkplate5/pins.h` | 12–38 (`WAKEUP 3`, `PWRUP 4`, `VCOM 5`) |
+| `Inkplate-Arduino-library/examples/Inkplate5V2/Diagnostics/Inkplate5V2_SetVCOM/Inkplate5V2_SetVCOM.ino` | 12–15, 40–41 (EEPROM endurance warning) |
+| `Inkplate-micropython/shared/drivers/tps65186.py` | 9–95 (full driver) |
+| `Inkplate-micropython/boards/inkplate5/inkplate5.py` | 116–131 (expander pin names) |
+
+### Authoritative sources
+
+| ID | Title | Class | URL | Retrieved | Version | Establishes | Local artifact |
+|---|---|---|---|---|---|---|---|
+| S1 | **TI TPS65186 datasheet** — pin table, §8.3 sequencing, §8.3.6 VCOM, §8.6 register map, §7 electricals | primary | https://www.ti.com/lit/ds/symlink/tps65186.pdf | 2026-08-24 | **SLVSB04A**, rev. Aug 2015 | Everything marked **[DOC]** | `artifacts/tps65186-datasheet-slvsb04a.pdf` |
+| S2 | TI TPS65186 product folder | primary | https://www.ti.com/product/TPS65186 | 2026-08-24 | live | Lifecycle **ACTIVE**; orderable `RGZR`/`RGZT`; sibling parts TPS65185/651851/65180B/65181B/65182B; "w/ Active Discharge" | – |
+| S3 | Inkplate Arduino library | primary | https://github.com/SolderedElectronics/Inkplate-Arduino-library | 2026-08-24 | **v11.1.4** | Everything marked **[SRC]** (Arduino) | snapshot, §16 |
+| S4 | Inkplate MicroPython library | primary | https://github.com/SolderedElectronics/Inkplate-micropython | 2026-08-24 | snapshot | Expander pin names; the parallel driver | snapshot, §16 |
+| S5 | Soldered Inkplate 5 hardware design (TAPR OHL) | primary | https://github.com/SolderedElectronics/Soldered-Inkplate-5-hardware-design | 2026-08-24 | **V1.2.0** | All **[SCH]** for Inkplate 5 | local |
+| S6 | Soldered Inkplate 5 Gen2 hardware design | primary | https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design | 2026-08-24 | **V1.1.0** | All **[SCH]** for Gen 2 | local |
+| S7 | ZeroWriter Ink design files | primary | https://github.com/zerowriter/zerowriter_ink | 2026-08-24 | **v1.2.0** | PMIC block unchanged in the respin | local |
+| S8 | Inkplate documentation — `einkOn()` rail list, IO-expander notes | secondary | https://docs.soldered.com/inkplate/ | 2026-08-24 | live | Vendor-facing description of the same behaviour | `devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/` |
+
+> **Negative results, 2026-08-24.** No ESP-IDF component, ESP Component Registry entry, or vendor IDF driver for the TPS65186 was found (§12.3). No TI application note, errata or EVM user's guide beyond SLVSB04A is linked from the product folder — a literature-number scan of the page HTML returned only `SLVSB04A`. Both are search negatives, not proof of absence.

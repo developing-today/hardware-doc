@@ -1,0 +1,51 @@
+# Vendored-dependency delta report
+#
+# vendored copy   : examples/selected/XIAO-ESP32S3-Geolocation/libraries/TJpg_Decoder-master.zip
+# upstream        : Bodmer/TJpg_Decoder @ master
+# upstream source : https://codeload.github.com/Bodmer/TJpg_Decoder/zip/refs/heads/master
+# upstream zip    : 319,442 bytes, sha256 e806fed9ecf2d21fde3b2d2d64ad595f581e4533923e8a0cb84f28fe039b7a93
+# compared        : 2026-08-24
+# verdict         : DIFFERS from upstream
+# files differing : 3
+#
+# NOTE: a non-empty diff does not by itself prove local modification.
+#       Upstream moves; the vendored copy may simply be an older
+#       snapshot. Read the hunks before concluding it is a fork.
+#
+diff -ruN a/TJpg_Decoder-master.zip/library.json b/TJpg_Decoder-master.zip/library.json
+--- a/TJpg_Decoder-master.zip/library.json	2026-08-24 13:41:50.160462515 -0500
++++ b/TJpg_Decoder-master.zip/library.json	2026-08-24 13:41:49.701459770 -0500
+@@ -1,6 +1,6 @@
+ {
+   "name": "TJpg_Decoder",
+-  "version": "1.1.0",
++  "version": "1.0.9",
+   "keywords": "jpeg, jpg, tft, display, RP2040, STM32, ESP8266, ESP32",
+   "description": "A JPEG decoder library based on Tiny JPEG Decompressor",
+   "repository":
+diff -ruN a/TJpg_Decoder-master.zip/library.properties b/TJpg_Decoder-master.zip/library.properties
+--- a/TJpg_Decoder-master.zip/library.properties	2026-08-24 13:41:50.160462515 -0500
++++ b/TJpg_Decoder-master.zip/library.properties	2026-08-24 13:41:49.701459770 -0500
+@@ -1,5 +1,5 @@
+ name=TJpg_Decoder
+-version=1.1.0
++version=1.0.9
+ author=Bodmer
+ maintainer=Bodmer
+ sentence=A JPEG decoder based on tjpgd
+diff -ruN a/TJpg_Decoder-master.zip/src/tjpgd.c b/TJpg_Decoder-master.zip/src/tjpgd.c
+--- a/TJpg_Decoder-master.zip/src/tjpgd.c	2026-08-24 13:41:50.160462515 -0500
++++ b/TJpg_Decoder-master.zip/src/tjpgd.c	2026-08-24 13:41:49.702459776 -0500
+@@ -850,11 +850,7 @@
+ 					if (mx == 16) {					/* Double block width? */
+ 						if (ix == 8) py += 64 - 8;	/* Jump to next block if double block height */
+ 					}
+-					if (JD_FASTDECODE >= 1) {
+-						*pix++ = BYTECLIP(*py++);	/* Get and store a Y value as grayscale */
+-					} else {
+-						*pix++ = *py++;				/* Get and store a Y value as grayscale */
+-					}
++					*pix++ = (uint8_t)*py++;			/* Get and store a Y value as grayscale */
+ 				}
+ 			}
+ 		}

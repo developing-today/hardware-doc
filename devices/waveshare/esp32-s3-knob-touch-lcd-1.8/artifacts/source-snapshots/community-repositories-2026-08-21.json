@@ -1,0 +1,82 @@
+[
+  {
+    "repository": "VolosR/Knob18Meters",
+    "html_url": "https://github.com/VolosR/Knob18Meters",
+    "default_branch": "main",
+    "pushed_at": "2025-07-29T12:37:01Z",
+    "updated_at": "2026-08-08T21:39:46Z",
+    "license": null,
+    "archived": false,
+    "retrieved": "2026-08-21"
+  },
+  {
+    "repository": "ihayri/ESP32-S3-1.8inch-Knob-Display-Development-Board",
+    "html_url": "https://github.com/ihayri/ESP32-S3-1.8inch-Knob-Display-Development-Board",
+    "default_branch": "main",
+    "pushed_at": "2026-01-08T08:56:31Z",
+    "updated_at": "2026-08-08T21:45:42Z",
+    "license": null,
+    "archived": false,
+    "retrieved": "2026-08-21"
+  },
+  {
+    "repository": "muness/roon-knob",
+    "html_url": "https://github.com/muness/roon-knob",
+    "default_branch": "master",
+    "pushed_at": "2026-08-21T03:07:16Z",
+    "updated_at": "2026-08-04T18:58:23Z",
+    "license": "NOASSERTION",
+    "archived": false,
+    "retrieved": "2026-08-21"
+  },
+  {
+    "repository": "0015/lvgl_kawaii_face",
+    "html_url": "https://github.com/0015/lvgl_kawaii_face",
+    "default_branch": "main",
+    "pushed_at": "2026-02-27T05:05:05Z",
+    "updated_at": "2026-08-19T02:18:35Z",
+    "license": "MIT",
+    "archived": false,
+    "retrieved": "2026-08-21"
+  },
+  {
+    "repository": "knobby-mtg/knobby-mtg-life-counter",
+    "html_url": "https://github.com/knobby-mtg/knobby-mtg-life-counter",
+    "default_branch": "main",
+    "pushed_at": "2026-07-30T10:04:00Z",
+    "updated_at": "2026-08-19T14:16:52Z",
+    "license": "GPL-3.0",
+    "archived": false,
+    "retrieved": "2026-08-21"
+  },
+  {
+    "repository": "juggernautwins608/Waveshare-1.8-Magic-the-Gathering-Life-Counter",
+    "html_url": "https://github.com/juggernautwins608/Waveshare-1.8-Magic-the-Gathering-Life-Counter",
+    "default_branch": "main",
+    "pushed_at": "2026-07-04T04:19:15Z",
+    "updated_at": "2026-07-28T04:35:43Z",
+    "license": "MIT",
+    "archived": false,
+    "retrieved": "2026-08-21"
+  },
+  {
+    "repository": "EmbeddedWizardGUI/ESP32-S3-Knob-Touch-LCD-1.8-EN",
+    "html_url": "https://github.com/EmbeddedWizardGUI/ESP32-S3-Knob-Touch-LCD-1.8-EN",
+    "default_branch": "main",
+    "pushed_at": "2026-07-20T16:26:46Z",
+    "updated_at": "2026-07-28T05:06:36Z",
+    "license": null,
+    "archived": false,
+    "retrieved": "2026-08-21"
+  },
+  {
+    "repository": "chris023/orion-waveshare-rotary-dial",
+    "html_url": "https://github.com/chris023/orion-waveshare-rotary-dial",
+    "default_branch": "main",
+    "pushed_at": "2026-08-05T18:23:47Z",
+    "updated_at": "2026-08-15T17:20:35Z",
+    "license": "NOASSERTION",
+    "archived": false,
+    "retrieved": "2026-08-21"
+  }
+]

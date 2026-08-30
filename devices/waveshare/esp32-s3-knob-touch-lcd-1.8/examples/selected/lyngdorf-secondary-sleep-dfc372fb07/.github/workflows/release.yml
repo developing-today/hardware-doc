@@ -1,0 +1,44 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build + merge firmware with ESP-IDF
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v5.2.3
+          target: esp32
+          path: '.'
+          # Build, then merge the bootloader + partition table + app into a
+          # single image at offset 0x0 so users without an IDF environment
+          # can flash with a single esptool write_flash call.
+          command: |
+            idf.py build && \
+            python -m esptool --chip esp32 merge_bin \
+              -o build/secondary_sleep-merged.bin \
+              --flash_mode dio --flash_size 2MB --flash_freq 40m \
+              0x1000  build/bootloader/bootloader.bin \
+              0x8000  build/partition_table/partition-table.bin \
+              0x10000 build/secondary_sleep.bin
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            build/secondary_sleep-merged.bin
+            build/secondary_sleep.bin
+            build/bootloader/bootloader.bin
+            build/partition_table/partition-table.bin
+          generate_release_notes: true

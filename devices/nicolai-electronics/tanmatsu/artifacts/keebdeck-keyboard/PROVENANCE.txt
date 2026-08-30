@@ -1,0 +1,3 @@
+keebdeck commit: f1c074c47aa48d2eb584dad2ddad2a90ab6b86ed
+retrieved 2026-08-24 from https://github.com/solderparty/keebdeck_keyboard_hw (CERN-OHL v1.2)
+3D STEP models and Eagle/Altium/EasyEDA libraries NOT copied - see archive at ../hardware-doc-archive/scratch/tanmatsu/sources/keebdeck_keyboard_hw

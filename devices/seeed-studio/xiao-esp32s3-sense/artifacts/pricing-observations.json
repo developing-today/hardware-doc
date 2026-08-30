@@ -1,0 +1,74 @@
+{
+ "XIAO ESP32S3 Sense": {
+  "url": "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html",
+  "sku": "113991115",
+  "final": "13.99",
+  "low": null,
+  "high": null,
+  "ldprice": "13.99",
+  "avail": "InStock"
+ },
+ "XIAO ESP32S3 (plain)": {
+  "url": "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html",
+  "sku": "113991114",
+  "final": "7.49",
+  "low": null,
+  "high": null,
+  "ldprice": "7.49",
+  "avail": "InStock"
+ },
+ "XIAO ESP32S3 Plus": {
+  "url": "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Plus-p-6361.html",
+  "sku": "102010671",
+  "final": "0",
+  "low": null,
+  "high": null,
+  "ldprice": "7.90",
+  "avail": "InStock"
+ },
+ "XIAO ESP32C3": {
+  "url": "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html",
+  "sku": "113991054",
+  "final": "4.99",
+  "low": null,
+  "high": null,
+  "ldprice": "4.99",
+  "avail": "InStock"
+ },
+ "XIAO ESP32C6": {
+  "url": "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html",
+  "sku": "113991254",
+  "final": "5.2",
+  "low": null,
+  "high": null,
+  "ldprice": "5.20",
+  "avail": "InStock"
+ },
+ "XIAO nRF52840 Sense": {
+  "url": "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html",
+  "sku": "102010469",
+  "final": "12.99",
+  "low": null,
+  "high": null,
+  "ldprice": "15.99",
+  "avail": "InStock"
+ },
+ "OV5640 camera for XIAO": {
+  "url": "https://www.seeedstudio.com/OV5640-Camera-for-XIAO-ESP32S3-Sense-With-Heat-Sink-p-5739.html",
+  "sku": "114993115",
+  "final": "11.99",
+  "low": null,
+  "high": null,
+  "ldprice": "12.99",
+  "avail": "InStock"
+ },
+ "Wio-SX1262 for XIAO": {
+  "url": "https://www.seeedstudio.com/Wio-SX1262-with-XIAO-ESP32S3-p-5982.html",
+  "sku": "102010611",
+  "final": "0",
+  "low": null,
+  "high": null,
+  "ldprice": "10.90",
+  "avail": "InStock"
+ }
+}

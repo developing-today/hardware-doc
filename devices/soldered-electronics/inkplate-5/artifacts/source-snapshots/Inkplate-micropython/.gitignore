@@ -1,0 +1,9 @@
+board_config.py
+board_config_*.py
+init.mpf
+lib
+.vscode
+i2c_scanner.py
+.DS_Store
+__pycache__
+.venv

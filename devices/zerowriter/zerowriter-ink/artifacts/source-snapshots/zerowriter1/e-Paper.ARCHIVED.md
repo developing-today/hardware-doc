@@ -1,0 +1,392 @@
+# ARCHIVED: `e-Paper/`
+
+> This directory was **moved out of the repository**, not deleted.
+> Archived **2026-08-24**.
+
+**What it was:** Waveshare's official **e-Paper Python driver library** for Raspberry Pi / Jetson
+Nano (`waveshare_epd`), vendored wholesale into the ZeroWriter 1 project — driver modules for
+Waveshare's entire e-paper module range, plus 121 demo images and a CJK font in `pic/`.
+
+**What it is for:** ZeroWriter 1 (the Raspberry-Pi predecessor of ZeroWriter Ink) drives its
+Waveshare 4.2" panel through this library.
+
+**Why removal was OK:** it is a third-party dependency, not ZeroWriter's own work, and it is
+**byte-reproducible from two independent upstreams** (verified 2026-08-24 by `diff -rq`). 30 MiB of
+the 31 MiB is upstream demo bitmaps and a font, byte-identical to Waveshare's repository. The only
+two files that differ from upstream are ZeroWriter's own edits, and both are **preserved in this
+repository** as patches plus a written analysis:
+
+- [`../../vendored-deps/README.md`](../../vendored-deps/README.md) — full reacquisition record
+- [`../../vendored-deps/patches/`](../../vendored-deps/patches/) — the two patches, verbatim
+- [`../../../zerowriter1-epaper-driver-notes.md`](../../../zerowriter1-epaper-driver-notes.md) — what they change and why
+
+## Identity
+
+| Field | Value |
+|---|---|
+| Original repo path | `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper` |
+| Archived to | `../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper` |
+| Type | directory |
+| Size | **32,575,902 B (31.07 MiB)** |
+| File count | **272** (in 16 directories) |
+| Extracted-tree digest (`LC_ALL=C`) | `4148d90638b2ec989fae68a070d1b8712c3184134aa322be026a7bc940ecf75b` |
+| Same digest under `en_US.UTF-8` (non-canonical) | `91efa3c9e739f660239c14984f4d42f45fc351d1350d99f576ea539e887dba0d` |
+| `RaspberryPi_JetsonNano/python` subtree digest (`LC_ALL=C`) | `241c11cb9d7f13296b508a4e7826b6d05a5f13e70998f38e35ef3fbea72d9385` |
+| Last modified (mtime) | 2026-05-19 |
+| Vendoring repository | `zerowriter/zerowriter1`, branch `main` |
+| Vendoring commit | `e476d0567ac89104df62815f7bd2c807b8a3e140` ("Add MIT License to the project") |
+| Vendoring author / date | Zerowriter `<152807354+zerowriter@users.noreply.github.com>` · 2026-05-19T14:58:55-04:00 |
+| Last commit touching `e-Paper/` | `e94940ff9004d0d32ef7706006629dc65b4dd12e` · 2023-12-19 |
+| Original upstream repository | `waveshareteam/e-Paper` |
+| Original upstream commit | `fc4f54334d087dae440e3e9ac2bf8d809dfcfb53` ("e-Paper") |
+| Original upstream author / date | shhds `<1873145421@qq.com>` · 2023-06-12T15:10:45+08:00 |
+| Upstream state date | 2023-06-12 (last `Version_EN.txt` entry 2023-05-29) |
+| License | **MIT** — per-file header in every source file; also MIT at the zerowriter1 repo level. No repo-level `LICENSE` in `waveshareteam/e-Paper`. |
+| Redistribution status | allowed (MIT) |
+| Digest before/after extraction | Not applicable — this was a plain directory, never a compressed archive. |
+
+### Difference from upstream (complete)
+
+`diff -rq` upstream `RaspberryPi_JetsonNano/python` @ `fc4f5433` vs the archived copy:
+**exactly 2 files differ** — `lib/waveshare_epd/epdconfig.py` and `lib/waveshare_epd/epd3in7.py`.
+All 121 files in `pic/` and every other driver module are byte-identical.
+Everything else is pure add/remove: 48 unused `examples/epd_*_test.py` and 5 `readme_*.txt` pruned
+by ZeroWriter; `build/`, `dist/`, `*.egg-info/`, `examples/waveshare_epd/`, `__pycache__/`,
+`.DS_Store` and `._.DS_Store` added locally by an in-place `pip install .` on macOS.
+
+## How to get it back
+
+Verified **2026-08-24**.
+
+```bash
+# Source 1 — exact reproduction, from the vendoring repo at the pinned commit
+git clone https://github.com/zerowriter/zerowriter1.git
+cd zerowriter1 && git checkout e476d0567ac89104df62815f7bd2c807b8a3e140
+#   -> ./e-Paper is the tree, byte-for-byte
+
+# Source 2 — Waveshare upstream tarball
+#   HTTP 200 · Content-Type application/x-gzip · 27,470,969 bytes
+#   sha256 = 59b9f65f4706aa9f1cfbcf62d432c71b59fe3ff51e72264a852c608fe2f83a01
+curl -L -o epd.tar.gz \
+  https://codeload.github.com/waveshareteam/e-Paper/tar.gz/fc4f54334d087dae440e3e9ac2bf8d809dfcfb53
+
+# Source 3 — Waveshare upstream zip
+#   HTTP 200 · Content-Type application/zip (302 -> codeload)
+curl -L -o epd.zip \
+  https://github.com/waveshareteam/e-Paper/archive/fc4f54334d087dae440e3e9ac2bf8d809dfcfb53.zip
+
+# Source 4 — Waveshare upstream via git, pinned
+git clone https://github.com/waveshareteam/e-Paper.git
+cd e-Paper && git checkout fc4f54334d087dae440e3e9ac2bf8d809dfcfb53
+```
+
+Wayback Machine — both repositories are already captured, no save needed:
+
+- <https://web.archive.org/web/20260506003400/https://github.com/zerowriter/zerowriter1> (HTTP 200)
+- <https://web.archive.org/web/20260612184935/https://github.com/waveshareteam/e-Paper> (HTTP 200)
+
+If you restore from Source 2/3/4 rather than Source 1, reapply ZeroWriter's edits:
+
+```bash
+cd RaspberryPi_JetsonNano/python
+sed -i 's/\r$//' lib/waveshare_epd/epdconfig.py        # ZeroWriter also normalised line endings
+patch -p1 -d . < .../vendored-deps/patches/waveshare-epaper-epdconfig-zerowriter.patch
+patch -p1 -d . < .../vendored-deps/patches/waveshare-epaper-epd3in7-zerowriter.patch
+```
+
+## Verify
+
+```bash
+cd devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1
+find e-Paper -type f | wc -l                                        # 272
+find e-Paper -type f -printf '%s\n' | awk '{s+=$1}END{print s}'      # 32575902
+find e-Paper -type f -exec sha256sum {} + | LC_ALL=C sort -k2 | sha256sum
+#   4148d90638b2ec989fae68a070d1b8712c3184134aa322be026a7bc940ecf75b
+```
+
+`LC_ALL=C` is required: this tree contains `特别提醒.txt` and macOS dotfiles which sort
+differently under a UTF-8 locale, producing a different (and non-portable) digest.
+
+## Restore from the local archive
+
+```bash
+mv ../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper \
+   devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper
+```
+
+## Full per-file manifest (272 files, `sha256  path` relative to `e-Paper/`)
+
+```
+9873087f29c4a3a14c690ce0a48d52a5289b522e8dc85346377c9667a2db1b43  .DS_Store
+12685d868e889980ebaa3c05169e4f933ead99861ed8cc2c9265c7d07d059d18  ._.DS_Store
+f1bc06e992e54018d3ee98a055381720117cf3736ab40560972183c2c705d007  README.md
+b648b9265cdf399f11a2910c67fed5c64ad996271b430ed0cbfaa61d468ba2a2  RaspberryPi_JetsonNano/.DS_Store
+4cf60d2734741388097eaaa1fb0b6ec142ff6eff6eca07fc70a3c7185aaf512b  RaspberryPi_JetsonNano/._.DS_Store
+10a61d9d2323757169eb4579b75d5be994364beb2e0a36e06bd18f2f3677edec  RaspberryPi_JetsonNano/python/.DS_Store
+e4063cda081c672903965298bbfdb9e5178652fe0452bdb559fca3bb551fd9d0  RaspberryPi_JetsonNano/python/._.DS_Store
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/__init__.py
+ed1df8fca7196dbecc4c9b4a053c5a55e6966cf4c7c61d0e83bc07b5347137d7  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd1in02.py
+d24a4501a146f2b172853423253a7ad2ff413b399d35d34a7bc3edb71b4481f2  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd1in54.py
+5631f91191acd0699bbefea97ea8ebee57cbdf5dfa0a9287cc7cb407885ac90e  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd1in54_V2.py
+2718ab9d570678e793f9009ef5bffb2ab76e63a2977a49111fd0bf1cb1d9089b  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd1in54b.py
+32706de42686e11ed566f37dbdabc2ff9e9d43e731ced61229fbe570783e1f9d  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd1in54b_V2.py
+25167f01671edb9ec4669f9f2d9149f071967e894efd5c6ce8a925952961b28b  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd1in54c.py
+87eded508ccbc7b1d839c25744b09e5ac60c3e84362b8d3655a0ed33fa58c132  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd1in64g.py
+5bc4cb220135e2e49ce25d6f9eefe7548853192de96215b642aa3fe8869a061a  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in13.py
+52fdcb8f713f0fcfbc56dd67e6d6fce075dfd6ecd2ae1d2dd8240b4f41c4f6fe  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in13_V2.py
+12dd331cdc032095aa60fb3aeb8666876e4713324c1e7a78af10b51e878ca7f2  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in13_V3.py
+28540d4c96471d0b4d6467b519d8224f68f9e80ac74dbc092c98c4a473ce7537  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in13b_V3.py
+36a23759f70258380049417472460c5f694e3cf1147f11245c832acd1fc1dcb3  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in13b_V4.py
+a4094a6415300746aa33e20a3a8db6177365c7a3fa1de4a36801036cf06f737a  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in13bc.py
+6cc3d0a019ed39a56024e64e04fcfe17da154487e71ee5093f0b781bba948701  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in13d.py
+948c263cc063372db04eb1c2fc2cd9c3aeb22e20c74fd9aeab8e60dba2597106  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in13g.py
+c548ec47e568e7eb63fd573588c4553b952047066d4fab24aaf44db05d3db3b6  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in36g.py
+4fa509926fa13891e5e7e2fb9c5d707f72d6ea911359dcb15e3b9582ce23e40b  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in66.py
+dd69b58fe1d06baeb72998d87a85ef9fe0034356c2a98b2f850d43652628fe37  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in66b.py
+cd7b83cd5f2ab675fef4b17790cdfbb6170391078e6c15e3cdbe52a81129099a  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in7.py
+171bdc77a035f749782c78d2a513b7c3c987c9157ae39e7c0123e74e933b8a44  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in7_V2.py
+d06d1cde037d393d8dea7e66dd7e9c35ffb31e3427aa946978a13327ba15fce9  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in7b.py
+66aa1ac96186e982e3755e763f6842d272fe5abd0cf3467a4f4509eb13d00a32  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in7b_V2.py
+776f436b037b15e042e29dc3ee24cd4bdd2c08caf95928471a61e07ce70c7406  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in9.py
+ac2774e211066e414a190e338b5ea4a96a7dc245ed54f74f66b9164af20dd163  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in9_V2.py
+2e537d74c50fb5992e38d3961373533c6bb3cde30a3aa28b9004226514793129  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in9b_V3.py
+887a11f4d703b953ae6b004de69fd389fcb71e47bd95810e2e8142a68da6f40e  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in9bc.py
+ed560c22ad5b4f12e2c5175cdd2c43d61b1a932ebbff1248df47c43ff83b0a80  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd2in9d.py
+97ef31d3f7d4b84e4bc5c6b67fa7b27f1a3d9979776eb1494fdb209f9e6dcabe  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd3in0g.py
+060210f24aea2dc383a27a6e8635389f4eaae4a5e8b1a5d369a7f9b6dd5d39e2  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd3in52.py
+2096839acb9241eeaecf15df4e713f04aed1ea21701b92ab0666bf8e2b8a3f8e  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd3in7.py
+b7413505c7b6ca3f848d2177ae41de7558ca2adc9271efe770653d3fbf3b6bb4  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd4in01f.py
+3c8d55794bb9c9704f3257ce782fbc42edfbec2d971b523d7169a5cdf489c98a  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd4in2.py
+faf174cd5f661afbf974c0d11cb88f974a621a38d916adbd623658df468d0cbb  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd4in2b_V2.py
+fa04138d71f805ca5995b0611de723b39ed422bc2da0ab025e2a736f7d3d5b53  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd4in2bc.py
+650cc74637f5ce44e6b93315e21d14ff84c775cbcac6b40f2eb99cfacc08640a  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd4in37g.py
+3ee55c59363b7caf733836858dc7e5366a713f9742cdf5d35e9c571e58c85256  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd5in65f.py
+8a30222107584cf34c1d1b20c5ccf8a2362f64706e4ce3964ef189d041f2cf02  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd5in83.py
+e026b1d93ce195016c2eeb0671842b21c43f562dd243a2389aef19c7dd4eb76e  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd5in83_V2.py
+abbc95ecfd3f4330937960708ae1bffaf95dcd669837317d2126bc1a3558671f  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd5in83b_V2.py
+9d1b2165ffd6761b9dd9b624149ae390720ee382c0cca1c106eb5608b35d6f28  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd5in83bc.py
+300397f3dfc282aa88428acc76d25bf7c739e4f56025591ec47b587eea45be7a  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd7in3f.py
+217e6fc796bd8756833e9da4986e0094eb29efd192ba44771c5318ecfce1c240  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd7in3g.py
+392cdc3c9a96b1072d326802620545ba87cf40e376fb93f1324fdb81702ac6f6  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd7in5.py
+fe76dbd79eb36abd87f71763b3cbe4d9595fc1471f0c1fa63ddbb7af45583e61  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd7in5_HD.py
+13a97ddbbc9f5defabed471dc327b93b0b28518ceb394a7d7e3e9f17c1cf351a  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd7in5_V2.py
+aa6deaf3fc3df98cc129cb9d21dd63ae0758c0604c9d28a487b984bc2919daa9  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd7in5_V2_fast.py
+ceb61186694368a885a34d3e1b34c8ad1a8252d92e286bbe7bf4ec116ec3c231  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd7in5b_HD.py
+c75ca61a2775eb428d8d75338607b77e11c5cdde08c871b8b20b464343a6e45f  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd7in5b_V2.py
+f6378656a51e455cbbdd26094d6e843c8cb1d739af7651193f4357d585d66c7a  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epd7in5bc.py
+694b3ce4885d4452a3f565045776f0cffbdcb9bc4ef1a4aaff5f5880c3373b54  RaspberryPi_JetsonNano/python/build/lib/waveshare_epd/epdconfig.py
+84d1eff1ad6c2838d624474e418666e8838da7f33be69b3487ccd35a26473a4d  RaspberryPi_JetsonNano/python/dist/waveshare_epd-0.0.0-py3.9.egg
+c1d571e1d8ba5e540e66160a0e2463ff2743a156444bbe1755cad9fb605f60bd  RaspberryPi_JetsonNano/python/examples/._.DS_Store
+6cc9525b1334047445cba53f323e810331acfdf59f18f4008397d13137737b91  RaspberryPi_JetsonNano/python/examples/Courier Prime.ttf
+2ecbf34af8f997b52698cdb10e525a1280f72ee380d88487676e1624b7962876  RaspberryPi_JetsonNano/python/examples/__pycache__/keymaps.cpython-311.pyc
+785e225d8a5b88d0ef3928b6effae6db1972beb5a3da0f8a974dbe93d475704a  RaspberryPi_JetsonNano/python/examples/data/cache.txt
+b89f813896cb4e01287416bb6480129bc35efc668e9981778bf78c6d76d1138d  RaspberryPi_JetsonNano/python/examples/google_drive.py
+e57fd5deba461040a7564b6bf9d4bd8daf5b8c3509f0e224e3c25f675f6ac40e  RaspberryPi_JetsonNano/python/examples/keymaps.py
+8b41af230fd37d78fc2f494fb2553cebe4287b9f85da97af2d3f788af9ee40aa  RaspberryPi_JetsonNano/python/examples/main.py
+447d0cd3087f7f28e74adc01ea93d12d1ed8ebe68cad7b42702a72800e301283  RaspberryPi_JetsonNano/python/examples/waveshare_epd/.DS_Store
+440887ef11ec575aa8f129acccc2d0d04029c378554bbc5bff3ec31126d152d0  RaspberryPi_JetsonNano/python/examples/waveshare_epd/._.DS_Store
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  RaspberryPi_JetsonNano/python/examples/waveshare_epd/__init__.py
+b9cd431b7ed0cdb6ebc350aa39563715f4ba28bd9e5288b5a7ce87972099da56  RaspberryPi_JetsonNano/python/examples/waveshare_epd/__init__.pyc
+0e1b8eea0da616ce6350d5c6ad8b7d4ceb300e7aa65a32b58e8c33be124bd8a2  RaspberryPi_JetsonNano/python/examples/waveshare_epd/__pycache__/__init__.cpython-311.pyc
+46deced79678c7ac68fae9db044985b8e175e3f7418cdc7f0f79463c9d6f6ef2  RaspberryPi_JetsonNano/python/examples/waveshare_epd/__pycache__/epdconfig.cpython-311.pyc
+4b150beea69402504d221293cc9ef295c2d06251bb8327abe4befe7e84eb160e  RaspberryPi_JetsonNano/python/examples/waveshare_epd/__pycache__/new4in2part.cpython-311.pyc
+5f09f551fe6efe27b8be7250bbd014eb6c787a3b35ba8b03b2b60136dc26ee5d  RaspberryPi_JetsonNano/python/examples/waveshare_epd/epdconfig.py
+be04c3692e15797879761b83a1bbd3421656c5b935a52683cc7c45d9053fc456  RaspberryPi_JetsonNano/python/examples/waveshare_epd/epdconfig.pyc
+60cc1c314f4fa0869fee5d6f888ebf1e1c357aece52c2ed54dd279c6d5a72273  RaspberryPi_JetsonNano/python/examples/waveshare_epd/epdraw.py
+195a234803557996cfd07d4ea283fe7b620eb4e3df34c72a4608651f54d7fa75  RaspberryPi_JetsonNano/python/examples/waveshare_epd/new4in2part.py
+e119d7be670abba2345cb21ec0c5b12276a0ad55997576a13c9082a5b2cf7600  RaspberryPi_JetsonNano/python/examples/waveshare_epd/sysfs_gpio.so
+0a5360cc2269d39c6b24443f7e4982fccabc484e8c3780a4410e6edcf17533d6  RaspberryPi_JetsonNano/python/examples/waveshare_epd/sysfs_software_spi.so
+2b6f8bd8e318b9e796c7614e8052d863ec99d639f9dd9a20e670ed51b5e35afb  RaspberryPi_JetsonNano/python/lib/.DS_Store
+929d6c8f99c7a9711b62a2ace90f5c193adf195951232bb00107c008322205c6  RaspberryPi_JetsonNano/python/lib/._.DS_Store
+dba43cfba73514816ca281e3cfb43f97e53c9be64d0619e2cd36ea49a0d023bf  RaspberryPi_JetsonNano/python/lib/waveshare_epd.egg-info/PKG-INFO
+e69edd1d09d230dd6d94503be4911640a89f7f8ce0474ffc4981868a2a8bdad0  RaspberryPi_JetsonNano/python/lib/waveshare_epd.egg-info/SOURCES.txt
+01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b  RaspberryPi_JetsonNano/python/lib/waveshare_epd.egg-info/dependency_links.txt
+e84a879c160b1aae5e76530894aef30b326734ef29cebfd5ff952f8d8fd29806  RaspberryPi_JetsonNano/python/lib/waveshare_epd.egg-info/requires.txt
+22d90244cc32719a667d530a080894fdf724d85993188ddb0fdf62f50a35dd33  RaspberryPi_JetsonNano/python/lib/waveshare_epd.egg-info/top_level.txt
+1fe15e4966da325218200aa1d040c65944cb80f59991d99049a23a3c69c7d77a  RaspberryPi_JetsonNano/python/lib/waveshare_epd/._epd3in7.py
+8153d99c674488a064a351cd729b20b5c4245028af454b918d0272489c985c31  RaspberryPi_JetsonNano/python/lib/waveshare_epd/._epdconfig.py
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  RaspberryPi_JetsonNano/python/lib/waveshare_epd/__init__.py
+b9cd431b7ed0cdb6ebc350aa39563715f4ba28bd9e5288b5a7ce87972099da56  RaspberryPi_JetsonNano/python/lib/waveshare_epd/__init__.pyc
+ed1df8fca7196dbecc4c9b4a053c5a55e6966cf4c7c61d0e83bc07b5347137d7  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd1in02.py
+d24a4501a146f2b172853423253a7ad2ff413b399d35d34a7bc3edb71b4481f2  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd1in54.py
+5631f91191acd0699bbefea97ea8ebee57cbdf5dfa0a9287cc7cb407885ac90e  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd1in54_V2.py
+2718ab9d570678e793f9009ef5bffb2ab76e63a2977a49111fd0bf1cb1d9089b  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd1in54b.py
+32706de42686e11ed566f37dbdabc2ff9e9d43e731ced61229fbe570783e1f9d  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd1in54b_V2.py
+25167f01671edb9ec4669f9f2d9149f071967e894efd5c6ce8a925952961b28b  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd1in54c.py
+87eded508ccbc7b1d839c25744b09e5ac60c3e84362b8d3655a0ed33fa58c132  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd1in64g.py
+5bc4cb220135e2e49ce25d6f9eefe7548853192de96215b642aa3fe8869a061a  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in13.py
+52fdcb8f713f0fcfbc56dd67e6d6fce075dfd6ecd2ae1d2dd8240b4f41c4f6fe  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in13_V2.py
+12dd331cdc032095aa60fb3aeb8666876e4713324c1e7a78af10b51e878ca7f2  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in13_V3.py
+28540d4c96471d0b4d6467b519d8224f68f9e80ac74dbc092c98c4a473ce7537  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in13b_V3.py
+36a23759f70258380049417472460c5f694e3cf1147f11245c832acd1fc1dcb3  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in13b_V4.py
+a4094a6415300746aa33e20a3a8db6177365c7a3fa1de4a36801036cf06f737a  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in13bc.py
+6cc3d0a019ed39a56024e64e04fcfe17da154487e71ee5093f0b781bba948701  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in13d.py
+948c263cc063372db04eb1c2fc2cd9c3aeb22e20c74fd9aeab8e60dba2597106  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in13g.py
+c548ec47e568e7eb63fd573588c4553b952047066d4fab24aaf44db05d3db3b6  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in36g.py
+4fa509926fa13891e5e7e2fb9c5d707f72d6ea911359dcb15e3b9582ce23e40b  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in66.py
+dd69b58fe1d06baeb72998d87a85ef9fe0034356c2a98b2f850d43652628fe37  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in66b.py
+cd7b83cd5f2ab675fef4b17790cdfbb6170391078e6c15e3cdbe52a81129099a  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in7.py
+171bdc77a035f749782c78d2a513b7c3c987c9157ae39e7c0123e74e933b8a44  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in7_V2.py
+d06d1cde037d393d8dea7e66dd7e9c35ffb31e3427aa946978a13327ba15fce9  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in7b.py
+66aa1ac96186e982e3755e763f6842d272fe5abd0cf3467a4f4509eb13d00a32  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in7b_V2.py
+776f436b037b15e042e29dc3ee24cd4bdd2c08caf95928471a61e07ce70c7406  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in9.py
+ac2774e211066e414a190e338b5ea4a96a7dc245ed54f74f66b9164af20dd163  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in9_V2.py
+2e537d74c50fb5992e38d3961373533c6bb3cde30a3aa28b9004226514793129  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in9b_V3.py
+887a11f4d703b953ae6b004de69fd389fcb71e47bd95810e2e8142a68da6f40e  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in9bc.py
+ed560c22ad5b4f12e2c5175cdd2c43d61b1a932ebbff1248df47c43ff83b0a80  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd2in9d.py
+97ef31d3f7d4b84e4bc5c6b67fa7b27f1a3d9979776eb1494fdb209f9e6dcabe  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd3in0g.py
+060210f24aea2dc383a27a6e8635389f4eaae4a5e8b1a5d369a7f9b6dd5d39e2  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd3in52.py
+3f6171352c866fc4ba2c5fed2f52744722114870732baa6ec05f091355358b72  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd3in7.py
+2096839acb9241eeaecf15df4e713f04aed1ea21701b92ab0666bf8e2b8a3f8e  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd3in7_bu.py
+b7413505c7b6ca3f848d2177ae41de7558ca2adc9271efe770653d3fbf3b6bb4  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd4in01f.py
+3c8d55794bb9c9704f3257ce782fbc42edfbec2d971b523d7169a5cdf489c98a  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd4in2.py
+faf174cd5f661afbf974c0d11cb88f974a621a38d916adbd623658df468d0cbb  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd4in2b_V2.py
+fa04138d71f805ca5995b0611de723b39ed422bc2da0ab025e2a736f7d3d5b53  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd4in2bc.py
+650cc74637f5ce44e6b93315e21d14ff84c775cbcac6b40f2eb99cfacc08640a  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd4in37g.py
+3ee55c59363b7caf733836858dc7e5366a713f9742cdf5d35e9c571e58c85256  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd5in65f.py
+8a30222107584cf34c1d1b20c5ccf8a2362f64706e4ce3964ef189d041f2cf02  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd5in83.py
+e026b1d93ce195016c2eeb0671842b21c43f562dd243a2389aef19c7dd4eb76e  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd5in83_V2.py
+abbc95ecfd3f4330937960708ae1bffaf95dcd669837317d2126bc1a3558671f  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd5in83b_V2.py
+9d1b2165ffd6761b9dd9b624149ae390720ee382c0cca1c106eb5608b35d6f28  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd5in83bc.py
+300397f3dfc282aa88428acc76d25bf7c739e4f56025591ec47b587eea45be7a  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd7in3f.py
+217e6fc796bd8756833e9da4986e0094eb29efd192ba44771c5318ecfce1c240  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd7in3g.py
+392cdc3c9a96b1072d326802620545ba87cf40e376fb93f1324fdb81702ac6f6  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd7in5.py
+fe76dbd79eb36abd87f71763b3cbe4d9595fc1471f0c1fa63ddbb7af45583e61  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd7in5_HD.py
+13a97ddbbc9f5defabed471dc327b93b0b28518ceb394a7d7e3e9f17c1cf351a  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd7in5_V2.py
+aa6deaf3fc3df98cc129cb9d21dd63ae0758c0604c9d28a487b984bc2919daa9  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd7in5_V2_fast.py
+ceb61186694368a885a34d3e1b34c8ad1a8252d92e286bbe7bf4ec116ec3c231  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd7in5b_HD.py
+c75ca61a2775eb428d8d75338607b77e11c5cdde08c871b8b20b464343a6e45f  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd7in5b_V2.py
+f6378656a51e455cbbdd26094d6e843c8cb1d739af7651193f4357d585d66c7a  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epd7in5bc.py
+5f09f551fe6efe27b8be7250bbd014eb6c787a3b35ba8b03b2b60136dc26ee5d  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epdconfig.py
+be04c3692e15797879761b83a1bbd3421656c5b935a52683cc7c45d9053fc456  RaspberryPi_JetsonNano/python/lib/waveshare_epd/epdconfig.pyc
+e119d7be670abba2345cb21ec0c5b12276a0ad55997576a13c9082a5b2cf7600  RaspberryPi_JetsonNano/python/lib/waveshare_epd/sysfs_gpio.so
+0a5360cc2269d39c6b24443f7e4982fccabc484e8c3780a4410e6edcf17533d6  RaspberryPi_JetsonNano/python/lib/waveshare_epd/sysfs_software_spi.so
+dbf9c87db78b07bef74c52a00ccf0954c6d6940ae8626d3251e4c486448532a8  RaspberryPi_JetsonNano/python/pic/01.bmp
+27bc926571daa4ee961ddc632170451253a95e70072435988d356c852b8cd723  RaspberryPi_JetsonNano/python/pic/1.64inch-1.bmp
+9d0276cdb3b8a71de19bbb2b4dd8187064563f3a5f94a0ce3bed3636610ca069  RaspberryPi_JetsonNano/python/pic/1.64inch-2.bmp
+c9678c4280b74c25ac8e5ad39c96ba2acf6cd1c46b2b7e21beebfb8d237042d0  RaspberryPi_JetsonNano/python/pic/100x100.bmp
+9f14ad70584818d17df3c4986a34d31132aedf9fd35b41aad4336983469704dd  RaspberryPi_JetsonNano/python/pic/1in02.bmp
+8fff4ac0bd2cdde2373f456eb8650d3793f2eb6a4d70e295b67af09cef9355c0  RaspberryPi_JetsonNano/python/pic/1in54.bmp
+9cf514f9078f84640d859d3d2eebaf1152d8c47bea3a2960548dc739d857cf5d  RaspberryPi_JetsonNano/python/pic/1in54b-b.bmp
+9b05a66bfc65715ef17becb8bd595dcb7e14c4b471f86c4a0b4754da38bc378b  RaspberryPi_JetsonNano/python/pic/1in54b-r.bmp
+f0e3d1c1ace06155a5be466fb44a4e2200c6e2a13f878022fefbd5880c881899  RaspberryPi_JetsonNano/python/pic/1in54c-b.bmp
+23efeb81e7fe2589a274dc917fd91d617b8ac617b6357635cced4263b10a95cb  RaspberryPi_JetsonNano/python/pic/1in54c-y.bmp
+ecaf93506ffdd06ad786ed641f1839afec12c1058b9be22c2ea38ad69d67c8a9  RaspberryPi_JetsonNano/python/pic/2.36inch-1.bmp
+b89453be60a02f607f04a67b95f8d0e3c13ccd2d8415ed4515f9183e547baff6  RaspberryPi_JetsonNano/python/pic/2.36inch-2.bmp
+9ee206f3861c7c7ebef55a685060ae01bb8950bbeb6c996b6d4368d5f17322e3  RaspberryPi_JetsonNano/python/pic/2.66__b.bmp
+2fa7da1f1a63a6108f7c55207252d64d14e6ebcc5781cab8078f7d8f179b0db6  RaspberryPi_JetsonNano/python/pic/2.66__r.bmp
+5fa40c6381cc6788cd1e60c82f1c451357840e6632b3d8c31bf32021589b19d6  RaspberryPi_JetsonNano/python/pic/2.66inch.bmp
+70920576cdabb46705ee2958ff4ca181c64b7f1cf6e6455ea2e40e6651ac543c  RaspberryPi_JetsonNano/python/pic/2in13-v2.bmp
+52c867138f574b346b74acada564bf827b376cd306ebae776cdd5e42c6961098  RaspberryPi_JetsonNano/python/pic/2in13.bmp
+c8653252c4be07072b313c15e2206e4305344fb954f6ea1b0e764bf00d976394  RaspberryPi_JetsonNano/python/pic/2in13_1.bmp
+2d65f78fbd4d40574334aee812c33382c38f30f599b648d7a047386121a8cf34  RaspberryPi_JetsonNano/python/pic/2in13_2.bmp
+c3608a73e5c68cbd844708b45c95e2056d98970d957bd0a48bb7e0385cc82be8  RaspberryPi_JetsonNano/python/pic/2in13_b1.bmp
+a634958a3f5dfc8f39552604afd7ac9a2f5ad298459cfa1fecf50de5b6ab2f98  RaspberryPi_JetsonNano/python/pic/2in13_y1.bmp
+8a9aa238ee45996e7111885f6f375198a236c0e64510f3d94ba38cbd6fbc1be0  RaspberryPi_JetsonNano/python/pic/2in13b_V4b.bmp
+52000a9ff861db4235b035f895b72cc6eb076b2b83dbe32bfa237d2882ff2c4d  RaspberryPi_JetsonNano/python/pic/2in13b_V4r.bmp
+e75b15eb5d2a3d465a481ff1c6437c6eace6e57ed7a47fe477837bfe6d805139  RaspberryPi_JetsonNano/python/pic/2in13bc-b.bmp
+c28c9ec55371c0cc3ea8363bfad42c6aa61e7fd507097f08e070ffd076a9a2d3  RaspberryPi_JetsonNano/python/pic/2in13bc-ry.bmp
+4b529a6b9d42a778b5bad5174a20861ff7d405bd17dff97b7673bb0242de96c2  RaspberryPi_JetsonNano/python/pic/2in13d.bmp
+990a27dc286d3e4491ed81459f27f98d82ff28c4b67c7c895294d590054abd16  RaspberryPi_JetsonNano/python/pic/2in13d_1.bmp
+9557bbc80853e5ac6929eb93a42a9bdb3d8054976652a47e5a68a76b80bfce6e  RaspberryPi_JetsonNano/python/pic/2in13g.bmp
+73fd4aab016600df8d83a8ecd49c86d4762d685c86d9e118024430d561710496  RaspberryPi_JetsonNano/python/pic/2in66.bmp
+c2ac7dc02f961b8eebca6a67282cb0f49eb8b7282fae855cd3f2a7ca06cf57a3  RaspberryPi_JetsonNano/python/pic/2in66b_b.bmp
+9ff1ffbec887c2c98479408d909860d8ef5435bf412105c72975ba765467c416  RaspberryPi_JetsonNano/python/pic/2in66b_b1.bmp
+ba8dfedee3ea6eda4e7483b8224453b0889ac4a9ebbbacf41623c18b016fb2c9  RaspberryPi_JetsonNano/python/pic/2in66b_r.bmp
+db769d2d0bbd98f46707239e909e7e57976c788ad55c69b908b306d5ab735ea9  RaspberryPi_JetsonNano/python/pic/2in66b_r1.bmp
+93f923396e7f47d71ed0b4fa863339b2a6f06c6d50504d4f85fe76b603e6f056  RaspberryPi_JetsonNano/python/pic/2in7.bmp
+bfdab85050ba41e3c45c4cab4dae8d99cae2ebc2ed5424287cf4474032c858a9  RaspberryPi_JetsonNano/python/pic/2in7_Scale.bmp
+7c49c79bcd2d8f81c57b0c020d501eeb396b56e8ecd6a866ecfd70dc52681554  RaspberryPi_JetsonNano/python/pic/2in7b-b.bmp
+04b95dc3d991b73af3e9a0f0e1fa276d072dc13f96455ae1c5ad6ea627e860e3  RaspberryPi_JetsonNano/python/pic/2in7b-r.bmp
+fe13e60afaa8363ed0d5854d27bd03a5453fa6ed64d9003b8a899a65fc7e4c95  RaspberryPi_JetsonNano/python/pic/2in9.bmp
+2cbcfed9641e1d0496d7817e21a184feefd504e4238f89cbb2283db5c7443318  RaspberryPi_JetsonNano/python/pic/2in9_1.bmp
+f936198353ee3b3f90b9df3afb23971fdff46196ee896ab71817f17063935b3e  RaspberryPi_JetsonNano/python/pic/2in9_2.bmp
+521bb996e3aa5b67da31805cdbcbc277d61dea7daf0a428bbba99db139ef1108  RaspberryPi_JetsonNano/python/pic/2in9bc-b.bmp
+7b0cf0aac0071476ae74fc546b4aa5eeabc6842d4c95694856170675d17fd366  RaspberryPi_JetsonNano/python/pic/2in9bc-ry.bmp
+c1669b54c9aece9ba78a64755671d0ae86ee1f01f821ff9e54a9d6bda9b828d7  RaspberryPi_JetsonNano/python/pic/2in9d.bmp
+efd65be087489714d9319f810b9e0e53a60cf99ccb4a1fefb92221c472e944bc  RaspberryPi_JetsonNano/python/pic/3in52-1.bmp
+5c7d4d54da3b06947b1239e2c7ba0d881c7d79fd5246c7326f9fbfc0e709f37e  RaspberryPi_JetsonNano/python/pic/3in52-2.bmp
+3014b231564604e28567d4da1c53ac20d0953ebb695d0f2526ad4a27f15db438  RaspberryPi_JetsonNano/python/pic/3in52-3.bmp
+a7560152a61df58dc28c4269d69924c4c100c51764d5cc412fcea5e098d5d4d3  RaspberryPi_JetsonNano/python/pic/3in7.bmp
+6ae2fd51035084492181545483b7b85c47d90260e8e9acb11a74147f505b9cf2  RaspberryPi_JetsonNano/python/pic/3in7_4gray1.bmp
+782d7a17b8de70e2a3a0a91658782736661624d1e52b810df820ba83ff3e24ea  RaspberryPi_JetsonNano/python/pic/3in7_4gray2.bmp
+5ed60483d26b1360b1e74c17eab6cdce08be1c47cafe677d4e1ffbcf12f56ace  RaspberryPi_JetsonNano/python/pic/3in7_Scale.bmp
+1de47d5538fb0d3054e89209040728a87a62c0a5abc3160a9c269a47b8806cb1  RaspberryPi_JetsonNano/python/pic/3inch-1.bmp
+d26440b4f0610ac45a0a8169b7d0e68b69e156ccf76ccb78100787a0e6868b2c  RaspberryPi_JetsonNano/python/pic/3inch-2.bmp
+c90eac27c71610f09de123f92aca312a25bdcf810298b8658e7a200696513cfd  RaspberryPi_JetsonNano/python/pic/3inch-3.bmp
+75d29cac1f427cfda8c014d7217754cb3fc2786b3b1ff296f3a117b3448b16ee  RaspberryPi_JetsonNano/python/pic/4.01inch-e-Paper.bmp
+52c7538257dc69e36f5cd9e998b8ce067ad6a5cd9cfe0ab5ce3547fed3314163  RaspberryPi_JetsonNano/python/pic/4.2 m.bmp
+8614934fe0513409437889696dad728681a694e93eac80848702f767b69a0f10  RaspberryPi_JetsonNano/python/pic/4.2-B.bmp
+65ee78ac7c0b4554b210472dbb16e93da99afbc58836f4eb5ba2dee3584d8829  RaspberryPi_JetsonNano/python/pic/4.2-R.bmp
+a05aa2ec6d1fa5d22ba7be12fac86a8da527012dd32ab71af43148e76a0c84c4  RaspberryPi_JetsonNano/python/pic/42.bmp
+5d526e5d4f61c7af1b0ad0faaa1565c8ff3ac21e46f63cf3b4426f5caa8bc9a7  RaspberryPi_JetsonNano/python/pic/4in01-1.bmp
+fb643c257582f572a330d3eab74ea3549f73e3c18d557fec5059b7f12acfef37  RaspberryPi_JetsonNano/python/pic/4in01-2.bmp
+215ff9d0bd15ff12487cef77bbb0b88112336e741844e6b9aaf2be7e3965428f  RaspberryPi_JetsonNano/python/pic/4in01-3.bmp
+dd5e9267f9d275cba46d4a9586e61194c39ecc05a6ff17208df7c8e6f457e039  RaspberryPi_JetsonNano/python/pic/4in01-4.bmp
+d7628f1df548767f2fffb33e7b4052e5c08b3e66a66749aaaafd7107a3820102  RaspberryPi_JetsonNano/python/pic/4in01f.bmp
+962c30a452864c76d561b20507bfd42e90540c653662dfe29d25d7f71d140a7d  RaspberryPi_JetsonNano/python/pic/4in01f1.bmp
+8f09b402683cb2ae81f4d74ffc6e444852f72836656d77141aaee301ab909e72  RaspberryPi_JetsonNano/python/pic/4in2.bmp
+dbf9c87db78b07bef74c52a00ccf0954c6d6940ae8626d3251e4c486448532a8  RaspberryPi_JetsonNano/python/pic/4in2_1.bmp
+8614934fe0513409437889696dad728681a694e93eac80848702f767b69a0f10  RaspberryPi_JetsonNano/python/pic/4in2_B.bmp
+a05aa2ec6d1fa5d22ba7be12fac86a8da527012dd32ab71af43148e76a0c84c4  RaspberryPi_JetsonNano/python/pic/4in2_Pico.bmp
+65ee78ac7c0b4554b210472dbb16e93da99afbc58836f4eb5ba2dee3584d8829  RaspberryPi_JetsonNano/python/pic/4in2_R.bmp
+2f221691f00b635edd8358f9cc11ebe33112803f771fe4e1d603398a00b8ad04  RaspberryPi_JetsonNano/python/pic/4in2_Scale.bmp
+8bef0bfaab158a065a435d7d0ecb37cae11ece75a8f088373f8619a5b9eaebd5  RaspberryPi_JetsonNano/python/pic/4in2_Scale_1.bmp
+397d6f0f5d22c7d12981f7df49ca1fb08eba2481a49cd4ae42f6eef5a9975f8d  RaspberryPi_JetsonNano/python/pic/4in2_Scale_2.bmp
+1812fbc3f6bdf286b72119586e48a51cf0e983b39833acf7afdc19d88d122973  RaspberryPi_JetsonNano/python/pic/4in2b-b.bmp
+6a8ac5cbccd4cc74f58b9610110cf2ce184cfc1dca75504243f80520735c6eaf  RaspberryPi_JetsonNano/python/pic/4in2b-r.bmp
+8f09b402683cb2ae81f4d74ffc6e444852f72836656d77141aaee301ab909e72  RaspberryPi_JetsonNano/python/pic/4in2c-b.bmp
+a6c6a8d9f091204c61e71c09a53772e589da274d339a328c00d7a3d0131cdf0e  RaspberryPi_JetsonNano/python/pic/4in2c-y.bmp
+c8f6e33685acc4e4cbc9ba72297bc045bd2c2d67f252827ae5affd621d050fc7  RaspberryPi_JetsonNano/python/pic/4in37g0.jpg
+5893ee07d57647c8eedc45016e14ed82f005f55777ef93111010d757379030dd  RaspberryPi_JetsonNano/python/pic/4in37g1.jpg
+83cbeabd8bed3cf7d0f278cddf4e16d3ed643f95b636b58a1b0bb02bbd81cf08  RaspberryPi_JetsonNano/python/pic/4in37g2.jpg
+5f452eafb13180c948e3a8c7179ec230be38934d86cf551d4bd7ab0c7689ae45  RaspberryPi_JetsonNano/python/pic/5.83_V2_0.bmp
+944d43ea018ade27dd734e05567ff667766f7add9f5c9b7be96fc293cfbb90ce  RaspberryPi_JetsonNano/python/pic/5in65_n0.bmp
+24df7a82ce34eb219defd89aa13df71804d3c4600dfd1664347f7c40003dc7e6  RaspberryPi_JetsonNano/python/pic/5in65_n1.bmp
+2eb5a987cb33ba748f390a1ba878c3a20f1f3dde530dc527d7a91b57e759d19f  RaspberryPi_JetsonNano/python/pic/5in65_n2.bmp
+e7250cdf43a313d4eff277e73bda66d56c92f6bdd467b8900fb552e8e917cfb7  RaspberryPi_JetsonNano/python/pic/5in65_n3.bmp
+97c49b3d40d33e62de47ffecb6e6a8ac55159a55863a5b5db6ad95354646fe39  RaspberryPi_JetsonNano/python/pic/5in65_n4.bmp
+d60f71ee6ac180b0dc59e5ac4030f99e0809c97639f38ae082f6536b8ffb0d60  RaspberryPi_JetsonNano/python/pic/5in65_n5.bmp
+caf3dd6bfd52ee2e254bbdf8110cd5905638bfa77348e327deed347b57db4015  RaspberryPi_JetsonNano/python/pic/5in65f.bmp
+e72a70da5d41714f8e388efa7ac019adcc20dc7ef82d7cc1ec5c0a9cb3f967f5  RaspberryPi_JetsonNano/python/pic/5in65f0.bmp
+7ec654a46ff8381fba0490632a286169e70eecfa6edfbb39e226e68ec78754d1  RaspberryPi_JetsonNano/python/pic/5in65f1.bmp
+59098713af154ad3d73faa66aa90d6fdc83e036bd6ed4f5860d27c536d55d734  RaspberryPi_JetsonNano/python/pic/5in65f2.bmp
+eba76ab9722bf43b8c768fd91a8d243a2882159049cacb77a94c62b6cdbffc7e  RaspberryPi_JetsonNano/python/pic/5in65f3.bmp
+6d0c28082f57608e9959b4c57835b53f857942256ea267e9daa40bc06faef76b  RaspberryPi_JetsonNano/python/pic/5in65f4.bmp
+07d702e4212794466e1d2fd595666857219b8cf3032b1c6d58a91560dea9c128  RaspberryPi_JetsonNano/python/pic/5in83.bmp
+d62dfcc05b9da986342bb22b5f727f34cd68706eb22572e1ae4215a52c00dd0e  RaspberryPi_JetsonNano/python/pic/5in83_V2.bmp
+ee46b1738555dda4b6cc6c55d0600fdb287989059bb15bb7afaaca96848a7ce9  RaspberryPi_JetsonNano/python/pic/5in83b_V2.bmp
+372a950ae969fa2f234c8ecbb3027d022c0f84af81c88c0405dfdb654c5b891d  RaspberryPi_JetsonNano/python/pic/5in83b_V2_b.bmp
+5061af15e9c53b906f61314b789ee5063a15873a7e507d5649f3620f3a92b467  RaspberryPi_JetsonNano/python/pic/5in83b_V2_r.bmp
+c577348373dcc485eea0d57e4a3cc73015460337556cc799607ee948dacf66f9  RaspberryPi_JetsonNano/python/pic/5in83bc-b.bmp
+cdf4dc9fa2e78e793e9fe78162cda499a592e8e9503498ac8a89a5594c28de30  RaspberryPi_JetsonNano/python/pic/5in83bc-ry.bmp
+d16e601850f447b5b1f1bba31e5979e644caf122fa24dbe5796863b68c800852  RaspberryPi_JetsonNano/python/pic/7.3inch-1.bmp
+96d4ea1a22f13a961f63549ddbe446c4295dd6a77542867d4a29f2fcc676d547  RaspberryPi_JetsonNano/python/pic/7.3inch-2.bmp
+3262ac0b3e6259024a1bd6d84fdb230c0c8270d9df8e1bc1edc25ff045ef5436  RaspberryPi_JetsonNano/python/pic/7.3inch-3.bmp
+6732b88e977c02ebe486ace821f8fe10215ae08db255b29bf1160a4708dfdd1d  RaspberryPi_JetsonNano/python/pic/7in3f1.bmp
+38cc8e4b8c3d817541c38f904793e3c559f97b8566867047bcc12c75b0b4195b  RaspberryPi_JetsonNano/python/pic/7in3f3.bmp
+ace5b9628962a3960004cefea776736fa5b3d668cd834bdeb8376ad68f3fc775  RaspberryPi_JetsonNano/python/pic/7in5.bmp
+a065bc3c12224131f4e378fa6a31602f76cd675c4cecc9834620c72d9656f444  RaspberryPi_JetsonNano/python/pic/7in5_HD.bmp
+075d7f745c81c10b59bd92801823967071a3fda62d3a6c8cd5728b95ff35cbb2  RaspberryPi_JetsonNano/python/pic/7in5_HD_b.bmp
+e0225ce45ba66e98aa26a1894d873bdc92a296573486e8279baacb627599c40e  RaspberryPi_JetsonNano/python/pic/7in5_HD_r.bmp
+20b69ed399e6a57a5b405e43b7e15636006382650e4506c6b0ee53b99fd07b1a  RaspberryPi_JetsonNano/python/pic/7in5_V2.bmp
+510f792b72fee78c493c48dbb3d5c1114247cb71e34990d4b9701039c9d7cc95  RaspberryPi_JetsonNano/python/pic/7in5_V2_b.bmp
+886fce84dd8ccaa02d69e4dee9fe5be4079dc09bad5017f44a6ba312cfd9e685  RaspberryPi_JetsonNano/python/pic/7in5_V2_r.bmp
+830ab4b17f6fe729b56e3d72a84b24a2c64c1acedf20bc7e24696bf1e69cf705  RaspberryPi_JetsonNano/python/pic/7in5b-b.bmp
+7a0a6a94b2e670e2e10f664047e650761c2666f5916f66d546d2c5bd0f6ca739  RaspberryPi_JetsonNano/python/pic/7in5b-r.bmp
+6600dff365706bbbffa0936b80c01cfbf4fca7b598dca9a8c668d4898076b2bb  RaspberryPi_JetsonNano/python/pic/7in5c-b.bmp
+f484b6fb4fe45bf72329d645083c253fc2bb472cc71fe3146467b0bd72452d0a  RaspberryPi_JetsonNano/python/pic/7in5c-r.bmp
+19c998c3f67e3960f0eb70b288a9015ce57c1c75fcc7a97526d2d2efc90f1246  RaspberryPi_JetsonNano/python/pic/Color7.bmp
+2420e8078af796b19a3f6ef13de527a1a91c1e7171eea115926c614ced1009b3  RaspberryPi_JetsonNano/python/pic/Font.ttc
+19c998c3f67e3960f0eb70b288a9015ce57c1c75fcc7a97526d2d2efc90f1246  RaspberryPi_JetsonNano/python/pic/N-Color1.bmp
+339a67a5131ab43b2d5b54311b69fe949366cb542eb03d3f289d102e3f8da933  RaspberryPi_JetsonNano/python/pic/image.bmp
+837bbf010ff171ec276fc35adec2d43459044ed68eb7125d5682cb95389cd097  RaspberryPi_JetsonNano/python/pic/image_black.bmp
+2f4aa34a507ce9b7decf64b4f84937f986fcc8c57fa17c84da0257db272b7914  RaspberryPi_JetsonNano/python/pic/image_red.bmp
+0bd2251ebe9766bba1d7cb2f4523dbad1cf26f53e01840e71010a4fd8b7c4516  RaspberryPi_JetsonNano/python/readme_rpi_EN.txt
+27b5ba65d146faa77678d2cf1797111bb794b43fa1dfd0d3b8ccb15887ac672e  RaspberryPi_JetsonNano/python/setup.py
+923a4ac0343a178e5b669bbbb55a9f17c250938136b25b9d4074c714f35d56d9  Special Reminder.txt
+e309d65a84fe60efbbd042c5a5474564ca51fa38bd9cc9a8603b81afce09c664  Version_CN.txt
+3f9db5846e2d58721f0d7a0e13fecc52b556ab6edcb80402d9d7b9db9c3e292c  Version_EN.txt
+db9e7720669194822b76cb6e7990d36dcbf25334e4fb3ab8338d2d7687a08789  waveshare_logo.png
+82b4883b48c15276e5572268356a461c395e75c75a7b09d7d3d7ba014571029b  特别提醒.txt
+```

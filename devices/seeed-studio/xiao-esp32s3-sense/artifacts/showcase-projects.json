@@ -1,0 +1,2327 @@
+[
+ {
+  "page": 2,
+  "category": null,
+  "variant": null,
+  "title": "Table of Contents Introduction .....................................................................",
+  "author": null,
+  "keywords": null,
+  "intro": "",
+  "links": [],
+  "project_links": []
+ },
+ {
+  "page": 12,
+  "category": null,
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "SeeedStudio XIAO Comparision Table XIAO ESP32-S3 XIAO ESP32-S3 Sense XIAO RA4M1 XIAO MG24 XIAO MG24",
+  "author": null,
+  "keywords": null,
+  "intro": "",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/Seeed-XIAO-RA4M1-p-5943.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-MG24-p-6247.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/Seeed-XIAO-MG24-Sense-p-6248.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/XIAO-nRF54L15-p-6493.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/XIAO-nRF54L15-Sense-p-6494.html?utm_source=Seeedblog",
+   "https://wiki.seeedstudio.com/SeeedStudio_XIAO_Series_Introduction/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/Seeed-XIAO-RA4M1-p-5943.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-MG24-p-6247.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/Seeed-XIAO-MG24-Sense-p-6248.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/XIAO-nRF54L15-p-6493.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/XIAO-nRF54L15-Sense-p-6494.html?utm_source=Seeedblog",
+   "https://wiki.seeedstudio.com/SeeedStudio_XIAO_Series_Introduction/"
+  ]
+ },
+ {
+  "page": 14,
+  "category": "Wearables",
+  "variant": "XIAO SAMD21",
+  "title": "Yendor Flex Glove Embroidered E-Textile Interface",
+  "author": "Rodney Trusty",
+  "keywords": [
+   "Smart gloves",
+   "E-textiles",
+   "Machine-sewn PCB"
+  ],
+  "intro": "The Yendor Flex Glove is a machine-embroidered\u0003 smart glove combining textile design with embedded electronics. It uses conductive thread flex sensors, an IMU, and feedback via LEDs, vibration, and sound. Built with Digital Fiber Studio, it integrates washable components like an ADC, buzzer, and haptic motor. The project showcases gesture-based input and introduces novel techniques such as embroidered PCBs, bridges, and layout-aware stitching\u2014advancing the field of e-textile engineering.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/00legendary/yendor-flex-glove-e2dd68"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/00legendary/yendor-flex-glove-e2dd68"
+  ]
+ },
+ {
+  "page": 15,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "TPGmini v2 Tiny AR Wearable Companion",
+  "author": "Nguy\u1ec5n Minh HI\u1ec2N",
+  "keywords": [
+   "AR wearable",
+   "Smart glasses"
+  ],
+  "intro": "TPGmini v2 is a compact AR wearable that upgrades regular glasses into a smart assistant. It features a single-button interface for switching between apps like Gemini AI, Live Transcription, and a retro Camera. With an OLED display and mirror for HUD visuals, it runs on the XIAO ESP32-S3 Sense for real-time AI and transcription. Built on the open-source miniOS, it supports developer-made micro-apps for creative and accessible use cases.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/202281-tpgmini-the-customizable-ar-smart-glasses-v1"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/202281-tpgmini-the-customizable-ar-smart-glasses-v1"
+  ]
+ },
+ {
+  "page": 16,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "Wearables XIAO ESP 3 2 - S 3 Sense V ibe AI Wearable Nutrition Tracker By Jac ob T rebil Intr oduc t",
+  "author": null,
+  "keywords": null,
+  "intro": "",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2025/05/08/vibe-ai-wearable-nutrition-tracker-powered-by-seeed-studio-xiao-esp32s3/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2025/05/08/vibe-ai-wearable-nutrition-tracker-powered-by-seeed-studio-xiao-esp32s3/"
+  ]
+ },
+ {
+  "page": 17,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-C3",
+  "title": "Open Source Smart Health Ring",
+  "author": "Peter Machona",
+  "keywords": [
+   "Healthcare",
+   "Health wearable"
+  ],
+  "intro": "This prototype ring continuously tracks heart rate and blood oxygen levels for sickle cell patients using the MAX30105 sensor and XIAO ESP32-C3. It streams real-time data via WebSocket to a web dashboard, with options for PDF reporting. The GitHub repository includes firmware, server code, and setup guides, with planned features like offline mode and mobile app.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://github.com/MargeHealth/Open_Source_Health_Ring"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://github.com/MargeHealth/Open_Source_Health_Ring"
+  ]
+ },
+ {
+  "page": 18,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "WatchThis Wearable Point-and-Ask Assistant",
+  "author": "Cathy Mengying Fang, Patrick Chwalek, Quincy Kuang, and Pattie Maes",
+  "keywords": [
+   "AI wearable",
+   "Vision AI",
+   "Vision Language Model"
+  ],
+  "intro": "WatchThis is a wrist-mounted wearable that uses computer vision and GPT-4o to answer questions about real-world objects. Users flip up the camera, point, and tap to trigger image capture and contextual queries like \u201cWhat is this?\u201d or \u201cTranslate this.\u201d Built with Arduino-compatible C++, it responds in ~3 seconds and supports custom prompts via an onboard WebApp. Ideal for translation, navigation, and smart home control, it\u2019s designed for intuitive, gesture-driven interaction.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/10/21/watchthis-a-wearable-point-and-ask-interface-powered-by-vision-language-models-and-xiao-esp32s3-sense/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/10/21/watchthis-a-wearable-point-and-ask-interface-powered-by-vision-language-models-and-xiao-esp32s3-sense/"
+  ]
+ },
+ {
+  "page": 19,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-C3",
+  "title": "Open Hardware Summit Badge 2025 E-Textile Assembly Guide",
+  "author": "Rodney Trusty",
+  "keywords": [
+   "Wearable badge",
+   "E-textile circuit",
+   "Open Hardware Summit"
+  ],
+  "intro": "This tutorial walks through assembling the 2025 Open Hardware Summit badge as an embroidered e-textile circuit. It uses a XIAO ESP32-C3 microcontroller, two WS2812B-2020 LEDs, and a female SAO connector sewn onto conductive traces. Components are stitched with conductive thread\u2014no soldering required\u2014with USB or coin cell battery power. The guide covers orientation tips, thread trimming, and includes an Arduino sketch for RGB LED blinking.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/00legendary/open-hardware-summit-badge-2025-941ee3"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/00legendary/open-hardware-summit-badge-2025-941ee3"
+  ]
+ },
+ {
+  "page": 20,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "Wearables XIAO ESP 3 2 - S 3 Sense Environment Audio Monitoring Wearable By Solomon Muhun y o Githu",
+  "author": null,
+  "keywords": null,
+  "intro": "",
+  "links": [
+   "https://www.hackster.io/sologithu/environment-audio-monitoring-wearable-with-xiao-esp32s3-12a096"
+  ],
+  "project_links": [
+   "https://www.hackster.io/sologithu/environment-audio-monitoring-wearable-with-xiao-esp32s3-12a096"
+  ]
+ },
+ {
+  "page": 21,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-C3",
+  "title": "Wearables XIAO ESP 3 2 - C 3 Infr ar ed Th er mom et er Ring By Gokul K B Intr oduc tion: This weara",
+  "author": null,
+  "keywords": null,
+  "intro": "",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Gokux/infrared-thermometer-ring-cd0613"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Gokux/infrared-thermometer-ring-cd0613"
+  ]
+ },
+ {
+  "page": 22,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-C3",
+  "title": "Temperature Card",
+  "author": "Arnov Sharma",
+  "keywords": [
+   "Temperature sensor",
+   "Wearable ID badge"
+  ],
+  "intro": "The Temperature Card is a wearable ID-style device built around the SeeedStudio XIAO ESP32-C3, an SSD1306 OLED display, and an SHT40 temperature sensor; it reads live temperature data and displays it on screen, powered by a small 3.7V LiPo cell connected to the XIAO\u2019s battery terminals, with the entire setup assembled first on a breadboard and then transferred to a custom prototyping board housed ina 3D-printed enclosure that includes a slot for an ID strap and a slide switch for power control\u2014 making it a compact, portable temperature meter ideal for everyday wear.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/temperature-card-e02b3a"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/temperature-card-e02b3a"
+  ]
+ },
+ {
+  "page": 23,
+  "category": "Wearables",
+  "variant": "XIAO nRF52840",
+  "title": "Mouse Ring V2",
+  "author": "rafgaj78",
+  "keywords": [
+   "Wearable mouse",
+   "Ring wearable"
+  ],
+  "intro": "This compact Bluetooth-enabled ring functions as a wearable mouse controller using a joystick with four directional inputs and a push button to emulate left/ right clicks and scroll actions; built around the SeeedStudio XIAO nRF52840 and programmed in CircuitPython, it features two operating modes, deep sleep wake-up via joystick press, and improved ergonomics over the original version, with a minimal 3D-printed design sized for ring diameters from 19 to 24mm, a custom PCB, and a 90mAh LiPo battery\u2014 ideal for VR headset users seeking intuitive, hands-free mouse control.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Mouse-Ring-V2/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Mouse-Ring-V2/"
+  ]
+ },
+ {
+  "page": 24,
+  "category": "Wearables",
+  "variant": "XIAO nRF52840",
+  "title": "Ring With Mouse Buttons & Wheel",
+  "author": "rafgaj78",
+  "keywords": [
+   "Wearable mouse",
+   "Ring wearable"
+  ],
+  "intro": "This Bluetooth-enabled wearable mouse controller is built around the SeeedStudio XIAO nRF52840 and features four tactile buttons for left click, right click, scroll up, and scroll down, all integrated into a 3D-printed ring form factor with separate designs for left and right hands; powered by a 50mAh LiPo battery with USB charging and LED indicators, it\u2019s designed to enhance VR immersion\u2014especially in flight simulators like DCS World \u2014by pairing with Leap Motion and The Fingers software to eliminate the need for a traditional mouse, with simple CircuitPython-based programming and basic soldering and assembly required.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Ring-With-Mouse-Buttons-Wheel/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Ring-With-Mouse-Buttons-Wheel/"
+  ]
+ },
+ {
+  "page": 25,
+  "category": "Wearables",
+  "variant": "XIAO nRF52840",
+  "title": "Artyom's Wristwatch From Metro",
+  "author": "Donut Studio",
+  "keywords": [
+   "Wearable watch",
+   "Nutrition tracking"
+  ],
+  "intro": "Inspired by the Metro game series, this wearable wristwatch replicates Artyom\u2019s iconic gadget using four yellow 7-segment displays, a blue LED, and a light-dependent resistor for auto-brightness control \u2014all driven by a SeeedStudio XIAO nRF52840 microcontroller with deep sleep support and optional BLE features. The build includes a custom PCB, DS1302 RTC, TM1637 display driver, and a CR927 coin cell battery, housed ina 3D-printed case with acrylic cover and backpack strap mounts. Designed for realism and daily use, it features multiple modes (time, date, timer), a startup animation, and a sleep/ wake system triggered by button presses.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Artyoms-Wristwatch-From-Metro/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Artyoms-Wristwatch-From-Metro/"
+  ]
+ },
+ {
+  "page": 26,
+  "category": "Wearables",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "The Data Glove Control Bluetooth Devices With Gestures",
+  "author": "Donut Studio",
+  "keywords": [
+   "Wearable glove",
+   "Gesture-controlled"
+  ],
+  "intro": "This gesture-controlled wearable uses the SeeedStudio XIAO nRF52840 and five SS49E Hall sensors mounted on a bicycle glove to detect finger movements via magnetic field changes, enabling Bluetooth-based control of devices like media players or presentation software; the system includes an IR receiver, vibration motor, buttons, and LED for feedback, all integrated into a custom PCB with a 3D-printed enclosure, and programmed using Arduino-compatible sketches that support gesture recognition, haptic alerts, and multiple interaction modes\u2014making it a versatile, hands-free interface for smart environments.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.instructables.com/The-Data-Glove-Control-Bluetooth-Devices-With-Gest/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.instructables.com/The-Data-Glove-Control-Bluetooth-Devices-With-Gest/"
+  ]
+ },
+ {
+  "page": 27,
+  "category": "Wearables",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "BLE Data Glasses",
+  "author": "Markus Opitz",
+  "keywords": [
+   "AI wearable",
+   "Smart glasses"
+  ],
+  "intro": "These DIY smart glasses use the XIAO nRF52840 Sense, a 0.49\u2033 OLED display, and a 150mAh LiPo battery to project data into the user\u2019s eye via a mirror and lens. Controlled by a custom MIT App Inventor app, it supports overlays and alerts, with mirrored visuals corrected in software. The 3D-printed frame weighs just 24g\u2014offering a low-cost alternative to commercial smart eyewear.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.instructables.com/BLE-Data-Glasses/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.instructables.com/BLE-Data-Glasses/"
+  ]
+ },
+ {
+  "page": 28,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-C3",
+  "title": "Cardiogram Portable ECG Device for Daily Use",
+  "author": "Protyasish Majumder, Arpan Das, Tanish Sen, and Jaagrav Seal",
+  "keywords": [
+   "Wearable ECG monitor",
+   "Real-time heart health",
+   "BPM tracking"
+  ],
+  "intro": "Cardiogram is a wearable ECG device built around the XIAO ESP32-C3 and Heart Bioamp Candy sensor, designed for continuous heart health tracking. It streams real-time data to a SwiftUI iOS app via BLE, displaying metrics like BPM and supporting dual- mode operation (standby/streaming). Housed ina custom 3D-printed enclosure and powered by a 500mAh LiPo battery, the device includes filtering to reduce electrical noise and offers a low-cost, open-source alternative to commercial ECG monitors.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Cardiogram-a-Portable-ECG-Device-for-Daily-Use-on-/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Cardiogram-a-Portable-ECG-Device-for-Daily-Use-on-/"
+  ]
+ },
+ {
+  "page": 29,
+  "category": "Wearables",
+  "variant": "XIAO nRF52840",
+  "title": "Key Finder",
+  "author": "Hamid",
+  "keywords": [
+   "BLE key finder",
+   "NRF Connect"
+  ],
+  "intro": "This Bluetooth-enabled key finder uses the XIAO nRF52840 to connect with smartphones and trigger sound and light alerts via a buzzer and LED. Paired with apps like NRF Connect, it supports remote activation and manual reset through a built-in button. Developed in Arduino IDE and built on a custom SeeedStudio Fusion PCB, the firmware includes BLE sync, command handling, and power- saving logic\u2014offering a simple, customizable solution with future potential for SOS signaling and sensor upgrades.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/192520-key-finder-with-the-xiao-nrf52840-module"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/192520-key-finder-with-the-xiao-nrf52840-module"
+  ]
+ },
+ {
+  "page": 30,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-S3",
+  "title": "LED Choker",
+  "author": "Ted",
+  "keywords": [
+   "LED wearable",
+   "Light-up fashion"
+  ],
+  "intro": "This wearable LED choker repurposes high-density 120 LED/m strips bonded to a 15mm leather strap using Barge glue, with precise hole spacing (8.48mm) to accommodate flex and maintain alignment across the full length; powered by four 300mWh LiPo batteries and controlled by a SeeedStudio XIAO-S3\u2014chosen for its compact size and built-in LiPo charge controller\u2014the build delivers about two hours of runtime and showcases a minimalist, punch-tape-inspired aesthetic, making it a creative reuse of leftover components from a previous project.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/195078-led-choker"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/195078-led-choker"
+  ]
+ },
+ {
+  "page": 31,
+  "category": "Wearables",
+  "variant": "XIAO nRF52840",
+  "title": "ErgO: Neural-Network Powered Keyboard-Mouse Ring",
+  "author": "Sophia",
+  "keywords": [
+   "Smart ring",
+   "Gesture control",
+   "Touch sensors"
+  ],
+  "intro": "ErgO is a compact ring worn on the pointer finger that uses gesture and touch input to control Bluetooth devices. Built around the SeeedStudio XIAO nRF52840 for its small size and onboard power management, it features two touch sensors for tap detection, a Pimoroni Trackball for thumb-controlled cursor movement, and a LiPo battery with a slide switch\u2014all housed ina custom 3D-printed ring base. The result is a sleek, wearable interface for minimal and futuristic control.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/195560/instructions"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/195560/instructions"
+  ]
+ },
+ {
+  "page": 32,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-C6",
+  "title": "SmartCardX An Interactive Business Card",
+  "author": "Rishabh Jain",
+  "keywords": [
+   "Interactive business card",
+   "NFC & QR"
+  ],
+  "intro": "SmartCardX transforms the traditional business card into a credit-card-sized interactive badge powered by the XIAO ESP32-C6. It features a 17\u00d79 WS2812B LED matrix for animations and games, NFC and QR code for contact sharing, a 5-button interface, and an MPU6050 IMU for motion-based input. With Wi-Fi connectivity for real-time weather and time display, all packed into a sleek 85\u00d755 mm PCB, it\u2019s a programmable showcase of personality and tech for developers and designers.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.hackster.io/rishabh-jain5/smartcardx-an-interactive-business-card-622946"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.hackster.io/rishabh-jain5/smartcardx-an-interactive-business-card-622946"
+  ]
+ },
+ {
+  "page": 33,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-S3",
+  "title": "uPhone AI Wearable for Social Interaction",
+  "author": "Cayden Pierce",
+  "keywords": [
+   "AI wearable",
+   "Real-time translation"
+  ],
+  "intro": "uPhone is a necklace-style AI device that displays real-time translation, navigation, and shared information outward to conversation partners. It features around RGB touchscreen and a gesture-controlled glove powered by XIAO ESP32-S3, using magnets and Hall effect sensors for app switching via BLE. Built to foster connection and reduce tech isolation, uPhone transforms face-to-face conversations into collaborative, informed experiences",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/08/01/uphone-an-ai-wearable-for-better-interaction-powered-by-xiao-esp32s3/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/08/01/uphone-an-ai-wearable-for-better-interaction-powered-by-xiao-esp32s3/"
+  ]
+ },
+ {
+  "page": 34,
+  "category": "Wearables",
+  "variant": "XIAO RP2040",
+  "title": "Wearable Device for FoG (Freezing of Gait) in Parkinson\u2019s",
+  "author": "tobychui",
+  "keywords": [
+   "Health wearable",
+   "Mobility aid"
+  ],
+  "intro": "FoG is a common symptom among Parkinson\u2019s patients, disrupting the natural ability to walk. This lightweight wearable provides external rhythmic stimuli\u2014like vibrations or light cues\u2014to help the wearer \u201creset\u201d their walking pattern and reduce the severity of FoG. The XIAO RP2040 drives the logic, offering low power and compact size ideal for continuous use. This project demonstrates how low-cost hardware can improve mobility and independence.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.instructables.com/A-Wearable-Vibration-Device-Helpful-Device-to-Solv/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.instructables.com/A-Wearable-Vibration-Device-Helpful-Device-to-Solv/"
+  ]
+ },
+ {
+  "page": 35,
+  "category": "Wearables",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "MeMic Privacy-Aware AI Wearable Recorder",
+  "author": "Cayden Pierce, Wazeer Deen Zulfikar, and Pattie Maes",
+  "keywords": [
+   "Wearable voice recorder",
+   "Motion-triggered recording"
+  ],
+  "intro": "MeMic is a wearable voice recorder that activates its microphone only when the wearer speaks, ensuring privacy in continuous audio logging. It detects speech through vibrations captured by the onboard IMU, processed locally on the XIAO nRF52840 Sense using a custom algorithm that filters motion signals and triggers recording when voice-like acceleration is detected. A RGB LED indicator lights up during active recording, providing transparency. Tested in pendant and smart glasses form factors, MeMic aims to make AI wearables more socially acceptable by mitigating always-on listening concerns.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/07/03/memic-the-ai-wearable-that-only-listens-and-records-its-owner-speak-powered-by-xiao-nrf52840-sense/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/07/03/memic-the-ai-wearable-that-only-listens-and-records-its-owner-speak-powered-by-xiao-nrf52840-sense/"
+  ]
+ },
+ {
+  "page": 36,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "OpenGlass $20 AI-Powered Smart Glasses",
+  "author": "Nik Shevchenko",
+  "keywords": [
+   "AI wearable",
+   "Smart glasses"
+  ],
+  "intro": "OpenGlass transforms any ordinary glasses into smart eyewear using affordable off-the-shelf components. It features a XIAO ESP32-S3 Sense housed ina 3D-printed mount, alongside a compact Li-ion battery, enabling capabilities like life recording, people recognition, object identification, and text translation. These functions are powered by software that connects to Groq and OpenAI APIs. Fully open-source and the project supports community contributions.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/05/23/openglass-turn-any-glasses-into-ai-smart-glasses-for-just-20-with-xiao-esp32s3-sense/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/05/23/openglass-turn-any-glasses-into-ai-smart-glasses-for-just-20-with-xiao-esp32s3-sense/"
+  ]
+ },
+ {
+  "page": 37,
+  "category": "Wearables",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "Friend Now as Omi AI Open Source AI Wearable Recorder",
+  "author": "Nik Shevchenko and Based Hardware",
+  "keywords": [
+   "AI wearable",
+   "TinyML speech detection"
+  ],
+  "intro": "Friend is an AI-powered voice recorder that captures conversations hands-free and transcribes them in real time. It uses onboard TinyML on the XIAO nRF52840 Sense to detect speech and sends audio via Bluetooth to a mobile app. There, Deepgram and OpenAI Whisper handle transcription, producing accurate, time-stamped summaries and task lists. Compact and energy-efficient, the device features a rechargeable battery and switch for daily wear. With an open-source design and step-by-step build guide, users can customize and contribute via GitHub.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/05/16/meet-friend-open-source-ai-wearable-recording-device-powered-by-xiao-nrf52840-sense/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/05/16/meet-friend-open-source-ai-wearable-recording-device-powered-by-xiao-nrf52840-sense/"
+  ]
+ },
+ {
+  "page": 38,
+  "category": "Wearables",
+  "variant": null,
+  "title": "Wearables Third Eye for Blind By Md. Khairul Alam Introduction: Third Eye is a vision-to-speech aid",
+  "author": "Md. Khairul Alam",
+  "keywords": [
+   "Festival TTS",
+   "AID wearable"
+  ],
+  "intro": "Third Eye is a vision-to-speech aid for visually impaired users, combining edge AI and object detection to describe surroundings through headphones. Using a custom-trained Edge Impulse model, the XIAO ESP32-S3 Sense detects everyday objects and sends results via UART to a Raspberry Pi, which converts them to spoken feedback using Festival TTS. The setup includes Arduino library deployment, camera pin remapping, and speech-driven alerts like \u201cchair on the left\u201d or \u201cbed ahead\u201d\u2014 all optimized for low-cost accessibility.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/taifur/third-eye-for-blind-82bcd5"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/taifur/third-eye-for-blind-82bcd5"
+  ]
+ },
+ {
+  "page": 39,
+  "category": "Wearables",
+  "variant": "XIAO nRF52840",
+  "title": "BLE Smartwatch for Sun Damage Risk Prediction",
+  "author": "Kutluhan Aktar",
+  "keywords": [
+   "AI wearable",
+   "UV Index monitoring"
+  ],
+  "intro": "Overexposure to sunlight can lead to serious health risks, from dehydration to skin cancer. This AI- enabled smartwatch measures UV Index, temperature, pressure, and altitude to predict sun damage risk\u2014especially helpful for sensitive groups like children and the elderly. Built around our XIAO nRF52840 for BLE communication and AI inference, it uses an OLED display and microSD card for data visualization and logging. The goal? To warn users of harmful UV exposure before symptoms occur.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.hackster.io/kutluhan-aktar/ble-ai-driven-smartwatch-detecting-potential-sun-damage-7d08be"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.hackster.io/kutluhan-aktar/ble-ai-driven-smartwatch-detecting-potential-sun-damage-7d08be"
+  ]
+ },
+ {
+  "page": 40,
+  "category": "Wearables",
+  "variant": "XIAO SAMD21",
+  "title": "DIY LED Earrings Wearable Light-Up Accessory",
+  "author": "Alison Yang",
+  "keywords": [
+   "LED earrings",
+   "Wearable fashion"
+  ],
+  "intro": "These beginner-friendly earrings use the XIAO SAMD21 and WS2813 LEDs to create glowing, programmable accessories. Designed by Alison Yang and inspired by MakeFashion and Geek Mom Projects, each board features seven LEDs, pink string accents, and hidden power bank support. Programmed via Arduino IDE, the earrings showcase creative soldering and wearable flair\u2014ideal for parties, DIY showcases, and future upgrades like dynamic color effects.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/alison-yang/wearable-diy-led-earrings-dabca0"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/alison-yang/wearable-diy-led-earrings-dabca0"
+  ]
+ },
+ {
+  "page": 41,
+  "category": "Wearables",
+  "variant": "XIAO ESP32-C3",
+  "title": "DIY Digital Watch \u2013 Minimalist Timepiece",
+  "author": "Arnov Sharma",
+  "keywords": [
+   "DIY digital watch",
+   "Wearable tech"
+  ],
+  "intro": "This compact digital watch repurposes a vintage Casio frame using the XIAO ESP32-C3 and its expansion board, paired with a 0.96\u2033 OLED screen and RTC module for persistent timekeeping. Powered by a 100mAh LiPo battery and housed ina 3D-printed holder, it\u2019s lightweight, portable, and beginner-friendly. With built-in I2C integration and display libraries like Adafruit SSD1306 or u8g2, the project blends simplicity and reuse\u2014making it a great entry point for wearable tech enthusiasts.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/194960-diy-digital-watch-project"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/194960-diy-digital-watch-project"
+  ]
+ },
+ {
+  "page": 42,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-S3",
+  "title": "ARMOR: Egocentric Perception for Humanoid Robots",
+  "author": "Daehwa Kim , Mario Srouji, Chen Chen, and Jian Zhang",
+  "keywords": [
+   "Humanoid robotics",
+   "Egocentric depth sensing"
+  ],
+  "intro": "ARMOR is an innovative wearable sensor system for humanoid robots like the GR1, combining XIAO ESP32-S3 microcontrollers and SparkFun VL53L5CX ToF sensors to create a real-time egocentric depth sensing network. The sensors stream data to a Jetson Xavier NX, then to a high-performance Linux machine with RTX 4090, allowing a transformer- based policy (ARMOR-Policy) to generate safe, nimble trajectories.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2025/01/15/armor-egocentric-perception-for-humanoid-robot-powered-by-xiao-esp32s3/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2025/01/15/armor-egocentric-perception-for-humanoid-robot-powered-by-xiao-esp32s3/"
+  ]
+ },
+ {
+  "page": 43,
+  "category": "Robotics",
+  "variant": "XIAO nRF52840",
+  "title": "Zippy: World\u2019s Smallest Power-Autonomous Bipedal Robot",
+  "author": "Steven Man",
+  "keywords": [
+   "Humanoid robotics",
+   "Nutrition tracking"
+  ],
+  "intro": "It is the world\u2019s smallest power-autonomous bipedal robot, standing just 3.6 cm tall! Zippy packs high-speed agility, passive dynamic walking, and open- loop control \u2014 all powered by our XIAO nRF52840. With a single DC motor, 3D-printed limbs, and mechanical ingenuity, Zippy walks without sensors or complex feedback systems, making it ideal for micro- scale environments.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2025/05/23/zippy-the-worlds-smallest-power-autonomous-bipedal-robot-powered-by-xiao-nrf52840/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2025/05/23/zippy-the-worlds-smallest-power-autonomous-bipedal-robot-powered-by-xiao-nrf52840/"
+  ]
+ },
+ {
+  "page": 44,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "ESP-ROLL: Self-Balancing Spherical Ball Robot",
+  "author": "Max Imagination",
+  "keywords": [
+   "Spherical robot",
+   "FPV control"
+  ],
+  "intro": "ESP-ROLL is a 3D-printed, camera-equipped spherical robot that rolls smoothly across surfaces without wheels or balance sensors. Powered by the XIAO ESP32-S3 Sense, it integrates custom PCBs, LED lighting, and motion-triggered video recording, with real-time FPV control via Wi-Fi. Encased ina transparent ornament shell, this compact bot offers a playful, low-cost robotics experience\u2014perfect for makers exploring embedded vision and wireless control.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=VuBfRYNQgw0"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=VuBfRYNQgw0"
+  ]
+ },
+ {
+  "page": 45,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "Robotics XIAO ESP32-S3 Sense FPV Robot Car with XIAO ESP32-S3 Sense By Nickson Kiprotich Introductio",
+  "author": "Nickson Kiprotich",
+  "keywords": [
+   "FPV robot car",
+   "Wi-Fi control"
+  ],
+  "intro": "The FPV Robot Car is a remotely controlled car with live video streaming, powered by the XIAO ESP32-S3 Sense microcontroller. It features a motor driver, LED, and Wi-Fi antenna, operating as an access point for web-based joystick control and real-time video feed. Developed using Arduino IDE, the project blends robotics, AI, and IoT, with future plans for autonomous navigation and advanced sensors.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/tech_nickk/fpv-robot-car-with-xiao-esp32s3-sense-a3dd8a"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/tech_nickk/fpv-robot-car-with-xiao-esp32s3-sense-a3dd8a"
+  ]
+ },
+ {
+  "page": 46,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-C3",
+  "title": "ESP32-Powered 4x4 RC Rover Fully 3D Printed and Wi-Fi Controlled",
+  "author": "Gokul KB",
+  "keywords": [
+   "FPV robot car",
+   "Wi-Fi control"
+  ],
+  "intro": "This fully 3D-printed RC rover uses the XIAO ESP32-C3 to deliver true 4\u00d74 drive via four DC motors and a custom motor driver PCB. Operating as a Wi-Fi hotspot, it enables browser-based joystick control without external apps. A voltage booster enhances performance, while the compact design blends mechanical engineering and wireless electronics\u2014 making it a standout DIY build for robotics, RC, and IoT enthusiasts.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/ESP32-Powered-4x4-RC-Rover-Fully-3D-Printed-and-Wi/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/ESP32-Powered-4x4-RC-Rover-Fully-3D-Printed-and-Wi/"
+  ]
+ },
+ {
+  "page": 47,
+  "category": "Robotics",
+  "variant": "XIAO SAMD21",
+  "title": "SeeedStudio XIAO Expansion Board Ultrasonic Obstacle Avoidance Robot",
+  "author": "xuliang",
+  "keywords": [
+   "Obstacle avoidance robot",
+   "Autonomous movement"
+  ],
+  "intro": "This compact autonomous robot uses the SeeedStudio XIAO Expansion Board to control TT DC motors and a servo-mounted ultrasonic sensor for obstacle detection and avoidance. Built on a mini round chassis with a Grove-I2C Mini Motor Driver and powered by a rechargeable battery, it runs simple Arduino code to move, stop, retreat, and turn based on sensor input. Designed for beginners, it\u2019s a hands-on introduction to robotics and sensor-based navigation.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html",
+   "https://www.hackster.io/xlcoop0311/seeeduino-xiao-ultrasonic-obstacle-avoidance-robot-59bc3d"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html",
+   "https://www.hackster.io/xlcoop0311/seeeduino-xiao-ultrasonic-obstacle-avoidance-robot-59bc3d"
+  ]
+ },
+ {
+  "page": 48,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "Small Robot Car with Camera",
+  "author": "Just Do Electronics",
+  "keywords": [
+   "DIY robot car"
+  ],
+  "intro": "This beginner-friendly robot car uses the XIAO ESP32-S3 Sense to enable remote control and live video streaming. The tutorial guides users through hardware assembly, circuit wiring, and Arduino-based coding, with resources like schematics and a code link for easy replication. Designed for electronics enthusiasts, it blends robotics, embedded vision, and IoT\u2014making it a great entry point into remote-controlled systems.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=XsVgyg9ZOLs"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=XsVgyg9ZOLs"
+  ]
+ },
+ {
+  "page": 49,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "Gus: A Smart Robot Whose Eyes Indicate Your Room's Health",
+  "author": "Makestreme",
+  "keywords": [
+   "Air quality monitor",
+   "Environmental sensing"
+  ],
+  "intro": "Gus is a DIY smart robot that monitors air quality, temperature, and humidity using expressive OLED eyes that change based on environmental conditions. Powered by the XIAO ESP32-S3 Sense and built from foam board, Gus reacts visually\u2014 appearing sleepy when air quality is poor\u2014to encourage healthier surroundings. With integrated sensors, step-by-step instructions, wiring diagrams, and open-source code, it\u2019s a fun and educational project that blends electronics, coding, and fabrication into an interactive desktop companion.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/makestreme/gus-a-smart-robot-whose-eyes-indicate-your-room-s-health-2ee50c"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/makestreme/gus-a-smart-robot-whose-eyes-indicate-your-room-s-health-2ee50c"
+  ]
+ },
+ {
+  "page": 50,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-C3",
+  "title": "Assistant Based on Grove Vision AI Module V2",
+  "author": "Jaime Andres Rincon Arango",
+  "keywords": [
+   "Elderly health monitoring",
+   "AI rehabilitation assistant"
+  ],
+  "intro": "This AI-powered assistant supports physical rehabilitation and health monitoring for elderly users through edge computing and embedded machine learning. It recognizes objects, tracks human movement, and provides interactive exercise guidance using human pose detection and multi- class classification. With expressive OLED facial animations, servo-driven mobility, and cloud- connected analytics, the system offers a versatile, open-source companion for improving well-being through smart interaction and personalized tracking.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html\\",
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/jarain78/assistant-based-on-grove-vision-ai-module-v2-490f43"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html\\",
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/jarain78/assistant-based-on-grove-vision-ai-module-v2-490f43"
+  ]
+ },
+ {
+  "page": 51,
+  "category": "Robotics",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "Web Browser Operated Robot for Gas Leak Detection",
+  "author": "Ivan Arakistain",
+  "keywords": [
+   "Hydrogen gas detection",
+   "Environmental anomaly monitoring"
+  ],
+  "intro": "This remote-controlled robot repurposes an old hoverboard with BLDC motors and battery to detect hydrogen gas leaks using onboard sensors and Edge Impulse-based machine learning. Powered by the XIAO nRF52840 Sense and connected via Blues Wireless cellular modules, it analyzes air quality in real time and alerts users to anomalies. The project includes full schematics, firmware modification guides, and a web-based interface for live control and monitoring\u2014making it a robust DIY solution for environmental anomaly detection.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.hackster.io/ivan-arakistain/web-browser-operated-robot-for-gas-leak-detection-4cbe1b"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.hackster.io/ivan-arakistain/web-browser-operated-robot-for-gas-leak-detection-4cbe1b"
+  ]
+ },
+ {
+  "page": 52,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-S3",
+  "title": "DIY Mini FPV Tank",
+  "author": "techiesms",
+  "keywords": [
+   "FPV tank robot",
+   "Smartphone control"
+  ],
+  "intro": "This 3D-printed FPV tank uses the XIAO ESP32-S3 to deliver smartphone-controlled mobility and real-time video streaming via Wi-Fi. The tutorial walks users through chassis assembly, wiring, and programming, with resources including 3D design files, circuit diagrams, and Arduino-based code. Compact and camera-equipped, the tank offers an engaging entry point into remote-controlled robotics and embedded vision for DIY and IoT enthusiasts.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=tOGO_k2xXh0"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=tOGO_k2xXh0"
+  ]
+ },
+ {
+  "page": 53,
+  "category": "Robotics",
+  "variant": "XIAO RP2040",
+  "title": "Self-Balancing Robot",
+  "author": "Harshith Aradhya",
+  "keywords": [
+   "Motion stabilization",
+   "Embedded systems",
+   "Motor control"
+  ],
+  "intro": "This compact self-balancing robot uses the SeeedStudio XIAO RP2040 to demonstrate real-time stabilization, motor control, and sensor integration. Designed for DIY robotics enthusiasts, it maintains balance while moving using embedded techniques explored in the tutorial. With a short video showcasing its smooth motion dynamics, the project offers a hands-on introduction to embedded systems and control theory ina minimalist form factor.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.youtube.com/shorts/VdEH9P3MDsE"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.youtube.com/shorts/VdEH9P3MDsE"
+  ]
+ },
+ {
+  "page": 54,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "TN-24 V2.0: Emotionally Intelligent Desktop Robot",
+  "author": "Nickson Kiprotich",
+  "keywords": [
+   "Desktop companion",
+   "Human-robot interaction"
+  ],
+  "intro": "TN-24 V2.0 is a 3D-printed, OLED-faced desktop robot companion that reacts with emotion, wiggles when ignored, and can be remotely controlled through a browser interface. Originally made from cardboard, the new version features a sleek body and enhanced interactivity.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/tech_nickk/tn-24-v2-0-cute-desktop-companion-robot-44a472#toc-upcoming-updates-2"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/tech_nickk/tn-24-v2-0-cute-desktop-companion-robot-44a472#toc-upcoming-updates-2"
+  ]
+ },
+ {
+  "page": 55,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-S3",
+  "title": "XIAO Camera NanoTank",
+  "author": "moononournation",
+  "keywords": [
+   "FPV tank robot",
+   "DIY robotics"
+  ],
+  "intro": "This project showcases how to build a miniature tank powered by the XIAO ESP32-S3 and an external camera module. The robot offers Wi-Fi control and live video streaming capabilities. The tutorial includes detailed build instructions, part sourcing links, and a walkthrough for getting your tank up and running. A great starting point for anyone looking to explore remote-controlled vision robotics.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Camera-NanoTank/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Camera-NanoTank/"
+  ]
+ },
+ {
+  "page": 56,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "3D-Printed Screw-Propelled Robot with Video Feed",
+  "author": "Gokul KB",
+  "keywords": [
+   "Screw-propelled robot",
+   "Extreme terrain mobility"
+  ],
+  "intro": "Inspired by screw-propelled vehicles used in extreme terrain like swamps and snow, this fully 3D-printed design brings the concept to a hobbyist scale. Using minimal components, the robot is easy to build and doesn\u2019t rely on complex mechanics like ball bearings. The XIAO ESP32-S3 Sense handles wireless control and real-time video streaming, making it a perfect experiment for terrain exploration.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.instructables.com/3D-Printed-Screw-propelled-Robot-With-Video-Feed/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.instructables.com/3D-Printed-Screw-propelled-Robot-With-Video-Feed/"
+  ]
+ },
+ {
+  "page": 57,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-C3",
+  "title": "Mini Self-Balancing Robot",
+  "author": "Arnov Sharma",
+  "keywords": [
+   "DIY robotics",
+   "Motor control"
+  ],
+  "intro": "This compact self-balancing robot is built on a three- layer architecture: motor control, battery management, and sensing with the XIAO ESP32-C3. It integrates an MPU6050 gyro/accelerometer to maintain balance and uses a 3V gear motor powered by a 3.7V 2200mAh lithium cell with an IP5306 Boost Module. The project is still in development, but it\u2019s an excellent example of a minimalist balancing bot setup.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/mini-self-balancing-robot-64eec8"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/mini-self-balancing-robot-64eec8"
+  ]
+ },
+ {
+  "page": 58,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-C3",
+  "title": "Sumo-Style Hexapod Wrestling Robots",
+  "author": "Andrew Benson",
+  "keywords": [
+   "Hexapod sumo robots",
+   "Mechanical design"
+  ],
+  "intro": "This innovative project turns robotics into a game with affordable hexapod robots designed for sumo wrestling. The design emphasizes minimal components and an accessible BOM, making it ideal for beginners. Users can gain hands-on experience in mechanical design, electronics, and programming while engaging ina fun, competitive learning experience.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/190250-robo-roach-wrestling"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/190250-robo-roach-wrestling"
+  ]
+ },
+ {
+  "page": 59,
+  "category": "Robotics",
+  "variant": "XIAO RP2040",
+  "title": "Robotics XIAO RP 2 040 Radio-Controlled Cars By T aachimalKo Intr oduc tion: This RC car project hig",
+  "author": null,
+  "keywords": null,
+  "intro": "",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://jcomet.com/fusionpcb-pcba-rp2040-rccar/810/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://jcomet.com/fusionpcb-pcba-rp2040-rccar/810/"
+  ]
+ },
+ {
+  "page": 60,
+  "category": "Smart Home",
+  "variant": "XIAO RP2040",
+  "title": "Solar PV Monitoring System",
+  "author": "Pradeep",
+  "keywords": [
+   "Smart home",
+   "LoRa\u00ae wireless transmission"
+  ],
+  "intro": "This LoRa\u00ae-enabled solar monitoring system uses the XIAO RP2040 to collect photovoltaic data from a wattmeter, BH1750 light sensor, and Grove temperature/humidity sensor. Data is wirelessly transmitted via the Wio-E5 module and uploaded to the Qubitro cloud using a Notecard. Designed with Fusion PCBA, the project showcases a compact, low-power solution for clean energy tracking\u2014ideal for IoT developers exploring sustainable tech and remote sensing.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2023/06/20/elevating-solar-pv-monitoring-system-with-blues-qubitro-powered-by-seeed-wio-e5-module-and-fusion-pcba-service/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2023/06/20/elevating-solar-pv-monitoring-system-with-blues-qubitro-powered-by-seeed-wio-e5-module-and-fusion-pcba-service/"
+  ]
+ },
+ {
+  "page": 61,
+  "category": "Robotics",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "ESP-DIVE \u2014 DIY RC Submarine with FPV Camera",
+  "author": "Max Imagination",
+  "keywords": [
+   "FPV underwater camera",
+   "Waterproof electronics"
+  ],
+  "intro": "This open-source project showcases a fully functional RC submarine powered by the XIAO ESP32-S3 Sense. It features FPV video streaming, wireless charging, and motor control via DRV8833 and servo modules. The build integrates custom PCBs, waterproofing techniques, and a wide array of components including LiPo batteries, sensors, and 3D-printed parts. Designed for underwater exploration, it balances affordability, modularity, and creative engineering.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=d-2uSKn9rYs"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=d-2uSKn9rYs"
+  ]
+ },
+ {
+  "page": 62,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C3",
+  "title": "Dusk to Dawn Auto Night Lights",
+  "author": "drmpf",
+  "keywords": [
+   "BLE ambient light sensor",
+   "Smart home automation"
+  ],
+  "intro": "This smart lighting system uses a BLE ambient light sensor and BLE-to-BLE bridge to automatically switch lights on at dusk and off at dawn\u2014no internet, GPS, or time zone settings required. Powered by the XIAO ESP32-C3, it\u2019s demonstrated in two forms: a retrofit hallway switch and a battery-powered relay for lamps, both offering manual override and over 4 years of battery life. With schematics, setup instructions, and Arduino code included, it\u2019s a low-maintenance, privacy-friendly solution for reliable home automation.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Dusk-to-Dawn-Auto-Night-Lights-No-Internet-Connect/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Dusk-to-Dawn-Auto-Night-Lights-No-Internet-Connect/"
+  ]
+ },
+ {
+  "page": 63,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C3",
+  "title": "A Smart Lamp That Uses Sleep Cycles to Improve Sleep Quality",
+  "author": "Arpan Mondal",
+  "keywords": [
+   "Smart lamp",
+   "Simulated sunrise"
+  ],
+  "intro": "This health-focused smart lamp uses the XIAO ESP32-C3, IR proximity sensor, and WS2813 addressable LEDs to simulate a sunrise effect based on the user\u2019s sleep cycle. By estimating sleep onset, it calculates an optimal wake-up time and gradually brightens to align with natural rhythms. Featuring a foam board body with faux wood finish and a repurposed laptop diffuser for soft lighting, the project blends creative fabrication with embedded automation. Full 3D print files, wiring diagrams, and Arduino code make it an accessible build for DIYers exploring wellness tech and ambient design.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/A-Smart-Lamp-That-Wakes-You-Up-at-the-Optimal-Time/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/A-Smart-Lamp-That-Wakes-You-Up-at-the-Optimal-Time/"
+  ]
+ },
+ {
+  "page": 64,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C6",
+  "title": "AI-driven Sound & Thermal Image-based HVAC Fault Diagnosis",
+  "author": "Kutluhan Aktar",
+  "keywords": [
+   "HVAC fault detection",
+   "AIoT diagnostics"
+  ],
+  "intro": "This advanced AIoT system identifies faults in water- based HVAC setups using dual anomaly detection: thermal imaging and sound classification. Powered by a LattePanda Mu compute module and the XIAO ESP32-C6, it integrates the MLX90641 thermal camera, I2S MEMS microphone, and a custom CNC router for component scanning. Models trained via Edge Impulse enable detection of failing fans and thermal irregularities in cooling blocks. A dedicated web dashboard manages data flow, inference, and alerts\u2014delivering a robust, real-time diagnostic solution for industrial-grade HVAC systems.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.instructables.com/AI-driven-Sound-Thermal-Image-based-HVAC-Fault-Dia/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.instructables.com/AI-driven-Sound-Thermal-Image-based-HVAC-Fault-Dia/"
+  ]
+ },
+ {
+  "page": 65,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C6",
+  "title": "Hollow Clock V",
+  "author": "shiura",
+  "keywords": [
+   "Creative mechanical design",
+   "Crystal oscillator"
+  ],
+  "intro": "Hollow Clock V is a refined 3D-printed timepiece featuring a sleek 7mm-thin ring, ratchet-assisted timekeeping, and crystal oscillator precision powered by either RP2040 or XIAO ESP32-C6. It uses magnet- coupled hands, build plate texturing, and a tool-free slide-off ring for manual adjustment. A worm and bevel gear system driven by a 28BYJ-48 stepper motor delivers compact mechanical elegance. With detailed 3D files, Arduino code (including precompiled binaries), and clear assembly instructions, it\u2019s a rewarding build for makers exploring creative mechanical design and embedded precision.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Hollow-Clock-V/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Hollow-Clock-V/"
+  ]
+ },
+ {
+  "page": 66,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C3",
+  "title": "Hive Helper",
+  "author": "Timothy Lovett",
+  "keywords": [
+   "ePaper display",
+   "ESPHome integration"
+  ],
+  "intro": "Hive Helper is a custom PCB-based smart display featuring a 2.9\u2033 ePaper screen and multichannel gas and flame sensors, designed to integrate seamlessly with Home Assistant. Powered by the XIAO ESP32-C3 and housed ina sleek 3D-printed enclosure, it monitors temperature, humidity, and air quality with real-time feedback via ESPHome. With Grove I\u00b2C/ UART expansion ports and detailed setup instructions\u2014including wiring, enclosure design, and YAML config\u2014it\u2019s a reliable, elegant solution for enriching smart home dashboards with local environmental data.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/timo614/hive-helper-xiao-esp32c3-epaper-home-assistant-display-6583fc"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/timo614/hive-helper-xiao-esp32c3-epaper-home-assistant-display-6583fc"
+  ]
+ },
+ {
+  "page": 67,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "Static IP Address",
+  "author": "Pradeep",
+  "keywords": [
+   "Home Assistant integration",
+   "Web-based control"
+  ],
+  "intro": "This tutorial walks users through assigning a static IP address to the XIAO ESP32-S3 Sense, ensuring consistent access to hosted services and web interfaces on local networks. It covers how to extract current network parameters and modify the Arduino sketch to set static IP, gateway, subnet mask, and DNS. With integration tips for ESP32-CAM streaming, web-based control, and Home Assistant, the project is ideal for DIY smart home and IoT developers seeking dependable device connectivity.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/pradeeplogu0/static-ip-address-on-xiao-esp32-s3-sense-4b4bdb"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/pradeeplogu0/static-ip-address-on-xiao-esp32-s3-sense-4b4bdb"
+  ]
+ },
+ {
+  "page": 68,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-S3",
+  "title": "Sensing Environmental Conditions in My Garden",
+  "author": "Spencer and Yvonne",
+  "keywords": [
+   "Rooftop garden monitor",
+   "Datacake visualization"
+  ],
+  "intro": "This smart garden monitor uses the XIAO ESP32-S3, Grove SEN54, and Wio-E5 LoRa module to track soil moisture, air quality, temperature, and humidity ina rooftop setting. Data is transmitted via LoRaWAN to The Things Network and visualized on Datacake through webhook integration. With modular sensor expansion via an I\u00b2C hub and AT command-based LoRa configuration, the system offers scalable, low-power environmental monitoring. Developed during a personal internship, it reflects a hands-on commitment to enhancing urban gardening through real-time data insights.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.hackster.io/spenyan/sensing-environmental-conditions-in-my-garden-with-xiao-1fe6c7"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.hackster.io/spenyan/sensing-environmental-conditions-in-my-garden-with-xiao-1fe6c7"
+  ]
+ },
+ {
+  "page": 69,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C6",
+  "title": "DIY Zigbee Air Pressure Sensor",
+  "author": "Jason",
+  "keywords": [
+   "Zigbee Home Automation",
+   "Smart home sensing"
+  ],
+  "intro": "This smart atmospheric pressure monitor uses the XIAO ESP32-C6 and Grove BMP280 sensor to deliver live barometric readings and historical trend visualization via Home Assistant. Featuring a custom OLED UI and Zigbee Home Automation integration, the device offers reliable, local sensing with potential for future appliance automation based on pressure thresholds. The tutorial includes circuit diagrams, Arduino code, and Home Assistant configuration\u2014 making it a practical and elegant addition to any smart home setup.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.hackster.io/JasonFang/a-diy-zigbee-air-pressure-sensor-for-my-home-assistant-6215f1"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.hackster.io/JasonFang/a-diy-zigbee-air-pressure-sensor-for-my-home-assistant-6215f1"
+  ]
+ },
+ {
+  "page": 70,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C3",
+  "title": "Smart Room Heater Plug",
+  "author": "Arnov Sharma",
+  "keywords": [
+   "Wi-Fi control",
+   "mart heater"
+  ],
+  "intro": "This DIY smart plug transforms a conventional room heater into a Wi-Fi-enabled device using the XIAO ESP32-C3 and a custom AC relay driver board. Designed for both winter heating and summer cooling, it features a thermally durable 3D-printed enclosure, isolated 240V-to-5V power conversion, and a compact XIAO Relay Board with an AO3400 MOSFET. A web-based interface allows control from any device, while the tutorial covers PCB design, surface-mount soldering, plug-socket integration, and antenna placement\u2014making it a robust blueprint for practical home automation.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/smart-room-heater-plug-b0f7ad"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/smart-room-heater-plug-b0f7ad"
+  ]
+ },
+ {
+  "page": 71,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "Temperature Prediction using a TinyML LSTM model",
+  "author": "MJRoBot (Marcelo Rovai)",
+  "keywords": [
+   "TinyML temperature prediction",
+   "LSTM time-series model"
+  ],
+  "intro": "This project uses a TinyML LSTM model to forecast one-hour-ahead temperatures based on 14 years of historical weather data from Lo Barnechea, Chile. The data is preprocessed in Python, and the model is trained in TensorFlow, converted with TFLite, and deployed onto a XIAO ESP32-S3 using the Edge Impulse Python SDK. Emphasizing sequence learning for time-series data, the tutorial covers everything from data collection and model design to optimization, deployment, and inference testing\u2014 making it a compelling example of embedded AI for environmental forecasting.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/mjrobot/temperature-prediction-using-a-tinyml-lstm-model-264029"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/mjrobot/temperature-prediction-using-a-tinyml-lstm-model-264029"
+  ]
+ },
+ {
+  "page": 72,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C3",
+  "title": "Tiny Internet Clock",
+  "author": "Gokul KB",
+  "keywords": [
+   "NTP time sync",
+   "Wi-Fi timekeeping"
+  ],
+  "intro": "This beginner-friendly project builds a compact internet-connected clock using the XIAO ESP32-C3 and a 0.91\u2033 OLED display. It fetches real-time data from NTP servers over Wi-Fi and updates the time every second. Housed ina sleek 3D-printed enclosure designed in Fusion 360, the build includes step-by-step guidance on modeling, printing, wiring, and Arduino code setup\u2014covering Wi-Fi credentials, GMT offset, and display handling. It\u2019s a great introduction to embedded UI design and network-based timekeeping.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedbloghttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Gokux/tiny-internet-clock-134b22"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedbloghttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Gokux/tiny-internet-clock-134b22"
+  ]
+ },
+ {
+  "page": 73,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C6",
+  "title": "Programmable Mist Makers",
+  "author": "David Yang",
+  "keywords": [
+   "Ultrasonic mist maker",
+   "Recycled container"
+  ],
+  "intro": "This open-source project turns recycled containers and a custom PCB into a programmable ultrasonic mist maker using the XIAO ESP32-C6 and a piezoelectric disc. Developed for the Open Hardware Summit 2025, it showcases mist generation via high-frequency vibration and highlights key subsystems like tapped-inductor voltage amplification, PWM control, and safe battery or USB-powered operation. With detailed circuit design, prototyping steps, and custom Arduino libraries, it introduces mist as a novel medium for artistic expression, ambient effects, and IoT experimentation.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.hackster.io/dav1dyang/waste-into-wonder-making-programmable-mist-makers-fe3ae7"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.hackster.io/dav1dyang/waste-into-wonder-making-programmable-mist-makers-fe3ae7"
+  ]
+ },
+ {
+  "page": 74,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C3",
+  "title": "DIY Flap Clock",
+  "author": "drtonis",
+  "keywords": [
+   "Wi-Fi smart decor",
+   "Vestaboard,"
+  ],
+  "intro": "Inspired by the Vestaboard, this project features a Wi-Fi-connected mechanical flap display built using 3D-printed components, stepper motors, and wooden panels. The XIAO ESP32-C3 handles network connectivity and real-time updates, creating a unique smart display for home decor.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Yet-Another-Flap-Clock/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Yet-Another-Flap-Clock/"
+  ]
+ },
+ {
+  "page": 75,
+  "category": "Smart Home",
+  "variant": "XIAO SAMD21",
+  "title": "Home Automation Board",
+  "author": "Arnov Sharma",
+  "keywords": [
+   "Home automation",
+   "Isolated power supply"
+  ],
+  "intro": "This custom PCB-based home automation board uses a single SPDT relay, an isolated power supply, and XIAO SAMD21 to control smart loads. It supports all XIAO variants, including ESP32C3 and ESP32S3, and is ideal for modular and scalable smart home setups.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.instructables.com/XIAO-Home-Automation-Board/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.instructables.com/XIAO-Home-Automation-Board/"
+  ]
+ },
+ {
+  "page": 76,
+  "category": "Smart Home",
+  "variant": "XIAO SAMD21",
+  "title": "TachoStats PC Hardware Performance Monitor",
+  "author": "Tallman Labs",
+  "keywords": [
+   "Round display",
+   "Capacitive touch controller"
+  ],
+  "intro": "Built with the round display for XIAO and a capacitive touch controller, this stylish PC hardware monitor fits neatly into a 3D-printed enclosure. It\u2019s an elegant way to visualize real-time system stats on your desk.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://runawaybrainz.blogspot.com/2023/06/tachostats-pc-hardware-performance.html"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://runawaybrainz.blogspot.com/2023/06/tachostats-pc-hardware-performance.html"
+  ]
+ },
+ {
+  "page": 77,
+  "category": "Smart Home",
+  "variant": "XIAO SAMD21",
+  "title": "PhatStats PC Performance TFT Display",
+  "author": "Tallman Labs",
+  "keywords": [
+   "GPU performance monitor"
+  ],
+  "intro": "PhatStats is a smart monitor for GPU stats. It pulls data via serial from a PC and displays it on an ILI9341 TFT display. It\u2019s ideal for DIYers wanting custom dashboards on dedicated microcontroller displays.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/19018-phatstats-pc-performance-tft-display"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://hackaday.io/project/19018-phatstats-pc-performance-tft-display"
+  ]
+ },
+ {
+  "page": 78,
+  "category": "Smart Home",
+  "variant": "XIAO RP2040",
+  "title": "Gas/Smoke Detector, Alarm System With Real-Time Leakage Monitoring",
+  "author": "technolab creation",
+  "keywords": [
+   "DIY home safety",
+   "Gas leak detector"
+  ],
+  "intro": "This compact safety device leverages an MQ-02 gas sensor and the XIAO RP2040 to detect leaks and trigger alarms. It offers real-time monitoring ina small footprint, ideal for kitchens, garages, or workshops",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.technolabcreation.com/gas-smoke-detector-alarm-system-with-real-time-leakage-monitoring-using-seeed-studios-xiao-rp2040/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.technolabcreation.com/gas-smoke-detector-alarm-system-with-real-time-leakage-monitoring-using-seeed-studios-xiao-rp2040/"
+  ]
+ },
+ {
+  "page": 79,
+  "category": "Smart Home",
+  "variant": "XIAO SAMD21",
+  "title": "Room Temperature and Humidity Meter",
+  "author": "Arnov Sharma",
+  "keywords": [
+   "Portable environmental sensing",
+   "DIY electronics"
+  ],
+  "intro": "A room temperature and humidity meter that measures current room temperature and humidity and displays the readings on an SSD1306 OLED Screen. AHT10 is being used here to get the Temperature and humidity data, and the whole setup is driven by an XIAO SAMD21. This whole meter is powered through the onboard 18650 lithium Cell through a power management IC Setup that boosts the 3.7V of the lithium Cell to 5V for the MCU, display, and sensor to work.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.instructables.com/XIAO-Room-TEMP-and-HUMIDITY-Meter/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.instructables.com/XIAO-Room-TEMP-and-HUMIDITY-Meter/"
+  ]
+ },
+ {
+  "page": 80,
+  "category": "Smart Home",
+  "variant": "XIAO SAMD21",
+  "title": "6-Channel Temperature Meter",
+  "author": "Gokul KB",
+  "keywords": [
+   "Temperature monitor"
+  ],
+  "intro": "Designed as a cost-effective thermal camera alternative, this monitor uses NTC thermistors and an OLED to display temperatures from six different points\u2014perfect for labs or experimental setups.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.instructables.com/6-Channel-Temperature-Meter/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.instructables.com/6-Channel-Temperature-Meter/"
+  ]
+ },
+ {
+  "page": 81,
+  "category": "Smart Home",
+  "variant": "XIAO SAMD21",
+  "title": "XIAO Power Meter with INA219",
+  "author": "Gokul KB",
+  "keywords": [
+   "Energy monitoring",
+   "LED Lights"
+  ],
+  "intro": "This micro power meter uses the INA219 sensor to measure current and voltage over I2C. The XIAO\u2019s size and simplicity make it ideal for embedding in low- power, high-accuracy monitoring setups.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Gokux/xiao-power-meter-with-ina219-e9815f"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Gokux/xiao-power-meter-with-ina219-e9815f"
+  ]
+ },
+ {
+  "page": 82,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C6",
+  "title": "Automate Lighting Using Relay and Zigbee",
+  "author": "Keliang Zhang",
+  "keywords": [
+   "Zigbee lighting control",
+   "Home Assistant integration"
+  ],
+  "intro": "Add seamless Zigbee lighting control to your smart home with this sleek setup powered by the XIAO ESP32-C6. Paired with a Grove relay and integrated into Home Assistant, it lets you wirelessly toggle an LED strip from your browser. Housed ina custom 3D- printed enclosure and optimized for low power consumption, this compact build blends smart functionality with modern DIY design.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.hackster.io/1184665829/automate-lighting-with-xiao-esp32c6-using-relay-and-zigbee-1d0688"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.hackster.io/1184665829/automate-lighting-with-xiao-esp32c6-using-relay-and-zigbee-1d0688"
+  ]
+ },
+ {
+  "page": 83,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-C6",
+  "title": "Easy DIY Zigbee Smart Air Monitor",
+  "author": "Jason",
+  "keywords": [
+   "Zigbee air monitor",
+   "OLED display"
+  ],
+  "intro": "Monitor your indoor air like a pro with this DIY Zigbee Smart Air Monitor powered by the XIAO ESP32-C6. Packed into a stylish robot-inspired shell, it tracks CO\u2082 and TVOC levels using the Grove SGP30 sensor and seamlessly integrates with Home Assistant for real-time and historical data display. With low power consumption, sleek OLED readouts, and a custom PCB, it\u2019s an ideal project for smart home enthusiasts who value both function and aesthetics.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.hackster.io/JasonFang/easy-diy-zigbee-smart-air-monitor-with-xiao-esp32c6-8e14d0"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.hackster.io/JasonFang/easy-diy-zigbee-smart-air-monitor-with-xiao-esp32c6-8e14d0"
+  ]
+ },
+ {
+  "page": 84,
+  "category": "Smart Home",
+  "variant": "XIAO ESP32-S3",
+  "title": "Home Automation Shield",
+  "author": "Arnov Sharma",
+  "keywords": [
+   "Web interface",
+   "Smart home DIY"
+  ],
+  "intro": "Control your home appliances like a pro with this dual-relay automation shield built for the Seeed XIAO ESP32 C3/S3. Featuring onboard AC-to-DC power conversion, Wi-Fi connectivity, and an intuitive web interface, it allows you to toggle two AC or DC devices straight from your browser. With custom PCBs, a compact 3D-printed stand, and support for both SMD and THT components, it\u2019s a robust DIY solution for smart living.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/xiao-esp32-home-automation-shield-7c568e"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/xiao-esp32-home-automation-shield-7c568e"
+  ]
+ },
+ {
+  "page": 85,
+  "category": "Health",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "Internet Connected Patient Monitoring with Cellular IoT",
+  "author": "Arun Varghese",
+  "keywords": [
+   "Blues Notecard",
+   "TinyML"
+  ],
+  "intro": "This advanced patient monitoring system combines an STM32 microcontroller with SpO\u2082, ECG, and temperature sensors to transmit real-time vitals via cellular IoT. A finger probe powered by the XIAO nRF52840 Sense runs a TinyML model for motion anomaly detection, enabling gesture-based alerts. With RTOS for stable operation and a Blues Notecard for secure cloud transmission to KaaIoT and visualization via Notehub, the system supports remote decision-making and nurse assistance\u2014 making it a powerful prototype for connected healthcare.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.hackster.io/arunvarghese/internet-connected-patient-monitoring-with-cellular-iot-059500?f=1"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.hackster.io/arunvarghese/internet-connected-patient-monitoring-with-cellular-iot-059500?f=1"
+  ]
+ },
+ {
+  "page": 86,
+  "category": "Health",
+  "variant": "XIAO ESP32-C3",
+  "title": "MotionSpike: Wearable Game-Controlled",
+  "author": "TECH TRONICS",
+  "keywords": [
+   "Real-time activity feedback",
+   "Fitness & therapy tech"
+  ],
+  "intro": "MotionSpike is a dual-player wearable system that merges movement-based gameplay with biometric tracking for fitness, therapy, and education. Each wristband uses MPU6050 and MAX30102 sensors to collect motion, heart rate, and SpO\u2082 data, transmitting it via UDP Wi-Fi to an ESP32 hub for dashboard visualization and game interaction. Housed in custom 3D-printed enclosures and powered by Python-based gesture detection, the system delivers real-time feedback and supports interactive rehabilitation and activity-based learning.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/MOTION-SPIKE/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/MOTION-SPIKE/"
+  ]
+ },
+ {
+  "page": 87,
+  "category": "Health",
+  "variant": "XIAO MG24 Sense",
+  "title": "Spira \u2014 a Pocket-Friendly Spirometer",
+  "author": "Jaagrav \u200e \u200e \u200e \u200e \u200e \u200e \u200e Seal",
+  "keywords": [
+   "Lung exercise tracker",
+   "SwiftUI iOS app"
+  ],
+  "intro": "Spira is a compact, smart spirometer designed to help users consistently exercise their lungs. Built around the XIAO MG24 Sense and a differential pressure sensor (MPX10DP), it features a custom 3D- printed casing for portability, a low-pass filter to reduce ADC noise, and a power circuit that supports battery charging even when powered off. A companion SwiftUI iOS app (in development) will offer BLE connectivity, reminders, and gamified breathing exercises\u2014making Spira a sleek and functional wellness tool for respiratory health.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-MG24-Sense-p-6248.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Spira-a-Pocket-Friendly-Spirometer/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-MG24-Sense-p-6248.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Spira-a-Pocket-Friendly-Spirometer/"
+  ]
+ },
+ {
+  "page": 88,
+  "category": "Health",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "Servo Shoulder Support (Partial Exoskeleton)",
+  "author": "Markus Opitz",
+  "keywords": [
+   "Shoulder exoskeleton",
+   "Elderly mobility aid"
+  ],
+  "intro": "This wearable exoskeleton helps elderly users with limited shoulder mobility by interpreting hand movements via a BLE-enabled wrist unit powered by the XIAO nRF52840 Sense. A 40kg servo lifts the arm through a fully 3D-printed mechanical structure featuring a ball bearing-supported servo arm and adjustable neck brace. The ESP32-based main control unit, equipped with dual buck converters, manages power delivery from an 18V battery pack. Designed for autonomous wearing, the system offers practical movement support through modular assembly of the servo, hinge, shoulder rest, and battery case.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Servo-Shoulder-Support-Partial-Exoskeleton/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Servo-Shoulder-Support-Partial-Exoskeleton/"
+  ]
+ },
+ {
+  "page": 89,
+  "category": "Health",
+  "variant": "XIAO SAMD21",
+  "title": "Robot Arm, Like a Doctor",
+  "author": "Jaime Andres Rincon Arango",
+  "keywords": [
+   "Robotic medical check-up",
+   "myPalletizer arm"
+  ],
+  "intro": "This proof-of-concept project integrates the myPalletizer robotic arm with biosignal monitoring tools to enable remote medical check-ups. Using pre-programmed movements, the arm captures PPG and phonocardiography signals via a heart rate sensor and a modified digital stethoscope, both powered by XIAO microcontrollers. Data is visualized on there Terminal and securely stored in AWS DynamoDB for remote access and analysis. A PyBullet-based teleoperation simulator showcases future remote control capabilities, laying the foundation for autonomous eHealth systems with planned ECG and blood pressure integration.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/jarain78/robot-arm-like-a-doctor-027156"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/jarain78/robot-arm-like-a-doctor-027156"
+  ]
+ },
+ {
+  "page": 90,
+  "category": "Health",
+  "variant": "XIAO ESP32-C3",
+  "title": "Portable Weighing Scale with Battery Indicator",
+  "author": "vinay y.n",
+  "keywords": [
+   "OLED display",
+   "Load cell swapping"
+  ],
+  "intro": "This compact digital weighing scale combines the HX711 load cell amplifier and BQ27441 fuel gauge to deliver precise weight readings and real-time battery status on a 0.91\u2033 OLED screen. Powered by the XIAO ESP32-C3\u2019s internal charging system, it eliminates external circuitry while enabling BLE/Wi-Fi expansion. The custom PCB supports easy load cell swapping for different weight ranges and integrates charging, switching, and status indicators\u2014making it a versatile, portable tool for makers and field use. Step-by-step instructions guide users through PCB design, calibration, and Arduino code setup.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/vinayyn/xiao-esp32c3-portable-weighing-scale-battery-level-indicator-f62847"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/vinayyn/xiao-esp32c3-portable-weighing-scale-battery-level-indicator-f62847"
+  ]
+ },
+ {
+  "page": 91,
+  "category": "Health",
+  "variant": "XIAO SAMD21",
+  "title": "SeeedStudio XIAO Expansion Board \u2013 Heart Rate",
+  "author": "SeeedStudio",
+  "keywords": [
+   "DIY health electronics",
+   "Heart rate monitor"
+  ],
+  "intro": "This beginner-friendly heart rate monitor uses the SeeedStudio XIAO Expansion Board and its expansion board to measure pulse via a Grove finger- clip sensor. With an I\u00b2C interface for minimal wiring and an SSD1306 OLED screen driven by the U8g2 library, it displays BPM values in real time. Built using the Arduino IDE, the project includes clear instructions for hardware setup, library installation, and working code\u2014making it an ideal entry point for health-focused DIY electronics and sensor integration.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/SeeedStudio/seeeduino-xiao-expansion-board-heart-rate-830983"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/SeeedStudio/seeeduino-xiao-expansion-board-heart-rate-830983"
+  ]
+ },
+ {
+  "page": 92,
+  "category": "Health",
+  "variant": "XIAO SAMD21",
+  "title": "Assistant Based On Grove Vision AI Module V2",
+  "author": "Jaime Andres Rincon Arango",
+  "keywords": [
+   "Human pose detection",
+   "Companion rehab robot"
+  ],
+  "intro": "This compact companion robot leverages Edge AI and human pose detection to support elderly users with physical rehabilitation and health tracking. Built around the Grove Vision AI V2 and XIAO SAMD21, it controls 12 servo motors for expressive movement, displays animated feedback on an OLED screen, and classifies hand gestures and exercises using a trained ML model. Data is processed locally or transmitted via ESP32 to a cloud server for further analysis. The system also enables gesture detection, food/object recognition, and remote model updates via a Flask- based web server and Intel Neural Compute Sticks\u2014 making it a versatile platform for autonomous eHealth applications.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/jarain78/assistant-based-on-grove-vision-ai-module-v2-490f43"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/jarain78/assistant-based-on-grove-vision-ai-module-v2-490f43"
+  ]
+ },
+ {
+  "page": 93,
+  "category": "Health",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "Personal Trainer Using TinyML",
+  "author": "Ricardo Magno",
+  "keywords": [
+   "TinyML personal trainer",
+   "Real-time fitness feedback"
+  ],
+  "intro": "This wearable fitness tracker uses a dumbbell- mounted XIAO nRF52840 Sense with built-in IMU to identify gym exercises like biceps curls, bench presses, and lateral raises. Motion data is transmitted viaBLE to an Android app and processed using a Dense Neural Network trained through Edge Impulse, achieving ~85% classification accuracy. Housed ina 3D-printed case with battery support, the system offers real-time exercise visualization and feedback\u2014making it a powerful tool for smart workouts, form tracking, and personalized training.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.hackster.io/ricardomdcj/developing-a-personal-trainer-using-tinyml-172001"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.hackster.io/ricardomdcj/developing-a-personal-trainer-using-tinyml-172001"
+  ]
+ },
+ {
+  "page": 94,
+  "category": "Health",
+  "variant": "XIAO SAMD21",
+  "title": "Cyberpunk Mask",
+  "author": "r Lintey",
+  "keywords": [
+   "RGB lighting control",
+   "Servo-actuated vents"
+  ],
+  "intro": "This DIY wearable merges futuristic aesthetics with functional air quality monitoring, built into a modified 3M mask. Powered by a XIAO microcontroller, it uses a Grove air sensor to detect pollution levels and dynamically adjusts RGB lighting, servo-actuated vents, and a fan for responsive airflow control. A relay and servo system open/close vents based on sensor input, while a laser-cut enclosure houses the electronics. Running on custom Arduino code, the mask delivers real-time feedback through color-coded alerts\u2014making it a striking blend of style and environmental awareness.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/linterislinter/cyberpunk-mask-77e7a9"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/linterislinter/cyberpunk-mask-77e7a9"
+  ]
+ },
+ {
+  "page": 95,
+  "category": "Health",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "AI Microscope for Real-Time Sample Analysis",
+  "author": "techiesms",
+  "keywords": [
+   "Blood cell & microplastic analysis",
+   "IoT diagnostics"
+  ],
+  "intro": "This open-source AI microscope combines the XIAO ESP32-S3 Sense with real-time image recognition to create a compact, low-cost diagnostic tool. Designed by OpenUC2 and Seeed Studio, it can analyze blood cells, microplastics, and biological samples using embedded AI inference. Its modular architecture supports customization and upgrades, making it ideal for classrooms, makerspaces, and research labs. By merging IoT and computer vision, the project showcases how accessible hardware can democratize scientific imaging and empower hands-on learning in diagnostics and microscopy.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=HbGUlDN49r8&ab_channel=techiesms"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=HbGUlDN49r8&ab_channel=techiesms"
+  ]
+ },
+ {
+  "page": 96,
+  "category": "Health",
+  "variant": "XIAO nRF52840",
+  "title": "Wireless Heartbeat Monitor",
+  "author": "Tiago Santos",
+  "keywords": [
+   "OLED BPM display",
+   "Fitness tracking"
+  ],
+  "intro": "This wearable heart rate monitor uses the XIAO nRF52840 and a pulse sensor to collect heartbeat data and transmit it wirelessly via Bluetooth. Designed for fitness tracking and sleep monitoring, it sends real-time BPM readings to a nearby receiver with an OLED display. Its compact form factor and BLE connectivity make it ideal for low-power, on- body health applications, offering a simple yet effective solution for continuous heart health awareness.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Hearbeat-Monitor-With-XIAO-NRF52840/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Hearbeat-Monitor-With-XIAO-NRF52840/"
+  ]
+ },
+ {
+  "page": 97,
+  "category": "Health",
+  "variant": "XIAO SAMD21",
+  "title": "Blood Oxygen & Heart Rate Meter",
+  "author": "John Bradnam",
+  "keywords": [
+   "Pulse oximeter sensor",
+   "OLED display"
+  ],
+  "intro": "Using a pulse oximeter sensor, OLED display, and the XIAO SAMD21, this non-invasive device measures both SpO\u2082 and heart rate to monitor overall health. It\u2019s ideal for respiratory tracking, exercise recovery, or early illness detection. A mobile app syncs with the device for remote viewing and data logging. This compact tool is a great example of accessible, real-time health monitoring.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/john-bradnam/blood-oxygen-heart-rate-meter-c9089d"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/john-bradnam/blood-oxygen-heart-rate-meter-c9089d"
+  ]
+ },
+ {
+  "page": 98,
+  "category": null,
+  "variant": "XIAO ESP32-C6",
+  "title": "XIAO 2-Channel Wi-Fi AC Energy Meter",
+  "author": "CNX Software",
+  "keywords": [
+   "ESPHome integration",
+   "DIY power monitoring"
+  ],
+  "intro": "The XIAO 2-Channel Wi-Fi AC Energy Meter (XIAO-2CH-EM) is a pre-calibrated, plug-and-play solution for accurate AC energy monitoring. Built around the XIAO ESP32-C6, it uses non-invasive CT clamps to track bi-directional current flow\u2014ideal for EV charging, solar generation, or whole-home usage. With built-in ESPHome support, real-time telemetry, and Home Assistant auto-discovery, it delivers up to 40A current tracking without rewiring. STL files for its enclosure and open-source configs make it highly customizable, offering a reliable alternative to DIY ESP32+PZEM setups or cloud-dependent power rings.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.cnx-software.com/2025/06/06/seeed-studio-xiao-2ch-em-review-2-channel-wi-fi-ac-energy-meter-two-ct-clamps-esphome/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html?utm_source=Seeedblog",
+   "https://www.cnx-software.com/2025/06/06/seeed-studio-xiao-2ch-em-review-2-channel-wi-fi-ac-energy-meter-two-ct-clamps-esphome/"
+  ]
+ },
+ {
+  "page": 99,
+  "category": null,
+  "variant": "XIAO ESP32-C3",
+  "title": "SeeedStudio 2-Channel Wi-Fi AC Relay",
+  "author": "CNX Software",
+  "keywords": [
+   "ESPHome pre-flashed",
+   "Home Assistant integration"
+  ],
+  "intro": "The SeeedStudio 2-Channel Wi-Fi AC Relay is a no- code smart switch designed for seamless Home Assistant integration via ESPHome. Featuring two independently controllable AC channels and built-in power metering, it comes pre-flashed for instant setup. Ina hands-on review by CNX Software, the device was tested for smart light automation using an Aqara Cube and praised for its reliable dual relay operation, OTA update support, and intuitive web dashboard. While it lacks per-channel energy tracking, its all-in-one design and native Wi-Fi connectivity make it a robust, ready-to-use solution for smart home control.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.cnx-software.com/2025/01/26/seeed-studio-2-channel-wi-fi-ac-relay-review-an-esphome-smart-switch-with-power-meter-function/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.cnx-software.com/2025/01/26/seeed-studio-2-channel-wi-fi-ac-relay-review-an-esphome-smart-switch-with-power-meter-function/"
+  ]
+ },
+ {
+  "page": 100,
+  "category": null,
+  "variant": "XIAO ESP32-C3",
+  "title": "Solar Power Gauge",
+  "author": "Ben Krejci",
+  "keywords": [
+   "Solar output dial",
+   "Home Assistant integration"
+  ],
+  "intro": "This project builds a real-time solar output dial using an automotive stepper gauge, XIAO ESP32-C3, and L293D H-Bridge Driver. It shows current kW generation ina custom 3D-printed enclosure, calibrated via ESPHome with a reset script to combat motor drift. The tutorial offers printable files, config setup, and Home Assistant integration, ideal for smart energy monitoring.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.benkrejci.com/post/Solar-Power-Gauge:6"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.benkrejci.com/post/Solar-Power-Gauge:6"
+  ]
+ },
+ {
+  "page": 101,
+  "category": null,
+  "variant": "XIAO ESP32-C3",
+  "title": "Solar Charge Controller",
+  "author": "Dieter",
+  "keywords": [
+   "Solar charge controller",
+   "Smart energy management"
+  ],
+  "intro": "An open-source upgrade to traditional PWM charge controllers, this solar charge controller features dual synchronous buck converters for high-efficiency power handling. It supports input voltages up to 90V and displays performance metrics on a 128\u00d764 OLED screen. The XIAO ESP32-C3 handles data acquisition and control logic, making the design ideal for custom solar systems.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/dieter15/diy-mppt-eb0fe3"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/dieter15/diy-mppt-eb0fe3"
+  ]
+ },
+ {
+  "page": 102,
+  "category": null,
+  "variant": "XIAO ESP32-C3",
+  "title": "DIY Solar Panel Monitoring System",
+  "author": "Open Green Energy",
+  "keywords": [
+   "Solar PV monitoring",
+   "DIY solution"
+  ],
+  "intro": "Monitor your solar PV system with this versatile DIY solution. It tracks voltage, current, temperature, and energy generation, helping optimize output and detect system inefficiencies. The XIAO ESP32-C3 enables real-time data collection and transmission, while Grove sensors simplify environmental input monitoring. Ideal for beginners and solar enthusiasts alike.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.opengreenenergy.com/solar-panel-monitoring-system-v2/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.opengreenenergy.com/solar-panel-monitoring-system-v2/"
+  ]
+ },
+ {
+  "page": 103,
+  "category": null,
+  "variant": "XIAO ESP32-S3",
+  "title": "Li-ion Cell Charger",
+  "author": "Arnov Sharma",
+  "keywords": [
+   "USB power output",
+   "Real-time voltage monitoring"
+  ],
+  "intro": "This DIY Li-ion charging system combines the TP4056 charging IC with the XIAO ESP32-S3 to monitor battery voltage in real time via an SSD1306 OLED screen. A voltage divider circuit enables analog pin readings, while a DC-DC buck converter delivers a stable 5V output from a 12V input. The custom PCB supports a standard 18650 battery holder, manual power switching, and USB ports for powering external devices. With step-by-step instructions covering PCB fabrication, 3D-printed housing, and voltage calculations, the project offers a compact, functional solution for battery management and portable power delivery.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Li-ion-Cell-Charger-With-TP4056-and-XIAO-ESP32S3/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.instructables.com/Li-ion-Cell-Charger-With-TP4056-and-XIAO-ESP32S3/"
+  ]
+ },
+ {
+  "page": 104,
+  "category": null,
+  "variant": "XIAO ESP32-C3",
+  "title": "DIY Smart Multipurpose Battery Tester",
+  "author": "Open Green Energy",
+  "keywords": [
+   "OLED display",
+   "Current sensing circuit"
+  ],
+  "intro": "This compact battery tester uses the XIAO ESP32-C3 to charge, discharge, and analyze lithium-ion cells, including internal resistance testing. It features a dedicated charging circuit, current sensing, OLED display, and a standard battery holder\u2014all housed ina custom PCB. With four testing modes and remote monitoring via Wi-Fi, the system provides real-time insights into battery health and capacity. The tutorial covers PCB assembly, firmware programming, and safety precautions, making it a practical tool for makers, repair technicians, and energy enthusiasts.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/DIY-Smart-Multipurpose-Battery-Tester/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.instructables.com/DIY-Smart-Multipurpose-Battery-Tester/"
+  ]
+ },
+ {
+  "page": 105,
+  "category": "AI",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "Real-Life Pok\u00e9dex with AI Voice & Vision Recognition",
+  "author": "abe's projects",
+  "keywords": [
+   "AI voice cloning",
+   "Computer vision"
+  ],
+  "intro": "This imaginative build turns a childhood fantasy into a working gadget by combining computer vision, AI voice cloning, and custom 3D printing. Powered by the XIAO ESP32-S3 Sense, the device uses its onboard camera to identify physical Pok\u00e9mon toys and responds with synthesized narration in classic Pok\u00e9dex style. The project showcases embedded AI\u2019s potential for interactive storytelling and nostalgic tech, blending real-time inference with playful design. While not flawless, it\u2019s a standout example of how microcontrollers can bring fictional interfaces to life.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=wVcerPofkE0"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=wVcerPofkE0"
+  ]
+ },
+ {
+  "page": 106,
+  "category": "AI",
+  "variant": "XIAO ESP32-S3",
+  "title": "AI Study Lamp That Helps You Reduce Distractions",
+  "author": "Arpan Mondal",
+  "keywords": [
+   "Grove Vision AI module",
+   "Smartphone distraction detection"
+  ],
+  "intro": "This smart study lamp uses a Grove Vision AI module trained to detect smartphones, helping users stay focused by reacting to distractions in real time. When a phone enters the camera\u2019s view, the lamp shifts from warm white to deep red using a WS2812B LED strip\u2014signaling the user to refocus. Controlled by a XIAO ESP32-S3, the system reverts to warm lighting once the distraction is removed. The build includes step-by-step guidance for AI model training, Arduino programming, LED integration, and custom lamp assembly, making it a creative blend of ambient tech and behavioral nudging.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.instructables.com/AI-Study-Lamp-Helps-Reduce-Distractions/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.instructables.com/AI-Study-Lamp-Helps-Reduce-Distractions/"
+  ]
+ },
+ {
+  "page": 107,
+  "category": "AI",
+  "variant": "XIAO ESP32-C3",
+  "title": "The Ultimate Cheating Device",
+  "author": "ChromaLock",
+  "keywords": [
+   "ChatGPT integration",
+   "DIY electronics"
+  ],
+  "intro": "This satirical DIY mod transforms a standard TI-84 calculator into a covert test-day assistant by embedding a XIAO ESP32-C3 microcontroller and connecting it to the internet. Dubbed the \u201cTI-32,\u201d the project bypasses anti-cheating mechanisms and enables access to AI tools like ChatGPT, turning the calculator into a stealthy knowledge hub. It showcases bold hardware hacking, microcontroller integration, and ethical gray zones in academic tech. While not intended for real-world use, it creatively explores the boundaries of embedded connectivity and the risks of modifying everyday tools for unintended purposes.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://github.com/chromalock/TI-32"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://github.com/chromalock/TI-32"
+  ]
+ },
+ {
+  "page": 108,
+  "category": "AI",
+  "variant": "XIAO ESP32-C3",
+  "title": "Skulls \u2014 Composing Music with Computer Vision",
+  "author": "Lucidbeaming",
+  "keywords": [
+   "Generative music with AI",
+   "MQTT communication"
+  ],
+  "intro": "This experimental build turns object recognition into generative sound by identifying plastic skulls and teeth using a custom-trained YOLOv5 model on the Grove Vision AI Module V2. Controlled by a XIAO ESP32-C3 and communicating via MQTT to a Raspberry Pi running FluidSynth, the system triggers musical responses based on visual input. The AI model was trained on 176 manually processed images, with annotation and conversion handled through Roboflow and Google Colab. Despite documentation hurdles, the project highlights the expressive potential of embedded vision and sound synthesis in human-machine artistic interfaces.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://lucidbeaming.com/blog/skulls-composing-music-with-computer-vision-and-a-custom-yolo5-ai-model/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://lucidbeaming.com/blog/skulls-composing-music-with-computer-vision-and-a-custom-yolo5-ai-model/"
+  ]
+ },
+ {
+  "page": 109,
+  "category": "AI",
+  "variant": "XIAO RP2040",
+  "title": "Transferscope \u2014 Real-World Textures for Instant AI Image Generation",
+  "author": "Christopher Pietsch",
+  "keywords": [
+   "Real-world texture capture"
+  ],
+  "intro": "Transferscope is a handheld creative tool that captures real-world textures and instantly transforms them into new images using Stable Diffusion. Built with a Raspberry Pi Zero 2, HyperPixel screen, and a single-button XIAO RP2040 controller, it offers tactile AI prompting without complex inputs. The device detects edges, sends visual data to a GPU server, and uses Kosmos-2 for interpretation and Stable Diffusion for image generation\u2014all within seconds. Encased ina custom 3D-printed shell with a camera and Li-ion battery, it\u2019s designed for spontaneity and artistic exploration. Planned upgrades include haptics, accelerometers, and a metal enclosure for enhanced interaction.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/07/25/transferscope-using-gen-ai-and-xiao-rp2040-to-transform-real-world-images/?srsltid=AfmBOooZmbJ-U0OpMtbpsRartTOxy46qhkTxJg1iESjDc0d4eX6cYrXe"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/07/25/transferscope-using-gen-ai-and-xiao-rp2040-to-transform-real-world-images/?srsltid=AfmBOooZmbJ-U0OpMtbpsRartTOxy46qhkTxJg1iESjDc0d4eX6cYrXe"
+  ]
+ },
+ {
+  "page": 110,
+  "category": "AI",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "AI Candy Dispenser",
+  "author": "Bruno Santos",
+  "keywords": [
+   "Sentiment analysis",
+   "Whisper transcription"
+  ],
+  "intro": "This playful build turns speech into sweets using voice recognition and sentiment analysis. Powered by the XIAO ESP32-S3 Sense and a XIAO Round Display, the device records a 5-second phrase and sends it to a remote server for transcription via Whisper and classification via BART-MNLI. If the sentiment is positive about candy, the dispenser activates. Housed ina 3D-printed shell, the system runs on Arduino code and supports Docker-based deployment for both GPU and CPU setups. It\u2019s a whimsical showcase of embedded AI, combining voice, vision, and reward logic ina delightfully interactive form.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://github.com/feiticeir0/ai-candy-dispenser"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://github.com/feiticeir0/ai-candy-dispenser"
+  ]
+ },
+ {
+  "page": 111,
+  "category": "AI",
+  "variant": "XIAO ESP32-S3",
+  "title": "AI Gadget XIAO ESP 3 2 - S 3 MiniMe \u2014 ChatGPT-Powered Digital Doppelg\u00e4n ger By Michael Merrifield In",
+  "author": null,
+  "keywords": null,
+  "intro": "",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2025/04/10/minime-a-chatgpt-powered-digital-doppelganger-in-a-tiny-box-powered-by-xiao-esp32-s3/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2025/04/10/minime-a-chatgpt-powered-digital-doppelganger-in-a-tiny-box-powered-by-xiao-esp32-s3/"
+  ]
+ },
+ {
+  "page": 112,
+  "category": "AI",
+  "variant": "XIAO ESP32-C3",
+  "title": "ADeus \u2014 Open Source Personal AI Companion",
+  "author": "Adam Cohen Hillel",
+  "keywords": [
+   "Supabase secure storage",
+   "Context-aware responses"
+  ],
+  "intro": "ADeus is a privacy-focused AI companion that captures voice input via a wearable device and delivers context-aware responses through a mobile or web app. Built around the XIAO ESP32-C3 and INMP441 microphone, it stores transcripts securely using Supabase, an open-source Firebase alternative. The assistant runs personalized interactions with large language models while ensuring full user control over data. Hardware setup involves soldering a mic and battery to the XIAO board, with firmware configured via ESP-IDF and Arduino. ADeus supports builds on ESP32C3, Coral AI, and Raspberry Pi Zero W, offering a modular, open-source platform for ethical AI wearables.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/06/03/build-a-100-open-source-personal-ai-companion-adeus-with-xiao-esp32c3/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/blog/2024/06/03/build-a-100-open-source-personal-ai-companion-adeus-with-xiao-esp32c3/"
+  ]
+ },
+ {
+  "page": 113,
+  "category": "AI",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "Dual AI Camera Hummingbird Detection and Capture",
+  "author": "Ralph Yamamoto",
+  "keywords": [
+   "SenseCraft AI deployment",
+   "Wi-Fi web server"
+  ],
+  "intro": "Using Grove Vision AI V2 and XIAO ESP32-S3 Sense, this device detects hummingbirds and snaps photos at a feeder. Images are saved to an SD card and served via Wi-Fi. A custom model trained with Edge Impulse enables accurate detection, though SSCMA library issues remain. Housed ina 3D-printed mount and powered by a USB battery, it\u2019s a smart, remote wildlife monitor.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Ralphjy/dual-ai-camera-e04757"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Ralphjy/dual-ai-camera-e04757"
+  ]
+ },
+ {
+  "page": 114,
+  "category": "AI",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "Voice-Controlled Animation and Toy",
+  "author": "Billtheworld",
+  "keywords": [
+   "Edge Impulse model",
+   "OLED display"
+  ],
+  "intro": "This playful demo uses XIAO nRF52840 Sense boards and Edge Impulse to recognize keywords like \u201cHuTao\u201d or \u201cshake,\u201d activating a toy via relay or displaying animated GIFs on a 0.66\u2033 OLED screen. Voice data is collected as WAV files, trained into a lightweight model, and deployed for real-time control. The build includes 3D-printed components and Arduino code for speech-driven animation and servo response.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.hackster.io/yuwork58426/voice-control-toy-and-display-using-xiao-and-edge-impulse-592bb4"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.hackster.io/yuwork58426/voice-control-toy-and-display-using-xiao-and-edge-impulse-592bb4"
+  ]
+ },
+ {
+  "page": 115,
+  "category": "AI",
+  "variant": "XIAO ESP32-S3",
+  "title": "AI Scarecrow Makes Noise When It Sees Birds",
+  "author": "Makestreme",
+  "keywords": [
+   "Bird detection model",
+   "High-frequency audio"
+  ],
+  "intro": "This quirky scarecrow uses Grove Vision AI V2 and a XIAO ESP32-S3 to detect pigeons and emit randomized tones (2kHz\u201320kHz) via a PAM8403 amp and 3W speaker. Housed ina hardboard cutout, it triggers only on bounding box detections to reduce false alarms. While effective at first, pigeons gradually adapted\u2014highlighting the limits of AI deterrents.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.hackster.io/makestreme/ai-scarecrow-makes-noise-when-it-sees-birds-1b5dd3"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.hackster.io/makestreme/ai-scarecrow-makes-noise-when-it-sees-birds-1b5dd3"
+  ]
+ },
+ {
+  "page": 116,
+  "category": "AI",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "Speech Recognition Powered",
+  "author": "Edge Impulse By SeeedStudio",
+  "keywords": [
+   "TinyML speech recognition",
+   "Low-power AI"
+  ],
+  "intro": "This video showcases a TinyML speech recognition demo using the XIAO nRF52840 Sense with Edge Impulse. The ultra-compact setup enables local voice command detection, featuring onboard sensors and BLE connectivity for real-time response. Optimized for low-power applications, it\u2019s perfect for voice-controlled devices, smart wearables, and hands-free interfaces. The demo highlights just how accessible embedded AI has become, making speech recognition viable even on small, battery-powered microcontrollers.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=Ss8L94170B0"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=Ss8L94170B0"
+  ]
+ },
+ {
+  "page": 117,
+  "category": "AI",
+  "variant": "XIAO ESP32-S3 Sense",
+  "title": "Miniature ChatGPT Voice Assistant",
+  "author": "SeeedStudio",
+  "keywords": [
+   "Miniature voice assistant",
+   "Smart home control"
+  ],
+  "intro": "This super-compact voice assistant uses the onboard microphone of the XIAO ESP32-S3 Sense to capture speech, which is then transcribed via Google Cloud\u2019s speech-to-text API and processed by ChatGPT for real-time conversational feedback. Answers and transcriptions are displayed on a circular screen, creating a tiny yet responsive voice interface. This fusion of embedded AI and cloud services demonstrates how ultra-portable devices can deliver intelligent interactions\u2014perfect for smart home control, on-the-go assistants, or wearable tech.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=wPi-XjeJPNw"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=wPi-XjeJPNw"
+  ]
+ },
+ {
+  "page": 118,
+  "category": "AI",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "Building a Voice Recognition Robot",
+  "author": "CiferTech",
+  "keywords": [
+   "Embedded AI demo",
+   "Low-power microcontroller"
+  ],
+  "intro": "This voice-controlled robot uses the onboard microphone of the XIAO nRF52840 Sense to interpret spoken commands via the micro_speech library. Once recognized, the commands are displayed on a vintage screen while the robot responds in real time\u2014 demonstrating a simple but effective application of offline voice recognition. The project highlights the potential of low-power embedded AI in educational robotics and interactive design.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=QCYVOg2ojgE&ab_channel=CiferTech"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html?utm_source=Seeedblog",
+   "https://www.youtube.com/watch?v=QCYVOg2ojgE&ab_channel=CiferTech"
+  ]
+ },
+ {
+  "page": 119,
+  "category": "AI",
+  "variant": "XIAO ESP32-C3",
+  "title": "Gemini on Display \u2014 Pocket AI Assistant",
+  "author": "IoT HUB",
+  "keywords": [
+   "OLED display",
+   "Voice input"
+  ],
+  "intro": "This compact terminal uses the XIAO ESP32-C3 to send queries to Google Gemini and display responses on a 0.96\u2033 OLED screen. Featuring clean formatting, button-controlled scrolling, and animated UI, it\u2019s a sleek showcase of embedded AI. Expandable with voice input, SD card logging, or multitasking menus.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/iothub-guy/gemini-on-display-using-xiao-esp32-c3-by-seeed-studio-144c47"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.htmlhttps://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.hackster.io/iothub-guy/gemini-on-display-using-xiao-esp32-c3-by-seeed-studio-144c47"
+  ]
+ },
+ {
+  "page": 120,
+  "category": "Tools",
+  "variant": "XIAO ESP32-S3",
+  "title": "XIAO ESP32 S3 Handheld Camera Pocket Edition",
+  "author": "Arnov Sharma",
+  "keywords": [
+   "Pocket Camera",
+   "SeeedStudio Fusion"
+  ],
+  "intro": "A portable pocket edition of the XIAO ESP32-S3 handheld camera has been developed to meet the growing demand for compact photography tools. Leveraging the XIAO ESP32-S3 development board and custom PCB services from SeeedStudio Fusion, Arnov created a travel- friendly camera for enthusiasts, photographers, and creators. It integrates a central processor, Wi-Fi module, radiofrequency circuit, memory, sensors, and other components to enable high-speed image processing and storage. Arnov designed the circuit, wrote the code, and used 3D printing to build the housing. Despite challenges, this versatile device aims to inspire DIY innovation in the photography community.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/xiao-esp32-s3-handheld-camera-pocket-edition-9325f6"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/xiao-esp32-s3-handheld-camera-pocket-edition-9325f6"
+  ]
+ },
+ {
+  "page": 121,
+  "category": "Tools",
+  "variant": "XIAO nRF52840 Sense",
+  "title": "Tools & Accessories XIAO nRF52840 Neonatal Incubator Monitoring using Blues & Qubitro By Pradeep Int",
+  "author": "Pradeep",
+  "keywords": [
+   "Environment Monitoring"
+  ],
+  "intro": "The design uses hardware components including the Blues Notecard (Cellular), Blues Notecarrier-A, SeeedStudio XIAO nRF52840 Sense, and a 60GHz mmWave sensor for breathing and heartbeat detection. It also features environmental sensors\u2014temperature, humidity, barometer, and eCO2/CO2\u2014to monitor conditions inside the incubator. A microcontroller processes the data and sends it to a cloud server via the Blues Notecard. Powered by Blues Notehub, the server stores data and offers a web interface for remote monitoring by doctors and parents. The system can send alerts via email or SMS if parameters exceed safe thresholds.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.hackster.io/pradeeplogu0/neonatal-incubator-monitoring-using-blues-qubitro-e96197"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-Studio-XIAO-nRF52840-Pre-Soldered-p-6332.html?utm_source=Seeedblog",
+   "https://www.hackster.io/pradeeplogu0/neonatal-incubator-monitoring-using-blues-qubitro-e96197"
+  ]
+ },
+ {
+  "page": 122,
+  "category": "Tools",
+  "variant": "XIAO RP2040",
+  "title": "SenseCAP Sensor Builder, an Open-Source Tool to Build RS485 Sensors With Grove",
+  "author": "SeeedStudio",
+  "keywords": [
+   "Industrial Sensor Converter",
+   "Environmental Sensing Tool"
+  ],
+  "intro": "Powered by SeeedStudio XIAO RP2040 dual-core ARM M0+ processor, with a USB-C port for easy code uploading, this design can convert 500+ existing Grove sensors to MODBUS RS485 industrial-grade sensors. You can easily finish the upgrade from maker/Arduino products to industrial-level products. Six popular environmental Grove sensors are already fully compatible with native firmware. It is compatible with your data logger and IoT platform. An IP66 waterproof rate outdoor enclosure with a customized mounting panel is included, suitable for pole and wall installation.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/SenseCAP-XIAO-LoRaWAN-Controller-p-5474.html"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.seeedstudio.com/SenseCAP-XIAO-LoRaWAN-Controller-p-5474.html"
+  ]
+ },
+ {
+  "page": 123,
+  "category": "Tools",
+  "variant": "XIAO SAMD21",
+  "title": "PCB Hotplate Powered",
+  "author": "XIAO SAMD21 By Arnov Sharma",
+  "keywords": [
+   "Laboratory Device",
+   "Melting&Heating Device"
+  ],
+  "intro": "The temperature of the heating coil is displayed on an OLED screen. The XIAO SAMD21 board, measuring just 20.3mm \u00d7 17.8mm, powers the system. PCBs are used to create coils directly on the board layer, which then function as heating elements. When electricity passes through a material with resistance, heat is generated. By designing 1mm-wide coils on the PCB with a resistance of 2.2 ohms, current can flow through them to produce heat. PCB design and fabrication are straightforward and efficient, enabling quick production.",
+  "links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/pcb-hotplate-slightly-bigger-edition-6a8ed8?f=1"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/pcb-hotplate-slightly-bigger-edition-6a8ed8?f=1"
+  ]
+ },
+ {
+  "page": 124,
+  "category": "Tools",
+  "variant": "XIAO ESP32-C3",
+  "title": "Current Measuring Tool Using XIAO ESP32C3 & ACS758 Sensor",
+  "author": "Open Green Energy",
+  "keywords": [
+   "Electrical Maintenance & Troubleshooting"
+  ],
+  "intro": "This design demonstrates how to accurately measure current using the XIAO ESP32-C3 and ACS758 sensor\u2014an essential capability for electronic projects and power monitoring applications. The XIAO ESP32-C3 reads current data through code, delivering precise measurements. The designer also shares practical tips for sensor calibration and performance optimization, making the project valuable for hobbyists, students, and professional engineers alike.",
+  "links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.opengreenenergy.com/xiao-esp32-and-acs758-sensor/"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html?utm_source=Seeedblog",
+   "https://www.opengreenenergy.com/xiao-esp32-and-acs758-sensor/"
+  ]
+ },
+ {
+  "page": 125,
+  "category": null,
+  "variant": "XIAO RP2040",
+  "title": "Ultra Small Ethernet Powered",
+  "author": "XIAO RP2040 & WIZNET W5100S By Alan",
+  "keywords": [
+   "IoT",
+   "Industrial Control Systems"
+  ],
+  "intro": "The product designer set out to create an ultra-small, efficient board by combining the XIAO series with the WIZNET W5100S Ethernet chip. Having previously worked with RP2040-based projects and the Ethernet-enabled W5100S-EVB Pico, the designer aimed to build a more compact and streamlined solution. The XIAO RP2040 was chosen for its minimal footprint, while the W5100S chip was selected for its SPI compatibility and reliable Ethernet connectivity. The resulting board is tailored for embedded systems and IoT applications that demand network access with minimal size and maximum efficiency.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.hackster.io/alan43/ultra-small-ethernet-rp2040-board-production-record-55ea0b"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.hackster.io/alan43/ultra-small-ethernet-rp2040-board-production-record-55ea0b"
+  ]
+ },
+ {
+  "page": 126,
+  "category": null,
+  "variant": "XIAO RP2040",
+  "title": "ANAVI Macro Pad 12 & Arrows Powered",
+  "author": "XIAO RP2040 By Anavi Technology",
+  "keywords": [
+   "Mechanical Keyboards"
+  ],
+  "intro": "The Anavi Macro Pad 12 and Arrows are customizable, programmable keypads designed for makers, developers, and anyone needing quick access to frequently used commands. The Macro Pad 12 features 12 programmable keys, while the Arrows version includes four arrow keys and eight programmable keys. Both versions are compatible with multiple operating systems and support the popular QMK firmware. They are easy to assemble and come with pre-soldered components, making them beginner-friendly. Open-source and modular by design, they allow for customization and expansion with various add-ons. The project is currently featured on Crowd Supply, where backers can pre-order and support the development of open-source hardware.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.crowdsupply.com/anavi-technology/anavi-macro-pad-12-and-arrows"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.crowdsupply.com/anavi-technology/anavi-macro-pad-12-and-arrows"
+  ]
+ },
+ {
+  "page": 127,
+  "category": null,
+  "variant": "XIAO RP2040",
+  "title": "TOTEM: A Tiny Splitkeyboard With Splay Powered",
+  "author": "XIAO RP2040 By Geist",
+  "keywords": [
+   "Mechanical Keyboards"
+  ],
+  "intro": "The Anavi Macro Pad 12 and Arrows are customizable, programmable keypads designed for makers, developers, and anyone needing quick access to frequently used commands. The Macro Pad 12 features 12 programmable keys, while the Arrows version includes four arrow keys and eight programmable keys. Both versions are compatible with multiple operating systems and support the popular QMK firmware. They are easy to assemble and come with pre-soldered components, making them beginner-friendly. Open-source and modular by design, they allow for customization and expansion with various add-ons. The project is currently featured on Crowd Supply, where backers can pre-order and support the development of open-source hardware.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.hackster.io/geist/totem-a-tiny-splitkeyboard-with-splay-cb2e43"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.hackster.io/geist/totem-a-tiny-splitkeyboard-with-splay-cb2e43"
+  ]
+ },
+ {
+  "page": 128,
+  "category": null,
+  "variant": "XIAO RP2040",
+  "title": "LED Light XIAO RP2040 GOMU GOMU NO MI With XIAO RP2040 By Arnov Sharma Introduction: The project uti",
+  "author": "Arnov Sharma",
+  "keywords": [
+   "SeeedStudio Fusion",
+   "Custom PCB"
+  ],
+  "intro": "The project utilizes custom PCBs, WS2812B addressable LEDs, and a XIAO RP2040. Two PCBs are used: the bottom board houses the RGB LEDs and the XIAO module, while the top board features an etched layer resembling the gum-gum fruit design. This top layer diffuses the LED glow, creating a vibrant, illuminated effect across the entire setup.",
+  "links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/gomu-gomu-no-mi-with-xiao-rp2040-560601"
+  ],
+  "project_links": [
+   "https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html?utm_source=Seeedblog",
+   "https://www.hackster.io/Arnov_Sharma_makes/gomu-gomu-no-mi-with-xiao-rp2040-560601"
+  ]
+ }
+]

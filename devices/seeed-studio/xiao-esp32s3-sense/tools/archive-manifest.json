@@ -1,0 +1,146 @@
+[
+ {
+  "path": "examples/selected/esp32-birdnet-mic/web-flasher",
+  "reason": "68 MiB of prebuilt per-target flash images for the browser-based ESP Web Tools flasher. Verified re-obtainable from two independent places: the pinned repo commit, and this project's GitHub Releases, which publish the same per-target assets for every version tag.",
+  "notes": [
+   "`firmware-s3.bin` is a **merged full-flash image**, exactly 8,388,608 B (8 MiB) \u2014 mostly erased padding, which is why the directory is so large. SHA-256 `d2b8fe67e3f6310cb74e9e02b8afd60acff63495bbea8aab33ab53a0198f631b`, chip ID 9 = ESP32-S3, DIO / 8 MB / 80 MHz.",
+   "`firmware.bin` is the **ESP32-C6** merged image (4,194,304 B, chip ID 13, DIO / 4 MB / 40 MHz) \u2014 despite the unqualified name it is *not* the S3 build.",
+   "The versioned `firmware-app-*-1.10.0 \u2026 1.22` files are historical per-release application images. Example: `firmware-app-c5-1.10.0.bin` is an **ESP32-C5** (chip ID 23) app built **2026-03-31 11:44:16** against **ESP-IDF v5.5.4**, project `arduino-lib-builder`, ELF SHA-256 `3080fb06\u2026`.",
+   "These are build outputs, but ESP-IDF builds are **not byte-reproducible**, so rebuilding from source will not recreate these exact bytes. They are preserved rather than discarded for that reason.",
+   "Not needed to read, understand or build the project \u2014 the firmware source is retained in the repository."
+  ],
+  "verification": "Checked against upstream 2026-08-24: the same assets are published under GitHub Releases v1.10.0 through v1.22, giving a second recovery path independent of the git object store.",
+  "source": {
+   "repo": "Sukecz/esp32-birdnet-mic",
+   "commit": "8552b12aa44487c1cb935467a93ac35ecdc681d6",
+   "path_in_repo": "web-flasher",
+   "author": "Sukecz <Sukecz@users.noreply.github.com>",
+   "committed": "2026-08-01T08:21:05Z",
+   "license": "MIT",
+   "extra_urls": [
+    "https://github.com/Sukecz/esp32-birdnet-mic",
+    "https://github.com/Sukecz/esp32-birdnet-mic/releases"
+   ]
+  }
+ },
+ {
+  "path": "examples/selected/esp32-birdnet-mic/manual-ota-firmware",
+  "reason": "6 MiB of prebuilt OTA application images, duplicating builds also present under `web-flasher/` and in GitHub Releases.",
+  "notes": [
+   "Manual-OTA counterparts of the web-flasher images; same provenance and the same non-reproducibility caveat."
+  ],
+  "source": {
+   "repo": "Sukecz/esp32-birdnet-mic",
+   "commit": "8552b12aa44487c1cb935467a93ac35ecdc681d6",
+   "path_in_repo": "manual-ota-firmware",
+   "author": "Sukecz <Sukecz@users.noreply.github.com>",
+   "committed": "2026-08-01T08:21:05Z",
+   "license": "MIT",
+   "extra_urls": [
+    "https://github.com/Sukecz/esp32-birdnet-mic",
+    "https://github.com/Sukecz/esp32-birdnet-mic/releases"
+   ]
+  }
+ },
+ {
+  "path": "examples/selected/esp32-birdnet-mic/assets",
+  "reason": "4.5 MiB of README screenshots and wiring diagrams (PNG). Documentation illustration only; not required to build.",
+  "notes": [
+   "Includes `connection.png` / `connection-dark.png`, the project's wiring diagrams \u2014 useful reference, but reproduced in the retained README and recoverable from the pinned commit."
+  ],
+  "source": {
+   "repo": "Sukecz/esp32-birdnet-mic",
+   "commit": "8552b12aa44487c1cb935467a93ac35ecdc681d6",
+   "path_in_repo": "assets",
+   "author": "Sukecz <Sukecz@users.noreply.github.com>",
+   "committed": "2026-08-01T08:21:05Z",
+   "license": "MIT",
+   "extra_urls": [
+    "https://github.com/Sukecz/esp32-birdnet-mic"
+   ]
+  }
+ },
+ {
+  "path": "examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models",
+  "reason": "10 MiB of 3D-printable enclosure meshes (STL). Mechanical assets, not firmware.",
+  "notes": [
+   "`cam_final.stl` (4.9 MiB) and `2inc_tft_final.stl` (5.1 MiB) are the printable camera body and 2\" TFT bezel.",
+   "Retained upstream at the pinned commit; nothing in the firmware build references them."
+  ],
+  "source": {
+   "repo": "barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera",
+   "commit": "442a6971622a406cc5cbd323276f74cfe4c5fe2a",
+   "path_in_repo": "models",
+   "author": "barkinsarikartal <barkinsarikartal51@gmail.com>",
+   "committed": "2026-06-15T11:42:52Z",
+   "license": "MIT",
+   "extra_urls": [
+    "https://github.com/barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera"
+   ]
+  }
+ },
+ {
+  "path": "examples/selected/on-device-vision-ai/latex",
+  "reason": "7.2 MiB of LaTeX sources and full-resolution photographs for the project write-up.",
+  "notes": [
+   "Contains `oled-menu.jpg` (4.8 MiB) and `xiaoml-kit.jpg` (2.2 MiB) \u2014 high-resolution build photos.",
+   "The compiled result (`main.pdf`) is archived alongside; the technical content is summarised in this research tree."
+  ],
+  "source": {
+   "repo": "webmcu-ai/on-device-vision-ai",
+   "commit": "8a8d92ef1157f3c4c6fb260c5b4ef0ac478e715e",
+   "path_in_repo": "latex",
+   "author": "Jeremy Ellis <keyfreemusic@gmail.com>",
+   "committed": "2026-04-28T05:02:32Z",
+   "license": "MIT",
+   "extra_urls": [
+    "https://github.com/webmcu-ai/on-device-vision-ai"
+   ]
+  }
+ },
+ {
+  "path": "examples/selected/on-device-vision-ai/main.pdf",
+  "reason": "7.5 MiB compiled PDF of the project write-up; regenerable from the archived LaTeX sources and served from the pinned commit.",
+  "source": {
+   "repo": "webmcu-ai/on-device-vision-ai",
+   "commit": "8a8d92ef1157f3c4c6fb260c5b4ef0ac478e715e",
+   "path_in_repo": "main.pdf",
+   "author": "Jeremy Ellis <keyfreemusic@gmail.com>",
+   "committed": "2026-04-28T05:02:32Z",
+   "license": "MIT",
+   "extra_urls": [
+    "https://github.com/webmcu-ai/on-device-vision-ai"
+   ]
+  }
+ },
+ {
+  "path": "examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif",
+  "reason": "3.6 MiB animated GIF used only as a README illustration.",
+  "source": {
+   "repo": "Seeed-Studio/Seeed_Arduino_SSCMA",
+   "commit": "65a1b2061e80f1bd3814f688451a66646782fe1f",
+   "path_in_repo": "examples/camera_web_server/img/example_0.gif",
+   "author": "LynnL4 <51182126+LynnL4@users.noreply.github.com>",
+   "committed": "2025-06-06T03:26:45Z",
+   "license": "MIT",
+   "extra_urls": [
+    "https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA"
+   ]
+  }
+ },
+ {
+  "path": "examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_1.gif",
+  "reason": "1.4 MiB animated GIF used only as a README illustration.",
+  "source": {
+   "repo": "Seeed-Studio/Seeed_Arduino_SSCMA",
+   "commit": "65a1b2061e80f1bd3814f688451a66646782fe1f",
+   "path_in_repo": "examples/camera_web_server/img/example_1.gif",
+   "author": "LynnL4 <51182126+LynnL4@users.noreply.github.com>",
+   "committed": "2025-06-06T03:26:45Z",
+   "license": "MIT",
+   "extra_urls": [
+    "https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA"
+   ]
+  }
+ }
+]

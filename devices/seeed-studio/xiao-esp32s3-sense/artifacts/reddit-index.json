@@ -1,0 +1,1047 @@
+{
+ "retrieved": "2026-08-24",
+ "method": "old.reddit.com/search.json with WhatsApp/2.23.20.0 UA (www.reddit.com returns 403)",
+ "queries": [
+  "xiao esp32s3 sense",
+  "xiao esp32s3 camera",
+  "xiao esp32s3"
+ ],
+ "unique_posts": 115,
+ "posts": [
+  {
+   "title": "Made an autonomous rover using the Xiao ESP32S3 and a browser",
+   "subreddit": "esp32",
+   "score": 254,
+   "num_comments": 25,
+   "created_utc": 1778094870.0,
+   "url": "https://reddit.com/r/esp32/comments/1t5mrsp/made_an_autonomous_rover_using_the_xiao_esp32s3/",
+   "link": "https://v.redd.it/2iykjjnqgkzg1"
+  },
+  {
+   "title": "DjRoomba- Xiao sense esp32 controlled roomba",
+   "subreddit": "esp32",
+   "score": 74,
+   "num_comments": 21,
+   "created_utc": 1785385510.0,
+   "url": "https://reddit.com/r/esp32/comments/1vaj8og/djroomba_xiao_sense_esp32_controlled_roomba/",
+   "link": "https://v.redd.it/gwtlithqiagh1"
+  },
+  {
+   "title": "How I revived a completely dead/bricked SenseCAP Solar Node (XIAO ESP32S3)",
+   "subreddit": "meshtastic",
+   "score": 118,
+   "num_comments": 12,
+   "created_utc": 1784358223.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1uzoubw/how_i_revived_a_completely_deadbricked_sensecap/",
+   "link": "https://www.reddit.com/gallery/1uzoubw"
+  },
+  {
+   "title": "Noise and consistent lines on OV5640 camera with Seeed Studio ESP32S3 Sense",
+   "subreddit": "esp32",
+   "score": 13,
+   "num_comments": 12,
+   "created_utc": 1784718081.0,
+   "url": "https://reddit.com/r/esp32/comments/1v3ctcx/noise_and_consistent_lines_on_ov5640_camera_with/",
+   "link": "https://www.reddit.com/gallery/1v3ctcx"
+  },
+  {
+   "title": "I built a custom Retro Camera using a XIAO ESP32-S3 Sense. It records AVI video with sound, plays it back, and has a wireless file manager",
+   "subreddit": "esp32",
+   "score": 11,
+   "num_comments": 4,
+   "created_utc": 1781525034.0,
+   "url": "https://reddit.com/r/esp32/comments/1u6emxs/i_built_a_custom_retro_camera_using_a_xiao/",
+   "link": "https://youtube.com/watch?v=0UTXGptOVkc&amp;si=ZZrZOGL0Rouzvbzc"
+  },
+  {
+   "title": "ESP32-S3 (Seeed XIAO ESP32S3 Sense) shows Code 43 \u201cWindows has stopped this device\u201d after soldering \u2014 unknown USB device",
+   "subreddit": "esp32",
+   "score": 0,
+   "num_comments": 14,
+   "created_utc": 1775381982.0,
+   "url": "https://reddit.com/r/esp32/comments/1sczfnk/esp32s3_seeed_xiao_esp32s3_sense_shows_code_43/",
+   "link": "https://old.reddit.com/r/esp32/comments/1sczfnk/esp32s3_seeed_xiao_esp32s3_sense_shows_code_43/"
+  },
+  {
+   "title": "Gdma_disconnect: no peripheral is connected to the channel on esp_camera_deinit() \u2014 OV5640 + XIAO ESP32S3 Sense",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 1,
+   "created_utc": 1778682293.0,
+   "url": "https://reddit.com/r/esp32/comments/1tc17zt/gdma_disconnect_no_peripheral_is_connected_to_the/",
+   "link": "https://old.reddit.com/r/esp32/comments/1tc17zt/gdma_disconnect_no_peripheral_is_connected_to_the/"
+  },
+  {
+   "title": "XIAO ESP32S3 SENSE camera not working",
+   "subreddit": "esp32",
+   "score": 7,
+   "num_comments": 20,
+   "created_utc": 1759400898.0,
+   "url": "https://reddit.com/r/esp32/comments/1nw02vj/xiao_esp32s3_sense_camera_not_working/",
+   "link": "https://www.reddit.com/gallery/1nw02vj"
+  },
+  {
+   "title": "Is it possible to record and save audio to laptop directly through wifi (without SD card) on Xiao esp32-s3 Seeed Sense?",
+   "subreddit": "esp32",
+   "score": 2,
+   "num_comments": 4,
+   "created_utc": 1773412889.0,
+   "url": "https://reddit.com/r/esp32/comments/1rsp67k/is_it_possible_to_record_and_save_audio_to_laptop/",
+   "link": "https://old.reddit.com/r/esp32/comments/1rsp67k/is_it_possible_to_record_and_save_audio_to_laptop/"
+  },
+  {
+   "title": "ESP32-S3 (Seeed XIAO ESP32S3 Sense) shows Code 43 \u201cWindows has stopped this device\u201d after soldering \u2014 unknown USB device",
+   "subreddit": "esp32projects",
+   "score": 1,
+   "num_comments": 0,
+   "created_utc": 1775393343.0,
+   "url": "https://reddit.com/r/esp32projects/comments/1sd2shk/esp32s3_seeed_xiao_esp32s3_sense_shows_code_43/",
+   "link": "/r/esp32/comments/1sczfnk/esp32s3_seeed_xiao_esp32s3_sense_shows_code_43/"
+  },
+  {
+   "title": "random RGB noise on TFT with SPI / Xiao ESP32S3",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 0,
+   "created_utc": 1770891129.0,
+   "url": "https://reddit.com/r/esp32/comments/1r2ppja/random_rgb_noise_on_tft_with_spi_xiao_esp32s3/",
+   "link": "https://old.reddit.com/r/esp32/comments/1r2ppja/random_rgb_noise_on_tft_with_spi_xiao_esp32s3/"
+  },
+  {
+   "title": "Seeed Studio XIAO ESP32S3 Sense Camera - a working yaml",
+   "subreddit": "Esphome",
+   "score": 12,
+   "num_comments": 5,
+   "created_utc": 1762018600.0,
+   "url": "https://reddit.com/r/Esphome/comments/1oltvdr/seeed_studio_xiao_esp32s3_sense_camera_a_working/",
+   "link": "https://old.reddit.com/r/Esphome/comments/1oltvdr/seeed_studio_xiao_esp32s3_sense_camera_a_working/"
+  },
+  {
+   "title": "Need help finding xiao esp32s3 sense drop-in camera replacement",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 2,
+   "created_utc": 1761279053.0,
+   "url": "https://reddit.com/r/esp32/comments/1oeo6cj/need_help_finding_xiao_esp32s3_sense_dropin/",
+   "link": "https://old.reddit.com/r/esp32/comments/1oeo6cj/need_help_finding_xiao_esp32s3_sense_dropin/"
+  },
+  {
+   "title": "Seeed Studio XIAO ESP32S3 Sense Camera - a working yaml",
+   "subreddit": "homeassistant",
+   "score": 4,
+   "num_comments": 1,
+   "created_utc": 1762018648.0,
+   "url": "https://reddit.com/r/homeassistant/comments/1oltw3e/seeed_studio_xiao_esp32s3_sense_camera_a_working/",
+   "link": "/r/Esphome/comments/1oltvdr/seeed_studio_xiao_esp32s3_sense_camera_a_working/"
+  },
+  {
+   "title": "Questions about the Seeed Studio esp32s3 sense with OV2640 camera",
+   "subreddit": "esp32",
+   "score": 0,
+   "num_comments": 0,
+   "created_utc": 1759341999.0,
+   "url": "https://reddit.com/r/esp32/comments/1nvfocd/questions_about_the_seeed_studio_esp32s3_sense/",
+   "link": "https://old.reddit.com/r/esp32/comments/1nvfocd/questions_about_the_seeed_studio_esp32s3_sense/"
+  },
+  {
+   "title": "Has anyone used the XIAO ESP32S3 Plus board?",
+   "subreddit": "esp32",
+   "score": 3,
+   "num_comments": 1,
+   "created_utc": 1755635119.0,
+   "url": "https://reddit.com/r/esp32/comments/1mutyrj/has_anyone_used_the_xiao_esp32s3_plus_board/",
+   "link": "https://old.reddit.com/r/esp32/comments/1mutyrj/has_anyone_used_the_xiao_esp32s3_plus_board/"
+  },
+  {
+   "title": "Xiao ESP32s3 Sense - Face detection toggle not showing up",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 2,
+   "created_utc": 1748178551.0,
+   "url": "https://reddit.com/r/esp32/comments/1kv25cq/xiao_esp32s3_sense_face_detection_toggle_not/",
+   "link": "https://i.redd.it/666fex69gx2f1.png"
+  },
+  {
+   "title": "Seeking Advise: Battery for Xiao ESP32S3 Sense",
+   "subreddit": "esp32",
+   "score": 2,
+   "num_comments": 6,
+   "created_utc": 1739235701.0,
+   "url": "https://reddit.com/r/esp32/comments/1immfjy/seeking_advise_battery_for_xiao_esp32s3_sense/",
+   "link": "https://old.reddit.com/r/esp32/comments/1immfjy/seeking_advise_battery_for_xiao_esp32s3_sense/"
+  },
+  {
+   "title": "XIAO ESP32S3 Sense durability?",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 6,
+   "created_utc": 1737824410.0,
+   "url": "https://reddit.com/r/esp32/comments/1i9re51/xiao_esp32s3_sense_durability/",
+   "link": "https://old.reddit.com/r/esp32/comments/1i9re51/xiao_esp32s3_sense_durability/"
+  },
+  {
+   "title": "Battery charging for the xiao esp32s3 sense (problems)",
+   "subreddit": "tinyXIAO",
+   "score": 1,
+   "num_comments": 1,
+   "created_utc": 1745994793.0,
+   "url": "https://reddit.com/r/tinyXIAO/comments/1kb9wj6/battery_charging_for_the_xiao_esp32s3_sense/",
+   "link": "https://old.reddit.com/r/tinyXIAO/comments/1kb9wj6/battery_charging_for_the_xiao_esp32s3_sense/"
+  },
+  {
+   "title": "Guys!! Need someone to test XIAO ESP32S3 Sense for me! Please help.",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 30,
+   "created_utc": 1684845242.0,
+   "url": "https://reddit.com/r/esp32/comments/13pn80f/guys_need_someone_to_test_xiao_esp32s3_sense_for/",
+   "link": "https://old.reddit.com/r/esp32/comments/13pn80f/guys_need_someone_to_test_xiao_esp32s3_sense_for/"
+  },
+  {
+   "title": "Questions regarding Seeed Studio XIAO ESP32S3 Sense (Pre-Soldered).",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 4,
+   "created_utc": 1740105185.0,
+   "url": "https://reddit.com/r/esp32/comments/1iug9mk/questions_regarding_seeed_studio_xiao_esp32s3/",
+   "link": "https://old.reddit.com/r/esp32/comments/1iug9mk/questions_regarding_seeed_studio_xiao_esp32s3/"
+  },
+  {
+   "title": "Seeed Technology Co., Ltd. Seeed Studio XIAO ESP32S3 Plus/Seeed Studio XIAO ESP32S3 Sense Plus XIAOESP32S3P (Z4T-XIAOESP32S3P)",
+   "subreddit": "FCCID",
+   "score": 1,
+   "num_comments": 0,
+   "created_utc": 1745901085.0,
+   "url": "https://reddit.com/r/FCCID/comments/1kafk00/seeed_technology_co_ltd_seeed_studio_xiao_esp32s3/",
+   "link": "https://fccid.io/Z4T-XIAOESP32S3P"
+  },
+  {
+   "title": "Tiny speakers with Seeedstudio XIAO esp32s3 sense",
+   "subreddit": "arduino",
+   "score": 2,
+   "num_comments": 10,
+   "created_utc": 1725771422.0,
+   "url": "https://reddit.com/r/arduino/comments/1fbq0yl/tiny_speakers_with_seeedstudio_xiao_esp32s3_sense/",
+   "link": "https://old.reddit.com/r/arduino/comments/1fbq0yl/tiny_speakers_with_seeedstudio_xiao_esp32s3_sense/"
+  },
+  {
+   "title": "Xiao sense s3 project for recording",
+   "subreddit": "tinyXIAO",
+   "score": 1,
+   "num_comments": 0,
+   "created_utc": 1741796257.0,
+   "url": "https://reddit.com/r/tinyXIAO/comments/1j9ntlm/xiao_sense_s3_project_for_recording/",
+   "link": "https://old.reddit.com/r/tinyXIAO/comments/1j9ntlm/xiao_sense_s3_project_for_recording/"
+  },
+  {
+   "title": "Unable to run micro SD card examples using the XIAO ESP32S3 Sense",
+   "subreddit": "esp32",
+   "score": 4,
+   "num_comments": 10,
+   "created_utc": 1720032834.0,
+   "url": "https://reddit.com/r/esp32/comments/1dum4o2/unable_to_run_micro_sd_card_examples_using_the/",
+   "link": "https://old.reddit.com/r/esp32/comments/1dum4o2/unable_to_run_micro_sd_card_examples_using_the/"
+  },
+  {
+   "title": "Can I use a XIAO ESP32C6 with the camera module/board of the XIAO ESP32S3 sense??",
+   "subreddit": "esp32",
+   "score": 0,
+   "num_comments": 0,
+   "created_utc": 1738699937.0,
+   "url": "https://reddit.com/r/esp32/comments/1ihr6ds/can_i_use_a_xiao_esp32c6_with_the_camera/",
+   "link": "https://old.reddit.com/r/esp32/comments/1ihr6ds/can_i_use_a_xiao_esp32c6_with_the_camera/"
+  },
+  {
+   "title": "Questions regarding Seeed Studio XIAO ESP32S3 Sense (Pre-Soldered).",
+   "subreddit": "EdgeImpulse",
+   "score": 2,
+   "num_comments": 0,
+   "created_utc": 1740111300.0,
+   "url": "https://reddit.com/r/EdgeImpulse/comments/1iui7cq/questions_regarding_seeed_studio_xiao_esp32s3/",
+   "link": "/r/esp32/comments/1iug9mk/questions_regarding_seeed_studio_xiao_esp32s3/"
+  },
+  {
+   "title": "Questions regarding Seeed Studio XIAO ESP32S3 Sense (Pre-Soldered).",
+   "subreddit": "arduino",
+   "score": 1,
+   "num_comments": 0,
+   "created_utc": 1740111096.0,
+   "url": "https://reddit.com/r/arduino/comments/1iui57f/questions_regarding_seeed_studio_xiao_esp32s3/",
+   "link": "/r/esp32/comments/1iug9mk/questions_regarding_seeed_studio_xiao_esp32s3/"
+  },
+  {
+   "title": "XIAO Sense stopped programming",
+   "subreddit": "esp32",
+   "score": 0,
+   "num_comments": 5,
+   "created_utc": 1730137768.0,
+   "url": "https://reddit.com/r/esp32/comments/1ge8dum/xiao_sense_stopped_programming/",
+   "link": "https://old.reddit.com/r/esp32/comments/1ge8dum/xiao_sense_stopped_programming/"
+  },
+  {
+   "title": "Can I Attach a 0.49 Inch Display to XIAO ESP32S3 Sense, Power it with a Battery, and Get a Better Camera?",
+   "subreddit": "esp32",
+   "score": 0,
+   "num_comments": 10,
+   "created_utc": 1718287869.0,
+   "url": "https://reddit.com/r/esp32/comments/1dezybo/can_i_attach_a_049_inch_display_to_xiao_esp32s3/",
+   "link": "https://www.reddit.com/gallery/1dezybo"
+  },
+  {
+   "title": "Seeed Esp32s3 Sense? ",
+   "subreddit": "homeassistant",
+   "score": 3,
+   "num_comments": 1,
+   "created_utc": 1736261931.0,
+   "url": "https://reddit.com/r/homeassistant/comments/1hvt8nq/seeed_esp32s3_sense/",
+   "link": "https://old.reddit.com/r/homeassistant/comments/1hvt8nq/seeed_esp32s3_sense/"
+  },
+  {
+   "title": "Need a gut check on  xiao esp32s3 circuit python flash ",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 2,
+   "created_utc": 1734138650.0,
+   "url": "https://reddit.com/r/esp32/comments/1hdrfh9/need_a_gut_check_on_xiao_esp32s3_circuit_python/",
+   "link": "https://old.reddit.com/r/esp32/comments/1hdrfh9/need_a_gut_check_on_xiao_esp32s3_circuit_python/"
+  },
+  {
+   "title": "Is it possible to play audio files in the sd card of a xiao esp32s3 sense to earphones through bluetooth?",
+   "subreddit": "esp32",
+   "score": 0,
+   "num_comments": 2,
+   "created_utc": 1727934133.0,
+   "url": "https://reddit.com/r/esp32/comments/1fv0tfu/is_it_possible_to_play_audio_files_in_the_sd_card/",
+   "link": "https://old.reddit.com/r/esp32/comments/1fv0tfu/is_it_possible_to_play_audio_files_in_the_sd_card/"
+  },
+  {
+   "title": "How do i start a program when my xiao esp32s3 sense is powered with a battery?",
+   "subreddit": "esp32",
+   "score": 0,
+   "num_comments": 3,
+   "created_utc": 1729330285.0,
+   "url": "https://reddit.com/r/esp32/comments/1g758j5/how_do_i_start_a_program_when_my_xiao_esp32s3/",
+   "link": "https://old.reddit.com/r/esp32/comments/1g758j5/how_do_i_start_a_program_when_my_xiao_esp32s3/"
+  },
+  {
+   "title": "XIAO ESP32S3 Sense Microphone w/ WLED?",
+   "subreddit": "WLED",
+   "score": 1,
+   "num_comments": 7,
+   "created_utc": 1715811858.0,
+   "url": "https://reddit.com/r/WLED/comments/1csxlpx/xiao_esp32s3_sense_microphone_w_wled/",
+   "link": "https://old.reddit.com/r/WLED/comments/1csxlpx/xiao_esp32s3_sense_microphone_w_wled/"
+  },
+  {
+   "title": "How do i run a webserver that utilizes pytesseract to process the images taken by the seeed xiao esp32s3 sense through wifi?",
+   "subreddit": "esp32",
+   "score": 0,
+   "num_comments": 1,
+   "created_utc": 1727945624.0,
+   "url": "https://reddit.com/r/esp32/comments/1fv3a7h/how_do_i_run_a_webserver_that_utilizes/",
+   "link": "https://old.reddit.com/r/esp32/comments/1fv3a7h/how_do_i_run_a_webserver_that_utilizes/"
+  },
+  {
+   "title": "DIY camera using the XIAO ESP32S3 Sense and a round OLED screen.",
+   "subreddit": "esp32",
+   "score": 7,
+   "num_comments": 2,
+   "created_utc": 1718245023.0,
+   "url": "https://reddit.com/r/esp32/comments/1deo3pv/diy_camera_using_the_xiao_esp32s3_sense_and_a/",
+   "link": "https://www.reddit.com/gallery/1deo3pv"
+  },
+  {
+   "title": "Can I Attach a 0.49 Inch Display to XIAO ESP32S3 Sense, Power it with a Battery, and Get a Better Camera?",
+   "subreddit": "arduino",
+   "score": 1,
+   "num_comments": 1,
+   "created_utc": 1718287765.0,
+   "url": "https://reddit.com/r/arduino/comments/1dezwwu/can_i_attach_a_049_inch_display_to_xiao_esp32s3/",
+   "link": "https://www.reddit.com/gallery/1dezwwu"
+  },
+  {
+   "title": "Hello, I am new to this but does the XIAO ESP32S3 Sense with the round display have the ability to be connected to a speaker to play audio? If so, how would I go about that\uff1f",
+   "subreddit": "Seeed_Studio",
+   "score": 4,
+   "num_comments": 1,
+   "created_utc": 1717404761.0,
+   "url": "https://reddit.com/r/Seeed_Studio/comments/1d6zvfr/hello_i_am_new_to_this_but_does_the_xiao_esp32s3/",
+   "link": "https://old.reddit.com/r/Seeed_Studio/comments/1d6zvfr/hello_i_am_new_to_this_but_does_the_xiao_esp32s3/"
+  },
+  {
+   "title": "Problems with XIAO ESP32S3 (Sense)",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 8,
+   "created_utc": 1697610956.0,
+   "url": "https://reddit.com/r/esp32/comments/17ak3ku/problems_with_xiao_esp32s3_sense/",
+   "link": "https://old.reddit.com/r/esp32/comments/17ak3ku/problems_with_xiao_esp32s3_sense/"
+  },
+  {
+   "title": "XIAO ESP32S3 SENSE .Wav Data transfer",
+   "subreddit": "esp32",
+   "score": 3,
+   "num_comments": 1,
+   "created_utc": 1716755079.0,
+   "url": "https://reddit.com/r/esp32/comments/1d1ab08/xiao_esp32s3_sense_wav_data_transfer/",
+   "link": "https://www.reddit.com/gallery/1d1ab08"
+  },
+  {
+   "title": "ESP32S3 Xiao Sense crashes or fails to capture high quality picture",
+   "subreddit": "esp32",
+   "score": 3,
+   "num_comments": 4,
+   "created_utc": 1706048270.0,
+   "url": "https://reddit.com/r/esp32/comments/19e0qts/esp32s3_xiao_sense_crashes_or_fails_to_capture/",
+   "link": "https://old.reddit.com/r/esp32/comments/19e0qts/esp32s3_xiao_sense_crashes_or_fails_to_capture/"
+  },
+  {
+   "title": "zmk on XIAO ESP32S3 possible?",
+   "subreddit": "ErgoMechKeyboards",
+   "score": 2,
+   "num_comments": 2,
+   "created_utc": 1709908197.0,
+   "url": "https://reddit.com/r/ErgoMechKeyboards/comments/1b9pabv/zmk_on_xiao_esp32s3_possible/",
+   "link": "https://old.reddit.com/r/ErgoMechKeyboards/comments/1b9pabv/zmk_on_xiao_esp32s3_possible/"
+  },
+  {
+   "title": "Problems with XIAO ESP32S3 (Sense) and edge impulse",
+   "subreddit": "esp32",
+   "score": 0,
+   "num_comments": 2,
+   "created_utc": 1707136279.0,
+   "url": "https://reddit.com/r/esp32/comments/1ajfe26/problems_with_xiao_esp32s3_sense_and_edge_impulse/",
+   "link": "https://old.reddit.com/r/esp32/comments/1ajfe26/problems_with_xiao_esp32s3_sense_and_edge_impulse/"
+  },
+  {
+   "title": "Seeed Studio XIAO ESP32S3 Camera - pins left?",
+   "subreddit": "esp32",
+   "score": 2,
+   "num_comments": 3,
+   "created_utc": 1701029880.0,
+   "url": "https://reddit.com/r/esp32/comments/184jp9l/seeed_studio_xiao_esp32s3_camera_pins_left/",
+   "link": "https://old.reddit.com/r/esp32/comments/184jp9l/seeed_studio_xiao_esp32s3_camera_pins_left/"
+  },
+  {
+   "title": "Can I use the OV9781 or OV9782 with the xiao esp32s3 sense?",
+   "subreddit": "esp32",
+   "score": 2,
+   "num_comments": 0,
+   "created_utc": 1707478485.0,
+   "url": "https://reddit.com/r/esp32/comments/1amm5gm/can_i_use_the_ov9781_or_ov9782_with_the_xiao/",
+   "link": "https://old.reddit.com/r/esp32/comments/1amm5gm/can_i_use_the_ov9781_or_ov9782_with_the_xiao/"
+  },
+  {
+   "title": "Can anyone do the review between XIAO ESP32S3 Sense and DFRobot ESP32-CAM Dev Board?",
+   "subreddit": "esp32",
+   "score": 4,
+   "num_comments": 6,
+   "created_utc": 1684305320.0,
+   "url": "https://reddit.com/r/esp32/comments/13jtqy8/can_anyone_do_the_review_between_xiao_esp32s3/",
+   "link": "https://old.reddit.com/r/esp32/comments/13jtqy8/can_anyone_do_the_review_between_xiao_esp32s3/"
+  },
+  {
+   "title": "ESP32-S3 selfie camera with a round display that syncs photos to my iPhone app",
+   "subreddit": "esp32",
+   "score": 297,
+   "num_comments": 17,
+   "created_utc": 1781985387.0,
+   "url": "https://reddit.com/r/esp32/comments/1ub5wou/esp32s3_selfie_camera_with_a_round_display_that/",
+   "link": "https://v.redd.it/msa7948lph8h1"
+  },
+  {
+   "title": "I built an ESP32 Wi-Fi survey sensor with a BLE GATT client for Apple devices \u2014 feedback on the protocol wanted",
+   "subreddit": "esp32",
+   "score": 4,
+   "num_comments": 14,
+   "created_utc": 1787105408.0,
+   "url": "https://reddit.com/r/esp32/comments/1vs991q/i_built_an_esp32_wifi_survey_sensor_with_a_ble/",
+   "link": "https://old.reddit.com/r/esp32/comments/1vs991q/i_built_an_esp32_wifi_survey_sensor_with_a_ble/"
+  },
+  {
+   "title": "Need help: Posting images from XIAO ESP32S3 camera to my own server",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 3,
+   "created_utc": 1758605984.0,
+   "url": "https://reddit.com/r/esp32/comments/1no99fh/need_help_posting_images_from_xiao_esp32s3_camera/",
+   "link": "https://old.reddit.com/r/esp32/comments/1no99fh/need_help_posting_images_from_xiao_esp32s3_camera/"
+  },
+  {
+   "title": "Xiao ESP32S3 Bricking Issue",
+   "subreddit": "esp32",
+   "score": 3,
+   "num_comments": 10,
+   "created_utc": 1746234176.0,
+   "url": "https://reddit.com/r/esp32/comments/1kdgwgp/xiao_esp32s3_bricking_issue/",
+   "link": "https://old.reddit.com/r/esp32/comments/1kdgwgp/xiao_esp32s3_bricking_issue/"
+  },
+  {
+   "title": "XIAO-ESP-S3 Camera for CORE One",
+   "subreddit": "prusa3d",
+   "score": 6,
+   "num_comments": 6,
+   "created_utc": 1750995595.0,
+   "url": "https://reddit.com/r/prusa3d/comments/1llk0e1/xiaoesps3_camera_for_core_one/",
+   "link": "https://www.reddit.com/gallery/1llk0e1"
+  },
+  {
+   "title": "ESP32S3 Round Display Development Module with an OV5640 5MP Camera Sensor",
+   "subreddit": "esp32",
+   "score": 5,
+   "num_comments": 4,
+   "created_utc": 1745673840.0,
+   "url": "https://reddit.com/r/esp32/comments/1k8cvbz/esp32s3_round_display_development_module_with_an/",
+   "link": "https://old.reddit.com/r/esp32/comments/1k8cvbz/esp32s3_round_display_development_module_with_an/"
+  },
+  {
+   "title": "Connecting OV5647 camera module to seeeduino xiao esp32s3 - Need Advice",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 2,
+   "created_utc": 1744020283.0,
+   "url": "https://reddit.com/r/esp32/comments/1jthohf/connecting_ov5647_camera_module_to_seeeduino_xiao/",
+   "link": "https://old.reddit.com/r/esp32/comments/1jthohf/connecting_ov5647_camera_module_to_seeeduino_xiao/"
+  },
+  {
+   "title": "I Build a Digital Film Clapperboard Out of ePaper Display + ESP32",
+   "subreddit": "esp32",
+   "score": 738,
+   "num_comments": 29,
+   "created_utc": 1775904357.0,
+   "url": "https://reddit.com/r/esp32/comments/1sifrjb/i_build_a_digital_film_clapperboard_out_of_epaper/",
+   "link": "https://www.reddit.com/gallery/1sifrjb"
+  },
+  {
+   "title": "Pigeon deterrent powered by AI \ud83d\udc26\ud83e\udd16",
+   "subreddit": "arduino",
+   "score": 45,
+   "num_comments": 45,
+   "created_utc": 1774014678.0,
+   "url": "https://reddit.com/r/arduino/comments/1rywsln/pigeon_deterrent_powered_by_ai/",
+   "link": "https://www.reddit.com/gallery/1rywsln"
+  },
+  {
+   "title": "Need Help About My Camera Project",
+   "subreddit": "esp32",
+   "score": 89,
+   "num_comments": 5,
+   "created_utc": 1778935506.0,
+   "url": "https://reddit.com/r/esp32/comments/1tesphg/need_help_about_my_camera_project/",
+   "link": "https://www.reddit.com/gallery/1tesphg"
+  },
+  {
+   "title": "Please help \ud83d\ude1e",
+   "subreddit": "esp32",
+   "score": 0,
+   "num_comments": 6,
+   "created_utc": 1783972375.0,
+   "url": "https://reddit.com/r/esp32/comments/1uvm8ny/please_help/",
+   "link": "https://i.redd.it/qtvcm2gsx1dh1.jpeg"
+  },
+  {
+   "title": "High Altitude Balloon Avionics Board (Review Request)",
+   "subreddit": "PCB",
+   "score": 5,
+   "num_comments": 11,
+   "created_utc": 1777388299.0,
+   "url": "https://reddit.com/r/PCB/comments/1sy3u9p/high_altitude_balloon_avionics_board_review/",
+   "link": "https://www.reddit.com/gallery/1sy3u9p"
+  },
+  {
+   "title": "PCB Camera Review",
+   "subreddit": "PCB",
+   "score": 1,
+   "num_comments": 0,
+   "created_utc": 1782483422.0,
+   "url": "https://reddit.com/r/PCB/comments/1ug83zf/pcb_camera_review/",
+   "link": "https://www.reddit.com/gallery/1ug83zf"
+  },
+  {
+   "title": "My Space Balloon Project!!",
+   "subreddit": "SideProject",
+   "score": 3,
+   "num_comments": 5,
+   "created_utc": 1778553089.0,
+   "url": "https://reddit.com/r/SideProject/comments/1taodge/my_space_balloon_project/",
+   "link": "https://old.reddit.com/r/SideProject/comments/1taodge/my_space_balloon_project/"
+  },
+  {
+   "title": "Need help with my camera project",
+   "subreddit": "3Dprinting",
+   "score": 3,
+   "num_comments": 2,
+   "created_utc": 1778932336.0,
+   "url": "https://reddit.com/r/3Dprinting/comments/1terj4b/need_help_with_my_camera_project/",
+   "link": "https://www.reddit.com/gallery/1terj4b"
+  },
+  {
+   "title": "[Review Request] HAB Avionics Board",
+   "subreddit": "PrintedCircuitBoard",
+   "score": 22,
+   "num_comments": 1,
+   "created_utc": 1776988125.0,
+   "url": "https://reddit.com/r/PrintedCircuitBoard/comments/1stzf97/review_request_hab_avionics_board/",
+   "link": "https://www.reddit.com/gallery/1stzf97"
+  },
+  {
+   "title": "Help with Custom project",
+   "subreddit": "3Dprinting",
+   "score": 0,
+   "num_comments": 0,
+   "created_utc": 1779990463.0,
+   "url": "https://reddit.com/r/3Dprinting/comments/1tqauz8/help_with_custom_project/",
+   "link": "https://old.reddit.com/r/3Dprinting/comments/1tqauz8/help_with_custom_project/"
+  },
+  {
+   "title": "XIAOESP32S3-Sense Does Not Broadcast its Setup SSID",
+   "subreddit": "esp32",
+   "score": 2,
+   "num_comments": 5,
+   "created_utc": 1775712571.0,
+   "url": "https://reddit.com/r/esp32/comments/1sggqc8/xiaoesp32s3sense_does_not_broadcast_its_setup_ssid/",
+   "link": "https://old.reddit.com/r/esp32/comments/1sggqc8/xiaoesp32s3sense_does_not_broadcast_its_setup_ssid/"
+  },
+  {
+   "title": "Anything obviously wrong with my HAB avionics board schematic?",
+   "subreddit": "AskElectronics",
+   "score": 1,
+   "num_comments": 2,
+   "created_utc": 1777319878.0,
+   "url": "https://reddit.com/r/AskElectronics/comments/1sxesxo/anything_obviously_wrong_with_my_hab_avionics/",
+   "link": "https://www.reddit.com/gallery/1sxesxo"
+  },
+  {
+   "title": "Complete Beginner Building an FPV RC Car with My Son \u2014 Need Guidance!",
+   "subreddit": "radiocontrol",
+   "score": 0,
+   "num_comments": 2,
+   "created_utc": 1775121660.0,
+   "url": "https://reddit.com/r/radiocontrol/comments/1sach2z/complete_beginner_building_an_fpv_rc_car_with_my/",
+   "link": "https://old.reddit.com/r/radiocontrol/comments/1sach2z/complete_beginner_building_an_fpv_rc_car_with_my/"
+  },
+  {
+   "title": "In a custom ESP32-S3 device will OV5640 Autofocus work if AF_VCC is routed as STROBE?",
+   "subreddit": "esp32",
+   "score": 3,
+   "num_comments": 5,
+   "created_utc": 1772000419.0,
+   "url": "https://reddit.com/r/esp32/comments/1re5jcr/in_a_custom_esp32s3_device_will_ov5640_autofocus/",
+   "link": "https://old.reddit.com/r/esp32/comments/1re5jcr/in_a_custom_esp32s3_device_will_ov5640_autofocus/"
+  },
+  {
+   "title": "Hardware limitations for photo capture",
+   "subreddit": "esp32",
+   "score": 3,
+   "num_comments": 7,
+   "created_utc": 1753365910.0,
+   "url": "https://reddit.com/r/esp32/comments/1m85bio/hardware_limitations_for_photo_capture/",
+   "link": "https://old.reddit.com/r/esp32/comments/1m85bio/hardware_limitations_for_photo_capture/"
+  },
+  {
+   "title": "Issue With Arduino",
+   "subreddit": "Esphome",
+   "score": 3,
+   "num_comments": 5,
+   "created_utc": 1753210897.0,
+   "url": "https://reddit.com/r/Esphome/comments/1m6mw6j/issue_with_arduino/",
+   "link": "https://old.reddit.com/r/Esphome/comments/1m6mw6j/issue_with_arduino/"
+  },
+  {
+   "title": "DIY Eye Tracking Soldering Help",
+   "subreddit": "diyelectronics",
+   "score": 1,
+   "num_comments": 0,
+   "created_utc": 1760108900.0,
+   "url": "https://reddit.com/r/diyelectronics/comments/1o33i6a/diy_eye_tracking_soldering_help/",
+   "link": "https://old.reddit.com/r/diyelectronics/comments/1o33i6a/diy_eye_tracking_soldering_help/"
+  },
+  {
+   "title": "ESP CAM Help",
+   "subreddit": "Esphome",
+   "score": 2,
+   "num_comments": 3,
+   "created_utc": 1754852503.0,
+   "url": "https://reddit.com/r/Esphome/comments/1mmqyaj/esp_cam_help/",
+   "link": "https://old.reddit.com/r/Esphome/comments/1mmqyaj/esp_cam_help/"
+  },
+  {
+   "title": "Micro Camera",
+   "subreddit": "embedded",
+   "score": 0,
+   "num_comments": 12,
+   "created_utc": 1741540617.0,
+   "url": "https://reddit.com/r/embedded/comments/1j7cey0/micro_camera/",
+   "link": "https://old.reddit.com/r/embedded/comments/1j7cey0/micro_camera/"
+  },
+  {
+   "title": "Newbie here: Currently looking on advice bet LoRa SX1262 Modules vs SX128x 2.4Ghz Capable Chips",
+   "subreddit": "Lora",
+   "score": 2,
+   "num_comments": 2,
+   "created_utc": 1749451958.0,
+   "url": "https://reddit.com/r/Lora/comments/1l6y2cb/newbie_here_currently_looking_on_advice_bet_lora/",
+   "link": "https://www.reddit.com/gallery/1l6y2cb"
+  },
+  {
+   "title": "Critics for my model (an ESP32 mount)",
+   "subreddit": "BambuLab",
+   "score": 3,
+   "num_comments": 7,
+   "created_utc": 1738555566.0,
+   "url": "https://reddit.com/r/BambuLab/comments/1igghrs/critics_for_my_model_an_esp32_mount/",
+   "link": "https://old.reddit.com/r/BambuLab/comments/1igghrs/critics_for_my_model_an_esp32_mount/"
+  },
+  {
+   "title": "robotic car sketch",
+   "subreddit": "arduino",
+   "score": 0,
+   "num_comments": 0,
+   "created_utc": 1750664961.0,
+   "url": "https://reddit.com/r/arduino/comments/1liaocx/robotic_car_sketch/",
+   "link": "https://old.reddit.com/r/arduino/comments/1liaocx/robotic_car_sketch/"
+  },
+  {
+   "title": "Has anyone created a vision mod?",
+   "subreddit": "ClockworkPi",
+   "score": 4,
+   "num_comments": 2,
+   "created_utc": 1744065439.0,
+   "url": "https://reddit.com/r/ClockworkPi/comments/1jtyeka/has_anyone_created_a_vision_mod/",
+   "link": "https://old.reddit.com/r/ClockworkPi/comments/1jtyeka/has_anyone_created_a_vision_mod/"
+  },
+  {
+   "title": "Only heard about MeshCore a few weeks ago. Had fun putting this simple and inexpensive node together (Lora module SX1262 868mhz 915mhz antenna XIAO ESP32S3)",
+   "subreddit": "meshcore",
+   "score": 68,
+   "num_comments": 13,
+   "created_utc": 1778876097.0,
+   "url": "https://reddit.com/r/meshcore/comments/1te7tgp/only_heard_about_meshcore_a_few_weeks_ago_had_fun/",
+   "link": "https://www.reddit.com/gallery/1te7tgp"
+  },
+  {
+   "title": "Xiao ESP32S3 Setup Issues?",
+   "subreddit": "meshtastic",
+   "score": 5,
+   "num_comments": 6,
+   "created_utc": 1783302484.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1uojxi0/xiao_esp32s3_setup_issues/",
+   "link": "https://old.reddit.com/r/meshtastic/comments/1uojxi0/xiao_esp32s3_setup_issues/"
+  },
+  {
+   "title": "Brass with XIAO ESP32S3 &amp; Wio-SX1262 Kit",
+   "subreddit": "meshcore",
+   "score": 32,
+   "num_comments": 5,
+   "created_utc": 1780767348.0,
+   "url": "https://reddit.com/r/meshcore/comments/1tynj8s/brass_with_xiao_esp32s3_wiosx1262_kit/",
+   "link": "https://www.reddit.com/gallery/1tynj8s"
+  },
+  {
+   "title": "My 1st Node - Seeed Xiao ESP32S3 Wio SX1262",
+   "subreddit": "meshtastic",
+   "score": 89,
+   "num_comments": 11,
+   "created_utc": 1771145753.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1r59wtp/my_1st_node_seeed_xiao_esp32s3_wio_sx1262/",
+   "link": "https://www.reddit.com/gallery/1r59wtp"
+  },
+  {
+   "title": "Quick review of the reSpeaker XMOS XVF3800 with XIAO ESP32S3 (Case Version)",
+   "subreddit": "homeassistant",
+   "score": 1,
+   "num_comments": 6,
+   "created_utc": 1780987739.0,
+   "url": "https://reddit.com/r/homeassistant/comments/1u0xeu0/quick_review_of_the_respeaker_xmos_xvf3800_with/",
+   "link": "https://old.reddit.com/r/homeassistant/comments/1u0xeu0/quick_review_of_the_respeaker_xmos_xvf3800_with/"
+  },
+  {
+   "title": "XIAO ESP32S3 Not Charging Battery",
+   "subreddit": "esp32",
+   "score": 3,
+   "num_comments": 4,
+   "created_utc": 1781332525.0,
+   "url": "https://reddit.com/r/esp32/comments/1u4jjpw/xiao_esp32s3_not_charging_battery/",
+   "link": "https://old.reddit.com/r/esp32/comments/1u4jjpw/xiao_esp32s3_not_charging_battery/"
+  },
+  {
+   "title": "IMU+Altimeter+SD Card custom board for the XIAO ESP32S3. What projects would you do with this?",
+   "subreddit": "esp32",
+   "score": 118,
+   "num_comments": 22,
+   "created_utc": 1754142706.0,
+   "url": "https://reddit.com/r/esp32/comments/1mfr2ag/imualtimetersd_card_custom_board_for_the_xiao/",
+   "link": "https://v.redd.it/zccm48xr2mgf1"
+  },
+  {
+   "title": "Seeed Studio XIAO ESP32S3 &amp; Wio-SX1262",
+   "subreddit": "meshtastic",
+   "score": 5,
+   "num_comments": 4,
+   "created_utc": 1780066527.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1tr4dkp/seeed_studio_xiao_esp32s3_wiosx1262/",
+   "link": "https://old.reddit.com/r/meshtastic/comments/1tr4dkp/seeed_studio_xiao_esp32s3_wiosx1262/"
+  },
+  {
+   "title": "esp32s3 ink xiao zhi ai",
+   "subreddit": "eink",
+   "score": 44,
+   "num_comments": 6,
+   "created_utc": 1773064745.0,
+   "url": "https://reddit.com/r/eink/comments/1rp0xz1/esp32s3_ink_xiao_zhi_ai/",
+   "link": "https://v.redd.it/po48nnfqz0og1"
+  },
+  {
+   "title": "XIAO ESP32S3 for Meshtastic and my colleague's hand \ud83d\udd90\ufe0f",
+   "subreddit": "meshtastic",
+   "score": 68,
+   "num_comments": 44,
+   "created_utc": 1731920214.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1gu0lf2/xiao_esp32s3_for_meshtastic_and_my_colleagues_hand/",
+   "link": "https://www.reddit.com/gallery/1gu0lf2"
+  },
+  {
+   "title": "Xiao ESP32S3 - problems flashing",
+   "subreddit": "meshtastic",
+   "score": 2,
+   "num_comments": 3,
+   "created_utc": 1776790628.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1srtmro/xiao_esp32s3_problems_flashing/",
+   "link": "https://old.reddit.com/r/meshtastic/comments/1srtmro/xiao_esp32s3_problems_flashing/"
+  },
+  {
+   "title": "Seeed Xiao esp32s3+sx1262 kit",
+   "subreddit": "meshcore",
+   "score": 5,
+   "num_comments": 8,
+   "created_utc": 1772090373.0,
+   "url": "https://reddit.com/r/meshcore/comments/1rf3nwe/seeed_xiao_esp32s3sx1262_kit/",
+   "link": "https://old.reddit.com/r/meshcore/comments/1rf3nwe/seeed_xiao_esp32s3sx1262_kit/"
+  },
+  {
+   "title": "Working on a passwordless fingerprint unlocker thingy",
+   "subreddit": "esp32",
+   "score": 713,
+   "num_comments": 109,
+   "created_utc": 1783353305.0,
+   "url": "https://reddit.com/r/esp32/comments/1up1dg5/working_on_a_passwordless_fingerprint_unlocker/",
+   "link": "https://www.reddit.com/gallery/1up1dg5"
+  },
+  {
+   "title": "Thumbs up on the XIAO ESP32S3 &amp; Wio-SX1262",
+   "subreddit": "meshtastic",
+   "score": 8,
+   "num_comments": 1,
+   "created_utc": 1776216535.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1slrww3/thumbs_up_on_the_xiao_esp32s3_wiosx1262/",
+   "link": "https://old.reddit.com/r/meshtastic/comments/1slrww3/thumbs_up_on_the_xiao_esp32s3_wiosx1262/"
+  },
+  {
+   "title": "XIAO ESP32S3 + WIO-SX1262 + CN3791",
+   "subreddit": "meshtastic",
+   "score": 1,
+   "num_comments": 1,
+   "created_utc": 1776807600.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1ss1ptt/xiao_esp32s3_wiosx1262_cn3791/",
+   "link": "https://old.reddit.com/r/meshtastic/comments/1ss1ptt/xiao_esp32s3_wiosx1262_cn3791/"
+  },
+  {
+   "title": "Seeed xiao esp32s3 sx1262 battery %",
+   "subreddit": "meshtastic",
+   "score": 3,
+   "num_comments": 2,
+   "created_utc": 1775321516.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1sce9mq/seeed_xiao_esp32s3_sx1262_battery/",
+   "link": "https://old.reddit.com/r/meshtastic/comments/1sce9mq/seeed_xiao_esp32s3_sx1262_battery/"
+  },
+  {
+   "title": "Xiao esp32s3 deaf receive issue",
+   "subreddit": "meshtastic",
+   "score": 1,
+   "num_comments": 0,
+   "created_utc": 1777155550.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1svpq39/xiao_esp32s3_deaf_receive_issue/",
+   "link": "https://old.reddit.com/r/meshtastic/comments/1svpq39/xiao_esp32s3_deaf_receive_issue/"
+  },
+  {
+   "title": "SI1145 Not working with ESPHome and Xiao ESP32S3-Plus",
+   "subreddit": "Esphome",
+   "score": 1,
+   "num_comments": 1,
+   "created_utc": 1775502688.0,
+   "url": "https://reddit.com/r/Esphome/comments/1se8d68/si1145_not_working_with_esphome_and_xiao/",
+   "link": "https://old.reddit.com/r/Esphome/comments/1se8d68/si1145_not_working_with_esphome_and_xiao/"
+  },
+  {
+   "title": "XIAO ESP32s3 Working WiFi to HaLow Bridge",
+   "subreddit": "Seeed_Studio",
+   "score": 6,
+   "num_comments": 6,
+   "created_utc": 1769903113.0,
+   "url": "https://reddit.com/r/Seeed_Studio/comments/1qsi81f/xiao_esp32s3_working_wifi_to_halow_bridge/",
+   "link": "https://old.reddit.com/r/Seeed_Studio/comments/1qsi81f/xiao_esp32s3_working_wifi_to_halow_bridge/"
+  },
+  {
+   "title": "Xiao ESP32s3 HaLow to WiFi Bridge",
+   "subreddit": "esp32",
+   "score": 31,
+   "num_comments": 3,
+   "created_utc": 1769913978.0,
+   "url": "https://reddit.com/r/esp32/comments/1qsmcvm/xiao_esp32s3_halow_to_wifi_bridge/",
+   "link": "https://www.reddit.com/gallery/1qsmcvm"
+  },
+  {
+   "title": "Mounting Seeed Studio XIAO ESP32S3?",
+   "subreddit": "esp32",
+   "score": 23,
+   "num_comments": 43,
+   "created_utc": 1728486691.0,
+   "url": "https://reddit.com/r/esp32/comments/1fztq73/mounting_seeed_studio_xiao_esp32s3/",
+   "link": "https://i.redd.it/n91lct4dyqtd1.jpeg"
+  },
+  {
+   "title": "Can't get TFT_eSPI to do anything but boot loop my Xiao esp32s3",
+   "subreddit": "esp32",
+   "score": 2,
+   "num_comments": 10,
+   "created_utc": 1765412928.0,
+   "url": "https://reddit.com/r/esp32/comments/1pjjgc1/cant_get_tft_espi_to_do_anything_but_boot_loop_my/",
+   "link": "https://old.reddit.com/r/esp32/comments/1pjjgc1/cant_get_tft_espi_to_do_anything_but_boot_loop_my/"
+  },
+  {
+   "title": "Seeed Xiao ESP32S3 / Wio SX1262 Crashing",
+   "subreddit": "meshtastic",
+   "score": 1,
+   "num_comments": 2,
+   "created_utc": 1771689467.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1raun91/seeed_xiao_esp32s3_wio_sx1262_crashing/",
+   "link": "https://old.reddit.com/r/meshtastic/comments/1raun91/seeed_xiao_esp32s3_wio_sx1262_crashing/"
+  },
+  {
+   "title": "ESPresence on a xiao esp32s3 doesn't offer Wi-Fi Setup",
+   "subreddit": "homeassistant",
+   "score": 2,
+   "num_comments": 2,
+   "created_utc": 1770529098.0,
+   "url": "https://reddit.com/r/homeassistant/comments/1qz0oze/espresence_on_a_xiao_esp32s3_doesnt_offer_wifi/",
+   "link": "https://old.reddit.com/r/homeassistant/comments/1qz0oze/espresence_on_a_xiao_esp32s3_doesnt_offer_wifi/"
+  },
+  {
+   "title": "Modular Pill box using xiao esp32s3 in base housing unit and pogo pins",
+   "subreddit": "ArduinoProjects",
+   "score": 2,
+   "num_comments": 3,
+   "created_utc": 1769242403.0,
+   "url": "https://reddit.com/r/ArduinoProjects/comments/1qlhexm/modular_pill_box_using_xiao_esp32s3_in_base/",
+   "link": "https://old.reddit.com/r/ArduinoProjects/comments/1qlhexm/modular_pill_box_using_xiao_esp32s3_in_base/"
+  },
+  {
+   "title": "Add Buzzer and Digital Button to XIAO ESP32S3 Cam",
+   "subreddit": "arduino",
+   "score": 2,
+   "num_comments": 1,
+   "created_utc": 1768850916.0,
+   "url": "https://reddit.com/r/arduino/comments/1qhe1de/add_buzzer_and_digital_button_to_xiao_esp32s3_cam/",
+   "link": "https://old.reddit.com/r/arduino/comments/1qhe1de/add_buzzer_and_digital_button_to_xiao_esp32s3_cam/"
+  },
+  {
+   "title": "a digital frame powered by XIAO ESP32S3 and an ePaper Display, created by ThatProject",
+   "subreddit": "esp32",
+   "score": 148,
+   "num_comments": 12,
+   "created_utc": 1731373667.0,
+   "url": "https://reddit.com/r/esp32/comments/1gp8q5v/a_digital_frame_powered_by_xiao_esp32s3_and_an/",
+   "link": "https://www.reddit.com/gallery/1gp8q5v"
+  },
+  {
+   "title": "Adding Buzzer to XIAO ESP32S3 &amp; Wio-SX1262?",
+   "subreddit": "meshtastic",
+   "score": 2,
+   "num_comments": 9,
+   "created_utc": 1756228251.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1n0roza/adding_buzzer_to_xiao_esp32s3_wiosx1262/",
+   "link": "https://old.reddit.com/r/meshtastic/comments/1n0roza/adding_buzzer_to_xiao_esp32s3_wiosx1262/"
+  },
+  {
+   "title": "XIAO ESP32S3 &amp; Wio-SX1262 with the HGLRC M100 GPS module",
+   "subreddit": "meshtastic",
+   "score": 1,
+   "num_comments": 0,
+   "created_utc": 1766620198.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1pv0ite/xiao_esp32s3_wiosx1262_with_the_hglrc_m100_gps/",
+   "link": "https://i.redd.it/da9mjhzuo89g1.jpeg"
+  },
+  {
+   "title": "SEEEDSTUDIO XIAO ESP32S3 DIY Meshtastic",
+   "subreddit": "meshtastic",
+   "score": 21,
+   "num_comments": 17,
+   "created_utc": 1737124728.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1i3hr7u/seeedstudio_xiao_esp32s3_diy_meshtastic/",
+   "link": "https://www.reddit.com/gallery/1i3hr7u"
+  },
+  {
+   "title": "Where can I find footprint for XIAO ESP32S3 Plus?",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 5,
+   "created_utc": 1755268678.0,
+   "url": "https://reddit.com/r/esp32/comments/1mqzphx/where_can_i_find_footprint_for_xiao_esp32s3_plus/",
+   "link": "https://old.reddit.com/r/esp32/comments/1mqzphx/where_can_i_find_footprint_for_xiao_esp32s3_plus/"
+  },
+  {
+   "title": "Xiao Esp32S3 drone imu error",
+   "subreddit": "embedded",
+   "score": 2,
+   "num_comments": 6,
+   "created_utc": 1751787556.0,
+   "url": "https://reddit.com/r/embedded/comments/1lsvkrd/xiao_esp32s3_drone_imu_error/",
+   "link": "https://old.reddit.com/r/embedded/comments/1lsvkrd/xiao_esp32s3_drone_imu_error/"
+  },
+  {
+   "title": "Ordered a $10 XIAO ESP32S3 for Meshtastic &amp; LoRa",
+   "subreddit": "meshtastic",
+   "score": 35,
+   "num_comments": 10,
+   "created_utc": 1739575524.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1ipo283/ordered_a_10_xiao_esp32s3_for_meshtastic_lora/",
+   "link": "https://www.reddit.com/gallery/1ipo283"
+  },
+  {
+   "title": "SEEEDSTUDIO XIAO ESP32S3 &amp; Wio-SX1262 DIY FINISH PROJECT\u2026",
+   "subreddit": "meshtastic",
+   "score": 2,
+   "num_comments": 15,
+   "created_utc": 1737165828.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1i3x1ok/seeedstudio_xiao_esp32s3_wiosx1262_diy_finish/",
+   "link": "https://www.reddit.com/gallery/1i3x1ok"
+  },
+  {
+   "title": "SD card module fails on 3.3V with XIAO ESP32S3",
+   "subreddit": "esp32",
+   "score": 1,
+   "num_comments": 5,
+   "created_utc": 1750264884.0,
+   "url": "https://reddit.com/r/esp32/comments/1lelwad/sd_card_module_fails_on_33v_with_xiao_esp32s3/",
+   "link": "https://old.reddit.com/r/esp32/comments/1lelwad/sd_card_module_fails_on_33v_with_xiao_esp32s3/"
+  },
+  {
+   "title": "Need help with my Seeed XIAO ESP32S3",
+   "subreddit": "meshtastic",
+   "score": 2,
+   "num_comments": 3,
+   "created_utc": 1752156494.0,
+   "url": "https://reddit.com/r/meshtastic/comments/1lwdnqq/need_help_with_my_seeed_xiao_esp32s3/",
+   "link": "https://old.reddit.com/r/meshtastic/comments/1lwdnqq/need_help_with_my_seeed_xiao_esp32s3/"
+  },
+  {
+   "title": "Where can I find footprint for XIAO ESP32S3 Plus?",
+   "subreddit": "Seeed_Studio",
+   "score": 1,
+   "num_comments": 0,
+   "created_utc": 1755267625.0,
+   "url": "https://reddit.com/r/Seeed_Studio/comments/1mqz880/where_can_i_find_footprint_for_xiao_esp32s3_plus/",
+   "link": "https://old.reddit.com/r/Seeed_Studio/comments/1mqz880/where_can_i_find_footprint_for_xiao_esp32s3_plus/"
+  }
+ ]
+}

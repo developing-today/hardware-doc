@@ -1,0 +1,801 @@
+[
+ {
+  "slug": "at.cavac.ballz",
+  "name": "Ballz GL",
+  "author": "Rene cavac Schickbauer",
+  "version": "2.1.0",
+  "cats": [
+   "demo"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.floppybird",
+  "name": "Floppy Bird GL",
+  "author": "Rene cavac Schickbauer",
+  "version": "2.1.0",
+  "cats": [
+   "games"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.graceloader",
+  "name": "Graceloader",
+  "author": "Rene cavac Schickbauer",
+  "version": "2.1.0",
+  "cats": [
+   "tools"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.key-led-indicator",
+  "name": "Key LED Indicator",
+  "author": "Rene Schickbauer",
+  "version": "2.0.0",
+  "cats": [
+   "tools"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.musicalkeyboard",
+  "name": "Musical Keyboard GL",
+  "author": "Rene cavac Schickbauer",
+  "version": "2.1.0",
+  "cats": [
+   "fun"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.musicplayer",
+  "name": "Music Player",
+  "author": "Rene Schickbauer",
+  "version": "2.0.0",
+  "cats": [
+   "multimedia"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.nukeitformatter",
+  "name": "Nuke-it",
+  "author": "Rene cavac Schickbauer",
+  "version": "1.5.0",
+  "cats": [
+   "tools"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.paperclips",
+  "name": "Universal Paperclips GL",
+  "author": "Rene cavac Schickbauer",
+  "version": "0.2.0",
+  "cats": [
+   "games"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.placeinvaders",
+  "name": "Place Invaders GL",
+  "author": "Rene cavac Schickbauer",
+  "version": "2.2.0",
+  "cats": [
+   "games"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.pogn",
+  "name": "POGN GL",
+  "author": "Rene cavac Schickbauer",
+  "version": "2.1.0",
+  "cats": [
+   "games"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.powerinfo",
+  "name": "Power Info",
+  "author": "Rene Schickbauer",
+  "version": "2.0.0",
+  "cats": [
+   "tools"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.racethesynth",
+  "name": "Race the Synth GL",
+  "author": "Rene cavac Schickbauer",
+  "version": "0.3.0",
+  "cats": [
+   "games"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.screenshot",
+  "name": "Screenshot",
+  "author": "Rene Schickbauer",
+  "version": "2.0.0",
+  "cats": [
+   "tools"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.startup",
+  "name": "Startup Sound",
+  "author": "Rene Schickbauer",
+  "version": "2.0.0",
+  "cats": [
+   "multimedia"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.tadoom",
+  "name": "TaDOOM",
+  "author": "Rene cavac Schickbauer",
+  "version": "0.6.0",
+  "cats": [
+   "games"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.tanmatype",
+  "name": "Tanmatype camera",
+  "author": "Rene cavac Schickbauer",
+  "version": "1.5.0",
+  "cats": [
+   "multimedia"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.thecube",
+  "name": "TheCube GL",
+  "author": "Rene cavac Schickbauer",
+  "version": "2.1.0",
+  "cats": [
+   "demo"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.turret",
+  "name": "Turret",
+  "author": "Rene Schickbauer",
+  "version": "2.0.0",
+  "cats": [
+   "fun"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "at.cavac.zoetrope",
+  "name": "Zotoropu",
+  "author": "Rene cavac Schickbauer",
+  "version": "1.4.0",
+  "cats": [
+   "multimedia"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "com.annejan.tic80",
+  "name": "TIC-80",
+  "author": "Vadim Grigoruk (nesbox) - Tanmatsu port by Anne Jan Brouwer",
+  "version": "1.3.1",
+  "cats": [
+   "games",
+   "tools"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "com.github.siviqt.tanradio",
+  "name": "TanRadio",
+  "author": "siviqt",
+  "version": "0.1.0",
+  "cats": [
+   "media"
+  ],
+  "license": "proprietary",
+  "targets": [
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "com.irak4t0n.howboyadvance",
+  "name": "HowBoyAdvance",
+  "author": "Irak4t0n",
+  "version": "1",
+  "cats": [
+   "games",
+   "emulators"
+  ],
+  "license": "GPL-2.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "com.irak4t0n.howboymatsu",
+  "name": "HowBoyMatsu",
+  "author": "Irak4t0n",
+  "version": "2",
+  "cats": [
+   "games",
+   "emulators"
+  ],
+  "license": "GPL-2.0",
+  "targets": [
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "com.irak4t0n.matsumonstermesh",
+  "name": "MatsuMonsterMesh",
+  "author": "Irak4t0n",
+  "version": "1",
+  "cats": [
+   "games",
+   "emulators"
+  ],
+  "license": "GPL-3.0-or-later",
+  "targets": [
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "com.lunardr4gn.typewriter",
+  "name": "Typewriter",
+  "author": "Leviathan & Daandobber",
+  "version": "3.0.1",
+  "cats": [
+   "tools"
+  ],
+  "license": "MIT",
+  "targets": [
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "com.wadamesh.wadamesh",
+  "name": "WadaMesh",
+  "author": "Kaj Schittecat - ALLFATHER BV",
+  "version": "1.0.63",
+  "cats": [
+   "tools",
+   "utils",
+   "hardware"
+  ],
+  "license": "GPL-3.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "de.asaril.tanmatsu.ircam",
+  "name": "IR Camera",
+  "author": "Asaril",
+  "version": "0.2.1",
+  "cats": [
+   "hardware"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "de.saarbastler.wifiscanner",
+  "name": "WifiScanner",
+  "author": "Saarbastler",
+  "version": "0.2.0",
+  "cats": [
+   "tools"
+  ],
+  "license": "MIT",
+  "targets": [
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "fi.ps.multimesh",
+  "name": "MultiMesh",
+  "author": "Petri Simolin",
+  "version": "0.10.0",
+  "cats": [
+   "communication",
+   "tools"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "gb.heathenuk.trackmatsu",
+  "name": "Trackmatsu",
+  "author": "HeathenUK",
+  "version": "0.0.2",
+  "cats": [
+   "media"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "hu.zh4ck.matter",
+  "name": "Matter comms",
+  "author": "zh4ck",
+  "version": "1.0.5",
+  "cats": [
+   "utils"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "hu.zh4ck.tirc",
+  "name": "T-IRC",
+  "author": "zh4ck",
+  "version": "1.0.0",
+  "cats": [
+   "utils"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "lgbt.sky.imagewag",
+  "name": "ImageWag",
+  "author": "Sky.LGBT",
+  "version": "2.0.0",
+  "cats": [
+   "image viewer"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "lgbt.sky.tanterminal",
+  "name": "TanTerminal",
+  "author": "Sky.LGBT",
+  "version": "1.1.0",
+  "cats": [
+   "Utils"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "net.scheffers.neiro",
+  "name": "Neiro",
+  "author": "Pascal Scheffers",
+  "version": "1.0.0",
+  "cats": [
+   "music",
+   "multimedia"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.cj.meshcore",
+  "name": "MeshCore",
+  "author": "CJ van Soest",
+  "version": "3.6.0",
+  "cats": [
+   "tools",
+   "utils",
+   "hardware"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.cj.whyledmatrix",
+  "name": "LED Matrix",
+  "author": "CJ van Soest",
+  "version": "1.0.0",
+  "cats": [
+   "tools",
+   "hardware"
+  ],
+  "license": "MIT",
+  "targets": [
+   "why2025"
+  ]
+ },
+ {
+  "slug": "nl.cj.whysensorslvgl",
+  "name": "Sensors (LVGL)",
+  "author": "CJ van Soest",
+  "version": "1.0.0",
+  "cats": [
+   "tools",
+   "hardware"
+  ],
+  "license": "MIT",
+  "targets": [
+   "why2025"
+  ]
+ },
+ {
+  "slug": "nl.cj.whystorage",
+  "name": "Storage Monitor",
+  "author": "CJ van Soest",
+  "version": "1.0.0",
+  "cats": [
+   "tools",
+   "system"
+  ],
+  "license": "MIT",
+  "targets": [
+   "why2025"
+  ]
+ },
+ {
+  "slug": "nl.cj.wifianalyzer",
+  "name": "WiFi Analyzer",
+  "author": "CJ van Soest",
+  "version": "1.0.1",
+  "cats": [
+   "tools"
+  ],
+  "license": "MIT",
+  "targets": [
+   "tanmatsu",
+   "why2025"
+  ]
+ },
+ {
+  "slug": "nl.daandobber.discomatsu",
+  "name": "Disc-O-Matsu",
+  "author": "Daan Dobber",
+  "version": "0.2.0",
+  "cats": [
+   "media"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.daandobber.kodiremote",
+  "name": "Kodi Remote",
+  "author": "Daan Dobber",
+  "version": "0.2.0",
+  "cats": [
+   "media"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.daandobber.matrixmatsu",
+  "name": "MatrixMatsu",
+  "author": "Daan Dobber",
+  "version": "0.3.0",
+  "cats": [
+   "communication"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.daandobber.musicmaker",
+  "name": "MusicMaker",
+  "author": "Daan Dobber",
+  "version": "0.1.0",
+  "cats": [
+   "media"
+  ],
+  "license": "MIT",
+  "targets": [
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.daandobber.musicplayer",
+  "name": "MusicPlayer",
+  "author": "Daan Dobber",
+  "version": "0.1.0",
+  "cats": [
+   "media"
+  ],
+  "license": "proprietary",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.daandobber.openjazz",
+  "name": "OpenJazz",
+  "author": "Daan Dobber",
+  "version": "0.1.0",
+  "cats": [
+   "games"
+  ],
+  "license": "GPL-2.0-or-later",
+  "targets": [
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.mansoft.catchtheapple",
+  "name": "Catch the apple",
+  "author": "Henri Manson",
+  "version": "0.0.1",
+  "cats": [
+   "games"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.mansoft.micropython",
+  "name": "Micropython",
+  "author": "Henri Manson",
+  "version": "0.2",
+  "cats": [
+   "tools"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.mansoft.mqtt",
+  "name": "MQTT demo",
+  "author": "Henri Manson",
+  "version": "0.0.1",
+  "cats": [
+   "games"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.mansoft.spiro",
+  "name": "Spirograph",
+  "author": "Henri Manson",
+  "version": "0.0.1",
+  "cats": [
+   "games"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.mansoft.vt01a",
+  "name": "VT01A",
+  "author": "Henri Manson",
+  "version": "0.0.1",
+  "cats": [
+   "games"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.nickbouwhuis.sshmatsu",
+  "name": "SSHmatsu",
+  "author": "Nick Bouwhuis",
+  "version": "1.0.0",
+  "cats": [
+   "communication",
+   "utils"
+  ],
+  "license": "MIT",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.nicolaielectronics.catprinter",
+  "name": "BLE cat printer",
+  "author": "Nicolai Electronics",
+  "version": "0.0.1",
+  "cats": [
+   "hardware"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.nicolaielectronics.keyboard",
+  "name": "USB HID keyboard",
+  "author": "Nicolai Electronics",
+  "version": "0.0.2",
+  "cats": [
+   "hardware"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.nicolaielectronics.usbmsc",
+  "name": "USB disk drive",
+  "author": "Nicolai Electronics",
+  "version": "0.0.1",
+  "cats": [
+   "hardware"
+  ],
+  "license": "CC0-1.0",
+  "targets": [
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "nl.ranzbak.c64",
+  "name": "Commodore 64 emulator",
+  "author": "Ranzbak",
+  "version": "0.0.6",
+  "cats": [
+   "games"
+  ],
+  "license": "GPLv3 or later",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ },
+ {
+  "slug": "team.badge.nofrendo",
+  "name": "Nofrendo NES emulator",
+  "author": "Badge.Team",
+  "version": "0.0.2",
+  "cats": [
+   "games"
+  ],
+  "license": "GPLv2",
+  "targets": [
+   "konsool",
+   "tanmatsu"
+  ]
+ }
+]

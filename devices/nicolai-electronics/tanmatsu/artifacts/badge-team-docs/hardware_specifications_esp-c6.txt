@@ -1,0 +1,13 @@
+Konsool ESP-C6
+Specifications
+label | Value |
+Type | ESP32-C6-WROOM-1 |
+Architecture | RISC-V |
+Flash | 8 mb |
+WIFI version | 6 |
+WIFI frequency | 2.4 GHz |
+Bluetooth | LE |
+IOT | Zigbee + THread (802.15.4) |
+Datasheet
+For detailed specifications please look at the datasheet
+Last modified August 21, 2026: Merge pull request #257 from badgeteam/fix-hatchery-swagger-url (14c0a0c)

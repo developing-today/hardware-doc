@@ -1,0 +1,22 @@
+{
+  "verifiedAt": "2026-08-21",
+  "scope": {
+    "authoredMarkdown": "Markdown outside device artifacts/",
+    "bundledUpstreamMarkdown": "preserved as supplied; relative links not validated and not claimed to pass",
+    "inventory": "all files except inventory.txt and verification.json to avoid self-referential generated metadata"
+  },
+  "authoredMarkdownFiles": 37,
+  "authoredRelativeLinks": 101,
+  "authoredRelativeLinksResult": "OK",
+  "artifactFiles": 1832,
+  "artifactBytes": 374335065,
+  "inventoryFiles": 1870,
+  "inventoryBytes": 374848403,
+  "duplicateHashGroups": 160,
+  "duplicateRedundantBytes": 61915220,
+  "expectedOfficialZipAndFirmwareHashes": "OK",
+  "zipIntegrity": "OK",
+  "pdfMagic": "OK",
+  "filenamePortability": "OK",
+  "failures": []
+}

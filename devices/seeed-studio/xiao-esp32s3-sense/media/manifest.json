@@ -1,0 +1,136 @@
+{
+  "device": "seeed-studio/xiao-esp32s3-sense",
+  "retrieved": "2026-08-24",
+  "rights": "Seeed Studio product/wiki imagery. Schematic-derived block diagram is CC BY-SA 4.0 (per the schematic sheets). Wiki/product photography carries no stated licence - redistribution status unknown.",
+  "count": 17,
+  "images": [
+    {
+      "file": "xiaoesp32s3sense.jpg",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/xiaoesp32s3sense.jpg",
+      "bytes": 221204,
+      "sha256": "107066759dd029d84707a5c2af13f57f854cab63391c41821e3a5037c8d34809",
+      "renamed_from": null
+    },
+    {
+      "file": "xiao-esp32-s3-sense-overview.png",
+      "url": "https://files.seeedstudio.com/wiki/microblocks/xiao-esp32-s3-sense-overview.png",
+      "bytes": 482450,
+      "sha256": "2babfc99995f8b9f28e55a3ad37ca4555c0e75721810eb2c41fd0727f83211df",
+      "renamed_from": null
+    },
+    {
+      "file": "xiao-esp32s3-sense-pinout.jpg",
+      "url": "https://files.seeedstudio.com/wiki/microblocks/xiao-esp32s3-sense-pinout.jpg",
+      "bytes": 117825,
+      "sha256": "c3db8ce278fcc0428ce766783254553873e031a50c50f2feaab3675959923694",
+      "renamed_from": null
+    },
+    {
+      "file": "XIAO_ESP32-S3_front_pinout.png",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32-S3_front_pinout.png",
+      "bytes": 2671832,
+      "sha256": "27a54de4cd855aa5269fbfbc9c49715fcedf104dbf1b7cef7e9a4833b206a8e2",
+      "renamed_from": null
+    },
+    {
+      "file": "XIAO_ESP32-S3_back_pinout.png",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32-S3_back_pinout.png",
+      "bytes": 2139600,
+      "sha256": "49dfbb6d873c52990b4985e0533ec04c811b3d180eb266bd476ca013e75b714d",
+      "renamed_from": null
+    },
+    {
+      "file": "XIAO_ESP32-S3_Sense_front_pinout.png",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32-S3_Sense_front_pinout.png",
+      "bytes": 5094993,
+      "sha256": "5fe775f131ab8e84a1860b5435c30edf1e77f7ab9bc4e08c2e428fc4bb4c00c8",
+      "renamed_from": null
+    },
+    {
+      "file": "XIAO_ESP32-S3_Sense_back_pinout.png",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32-S3_Sense_back_pinout.png",
+      "bytes": 2139559,
+      "sha256": "91b5266fd29b73c7218173430c035444960460f89c4ac582fe595e395053f02f",
+      "renamed_from": null
+    },
+    {
+      "file": "XIAO_ESP32-S3_Plus_front_pinout.png",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32-S3_Plus_front_pinout.png",
+      "bytes": 2479215,
+      "sha256": "a16289a228731548ccaf7fb31bdf79a12d4cbb69369cf882fc7443fe24dd3b33",
+      "renamed_from": null
+    },
+    {
+      "file": "XIAO_ESP32-S3_Plus_back_pinout.png",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32-S3_Plus_back_pinout.png",
+      "bytes": 2596347,
+      "sha256": "17207eb60a5049bfd7b4227475b6b03d8ca6b904e7e2f6e77ecd1569a00d48c7",
+      "renamed_from": null
+    },
+    {
+      "file": "sense-daughterboard-detached.jpg",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/105.jpg",
+      "bytes": 438489,
+      "sha256": "4e8c3698a858cfec84056ceae35cbdc8b28888e6d5a9e74ff10a7147d3d3d02a",
+      "renamed_from": [
+        "105.jpg"
+      ]
+    },
+    {
+      "file": "b2b-connector-detail.png",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/106.png",
+      "bytes": 42055,
+      "sha256": "c47c02606ea0fb77f1bdb736994814b130c6b8e6423c32b4a5f1a1bc6d82bfd0",
+      "renamed_from": [
+        "106.png"
+      ]
+    },
+    {
+      "file": "sense-assembly.png",
+      "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/107.png",
+      "bytes": 339916,
+      "sha256": "017a20b71a28f95737935bb4db6a97ff3a77de00d58bce9838319b47ebc76fa7",
+      "renamed_from": [
+        "107.png"
+      ]
+    },
+    {
+      "file": "block-diagram-v1.5.png",
+      "url": null,
+      "bytes": 197107,
+      "sha256": "a1c76f957564ec9401c45f1fb2e4403c47a049892084954f4e439a918a48e5e8",
+      "source": "Extracted from the Sense v1.5 SCH&PCB KiCad package (not published separately)"
+    },
+    {
+      "file": "block-diagram-v1.5.drawio",
+      "url": null,
+      "bytes": 34628,
+      "sha256": "ebcaab1d03ed9271aa180f08b05da9697e344390ae264bd9bdb2471ed6607789",
+      "source": "Extracted from the Sense v1.5 SCH&PCB KiCad package (not published separately)"
+    },
+    {
+      "file": "board-top-view.jpg",
+      "url": null,
+      "bytes": 110691,
+      "sha256": "1ee52eaa4b3b20d573d3e1dfd64eb0d16e28bb458a0ff00af6d2e9343c7f276b",
+      "source": "Extracted from Seeed's 3D-model ZIPs (now archived; see artifacts/cad/ARCHIVED-3D-MODELS.md)",
+      "note": "Top face: shield can with FCC ID label, R/B button markings, U.FL connector, B2B footprint"
+    },
+    {
+      "file": "board-bottom-view.jpg",
+      "url": null,
+      "bytes": 134927,
+      "sha256": "7223d1938af63f9063e85f1d2d779805fd0968b9fbf4f6fcb959e687b6b7b66d",
+      "source": "Extracted from Seeed's 3D-model ZIPs (now archived; see artifacts/cad/ARCHIVED-3D-MODELS.md)",
+      "note": "**Bottom face \u2014 the clearest view of the labelled JTAG pads that exists.** MTDO, MTDI, GND, EN, MTCK, MTMS, D+, D-, BAT +/-"
+    },
+    {
+      "file": "sense-assembled-render.jpg",
+      "url": null,
+      "bytes": 105830,
+      "sha256": "f3bfbfa6bc099d05f02e90672763b10abf2d96d9647ea56228e7db7c0987f83b",
+      "source": "Extracted from Seeed's 3D-model ZIPs (now archived; see artifacts/cad/ARCHIVED-3D-MODELS.md)",
+      "note": "Sense stack assembled with camera fitted"
+    }
+  ]
+}

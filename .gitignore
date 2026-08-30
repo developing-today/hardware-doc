@@ -1,0 +1,6 @@
+# Bulk artifacts live in the sibling ../hardware-doc-archive (not a git repo).
+# Each one leaves a *.ARCHIVED.md placeholder here with hashes and recovery URLs.
+
+__pycache__/
+*.pyc
+.DS_Store

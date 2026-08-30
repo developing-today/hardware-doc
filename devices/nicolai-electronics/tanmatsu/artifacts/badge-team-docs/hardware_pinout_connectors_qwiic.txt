@@ -1,0 +1,6 @@
+QWIIC pinout
+Description
+The QWIIC connector combines I2C and I3C in one connector.
+Information about this connector and all of it’s versatile uses can be found on https://www.sparkfun.com/qwiic
+For this connector sparkfun advices to use the standard cable so all modules you connect to this connector will work without any issues.
+Last modified August 21, 2026: Merge pull request #257 from badgeteam/fix-hatchery-swagger-url (14c0a0c)

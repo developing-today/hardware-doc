@@ -1,0 +1,7 @@
+Konsool specifications
+Konsool battery
+Konsool ESP-C6
+Konsool ESP-P4
+Konsool keyboard
+Konsool screen
+Last modified August 21, 2026: Merge pull request #257 from badgeteam/fix-hatchery-swagger-url (14c0a0c)

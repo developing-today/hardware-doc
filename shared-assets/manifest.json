@@ -1,0 +1,485 @@
+{
+  "generated": "2026-08-30",
+  "tool": "doc/hardware/tools/dedupe_shared_assets.py",
+  "note": "Derived from disk state by --reindex; safe to regenerate at any time.",
+  "entries": [
+    {
+      "sha256": "dc831848e1f7824caf8dde575a0b2bb34bcb261c4d009ebaab9c7b5f4b900958",
+      "bytes": 1075546,
+      "pool_entry": "dc831848e1f7-ambient-light-and-proximity-sensor-selection-zh.pdf",
+      "linked_from": [
+        "components/generic/ambient-light-and-proximity-sensor-selection/artifacts/ambient-light-and-proximity-sensor-selection-zh.pdf",
+        "devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/03_DRV2605_Test/components/SensorLib/datasheet/+\udcc0\udca5\udca6\udca6\udcd4\udccb\u0662\u02e2\udcb3\udca6\udcbd\udca9\udcf0\udce3\udcb8\u02ea\udccb+\udccb\udcd9\udcd0\udced\udcf0-.pdf"
+      ]
+    },
+    {
+      "sha256": "670808e30541f900aceb1f715c449149a69de9acbee31ccc1a601e4a545d52cb",
+      "bytes": 950989,
+      "pool_entry": "670808e30541-chsc5816-datasheet-v1-20221114-zh.pdf",
+      "linked_from": [
+        "components/chipsemi/chsc5816/artifacts/chsc5816-datasheet-v1-20221114-zh.pdf",
+        "devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/03_DRV2605_Test/components/SensorLib/datasheet/CHSC5816\udca6\udcd1+\udccf\udcf0\udca5\udce3\udcbc-\udca6\udccb+-\udcc1+\udcb8V1-20221114.pdf"
+      ]
+    },
+    {
+      "sha256": "312f05e05de91f428fc7b7abba8e76c2bf57e2db483de69dcec821d15bf3be87",
+      "bytes": 786948,
+      "pool_entry": "312f05e05de9-components.png",
+      "linked_from": [
+        "devices/nicolai-electronics/tanmatsu/artifacts/source-snapshots/tanmatsu-documentation/hardware/components.png",
+        "devices/nicolai-electronics/tanmatsu/artifacts/source-snapshots/tanmatsu-documentation/hardware/pcb-back.png"
+      ]
+    },
+    {
+      "sha256": "0e9a0c42358c907a1926a17aea987453d144f2f0dfbd5a694bd745bb32791860",
+      "bytes": 660817,
+      "pool_entry": "0e9a0c42358c-hynitron-touch-driver-porting-guide-v3.5-20220701-zh.pdf",
+      "linked_from": [
+        "devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/03_DRV2605_Test/components/SensorLib/datasheet/\udca6\udcfa\u07a6\udca6\udca6\udca6\udcd1+\udca6\udcf0\udca5\udce3\udcbc\udcca\udce3\u0366-\u0366\udcdf-v3.5-20220701(1).pdf",
+        "vendors/hynitron/artifacts/hynitron-touch-driver-porting-guide-v3.5-20220701-zh.pdf"
+      ]
+    },
+    {
+      "sha256": "a938ccb89a85b97387b04209edba1a27baee1907f3a05cf1cf886686be481616",
+      "bytes": 150712,
+      "pool_entry": "a938ccb89a85-camera_index.h",
+      "linked_from": [
+        "devices/seeed-studio/xiao-esp32s3-sense/examples/selected/SeeedStudio-XIAO-ESP32S3-Sense-camera/record_video/camera_index.h",
+        "devices/seeed-studio/xiao-esp32s3-sense/examples/selected/SeeedStudio-XIAO-ESP32S3-Sense-camera/round_display_take_picture/camera_index.h",
+        "devices/seeed-studio/xiao-esp32s3-sense/examples/selected/SeeedStudio-XIAO-ESP32S3-Sense-camera/round_display_take_picture_fix/camera_index.h",
+        "devices/seeed-studio/xiao-esp32s3-sense/examples/selected/SeeedStudio-XIAO-ESP32S3-Sense-camera/take_photos/camera_index.h",
+        "devices/seeed-studio/xiao-esp32s3-sense/examples/selected/SeeedStudio-XIAO-ESP32S3-Sense-camera/video_stream_round_display/camera_index.h"
+      ]
+    },
+    {
+      "sha256": "cbb6a53dc20a68748784b5bf3548801710f925bd69dbdb75510a9a46d6d0007a",
+      "bytes": 328112,
+      "pool_entry": "cbb6a53dc20a-SCH_ESP32-P4_HMI_SubBoard_V1.3_20240709.pdf",
+      "linked_from": [
+        "devices/espressif/shared-artifacts/lcd-adapter-board-reference-design/LCD Adapter Board/01_Schematic/SCH_ESP32-P4_HMI_SubBoard_V1.3_20240709.pdf",
+        "devices/espressif/shared-artifacts/lcd-subboard-schematics.pdf"
+      ]
+    },
+    {
+      "sha256": "12259b9479856b8e54183f436d36d6e139d1e564dd0d76ff1fda1ab479f0582f",
+      "bytes": 47327,
+      "pool_entry": "12259b947985-FreeMonoBold24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeMonoBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeMonoBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_Quotables/Fonts/FreeMonoBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_Google_Calendar/src/fonts/FreeMonoBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeMonoBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_OpenMeteo_Weather_Station/src/fonts/FreeMonoBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_Quotables/Fonts/FreeMonoBold24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "c0f001bf462d9677b152852ce32b359227d6556bc34b114c0142662816fc36f7",
+      "bytes": 55627,
+      "pool_entry": "c0f001bf462d-FreeSansBold24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSansBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSansBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_Google_Calendar/src/fonts/FreeSansBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSansBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_OpenMeteo_Weather_Station/src/fonts/FreeSansBold24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "107066759dd029d84707a5c2af13f57f854cab63391c41821e3a5037c8d34809",
+      "bytes": 221204,
+      "pool_entry": "107066759dd0-xiao-esp32s3-sense.jpg",
+      "linked_from": [
+        "devices/seeed-studio/xiao-esp32s3-sense/examples/selected/XIAO_Webcam/docs/xiao-esp32s3-sense.jpg",
+        "devices/seeed-studio/xiao-esp32s3-sense/media/xiaoesp32s3sense.jpg"
+      ]
+    },
+    {
+      "sha256": "4162814ffe26ac40be001ac1608ed8b8d7ba408864fb38a7e4ae94c59a753be6",
+      "bytes": 51419,
+      "pool_entry": "4162814ffe26-FreeSans24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSans24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSans24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_Google_Calendar/src/fonts/FreeSans24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSans24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_OpenMeteo_Weather_Station/src/fonts/FreeSans24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "a1c76f957564ec9401c45f1fb2e4403c47a049892084954f4e439a918a48e5e8",
+      "bytes": 197107,
+      "pool_entry": "a1c76f957564-XIAO_ESP32S3 Sense_v1.5.drawio.png",
+      "linked_from": [
+        "devices/seeed-studio/xiao-esp32s3-sense/artifacts/extracted/xiao-esp32s3-sense-v1.5-sch-pcb/202003753_XIAO ESP32S3 Sense_v1.5_SCH&PCB_260226/XIAO_ESP32S3 Sense_v1.5.drawio.png",
+        "devices/seeed-studio/xiao-esp32s3-sense/media/block-diagram-v1.5.png"
+      ]
+    },
+    {
+      "sha256": "42c4c5681f2176e97e1dad79a5fc4f60547a525d5cc8e55f16071653a4967c3f",
+      "bytes": 60915,
+      "pool_entry": "42c4c5681f21-sdkconfig.old",
+      "linked_from": [
+        "devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/01_ADC_Test/sdkconfig.old",
+        "devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/02_SD_Card/sdkconfig.old",
+        "devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/03_DRV2605_Test/sdkconfig.old",
+        "devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/04_Encoder_Test/sdkconfig.old"
+      ]
+    },
+    {
+      "sha256": "f8b3d34f9fac17931650331780cd0152feaffdf2636c50de5db44f32fa44ae0f",
+      "bytes": 149599,
+      "pool_entry": "f8b3d34f9fac-camera_index.h",
+      "linked_from": [
+        "devices/seeed-studio/xiao-esp32s3-sense/examples/selected/SeeedStudio-XIAO-ESP32S3-Sense-camera/CameraWebServer_for_esp-arduino_2.0.x/camera_index.h",
+        "devices/seeed-studio/xiao-esp32s3-sense/examples/selected/SeeedStudio-XIAO-ESP32S3-Sense-camera/CameraWebServer_for_esp-arduino_3.0.x/camera_index.h"
+      ]
+    },
+    {
+      "sha256": "9ad6e251f11ccf6d541cad814b60386825bfd7e1afa10e1adec75af56ef8bc8d",
+      "bytes": 33181,
+      "pool_entry": "9ad6e251f11c-FreeSansBold18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSansBold18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSansBold18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_Google_Calendar/src/fonts/FreeSansBold18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSansBold18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_OpenMeteo_Weather_Station/src/fonts/FreeSansBold18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "17c8c4f91ea9bdbf04ab536a971ac55da7810f10d2072baffd774007e9990fa5",
+      "bytes": 64811,
+      "pool_entry": "17c8c4f91ea9-Soldered Engineering SCH template.kicad_wks",
+      "linked_from": [
+        "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/Soldered Engineering SCH template.kicad_wks",
+        "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/Soldered Engineering SCH template.kicad_wks",
+        "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/Soldered Engineering SCH template.kicad_wks"
+      ]
+    },
+    {
+      "sha256": "341af6d70b65fb9485c00a106a3118a4c3b478c2d7f2f23e6dc039afc012abae",
+      "bytes": 63705,
+      "pool_entry": "341af6d70b65-FreeSansBoldOblique24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSansBoldOblique24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSansBoldOblique24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSansBoldOblique24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "4d5dee62cfae56ded2b1cf17501e231dbb28fd2c3e5d67daaa88135e94f612ac",
+      "bytes": 31039,
+      "pool_entry": "4d5dee62cfae-FreeSans18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSans18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSans18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_Google_Calendar/src/fonts/FreeSans18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSans18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_OpenMeteo_Weather_Station/src/fonts/FreeSans18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "461e27356553f05be1dd20873833314764d2bceb673495c96b8c62f666745945",
+      "bytes": 59762,
+      "pool_entry": "461e27356553-FreeSansOblique24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSansOblique24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSansOblique24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSansOblique24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "23e469ff72b1249f911ef68755f476b49a31d288bf37c12697b7d5fb3e39a31f",
+      "bytes": 28925,
+      "pool_entry": "23e469ff72b1-FreeMonoBold18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeMonoBold18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeMonoBold18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_Google_Calendar/src/fonts/FreeMonoBold18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeMonoBold18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_OpenMeteo_Weather_Station/src/fonts/FreeMonoBold18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "146b89f544b1c81f0b88dd3fe1255a29b80c843f3a4a0edbf9a98a13693bd108",
+      "bytes": 56292,
+      "pool_entry": "146b89f544b1-FreeSerifBoldItalic24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSerifBoldItalic24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSerifBoldItalic24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSerifBoldItalic24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "2243a6e1bfc30d9cdcb77bd3a6bc11284db055dd28a3ae1dc3e58e62a1563d40",
+      "bytes": 53806,
+      "pool_entry": "2243a6e1bfc3-FreeSerifBold24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSerifBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSerifBold24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSerifBold24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "bb559dc9cb192937b2a9913ad20ca2064b07ff20f5cc29b612e9f6084a0af25e",
+      "bytes": 52530,
+      "pool_entry": "bb559dc9cb19-FreeMonoBoldOblique24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeMonoBoldOblique24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeMonoBoldOblique24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeMonoBoldOblique24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "7516f72716057841b71224c78a5cbefdefbbcf7626db2455730411e5387be0c6",
+      "bytes": 52164,
+      "pool_entry": "7516f7271605-FreeSerifItalic24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSerifItalic24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSerifItalic24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSerifItalic24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "f0fba3f8e0a60117e42b70788426e388baa1f66bca0f18e5722c456b4f17fe91",
+      "bytes": 48626,
+      "pool_entry": "f0fba3f8e0a6-FreeSerif24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSerif24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSerif24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSerif24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "b908bb1f719864173515e2fd377d3135871e56a51f58f66211fc81066057fbd6",
+      "bytes": 45214,
+      "pool_entry": "b908bb1f7198-FreeMonoOblique24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeMonoOblique24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeMonoOblique24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeMonoOblique24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "839ddd4c2be473154cb82d8e59b0b55317724f9087fb487d9206e48b0a205169",
+      "bytes": 40283,
+      "pool_entry": "839ddd4c2be4-FreeMono24pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeMono24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeMono24pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeMono24pt7b.h"
+      ]
+    },
+    {
+      "sha256": "d752f902fe6fffaa414b9137f19eac5194ccfb060e144bab48acacf490ff8f85",
+      "bytes": 77702,
+      "pool_entry": "d752f902fe6f-sdkconfig",
+      "linked_from": [
+        "devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/demo/ESP-IDF/08_lvgl_display_panel/sdkconfig",
+        "devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/demo/ESP-IDF/10_lvgl_demo_v9/sdkconfig"
+      ]
+    },
+    {
+      "sha256": "bca6342f7abf9cf5a4ff135fb591af329d0c5de7d7aede406f171bca2dc45d40",
+      "bytes": 37952,
+      "pool_entry": "bca6342f7abf-FreeSansBoldOblique18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSansBoldOblique18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSansBoldOblique18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSansBoldOblique18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "66f6c858e2a41db874d976559e971aa1fd243ce67497627d032a4a21eada680b",
+      "bytes": 35958,
+      "pool_entry": "66f6c858e2a4-FreeSansOblique18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSansOblique18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSansOblique18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSansOblique18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "7f2f35c41d7d4baeef002d422a74dd9b4771cb4cdc265391debe3f4e99ba6612",
+      "bytes": 34664,
+      "pool_entry": "7f2f35c41d7d-FreeSerifBoldItalic18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSerifBoldItalic18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSerifBoldItalic18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSerifBoldItalic18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "a91f853053c9bded00e3b591699e85afbc3348bf5309b28256341706e5f8ff40",
+      "bytes": 67504,
+      "pool_entry": "a91f853053c9-sdkconfig",
+      "linked_from": [
+        "devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/01_ADC_Test/sdkconfig",
+        "devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/02_SD_Card/sdkconfig"
+      ]
+    },
+    {
+      "sha256": "4f3ecca6278af46801c24ed5375511c31e12adfe410aa82df52df7dd47c3d13d",
+      "bytes": 66538,
+      "pool_entry": "4f3ecca6278a-ESP32-S3-Knob-Touch-LCD-1.8-14.jpg",
+      "linked_from": [
+        "devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/images/wiki/ESP32-S3-Knob-Touch-LCD-1.8-14.jpg",
+        "devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/ESP32-S3-Knob-Touch-LCD-1.8-14.jpg"
+      ]
+    },
+    {
+      "sha256": "f1e12e09c8707570dd62852c7e4fff9b3a248b53180bc9b06e6d24ec1bd62d43",
+      "bytes": 31768,
+      "pool_entry": "f1e12e09c870-FreeSerifBold18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSerifBold18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSerifBold18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSerifBold18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "61bfe16e7b9f59a9261b9dd23b354a837530deac46f87a84fddecf58fa790cca",
+      "bytes": 31692,
+      "pool_entry": "61bfe16e7b9f-FreeMonoBoldOblique18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeMonoBoldOblique18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeMonoBoldOblique18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeMonoBoldOblique18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "8d52e8449adc9f19124f3ddc1daf56530149b35b2b10adb73c22ad14109fed92",
+      "bytes": 30914,
+      "pool_entry": "8d52e8449adc-FreeSerifItalic18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSerifItalic18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSerifItalic18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSerifItalic18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "a5b83dc246f7edb28f5a4a45d5abbe88880ccc70631650ef89d71ea11c2d3b2f",
+      "bytes": 60350,
+      "pool_entry": "a5b83dc246f7-InkplatePeripheralMode.cpp",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Diagnostics/Inkplate5_Peripheral_Mode/InkplatePeripheralMode.cpp",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Diagnostics/Peripheral_Mode/InkplatePeripheralMode.cpp"
+      ]
+    },
+    {
+      "sha256": "e40674814569e6e8ace652241a28153f4a0545b2be263a202470742bf15e8250",
+      "bytes": 29360,
+      "pool_entry": "e40674814569-FreeSerif18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSerif18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSerif18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSerif18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "7ba43ee37b293d21937121cabca8c6589477e90c36ddc372ffd07b1106c2e861",
+      "bytes": 27096,
+      "pool_entry": "7ba43ee37b29-FreeMonoOblique18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeMonoOblique18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeMonoOblique18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeMonoOblique18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "dba6ebd28493f6d77d2164cc2802df16fed1df40ff3cdc41428c0bd6e58f4382",
+      "bytes": 24441,
+      "pool_entry": "dba6ebd28493-FreeMono18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeMono18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeMono18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeMono18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "1c8675226bf6c88d16791725fd05cae4b5c1094d75f73d3fa75053b3c9f3347e",
+      "bytes": 24104,
+      "pool_entry": "1c8675226bf6-TomThumb.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/TomThumb.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/TomThumb.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/TomThumb.h"
+      ]
+    },
+    {
+      "sha256": "e1d09ee173e5c02459a8c2ebcc57c18a824202541241972aded2bf7f812e36c6",
+      "bytes": 21080,
+      "pool_entry": "e1d09ee173e5-FreeSansBoldOblique12pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/Fonts/FreeSansBoldOblique12pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/FreeSansBoldOblique12pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/FreeSansBoldOblique12pt7b.h"
+      ]
+    },
+    {
+      "sha256": "e7dc9d111a4c4647f0f2be79cfd6a4711cd467ff50d3f823ed49b0d5a1a08575",
+      "bytes": 41632,
+      "pool_entry": "e7dc9d111a4c-Roboto_Light_36.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Basic/Inkplate5_TextBox/Roboto_Light_36.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Basic/Inkplate5V2_TextBox/Roboto_Light_36.h"
+      ]
+    },
+    {
+      "sha256": "ebcaab1d03ed9271aa180f08b05da9697e344390ae264bd9bdb2471ed6607789",
+      "bytes": 34628,
+      "pool_entry": "ebcaab1d03ed-XIAO_ESP32S3 Sense_v1.5.drawio",
+      "linked_from": [
+        "devices/seeed-studio/xiao-esp32s3-sense/artifacts/extracted/xiao-esp32s3-sense-v1.5-sch-pcb/202003753_XIAO ESP32S3 Sense_v1.5_SCH&PCB_260226/XIAO_ESP32S3 Sense_v1.5.drawio",
+        "devices/seeed-studio/xiao-esp32s3-sense/media/block-diagram-v1.5.drawio"
+      ]
+    },
+    {
+      "sha256": "eb966fcf076707914a84f8da9229005d9d93d0756223363948c6217d28b6fd24",
+      "bytes": 33118,
+      "pool_entry": "eb966fcf0767-fp-info-cache",
+      "linked_from": [
+        "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/fp-info-cache",
+        "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/fp-info-cache"
+      ]
+    },
+    {
+      "sha256": "f244786fa85c083f72112e038b2deeddb4bb2eacfffb18aed41ccb04e38ee23d",
+      "bytes": 31453,
+      "pool_entry": "f244786fa85c-icons.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Advanced/Communications/Inkplate5_Qwiic/icons.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Advanced/Communications/Inkplate5V2_Qwiic/icons.h"
+      ]
+    },
+    {
+      "sha256": "6d63ff696a8644e9588b7bf4da8e1cd7c3aef2841f34dad3929381806256699f",
+      "bytes": 28719,
+      "pool_entry": "6d63ff696a86-FreeMonoBold18pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_OpenAI_Text_Prompt/FreeMonoBold18pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_OpenAI_Text_Prompt/FreeMonoBold18pt7b.h"
+      ]
+    },
+    {
+      "sha256": "5f627272d6a21fa0f67e5106be3495b3839fb8f042c70157323373f830ef7edd",
+      "bytes": 26072,
+      "pool_entry": "5f627272d6a2-Inter16pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/Inter16pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/Inter16pt7b.h"
+      ]
+    },
+    {
+      "sha256": "096630ba8bedab2cd71481c93c649922bdadad565a2c1a769335d02d5268d6e7",
+      "bytes": 22716,
+      "pool_entry": "096630ba8bed-GT_Pressura16pt7b.h",
+      "linked_from": [
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_News/Fonts/GT_Pressura16pt7b.h",
+        "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Projects/Inkplate5V2_News/Fonts/GT_Pressura16pt7b.h"
+      ]
+    }
+  ]
+}

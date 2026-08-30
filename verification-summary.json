@@ -1,0 +1,7 @@
+{
+  "generated": "2026-08-28",
+  "files": 3447,
+  "bytes": 647422616,
+  "duplicateHashGroups": 237,
+  "note": "Regenerated after component research pass. Sort recipe: python os.walk + sort on relpath."
+}

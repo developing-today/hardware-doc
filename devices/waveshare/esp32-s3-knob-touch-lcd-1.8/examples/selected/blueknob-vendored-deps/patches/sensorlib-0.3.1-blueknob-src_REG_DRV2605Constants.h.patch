@@ -1,0 +1,11 @@
+--- a/src/REG/DRV2605Constants.h
++++ b/src/REG/DRV2605Constants.h
+@@ -40,7 +40,7 @@
+ 
+     // Chip IDs
+     static constexpr uint8_t DRV2604_CHIP_ID = 0x04;                //* DRV2604  (contains RAM, does not contain licensed ROM library)
+-    static constexpr uint8_t DRV2605_CHIP_ID = 0x03;                //* DRV2605  (contains licensed ROM library, does not contain RAM)
++    static constexpr uint8_t DRV2605_CHIP_ID = 0x05;                //* DRV2605  (contains licensed ROM library, does not contain RAM)
+     static constexpr uint8_t DRV2604L_CHIP_ID = 0x06;               //* DRV2604L (low-voltage version of the DRV2604 device)
+     static constexpr uint8_t DRV2605L_CHIP_ID = 0x07;               //* DRV2605L (low-voltage version of the DRV2605 device)
+ 

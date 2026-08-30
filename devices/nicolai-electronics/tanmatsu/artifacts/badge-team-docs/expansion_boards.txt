@@ -1,0 +1,4 @@
+Konsool expansion boards
+18650 extension
+Zero expansion boards
+Last modified August 21, 2026: Merge pull request #257 from badgeteam/fix-hatchery-swagger-url (14c0a0c)

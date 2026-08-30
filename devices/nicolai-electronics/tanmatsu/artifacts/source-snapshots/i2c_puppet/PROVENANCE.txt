@@ -1,0 +1,2 @@
+i2c_puppet commit: f085518d78ed38c009f18651abc21321ddf6fcfd
+retrieved 2026-08-24 from https://github.com/solderparty/i2c_puppet (LICENSE: see LICENSE file)

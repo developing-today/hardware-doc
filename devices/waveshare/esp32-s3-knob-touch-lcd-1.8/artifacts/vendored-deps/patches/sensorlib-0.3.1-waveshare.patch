@@ -1,0 +1,10 @@
+--- a/src/SensorQMI8658.hpp
++++ b/src/SensorQMI8658.hpp
+@@ -31,6 +31,7 @@
+ 
+ #include "REG/QMI8658Constants.h"
+ #include "SensorPlatform.hpp"
++#include <cmath>
+ 
+ typedef struct {
+     float x;

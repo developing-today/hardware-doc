@@ -1,0 +1,553 @@
+# ARCHIVED: `build`
+
+> This directory was **moved out of the repository**, not deleted.
+> Archived **2026-08-24**.
+
+**Reason:** 535 MiB of GENERATED Sphinx output (HTML, doctrees, bundled webfonts). Pure build artifact - reproducible from the retained source/ tree with `make html`. Contains no information not present in source/.
+
+## Identity
+
+| Field | Value |
+|---|---|
+| Original repo path | `devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/build` |
+| Archived to | `../hardware-doc-archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/build` |
+| Type | directory |
+| Size | 559,621,577 B (533.70 MiB) |
+| File count | 489 |
+| Last modified (mtime) | 2026-08-24 19:13:52Z |
+| Upstream repository | SolderedElectronics/Inkplate-documentation |
+| Commit | `1b3d3329915dbddf8f923ce61945d0842cad6c63` |
+| Author / committer | Dino Ragač <221081085+RagacDino@users.noreply.github.com> |
+| Commit date | 2025-08-25T11:09:33Z |
+| License | see LICENSE in repo |
+| Path within upstream repo | `build` |
+
+## Contents
+
+| File | Bytes | SHA-256 |
+|---|---:|---|
+| `conf.py` | 20 | `75bad9118a8a54091bfb515d95cf37b3affcacbad329a184b57a1d3c5a10b7d6` |
+| `doctrees/about.doctree` | 5,169 | `8d992fde3a70664ab2f00dd55b9dcf1704fd181d595f57177548d6f21ca183aa` |
+| `doctrees/api-reference.doctree` | 2,841 | `c2ba0f586d893eeb3fa940d65deb6e4e4772ec4e1b6a4651ecd6a42c6486feaf` |
+| `doctrees/arduino.doctree` | 798,307 | `9bb294d142bc6775c1196c9ba99cb9e367be68e415d44daa82fe0c45466decf5` |
+| `doctrees/environment.pickle` | 217,937 | `e20c221bfc370ad57d7fe8d1b25b69e574f6d852436f1373e01ebb6aa9fb3b63` |
+| `doctrees/esp-idf.doctree` | 249,076 | `45174f854681dc97b368f6ff03f305a9098eea3c99a3644bd90cf60d358c446f` |
+| `doctrees/examples.doctree` | 32,056 | `9e8c07f2dac345588e9bf8cb8d6b3b040fdfcf196fffbeefae0c11b89c19adfc` |
+| `doctrees/features.doctree` | 29,258 | `a2d8db78f46c2590e29b4602c25aad948500f8fb95fae63df6a80010b8deb013` |
+| `doctrees/get-started.doctree` | 26,726 | `a088a6c19928a1abd359a7f857da9c4404af945a2f3492e0e2696a185db7ed75` |
+| `doctrees/gui-designer.doctree` | 47,721 | `7f55dc12bb0fc64579813fdfb0674c989a3003e34dcba81e67863ec99a368c75` |
+| `doctrees/hardware-reference.doctree` | 12,373 | `eaae5622acd0029c372c8628ef59bda3aca7b443ed8f35ecc05b68830ce10b88` |
+| `doctrees/index.doctree` | 6,138 | `d9ab27804fd6dd66e77cd74bd4c9f55f9da2e6cbdc483781b68e3f9aba4a3981` |
+| `doctrees/micropython.doctree` | 453,394 | `2b8c174c50d211973df811ffcfda0130730109c6f2152c53f7e78c6db150f0d9` |
+| `doctrees/open-source.doctree` | 8,420 | `a71c07d4c67d5a9f297d0040437fbacce0b36854c50cb50376b3f9107dc96ed8` |
+| `doctrees/peripheral-mode.doctree` | 48,070 | `10b95419b1c512e92b6aa044eadec7e7d0f9d759b18c6ac93a2f85b88ed764c6` |
+| `doctrees/resources.doctree` | 8,262 | `cf9d93ec86087522562add562a0408c3c78b30a2a7ba3fb941296b48ac41f8bb` |
+| `html/.buildinfo` | 230 | `732d57d2864b5fc395fe6b0dffbc344d81afdcb5d49f286d0329344afe16c7e9` |
+| `html/about.html` | 6,581 | `ed3b9e62043a0c3373921229d35bbb013130c8845f0fbeeb94c27ba2f16ee7c9` |
+| `html/api-reference.html` | 6,204 | `e8f7015cb7ece9d9b272921e805827b7fb7a8a4a0645d9089bcd59de4012599b` |
+| `html/arduino.html` | 313,409 | `2b2ed172dd539fc8c8abdfd603fcbae685f32250843285439998a0564d55f774` |
+| `html/esp-idf.html` | 112,458 | `ebd5c9082c084e7831c3171a1f20a0719723139ff8bf0a15d5e0d427ba79395a` |
+| `html/examples.html` | 36,386 | `355f3729c33dc1adb3e6a56f39756d84c88bca4b81b2791a8e11b7baf1618e06` |
+| `html/features.html` | 20,122 | `07ea0089c2733140b36d8bcdf3c46ab65a8d11d7f5b48007c4ee333092d69b04` |
+| `html/genindex.html` | 4,171 | `1eee718a8004958d9f28d744e7d9e418f95c0b036d45a08b0d101e3d8b4efd6a` |
+| `html/get-started.html` | 15,851 | `5771db50e9dcc4614a0c9cdaac5fe0e1536810ff69f5671da544784a58767ee4` |
+| `html/gui-designer.html` | 30,204 | `2e49ce48e7a075ea8baa53521afea869cb603e8da428448aa6c69aec674d7f41` |
+| `html/hardware-reference.html` | 8,410 | `ff5839abc3e1fe8fc3d6a970da88d787bcde9ed82fe1807d46a50f7808f1705e` |
+| `html/index.html` | 11,453 | `3f334f58df9fc7f06c6b547bfbbc7f9d6584acd2014912ecd06ec1a44184bb6c` |
+| `html/micropython.html` | 161,171 | `8f47d85578a9931f6d1a0edabb6c5570992fd11e8f27929e64a7f4a08885e4a1` |
+| `html/objects.inv` | 482 | `095826c7d10e6197b1ac9fac839d00c9eb7fc27a22d0620f29e5d7f01fc4964d` |
+| `html/open-source.html` | 8,597 | `236a8690d2c76d92a2476766fb2d883f8181bc3c2ef0af42a1c84544c09295c1` |
+| `html/peripheral-mode.html` | 34,941 | `6b2ecd58e23aa1ac22c37c01f6f5f2429bc853937826f82fd8d0e15847cb002c` |
+| `html/resources.html` | 7,275 | `7a06a20d134327a1e0a92a12be0f7ae44e9574dd05ee78e11c230e01f2ef46ed` |
+| `html/search.html` | 4,570 | `53ebcf6d2da8300fec927889d906c58b6553444385b29c90fd8b45df771fbb65` |
+| `html/searchindex.js` | 26,884 | `e74b8dabc9eb164d7737568351bf4c900305fbf1e80e5e2b14dd02816f3ec685` |
+| `html/_images/BoardSelection.jpg` | 90,397 | `a19b157a6afdc0cd8b1a02f730819a6fcec2b28523cd329945f846ee55cb0a91` |
+| `html/_images/IMG_4345.jpg` | 342,801 | `6309647f396de501b2ce610e56bf8f0648cfc90895c9066f6ae76d5c3bb1c73f` |
+| `html/_images/IMG_4347.jpg` | 411,926 | `30a4d72056e78a311c011d70142c31dd4293ac660f1ead252db382f01d85e1c6` |
+| `html/_images/IMG_4348.jpg` | 466,125 | `a5282bbb0dae2aaac865436eb2563c37af8b7aba0b01233c0b11844af865113f` |
+| `html/_images/IMG_4349.jpg` | 1,298,463 | `3aca4347549d7b5872ebd8deefed9150a14aac4846b3f2c766911895667f2128` |
+| `html/_images/IMG_4350.jpg` | 403,692 | `867684b67d48c25186c39e0f48674a83579759d3cb752613977ee00331559981` |
+| `html/_images/IMG_4353.jpg` | 413,338 | `ac100f7189cdec847be247126f31644cad69830c80ebf49610f2cd71d21fa1f1` |
+| `html/_images/IMG_4354.jpg` | 399,808 | `87c757f3c7abfb20fcdecbf3f67c35385aa5e3c17e759b0b9610c8ebecc6818f` |
+| `html/_images/IMG_4355.jpg` | 384,713 | `ba668f67b8d2802ec0aa4209e56c97f4a63e5ce046655f62936ff2efa12be7d7` |
+| `html/_images/IMG_4356.jpg` | 378,564 | `4fab387b50b81aac319ca8fec7b29c1c46fd909885a1cb0c8e7cf9493582db2f` |
+| `html/_images/IMG_4357.jpg` | 660,474 | `70192420545476e87dca5c5da15812a7a51aa62242eb7c9455407d5784e75a07` |
+| `html/_images/IMG_4358.jpg` | 425,798 | `aaa1223ed122c2bf8cbd0ea139caf8fb3ac73af6c3d05573bc911c6acb727ec5` |
+| `html/_images/IMG_4359.jpg` | 421,545 | `b38e3cd06e0af8227a42bce1c111d2e3ef76272500ea03b1a7eb19c0b973c855` |
+| `html/_images/IMG_4360.jpg` | 410,129 | `0d789f47020c4fe68b15bcf0f1664346cf0d564705b00a963054400c81086d33` |
+| `html/_images/IMG_4361.jpg` | 399,494 | `3e08ac6f6757858306543f614fa986d6a447253788f10ea62b01b72b31fe9db7` |
+| `html/_images/IMG_4362.jpg` | 421,580 | `b0780eff727733ec28afea00dfbae6a9805cde587eeadf068e2e00dd929c60fc` |
+| `html/_images/IMG_4363.jpg` | 425,001 | `bee8f57e2d7fa4ec33da77910dcf2c8872bc7feb053d858308b58614961c7fb4` |
+| `html/_images/IMG_4364.jpg` | 423,532 | `e452ce85621e493afe572b1187992d285efa89c780632776b15f8489d5670f28` |
+| `html/_images/IMG_4365.jpg` | 477,611 | `d31f031b9ecda853e5350aed25bc94ff4f99bccc5c6620b2704dcdf811005526` |
+| `html/_images/IMG_4366.jpg` | 438,304 | `f8cfb43f9bb2bc1e8738bb11d94841454fbd64ef3a0f2ffd7a6529570c415cec` |
+| `html/_images/IMG_4369.jpg` | 517,826 | `644c9fd0d04d16595349bafa0fad3cb1a0e8333e2c30ec13e276df0d053fc630` |
+| `html/_images/IMG_4371.jpg` | 386,134 | `1b97f9bebf8b553660551b4835bd25a5d0e87b2d3d7eab090a6332f10d0bec42` |
+| `html/_images/IMG_4373.jpg` | 402,206 | `f53b8acf9a8878ecaae44b915930cd22951ab1ce63c1743b6f1831c83e290e3c` |
+| `html/_images/Inkplate.jpg` | 62,938 | `eb8d1c80388f572951dd8275cfcbeb939f4cbdf5ca69fadbc52165189525bd71` |
+| `html/_images/OSHWA_logo.png` | 10,952 | `97aac1c774cb0d441a6d5e4ab9e8dee91af84814613307160f82e31c22fdffed` |
+| `html/_images/example1.jpg` | 3,714,065 | `ff50af44458074ae4e42183d2e5f2ae4c4db55c8d100a8ae3c80f29c2dcc0061` |
+| `html/_images/example10.jpg` | 3,717,970 | `3081c9fbaf5cdc5b3a01002acdfcb2c0dbe83afe361a8b731b08b87656c7cf34` |
+| `html/_images/example11.jpg` | 4,157,404 | `4086b2368542676082aea7e585ed64251595ba813bb9aa59d03444a552942a7c` |
+| `html/_images/example12.jpg` | 3,998,264 | `332acb5ff043428040368f0635839751a7f240dd147d35c104eb086beeaee5f4` |
+| `html/_images/example13.jpg` | 3,969,770 | `5a6c8977989772cd000b662b92d9f1a499b5f7ff60f810e7ed239c299b7747eb` |
+| `html/_images/example14.jpg` | 3,773,492 | `7bc3e9b788a34123445b520913ef449f5ebf994201e975805c97a58cae85e34c` |
+| `html/_images/example15.jpg` | 3,768,474 | `eec16191c448ab9876aff083be393c67b640417a4ebc10075a85686b2b91eb6d` |
+| `html/_images/example16.jpg` | 4,334,609 | `8e695e5d4813be26575e9dd4db8561f00ccc696f23f517da9ba30e18dd9731ec` |
+| `html/_images/example17.jpg` | 3,628,075 | `339941e91568725572034eecb436170400ae780e1483e9e1bc04f57f1bb13826` |
+| `html/_images/example18.jpg` | 5,785,344 | `db5da7cee860c3f701200e8d763fd4d22e3d0a9545d5d719b9fce97ab2860be7` |
+| `html/_images/example19.jpg` | 5,438,934 | `cc28d12b429b5ad0ead056141415cd156cd625648a55933bba86738a89d1f8a2` |
+| `html/_images/example2.jpg` | 2,736,533 | `58722f7eed983c219a09e0769b8cb91352500243ef679c718288a4cbc388d086` |
+| `html/_images/example20.jpg` | 4,546,973 | `d4f78959a2c9550ed30c33012f21469c7cb188642d58662d918660adbff2d4dd` |
+| `html/_images/example21.jpg` | 4,178,108 | `3a3c294b0a541347687b38587a3519a9672855a5537e5981a40e653063b4fb16` |
+| `html/_images/example22a.jpg` | 678,646 | `0c67ad5ad093207f6052b72c6d403848e0997817727b401780af6e43f2e40df6` |
+| `html/_images/example22b.jpg` | 147,533 | `de7a83fbb51b1acbe652d170e1a0498a7262fc6176ac2ae219ec0cb1c5c5ad8c` |
+| `html/_images/example3.jpg` | 3,769,318 | `697978957f9337c75497054fc413cf8f3851cef5bcd5dfb361a8df9c55aa79e1` |
+| `html/_images/example4.jpg` | 3,569,894 | `2762a19233e0c54dc5c5af5eaaa6935ce276fef80ce527c324aae55112905b6b` |
+| `html/_images/example5.jpg` | 3,130,546 | `701f95e9c486382e21bb4f39fb78c626d7b16f583444cb0eb9fdc9579408c7f2` |
+| `html/_images/example6.jpg` | 2,927,545 | `0f80cacab332d66e39b6d873fb8098fd2848030d9ce604a589c5a6bf514e8b38` |
+| `html/_images/example7.jpg` | 6,751,580 | `56bbd0805cb7cdb9ed3177983b3bce184d845006b88d724eb9bf7942a6c85b6a` |
+| `html/_images/example8.jpg` | 4,111,105 | `39a2bee99768e600e0597ccd7e5e2f2172b20866651d877dc9bef0368820c1a1` |
+| `html/_images/example9.jpg` | 3,178,220 | `ee59ff2e5c54d1fc9d29b64cef1438e79cbbdaaa093459e627c04232ff0c9dca` |
+| `html/_images/gui_designer.jpg` | 192,969 | `0c9f7fe4dccbcceeaec5c95b5f99b25214ab27a3bf1d4a6f87db32e173319195` |
+| `html/_images/inkplate10_back.png` | 3,816,797 | `19e98043ba9b76183ee84dd58efb472399f3a1f05bbc3e1ebb8cbdfca6e0b627` |
+| `html/_images/inkplate10_front.png` | 4,273,751 | `5e5d900b976863deda40e7de752a192a52f3f116a7b5ded01126b1bf80ac0460` |
+| `html/_images/inkplate6_back.jpg` | 50,726 | `5a79bd906ec9aa97f02d0322f3739f52b731fce100fb4f34ff6048b71f37e14d` |
+| `html/_images/inkplate6_front.jpg` | 45,900 | `9d936b371f75344f41713ce37f8e3d6386df00d31b028878c15c298f57f22020` |
+| `html/_images/inkplate6color_back.jpg` | 2,222,867 | `52a9207eaa941133b5216bb732c42ee9903be70ab89fdb574c4e0fa265d73394` |
+| `html/_images/inkplate6color_front.jpg` | 24,429 | `42e3a80621821f6790a16ac5cb4be79b0e7befd282aad873536dfd966013132a` |
+| `html/_images/inkplate6plus_back.jpg` | 3,685,029 | `ad199995fac8cfadd6cc7ab6f1d289227c8eb9e516ead0806b48c204902911e0` |
+| `html/_images/inkplate6plus_front.jpg` | 2,117,906 | `b1ce0df5c4817b87fdbc8d4e7d62399d9d22c445b00eb25125b1117075913da8` |
+| `html/.doctrees/about.doctree` | 5,146 | `96d3b112988426dadeda8cea452a94721cb5803617043bbeeb4a03d13139dcff` |
+| `html/.doctrees/api-reference.doctree` | 2,836 | `d23378564070c47fc1a496b00752fe4084c5fd6b4c66702f75fe6825ab0790cd` |
+| `html/.doctrees/arduino.doctree` | 747,405 | `0485ef03ae6a017067b50e2dfd46864cb9ae39c52e11e55a192e0eccfe0384f6` |
+| `html/.doctrees/environment.pickle` | 226,477 | `cb8873f029c8db4c66355c946db1c2de1d06d5955d97c12b00f3ec1b9400b272` |
+| `html/.doctrees/esp-idf.doctree` | 249,071 | `b1622be5c9c0f80fa11722d64c654a2a4f3d7532553c313fd406a0aba0fc7874` |
+| `html/.doctrees/examples.doctree` | 48,336 | `ed72f92f863b2d03a50a3bc06cc18b99edde4b6fea5be10946d8aee3e967d4de` |
+| `html/.doctrees/features.doctree` | 44,778 | `0fda7a37326d29c4eff803cff10baba163187c929a4320fb12aa214719612ebd` |
+| `html/.doctrees/get-started.doctree` | 26,721 | `7442d6466cda1051a832924b4348cc8f0ca36c0b547daa5e10d4142c3d87d3ca` |
+| `html/.doctrees/gui-designer.doctree` | 47,716 | `caf2b8ffe57477de3d508f1e863c2a44335b33e03d0cfb7653cf73fc87e74154` |
+| `html/.doctrees/hardware-reference.doctree` | 14,140 | `e13ee6641b2fcc08d382576782cfa947cd4a1456d92b3c750c91e9b5e3ef3f28` |
+| `html/.doctrees/index.doctree` | 6,133 | `93f38516741b35586d2fa474c3c8db05e6711a6be98671f75239506e9291187e` |
+| `html/.doctrees/micropython.doctree` | 446,444 | `0a4f0e77ede3c53a27949a10e9ace64bdb0ad0134659863d55464ff9a2eddc9c` |
+| `html/.doctrees/open-source.doctree` | 8,415 | `9ebcdcac669276ea1f4719f505417024acf575cb0c239c2cc438b50301df8945` |
+| `html/.doctrees/peripheral-mode.doctree` | 50,570 | `79c02e4ca09cdf2ce4ead3635a3111aac0f2936e37515e6a858614c10753113a` |
+| `html/.doctrees/resources.doctree` | 10,756 | `17e826ef1ad13d261c9621dbfbb8c819f38b5a9b1f55b5bd0da244bc42a3be25` |
+| `html/_sources/about.rst.txt` | 1,124 | `43624629cc3ce9d752fc3b3746ddd9bee0d8d0d7592e7296478a8472d2726cde` |
+| `html/_sources/api-reference.rst.txt` | 143 | `a3343c60c50b919a343ddb5cd94d2b1b281638614ba513c6991f115a7678c4c3` |
+| `html/_sources/arduino.rst.txt` | 89,114 | `377bbb5d3f2fd7a94099b432cd6e3a4dadca24722f682283ea935e73cb45a6ce` |
+| `html/_sources/esp-idf.rst.txt` | 28,958 | `1399f13cbbcdf28365cb17163f3cbe2911cd73af4ac96a05e1f09cee84eae933` |
+| `html/_sources/examples.rst.txt` | 13,508 | `86e0c4d3e26e104945ec15c6519cd2dfb0cfbf24eb720542938547a3a7b5136d` |
+| `html/_sources/features.rst.txt` | 5,677 | `8acc6b68dc3cef19667e9829b0b480c7132600d11b7a787bcc4b753c4708914e` |
+| `html/_sources/get-started.rst.txt` | 4,338 | `54fe5cd0e03fb05ad880857b05de7a7b3f7d3971405c3aedfc2ec2f84d7c827c` |
+| `html/_sources/gui-designer.rst.txt` | 9,324 | `00dd2cf50dee1a356cb149234cde10342daf9791ec390cb4c8b7faae8440a343` |
+| `html/_sources/hardware-reference.rst.txt` | 2,193 | `f67c92c947eb47dba2777766df592925458d9d2e7f4633a431d3d949cac90e03` |
+| `html/_sources/index.rst.txt` | 1,196 | `1ab426d2570f5f7fb8f6e3256c32454011514aedc51e40471bfeb70b6d934347` |
+| `html/_sources/micropython.rst.txt` | 47,887 | `27f89caac9eaefd5e4baed95a5ccb76215c14a0c7469d25a6c3038af6aabc730` |
+| `html/_sources/open-source.rst.txt` | 2,281 | `d3b65be0929309b4c0c6c2130c37382bf58d9d38a89720a2fa004e0745c935a0` |
+| `html/_sources/peripheral-mode.rst.txt` | 10,899 | `cd87e1145b9870e20fdac8de78b4de40bf85095f1a6a5bfb8f31f18bf7911000` |
+| `html/_sources/resources.rst.txt` | 1,190 | `085363d48e3e011811109a6d6f1a2da5ea71b770f2d189d7af99edc373a8ab16` |
+| `html/_static/about.rst` | 1,124 | `43624629cc3ce9d752fc3b3746ddd9bee0d8d0d7592e7296478a8472d2726cde` |
+| `html/_static/api-reference.rst` | 143 | `a3343c60c50b919a343ddb5cd94d2b1b281638614ba513c6991f115a7678c4c3` |
+| `html/_static/arduino.rst` | 89,514 | `b9ce41bbac1719ed76b5d77aad9ed5b7db6d203e9e1f19b82b1a2d200836b037` |
+| `html/_static/basic.css` | 14,667 | `3d3f283e5f396a314d826bbfc73990767acc15c5380674e2b3fe801e533d43be` |
+| `html/_static/conf.py` | 5,350 | `fb0941ceb6525df0f42c2d7df7c15ae23e26ea3dbbb996d84c32d7e15aaa07c5` |
+| `html/_static/doctools.js` | 9,630 | `5a001934886bdedcbabf89f6a81e8253c0c1bb47ac18e9c7b859f0fcb1d92406` |
+| `html/_static/documentation_options.js` | 350 | `4a71fcaf3858157f908df3628f9e98f5582fd9a8e518b37dce526eb23ef736b8` |
+| `html/_static/esp-idf.rst` | 28,675 | `dffb8a9ce99fa7e262c2a587be7a32ef4e3ce985496a152516b3a097c1eea277` |
+| `html/_static/examples.rst` | 13,508 | `86e0c4d3e26e104945ec15c6519cd2dfb0cfbf24eb720542938547a3a7b5136d` |
+| `html/_static/features.rst` | 5,677 | `8acc6b68dc3cef19667e9829b0b480c7132600d11b7a787bcc4b753c4708914e` |
+| `html/_static/file.png` | 286 | `5c4bc9a16aebf38c4b950f59b8e501ca36495328cb9eb622218bce9064a35e3e` |
+| `html/_static/get-started.rst` | 4,338 | `54fe5cd0e03fb05ad880857b05de7a7b3f7d3971405c3aedfc2ec2f84d7c827c` |
+| `html/_static/gui-designer.rst` | 9,324 | `00dd2cf50dee1a356cb149234cde10342daf9791ec390cb4c8b7faae8440a343` |
+| `html/_static/hardware-reference.rst` | 2,193 | `f67c92c947eb47dba2777766df592925458d9d2e7f4633a431d3d949cac90e03` |
+| `html/_static/index.rst` | 1,197 | `7d5ff0667d8cf38d82af8c0c9990b2cbb940acb27bbc74438e30b6eaf3bdc035` |
+| `html/_static/jquery-3.5.1.js` | 287,630 | `416a3b2c3bf16d64f6b5b6d0f7b079df2267614dd6847fc2f3271b4409233c37` |
+| `html/_static/jquery.js` | 89,476 | `f7f6a5894f1d19ddad6fa392b2ece2c5e578cbf7da4ea805b6885eb6985b6e3d` |
+| `html/_static/language_data.js` | 10,854 | `004ad6ad7e772d6f3c61c65a7fb255e2b36d8bf583044c08ab97e7e5e6b8442d` |
+| `html/_static/micropython.rst` | 47,887 | `27f89caac9eaefd5e4baed95a5ccb76215c14a0c7469d25a6c3038af6aabc730` |
+| `html/_static/minus.png` | 90 | `47e7fc50db3699f1ca41ce9a2ffa202c00c5d1d5180c55f62ba859b1bd6cc008` |
+| `html/_static/open-source.rst` | 2,281 | `d3b65be0929309b4c0c6c2130c37382bf58d9d38a89720a2fa004e0745c935a0` |
+| `html/_static/peripheral-mode.rst` | 10,899 | `cd87e1145b9870e20fdac8de78b4de40bf85095f1a6a5bfb8f31f18bf7911000` |
+| `html/_static/plus.png` | 90 | `54115199b96a130cba02147c47c0deb43dcc9b9f08b5162bba8642b34980ac63` |
+| `html/_static/pygments.css` | 4,819 | `f82f422053b4413684181f281e3cfcc2e84bea525d66feb8116f9dbe8674fcc2` |
+| `html/_static/resources.rst` | 1,189 | `da98a9cf1ecbe592019f69244435550aab28dc82692c8e93dca07be6bef90d9a` |
+| `html/_static/searchtools.js` | 16,793 | `3b06be0c659c19566813dd5f75b7359bd87fe6a55ce1efe05ec312e84a178bcc` |
+| `html/_static/underscore-1.13.1.js` | 68,420 | `cc10f799cd0f6b65f95c4012445497e5ba3cb9f51964a9468940b27bde98b487` |
+| `html/_static/underscore.js` | 19,530 | `218fb1c1fc72e9af6b866f430be2a67fa376392b4db2f4dbf32772671b6ae55c` |
+| `html/_static/css/badge_only.css` | 3,275 | `c4050fa47d8bb6297c79811f663e6cfa32cb6b783b47eaeddd6ba50d5cf1a666` |
+| `html/_static/css/theme.css` | 129,674 | `af78284d3c7a8ab0917208ddc2a71854d4b552802104a7146f8705dca8dd88d1` |
+| `html/_static/css/fonts/Roboto-Slab-Bold.woff` | 87,624 | `9fec87cadbe2413b255f1ec577573a83f1ca2e1c37aa023dbebcd3a7b864636a` |
+| `html/_static/css/fonts/Roboto-Slab-Bold.woff2` | 67,312 | `1a0c024dd1a267c52d5575469ffe8570d1e84164de7d393cf3414bafd17d7a0c` |
+| `html/_static/css/fonts/Roboto-Slab-Regular.woff` | 86,288 | `9f32630e2c0c5135bf1e86e36cb65b3932e4410644235bc2bd995e9c7f6ff117` |
+| `html/_static/css/fonts/Roboto-Slab-Regular.woff2` | 66,444 | `874e42222856d7af03b3f438d21d923a4280d47fe67c48510e2174a1579795ef` |
+| `html/_static/css/fonts/fontawesome-webfont.eot` | 165,742 | `7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979` |
+| `html/_static/css/fonts/fontawesome-webfont.svg` | 444,379 | `ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4` |
+| `html/_static/css/fonts/fontawesome-webfont.ttf` | 165,548 | `aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8` |
+| `html/_static/css/fonts/fontawesome-webfont.woff` | 98,024 | `ba0c59deb5450f5cb41b3f93609ee2d0d995415877ddfa223e8a8a7533474f07` |
+| `html/_static/css/fonts/fontawesome-webfont.woff2` | 77,160 | `2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe` |
+| `html/_static/css/fonts/lato-bold-italic.woff` | 323,344 | `980c8592e5488df256192c999e92db8fd302db8cd8909b7fa266a684e37e45f8` |
+| `html/_static/css/fonts/lato-bold-italic.woff2` | 193,308 | `c0916a33340d063f7b05679e08031e729d1888444706f04804705da5966d895d` |
+| `html/_static/css/fonts/lato-bold.woff` | 309,728 | `0e56b17d142eb366c8007031d14e34da48c70b4a9d9a0ca492e696a7bae45e1e` |
+| `html/_static/css/fonts/lato-bold.woff2` | 184,912 | `ae88fc0d7a961832f809527d30bd3983a6866d42f66a56ade23f543681594db6` |
+| `html/_static/css/fonts/lato-normal-italic.woff` | 328,412 | `26318a1467a5e5caf10b04cfa942d079632560cd7a29cec565fd1dc9f7ec5081` |
+| `html/_static/css/fonts/lato-normal-italic.woff2` | 195,704 | `4465765f2f6eddcdad34ffd7cab559e56bc0e75e45e192f85e9562b0771481dc` |
+| `html/_static/css/fonts/lato-normal.woff` | 309,192 | `5b9025dda4d7688e3311b0c17eddc501133b807def33effaef6593843cf5416e` |
+| `html/_static/css/fonts/lato-normal.woff2` | 182,708 | `983b0caf336e8542214fc17019a4fc5e0360864b92806ca14d55c1fc1c2c5a0f` |
+| `html/_static/js/badge_only.js` | 934 | `f0a4808d04c4d55378751ac096a8376b64b1a704c82584b0ee590212cf413013` |
+| `html/_static/js/html5shiv-printshiv.min.js` | 4,370 | `b42a7e949a6e21d66b30fbbb4a22deafd9e0ccabc04f0fa2907fc6252fdf165f` |
+| `html/_static/js/html5shiv.min.js` | 2,734 | `f6e0283561ddb33b140e14977ffad57163aa28f7e2e7ff15e51e1475b6657b60` |
+| `html/_static/js/theme.js` | 5,023 | `536ad2d746e944c5570cc15badaeccc3c0582a1b66e45511fe4edce32b6da510` |
+| `html/_static/images/BoardSelection.jpg` | 90,397 | `a19b157a6afdc0cd8b1a02f730819a6fcec2b28523cd329945f846ee55cb0a91` |
+| `html/_static/images/IMG_4344.jpg` | 416,679 | `485beb9e0e1234c039503248dd6f9fd3cccb9bfba85df0e36f8da01dbad0f7c5` |
+| `html/_static/images/IMG_4345.jpg` | 342,801 | `6309647f396de501b2ce610e56bf8f0648cfc90895c9066f6ae76d5c3bb1c73f` |
+| `html/_static/images/IMG_4346.jpg` | 409,373 | `cefbb4f96326a8eef39b462d0800be69ea050ec29ee9ea3c0819cbad5e256ad9` |
+| `html/_static/images/IMG_4347.jpg` | 411,926 | `30a4d72056e78a311c011d70142c31dd4293ac660f1ead252db382f01d85e1c6` |
+| `html/_static/images/IMG_4348.jpg` | 466,125 | `a5282bbb0dae2aaac865436eb2563c37af8b7aba0b01233c0b11844af865113f` |
+| `html/_static/images/IMG_4349.jpg` | 1,298,463 | `3aca4347549d7b5872ebd8deefed9150a14aac4846b3f2c766911895667f2128` |
+| `html/_static/images/IMG_4350.jpg` | 403,692 | `867684b67d48c25186c39e0f48674a83579759d3cb752613977ee00331559981` |
+| `html/_static/images/IMG_4353.jpg` | 413,338 | `ac100f7189cdec847be247126f31644cad69830c80ebf49610f2cd71d21fa1f1` |
+| `html/_static/images/IMG_4354.jpg` | 399,808 | `87c757f3c7abfb20fcdecbf3f67c35385aa5e3c17e759b0b9610c8ebecc6818f` |
+| `html/_static/images/IMG_4355.jpg` | 384,713 | `ba668f67b8d2802ec0aa4209e56c97f4a63e5ce046655f62936ff2efa12be7d7` |
+| `html/_static/images/IMG_4356.jpg` | 378,564 | `4fab387b50b81aac319ca8fec7b29c1c46fd909885a1cb0c8e7cf9493582db2f` |
+| `html/_static/images/IMG_4357.jpg` | 660,474 | `70192420545476e87dca5c5da15812a7a51aa62242eb7c9455407d5784e75a07` |
+| `html/_static/images/IMG_4358.jpg` | 425,798 | `aaa1223ed122c2bf8cbd0ea139caf8fb3ac73af6c3d05573bc911c6acb727ec5` |
+| `html/_static/images/IMG_4359.jpg` | 421,545 | `b38e3cd06e0af8227a42bce1c111d2e3ef76272500ea03b1a7eb19c0b973c855` |
+| `html/_static/images/IMG_4360.jpg` | 410,129 | `0d789f47020c4fe68b15bcf0f1664346cf0d564705b00a963054400c81086d33` |
+| `html/_static/images/IMG_4361.jpg` | 399,494 | `3e08ac6f6757858306543f614fa986d6a447253788f10ea62b01b72b31fe9db7` |
+| `html/_static/images/IMG_4362.jpg` | 421,580 | `b0780eff727733ec28afea00dfbae6a9805cde587eeadf068e2e00dd929c60fc` |
+| `html/_static/images/IMG_4363.jpg` | 425,001 | `bee8f57e2d7fa4ec33da77910dcf2c8872bc7feb053d858308b58614961c7fb4` |
+| `html/_static/images/IMG_4364.jpg` | 423,532 | `e452ce85621e493afe572b1187992d285efa89c780632776b15f8489d5670f28` |
+| `html/_static/images/IMG_4365.jpg` | 477,611 | `d31f031b9ecda853e5350aed25bc94ff4f99bccc5c6620b2704dcdf811005526` |
+| `html/_static/images/IMG_4366.jpg` | 438,304 | `f8cfb43f9bb2bc1e8738bb11d94841454fbd64ef3a0f2ffd7a6529570c415cec` |
+| `html/_static/images/IMG_4369.jpg` | 517,826 | `644c9fd0d04d16595349bafa0fad3cb1a0e8333e2c30ec13e276df0d053fc630` |
+| `html/_static/images/IMG_4371.jpg` | 386,134 | `1b97f9bebf8b553660551b4835bd25a5d0e87b2d3d7eab090a6332f10d0bec42` |
+| `html/_static/images/IMG_4373.jpg` | 402,206 | `f53b8acf9a8878ecaae44b915930cd22951ab1ce63c1743b6f1831c83e290e3c` |
+| `html/_static/images/Inkplate.jpg` | 62,938 | `eb8d1c80388f572951dd8275cfcbeb939f4cbdf5ca69fadbc52165189525bd71` |
+| `html/_static/images/OSHWA_logo.bmp` | 450,286 | `1e1561bf3145aec4ecd61814449b9bb2d1f7a11a7563001ce7c184c62dce8d55` |
+| `html/_static/images/OSHWA_logo.png` | 10,952 | `97aac1c774cb0d441a6d5e4ab9e8dee91af84814613307160f82e31c22fdffed` |
+| `html/_static/images/example1.JPG` | 3,714,065 | `ff50af44458074ae4e42183d2e5f2ae4c4db55c8d100a8ae3c80f29c2dcc0061` |
+| `html/_static/images/example1.jpg` | 3,714,065 | `ff50af44458074ae4e42183d2e5f2ae4c4db55c8d100a8ae3c80f29c2dcc0061` |
+| `html/_static/images/example10.JPG` | 3,717,970 | `3081c9fbaf5cdc5b3a01002acdfcb2c0dbe83afe361a8b731b08b87656c7cf34` |
+| `html/_static/images/example10.jpg` | 3,717,970 | `3081c9fbaf5cdc5b3a01002acdfcb2c0dbe83afe361a8b731b08b87656c7cf34` |
+| `html/_static/images/example11.JPG` | 4,157,404 | `4086b2368542676082aea7e585ed64251595ba813bb9aa59d03444a552942a7c` |
+| `html/_static/images/example11.jpg` | 4,157,404 | `4086b2368542676082aea7e585ed64251595ba813bb9aa59d03444a552942a7c` |
+| `html/_static/images/example12.JPG` | 3,998,264 | `332acb5ff043428040368f0635839751a7f240dd147d35c104eb086beeaee5f4` |
+| `html/_static/images/example12.jpg` | 3,998,264 | `332acb5ff043428040368f0635839751a7f240dd147d35c104eb086beeaee5f4` |
+| `html/_static/images/example13.JPG` | 3,969,770 | `5a6c8977989772cd000b662b92d9f1a499b5f7ff60f810e7ed239c299b7747eb` |
+| `html/_static/images/example13.jpg` | 3,969,770 | `5a6c8977989772cd000b662b92d9f1a499b5f7ff60f810e7ed239c299b7747eb` |
+| `html/_static/images/example14.JPG` | 3,773,492 | `7bc3e9b788a34123445b520913ef449f5ebf994201e975805c97a58cae85e34c` |
+| `html/_static/images/example14.jpg` | 3,773,492 | `7bc3e9b788a34123445b520913ef449f5ebf994201e975805c97a58cae85e34c` |
+| `html/_static/images/example15.JPG` | 3,768,474 | `eec16191c448ab9876aff083be393c67b640417a4ebc10075a85686b2b91eb6d` |
+| `html/_static/images/example15.jpg` | 3,768,474 | `eec16191c448ab9876aff083be393c67b640417a4ebc10075a85686b2b91eb6d` |
+| `html/_static/images/example16.JPG` | 4,334,609 | `8e695e5d4813be26575e9dd4db8561f00ccc696f23f517da9ba30e18dd9731ec` |
+| `html/_static/images/example16.jpg` | 4,334,609 | `8e695e5d4813be26575e9dd4db8561f00ccc696f23f517da9ba30e18dd9731ec` |
+| `html/_static/images/example17.JPG` | 3,628,075 | `339941e91568725572034eecb436170400ae780e1483e9e1bc04f57f1bb13826` |
+| `html/_static/images/example17.jpg` | 3,628,075 | `339941e91568725572034eecb436170400ae780e1483e9e1bc04f57f1bb13826` |
+| `html/_static/images/example18.JPG` | 5,785,344 | `db5da7cee860c3f701200e8d763fd4d22e3d0a9545d5d719b9fce97ab2860be7` |
+| `html/_static/images/example18.jpg` | 5,785,344 | `db5da7cee860c3f701200e8d763fd4d22e3d0a9545d5d719b9fce97ab2860be7` |
+| `html/_static/images/example19.JPG` | 5,438,934 | `cc28d12b429b5ad0ead056141415cd156cd625648a55933bba86738a89d1f8a2` |
+| `html/_static/images/example19.jpg` | 5,438,934 | `cc28d12b429b5ad0ead056141415cd156cd625648a55933bba86738a89d1f8a2` |
+| `html/_static/images/example2.JPG` | 2,736,533 | `58722f7eed983c219a09e0769b8cb91352500243ef679c718288a4cbc388d086` |
+| `html/_static/images/example2.jpg` | 2,736,533 | `58722f7eed983c219a09e0769b8cb91352500243ef679c718288a4cbc388d086` |
+| `html/_static/images/example20.JPG` | 4,546,973 | `d4f78959a2c9550ed30c33012f21469c7cb188642d58662d918660adbff2d4dd` |
+| `html/_static/images/example20.jpg` | 4,546,973 | `d4f78959a2c9550ed30c33012f21469c7cb188642d58662d918660adbff2d4dd` |
+| `html/_static/images/example21.JPG` | 4,178,108 | `3a3c294b0a541347687b38587a3519a9672855a5537e5981a40e653063b4fb16` |
+| `html/_static/images/example21.jpg` | 4,178,108 | `3a3c294b0a541347687b38587a3519a9672855a5537e5981a40e653063b4fb16` |
+| `html/_static/images/example22a.jpg` | 678,646 | `0c67ad5ad093207f6052b72c6d403848e0997817727b401780af6e43f2e40df6` |
+| `html/_static/images/example22a.png` | 2,615,090 | `d05d3411f5e34e60d6007ecefdd136ff4de3039255c526c5ac599b2b53803a85` |
+| `html/_static/images/example22b.jpg` | 147,533 | `de7a83fbb51b1acbe652d170e1a0498a7262fc6176ac2ae219ec0cb1c5c5ad8c` |
+| `html/_static/images/example3.JPG` | 3,769,318 | `697978957f9337c75497054fc413cf8f3851cef5bcd5dfb361a8df9c55aa79e1` |
+| `html/_static/images/example3.jpg` | 3,769,318 | `697978957f9337c75497054fc413cf8f3851cef5bcd5dfb361a8df9c55aa79e1` |
+| `html/_static/images/example4.JPG` | 3,569,894 | `2762a19233e0c54dc5c5af5eaaa6935ce276fef80ce527c324aae55112905b6b` |
+| `html/_static/images/example4.jpg` | 3,569,894 | `2762a19233e0c54dc5c5af5eaaa6935ce276fef80ce527c324aae55112905b6b` |
+| `html/_static/images/example5.JPG` | 3,130,546 | `701f95e9c486382e21bb4f39fb78c626d7b16f583444cb0eb9fdc9579408c7f2` |
+| `html/_static/images/example5.jpg` | 3,130,546 | `701f95e9c486382e21bb4f39fb78c626d7b16f583444cb0eb9fdc9579408c7f2` |
+| `html/_static/images/example6.JPG` | 2,927,545 | `0f80cacab332d66e39b6d873fb8098fd2848030d9ce604a589c5a6bf514e8b38` |
+| `html/_static/images/example6.jpg` | 2,927,545 | `0f80cacab332d66e39b6d873fb8098fd2848030d9ce604a589c5a6bf514e8b38` |
+| `html/_static/images/example7.JPG` | 6,751,580 | `56bbd0805cb7cdb9ed3177983b3bce184d845006b88d724eb9bf7942a6c85b6a` |
+| `html/_static/images/example7.jpg` | 6,751,580 | `56bbd0805cb7cdb9ed3177983b3bce184d845006b88d724eb9bf7942a6c85b6a` |
+| `html/_static/images/example8.JPG` | 4,111,105 | `39a2bee99768e600e0597ccd7e5e2f2172b20866651d877dc9bef0368820c1a1` |
+| `html/_static/images/example8.jpg` | 4,111,105 | `39a2bee99768e600e0597ccd7e5e2f2172b20866651d877dc9bef0368820c1a1` |
+| `html/_static/images/example9.JPG` | 3,178,220 | `ee59ff2e5c54d1fc9d29b64cef1438e79cbbdaaa093459e627c04232ff0c9dca` |
+| `html/_static/images/example9.jpg` | 3,178,220 | `ee59ff2e5c54d1fc9d29b64cef1438e79cbbdaaa093459e627c04232ff0c9dca` |
+| `html/_static/images/features.jpg` | 88,548 | `5afa71115433fa228cbc477541e8119727835fde947083990acebe3e227c0028` |
+| `html/_static/images/gui_designer.jpg` | 192,969 | `0c9f7fe4dccbcceeaec5c95b5f99b25214ab27a3bf1d4a6f87db32e173319195` |
+| `html/_static/images/index.jpg` | 10,200 | `c2494fade4a3497190214ff23dafb905148656fed15dc9f84c6856fa23d807a3` |
+| `html/_static/images/inkplate10_back.png` | 3,816,797 | `19e98043ba9b76183ee84dd58efb472399f3a1f05bbc3e1ebb8cbdfca6e0b627` |
+| `html/_static/images/inkplate10_front.png` | 4,273,751 | `5e5d900b976863deda40e7de752a192a52f3f116a7b5ded01126b1bf80ac0460` |
+| `html/_static/images/inkplate6_back.jpg` | 50,726 | `5a79bd906ec9aa97f02d0322f3739f52b731fce100fb4f34ff6048b71f37e14d` |
+| `html/_static/images/inkplate6_front.jpg` | 45,900 | `9d936b371f75344f41713ce37f8e3d6386df00d31b028878c15c298f57f22020` |
+| `html/_static/images/inkplate6color_back.jpg` | 2,222,867 | `52a9207eaa941133b5216bb732c42ee9903be70ab89fdb574c4e0fa265d73394` |
+| `html/_static/images/inkplate6color_front.jpg` | 24,429 | `42e3a80621821f6790a16ac5cb4be79b0e7befd282aad873536dfd966013132a` |
+| `html/_static/images/inkplate6plus_back.jpg` | 3,685,029 | `ad199995fac8cfadd6cc7ab6f1d289227c8eb9e516ead0806b48c204902911e0` |
+| `html/_static/images/inkplate6plus_front.jpg` | 2,117,906 | `b1ce0df5c4817b87fdbc8d4e7d62399d9d22c445b00eb25125b1117075913da8` |
+| `html_old/.buildinfo` | 230 | `58a2343111ccc5fb5299095eb0438e6b54d19cbd1f89ec166eedcc7fd0c4744f` |
+| `html_old/about.html` | 6,605 | `ce107264f55d30f2ef32d31ce2376517ed19d940150c314541fdbab15f658bb1` |
+| `html_old/api-reference.html` | 6,210 | `69d5bd0828e204eb8d1e1635587c9fcadfbf61633bc1a15b8d0c617ecd13e5bd` |
+| `html_old/arduino.html` | 315,439 | `8e2e41464cee192560be53bf69792a65532fd9c03166b72fe6f4b3047c2e64c6` |
+| `html_old/esp-idf.html` | 112,464 | `46919ab5548ebb637c72ba247f7b4d164e5414e2ea8b7e549b155bbb36e57ae5` |
+| `html_old/examples.html` | 26,566 | `0a8d87eff385fc454f057e0eb44163461b87ed36683d6fcd71b4d9db7eaa9705` |
+| `html_old/features.html` | 14,789 | `b33a831493a7de3e8b471bd55688d339816efc6b6f0aa04228840ff2f5db9c5e` |
+| `html_old/genindex.html` | 4,177 | `36121c221d3e8f1b5116b2f158786199266e3027718a93c9e4c49a57098e1a5d` |
+| `html_old/get-started.html` | 15,857 | `3ab895a814b1650b2894e28c984e0485a975e72057c90ef180a7297b4b9b47b7` |
+| `html_old/gui-designer.html` | 30,210 | `509e8286fcbfcf46fb6200b05c1adc349563bb36787eb4ac80e916b5f15c450c` |
+| `html_old/hardware-reference.html` | 8,105 | `32996fa41ff997722d279c6d3046a4803fce8473ba1d0e31a3aa25210f9d1acc` |
+| `html_old/index.html` | 11,232 | `575fb80fecd05385e0058b53c152bfdf44dbd661c3e4317c7143ef2810847a8b` |
+| `html_old/micropython.html` | 157,734 | `e010840d83d8a2fed7beb8d712b2ea5a16f8b17c314dd52fb6c92928ca24451c` |
+| `html_old/objects.inv` | 483 | `cdec2a58fd64ac010b01c895becc35fbaab1d86069ea6e6aff746a02704a0eb9` |
+| `html_old/open-source.html` | 8,609 | `ee8e948efff36068ea0b2d83e11187ed497ed34092a0b1c2a43ef3322622d33b` |
+| `html_old/peripheral-mode.html` | 33,988 | `fb21aa2c10c70fbca297f6e20636056ff6ea250ec746b1faa1c0510fbea7226b` |
+| `html_old/resources.html` | 6,669 | `9df13be6826499468239495fa512fd00794f8cc50f93626c307af0625741b834` |
+| `html_old/search.html` | 4,576 | `d28e7681042b499e050fc35f822f9baa258b5903f36c7ca071357cc772527202` |
+| `html_old/searchindex.js` | 25,685 | `9ffc115a602202a842fdd3f72b21fe679353143aef53f93b6275da23b5745524` |
+| `html_old/_images/BoardSelection.jpg` | 90,397 | `a19b157a6afdc0cd8b1a02f730819a6fcec2b28523cd329945f846ee55cb0a91` |
+| `html_old/_images/IMG_4345.jpg` | 342,801 | `6309647f396de501b2ce610e56bf8f0648cfc90895c9066f6ae76d5c3bb1c73f` |
+| `html_old/_images/IMG_4347.jpg` | 411,926 | `30a4d72056e78a311c011d70142c31dd4293ac660f1ead252db382f01d85e1c6` |
+| `html_old/_images/IMG_4348.jpg` | 466,125 | `a5282bbb0dae2aaac865436eb2563c37af8b7aba0b01233c0b11844af865113f` |
+| `html_old/_images/IMG_4349.jpg` | 1,298,463 | `3aca4347549d7b5872ebd8deefed9150a14aac4846b3f2c766911895667f2128` |
+| `html_old/_images/IMG_4350.jpg` | 403,692 | `867684b67d48c25186c39e0f48674a83579759d3cb752613977ee00331559981` |
+| `html_old/_images/IMG_4353.jpg` | 413,338 | `ac100f7189cdec847be247126f31644cad69830c80ebf49610f2cd71d21fa1f1` |
+| `html_old/_images/IMG_4354.jpg` | 399,808 | `87c757f3c7abfb20fcdecbf3f67c35385aa5e3c17e759b0b9610c8ebecc6818f` |
+| `html_old/_images/IMG_4355.jpg` | 384,713 | `ba668f67b8d2802ec0aa4209e56c97f4a63e5ce046655f62936ff2efa12be7d7` |
+| `html_old/_images/IMG_4356.jpg` | 378,564 | `4fab387b50b81aac319ca8fec7b29c1c46fd909885a1cb0c8e7cf9493582db2f` |
+| `html_old/_images/IMG_4357.jpg` | 660,474 | `70192420545476e87dca5c5da15812a7a51aa62242eb7c9455407d5784e75a07` |
+| `html_old/_images/IMG_4358.jpg` | 425,798 | `aaa1223ed122c2bf8cbd0ea139caf8fb3ac73af6c3d05573bc911c6acb727ec5` |
+| `html_old/_images/IMG_4359.jpg` | 421,545 | `b38e3cd06e0af8227a42bce1c111d2e3ef76272500ea03b1a7eb19c0b973c855` |
+| `html_old/_images/IMG_4360.jpg` | 410,129 | `0d789f47020c4fe68b15bcf0f1664346cf0d564705b00a963054400c81086d33` |
+| `html_old/_images/IMG_4361.jpg` | 399,494 | `3e08ac6f6757858306543f614fa986d6a447253788f10ea62b01b72b31fe9db7` |
+| `html_old/_images/IMG_4362.jpg` | 421,580 | `b0780eff727733ec28afea00dfbae6a9805cde587eeadf068e2e00dd929c60fc` |
+| `html_old/_images/IMG_4363.jpg` | 425,001 | `bee8f57e2d7fa4ec33da77910dcf2c8872bc7feb053d858308b58614961c7fb4` |
+| `html_old/_images/IMG_4364.jpg` | 423,532 | `e452ce85621e493afe572b1187992d285efa89c780632776b15f8489d5670f28` |
+| `html_old/_images/IMG_4365.jpg` | 477,611 | `d31f031b9ecda853e5350aed25bc94ff4f99bccc5c6620b2704dcdf811005526` |
+| `html_old/_images/IMG_4366.jpg` | 438,304 | `f8cfb43f9bb2bc1e8738bb11d94841454fbd64ef3a0f2ffd7a6529570c415cec` |
+| `html_old/_images/IMG_4369.jpg` | 517,826 | `644c9fd0d04d16595349bafa0fad3cb1a0e8333e2c30ec13e276df0d053fc630` |
+| `html_old/_images/IMG_4371.jpg` | 386,134 | `1b97f9bebf8b553660551b4835bd25a5d0e87b2d3d7eab090a6332f10d0bec42` |
+| `html_old/_images/IMG_4373.jpg` | 402,206 | `f53b8acf9a8878ecaae44b915930cd22951ab1ce63c1743b6f1831c83e290e3c` |
+| `html_old/_images/Inkplate.jpg` | 62,938 | `eb8d1c80388f572951dd8275cfcbeb939f4cbdf5ca69fadbc52165189525bd71` |
+| `html_old/_images/OSHWA_logo.png` | 10,952 | `97aac1c774cb0d441a6d5e4ab9e8dee91af84814613307160f82e31c22fdffed` |
+| `html_old/_images/example1.jpg` | 3,714,065 | `ff50af44458074ae4e42183d2e5f2ae4c4db55c8d100a8ae3c80f29c2dcc0061` |
+| `html_old/_images/example10.jpg` | 3,717,970 | `3081c9fbaf5cdc5b3a01002acdfcb2c0dbe83afe361a8b731b08b87656c7cf34` |
+| `html_old/_images/example11.jpg` | 4,157,404 | `4086b2368542676082aea7e585ed64251595ba813bb9aa59d03444a552942a7c` |
+| `html_old/_images/example12.jpg` | 3,998,264 | `332acb5ff043428040368f0635839751a7f240dd147d35c104eb086beeaee5f4` |
+| `html_old/_images/example13.jpg` | 3,969,770 | `5a6c8977989772cd000b662b92d9f1a499b5f7ff60f810e7ed239c299b7747eb` |
+| `html_old/_images/example14.jpg` | 3,773,492 | `7bc3e9b788a34123445b520913ef449f5ebf994201e975805c97a58cae85e34c` |
+| `html_old/_images/example15.jpg` | 3,768,474 | `eec16191c448ab9876aff083be393c67b640417a4ebc10075a85686b2b91eb6d` |
+| `html_old/_images/example16.jpg` | 4,334,609 | `8e695e5d4813be26575e9dd4db8561f00ccc696f23f517da9ba30e18dd9731ec` |
+| `html_old/_images/example17.jpg` | 3,628,075 | `339941e91568725572034eecb436170400ae780e1483e9e1bc04f57f1bb13826` |
+| `html_old/_images/example18.jpg` | 5,785,344 | `db5da7cee860c3f701200e8d763fd4d22e3d0a9545d5d719b9fce97ab2860be7` |
+| `html_old/_images/example19.jpg` | 5,438,934 | `cc28d12b429b5ad0ead056141415cd156cd625648a55933bba86738a89d1f8a2` |
+| `html_old/_images/example2.jpg` | 2,736,533 | `58722f7eed983c219a09e0769b8cb91352500243ef679c718288a4cbc388d086` |
+| `html_old/_images/example20.jpg` | 4,546,973 | `d4f78959a2c9550ed30c33012f21469c7cb188642d58662d918660adbff2d4dd` |
+| `html_old/_images/example21.jpg` | 4,178,108 | `3a3c294b0a541347687b38587a3519a9672855a5537e5981a40e653063b4fb16` |
+| `html_old/_images/example3.jpg` | 3,769,318 | `697978957f9337c75497054fc413cf8f3851cef5bcd5dfb361a8df9c55aa79e1` |
+| `html_old/_images/example4.jpg` | 3,569,894 | `2762a19233e0c54dc5c5af5eaaa6935ce276fef80ce527c324aae55112905b6b` |
+| `html_old/_images/example5.jpg` | 3,130,546 | `701f95e9c486382e21bb4f39fb78c626d7b16f583444cb0eb9fdc9579408c7f2` |
+| `html_old/_images/example6.jpg` | 2,927,545 | `0f80cacab332d66e39b6d873fb8098fd2848030d9ce604a589c5a6bf514e8b38` |
+| `html_old/_images/example7.jpg` | 6,751,580 | `56bbd0805cb7cdb9ed3177983b3bce184d845006b88d724eb9bf7942a6c85b6a` |
+| `html_old/_images/example8.jpg` | 4,111,105 | `39a2bee99768e600e0597ccd7e5e2f2172b20866651d877dc9bef0368820c1a1` |
+| `html_old/_images/example9.jpg` | 3,178,220 | `ee59ff2e5c54d1fc9d29b64cef1438e79cbbdaaa093459e627c04232ff0c9dca` |
+| `html_old/_images/gui_designer.jpg` | 192,969 | `0c9f7fe4dccbcceeaec5c95b5f99b25214ab27a3bf1d4a6f87db32e173319195` |
+| `html_old/_images/inkplate10_back.png` | 3,816,797 | `19e98043ba9b76183ee84dd58efb472399f3a1f05bbc3e1ebb8cbdfca6e0b627` |
+| `html_old/_images/inkplate10_front.png` | 4,273,751 | `5e5d900b976863deda40e7de752a192a52f3f116a7b5ded01126b1bf80ac0460` |
+| `html_old/_images/inkplate6_back.jpg` | 50,726 | `5a79bd906ec9aa97f02d0322f3739f52b731fce100fb4f34ff6048b71f37e14d` |
+| `html_old/_images/inkplate6_front.jpg` | 45,900 | `9d936b371f75344f41713ce37f8e3d6386df00d31b028878c15c298f57f22020` |
+| `html_old/_images/inkplate6plus_back.jpg` | 3,685,029 | `ad199995fac8cfadd6cc7ab6f1d289227c8eb9e516ead0806b48c204902911e0` |
+| `html_old/_images/inkplate6plus_front.jpg` | 2,117,906 | `b1ce0df5c4817b87fdbc8d4e7d62399d9d22c445b00eb25125b1117075913da8` |
+| `html_old/_sources/about.rst.txt` | 1,130 | `2465e1e83a28863ce404da01a5730760d944fec03626f9f481c4f39410500402` |
+| `html_old/_sources/api-reference.rst.txt` | 143 | `a3343c60c50b919a343ddb5cd94d2b1b281638614ba513c6991f115a7678c4c3` |
+| `html_old/_sources/arduino.rst.txt` | 86,624 | `67c89cbc016aba29b4fbfc57658995f08ed24d669f6bed6deb56a605cc58c96d` |
+| `html_old/_sources/esp-idf.rst.txt` | 28,675 | `dffb8a9ce99fa7e262c2a587be7a32ef4e3ce985496a152516b3a097c1eea277` |
+| `html_old/_sources/examples.rst.txt` | 8,348 | `7e7bb2fc97be33f9f2a0b9ddf9eb06c2d83c581bbaee9d89806134d3cba8b893` |
+| `html_old/_sources/features.rst.txt` | 3,503 | `d6d83daf0c208052265efc51e96b874a99174b7b382f64490ec31650a097d2bc` |
+| `html_old/_sources/get-started.rst.txt` | 4,338 | `54fe5cd0e03fb05ad880857b05de7a7b3f7d3971405c3aedfc2ec2f84d7c827c` |
+| `html_old/_sources/gui-designer.rst.txt` | 9,324 | `00dd2cf50dee1a356cb149234cde10342daf9791ec390cb4c8b7faae8440a343` |
+| `html_old/_sources/hardware-reference.rst.txt` | 2,001 | `7cafaee6b90b7d1a9d6e53e6318e8a0d00101f5dc352ace6b5b737686f60014a` |
+| `html_old/_sources/index.rst.txt` | 1,196 | `1ab426d2570f5f7fb8f6e3256c32454011514aedc51e40471bfeb70b6d934347` |
+| `html_old/_sources/micropython.rst.txt` | 47,747 | `98c9c192473d18f5062f32db24d4ff751b84ec89e03f8c369b9929412d0e5b75` |
+| `html_old/_sources/open-source.rst.txt` | 2,281 | `d3b65be0929309b4c0c6c2130c37382bf58d9d38a89720a2fa004e0745c935a0` |
+| `html_old/_sources/peripheral-mode.rst.txt` | 10,413 | `1fb8de50f1aa2928e3755dca3311d723c1d894269e886d4884ac83fcd41817ec` |
+| `html_old/_sources/resources.rst.txt` | 794 | `3bce0b1b96b140926de47659195c19c8c0f4f2f4fa167b16259c6522dfdccffd` |
+| `html_old/_static/about.rst` | 1,130 | `2465e1e83a28863ce404da01a5730760d944fec03626f9f481c4f39410500402` |
+| `html_old/_static/api-reference.rst` | 143 | `a3343c60c50b919a343ddb5cd94d2b1b281638614ba513c6991f115a7678c4c3` |
+| `html_old/_static/arduino.rst` | 86,624 | `67c89cbc016aba29b4fbfc57658995f08ed24d669f6bed6deb56a605cc58c96d` |
+| `html_old/_static/basic.css` | 14,692 | `55e3151630469fe605cc1730536cc11c0f3c5685796f4ea1392c24709b094386` |
+| `html_old/_static/conf.py` | 5,359 | `abc8bfa78c2962766cd41e03c6682485b8d0b9e517f0d09410de83781c55559f` |
+| `html_old/_static/doctools.js` | 9,758 | `809310eb1c7560076ac9e0eb7ae647eb1fda8480e34c2bea1d570d53e190a2dd` |
+| `html_old/_static/documentation_options.js` | 350 | `4a71fcaf3858157f908df3628f9e98f5582fd9a8e518b37dce526eb23ef736b8` |
+| `html_old/_static/esp-idf.rst` | 28,675 | `dffb8a9ce99fa7e262c2a587be7a32ef4e3ce985496a152516b3a097c1eea277` |
+| `html_old/_static/examples.rst` | 8,348 | `7e7bb2fc97be33f9f2a0b9ddf9eb06c2d83c581bbaee9d89806134d3cba8b893` |
+| `html_old/_static/features.rst` | 3,503 | `d6d83daf0c208052265efc51e96b874a99174b7b382f64490ec31650a097d2bc` |
+| `html_old/_static/file.png` | 286 | `5c4bc9a16aebf38c4b950f59b8e501ca36495328cb9eb622218bce9064a35e3e` |
+| `html_old/_static/get-started.rst` | 4,338 | `54fe5cd0e03fb05ad880857b05de7a7b3f7d3971405c3aedfc2ec2f84d7c827c` |
+| `html_old/_static/gui-designer.rst` | 9,324 | `00dd2cf50dee1a356cb149234cde10342daf9791ec390cb4c8b7faae8440a343` |
+| `html_old/_static/hardware-reference.rst` | 2,001 | `7cafaee6b90b7d1a9d6e53e6318e8a0d00101f5dc352ace6b5b737686f60014a` |
+| `html_old/_static/index.rst` | 1,197 | `7d5ff0667d8cf38d82af8c0c9990b2cbb940acb27bbc74438e30b6eaf3bdc035` |
+| `html_old/_static/jquery-3.5.1.js` | 287,630 | `416a3b2c3bf16d64f6b5b6d0f7b079df2267614dd6847fc2f3271b4409233c37` |
+| `html_old/_static/jquery.js` | 89,476 | `f7f6a5894f1d19ddad6fa392b2ece2c5e578cbf7da4ea805b6885eb6985b6e3d` |
+| `html_old/_static/language_data.js` | 10,854 | `b8955c86f6121115098eed872bd279bab64b83af333694f70b5632e6deb2e1e9` |
+| `html_old/_static/micropython.rst` | 47,747 | `98c9c192473d18f5062f32db24d4ff751b84ec89e03f8c369b9929412d0e5b75` |
+| `html_old/_static/minus.png` | 90 | `47e7fc50db3699f1ca41ce9a2ffa202c00c5d1d5180c55f62ba859b1bd6cc008` |
+| `html_old/_static/open-source.rst` | 2,281 | `d3b65be0929309b4c0c6c2130c37382bf58d9d38a89720a2fa004e0745c935a0` |
+| `html_old/_static/peripheral-mode.rst` | 10,413 | `1fb8de50f1aa2928e3755dca3311d723c1d894269e886d4884ac83fcd41817ec` |
+| `html_old/_static/plus.png` | 90 | `54115199b96a130cba02147c47c0deb43dcc9b9f08b5162bba8642b34980ac63` |
+| `html_old/_static/pygments.css` | 4,819 | `881741d5045bd10829c8da68276d87767b0a4283e1d6b081fd91bf116d768797` |
+| `html_old/_static/resources.rst` | 794 | `3bce0b1b96b140926de47659195c19c8c0f4f2f4fa167b16259c6522dfdccffd` |
+| `html_old/_static/searchtools.js` | 16,793 | `f4a9cacabebf738abfdca6133b780cab8132b5b23ea6e6c99f55f34a626a90bd` |
+| `html_old/_static/underscore-1.12.0.js` | 67,692 | `17593fc70248aa6169a7c031f5d5975f999fdbb835b7a5f665e4cbbc0bc4c894` |
+| `html_old/_static/underscore-1.13.1.js` | 68,420 | `cc10f799cd0f6b65f95c4012445497e5ba3cb9f51964a9468940b27bde98b487` |
+| `html_old/_static/underscore.js` | 19,530 | `218fb1c1fc72e9af6b866f430be2a67fa376392b4db2f4dbf32772671b6ae55c` |
+| `html_old/_static/fonts/Inconsolata-Bold.ttf` | 109,948 | `c268fae6dbf17a27f648218fac958b86dc38e169f6315f0b02866966f56b42bf` |
+| `html_old/_static/fonts/Inconsolata-Regular.ttf` | 96,964 | `e28c150b4390e5fd59aedc2c150b150086fbcba0b4dbde08ac260d6db65018d6` |
+| `html_old/_static/fonts/Inconsolata.ttf` | 63,184 | `c2d9721f4afc45e77b103c9ae735f44a4ffc5603e19b240de9857f87e9ae2bf4` |
+| `html_old/_static/fonts/Lato-Bold.ttf` | 656,544 | `8a0aace75d33794eece4b28187bfc1df0bbd2888b5d8a56e01788c8d65d16be1` |
+| `html_old/_static/fonts/Lato-Regular.ttf` | 656,568 | `d636e4683231f931eda222d588e944d082bfd3bdba02f928bee461c0f185b251` |
+| `html_old/_static/fonts/RobotoSlab-Bold.ttf` | 170,616 | `ba12d2eab1fa765b6b05398fa7e047dd76293f0c051ce57a8f7b0c591c14d42b` |
+| `html_old/_static/fonts/RobotoSlab-Regular.ttf` | 169,064 | `13aa5f54c6f2fa2e388fe0e675cdbcc6a81f6270a8bf9c03a5df8af9cb022810` |
+| `html_old/_static/fonts/fontawesome-webfont.eot` | 165,742 | `7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979` |
+| `html_old/_static/fonts/fontawesome-webfont.svg` | 444,379 | `ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4` |
+| `html_old/_static/fonts/fontawesome-webfont.ttf` | 165,548 | `aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8` |
+| `html_old/_static/fonts/fontawesome-webfont.woff` | 98,024 | `ba0c59deb5450f5cb41b3f93609ee2d0d995415877ddfa223e8a8a7533474f07` |
+| `html_old/_static/fonts/fontawesome-webfont.woff2` | 77,160 | `2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe` |
+| `html_old/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot` | 79,520 | `4438991a12ff951cc8d0e83348ec06d9f910591b1b014c476e9595d4da099e48` |
+| `html_old/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf` | 170,616 | `ba12d2eab1fa765b6b05398fa7e047dd76293f0c051ce57a8f7b0c591c14d42b` |
+| `html_old/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff` | 87,624 | `9fec87cadbe2413b255f1ec577573a83f1ca2e1c37aa023dbebcd3a7b864636a` |
+| `html_old/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2` | 67,312 | `1a0c024dd1a267c52d5575469ffe8570d1e84164de7d393cf3414bafd17d7a0c` |
+| `html_old/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot` | 78,331 | `b3809b71d417c6c225e77a55880aa7915b4e4b4f77a5e2d243f3563731e7f55c` |
+| `html_old/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf` | 169,064 | `13aa5f54c6f2fa2e388fe0e675cdbcc6a81f6270a8bf9c03a5df8af9cb022810` |
+| `html_old/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff` | 86,288 | `9f32630e2c0c5135bf1e86e36cb65b3932e4410644235bc2bd995e9c7f6ff117` |
+| `html_old/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2` | 66,444 | `874e42222856d7af03b3f438d21d923a4280d47fe67c48510e2174a1579795ef` |
+| `html_old/_static/fonts/Lato/lato-bold.eot` | 256,056 | `b91fc1ca55df440dc11354b32a39b45db663d24bb17b16dcb2e706330955b0d1` |
+| `html_old/_static/fonts/Lato/lato-bold.ttf` | 600,856 | `f71f833c099f450606f8107b83ef208ae918c0ea00779466d45e9be96b0bc7cc` |
+| `html_old/_static/fonts/Lato/lato-bold.woff` | 309,728 | `0e56b17d142eb366c8007031d14e34da48c70b4a9d9a0ca492e696a7bae45e1e` |
+| `html_old/_static/fonts/Lato/lato-bold.woff2` | 184,912 | `ae88fc0d7a961832f809527d30bd3983a6866d42f66a56ade23f543681594db6` |
+| `html_old/_static/fonts/Lato/lato-bolditalic.eot` | 266,158 | `b3d585879a02f48c5d43d8f91d06b167e367a31934bb3b8147c0a90b5ca32bfc` |
+| `html_old/_static/fonts/Lato/lato-bolditalic.ttf` | 622,572 | `f98d040631714eabffd0ffb747576674fa78c2910f6d9e3dc0c58481d03c1898` |
+| `html_old/_static/fonts/Lato/lato-bolditalic.woff` | 323,344 | `980c8592e5488df256192c999e92db8fd302db8cd8909b7fa266a684e37e45f8` |
+| `html_old/_static/fonts/Lato/lato-bolditalic.woff2` | 193,308 | `c0916a33340d063f7b05679e08031e729d1888444706f04804705da5966d895d` |
+| `html_old/_static/fonts/Lato/lato-italic.eot` | 268,604 | `bc24dbe04f5b2415678f978e7e2f630cc6610670d684e088e73ad29c439eafe3` |
+| `html_old/_static/fonts/Lato/lato-italic.ttf` | 639,388 | `12d825af88eafea1ce3aa469f83c03acaecd0d03f690f409c8643529f1205b4f` |
+| `html_old/_static/fonts/Lato/lato-italic.woff` | 328,412 | `26318a1467a5e5caf10b04cfa942d079632560cd7a29cec565fd1dc9f7ec5081` |
+| `html_old/_static/fonts/Lato/lato-italic.woff2` | 195,704 | `4465765f2f6eddcdad34ffd7cab559e56bc0e75e45e192f85e9562b0771481dc` |
+| `html_old/_static/fonts/Lato/lato-regular.eot` | 253,461 | `e735410675eacc363b257112f39eb819a854b03077d7b1f0caa6e7660ffbd8b3` |
+| `html_old/_static/fonts/Lato/lato-regular.ttf` | 607,720 | `089ab6d4a57e0e6c4dd3b681b6fd50a5184f1b902429d35e1227e52d6ccad1bd` |
+| `html_old/_static/fonts/Lato/lato-regular.woff` | 309,192 | `5b9025dda4d7688e3311b0c17eddc501133b807def33effaef6593843cf5416e` |
+| `html_old/_static/fonts/Lato/lato-regular.woff2` | 182,708 | `983b0caf336e8542214fc17019a4fc5e0360864b92806ca14d55c1fc1c2c5a0f` |
+| `html_old/_static/css/badge_only.css` | 3,275 | `c4050fa47d8bb6297c79811f663e6cfa32cb6b783b47eaeddd6ba50d5cf1a666` |
+| `html_old/_static/css/theme.css` | 129,674 | `af78284d3c7a8ab0917208ddc2a71854d4b552802104a7146f8705dca8dd88d1` |
+| `html_old/_static/css/fonts/Roboto-Slab-Bold.woff` | 87,624 | `9fec87cadbe2413b255f1ec577573a83f1ca2e1c37aa023dbebcd3a7b864636a` |
+| `html_old/_static/css/fonts/Roboto-Slab-Bold.woff2` | 67,312 | `1a0c024dd1a267c52d5575469ffe8570d1e84164de7d393cf3414bafd17d7a0c` |
+| `html_old/_static/css/fonts/Roboto-Slab-Regular.woff` | 86,288 | `9f32630e2c0c5135bf1e86e36cb65b3932e4410644235bc2bd995e9c7f6ff117` |
+| `html_old/_static/css/fonts/Roboto-Slab-Regular.woff2` | 66,444 | `874e42222856d7af03b3f438d21d923a4280d47fe67c48510e2174a1579795ef` |
+| `html_old/_static/css/fonts/fontawesome-webfont.eot` | 165,742 | `7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979` |
+| `html_old/_static/css/fonts/fontawesome-webfont.svg` | 444,379 | `ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4` |
+| `html_old/_static/css/fonts/fontawesome-webfont.ttf` | 165,548 | `aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8` |
+| `html_old/_static/css/fonts/fontawesome-webfont.woff` | 98,024 | `ba0c59deb5450f5cb41b3f93609ee2d0d995415877ddfa223e8a8a7533474f07` |
+| `html_old/_static/css/fonts/fontawesome-webfont.woff2` | 77,160 | `2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe` |
+| `html_old/_static/css/fonts/lato-bold-italic.woff` | 323,344 | `980c8592e5488df256192c999e92db8fd302db8cd8909b7fa266a684e37e45f8` |
+| `html_old/_static/css/fonts/lato-bold-italic.woff2` | 193,308 | `c0916a33340d063f7b05679e08031e729d1888444706f04804705da5966d895d` |
+| `html_old/_static/css/fonts/lato-bold.woff` | 309,728 | `0e56b17d142eb366c8007031d14e34da48c70b4a9d9a0ca492e696a7bae45e1e` |
+| `html_old/_static/css/fonts/lato-bold.woff2` | 184,912 | `ae88fc0d7a961832f809527d30bd3983a6866d42f66a56ade23f543681594db6` |
+| `html_old/_static/css/fonts/lato-normal-italic.woff` | 328,412 | `26318a1467a5e5caf10b04cfa942d079632560cd7a29cec565fd1dc9f7ec5081` |
+| `html_old/_static/css/fonts/lato-normal-italic.woff2` | 195,704 | `4465765f2f6eddcdad34ffd7cab559e56bc0e75e45e192f85e9562b0771481dc` |
+| `html_old/_static/css/fonts/lato-normal.woff` | 309,192 | `5b9025dda4d7688e3311b0c17eddc501133b807def33effaef6593843cf5416e` |
+| `html_old/_static/css/fonts/lato-normal.woff2` | 182,708 | `983b0caf336e8542214fc17019a4fc5e0360864b92806ca14d55c1fc1c2c5a0f` |
+| `html_old/_static/js/badge_only.js` | 934 | `f0a4808d04c4d55378751ac096a8376b64b1a704c82584b0ee590212cf413013` |
+| `html_old/_static/js/html5shiv-printshiv.min.js` | 4,370 | `b42a7e949a6e21d66b30fbbb4a22deafd9e0ccabc04f0fa2907fc6252fdf165f` |
+| `html_old/_static/js/html5shiv.min.js` | 2,734 | `f6e0283561ddb33b140e14977ffad57163aa28f7e2e7ff15e51e1475b6657b60` |
+| `html_old/_static/js/modernizr.min.js` | 15,414 | `cf25ec18f223f4c51ce1128a42e644cdc2244d88f89d1a51440d9dbe51f4efe8` |
+| `html_old/_static/js/theme.js` | 5,023 | `536ad2d746e944c5570cc15badaeccc3c0582a1b66e45511fe4edce32b6da510` |
+| `html_old/_static/images/BoardSelection.jpg` | 90,397 | `a19b157a6afdc0cd8b1a02f730819a6fcec2b28523cd329945f846ee55cb0a91` |
+| `html_old/_static/images/IMG_4344.jpg` | 416,679 | `485beb9e0e1234c039503248dd6f9fd3cccb9bfba85df0e36f8da01dbad0f7c5` |
+| `html_old/_static/images/IMG_4345.jpg` | 342,801 | `6309647f396de501b2ce610e56bf8f0648cfc90895c9066f6ae76d5c3bb1c73f` |
+| `html_old/_static/images/IMG_4346.jpg` | 409,373 | `cefbb4f96326a8eef39b462d0800be69ea050ec29ee9ea3c0819cbad5e256ad9` |
+| `html_old/_static/images/IMG_4347.jpg` | 411,926 | `30a4d72056e78a311c011d70142c31dd4293ac660f1ead252db382f01d85e1c6` |
+| `html_old/_static/images/IMG_4348.jpg` | 466,125 | `a5282bbb0dae2aaac865436eb2563c37af8b7aba0b01233c0b11844af865113f` |
+| `html_old/_static/images/IMG_4349.jpg` | 1,298,463 | `3aca4347549d7b5872ebd8deefed9150a14aac4846b3f2c766911895667f2128` |
+| `html_old/_static/images/IMG_4350.jpg` | 403,692 | `867684b67d48c25186c39e0f48674a83579759d3cb752613977ee00331559981` |
+| `html_old/_static/images/IMG_4353.jpg` | 413,338 | `ac100f7189cdec847be247126f31644cad69830c80ebf49610f2cd71d21fa1f1` |
+| `html_old/_static/images/IMG_4354.jpg` | 399,808 | `87c757f3c7abfb20fcdecbf3f67c35385aa5e3c17e759b0b9610c8ebecc6818f` |
+| `html_old/_static/images/IMG_4355.jpg` | 384,713 | `ba668f67b8d2802ec0aa4209e56c97f4a63e5ce046655f62936ff2efa12be7d7` |
+| `html_old/_static/images/IMG_4356.jpg` | 378,564 | `4fab387b50b81aac319ca8fec7b29c1c46fd909885a1cb0c8e7cf9493582db2f` |
+| `html_old/_static/images/IMG_4357.jpg` | 660,474 | `70192420545476e87dca5c5da15812a7a51aa62242eb7c9455407d5784e75a07` |
+| `html_old/_static/images/IMG_4358.jpg` | 425,798 | `aaa1223ed122c2bf8cbd0ea139caf8fb3ac73af6c3d05573bc911c6acb727ec5` |
+| `html_old/_static/images/IMG_4359.jpg` | 421,545 | `b38e3cd06e0af8227a42bce1c111d2e3ef76272500ea03b1a7eb19c0b973c855` |
+| `html_old/_static/images/IMG_4360.jpg` | 410,129 | `0d789f47020c4fe68b15bcf0f1664346cf0d564705b00a963054400c81086d33` |
+| `html_old/_static/images/IMG_4361.jpg` | 399,494 | `3e08ac6f6757858306543f614fa986d6a447253788f10ea62b01b72b31fe9db7` |
+| `html_old/_static/images/IMG_4362.jpg` | 421,580 | `b0780eff727733ec28afea00dfbae6a9805cde587eeadf068e2e00dd929c60fc` |
+| `html_old/_static/images/IMG_4363.jpg` | 425,001 | `bee8f57e2d7fa4ec33da77910dcf2c8872bc7feb053d858308b58614961c7fb4` |
+| `html_old/_static/images/IMG_4364.jpg` | 423,532 | `e452ce85621e493afe572b1187992d285efa89c780632776b15f8489d5670f28` |
+| `html_old/_static/images/IMG_4365.jpg` | 477,611 | `d31f031b9ecda853e5350aed25bc94ff4f99bccc5c6620b2704dcdf811005526` |
+| `html_old/_static/images/IMG_4366.jpg` | 438,304 | `f8cfb43f9bb2bc1e8738bb11d94841454fbd64ef3a0f2ffd7a6529570c415cec` |
+| `html_old/_static/images/IMG_4369.jpg` | 517,826 | `644c9fd0d04d16595349bafa0fad3cb1a0e8333e2c30ec13e276df0d053fc630` |
+| `html_old/_static/images/IMG_4371.jpg` | 386,134 | `1b97f9bebf8b553660551b4835bd25a5d0e87b2d3d7eab090a6332f10d0bec42` |
+| `html_old/_static/images/IMG_4373.jpg` | 402,206 | `f53b8acf9a8878ecaae44b915930cd22951ab1ce63c1743b6f1831c83e290e3c` |
+| `html_old/_static/images/Inkplate.jpg` | 62,938 | `eb8d1c80388f572951dd8275cfcbeb939f4cbdf5ca69fadbc52165189525bd71` |
+| `html_old/_static/images/OSHWA_logo.bmp` | 450,286 | `1e1561bf3145aec4ecd61814449b9bb2d1f7a11a7563001ce7c184c62dce8d55` |
+| `html_old/_static/images/OSHWA_logo.png` | 10,952 | `97aac1c774cb0d441a6d5e4ab9e8dee91af84814613307160f82e31c22fdffed` |
+| `html_old/_static/images/example1.jpg` | 3,714,065 | `ff50af44458074ae4e42183d2e5f2ae4c4db55c8d100a8ae3c80f29c2dcc0061` |
+| `html_old/_static/images/example10.jpg` | 3,717,970 | `3081c9fbaf5cdc5b3a01002acdfcb2c0dbe83afe361a8b731b08b87656c7cf34` |
+| `html_old/_static/images/example11.jpg` | 4,157,404 | `4086b2368542676082aea7e585ed64251595ba813bb9aa59d03444a552942a7c` |
+| `html_old/_static/images/example12.jpg` | 3,998,264 | `332acb5ff043428040368f0635839751a7f240dd147d35c104eb086beeaee5f4` |
+| `html_old/_static/images/example13.jpg` | 3,969,770 | `5a6c8977989772cd000b662b92d9f1a499b5f7ff60f810e7ed239c299b7747eb` |
+| `html_old/_static/images/example14.jpg` | 3,773,492 | `7bc3e9b788a34123445b520913ef449f5ebf994201e975805c97a58cae85e34c` |
+| `html_old/_static/images/example15.jpg` | 3,768,474 | `eec16191c448ab9876aff083be393c67b640417a4ebc10075a85686b2b91eb6d` |
+| `html_old/_static/images/example16.jpg` | 4,334,609 | `8e695e5d4813be26575e9dd4db8561f00ccc696f23f517da9ba30e18dd9731ec` |
+| `html_old/_static/images/example17.jpg` | 3,628,075 | `339941e91568725572034eecb436170400ae780e1483e9e1bc04f57f1bb13826` |
+| `html_old/_static/images/example18.jpg` | 5,785,344 | `db5da7cee860c3f701200e8d763fd4d22e3d0a9545d5d719b9fce97ab2860be7` |
+| `html_old/_static/images/example19.jpg` | 5,438,934 | `cc28d12b429b5ad0ead056141415cd156cd625648a55933bba86738a89d1f8a2` |
+| `html_old/_static/images/example2.jpg` | 2,736,533 | `58722f7eed983c219a09e0769b8cb91352500243ef679c718288a4cbc388d086` |
+| `html_old/_static/images/example20.jpg` | 4,546,973 | `d4f78959a2c9550ed30c33012f21469c7cb188642d58662d918660adbff2d4dd` |
+| `html_old/_static/images/example21.jpg` | 4,178,108 | `3a3c294b0a541347687b38587a3519a9672855a5537e5981a40e653063b4fb16` |
+| `html_old/_static/images/example3.jpg` | 3,769,318 | `697978957f9337c75497054fc413cf8f3851cef5bcd5dfb361a8df9c55aa79e1` |
+| `html_old/_static/images/example4.jpg` | 3,569,894 | `2762a19233e0c54dc5c5af5eaaa6935ce276fef80ce527c324aae55112905b6b` |
+| `html_old/_static/images/example5.jpg` | 3,130,546 | `701f95e9c486382e21bb4f39fb78c626d7b16f583444cb0eb9fdc9579408c7f2` |
+| `html_old/_static/images/example6.jpg` | 2,927,545 | `0f80cacab332d66e39b6d873fb8098fd2848030d9ce604a589c5a6bf514e8b38` |
+| `html_old/_static/images/example7.jpg` | 6,751,580 | `56bbd0805cb7cdb9ed3177983b3bce184d845006b88d724eb9bf7942a6c85b6a` |
+| `html_old/_static/images/example8.jpg` | 4,111,105 | `39a2bee99768e600e0597ccd7e5e2f2172b20866651d877dc9bef0368820c1a1` |
+| `html_old/_static/images/example9.jpg` | 3,178,220 | `ee59ff2e5c54d1fc9d29b64cef1438e79cbbdaaa093459e627c04232ff0c9dca` |
+| `html_old/_static/images/features.jpg` | 88,548 | `5afa71115433fa228cbc477541e8119727835fde947083990acebe3e227c0028` |
+| `html_old/_static/images/gui_designer.jpg` | 192,969 | `0c9f7fe4dccbcceeaec5c95b5f99b25214ab27a3bf1d4a6f87db32e173319195` |
+| `html_old/_static/images/index.jpg` | 10,200 | `c2494fade4a3497190214ff23dafb905148656fed15dc9f84c6856fa23d807a3` |
+| `html_old/_static/images/inkplate10_back.png` | 3,816,797 | `19e98043ba9b76183ee84dd58efb472399f3a1f05bbc3e1ebb8cbdfca6e0b627` |
+| `html_old/_static/images/inkplate10_front.png` | 4,273,751 | `5e5d900b976863deda40e7de752a192a52f3f116a7b5ded01126b1bf80ac0460` |
+| `html_old/_static/images/inkplate6_back.jpg` | 50,726 | `5a79bd906ec9aa97f02d0322f3739f52b731fce100fb4f34ff6048b71f37e14d` |
+| `html_old/_static/images/inkplate6_front.jpg` | 45,900 | `9d936b371f75344f41713ce37f8e3d6386df00d31b028878c15c298f57f22020` |
+| `html_old/_static/images/inkplate6plus_back.jpg` | 3,685,029 | `ad199995fac8cfadd6cc7ab6f1d289227c8eb9e516ead0806b48c204902911e0` |
+| `html_old/_static/images/inkplate6plus_front.jpg` | 2,117,906 | `b1ce0df5c4817b87fdbc8d4e7d62399d9d22c445b00eb25125b1117075913da8` |
+
+## How to get it back
+
+Independent recovery URLs, most reliable first:
+
+- whole-repository tarball at that commit (**works for directories**):
+  <https://codeload.github.com/SolderedElectronics/Inkplate-documentation/tar.gz/1b3d3329915dbddf8f923ce61945d0842cad6c63>
+- browse the directory at that commit:
+  <https://github.com/SolderedElectronics/Inkplate-documentation/tree/1b3d3329915dbddf8f923ce61945d0842cad6c63/build>
+- jsDelivr directory listing at that commit:
+  <https://cdn.jsdelivr.net/gh/SolderedElectronics/Inkplate-documentation@1b3d3329915dbddf8f923ce61945d0842cad6c63/build/>
+- current default branch (may have changed):
+  <https://github.com/SolderedElectronics/Inkplate-documentation/tree/HEAD/build>
+- additional mirror:
+  <https://github.com/SolderedElectronics/Inkplate-documentation>
+- additional mirror:
+  <https://inkplate.readthedocs.io>
+
+> **Resolving `../hardware-doc-archive`** — it is a sibling of the **real repository root**,
+> not of your working directory. Under a git worktree, resolve it with the *common* dir:
+>
+> ```bash
+> ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
+> ```
+
+Restore from the local archive:
+
+```bash
+mv "../hardware-doc-archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/build" \
+   "devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/build"
+```
+
+If every URL above is dead, try the Wayback Machine:
+
+    https://web.archive.org/web/2/https://codeload.github.com/SolderedElectronics/Inkplate-documentation/tar.gz/1b3d3329915dbddf8f923ce61945d0842cad6c63
+

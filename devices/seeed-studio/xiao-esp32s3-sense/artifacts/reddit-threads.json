@@ -1,0 +1,162 @@
+{
+ "How I revived a completely dead/bricked SenseCAP Solar Node (XIAO ESP32S3)": {
+  "url": "https://reddit.com/r/meshtastic/comments/1uzoubw/how_i_revived_a_completely_deadbricked_sensecap/",
+  "score": 118,
+  "subreddit": "meshtastic",
+  "selftext": "**Hi everyone,**  \n**I wanted to share a quick fix in case anyone else encounters this issue.**\n\n**The Problem:**  \n**My SenseCAP Solar Node went completely dead. It wouldn't turn on, there was no Bluetooth signal, and Windows wouldn't even recognize it as a USB device (no connection sound at all). It was stuck in a deep power-protection loop because the battery had drained too low while resting near a window indoors.**\n\n**The Solution:**  \n**1. I opened up the casing to access the internal Seeed Studio XIAO board.**  \n**2. I connected the USB-C cable from the node to my computer.**  \n**3. Using a single unfolded metal paperclip, I carefully jumped/shorted the \u2060RST\u2060 and \u2060GND\u2060 solder pads on the PCB by tapping them together twice very quickly (like a fast double-click).**\n\n**Instantly, Windows made the connection sound, and the \u2060XIAO-BOOT\u2060 drive popped up! I was able to drag and drop the latest stable Meshtastic firmware (\u20602.7.26 Beta\u2060) into the folder. The node automatically rebooted, and it's now fully alive and syncing perfectly with my phone.**\n\n**If your node seems completely bricked and won't respond to the external buttons, give the hardware reset pads a shot!**",
+  "comments": [
+   [
+    15,
+    "You should learn about your node first.\n\nFirst, you could check you \u2018facts\u2019 about the reset button with a multimeter.\n\nSecond, cells are not welded. That\u2019s a spring loaded battery holder.\n\nSource: I also have one Solar P1 Pro."
+   ],
+   [
+    12,
+    "OP, I don\u2019t think Seeed offers a SenseCap SolarNode with an XIAO ESP32S. My experience is that these are all NRF52 based SolarNodes allowing longer battery life. Can you elaborate?"
+   ],
+   [
+    7,
+    "**You are totally right, my bad! It is indeed the nRF52-based XIAO. I got confused with another board when writing the post, but the double-tap short on the RST/GND pads works exactly the same on it. Thanks for the correction!**"
+   ],
+   [
+    6,
+    "The external reset should do the same. In a y case is safer to unplug the cells and plug them again."
+   ],
+   [
+    3,
+    "Thanks for confirming. I didn\u2019t know if you had access to something new."
+   ],
+   [
+    2,
+    "Thanks chatgpt"
+   ],
+   [
+    2,
+    "I know others have shared other \u2018ways\u2019 of doing this but I appreciate a different view and a willingness to share. Thanks for posting this.\u00a0"
+   ],
+   [
+    1,
+    "merci pour l'astuce"
+   ]
+  ]
+ },
+ "Noise and consistent lines on OV5640 camera with Seeed Studio ESP32S3 Sense": {
+  "url": "https://reddit.com/r/esp32/comments/1v3ctcx/noise_and_consistent_lines_on_ov5640_camera_with/",
+  "score": 13,
+  "subreddit": "esp32",
+  "selftext": "So, I've been working on this diy toy camera project and this noise/pattern persisting in my image captures has had me scratching my head.\n\nIt is a OV5640 sensor paired with Seeed XIAO ESP32S3 Sense. Powered by a 2000mah LiPo wired to the board. Did not experience the issue with the OV3660 the board came with by default\n\nThe problem is in darker scenes: noisy, consistent lines. The lines sit in the same place shot to shot. Dark frame attached to see the extreme of what I mean. The other shot is a relatively dim lit desk space, but you can see the lines and noise more prominent along the left side.\n\nCouldn't find a definitive solution from my online research. One common theme I found though is it could be either power or heat related.\n\nWhat I've done to try mitigate:\n\n* reduce / cap the gain ceiling\n* reduce sensor XCLK below 20mhz\n* reduce the capture resolution (to QXGA max)\n* reseating the ribbon cable, to not much improvement\n\nIs this just a limitation with the sensor and board? Any insights appreciated.",
+  "comments": [
+   [
+    3,
+    "To reduce noise on the power lines, try adding one or more capacitors (100nF ceramics typically) as close to the camera as possible."
+   ],
+   [
+    3,
+    "Looks like matrix overheats. Try to add heatsink and maybe fan."
+   ],
+   [
+    3,
+    "I also ran into this problem with the OV5640, only thing that helped was lowering the clock all the way down to 6MHz. It was still present but much less noticeable compared to 20MHz. "
+   ],
+   [
+    1,
+    "Yeah listen to k0ef Esp32s3 sense I have will run at 180F streaming video out of it and that\u2019s in open air not in a box. Highly recommend heat sink and tiny fan if you\u2019re putting in a box."
+   ],
+   [
+    1,
+    "Wow, yup, exactly the same. Are you able to provide info on how you're powering them + if heatsinks are installed to them?"
+   ],
+   [
+    1,
+    "The one from the photo is the exact same one I used and did not give that problem. But it could be your code or a hardware issues ofcourse"
+   ],
+   [
+    1,
+    "That's sort of what I had to do as well, played around between 10mhz and 6mhz. I'm afraid I may have to deal with the lower clock"
+   ],
+   [
+    1,
+    "I swapped out the OV2640s on them to wider angle OV5640s for my application. No heatsink but the case I designed and 3D printed for them holds the back of the cam quite tightly against the ESP metal shield. I may try dobbing a little thermal compound on the back of the camera to improve heat transfer to the shield.\n\nI power them from cheap usb wall chargers. I have one each in three different windows at the cottage and each window has a wall socket nearby."
+   ]
+  ]
+ },
+ "Seeed Studio XIAO ESP32S3 Sense Camera - a working yaml": {
+  "url": "https://reddit.com/r/homeassistant/comments/1oltw3e/seeed_studio_xiao_esp32s3_sense_camera_a_working/",
+  "score": 4,
+  "subreddit": "homeassistant",
+  "selftext": "",
+  "comments": [
+   [
+    3,
+    "I literally ran into this problem last a weekend or two ago and was going crazy.  \nMy YAML look almost the same  ( i think I'm trying 1600x1200 res)\n\nFor me, the key was the psram lines. would not start the camera until then\n\n    psram:\n      mode: octal"
+   ]
+  ]
+ },
+ "Need Help About My Camera Project": {
+  "url": "https://reddit.com/r/esp32/comments/1tesphg/need_help_about_my_camera_project/",
+  "score": 89,
+  "subreddit": "esp32",
+  "selftext": "Hello all, I'm working on a project where I'm trying to build a retro-styled digital camera using Seeed Studio's XIAO ESP32S3 Sense board and a 2.0\" TFT LCD Screen. ([https://github.com/barkinsarikartal/XIAO-ESP32S3-Sense\\_Retro\\_Camera](https://github.com/barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera))\n\nHardware:\n\n|Component|Part|\n|:-|:-|\n|Microcontroller|Seeed Studio XIAO ESP32-S3 Sense (OV2640 + SD card expansion)|\n|Display|2.0\" TFT LCD \u2014 ST7789VW, 240\u00d7320, SPI|\n|Rotary Encoder|EC11 with push button|\n|Shutter button|1\u00d7 tactile button|\n|LED Flashlight|2\u00d7 5mm white LEDs with 100 ohms resistors|\n|Power|3.7 V Li-ion battery or USB-C|\n\nI currently came a long way about the software and the circuit is on a perforated pertinax right now but I want to move it a step further and make a 3D printed case, so I can bring it outside too.\n\nI'm very very new to 3D modeling and I'm using onshape. I currently designed the middle box with 2 open faces, and the face which will hold the TFT screen and the rotary encoder. But I'm having difficulty designing the other face which will hold two 5mm leds and the XIAO ESP32S3 Sense. I couldn't find any way to put XIAO to that face nicely.\n\nI thought maybe I can use this model ([https://www.printables.com/model/681623-xiao-sense-case-seeed-studio-xiao-esp32s3-sense-ca](https://www.printables.com/model/681623-xiao-sense-case-seeed-studio-xiao-esp32s3-sense-ca)) and make it fit snugly into the gap I put in the lid. But that doesn't seem like a good solution.\n\nMy requirements when designing this face: I need to be able to use the BAT+, BAT- pins and the GPIO pins from inside of the box. Also antenna is being used but I don't want the antenna to be visible from the outside of the box. Other than these, I want the Type-C port and SD Card slot to be accessible from the outside of the box for charging the battery and changing SD Card.\n\nSo, I'm open to any suggestions about this issue and any feedback for other models (box and other face) too!",
+  "comments": [
+   [
+    3,
+    "You can buy a ov2640 camera with a 3 inch ribbon cable so the camera can be separated from the cpu and sd card.  They are just a couple dollars."
+   ],
+   [
+    2,
+    "Right now, it can record 10 fps video with 480x320 resolution. And the viewfinder shows stable 25 fps when not recording."
+   ],
+   [
+    2,
+    "Just a heads up, over SPI, driving that resolution at a pleasant framerate is gonna be tough"
+   ],
+   [
+    1,
+    "Unfortunately, they are not available anywhere in my country and I can't buy anything from china :( So, I'm stuck with the default camera that comes with the XIAO."
+   ],
+   [
+    1,
+    "Hi thanks for the github link, I\u2019m also building a digital camera but I don\u2019t have the right components. The esp-32 that I have doesn\u2019t have the usb and I also don\u2019t have the adapter. \nI do have the OV2640 camera, though. "
+   ]
+  ]
+ },
+ "Mounting Seeed Studio XIAO ESP32S3?": {
+  "url": "https://reddit.com/r/esp32/comments/1fztq73/mounting_seeed_studio_xiao_esp32s3/",
+  "score": 23,
+  "subreddit": "esp32",
+  "selftext": "I'm very new to this hobby and am loving it! I have my first protect just about ready to go, based on the Seeed Studio XIAO ESP32S3, and I'm having to wrestle with a question. \n\nHow are people mounting these during installation? Physically, I mean.\n\nThere's no screw holes or anything, no clips, not way that I can see beyond just using glue. Is that what people are doing come time to install an Seeed Studio XIAO ESP32S3?\n\nAny and all suggestions welcomed.",
+  "comments": [
+   [
+    8,
+    "If you make a custom PCB (which is pretty cheap, MOQ is usally 5), you can directly solder it on pads because of the pin contacts going all the way to the edge of the ESP's PCB."
+   ],
+   [
+    7,
+    "If you solder pins onto it, you can put it on [one of these breadboards](https://imgur.com/a/C4Fq3WQ), I bought a set some time ago for prototypes"
+   ],
+   [
+    6,
+    "You may have just cracked the whole case wide open, thank you!\n\nThis is commensurate with my current skill level. Headers on the ESP32 board, solder those onto this board, then mount that. I can also use this for the wiring and stuff... This is perfect.\n\nExactly what I needed. Blessings on you wherever you are."
+   ],
+   [
+    6,
+    "&gt;no way that I can see beyond just using glue\n\nHot glue works great for personal projects! It's water proof and nonconductive, and you'd be surprised how many low cost electronics use a dab of hot glue to hold parts in place.\n\nHot glue, a drill, and a box like this: [https://www.amazon.com/dp/B07Q14K8YT/ref=twister\\_B07Q13SCZD?\\_encoding=UTF8&amp;psc=1](https://www.amazon.com/dp/B07Q14K8YT/ref=twister_B07Q13SCZD?_encoding=UTF8&amp;psc=1) is a great way to make a case for a little home project.\n\nI have fought with mounting all components to perf boards and such, but for small mostly permanent installations, I find it's easier to solder short solid core wires between components and stuff them all into a box with hot glue to hold them down."
+   ],
+   [
+    4,
+    "Like this...\n\n[https://www.thingiverse.com/thing:5196253](https://www.thingiverse.com/thing:5196253)\n\nor just the mount part itself you can add to your own custom 3D printed enclosures...\n\n[https://www.thingiverse.com/thing:5508504](https://www.thingiverse.com/thing:5508504)"
+   ],
+   [
+    4,
+    "Double sided foam tape also works well."
+   ],
+   [
+    3,
+    "Oh, that's a great tip. I did not know those existed, thank you."
+   ],
+   [
+    3,
+    "I'm keen to get to custom PCBs in time, but I'm not close to there yet. \ud83d\ude02 I'm at the \"LED controller with an RTC and ESP-NOW remote\" stage of things. \n\nAny ideas in the interim?"
+   ]
+  ]
+ }
+}

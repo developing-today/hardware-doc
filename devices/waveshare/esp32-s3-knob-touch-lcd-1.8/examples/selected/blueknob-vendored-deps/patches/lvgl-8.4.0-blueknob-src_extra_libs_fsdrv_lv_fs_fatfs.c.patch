@@ -1,0 +1,23 @@
+--- a/src/extra/libs/fsdrv/lv_fs_fatfs.c
++++ b/src/extra/libs/fsdrv/lv_fs_fatfs.c
+@@ -22,6 +22,11 @@
+ /**********************
+  *      TYPEDEFS
+  **********************/
++/* Create a type to store the required data about your file.*/
++typedef FIL file_t;
++
++/*Similarly to `file_t` create a type for directory reading too */
++typedef FF_DIR dir_t;
+ 
+ /**********************
+  *  STATIC PROTOTYPES
+@@ -225,7 +230,7 @@
+ static void * fs_dir_open(lv_fs_drv_t * drv, const char * path)
+ {
+     LV_UNUSED(drv);
+-    DIR * d = lv_mem_alloc(sizeof(DIR));
++    FF_DIR * d = lv_mem_alloc(sizeof(FF_DIR));
+     if(d == NULL) return NULL;
+ 
+     FRESULT res = f_opendir(d, path);

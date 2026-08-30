@@ -1,0 +1,338 @@
+[
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/new-res/202003753_XIAO%20ESP32S3%20Sense_v1.5_SCH_260226.pdf.pdf",
+  "dest": "artifacts/schematics/xiao-esp32s3-sense-v1.5-sch.pdf",
+  "status": "ok",
+  "bytes": 666348,
+  "sha256": "15993097cd695d177af352f4664ca91290a99c833f51d122d1165ef222f9923c",
+  "magic": "255044462d312e35"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/new-res/202003753_XIAO%20ESP32S3%20Sense_v1.5_SCH&PCB_260226.zip",
+  "dest": "artifacts/schematics/xiao-esp32s3-sense-v1.5-sch-pcb.zip",
+  "status": "ok",
+  "bytes": 836170,
+  "sha256": "a82247725c8a8bcd8cac81a7acbd126396217e5b680f6dfe28958851e02d5cdb",
+  "magic": "504b030414000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/new-res/202003751_XIAO%20ESP32S3_v1.4_SCH_260226.pdf.pdf",
+  "dest": "artifacts/schematics/xiao-esp32s3-v1.4-sch.pdf",
+  "status": "ok",
+  "bytes": 666348,
+  "sha256": "15993097cd695d177af352f4664ca91290a99c833f51d122d1165ef222f9923c",
+  "magic": "255044462d312e35"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/new-res/202003751_XIAO%20ESP32S3_v1.4_SCH&PCB_260226.zip",
+  "dest": "artifacts/schematics/xiao-esp32s3-v1.4-sch-pcb.zip",
+  "status": "ok",
+  "bytes": 836170,
+  "sha256": "a82247725c8a8bcd8cac81a7acbd126396217e5b680f6dfe28958851e02d5cdb",
+  "magic": "504b030414000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_SCH_v1.2.pdf",
+  "dest": "artifacts/schematics/xiao-esp32s3-v1.2-sch.pdf",
+  "status": "ok",
+  "bytes": 1123184,
+  "sha256": "c22d0b9fbbc7e0af6a8d0f549bbd10d05da412d092602c96e7ca2ccd05550825",
+  "magic": "255044462d312e34"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_v1.1_SCH&PCB_230327.zip",
+  "dest": "artifacts/schematics/xiao-esp32s3-v1.1-sch-pcb.zip",
+  "status": "ok",
+  "bytes": 1203582,
+  "sha256": "0110d0baa6e27b9d895d79a1e966312c35343f56b4a22f186e95c33c195bf694",
+  "magic": "504b030414000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_ExpBoard_v1.0_SCH.pdf",
+  "dest": "artifacts/schematics/xiao-esp32s3-expansion-board-v1.0-sch.pdf",
+  "status": "ok",
+  "bytes": 650385,
+  "sha256": "8224252d259a7ab09d19748a461970627f8b28029857a224c747e0de25040c0c",
+  "magic": "255044462d312e34"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_ExpBoard_v1.0_SCH&PCB_230324.zip",
+  "dest": "artifacts/schematics/xiao-esp32s3-expansion-board-v1.0-sch-pcb.zip",
+  "status": "ok",
+  "bytes": 717005,
+  "sha256": "5ee313210515bbc45428779e80944ceb7065c0ba508073dee22e698104ba1a47",
+  "magic": "504b030414000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_Plus_V1.1_SCH_260115.pdf",
+  "dest": "artifacts/schematics/xiao-esp32s3-plus-v1.1-sch.pdf",
+  "status": "ok",
+  "bytes": 671135,
+  "sha256": "5d0213b6258b2658e5edae4d4ee166f6f852e1d0c304bddff5006f6ec6a7d9b9",
+  "magic": "255044462d312e35"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_Plus_V1.1_KiCad_260115.zip",
+  "dest": "artifacts/kicad/xiao-esp32s3-plus-v1.1-kicad.zip",
+  "status": "ok",
+  "bytes": 678481,
+  "sha256": "8a90aa5990a835e97bc1e74afdd36f6a84dc32ad2eee2c423a6818157e1e65cd",
+  "magic": "504b030414000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/OV2640_datasheet.pdf",
+  "dest": "artifacts/datasheets/ov2640-datasheet.pdf",
+  "status": "ok",
+  "bytes": 676989,
+  "sha256": "4460f2f13b761eae4d1778a28f6d86db50a54e77b96cf8af9ddb2fa3168feab7",
+  "magic": "255044462d312e36"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/OV3660_datasheet.pdf",
+  "dest": "artifacts/datasheets/ov3660-datasheet.pdf",
+  "status": "ok",
+  "bytes": 1917798,
+  "sha256": "5afc0efd12b27a58f87a4cfc4fab1edcdaf86e5e12ea25722df6bf1ab72c81bc",
+  "magic": "255044462d312e37"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/OV5640_datasheet.pdf",
+  "dest": "artifacts/datasheets/ov5640-datasheet.pdf",
+  "status": "ok",
+  "bytes": 1749719,
+  "sha256": "0e0b34b90706043782568c39d982922f1727dbed41b288cfb7d404dde22fb742",
+  "magic": "255044462d312e36"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/new-res/OV3660_Camera_Module_Specification.pdf",
+  "dest": "artifacts/datasheets/ov3660-camera-module-spec.pdf",
+  "status": "ok",
+  "bytes": 387241,
+  "sha256": "c38741e9cf0083322f73a09c53a7a3fb9a89c420700eee8849763e27019e87fa",
+  "magic": "255044462d312e37"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/new-res/OV5640_Camera_Module_Specification.pdf",
+  "dest": "artifacts/datasheets/ov5640-camera-module-spec.pdf",
+  "status": "ok",
+  "bytes": 567209,
+  "sha256": "0a6e6120a71eb0d1bb323f76679a50e7f2c3c584db522e4c97ece9cafca84b43",
+  "magic": "255044462d312e37"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/esp32-s3_datasheet.pdf",
+  "dest": "artifacts/datasheets/esp32-s3-datasheet-seeed-copy.pdf",
+  "status": "ok",
+  "bytes": 1186462,
+  "sha256": "8f3a10205e31799d11ae6629c7383cce896d59f3a009048b53fcfa1ca90708b9",
+  "magic": "255044462d312e35"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/GATT.pdf",
+  "dest": "artifacts/datasheets/bluetooth-gatt-overview.pdf",
+  "status": "ok",
+  "bytes": 66821,
+  "sha256": "c5c7c2ddfe182203bdc7bd3782111080922f7ebafbe3af17255c6be9b42601cd",
+  "magic": "255044462d312e34"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_Sense_Pinout.xlsx",
+  "dest": "artifacts/pinouts/xiao-esp32s3-sense-pinout.xlsx",
+  "status": "ok",
+  "bytes": 26583,
+  "sha256": "d31153ed6a9bb5c2e0ab1bd1ec5bd620620664c06ec4bb55cf74caf0a08b8365",
+  "magic": "504b030414000600"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/Seeed_Studio_XIAO_ESP32S3_Plus_Pinout.xlsx",
+  "dest": "artifacts/pinouts/xiao-esp32s3-plus-pinout.xlsx",
+  "status": "ok",
+  "bytes": 59821,
+  "sha256": "5dd771ebbb3d0e075b1de7123a354c43e4ee0907b2e3dba0ca9b835b37223cd5",
+  "magic": "504b03040a000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/TOP.dxf",
+  "dest": "artifacts/cad/xiao-esp32s3-top.dxf",
+  "status": "ok",
+  "bytes": 3484053,
+  "sha256": "e997a3c0c3d75e2925ce9bd7263cacc9be20d0c2caada9553bb7668730786dbb",
+  "magic": "2020300d0a534543"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/BOTTOM.dxf",
+  "dest": "artifacts/cad/xiao-esp32s3-bottom.dxf",
+  "status": "ok",
+  "bytes": 1028107,
+  "sha256": "5773a720d7c33642cf6ad63b0121839b63c915fb5f122b84564e70883ff0e12d",
+  "magic": "2020300d0a534543"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_v1.1_Dimensioning.dxf",
+  "dest": "artifacts/cad/xiao-esp32s3-v1.1-dimensioning.dxf",
+  "status": "ok",
+  "bytes": 1713469,
+  "sha256": "5fd32e3ba7a4bd85b8cc0f5d9413e26dd947e84e27b2d0f03350a7d367903f23",
+  "magic": "2020300d0a534543"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_ExpBoard_v1.0_top.dxf",
+  "dest": "artifacts/cad/xiao-esp32s3-expboard-v1.0-top.dxf",
+  "status": "ok",
+  "bytes": 160474,
+  "sha256": "4039bf565f6bece5209c60877c804c1f0bd2507173ec9905d5eb8c7ec79949cc",
+  "magic": "2020300d0a534543"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_ExpBoard_v1.0_bot.dxf",
+  "dest": "artifacts/cad/xiao-esp32s3-expboard-v1.0-bot.dxf",
+  "status": "ok",
+  "bytes": 139489,
+  "sha256": "2e6efd7b1c898cf5f432d1cf841bad5727004c93cdced70bdc94b56e09f75c07",
+  "magic": "2020300d0a534543"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/seeed-studio-xiao-esp32s3-3d_model.zip",
+  "dest": "artifacts/cad/xiao-esp32s3-3d-model.zip",
+  "status": "ok",
+  "bytes": 4382912,
+  "sha256": "0d552ed2cc7359ea132601f4f7fe2c9d816e2dfe4f58f6463e83f84a901d3650",
+  "magic": "504b030414000008"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/seeed-studio-xiao-esp32s3-sense-3d_model.zip",
+  "dest": "artifacts/cad/xiao-esp32s3-sense-3d-model.zip",
+  "status": "ok",
+  "bytes": 8832441,
+  "sha256": "773c16cb7518a3a18df926979f24c7e224f19309aad69962ec8a54454e288c59",
+  "magic": "504b030414000008"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_Plus_Base_with_botton_pad_lead_out_V1.0.zip",
+  "dest": "artifacts/cad/xiao-plus-base-with-bottom-pad-leadout-v1.0.zip",
+  "status": "ok",
+  "bytes": 157037,
+  "sha256": "d4f9d380fab180c2f12f89ee7d01d9f9c1cc3a8ee849b263b39a97f6aa0315bd",
+  "magic": "504b030414000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_Plus_Base_without_botton_pad_lead_out_V1.0.zip",
+  "dest": "artifacts/cad/xiao-plus-base-without-bottom-pad-leadout-v1.0.zip",
+  "status": "ok",
+  "bytes": 128695,
+  "sha256": "6560f1adb2f53cfecce143168af68f5383fcc11b6c93d43ac85067c7bf7dc3f4",
+  "magic": "504b030414000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO-ESP32S3-Sense-firmware-20240814.zip",
+  "dest": "artifacts/firmware/xiao-esp32s3-sense-firmware-20240814.zip",
+  "status": "ok",
+  "bytes": 9520580,
+  "sha256": "d587641766c5e6f9f923eb689f532ab0b9626ee2ccbffaad472f9bdff7f1b001",
+  "magic": "504b030414000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO-ESP32S3-firmware-20240814.zip",
+  "dest": "artifacts/firmware/xiao-esp32s3-firmware-20240814.zip",
+  "status": "ok",
+  "bytes": 8219852,
+  "sha256": "7e4cc51fca6e5b16393e3bc6ed9d929b8c7e36c8a3107b4750d7991312f3fd68",
+  "magic": "504b030414000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAOESP32S3-Sense-firmware.zip",
+  "dest": "artifacts/firmware/xiao-esp32s3-sense-firmware-legacy.zip",
+  "status": "ok",
+  "bytes": 9516661,
+  "sha256": "588fc34927522df30f6e54bbbc9f603834a90c4e8f8aaf255ee94b6cb4c1dd07",
+  "magic": "504b03040a000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO-ESP32S3-firmware.zip",
+  "dest": "artifacts/firmware/xiao-esp32s3-firmware-legacy.zip",
+  "status": "ok",
+  "bytes": 8217189,
+  "sha256": "0383237f78e873dc7d7cd5d5ea559805ea3269b82ec2d62c9874526cf555ceda",
+  "magic": "504b03040a000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/Seeeduino-xiao-ESP32S3-KiCAD-Library.zip",
+  "dest": "artifacts/kicad/seeeduino-xiao-esp32s3-kicad-library.zip",
+  "status": "ok",
+  "bytes": 3310,
+  "sha256": "75a74f8137c44110f04f5aabf64753aab079ba8f242b9e1a8fa3462965be2f85",
+  "magic": "504b030414000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/XIAO_ESP32S3_Package.zip",
+  "dest": "artifacts/kicad/xiao-esp32s3-package.zip",
+  "status": "ok",
+  "bytes": 205631,
+  "sha256": "7f0ae7ba79b59e113f9a50afb54d2c42c4636b46e6284d3f6b29b495b58675b7",
+  "magic": "504b03040a000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/OV5640_AF.zip",
+  "dest": "artifacts/originals/ov5640-autofocus-firmware.zip",
+  "status": "ok",
+  "bytes": 80082,
+  "sha256": "1906f8e9f6da42bbde5ff290fa795860f109975f870a1aa276d54d87c7a43a33",
+  "magic": "504b030414000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/take_photos_command.ino.zip",
+  "dest": "artifacts/originals/take_photos_command-ino.zip",
+  "status": "ok",
+  "bytes": 46750,
+  "sha256": "e3f1e5c47ce1fe1d80d90b9d8a87bd2199bdccd0ff4961986a42c10292845a83",
+  "magic": "504b030414030000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/XIAO-KiCad-Library/New_XIAO_Series_Footprints.zip",
+  "dest": "artifacts/kicad/xiao-series-footprints.zip",
+  "status": "ok",
+  "bytes": 515461,
+  "sha256": "36f7e87db783002f20dad0fb36136c877dbc49e051293997993a988cac065698",
+  "magic": "504b03040a000000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/XIAO-KiCad-Library/XIAO_Series_SCH_Symbols.zip",
+  "dest": "artifacts/kicad/xiao-series-sch-symbols.zip",
+  "status": "ok",
+  "bytes": 7388,
+  "sha256": "9a423cc0683f3f6a2716a47f817556bfe0bc1a9720041712cad36902a0c25fe5",
+  "magic": "504b030414000800"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/XIAO/XIAO-Reference-Design.pdf",
+  "dest": "artifacts/datasheets/xiao-reference-design.pdf",
+  "status": "ok",
+  "bytes": 49878649,
+  "sha256": "22914bcb0d541de5b2dab1f9f941dc9529a53ffcc7d7f01f4468a9aaecc4625d",
+  "magic": "255044462d312e37"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/wiki-ranger/Contributions/S3-MicroPy/XIAO_ESP32S3_Micropython.zip",
+  "dest": "artifacts/originals/xiao-esp32s3-micropython-community.zip",
+  "status": "ok",
+  "bytes": 945100,
+  "sha256": "7215de08a8d134415e4c829d8d0c38815ca9df42f1e8bb27dca2e1853ceff51a",
+  "magic": "504b030414030000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/wiki-ranger/Contributions/S3-CIRCUITPY/related-mpy.zip",
+  "dest": "artifacts/originals/xiao-esp32s3-circuitpython-related-mpy.zip",
+  "status": "ok",
+  "bytes": 7509,
+  "sha256": "80981aceebe752a3a5c027de247be8f6904ff8a686ac0dcf51c14a6f238228ab",
+  "magic": "504b030414030000"
+ },
+ {
+  "url": "https://files.seeedstudio.com/wiki/tinyml-topic/res/xiao-esp32s3-fruits-classify_inferencing.zip",
+  "dest": "artifacts/originals/xiao-esp32s3-fruits-classify-inferencing.zip",
+  "status": "ok",
+  "bytes": 5183211,
+  "sha256": "047f555f6aa90e9407daa68766e6c1548d9223da1fffc5caeabaf89f22e7285b",
+  "magic": "504b03040a000000"
+ }
+]

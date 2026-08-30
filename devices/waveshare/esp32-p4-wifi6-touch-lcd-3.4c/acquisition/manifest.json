@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.0",
+  "device": "waveshare/esp32-p4-wifi6-touch-lcd-3.4c",
+  "also_applies_to": [
+    "waveshare/esp32-p4-wifi6-touch-lcd-4c"
+  ],
+  "generated": "2026-08-24",
+  "note": "Both variants share every artifact below; they live once under esp32-p4-wifi6-touch-lcd-xc-shared/. 'XC' is Waveshare's own family wildcard.",
+  "artifacts": [
+    {
+      "id": "xc-schematic",
+      "kind": "schematic",
+      "url": "https://files.waveshare.com/wiki/ESP32-P4-WIFI6-Touch-LCD-XC/ESP32-P4-WIFI6-Touch-LCD-XC-Schematic.pdf",
+      "sha256": "7a12998f1e641c49ab5e38f4765bdaf76aad2269e908e87ccffd572316647d68",
+      "bytes": 1869787,
+      "destination": "doc/hardware/devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/schematic/ESP32-P4-WIFI6-Touch-LCD-XC-Schematic.pdf",
+      "retrieved": "2026-08-24",
+      "upstream_last_modified": "2025-05-26T03:46:34Z",
+      "upstream_version": null,
+      "upstream_version_note": "Waveshare publish no revision for this schematic; the filename carries only the XC family wildcard.",
+      "license": null,
+      "license_evidence": "No licence statement on the wiki, the file, or the store page.",
+      "redistribution_status": "unknown",
+      "disposition": "repository",
+      "repository_state": "unstaged",
+      "validation": "PDF 1.3, 2 pages, %PDF magic confirmed",
+      "reacquisition_method": "automatic",
+      "last_verified": "2026-08-24",
+      "verification_note": "HTTP 200, Content-Length 1869787 matches local byte size exactly.",
+      "fallback_urls": [],
+      "target_hardware": [
+        "esp32-p4-wifi6-touch-lcd-3.4c",
+        "esp32-p4-wifi6-touch-lcd-4c"
+      ]
+    },
+    {
+      "id": "xc-demo-zip",
+      "kind": "demo-archive",
+      "url": "https://files.waveshare.com/wiki/ESP32-P4-WIFI6-Touch-LCD-XC/ESP32-P4-WIFI6-Touch-LCD-XC-Demo.zip",
+      "sha256": "b5319593738e114270852d84be0fdd8ccdc21ef1dac897b15f4fad5069dd66b8",
+      "bytes": 117768225,
+      "destination": "../hardware-doc-archive/doc/hardware/devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/originals/ESP32-P4-WIFI6-Touch-LCD-XC-Demo.zip",
+      "retrieved": "2026-08-24",
+      "upstream_last_modified": "2025-06-28T09:28:46Z",
+      "upstream_version": null,
+      "license": null,
+      "license_evidence": "No LICENSE file anywhere in the 5052-file archive.",
+      "redistribution_status": "unknown",
+      "disposition": "local-cache",
+      "repository_state": "not-downloaded",
+      "omission_reason": "112 MiB; 289 MiB extracted, dominated by three bundled third-party trees reproducible from upstream. Board-specific members were extracted into the repository instead.",
+      "validation": "PK zip magic confirmed; extracted cleanly to 5052 files",
+      "extracted_tree_digest": "a856b1941de93ba892b244f03f139d958cb200807284f4ed66cd5d74b428c838",
+      "extracted_file_count": 5052,
+      "extracted_bytes": 303038464,
+      "reacquisition_method": "automatic",
+      "last_verified": "2026-08-24",
+      "verification_note": "HTTP 200, Content-Length 117768225 matches local byte size exactly.",
+      "fallback_urls": [],
+      "member_selection": {
+        "extracted_to_repository": [
+          "ESP-IDF/01_HowToCreateProject",
+          "ESP-IDF/02_HelloWorld",
+          "ESP-IDF/03_i2c_tools",
+          "ESP-IDF/03_sdmmc",
+          "ESP-IDF/04_wifistation",
+          "ESP-IDF/05_I2SCodec",
+          "ESP-IDF/06_displaypanel_3.4inch",
+          "ESP-IDF/07_displaypanel_4inch",
+          "ESP-IDF/08_lvgl_display_panel",
+          "ESP-IDF/09_lvgl_demo_v8",
+          "ESP-IDF/10_lvgl_demo_v9",
+          "ESP-IDF/12_camera_dsi",
+          "ESP-IDF/13_usb_extend_screen",
+          "Arduino/examples",
+          "Arduino/libraries/displays",
+          "Arduino/libraries/lv_conf.h"
+        ],
+        "deliberately_excluded": [
+          "Arduino/libraries/lvgl",
+          "Arduino/libraries/GFX_Library_for_Arduino",
+          "ESP-IDF/11_esp_brookesia_phone"
+        ]
+      },
+      "target_hardware": [
+        "esp32-p4-wifi6-touch-lcd-3.4c",
+        "esp32-p4-wifi6-touch-lcd-4c"
+      ]
+    },
+    {
+      "id": "bundled-lvgl",
+      "kind": "vendored-dependency",
+      "url": "https://github.com/lvgl/lvgl",
+      "upstream_version": "9.3.0",
+      "upstream_tag": "v9.3.0",
+      "commit": null,
+      "sha256": null,
+      "sha256_note": "No single-file hash; identified by tree digest below.",
+      "tree_digest": "ae0606a48e68723a",
+      "bytes": 186517201,
+      "file_count": 4267,
+      "archive_member_path": "Arduino/libraries/lvgl",
+      "parent_artifact": "xc-demo-zip",
+      "license": "MIT",
+      "license_evidence": "MIT upstream; copy verified byte-identical to v9.3.0.",
+      "redistribution_status": "unknown",
+      "disposition": "reference-only",
+      "repository_state": "not-downloaded",
+      "omission_reason": "178 MiB, reproducible from upstream.",
+      "modification_status": "unmodified",
+      "modification_note": "Diffed against upstream v9.3.0 on 2026-08-24: ZERO differing files. Additions only: stripped dotfiles, .vscode/settings.json (66 B, inert), and src/demos/ (a ~30 MB copy of demos/ for Arduino build layout, with one file's include paths adjusted for depth). Rebuild from the tag with no patch step.",
+      "reacquisition_method": "automatic",
+      "last_verified": "2026-08-24",
+      "target_hardware": [
+        "esp32-p4-wifi6-touch-lcd-3.4c",
+        "esp32-p4-wifi6-touch-lcd-4c"
+      ]
+    },
+    {
+      "id": "bundled-arduino-gfx",
+      "kind": "vendored-dependency",
+      "url": "https://github.com/moononournation/Arduino_GFX",
+      "upstream_version": "1.6.0",
+      "tree_digest": "f18c8606b56faebf",
+      "bytes": 27130057,
+      "file_count": 309,
+      "archive_member_path": "Arduino/libraries/GFX_Library_for_Arduino",
+      "parent_artifact": "xc-demo-zip",
+      "license": null,
+      "license_evidence": "Not verified in this copy.",
+      "redistribution_status": "unknown",
+      "disposition": "reference-only",
+      "repository_state": "not-downloaded",
+      "omission_reason": "26 MiB, reproducible from upstream.",
+      "modification_status": "unmodified",
+      "reacquisition_method": "automatic",
+      "last_verified": "2026-08-24",
+      "target_hardware": [
+        "esp32-p4-wifi6-touch-lcd-3.4c",
+        "esp32-p4-wifi6-touch-lcd-4c"
+      ],
+      "modification_note": "Diffed against upstream v1.6.0 on 2026-08-24: ZERO differing files. Only .github and .gitignore stripped by packaging.",
+      "upstream_tag": "v1.6.0"
+    },
+    {
+      "id": "bundled-esp-brookesia-phone",
+      "kind": "vendored-dependency",
+      "url": "https://components.espressif.com/components/espressif/esp-brookesia",
+      "upstream_version": null,
+      "tree_digest": "e76fab6f24efafd1",
+      "bytes": 73198225,
+      "file_count": 306,
+      "archive_member_path": "ESP-IDF/11_esp_brookesia_phone",
+      "parent_artifact": "xc-demo-zip",
+      "license": null,
+      "redistribution_status": "unknown",
+      "disposition": "reference-only",
+      "repository_state": "not-downloaded",
+      "omission_reason": "70 MiB demo project; not analysed in this pass.",
+      "modification_status": "unknown",
+      "reacquisition_method": "manual",
+      "reacquisition_note": "Exact component version not pinned by the demo; resolve from its idf_component.yml before reacquiring.",
+      "last_verified": null,
+      "target_hardware": [
+        "esp32-p4-wifi6-touch-lcd-3.4c",
+        "esp32-p4-wifi6-touch-lcd-4c"
+      ],
+      "modification_note": "Not diffed: the demo pins no esp-brookesia version, so there is no upstream revision to compare against."
+    },
+    {
+      "id": "wiki-snapshot-3.4c",
+      "kind": "source-snapshot",
+      "url": "https://www.waveshare.com/wiki/ESP32-P4-WIFI6-Touch-LCD-3.4C",
+      "sha256": null,
+      "bytes": 98314,
+      "destination": "doc/hardware/devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/source-snapshots/wiki-ESP32-P4-WIFI6-Touch-LCD-3.4C.html",
+      "retrieved": "2026-08-24",
+      "license": null,
+      "redistribution_status": "unknown",
+      "disposition": "repository",
+      "repository_state": "unstaged",
+      "reacquisition_method": "automatic",
+      "reacquisition_note": "Live page changes over time; this snapshot is the 2026-08-24 state. Waveshare's MediaWiki API returns a PHP fatal error, so wikitext/oldid pinning is unavailable - see gaps-and-conflicts.md C10.",
+      "last_verified": "2026-08-24",
+      "target_hardware": [
+        "esp32-p4-wifi6-touch-lcd-3.4c"
+      ]
+    },
+    {
+      "id": "wiki-snapshot-4c",
+      "kind": "source-snapshot",
+      "url": "https://www.waveshare.com/wiki/ESP32-P4-WIFI6-Touch-LCD-4C",
+      "sha256": null,
+      "bytes": 98607,
+      "destination": "doc/hardware/devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/source-snapshots/wiki-ESP32-P4-WIFI6-Touch-LCD-4C.html",
+      "retrieved": "2026-08-24",
+      "license": null,
+      "redistribution_status": "unknown",
+      "disposition": "repository",
+      "repository_state": "unstaged",
+      "reacquisition_method": "automatic",
+      "reacquisition_note": "Important negative evidence: this wiki exists while the matching store URL returns 404.",
+      "last_verified": "2026-08-24",
+      "target_hardware": [
+        "esp32-p4-wifi6-touch-lcd-4c"
+      ]
+    }
+  ],
+  "failed_acquisitions": [
+    {
+      "id": "waveshare-wikitext-api",
+      "url": "https://www.waveshare.com/wiki/api.php?action=parse&page=ESP32-P4-WIFI6-Touch-LCD-3.4C&prop=wikitext&format=json",
+      "attempted": "2026-08-24",
+      "status": "failed",
+      "reason": "HTTP 200 but body is a PHP fatal error: \"Parse error: syntax error, unexpected '?' in /yundisk/web/waveshare/dotcom/w/includes/Setup.php on line 472\". 109 bytes.",
+      "workaround": "Fetched rendered wiki HTML and extracted files.waveshare.com URLs by regex; recovered all download links.",
+      "impact": "No immutable oldid pinning available for Waveshare wiki pages at this time."
+    },
+    {
+      "id": "waveshare-4c-store-page",
+      "url": "https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-4c.htm",
+      "attempted": "2026-08-24",
+      "status": "not-found",
+      "reason": "HTTP 404. Also 404 at /product/ path; catalogue search returns only the 3.4C.",
+      "impact": "Treated as evidence the 4C is not currently sold - see gaps-and-conflicts.md C2."
+    }
+  ]
+}

@@ -1,0 +1,1117 @@
+# Checked 2026-08-21. Failed/non-PDF responses were not retained as PDFs.
+wch/ch445p/ch445p-datasheet.pdf: https://www.wch-ic.com/search?q=CH445: manufacturer search exposed no downloadable PDF
+wch/ch445p/ch445p-datasheet.pdf: https://www.wch.cn/downloads/file/337.html: response was JavaScript source, not PDF; rejected
+alps-alpine/sscm110100/sscm-series-catalog.pdf: RESOLVED: authoritative Alps Alpine PDF downloaded and validated at components/alps-alpine/sscm110100/artifacts/sscm-series-catalog.pdf
+sgmicro/sgm2036-3.3/sgm2036-datasheet.pdf: https://www.sg-micro.com/uploads/soft/20240814/1723624970.pdf: HTTP 404 on manufacturer retry; no local PDF
+memsensing/msm261d4030h1cpm/msm261d4030h1cpm-datasheet.pdf: https://datasheet.lcsc.com/lcsc/1811081617_MEMSensing-MSM261D4030H1CPM_C74250.pdf: response was HTML, not PDF; rejected; no local PDF
+
+# --- Component deep-dive sweep, checked 2026-08-23 ---
+
+sgmicro/sgm2036-3.3/sgm2036-datasheet.pdf: *** RESOLVED 2026-08-23 -- the manufacturer PDF does exist. ***
+  The stable-looking paths under /uploads/soft/ are dead; SGMicro moved its site to a Next.js SPA
+  that serves datasheets from a signed asset endpoint. Method that worked:
+    1. GET https://www.sg-micro.com/product/SGM2036  -> HTTP 200, text/html, ~590 KB
+       (the older https://www.sg-micro.com/showproduct/97.html returns HTTP 404)
+    2. Grep the embedded Next.js payload for the asset URL. It is of the form
+       https://www.sg-micro.com/rect/assets/<uuid>/SGM2036.pdf?access_token=<token>
+    3. GET that URL -> HTTP 200, application/pdf, 942554 bytes, %PDF-1.6, 21 pages.
+  Retained and validated at components/sgmicro/sgm2036-3.3/artifacts/sgm2036-datasheet.pdf
+  (rev B.2, November 2021). NOTE: the access_token is very likely rotated per page render, so the
+  captured URL may not be re-fetchable later. Re-derive it from the product page if needed.
+  Tried and failed first: https://www.sg-micro.com/uploads/soft/20211230/1640843133.pdf (404 HTML),
+  https://www.sg-micro.com/uploads/soft/SGM2036.pdf (404 HTML),
+  https://www.sg-micro.com/search?keyword=SGM2036 (404).
+
+memsensing/msm261d4030h1cpm/msm261d4030h1cpm-datasheet.pdf: STILL UNAVAILABLE as of 2026-08-23.
+  Tried, all with a Chrome 131 desktop User-Agent and an https://www.lcsc.com/ referrer:
+    https://datasheet.lcsc.com/lcsc/1811081617_MEMSensing-MSM261D4030H1CPM_C74250.pdf
+      -> HTTP 200 but text/html, 905710 bytes (anti-bot interstitial). Retried with
+         UA "WhatsApp/2.23.20.0" -> byte-identical HTML interstitial. Rejected both times.
+    https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/1811081617_MEMSensing-MSM261D4030H1CPM_C74250.pdf
+      -> HTTP 200, text/html, 91 bytes, a <script> redirect stub. Rejected.
+    https://www.mouser.com/datasheet/2/MSM261D4030H1CPM.pdf -> HTTP 200 text/html 13897 bytes. Rejected.
+    https://www.memsensing.com/product/detail/id/16.html -> HTTP 404 (site CMS reorganised)
+    https://www.memsensing.com/en/product.html -> HTTP 404
+    http://www.memsensing.com/ -> HTTP 200, but the crawled link set contains no .pdf and no
+      per-part product pages; the English site redirects to http://en.memsensing.com/ .
+    https://www.memsensing.com/Uploads/file/20200708/5f0554a2dcbd8.pdf -> HTTP 403 text/html.
+  Wayback: https://archive.org/wayback/available?url=... -> HTTP 429 (rate limited);
+    the CDX endpoint timed out after 40 s. Worth one more attempt from a different network.
+  Consequence: every numeric PDM microphone specification (sensitivity, SNR, AOP, clock range,
+  current) is UNKNOWN and is NOT guessed in
+  components/memsensing/msm261d4030h1cpm/README.md. Only the schematic-established facts
+  (3.3 V supply, L/R tied low, pin map) and the ESP32-S3-side I2S PDM RX constraints are stated.
+
+# --- Espressif document sweep, checked 2026-08-21 ---
+# Context: https://www.espressif.com/sites/default/files/documentation/*.pdf now issues an HTTP
+# redirect into Espressif's new Centralized Documentation Platform (documentation.espressif.com)
+# and the versioned esp-docs projects on docs.espressif.com. Datasheets and TRMs still resolve to
+# real PDFs through that redirect. Errata and hardware design guidelines were migrated into
+# esp-docs projects and are now served from project-specific PDF build URLs, all of which were
+# located and retrieved successfully. The following items could NOT be retrieved as PDFs.
+
+espressif/esp32-s3r8/esp32-s3-processor-instruction-extensions-pie-guide.pdf: NOT A REAL DOCUMENT.
+  Tried: https://www.espressif.com/sites/default/files/documentation/esp32-s3_processor_instruction_extensions_pie_guide_en.pdf
+    -> HTTP 200 but text/html, 13745 bytes, redirected to https://documentation.espressif.com/404
+  Tried: https://dl.espressif.com/dl/documentation/esp32-s3_processor_instruction_extensions_pie_guide_en.pdf -> HTTP 404 text/html
+  Tried: https://dl.espressif.com/dl/esp32-s3_processor_instruction_extensions_pie_guide_en.pdf -> HTTP 404 text/html
+  Tried: https://dl.espressif.com/github_assets/esp-dsp/esp32-s3_processor_instruction_extensions_pie_guide_en.pdf -> HTTP 404 text/html
+  Tried: https://docs.espressif.com/projects/esp-dsp/en/latest/esp32s3/index.html -> HTTP 404 text/html
+  Tried: Wayback availability API for the espressif.com PIE URL -> {"archived_snapshots": {}} (no snapshot ever taken)
+  Tried: Wayback CDX listing of all archived espressif.com documentation PDFs matching esp32-s3
+    -> 23 distinct PDFs archived, none matching pie/instruction_extensions
+  Resolution: no standalone PIE PDF exists. Espressif publishes the PIE/SIMD vector instruction
+  specification as Chapter 1 "Processor Instruction Extensions (PIE)" of the ESP32-S3 Technical
+  Reference Manual, which IS retrieved locally at
+  components/espressif/esp32-s3r8/artifacts/esp32-s3-technical-reference-manual.pdf (v1.8).
+  Confirmed via Espressif's own documentation-platform full-text search index, which returns the
+  PIE chapter as a hit inside the TRM. No manual action needed; read Chapter 1 of the local TRM.
+
+espressif/esp32-u4wdh/pcn-2021-021.pdf: *** RESOLVED 2026-08-21 -- a PDF does exist. ***
+  URL: https://documentation.espressif.com/en/PCN-2021-021%20ESP32-U4WDH%20%E5%8D%87%E7%BA%A7%E4%B8%BA%E5%8F%8C%E6%A0%B8%E5%A4%84%E7%90%86%E5%99%A8%E4%BA%A7%E5%93%81.html
+    -> HTTP 200, text/html, 21889 bytes (genuine content page, not the SPA 404 shell)
+  Tried PDF renditions, all -> HTTP 200 text/html 13745 bytes = documentation.espressif.com/404:
+    https://documentation.espressif.com/PCN-2021-021_en.pdf
+    https://www.espressif.com/sites/default/files/pcn_downloads/PCN-2021-021_EN.pdf
+    https://www.espressif.com/sites/default/files/pcn_downloads/PCN-2021-021%20ESP32-U4WDH%20Upgraded%20to%20Dual-Core%20Products_EN.pdf
+
+  RESOLUTION. All three guesses above failed for the same reason: they assumed an *English*
+  filename. The real file on the legacy pcn_downloads path carries the same percent-encoded
+  *Chinese* title as the HTML page:
+
+    https://www.espressif.com/sites/default/files/pcn_downloads/PCN-2021-021%20ESP32-U4WDH%20%E5%8D%87%E7%BA%A7%E4%B8%BA%E5%8F%8C%E6%A0%B8%E5%A4%84%E7%90%86%E5%99%A8%E4%BA%A7%E5%93%81.pdf
+      -> HTTP 200, application/pdf, 782406 bytes, %PDF-1.7, %%EOF present
+
+  Saved to components/espressif/esp32-u4wdh/artifacts/pcn-2021-021-esp32-u4wdh-dual-core.pdf
+  sha256 8ac9154a232cc4a851a2ce774bf53dfb380c9f46494ceb65eb3b1b4fed8a9455
+  Wayback: https://web.archive.org/web/20260823001902/https://documentation.espressif.com/PCN-2021-021%20ESP32-U4WDH%20%e5%8d%87%e7%ba%a7%e4%b8%ba%e5%8f%8c%e6%a0%b8%e5%a4%84%e7%90%86%e5%99%a8%e4%ba%a7%e5%93%81.pdf
+  Found via a link pasted by a community member in github.com/espressif/arduino-esp32/issues/9252.
+
+  GENERAL LESSON for future Espressif PCN retrieval: build the .pdf candidate by taking the
+  known-good HTML URL, swapping the "documentation.espressif.com/en/" prefix for
+  "www.espressif.com/sites/default/files/pcn_downloads/", and changing .html to .pdf --
+  keeping the percent-encoded Chinese title byte-for-byte. Do not translate the filename.
+
+  The PDF's text layer is obfuscated with a uniform +29 code-point offset; adding 29 to each
+  extracted byte recovers plain ASCII including digits. Full transcription is in section 14 of
+  the esp32-u4wdh README.
+
+espressif/esp32-u4wdh/esp32-chip-revision-v3-0-user-guide.pdf: *** previously believed not to
+  exist; it does. RESOLVED 2026-08-21. ***
+  The esp32-u4wdh README formerly asserted there was no standalone "ECO V3 / chip revision v3
+  user guide" PDF and that the material lived only in the SoC Errata. That is wrong:
+    https://documentation.espressif.com/esp32_chip_revision_v3_0_user_guide_en.pdf
+      -> HTTP 200, application/pdf, 350173 bytes, v1.3 dated 2022.11
+  Saved to components/espressif/esp32-u4wdh/artifacts/esp32-chip-revision-v3-0-user-guide.pdf
+  sha256 7fa403d962987837c516a3b7c2769c06ca33a2b74db76d4e8eedbae28745a9d1
+  Its text layer is plain -- no offset trick needed. Applies in full to ESP32-U4WDH, which the
+  ESP32 Series Datasheet v5.3 restricts to chip revision v3.0/v3.1.
+
+espressif/esp32-u4wdh: STILL OPEN -- "ESP32 Chip Packaging Information".
+  Referenced by ESP32 Series Datasheet v5.3 section 6 as the authority for tape, reel and chip
+  marking. It is the document that would show the full top-marking layout that PCN-2021-021's
+  line-5 single/dual-core rule sits inside. All slugs tried returned the 13745-byte soft-404:
+    documentation.espressif.com/esp32_chip_packaging_information_en.pdf
+    documentation.espressif.com/esp32_chip_packaging_information.pdf
+    documentation.espressif.com/esp32_packaging_information_en.pdf
+  No mirror found.
+
+NOTE on Espressif PDFs generally (learned 2026-08-21): several Espressif PDFs ship deliberately
+  obfuscated text layers, and there is more than one scheme. PCNs and some user guides use the
+  uniform +29 offset described above. The ESP32 Series Datasheet uses a non-uniform glyph-subset
+  map that no simple offset recovers -- which is why its ordering-information table went
+  untranscribed for so long. The fix is not better PDF tooling, it is to fetch the HTML build:
+  documentation.espressif.com/<slug>.html serves the same document as clean, extractable text.
+  That is how the datasheet's nomenclature figure and series comparison table were finally read.
+  A copy is held at
+  components/espressif/esp32-u4wdh/artifacts/esp32-series-datasheet-v5.3.html
+  Slugs are unforgiving: esp32-mini-1_datasheet_en.pdf works,
+  esp32-mini-1_esp32-mini-1u_datasheet_en.pdf soft-404s, though it covers both parts.
+
+
+
+================================================================================
+Waveshare ESP32-S3-Knob-Touch-LCD-1.8 — exhaustive vendor acquisition pass
+Date: 2026-08-21
+Procedure: doc/hardware/vendors/waveshare/README.md
+================================================================================
+
+RESULT SUMMARY
+  93 files downloaded, 0 download failures, 0 magic-byte rejections.
+  All PDFs verified %PDF, all ZIPs verified PK\x03\x04, 7z verified 7z\xbc\xaf,
+  all images verified PNG/JPEG. No HTML was retained under a .pdf/.zip name.
+
+The entries below are NOT download failures. They are documented negative results
+recorded so a future pass does not repeat the probes.
+
+--------------------------------------------------------------------------------
+1. Wiki immutable-revision URLs blocked by Waveshare's WAF (worked around)
+--------------------------------------------------------------------------------
+  https://www.waveshare.com/w/index.php?title=ESP32-S3-Knob-Touch-LCD-1.8&oldid=111069
+    -> HTTP 404
+  https://www.waveshare.com/w/index.php?title=ESP32-S3-Knob-Touch-LCD-1.8&action=history
+    -> HTTP 404
+  https://www.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8?oldid=111069
+    -> HTTP 404
+  https://www.waveshare.com/wiki/index.php?title=ESP32-S3-Knob-Touch-LCD-1.8
+    -> HTTP 200 but 99-byte stub
+
+  The bare title (https://www.waveshare.com/w/index.php?title=<Page>) returns 200,
+  so the page exists; the oldid/action query parameters specifically are rejected.
+
+  WORKAROUND APPLIED (successful): the MediaWiki API is not filtered.
+    https://www.waveshare.com/w/api.php?action=parse&oldid=111069&prop=text|wikitext|revid
+    -> HTTP 200, 207962 bytes, revid 111069 confirmed
+  Saved as artifacts/source-snapshots/waveshare-wiki-oldid-111069.html
+                                      waveshare-wiki-wikitext-oldid-111069.txt
+                                      waveshare-wiki-oldid-111069-parse.json
+
+--------------------------------------------------------------------------------
+2. Chinese-language variants — do not exist for this product
+--------------------------------------------------------------------------------
+  https://www.waveshare.net/wiki/ESP32-S3-Knob-Touch-LCD-1.8       -> HTTP 404
+  https://www.waveshare.net/shop/ESP32-S3-Knob-Touch-LCD-1.8.htm   -> HTTP 404
+  https://www.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8/zh    -> HTTP 404
+
+  Conclusion: no CN wiki or CN storefront page published for this board. Nothing
+  to acquire; no extra information is being missed.
+
+--------------------------------------------------------------------------------
+3. Probed-but-absent product files on files.waveshare.com (all HTTP 404)
+--------------------------------------------------------------------------------
+  Base: https://files.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8/
+  (This CDN has NO directory listing — a request for the directory itself returns
+   HTTP 200 with an empty body, not an index. Filenames must be discovered from
+   the wiki, or guessed. These guesses were all wrong, i.e. the files do not exist.)
+
+    ESP32-S3-Knob-Touch-LCD-1.8-3D.zip          404
+    ESP32-S3-Knob-Touch-LCD-1.8.step            404
+    ESP32-S3-Knob-Touch-LCD-1.8-STEP.zip        404
+    ESP32-S3-Knob-Touch-LCD-1.8-UserManual.pdf  404
+    ESP32-S3-Knob-Touch-LCD-1.8-Manual.pdf      404
+    ESP32-S3-Knob-Touch-LCD-1.8-Dimension.pdf   404
+    ESP32-S3-Knob-Touch-LCD-1.8-dimensions.pdf  404
+    ESP32-S3-Knob-Touch-LCD-1.8-Gerber.zip      404
+    ESP32-S3-Knob-Touch-LCD-1.8-BOM.xlsx        404
+    ESP32-S3-Knob-Touch-LCD-1.8-Datasheet.pdf   404
+    ESP32-S3-Knob-Touch-LCD-1.8-SDK.zip         404
+
+  Conclusion: Waveshare publishes exactly three product-specific archives for this
+  board (-schematic.zip, -Demo.zip, -BIN.zip), all already retained. There is no
+  3D/STEP model, no Gerbers, no BOM and no standalone user manual or dimension PDF.
+  The dimension information exists ONLY as wiki PNG/JPG images, now retained under
+  artifacts/images/wiki/.
+
+--------------------------------------------------------------------------------
+4. Near-miss: download found only in wikitext, not in rendered HTML
+--------------------------------------------------------------------------------
+  https://files.waveshare.com/wiki/common/Sscom5.13.1.zip
+
+  This link is absent from every <a href> in the rendered wiki HTML (it sits in a
+  collapsed/templated section) and would have been MISSED by HTML scraping alone.
+  It was recovered by parsing the raw wikitext via action=parse&prop=wikitext.
+  Downloaded successfully (420199 bytes, valid ZIP).
+
+  Lesson recorded in the vendor guide: always enumerate from wikitext, not HTML.
+
+--------------------------------------------------------------------------------
+5. Rights caveat on retained images and mirrored PDFs
+--------------------------------------------------------------------------------
+  Not a failure, but a constraint: Waveshare publishes product images and mirrored
+  third-party datasheets with no explicit license. Copyright is Waveshare's (images)
+  or the original IC vendor's (PDFs). Redistribution rights are UNCLEAR. All such
+  files are retained for internal engineering reference only and must not be
+  republished. Recorded in artifacts/images/MANIFEST.md.
+=== 2026-08-21 exhaustive Espressif sweep (see vendors/espressif/README.md) ===
+
+espressif: ESP-DSP documentation PDF: NO PDF BUILD PUBLISHED.
+  Relevant because esp-dsp is the natural reference for the ESP32-S3 PIE/SIMD kernels.
+  Tried, all -> HTTP 404 text/html:
+    https://docs.espressif.com/projects/esp-dsp/en/latest/esp-dsp-en-master.pdf
+    https://docs.espressif.com/projects/esp-dsp/en/latest/esp32/esp-dsp-en-master-esp32.pdf
+    https://docs.espressif.com/projects/esp-dsp/en/latest/esp32/esp-dsp-en-latest-esp32.pdf
+    https://docs.espressif.com/projects/esp-dsp/en/latest/esp32s3/esp-dsp-en-master-esp32s3.pdf
+    https://docs.espressif.com/projects/esp-dsp/en/latest/esp32s3/esp-dsp-en-latest-esp32s3.pdf
+  The HTML site DOES exist: https://docs.espressif.com/projects/esp-dsp/en/latest/esp32/ -> HTTP 200,
+  but it is a 7682-byte JS/SPA shell containing no document links, so the PDF name cannot be scraped.
+  Resolution: esp-dsp opts out of esp-docs PDF generation. Use the HTML site or
+  https://github.com/espressif/esp-dsp. The PIE instruction specification itself is TRM Chapter 1,
+  already held locally at components/espressif/esp32-s3r8/artifacts/esp32-s3-technical-reference-manual.pdf.
+
+espressif: arduino-esp32 documentation PDF: NO PDF BUILD PUBLISHED.
+  Tried -> HTTP 404 text/html:
+    https://docs.espressif.com/projects/arduino-esp32/en/latest/arduino-esp32-en-master.pdf
+    https://docs.espressif.com/projects/arduino-esp32/en/latest/arduino-esp32-en-latest.pdf
+  HTML site exists (https://docs.espressif.com/projects/arduino-esp32/en/latest/ -> HTTP 200, 8903 B shell).
+  Resolution: HTML/GitHub only; https://github.com/espressif/arduino-esp32.
+
+espressif: ESP-IDF programming guide PDF for v5.3+: NOT PUBLISHED (PDF builds discontinued).
+  Needed because the ESP32-U4WDH factory image reports ESP-IDF v5.4-727-g5cbd2a3877.
+  Tried -> HTTP 404:
+    https://docs.espressif.com/projects/esp-idf/en/v5.4/esp32/esp-idf-en-v5.4-esp32.pdf
+    https://docs.espressif.com/projects/esp-idf/en/v5.4.1/esp32/esp-idf-en-v5.4.1-esp32.pdf
+    https://docs.espressif.com/projects/esp-idf/en/v5.4.0/esp32/esp-idf-en-v5.4.0-esp32.pdf  (version does not exist)
+    https://docs.espressif.com/projects/esp-idf/en/release-v5.4/esp32/esp-idf-en-release-v5.4-esp32.pdf
+    https://docs.espressif.com/projects/esp-idf/en/v5.5/esp32/esp-idf-en-v5.5-esp32.pdf
+    https://docs.espressif.com/projects/esp-idf/en/v5.3.3/esp32/esp-idf-en-v5.3.3-esp32.pdf
+  Confirmed still published for v4.4.8, v5.0.9, v5.1.4, v5.1.6, v5.2.5 (all real PDFs).
+  Resolution: v5.2.5 is the newest PDF that exists and has been retrieved as the closest available
+  reference; the version skew is stated explicitly in the esp32-u4wdh README. For an exact v5.4
+  manual, use the HTML docs or build docs/ from the esp-idf repo at tag v5.4.
+
+espressif: chip comparison / product selector documents: DO NOT EXIST at guessed names.
+  All -> HTTP 200 text/html 13745 bytes = documentation.espressif.com/404 soft-404 shell:
+    .../documentation/esp32_chip_comparison_en.pdf
+    .../documentation/esp32-s3_chip_comparison_en.pdf
+    .../documentation/esp-chip-comparison_en.pdf
+    .../documentation/esp-product-selector_en.pdf
+    .../documentation/esp32-s3_bluetooth-le-feature-support-status_en.pdf
+  Resolution: Espressif publishes chip comparison only as an interactive web product-selector page,
+  not as a downloadable document. Nothing to store.
+
+espressif: ESP32 ECO V3 / chip revision v3 user guide: NOT A SEPARATE DOCUMENT.
+  All -> soft-404 shell (13745 B):
+    .../documentation/esp32_eco_v3_user_guide_en.pdf
+    .../documentation/esp32_chip_revision_v3_user_guide_en.pdf
+    .../documentation/esp32-chip-revision-v3_user_guide_en.pdf
+  Resolution: chip-revision identification and ECO workarounds are chapters of the ESP32 Series SoC
+  Errata, already held at components/espressif/esp32-u4wdh/artifacts/esp32-errata.pdf.
+
+espressif: ESP32-U4WDH standalone datasheet: DOES NOT EXIST.
+    .../documentation/esp32-u4wdh_datasheet_en.pdf -> soft-404 shell (13745 B)
+  Resolution: the U4WDH is a package variant covered by the ESP32 series datasheet (held locally).
+
+espressif: esp-box / esp-protocols / esp-serial-flasher / esp-insights: no esp-docs project at that slug.
+    https://docs.espressif.com/projects/esp-box/en/latest/           -> HTTP 404
+    https://docs.espressif.com/projects/esp-protocols/en/latest/     -> HTTP 404
+    https://docs.espressif.com/projects/esp-serial-flasher/en/latest/-> HTTP 404
+    https://docs.espressif.com/projects/esp-insights/en/latest/      -> HTTP 404
+    https://docs.espressif.com/projects/rainmaker/en/latest/esp32/   -> HTTP 404 (correct slug is esp-rainmaker)
+  esptool and esp-rainmaker HTML sites exist but publish no PDF build:
+    https://docs.espressif.com/projects/esptool/en/latest/esp32/esptool-en-latest-esp32.pdf -> 404
+    https://docs.espressif.com/projects/esp-rainmaker/en/latest/esp32/esp-rainmaker-en-latest-esp32.pdf -> 404
+  Resolution: none of these are required for this board; recorded so the slugs are not re-guessed.
+
+espressif: module datasheets deliberately NOT stored (not a failure, a scoping decision).
+  These DO resolve as real PDFs via the legacy path and were verified to do so:
+    esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf (1280501 B), esp32-s3-wroom-2_datasheet_en.pdf (700361 B),
+    esp32-s3-mini-1_mini-1u_datasheet_en.pdf (1338916 B), esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf (1230114 B)
+  Not stored because this board mounts bare ESP32-S3R8 and ESP32-U4WDH dice, not modules; module
+  documentation would not describe the parts actually fitted.
+
+
+# --- WCH component deep-dive, checked 2026-08-21 (documented 2026-08-23) ---
+#
+# Context: www.wch-ic.com (and www.wch.cn) are Vue single-page apps that return
+# *** HTTP 200 with a ~4305-byte HTML shell for EVERY path they do not recognise ***,
+# including every https://www.wch-ic.com/downloads/<NAME>_PDF.html documentation URL and every
+# https://www.wch-ic.com/downloads/file/<id>.html page. Nothing in the response distinguishes
+# "wrong URL" from "here is your document". This is why the 2026-08-21 first pass recorded the
+# CH445P datasheet as unobtainable and the USB-UART bridge U10 as unidentifiable.
+#
+# THE ROUTE THAT WORKS (no User-Agent substitution needed; a plain default UA is fine):
+#   1. GET https://www.wch-ic.com/api/official/website/files/getFilesById?id=<N>
+#      -> JSON: {"code":0,"data":[{"id":N,"name":"CH440DS1.PDF","version":"3.2",
+#                                  "uploadTime":"...","size":"307KB","content":"...",
+#                                  "scope":"CH440G, ..., CH445P, ..."}]}
+#      Enumerate N over roughly 1-800 and match on `name` OR on `scope`. The `scope` field is the
+#      key: WCH publishes ONE document per *family*, named after the family's FIRST member, so a
+#      part number can be absent from every document title while appearing in a scope string.
+#   2. GET https://www.wch-ic.com/download/file?id=<N>   -> the actual PDF. Validate %PDF magic.
+#   Throttle to <= ~24 concurrent requests; above that the API times out silently.
+
+wch/ch445p/ch445p-datasheet.pdf: *** RESOLVED 2026-08-21 -- but under a different name. ***
+  There is NO document called CH445DS1.PDF and there never was. The CH445P is documented in
+  CH440DS1.PDF v3.2 (2022-06-29), whose `scope` reads:
+    "CH440G, CH440P, CH440R, CH442E, CH442Q, CH443K, CH443L, CH444G, CH444P, CH445P, CH448F, CH448U"
+  URL: https://www.wch-ic.com/download/file?id=135
+    -> HTTP 200, %PDF-1.4, 314459 bytes (matches the API's declared "307KB")
+  Retained and validated at
+    components/wch/ch445p/artifacts/ch440-ch442-ch443-ch444-ch445-ch448-datasheet-v3.2.pdf
+  This supplies the previously-unknown CH445P pin map (S4.1), truth table (S5.1) and the
+  CH445-only electrical/timing tables (S6.5-6.7). The two prior failure lines above
+  ("manufacturer search exposed no downloadable PDF" / "response was JavaScript source") were
+  accurate observations of the SPA shell, not evidence that the document does not exist.
+
+generic/usb-uart-bridge: *** RESOLVED 2026-08-21 -- U10 identified as WCH CH340X. ***
+  Three WCH datasheets retrieved by the same route and used as the identification evidence base:
+    CH340  v3D  https://www.wch-ic.com/download/file?id=79   -> %PDF, 325640 B
+    CH343  v2.0 https://www.wch-ic.com/download/file?id=296  -> %PDF, 277847 B
+    CH9102 v1.3 https://www.wch-ic.com/download/file?id=297  -> %PDF, 239210 B
+  All three retained under components/generic/usb-uart-bridge/artifacts/.
+  CH343 and CH9102 are kept as *negative* evidence: CH343P is QFN-16 and CH343K's ESSOP-10 pin
+  order does not match; CH9102 ships only as QFN-24/QFN-28 and has no 10-pin package at all.
+  The positive identification rests on CH340 datasheet S3 (CH340X = MSOP-10, 5V-tolerant IO) and
+  S5.3 option (2) ("a 4.7K resistor connected between the 6# pin and the 5# pin ... push-pull DTR
+  enhancement mode ... 3 to 5.6 K"), which is exactly R14 = 5.1 K between U10 pin 6 and pin 5.
+
+generic/usb-uart-bridge/artifacts/wch-vid-pid-table-from-ch34xvcpdriver.txt: derived artifact, no URL.
+  Extracted 2026-08-21 from the IOKitPersonalities dictionary of the binary Info.plist inside
+  cn.wch.CH34xVCPDriver.dext, inside CH34xVCPDriver.dmg, inside CH34XSER_MAC.7z -- the WCH macOS
+  driver that Waveshare itself mirrors for this board at
+  https://files.waveshare.com/wiki/common/CH34XSER_MAC.7z
+  (already held at devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/tools/CH34XSER_MAC.7z).
+  Method, all pure-Python, no external tooling: bsdtar the .7z; the .dmg is UDZO, so scan for
+  0x78 0x01/0x9c/0xda zlib chunk starts and decompress each with zlib.decompressobj(), using
+  unused_data to find the next chunk; then locate `bplist00` markers in the concatenated output
+  and brute-force plistlib.loads() over increasing end offsets. Yields WCH's own authoritative
+  VID/PID map (VID 0x1A86 throughout; CH340=0x7523, CH343=0x55D3, CH9102=0x55D4, ...).
+  Note: the .pkg sibling is a xar archive whose payload bsdtar rejects with "Decompressed size
+  error"; use the .dmg.
+
+
+================================================================================
+Espressif ESP32-P4 chip + official development boards — acquisition pass
+Date: 2026-08-21
+Procedure: doc/hardware/vendors/espressif/README.md (and this pass corrected it — see §8 change log)
+================================================================================
+
+RESULT SUMMARY
+  27 files downloaded and retained, 0 magic-byte rejections retained.
+  4 distinct download URLs failed. All 4 are the SAME failure: the "board reference
+  design ZIP" link class on documentation.espressif.com. No HTML was retained under a
+  .pdf or .zip name at any point.
+
+--------------------------------------------------------------------------------
+1. *** FAILURE *** Board reference-design ZIPs — an entire broken link class
+--------------------------------------------------------------------------------
+  The esp-dev-kits user guides for the CURRENT ESP32-P4 boards replaced the older
+  boards' individual schematic/PCB PDFs with a single "Reference Design (ZIP)" link.
+  None of those links resolve. Every one returns HTTP 200 with the documentation
+  platform's 13745-byte soft-404 SPA shell (documentation.espressif.com/404).
+
+  Linked from the P4X-Function-EV-Board user guide:
+    https://documentation.espressif.com/ESP32-P4X-Function-EV-Board-EN.zip
+      -> HTTP 200, text/html, 13745 bytes. REJECTED (PK magic check failed).
+  Linked from the P4X-EYE user guide:
+    https://documentation.espressif.com/ESP32-P4X-EYE-EN.zip
+      -> HTTP 200, text/html, 13745 bytes. REJECTED.
+
+  Exhaustive variant probing, ALL -> 13745-byte soft-404 shell:
+    https://documentation.espressif.com/ESP32-P4X-Function-EV-Board-EN.ZIP
+    https://documentation.espressif.com/esp32-p4x-function-ev-board-en.zip
+    https://documentation.espressif.com/ESP32-P4X-Function-EV-Board_EN.zip
+    https://documentation.espressif.com/ESP32-P4X-Function-EV-Board-CN.zip
+    https://documentation.espressif.com/en/ESP32-P4X-Function-EV-Board-EN.zip
+    https://www.espressif.com/sites/default/files/documentation/ESP32-P4X-Function-EV-Board-EN.zip
+    https://documentation.espressif.com/ESP32-P4-Function-EV-Board-EN.zip
+    https://documentation.espressif.com/ESP32-P4-EYE-EN.zip
+    https://documentation.espressif.com/ESP32-P4X-C5-Function-EV-Board-EN.zip
+  And on dl.espressif.com, ALL -> genuine HTTP 404 (few-hundred-byte plain HTML):
+    https://dl.espressif.com/dl/schematics/ESP32-P4X-Function-EV-Board-EN.zip
+    https://dl.espressif.com/schematics/ESP32-P4X-Function-EV-Board-EN.zip
+    https://dl.espressif.com/schematics/ESP32-P4X-Function-EV-BoardReferenceDesign.zip
+    https://dl.espressif.com/schematics/ESP32-P4-Function-EV-BoardReferenceDesign.zip
+    https://dl.espressif.com/dl/schematics/esp32-p4x-function-ev-board-schematics.pdf
+    https://dl.espressif.com/schematics/ESP32_P4X_Function_EV_board-2.0-schematics.pdf
+    https://dl.espressif.com/AE/esp-dev-kits/SCH_ESP32-P4X-EYE-MB_V2.3_20250416.pdf
+
+  RULED OUT: SPA-gated download. The URL was loaded in a real Chromium via CDP.
+    document.body.innerText was EMPTY and the page issued NO XHR to any /api endpoint
+    (85 network requests, all static assets + one GA beacon). So the resource is simply
+    absent, not fetched client-side or behind a login.
+  RULED OUT: an undocumented search API. https://documentation.espressif.com/api/document/search
+    -> HTTP 404 JSON {"status":404,"path":"/document/search"}. The SPA's axios baseURL is
+    "/api" but no document route was recoverable from the minified bundle.
+
+  WORKAROUND APPLIED (successful, and generalisable):
+    Each current P4 board has an EOL predecessor whose user guide is still published at
+      .../esp-dev-kits/en/latest/esp32p4/eol/<slug>/user_guide.html
+    and those EOL guides DO link working individual design-file PDFs. Espressif states the
+    only difference between each pair is the fitted chip revision (v3.1+). So:
+      ESP32-P4X-Function-EV-Board  -> use ESP32-P4-Function-EV-Board v1.52 schematic,
+                                      PCB layout, dimensions PDF+DXF, assembly drawing
+      ESP32-P4X-EYE                -> use ESP32-P4-EYE SCH V2.3 / PCB V2.2
+    All retained. THE SUBSTITUTION IS LABELLED AS A SUBSTITUTION in both board READMEs;
+    "identical schematic" is NOT claimed, only "difference described as a chip-revision change".
+
+  ALSO NOTE: the ESP32-P4X-C5-Function-EV-Board does NOT suffer this problem. Its user guide
+    links direct PDFs on dl.espressif.com/schematics/ and all four resolved. It is currently
+    the only P4 board with published main-board design files.
+
+  STILL MISSING for every P4 main board: BOM, Gerbers, EDA source. Espressif's stated route is
+    sales@espressif.com. The LCD/camera ADAPTER boards, by contrast, publish complete reference
+    designs (OrCAD .DSN, Allegro .brd, full Gerbers, BOM .xlsx, assembly) and those ZIPs DO work:
+    https://dl.espressif.com/schematics/{LCD,Camera}AdapterBoardReferenceDesign.zip
+
+--------------------------------------------------------------------------------
+2. NEGATIVE RESULT (not a failure): no ESP32-P4 module exists
+--------------------------------------------------------------------------------
+  All -> HTTP 200 text/html 13745 bytes = documentation.espressif.com/404 soft-404 shell:
+    .../documentation/esp32-p4-mini-1_datasheet_en.pdf
+    .../documentation/esp32-p4-wroom-1_datasheet_en.pdf
+    .../documentation/esp32-p4-module_datasheet_en.pdf
+    .../documentation/esp32-p4-mini-1_mini-1u_datasheet_en.pdf
+  Corroborated: https://www.espressif.com/en/products/modules contains no ESP32-P4 module
+  product (only a navigation-menu reference to the P4 SoC).
+  CONSEQUENCE, and it is an engineering consequence not a bookkeeping one: there is no
+  pre-certified module path for ESP32-P4. Every design integrates the bare QFN104 die, which
+  makes the ESP Hardware Design Guidelines mandatory rather than optional. Recorded in
+  components/espressif/esp32-p4/README.md section 11.
+
+--------------------------------------------------------------------------------
+3. NEGATIVE RESULT: "ESP32-P4 Chip Packaging Information" not retrievable
+--------------------------------------------------------------------------------
+    https://www.espressif.com/sites/default/files/documentation/esp32-p4_chip_packaging_information_en.pdf
+      -> 13745-byte soft-404 shell
+  The P4 errata's Chip Revision Identification chapter cites "ESP32-P4 Chip Packaging
+  Information > Chip Silk Marking" as the authority for the full top-marking layout and the
+  Date Code. Same situation as the ESP32 packaging document already recorded above, which is
+  also still open. The errata does supply the manufacturing-code letter per revision
+  (A/C/E/F/G/H for v0.0/v1.0/v1.3/v3.0/v3.1/v3.2), so revision identification is possible
+  without it; only the surrounding marking layout is missing.
+
+--------------------------------------------------------------------------------
+4. *** CORRECTION to the 2026-08-22 entry above: the ESP-IDF PDF cutoff is v5.3.2 ***
+--------------------------------------------------------------------------------
+  The entry "espressif: ESP-IDF programming guide PDF for v5.3+: NOT PUBLISHED" is WRONG,
+  and so is the vendor guide line it produced. That probe jumped from v5.2.5 to v5.3.3 and
+  concluded the v5.2 series was the cutoff. It is not.
+
+  Verified 2026-08-21 by HTTP range request (bytes 0-3) against the esp32p4 target:
+    v5.2.5   -> %PDF, 200, 11767843 B   (P4 preview; predates official P4 support)
+    v5.3     -> %PDF, 200, 13297191 B
+    v5.3.1   -> %PDF, 206
+    v5.3.2   -> %PDF, 206, 13656675 B   <-- NEWEST PDF THAT EXISTS
+    v5.3.3   -> 404 (9106 B)
+    v5.3.4   -> 404 (9106 B)
+    v5.4 / v5.4.1 / v5.4.2 -> 404
+    v5.5 / v5.5.1          -> 404
+  Cross-checked on the esp32 target: v5.3 -> %PDF. So the boundary is between v5.3.2 and
+  v5.3.3 for both targets, not after v5.2.x.
+
+  LESSON: probe CONSECUTIVE PATCH RELEASES, not just minor versions. The earlier conclusion
+  understated the newest available offline ESP-IDF manual by three releases.
+  Retained: components/espressif/esp32-p4/artifacts/esp-idf-programming-guide-v5.3.2-esp32p4.pdf
+  Vendor guide sections 3 and 4 corrected with this evidence.
+
+--------------------------------------------------------------------------------
+5. *** CORRECTION: dl.espressif.com IS a documentation host ***
+--------------------------------------------------------------------------------
+  The vendor guide previously stated: "Not a documentation host. Do not look for PDFs here
+  -- verified 404 for documentation paths." That was true for CHIP documents and false in
+  general. dl.espressif.com is the primary store for BOARD design files, under three
+  mutually-incompatible path prefixes:
+    /dl/schematics/       lowercase-hyphen names, _vX.YZ suffixes
+    /schematics/          Mixed_Underscore_Case, -M.N- infixes, reference-design ZIPs
+    /AE/esp-dev-kits/     SCH_/PCB_ prefixes, _VX.Y_YYYYMMDD, often Chinese filenames
+  21 files were retrieved from these prefixes in this pass, all validated.
+  Every cross-prefix filename guess tried (e.g. asking /schematics/ for a /dl/schematics/
+  name) returned a genuine 404. Do not extrapolate names between prefixes.
+  Vendor guide section 1 corrected; new section 2.4 documents the prefixes.
+
+--------------------------------------------------------------------------------
+6. NEGATIVE RESULT: documentation.espressif.com HTML renditions are now SPA-only
+--------------------------------------------------------------------------------
+  The 2026-08-21 note above ("the fix is to fetch the HTML build: documentation.espressif.com/
+  <slug>.html serves the same document as clean, extractable text") NO LONGER WORKS.
+    https://documentation.espressif.com/esp32-p4_datasheet_en.html
+      -> HTTP 200, 209546 bytes, correct <title>, but a Vue SPA shell.
+         Stripping tags yields exactly 2 lines of text and no document content.
+  The datasheet PDF itself has a glyph-subset-obfuscated text layer that the +29 offset trick
+  does NOT recover (a hand-written zlib/Tj extractor produced only the page-1 block diagram,
+  ~24 KB of 1.5 MB; every other content stream decoded to glyph indices).
+  WORKAROUND APPLIED (successful): render in headless Chromium via CDP and read
+  document.body.innerText -- 196767 characters, extracted in 40000-char slices.
+  LIMIT: the viewer lazy-loads. This yielded the cover, nomenclature, part numbers
+  (ESP32-P4NRW16X / ESP32-P4NRW32X), QFN104 package, memory sizes and the Features list,
+  but NOT the pin tables, electrical characteristics or packaging chapter. Those remain
+  readable only by opening the PDF in a viewer, and are deliberately NOT transcribed into
+  the component README rather than guessed.
+  CONSEQUENCE: the ESP32-P4 Technical Reference Manual's cover VERSION NUMBER is UNKNOWN and
+  is not cited anywhere. The artifact is pinned by SHA-256 + retrieval date instead.
+  Vendor guide section 5.5 added.
+
+--------------------------------------------------------------------------------
+7. UNRESOLVED CONFLICT (recorded, not silently resolved)
+--------------------------------------------------------------------------------
+  github.com/espressif/esp-idf/blob/master/COMPATIBILITY.md lists ESP32-P4 revisions as only
+  "v1.0, v1.3 -- Supported since ESP-IDF v5.3", while
+  docs.espressif.com/projects/esp-chip-errata/en/latest/esp32p4/01-chip-identification/
+  documents SIX revisions v0.0, v1.0, v1.3, v3.0, v3.1, v3.2, and the esp-dev-kits user guides
+  state that current shipping boards carry v3.1 or later. Both retrieved 2026-08-21.
+  Most likely COMPATIBILITY.md is stale for the v3.x family, but that is an INFERENCE.
+  No hard minimum-IDF statement exists for v3.1/v3.2 silicon. Recorded in
+  components/espressif/esp32-p4/README.md section 8.
+
+--------------------------------------------------------------------------------
+8. OPEN QUESTION: the "ESP32-P4X-Function-EV-Board-L2" SKU
+--------------------------------------------------------------------------------
+  The string appears in Espressif's DevKits catalogue (www.espressif.com/en/products/devkits)
+  but in NO user guide, schematic or revision note in esp-dev-kits. Most likely an
+  accessory-bundle ordering SKU (the 7" LCD and the camera are optional extras), especially
+  as the catalogue blurb says "Same functionality as ESP32-P4-Function-EV-Board".
+  NOT assumed to be a distinct PCB. Recorded as unresolved in the board README.
+
+--------------------------------------------------------------------------------
+9. NOTE: version mismatches WITHIN published design-file sets
+--------------------------------------------------------------------------------
+  Not a download failure, but it will bite whoever reads these files:
+    ESP32-P4-EYE:  schematic is V2.3 (2025-04-16), PCB layout is V2.2 (2025-03-14).
+    LCD/Camera Adapter Board reference designs: schematic V1.3 (2024-07-09),
+                                                PCB V1.2 (2024-05-27).
+  In both cases the schematic is one revision ahead of the layout, with no published
+  changelog between them. Do not assume the layout implements the schematic you are reading.
+
+--------------------------------------------------------------------------------
+10. Rights caveat on retained board artifacts
+--------------------------------------------------------------------------------
+  Espressif publishes all of these without an explicit redistribution licence, and several
+  are THIRD-PARTY documents mirrored by Espressif (OV2710 camera, ST7789VW controller,
+  ZJY154KC and the 7" panel, EK79007AD / EK73217BCGA display drivers, the 1.0K-GT-15PB FPC
+  connector). Copyright rests with Espressif or with the original IC/module vendors.
+  Redistribution status: UNKNOWN for all of them. Retained for internal engineering
+  reference only; must not be republished. Recorded in
+  devices/espressif/shared-artifacts/README.md.
+
+--------------------------------------------------------------------------------
+11. Inkplate 5 / ZeroWriter Ink component sweep, checked 2026-08-26 -- NO FAILURES
+--------------------------------------------------------------------------------
+  texas-instruments/bq25306/artifacts/bq25306-datasheet.pdf: RESOLVED first try.
+    GET https://www.ti.com/lit/gpn/BQ25306 with plain curl -L (no UA substitution)
+      -> HTTP 200, 2781845 bytes, magic "%PDF-", SLUSDC7A (March 2020, rev. Nov 2020).
+    sha256 8a70d122f22f3cf5255d6345d0fba74b5a7d7be9fdf5e8c86f54ac96a17ac2a5
+    The ti.com/lit/gpn/<PART> shortcut continues to work without any UA games.
+
+  nxp/pcf85063a/artifacts/pcf85063a-datasheet.pdf: already present locally
+    (Rev. 7, 30 March 2018, 726288 bytes,
+     sha256 a09223dbb64278087ed566ba7597399ef40144da36905f6875d5aaf430f6000b).
+    No download needed.
+
+  Lifecycle checks performed the same day:
+    https://www.ti.com/product/BQ25306        -> 200 with a Chrome 131 UA; status ACTIVE.
+    https://www.nxp.com/products/PCF85063A    -> 200 with BARE curl (no UA header);
+      status Active. This RE-CONFIRMS the inverted UA behaviour recorded in
+      ai-crawler-site-access-table.md: on nxp.com, do NOT substitute a browser UA.
+
+--------------------------------------------------------------------------------
+12. Inkplate 5 / ZeroWriter Ink component sweep (2/2), checked 2026-08-24
+    TPS65186 · PCAL6416A · ED052TC4
+--------------------------------------------------------------------------------
+
+  texas-instruments/tps65186/artifacts/tps65186-datasheet-slvsb04a.pdf: RESOLVED first try.
+    GET https://www.ti.com/lit/ds/symlink/tps65186.pdf   -> HTTP 200, application/pdf,
+        4046273 bytes, magic "%PDF-1.6", 56 pages,
+        pdfinfo title "TPS65186 PMIC for E Ink Vizplex Enabled Electronic Paper Display
+        datasheet (Rev. A)", keywords SLVSB04,SLVSB04A.
+    GET https://www.ti.com/lit/gpn/TPS65186 -> HTTP 200, 4046273 bytes, BYTE-IDENTICAL
+        (same sha256). Both forms serve the same file today.
+    sha256 ad97de5f2d5e85bcac1e904805fa2a5a1549f7607b6de0b9c18b695b96cad240
+    Plain curl -L, no UA substitution. The ti.com/lit shortcuts continue to need no UA games.
+    Revision-pinned alternative for reproducibility:
+      https://www.ti.com/lit/ds/slvsb04a/slvsb04a.pdf
+    Lifecycle check: https://www.ti.com/product/TPS65186 -> 200 with a Chrome 131 UA;
+      page carries <meta name="status" content="ACTIVE">.
+    NOTE: a literature-number scan of the product-folder HTML returned ONLY "SLVSB04A".
+      No errata, app note or EVM user's guide is linked for this part. Negative result.
+
+  nxp/pcal6416a/artifacts/pcal6416a-datasheet-rev7.1.pdf: RESOLVED first try.
+    GET https://www.nxp.com/docs/en/data-sheet/PCAL6416A.pdf  (BARE curl, no UA header)
+      -> HTTP 200, application/pdf, 868663 bytes, magic "%PDF-1.4", 56 pages,
+         author "NXP B.V.", Rev. 7.1 dated 30 August 2022.
+    sha256 abe25cb2f38fb3a3c77c6aa80fdaf50928007bda3794671753ee84f55fb5eff1
+
+    *** CORRECTION TO AN INTERMEDIATE FINDING IN THIS SAME SESSION ***
+    Product pages were first probed WITH a Chrome 131 UA and all returned HTTP 404 with a
+    745-byte "<title>Page not available" placeholder, which was briefly mistaken for NXP
+    blocking scripted clients. That was our error. Re-probed 2026-08-24 with the BARE curl
+    UA, every URL works:
+        HEAD https://www.nxp.com/docs/en/data-sheet/PCAL6416A.pdf  -> 200  (404 w/ Chrome UA)
+        GET  https://www.nxp.com/part/PCAL6416AHF                  -> 200, 59823 B
+        GET  https://www.nxp.com/products/PCAL6416A                -> 200, 247145 B
+        GET  https://www.nxp.com/                                  -> 200, 85842 B
+    This re-confirms for the THIRD time the inverted-UA behaviour already recorded in
+    vendors/nxp/README.md and ai-crawler-site-access-table.md:
+      ON nxp.com, DO NOT SUBSTITUTE A BROWSER USER-AGENT. Use curl's default.
+    Lifecycle from the product page: Active, and enrolled in NXP's Product Longevity
+    Program ("available for a minimum of 10 years").
+    Also failed, for the record: https://www.mouser.com/datasheet/2/302/PCAL6416A-1127566.pdf
+      -> curl (92) HTTP/2 stream reset by server, 0 bytes. Not retried; NXP direct sufficed.
+
+  e-ink/ed052tc4: *** NO MANUFACTURER DATASHEET OBTAINED. NOT EXPECTED TO EXIST PUBLICLY. ***
+    E Ink does not publish AMEPD panel datasheets. Evidence, all 2026-08-24, Chrome 131 UA
+    unless noted:
+      https://www.eink.com/product/ED052TC4        -> HTTP 200, 204139 bytes
+      https://www.eink.com/products                -> HTTP 200, 204139 bytes
+      https://www.eink.com/                        -> HTTP 200, 204139 bytes
+      https://www.eink.com/brand.html              -> HTTP 200, 204139 bytes
+      https://www.eink.com/brand.html?type=carta   -> HTTP 200, 204139 bytes
+      https://www.eink.com/tech.html?type=electronicink -> HTTP 200, 204139 bytes
+        ^ ALL BYTE-IDENTICAL. eink.com is a client-rendered SPA that serves one shell
+          document for every route. A 200 from this host is NOT evidence a page exists.
+          A regex for ED\d{3}[A-Z]{2}\d over the products page returns ZERO matches:
+          E Ink publishes no part catalogue at all.
+      https://www.e-ink.com/  (hyphenated)   -> connection timeout, no HTTP status,
+          with and without a browser UA. The live domain is eink.com.
+      https://www.panelook.com/ED052TC4_...  -> HTTP 200 but 11210-byte slider-CAPTCHA
+      https://www.panelook.com/modelsearch.php?keyword=ED052TC -> same CAPTCHA page.
+          Tried with and without a Chrome 131 UA. Panelook is the database that would
+          answer most of the open questions; it is bot-blocked.
+      https://www.crystalfontz.com/product/ed052tc4 -> HTTP 404
+      https://shopkits.eink.com/en/product?cate=Black%26White -> HTTP 200. E Ink's OWN kit
+          store publishes real per-part specs (resolution, active area, pixel pitch,
+          outline, weight, ppi) + user-manual PDFs -- but its 10 monochrome SKUs are
+          1.27/2.84/2.9/3.7/4.3/7/13.3/28/31.2/42 inch. THERE IS NO 5.2" PART. The
+          ED052TC4 is a customer-design part, not a kit part.
+      DuckDuckGo html/ and lite/ endpoints -> bot-challenge page ("select all squares
+          containing a duck"), with and without a browser UA.
+      Bing web search -> returned entirely unrelated German CRM-software results for the
+          quoted query. Useless.
+
+  e-ink/ed052tc4/artifacts/eink-af-16-tone-grayscale-5bit-waveform-flash-file-spec-800-1101-rev01.pdf:
+    PARTIAL WIN. Not a datasheet for this panel, but a GENUINE E Ink Corporation document.
+    GET https://www.waveshare.com/w/upload/c/c4/E-paper-mode-declaration.pdf (Chrome 131 UA)
+      -> HTTP 200, application/pdf, 362418 bytes, magic "%PDF-1.5", 5 pages,
+         pdfinfo title "800-1101 REV01 AF 16 TONE GRAYSCALE 5-BIT WAVEFORM FLASH FILE
+         PRODUCT SPECIFICATION.pdf", created 2017-01-11.
+    sha256 9396d7af46bdd0adcbb9dcca8591105787734b1b2692497dd672942a22863649
+    Establishes the standard E Ink update-mode taxonomy (INIT/DU/GC16/GL16/GLR16/GLD16/
+    A2/DU4) with ghosting ratings and typical update times, the waveform-file header
+    layout, and -- on its own first page -- E Ink's NDA notice, which is the primary
+    evidence that panel specs are not public. Appears to be a 5-page EXCERPT: Table 4
+    (verified AMEPD part numbers) is referenced but absent.
+    Provenance is third-party (a board vendor's wiki upload pool), NOT E Ink.
+    Archival: https://web.archive.org/save/<that URL> attempted 2026-08-24, TIMED OUT
+      after 120 s with no confirmation. Status unknown. RE-ATTEMPT RECOMMENDED --
+      this is a scarce and valuable source.
+
+  Also failed while looking for a generic parallel-AMEPD reference:
+      https://essentialscrap.com/eink/ED060SC4.pdf                 -> HTTP 404
+      https://cdn.sparkfun.com/datasheets/Dev/Arduino/Shields/ED060SC4.pdf -> HTTP 404
+      https://www.e-ink.com.tw/upload/EPD_Product_Brochure.pdf      -> connection failure
+
+  ADDENDUM to §12, 2026-08-24 -- the E Ink waveform spec IS already on the Wayback Machine.
+    https://archive.org/wayback/available?url=waveshare.com/w/upload/c/c4/E-paper-mode-declaration.pdf
+      -> {"status":"200","available":true,
+          "url":"http://web.archive.org/web/20260630175241/https://www.waveshare.com/w/upload/c/c4/E-paper-mode-declaration.pdf",
+          "timestamp":"20260630175241"}
+    Fetched that snapshot: HTTP 200, application/pdf, 362418 bytes,
+      sha256 9396d7af46bdd0adcbb9dcca8591105787734b1b2692497dd672942a22863649
+      -- BYTE-IDENTICAL to the live copy. No fresh save needed.
+    (For the record: web.archive.org/save/<url> timed out at 120 s on the first attempt and
+     returned HTTP 503 on a second 95 s attempt. Query the wayback/available API BEFORE
+     submitting a save -- it is fast, and the snapshot often already exists.)
+
+================================================================================
+PASS 2026-08-24 -- espressif/esp32-wrover, espressif/esp32-wroom-32u, wch/ch340c
+================================================================================
+
+  espressif/esp32-wrover -- ESPRESSIF MODULE DATASHEETS
+  -----------------------------------------------------
+  WORKING (legacy static path, 302 -> documentation.espressif.com, application/pdf):
+    esp32-wrover-e_esp32-wrover-ie_datasheet_en.pdf   200  1,425,347 B  v2.4
+    esp32-wrover-b_datasheet_en.pdf                   200    982,614 B  v2.3 (NRND)
+    esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf  200    866,305 B  v2.7 (NRND)
+    esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf 200  1,230,114 B  v2.1
+    esp32-wroom-32_datasheet_en.pdf                   200    619,238 B  v3.7 (NRND)
+    (all prefixed https://www.espressif.com/sites/default/files/documentation/)
+
+  SOFT-404 -- HTTP 200, text/html, EXACTLY 13,745 bytes, final URL
+  https://documentation.espressif.com/404 . This is the fingerprint documented in
+  vendors/espressif/README.md sec.5.1. All of the following returned it:
+      esp32-wrover_datasheet_en.pdf
+      esp32-wrover-i_datasheet_en.pdf
+      esp32-wrover_esp32-wrover-i_datasheet_en.pdf
+      esp32_wrover_datasheet_en.pdf
+      esp32-wrover-b_esp32-wrover-ib_datasheet_en.pdf
+      esp32-wrover-ib_datasheet_en.pdf
+      esp32-wrover-ie_datasheet_en.pdf
+      esp32-wroom-32u_datasheet_en.pdf
+      esp32-wroom-32ue_datasheet_en.pdf
+    DO NOT SAVE THESE AS .pdf. They are HTML.
+
+  RECOVERY -- the original ESP32-WROVER datasheet (the 1.8 V flash/PSRAM variant,
+  the one whose module pulls MTDI/GPIO12 HIGH internally) has been WITHDRAWN from
+  Espressif's live document store. It is on the Wayback Machine:
+      https://archive.org/wayback/available?url=espressif.com/sites/default/files/documentation/esp32-wrover_datasheet_en.pdf
+        -> {"status":"200","available":true,"timestamp":"20251015143618"}
+      curl -sSL 'http://web.archive.org/web/20251015143618if_/https://www.espressif.com/sites/default/files/documentation/esp32-wrover_datasheet_en.pdf'
+        -> 200 application/pdf 470,491 B, magic %PDF, 28 pages, "Version 2.7"
+      sha256 a0dc0b6173afcf7bc145ace8e0862f36d4d32266f78c3112c73906a5a3fbea42
+      Saved as components/espressif/esp32-wrover/artifacts/esp32-wrover-datasheet-v2.7-nrnd-wayback.pdf
+    This document is the ONLY source for the sentence that makes the WROVER GPIO16/17
+    trap explicit ("GPIOs 16 and 17 are connected to the module's integrated PSRAM"),
+    and for the original variant's 1.8 V memory rail. Worth keeping.
+
+  NEGATIVE RESULT, RECORDED SO NOBODY REPEATS IT:
+    There is NO standalone datasheet for -WROVER-I, -WROVER-IB, -WROVER-IE,
+    -WROOM-32U or -WROOM-32UE. Espressif documents the external-antenna variant
+    INSIDE its PCB-antenna sibling's document. Search for the PAIR, not the part.
+    Same convention as WCH's per-family documents (see vendors/wch/README.md sec.5).
+
+  espressif/esp32-wroom-32u -- LCSC / JLCPCB PART LOOKUP for C328062
+  ------------------------------------------------------------------
+  FAILED:
+    https://jlcpcb.com/api/luxService/getComponentDetailByComponentCode?componentCode=C328062
+      -> HTTP 200 but EMPTY BODY (Chrome-131 UA). Useless.
+    https://cart.jlcpcb.com/api/overseas-shop-cart/v1/shopCartSearch/searchComponentList?keyword=C328062
+      -> HTTP 200, empty body.
+    https://wmsc.lcsc.com/wmsc/product/detail?productCode=C328062
+      -> {"code":404,"msg":"The static resource is unavailable..."}
+    https://wmsc.lcsc.com/ftps/wm/search/global?keyword=C328062
+      -> Akamai "Access Denied" HTML page.
+    https://yaqwsx.github.io/jlcparts/data/  -> 404 (the jlcparts mirror moved)
+
+  WORKED:
+    https://www.lcsc.com/product-detail/C328062.html
+      -> HTTP 200, 378,243 bytes, with a plain Chrome-131 UA. ALSO worked with
+         UA "WhatsApp/2.23.20.0" (identical byte count), so it is not UA-gated.
+      The page embeds JSON. Useful keys, extracted with a regex over the HTML:
+         "productModel":"ESP32-WROOM-32U-N4"
+         "brandNameEn":"ESPRESSIF"
+         "encapStandard":"SMD,19.2x18mm"
+         "catalogName":"RF Transceiver Modules and Modems"
+         "pdfUrl":"https://datasheet.lcsc.com/datasheet/pdf/b5aa77912f414ccb9a53d803181beb97.pdf?productCode=C328062"
+      This RESOLVED the exact module variant on the ZeroWriter keyboard.
+    LESSON: for LCSC, scrape the product-detail HTML page. The wmsc.* API hosts are
+    Akamai-protected and the jlcpcb.com APIs return empty bodies to non-browser clients.
+
+  wch/ch340c -- POSITIVE CONTROL, NO FAILURES
+  -------------------------------------------
+  Everything resolved first try through the WCH JSON API with a PLAIN DEFAULT
+  User-Agent. No UA substitution needed. Procedure from vendors/wch/README.md sec.5
+  works exactly as documented.
+    https://www.wch-ic.com/api/official/website/files/getFilesById?id=79
+      -> {"name":"CH340DS1.PDF","version":"3.4","uploadTime":"2025-03-12","size":"318KB",
+          "scope":"CH340G, CH340C, CH340B, CH340N, CH340K, CH340E, CH340X, CH340T, CH340R"}
+    https://www.wch-ic.com/download/file?id=79
+      -> 200, 325,640 B, magic %PDF
+      md5 2ca320c5f1085c404d48215b5a6dbf75
+      BYTE-IDENTICAL to the copy already held at
+        components/wch/ch340c/artifacts/ch340-datasheet-v3.4.pdf  and
+        components/generic/usb-uart-bridge/artifacts/ch340-datasheet-v3d.pdf
+      NO RE-DOWNLOAD WAS NEEDED. Both local names are legitimate: "3.4" is WCH's
+      metadata version field, "3D" is the string printed on the PDF cover page.
+      Do not "fix" either filename thinking one is wrong.
+    https://www.wch-ic.com/download/file?id=177  (CH341SER_LINUX.ZIP v1.8, 2024-10-24)
+      -> 200, 13,449 B, magic PK. md5 3373213012007440e2a07a9e8ab897a8
+      BYTE-IDENTICAL to the held components/wch/ch340c/artifacts/ch341ser-linux-v1.8.zip
+    https://www.wch-ic.com/download/file?id=283  (InstallNoteOn64BitWIN7_EN.PDF v1.0)
+      -> 200, 364,123 B, magic %PDF. NEW -- saved as
+         components/wch/ch340c/artifacts/wch-win7-x64-driver-install-note-v1.0.pdf
+      sha256 9004941068d25d59617b61f9398950d9c8a8d660f0fa4afd91f9e0272659997c
+
+  WCH FILE-ID INDEX observed 2026-08-24 (enumerated ids 1-400 at 12-way concurrency;
+  completed cleanly, no silent truncation -- the ~24-concurrency ceiling in
+  vendors/wch/README.md sec.7 holds):
+      id=5    CH341SER.ZIP           v4.0  2026-06-26
+      id=65   CH341SER.EXE           v4.0  2026-06-24   Windows, WHQL/HCK certified
+      id=79   CH340DS1.PDF           v3.4  2025-03-12   THE CH340 datasheet
+      id=133  CH446DS1.PDF           v1.4
+      id=135  CH440DS1.PDF                              (covers CH445P -- see ch445p record)
+      id=177  CH341SER_LINUX.ZIP     v1.8  2024-10-24
+      id=178  CH341SER_MAC.ZIP       v2.0  2025-12-01   macOS DriverKit
+      id=195  CH341SER_ANDROID.ZIP   v2.3  2025-08-29
+      id=204  PRODUCT_GUIDE.PDF      v5.1  2025-12-05
+      id=283  InstallNoteOn64BitWIN7_EN.PDF v1.0
+      id=296  CH343DS1.PDF           v2.0  2025-02-20
+      id=334  CH34XSER_MAC.ZIP       v2.0  2025-12-01   same file as id=178
+      id=340  CH34xSerCfg.ZIP        v1.5  2023-10-12   serial-number/config tool
+    These ids are HISTORICAL OBSERVATIONS and may be reassigned. Always confirm via
+    getFilesById before trusting one.
+
+  TOOLING NOTE FOR THE NEXT AGENT
+  -------------------------------
+  This machine has NO pdftotext / mutool / qpdf / gs, and no system pypdf. Working
+  recipe used for every PDF in this pass:
+      python3 -m venv /tmp/opencode/v
+      /tmp/opencode/v/bin/pip install pypdf cryptography
+      /tmp/opencode/v/bin/python -c "import pypdf; ..."
+  The `cryptography` package is MANDATORY for the WCH datasheets -- CH340DS1.PDF is
+  AES-256 encrypted with an EMPTY user password and pypdf raises
+  "DependencyError: cryptography>=3.1 is required for AES algorithm" without it.
+
+  A KiCad .kicad_sch net extractor was written to /tmp/opencode/ksch.py for this
+  pass (S-expression parse -> wire/label/pin union-find -> netlist). It is NOT
+  committed. Two calibration facts worth re-deriving if you rebuild it:
+    1. A lib_symbol pin's (at x y ang) is ALREADY the connection point; do NOT add
+       (length). Global position = (sym_x + rot(px,py), sym_y - rot_y). The Y is
+       NEGATED because lib space is Y-up and sheet space is Y-down.
+    2. Soldered's newer sheets FLATTEN multi-unit lib_symbols to top level as
+       "0603R_1", "0603R_14", ... with the parent "Soldered symbols:0603R" absent.
+       Match lib_id basename OR basename+"_<digits>" and merge, or every passive
+       silently drops out of the netlist and nets look disconnected.
+
+
+# --- Display-controller component pass, checked 2026-08-30 ---
+# Five fitted display controllers given component records: JD9365, ST7789VW,
+# EK79007AD, EK73217BCGA, ILI9881C. Outcome summary: 7 PDFs obtained, 0 permanent
+# failures. All validated for %PDF- magic and plausible size before retention.
+
+ilitek/ili9881c/ili9881c-spec-3lane-mipi-gramless.pdf: https://www.internetsomething.com/lcd/ILI9881C-3lane-mipi-gramless.pdf
+  *** RESOLVED 2026-08-30 via User-Agent rotation. ***
+  Chrome 131 browser UA -> HTTP 520, 16-byte body containing the literal text "error"
+  (a Cloudflare-style origin failure, NOT a 404 -- the file is there).
+  http:// scheme and web.archive.org/web/2024/<url> were queued as fallbacks but not
+  needed. UA "WhatsApp/2.23.20.0" returned the real file on the first try:
+  9,842,657 bytes, sha256 57b146b880b0ab446cf67a0f73e4e7bda4f271a0acc95b28086a3471f8db7ebf.
+  NOTE: this URL is the one Espressif's own esp_lcd_ili9881c README links as
+  "Link to datasheet" -- the official pointer depends on this third-party mirror,
+  so the local copy is the only durable one.
+
+jadard/jd9365/jd9365da-h3-application-note-v0.03-20210201.pdf: https://lcddisplay.co/wp-content/uploads/2023/01/JD9365DA_V0.03_20210201.pdf
+  *** RESOLVED 2026-08-30 via User-Agent rotation. ***
+  Chrome 131 browser UA -> HTTP 403 with a 75,193-byte HTML bot-block page whose URL
+  still ends in .pdf. This is exactly the "HTML saved as PDF" trap; magic-byte
+  validation caught it. UA "WhatsApp/2.23.20.0" returned the real PDF:
+  1,304,905 bytes, sha256 30899c3307b4359b50c4f3865b675592b57870c24287b14108ea39af2de1dd25.
+
+jadard/jd9365/jd9365da-h3-datasheet-v0.01-20200819.pdf: https://dl.espressif.com/AE/esp-iot-solution/JD9365DA-H3_DS_V0.01_20200819.pdf
+  *** RESOLVED 2026-08-30 -- and this one overturns a standing repository claim. ***
+  Several existing files assert "no public JD9365 datasheet exists". One does: a
+  204-page Jadard JD9365DA-H3 Data Sheet V0.01 (2020-08-19), mirrored by Espressif.
+  4,962,394 bytes, sha256 31fb4729dc65525cd761174a6939d9763d33870862f8195c14a3532fa95d1d8f.
+  It was NOT findable by search engine (see SEARCH ENGINE NOTE below). The route that
+  worked -- and that should be tried FIRST for any display controller:
+      curl -s "https://components.espressif.com/api/components/espressif/esp_lcd_<part>"
+      # build the zip URL from the version list, then:
+      unzip -p <pkg>.zip '*/README.md' | grep -i datasheet
+  Every esp_lcd_* component README carries a "Link to datasheet" column. This single
+  trick produced 3 of the 7 PDFs in this pass (JD9365, EK79007 REV1.0, ILI9881C).
+  CAVEAT: the registry API's own "latest" ordering is wrong -- it reported 0.1.0 as
+  latest while 2.0.1 existed. Enumerate the versions list and pick the max yourself.
+
+fitipower/ek79007ad/ek79007-datasheet-esp-iot-solution-mirror.pdf: https://dl.espressif.com/AE/esp-iot-solution/EK79007.pdf
+  NOT A FAILURE -- recorded because it is a near-duplicate that must NOT be deduplicated.
+  Espressif serves EK79007 documents from two different CDN paths, and they are
+  DIFFERENT DOCUMENTS, not mirror copies of one file:
+    dl/schematics/display_driver_chip_EK79007AD_datasheet.pdf
+        -> "EK79007AD", MIPI only,      75 pp, Rev 1.9  (2018), 3,723,767 B, 2dbab767...
+    AE/esp-iot-solution/EK79007.pdf
+        -> "EK79007",   MIPI *and LVDS*, 92 pp, REV1.0  (2015), 4,084,080 B, a038ce84...
+  Both retained. Always check BOTH Espressif paths before concluding you have "the"
+  datasheet for a driver IC.
+
+  PDF-METADATA TRAP (Fitipower): both retained Fitipower datasheets -- EK79007AD and
+  EK73217BCGA, different parts -- carry the internal PDF Title "EK7616DS", author
+  "sally.chen". Fitipower builds datasheets by editing an EK7616 template. Do not
+  identify or deduplicate Fitipower PDFs by metadata Title; read the cover page.
+
+  SEARCH ENGINE NOTE (2026-08-30): for these parts every general search route failed.
+    grep.app          -> Vercel "Security Checkpoint" interstitial
+    searchcode API    -> HTTP 404 (endpoint gone)
+    GitHub code API   -> HTTP 401, requires auth
+    Bing / DuckDuckGo -> 200 but no usable result links for "JD9365 datasheet RSO"
+    Mojeek            -> "No pages found"
+  Vendor-portal guessing also failed: neither Jadard nor Fitipower nor Ilitek exposes
+  a usable public document index. Go via the ESP-IDF component registry and via
+  mainline Linux drivers/gpu/drm/panel/ instead.
+
+  NEGATIVE RESULT -- ILI9981C: no record was created for "ILI9981C" because the part
+  DOES NOT EXIST. It is a one-character transcription error for Ilitek ILI9881C,
+  present in devices/nicolai-electronics/tanmatsu/display.md and propagated into two
+  guides. Disproof: components.espressif.com/api/.../esp_lcd_ili9981c -> 404 while
+  esp_lcd_ili9881c -> 200; mainline drivers/gpu/drm/panel/ has panel-ilitek-ili9881c.c
+  and no ili9981 anything; and Waveshare's own 12_camera_dsi Kconfig in this repo says
+  ILI9881C at 800x1280. Recorded so nobody re-searches for the nonexistent part.
+
+  TOOLING NOTE (differs from the 2026-08-21 note above): this shell DOES have nix,
+  and `nix-shell -p poppler-utils --run "pdftotext -layout in.pdf out.txt"` works and
+  is far faster than the pypdf venv recipe. Note the attribute was RENAMED: it is
+  poppler-utils, not poppler_utils (the old name now throws).
+
+# =====================================================================================
+# --- Component deep-dive sweep #2, checked 2026-08-30 ---
+# Scope: bmi270, ov5640/ov2640/ov3660, bq25895, es8156, tps63020, w25q128jvs,
+#        gd25q64e, ch334r, e22-900m22s, sk6805-ec20, sgm6029, sgm40567.
+# All downloads were validated by %PDF magic bytes, NOT by extension or size.
+# =====================================================================================
+
+## SUCCEEDED FIRST TRY (recorded so nobody re-hunts)
+
+texas-instruments/bq25895  https://www.ti.com/lit/ds/symlink/bq25895.pdf
+  -> 200, %PDF, 2681280 B, 65 pp, SLUSC88C (Mar 2015 rev. Oct 2022). The TI symlink
+     pattern in vendors/texas-instruments/README.md continues to work, bare curl fine.
+texas-instruments/tps63020 https://www.ti.com/lit/ds/symlink/tps63020.pdf
+  -> 200, %PDF, 1855244 B, 34 pp, SLVS916I (Jul 2010 rev. Oct 2019).
+bosch-sensortec/bmi270  https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmi270-ds000.pdf
+  -> 200, %PDF, 2636042 B, 150 pp, BST-BMI270-DS000-08. Bosch serves bots fine; no UA
+     substitution needed. NOTE: the datasheet explicitly defers to
+     github.com/BoschSensortec/BMI270-Sensor-API for the mandatory 8 KB config blob --
+     the register map ALONE IS NOT SUFFICIENT to bring this part up.
+espressif/esp32-c6-wroom-1  https://www.espressif.com/sites/default/files/documentation/esp32-c6-wroom-1_wroom-1u_datasheet_en.pdf
+  -> 200, %PDF, 938372 B, 52 pp.
+omnivision/ov5640  https://cdn.sparkfun.com/datasheets/Sensors/LightImaging/OV5640_datasheet.pdf
+  -> 200, %PDF, 1749719 B, v2.03. BYTE-IDENTICAL (sha256 0e0b34b90706...) to the copy
+     already in the repo from a different source. Independent provenance confirmation.
+omnivision/ov2640  https://www.uctronics.com/download/cam_module/OV2640DS.pdf
+  -> 200, %PDF, 676989 B. BYTE-IDENTICAL (sha256 4460f2f13b76...) to the repo's copy.
+     *** FILENAME TRAP: the URL and our local name say "v2.2" but page 1 of the document
+     says "Version 1.6, February 28, 2006". Trust the document, not the filename. ***
+
+## RESOLVED AFTER FAILURES -- METHODS THAT WORK
+
+wch/ch334r/ch334ds1.pdf: *** RESOLVED 2026-08-30 via the WCH FILE API. ***
+  Confirms vendors/wch/README.md S5 exactly. ALL HTML paths return an identical
+  SPA shell and are useless:
+    https://www.wch-ic.com/downloads/file/304.html            -> 200, 4305 B application/javascript
+    https://www.wch-ic.com/downloads/CH334DS1_PDF.html        -> 200, 4305 B, byte-identical
+    https://www.wch.cn/downloads/file/304.html                -> 200, 4271 B
+    https://www.wch-ic.com/uploads/file/20211102/1635castCH334DS1.PDF -> 200, 4305 B
+    ...plus ?time= / Referer: / X-Requested-With: variants -> all the same 4305 B shell.
+  WHAT WORKED (plain default User-Agent, no referer, no cookie):
+    1. https://www.wch-ic.com/api/official/website/files/getFilesById?id=327
+       -> {"name":"CH334DS1.PDF","version":"2.91","uploadTime":"2026-08-28",
+           "size":"508KB",
+           "scope":"CH334F, CH334H, CH334L, CH334P, CH334R, CH334S, CH334U, CH334X,
+                    CH335F, CH335P"}
+    2. https://www.wch-ic.com/download/file?id=327
+       -> 200, %PDF, 521028 B, 34 pages.
+  THE CORRECT ID IS 327, not the 304 implied by the dead HTML paths. Search the
+  `scope` field, never document titles -- there is no "CH334R datasheet".
+  The PDF is ENCRYPTED (owner pw, empty user pw); pypdf and pdftotext both read it.
+
+normand/sk6805-ec20/sk6805-ec20-datasheet.pdf: *** RESOLVED 2026-08-30 via wmsc.lcsc.com/v2 ***
+    https://cdn-shop.adafruit.com/product-files/4960/4960_SK6805-EC20_REV02_EN.pdf -> 404
+    https://cdn-shop.adafruit.com/product-files/4960/4960_SK6805-EC20_REV01_EN.pdf -> 404
+    https://cdn-shop.adafruit.com/product-files/4492/Datasheet.pdf
+      -> *** 200, VALID %PDF, 3094006 B, 17 pages -- AND THE WRONG PART. ***
+         An image-only "iPixel LED" (Shenzhen) catalogue: zero extractable text, zero
+         occurrences of "SK6805". It passes every automated check. MAGIC-BYTE VALIDATION
+         IS NECESSARY BUT NOT SUFFICIENT -- grep the extracted text for the part number.
+         Archived, not deleted:
+         ../hardware-doc-archive/doc/hardware/components/normand/sk6805-ec20/artifacts/
+             WRONG-PART-ipixel-catalog-adafruit-4492.pdf
+    https://datasheet.lcsc.com/lcsc/2110250930_Normand-SK6805-EC20_C2890036.pdf
+      -> 200 but text/html anti-bot interstitial, 56572 B. Rejected.
+    https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2110250930_Normand-SK6805-EC20_C2890036.pdf
+      -> *** 200, %PDF, 804947 B, 13 pages. *** Chrome 131 UA + Referer https://www.lcsc.com/
+  REUSABLE LCSC RULE: datasheet.lcsc.com serves an HTML interstitial to bots, but
+  wmsc.lcsc.com/wmsc/upload/file/pdf/**v2**/lcsc/<same-filename> serves real bytes.
+  A 2026-08-23 note in this file recorded wmsc.lcsc.com returning a 91-byte script stub
+  for MSM261D4030H1CPM -- that was the NON-v2 path. TRY BOTH; prefer /v2/.
+  IDENTITY FINDING: the datasheet is from GuangDong OPSCO Technology (www.opscoled.com),
+  doc SK6805-EC20-001 Rev A1, 2025-08-25 -- NOT "Normand". LCSC's brand field is wrong;
+  our components/normand/ path inherits that error.
+
+everest-semiconductor/es8156: RESOLVED 2026-08-30, manufacturer's own site, PLAIN HTTP.
+    https://dl.radxa.com/rock3/docs/hw/datasheet/ES8156%20DS.pdf -> 404
+    http://www.everest-semi.com/pdf/ES8156%20PB.pdf
+      -> *** 200, %PDF, 1441871 B, 15 pp, Revision 13.0, February 2026. ***
+  Note http:// not https://, and the "%20PB" suffix. "PB" looks like "product brief"
+  but it IS the datasheet. Pattern: http://www.everest-semi.com/pdf/<PART>%20PB.pdf
+  *** THE DATASHEET CONTAINS NO REGISTER MAP. *** Everest publishes register tables only
+  to customers. The authoritative public register map is esp-adf's MIT-licensed
+  components/audio_hal/driver/es8156/es8156.h. Documented in vendors/everest-semiconductor/.
+
+sgmicro/sgm6029 + sgmicro/sgm40567: RESOLVED 2026-08-30 by REUSING the Next.js
+  access_token method recorded in this file on 2026-08-23 for SGM2036. It still works:
+    GET https://www.sg-micro.com/product/<PART>  then grep the embedded payload for
+    https://www.sg-micro.com/rect/assets/<uuid>/<PART>.pdf?access_token=<token>
+    sgm6029  -> 200, %PDF, 1989485 B, 24 pp
+    sgm40567 -> 200, %PDF,  749798 B, 16 pp
+  Static path https://www.sg-micro.com/uploads/soft/SGM6029.pdf still 404s. The
+  documented method is confirmed durable across ~7 days; keep it in vendors/sgmicro/.
+
+## STILL UNRESOLVED as of 2026-08-30
+
+gigadevice/gd25q64e/gd25q64e-datasheet.pdf: NOT OBTAINED. All tried:
+    https://www.gigadevice.com/datasheet/gd25q64e/                        -> 404 HTML (86 B)
+    https://www.gigadevice.com/Uploads/Attachment/2020-07-06/GD25Q64E_DS_Rev1.0.pdf -> 404
+    https://www.gigadevice.com/Public/Uploads/uploadfile/files/20240407/GD25Q64EDatasheetRev1.4.pdf -> 404
+    https://www.gigadevice.com/Public/Uploads/uploadfile/files/20230201/GD25Q64ERev1.2.pdf -> 404
+    https://www.gigadevice.com/Public/Uploads/uploadfile/files/20240722/GD25Q64EDatasheetRev1.5.pdf -> 404
+    https://www.gigadevice.com.cn/... (same paths)                        -> 404 HTML (139 KB!)
+    https://datasheet.lcsc.com/lcsc/2304140030_GigaDevice-Semicon-GD25Q64ETIGR_C2919772.pdf
+                                                                          -> 200 text/html interstitial
+    https://www.mouser.com/datasheet/2/1067/GD25Q64E_DS_Rev1_4-3437577.pdf -> 200 application/javascript
+    https://files.seeedstudio.com/products/317990687/document/GD25Q64E.pdf -> 403
+    https://files.seeedstudio.com/wiki/XIAO-ESP32S3/GD25Q64E.pdf           -> 403
+  NOT YET TRIED, recommended for the next attempt:
+    - the wmsc.lcsc.com /v2/ path with the SK6805 recipe above (Chrome UA + lcsc referer);
+      this is the single most promising lead and was found too late to use here
+    - gigadevice.com product page scrape for a signed/tokenised asset URL, by analogy
+      with the SGMicro Next.js method
+    - Wayback CDX for www.gigadevice.com/Public/Uploads/uploadfile/files/*GD25Q64E*
+  CONSEQUENCE: GD25Q64E numbers (QE bit default, JEDEC ID, timings) remain unverified.
+  Note gigadevice.com 404 pages are 86 B on .com but 139 KB on .com.cn -- the latter
+  would pass a naive size check. Validate magic bytes.
+
+ebyte/e22-900m22s user manual: NOT RELIABLY OBTAINED.
+  cdebyte.com serves documents from https://www.cdebyte.com/pdf-down.aspx?id=<N> where
+  N is an OPAQUE, NON-GUESSABLE integer unrelated to the product. Confirmed misses:
+    id=1211 -> valid %PDF but it is "Ethernet to TTL E810-TTL-01 User Manual" (34 pp)
+               *** this was nearly filed as the E22 manual -- WRONG PRODUCT ***
+    id=1210 -> "XC-NK-SJ-300 Antenna Extensible Cable" (3 pp)
+    id=1212 -> "E810-DTU(4RS1E) User Manual" (23 pp)
+    id=1213 -> "E810-DTU" (46 pp)
+    id=1105 -> "AM11-12W05V 12W AC-DC Step-down Power Supply Module" (9 pp)
+    id=286  -> a ZIP (PK magic), contents E220-400R30D.pcblib.PcbLib -- an Altium footprint
+    id=1209 -> ZIP;  id=1208 -> non-PDF binary
+  https://www.cdebyte.com/products/E22-900M22S returns 200 + 120 KB of HTML but the
+  download links are injected by JavaScript; no pdf-down or .pdf URL appears in the raw
+  markup. A bounded id sweep (1080-1200) was run filtering on `strings | grep E22-900M22S`.
+  METHOD THAT WOULD WORK NEXT TIME: drive the product page with a headless browser, or
+  find the XHR endpoint the page calls to populate its download list.
+
+semtech SX1262 datasheet (the die inside the E22-900M22S): NOT OBTAINED.
+    https://www.semtech.com/products/wireless-rf/lora-connect/sx1262#download-resources -> HTML
+    https://www.semtech.com/uploads/documents/DS_SX1261-2_V1.2.pdf -> 200 text/html (21 KB)
+    https://www.semtech.com/uploads/documents/DS_SX1261-2_V2.1.pdf -> 200 text/html (21 KB)
+    https://semtech.my.salesforce.com/sfc/p/... (2 different asset ids) -> 200 HTML stubs
+    https://www.mouser.com/datasheet/2/761/sx1261_2_datasheet-3486928.pdf -> application/javascript
+    https://www.rfsolutions.co.uk/downloads/1537522406DS_SX1261-2_V1.1.pdf -> 404
+    https://files.seeedstudio.com/products/317990687/document/SX1261-2_V1.1.pdf -> 403
+  Semtech gates datasheets behind a Salesforce-backed portal. NOT YET TRIED:
+  LoRa Alliance mirrors, RAKwireless / Heltec / Waveshare module vendor mirrors (these
+  ship SX1262 modules and must publish the datasheet), or Wayback.
+
+omnivision/ov3660: no INDEPENDENT copy obtained (the repo already holds one via Seeed,
+  sha256 5afc0efd..., 1917798 B, v1.3 May 2011 PRELIMINARY). Five re-fetch URLs all 404:
+    https://www.arducam.com/downloads/modules/OV3660/OV3660_datasheet.pdf
+      -> *** 404 that returns 260 KB of HTML -- would pass a size check. ***
+    https://www.arducam.com/wp-content/uploads/2018/01/OV3660_datasheet.pdf -> 404
+    https://www.arducam.com/wp-content/uploads/2019/10/OV3660_datasheet.pdf -> 404
+    https://files.waveshare.com/upload/9/9a/OV3660_datasheet.pdf            -> 404
+    https://dl.espressif.com/dl/schematics/OV3660_datasheet.pdf             -> 404
+  Unlike OV2640 and OV5640 (both independently re-fetched and byte-identical to the
+  repo copies), the OV3660 datasheet has a SINGLE UNVERIFIED SOURCE. It is the scarcest
+  of the three. Worth submitting the Seeed URL to web.archive.org/save/ if it is relocated.
+
+omnivision/ov5640 software application notes: RESOLVED 2026-08-30 -- NEW to the repo.
+    https://cdn.sparkfun.com/assets/learn_tutorials/8/3/4/OV5640_Software_Application_Notes.pdf -> 404
+    https://cdn.sparkfun.com/datasheets/Dev/Arduino/Shields/OV5640_Software_Application_Notes.pdf -> 404
+    https://www.arducam.com/downloads/modules/OV5640/OV5640_Software_app_note_parallel.pdf
+      -> *** 200, %PDF, 1909564 B, 63 pp, revision 2.13, 4 Nov 2011. ***
+  This document, NOT the datasheet, contains the entire autofocus protocol
+  (CMD_MAIN 0x3022 / CMD_ACK 0x3023 / FW_STATUS 0x3029 and their values). Autofocus is
+  unimplementable without it. Marked "OmniVision Confidential for BYD Only" on every page.
+  GENERAL LESSON: for OmniVision, always search for "<PART>_Software_Application_Notes"
+  and "<PART> Camera Module Application Notes" in ADDITION to the datasheet.
+
+## DNS-LEVEL FAILURES FROM THIS NETWORK
+  cdn.datasheetspdf.com -> does not resolve. Do not spend attempts on it.
+
+## DUPLICATES CREATED AND ARCHIVED (not deleted)
+  components/omnivision/ov2640/artifacts/ov2640-camera-module-software-application-notes.pdf
+    was byte-identical (4460f2f1...) to the OV2640 datasheet -- uctronics serves the same
+    file from OV2640DS.pdf and OV2640_DS.pdf. There is no separate OV2640 app-notes doc.
+    Archived to ../hardware-doc-archive/doc/hardware/components/omnivision/ov2640/artifacts/
+      DUPLICATE-of-ov2640-datasheet.pdf
+
+## TOOLING (this shell, 2026-08-30)
+  No pdftotext/mutool/qpdf/gs on PATH and no pypdf in the system python. What works:
+    uv run --quiet --with pypdf python -c "import pypdf; ..."
+  This handles WCH's encrypted PDFs transparently, same as pdftotext. The earlier
+  nix-shell -p poppler-utils note also remains valid if nix is available.
+
+## ADDENDUM 2026-08-30 -- gd25q64e, second wrong-part trap on LCSC
+
+The wmsc.lcsc.com /v2/ recipe (which genuinely worked for SK6805-EC20) was retried for
+GD25Q64E with a GUESSED filename:
+    https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_GigaDevice-Semicon-GD25Q64ETIGR_C2919772.pdf
+      -> 200, VALID %PDF, 1062428 B, 4 pages ... AND IT IS AN NPN TRANSISTOR DATASHEET
+         (MMUN2211/2212/2213/... bias-resistor transistors). Nothing to do with flash.
+  Archived, not deleted:
+    ../hardware-doc-archive/doc/hardware/components/gigadevice/gd25q64e/artifacts/
+        WRONG-PART-mmun22xx-transistor-lcsc-C2919772.pdf
+
+  *** LESSON, and this is the SECOND instance today (see the SK6805/Adafruit case above):
+      LCSC's wmsc path serves SOMETHING for a plausible-looking filename regardless of
+      whether that filename is the right document. The date-prefix + LCSC part-number
+      filename must be READ OFF THE ACTUAL LCSC PRODUCT PAGE, never guessed. And the
+      downloaded text must be grepped for the part number before the file is retained. ***
+
+  So GD25Q64E remains UNOBTAINED. Correct next step: fetch https://www.lcsc.com/product-detail/
+  <the real C-number>.html, extract the exact pdf filename from the page, then apply the
+  /v2/ path with Chrome UA + lcsc.com referer.

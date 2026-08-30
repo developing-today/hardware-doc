@@ -1,0 +1,14 @@
+# Vendored-dependency delta report
+#
+# vendored copy   : examples/selected/XIAO-ESP32S3-Geolocation/libraries/QuickDebug-master.zip
+# upstream        : gmag11/QuickDebug @ master
+# upstream source : https://codeload.github.com/gmag11/QuickDebug/zip/refs/heads/master
+# upstream zip    : 10,881 bytes, sha256 36106725aaf4d9117cfc0f4387581a07cf9be296b9a858216d6f2c25c1086e46
+# compared        : 2026-08-24
+# verdict         : IDENTICAL to upstream
+# files differing : 0
+#
+# NOTE: a non-empty diff does not by itself prove local modification.
+#       Upstream moves; the vendored copy may simply be an older
+#       snapshot. Read the hunks before concluding it is a fork.
+#
