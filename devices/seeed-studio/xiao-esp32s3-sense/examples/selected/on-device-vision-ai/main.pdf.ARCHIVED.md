@@ -22,6 +22,25 @@
 | License | MIT |
 | Path within upstream repo | `main.pdf` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`webmcu-ai/on-device-vision-ai`](https://github.com/webmcu-ai/on-device-vision-ai) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`webmcu-ai/on-device-vision-ai`](https://github.com/webmcu-ai/on-device-vision-ai) |
+| Base commit | [`8a8d92ef1157f3c4c6fb260c5b4ef0ac478e715e`](https://github.com/webmcu-ai/on-device-vision-ai/tree/8a8d92ef1157f3c4c6fb260c5b4ef0ac478e715e) |
+| Tree at that commit | <https://github.com/webmcu-ai/on-device-vision-ai/tree/8a8d92ef1157f3c4c6fb260c5b4ef0ac478e715e> |
+
+```bash
+git clone https://github.com/webmcu-ai/on-device-vision-ai
+git -C on-device-vision-ai checkout 8a8d92ef1157f3c4c6fb260c5b4ef0ac478e715e
+```
+
+**2 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/latex.ARCHIVED.md`](latex.ARCHIVED.md)
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:

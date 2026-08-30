@@ -54,6 +54,21 @@ Everything else is pure add/remove: 48 unused `examples/epd_*_test.py` and 5 `re
 by ZeroWriter; `build/`, `dist/`, `*.egg-info/`, `examples/waveshare_epd/`, `__pycache__/`,
 `.DS_Store` and `._.DS_Store` added locally by an in-place `pip install .` on macOS.
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`zerowriter/zerowriter1`](https://github.com/zerowriter/zerowriter1) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`zerowriter/zerowriter1`](https://github.com/zerowriter/zerowriter1) |
+| Base commit | [`e476d0567ac89104df62815f7bd2c807b8a3e140`](https://github.com/zerowriter/zerowriter1/tree/e476d0567ac89104df62815f7bd2c807b8a3e140) |
+| Tree at that commit | <https://github.com/zerowriter/zerowriter1/tree/e476d0567ac89104df62815f7bd2c807b8a3e140> |
+
+```bash
+git clone https://github.com/zerowriter/zerowriter1
+git -C zerowriter1 checkout e476d0567ac89104df62815f7bd2c807b8a3e140
+```
+
 ## How to get it back
 
 Verified **2026-08-24**.

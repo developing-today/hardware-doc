@@ -29,6 +29,26 @@
 | `Soldered Inkplate 5 Gen2 Bottom.step` | 2,602,572 | `20e3be9fb12051ff7bb420b3201ff3bbc77a260655cca4debdce1abfc87bba1d` |
 | `Soldered Inkplate 5 Gen2 Top.step` | 81,746 | `670b189d2ef82108c29b4bd45115ab8fdc4dbb27edaa267d6c9b0172c391d2ae` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design`](https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design`](https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design) |
+| Base commit | [`7450a321c3beac884dd3053d08eb61ed80828e30`](https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design/tree/7450a321c3beac884dd3053d08eb61ed80828e30) |
+| Tree at that commit | <https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design/tree/7450a321c3beac884dd3053d08eb61ed80828e30> |
+
+```bash
+git clone https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design
+git -C Soldered-Inkplate-5-Gen2-hardware-design checkout 7450a321c3beac884dd3053d08eb61ed80828e30
+```
+
+**3 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/CAD/V1.1.0/PANEL.ARCHIVED.md`](PANEL.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/OUTPUTS/V1.1.0/Soldered Inkplate 5 Gen2 3D.step.ARCHIVED.md`](../../OUTPUTS/V1.1.0/Soldered Inkplate 5 Gen2 3D.step.ARCHIVED.md)
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:

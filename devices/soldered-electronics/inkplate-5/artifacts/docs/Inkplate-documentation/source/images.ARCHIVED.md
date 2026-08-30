@@ -119,6 +119,25 @@
 | `tempera_rear.jpg` | 335,953 | `40d08cdb29af75eb839c53a5e92c39a017c1d6ba6adfade585ae78aee8ebfd01` |
 | `tempera_side.jpg` | 65,605 | `1567358fc116a35a94fe5b38d6c59fb9be291895fb01ce8bcec3fe24b9360b4b` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`SolderedElectronics/Inkplate-documentation`](https://github.com/SolderedElectronics/Inkplate-documentation) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`SolderedElectronics/Inkplate-documentation`](https://github.com/SolderedElectronics/Inkplate-documentation) |
+| Base commit | [`1b3d3329915dbddf8f923ce61945d0842cad6c63`](https://github.com/SolderedElectronics/Inkplate-documentation/tree/1b3d3329915dbddf8f923ce61945d0842cad6c63) |
+| Tree at that commit | <https://github.com/SolderedElectronics/Inkplate-documentation/tree/1b3d3329915dbddf8f923ce61945d0842cad6c63> |
+
+```bash
+git clone https://github.com/SolderedElectronics/Inkplate-documentation
+git -C Inkplate-documentation checkout 1b3d3329915dbddf8f923ce61945d0842cad6c63
+```
+
+**2 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/build.ARCHIVED.md`](../build.ARCHIVED.md)
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:

@@ -4,12 +4,14 @@
 deleted. 
 This took the vendored library from **28 MiB to 8.3 MiB while removing no code at all.**
 
-> **These files are absent from the repository.** They are not symlinks and not placeholders-in-place —
-> the paths simply do not exist here any more. This record is the only thing standing in for them,
-> which is why it carries a SHA-256, a byte count and a pinned reacquisition URL for every file.
+> **A symlink now stands in for each file at its original path**, pointing through this repo's
+> `archive/` link. With the archive present the paths resolve and the tree behaves as though
+> nothing moved; without it they dangle, and this record is what remains.
 >
-> The archive copy is a **convenience for whoever holds it, not part of the contract**: it lives
-> outside the repository at a machine-local path, so nothing here may depend on it.
+> That is why this record still carries a SHA-256, a byte count and a pinned reacquisition URL
+> for every file: **the archive copy is a convenience for whoever holds it, not part of the
+> contract.** It lives outside the repository at a machine-local path, so nothing here may
+> depend on it, and the symlinks are a local nicety rather than a substitute for these hashes.
 
 ## What was archived, and what deliberately was not
 
@@ -36,6 +38,33 @@ fixed string, against all authored Markdown outside this tree. **Zero were cited
 > An earlier check appeared to show five citations of `image.h`. That was a false positive — the
 > `.` in `image.h` was being read as a regex wildcard. Verified again with fixed-string matching on
 > the full relative path.
+
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`SolderedElectronics/Inkplate-Arduino-library`](https://github.com/SolderedElectronics/Inkplate-Arduino-library) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`SolderedElectronics/Inkplate-Arduino-library`](https://github.com/SolderedElectronics/Inkplate-Arduino-library) |
+| Base commit | [`1751cbe578522e5ea9ef713f32980186bde38077`](https://github.com/SolderedElectronics/Inkplate-Arduino-library/tree/1751cbe578522e5ea9ef713f32980186bde38077) |
+| Tree at that commit | <https://github.com/SolderedElectronics/Inkplate-Arduino-library/tree/1751cbe578522e5ea9ef713f32980186bde38077> |
+
+```bash
+git clone https://github.com/SolderedElectronics/Inkplate-Arduino-library
+git -C Inkplate-Arduino-library checkout 1751cbe578522e5ea9ef713f32980186bde38077
+```
+
+**10 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate10.ARCHIVED.md`](examples/Inkplate10.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate13SPECTRA.ARCHIVED.md`](examples/Inkplate13SPECTRA.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate2.ARCHIVED.md`](examples/Inkplate2.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate4TEMPERA.ARCHIVED.md`](examples/Inkplate4TEMPERA.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Advanced/microSD/Inkplate5V2_microSD_Pictures.ARCHIVED.md`](examples/Inkplate5V2/Advanced/microSD/Inkplate5V2_microSD_Pictures.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6.ARCHIVED.md`](examples/Inkplate6.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6COLOR.ARCHIVED.md`](examples/Inkplate6COLOR.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6FLICK.ARCHIVED.md`](examples/Inkplate6FLICK.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6PLUS.ARCHIVED.md`](examples/Inkplate6PLUS.ARCHIVED.md)
 
 ## Reacquisition
 

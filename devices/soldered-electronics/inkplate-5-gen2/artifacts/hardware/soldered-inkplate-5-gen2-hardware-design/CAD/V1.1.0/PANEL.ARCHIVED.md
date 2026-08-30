@@ -29,6 +29,26 @@
 | `Soldered Inkplate 5 Gen2_panel.kicad_pcb` | 8,443,598 | `051ae713fae953542616dd1f8d8c2ba5ea119f5be02b4096c83ebc6834e98a4c` |
 | `Soldered Inkplate 5 Gen2_panel.kicad_pro` | 5,170 | `423250ecb49901e8a2cbd700b5b560c2c636d02b7a7aed02bf911209bee9bf77` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design`](https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design`](https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design) |
+| Base commit | [`7450a321c3beac884dd3053d08eb61ed80828e30`](https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design/tree/7450a321c3beac884dd3053d08eb61ed80828e30) |
+| Tree at that commit | <https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design/tree/7450a321c3beac884dd3053d08eb61ed80828e30> |
+
+```bash
+git clone https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design
+git -C Soldered-Inkplate-5-Gen2-hardware-design checkout 7450a321c3beac884dd3053d08eb61ed80828e30
+```
+
+**3 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/CAD/V1.1.0/Source 3D files.ARCHIVED.md`](Source 3D files.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/OUTPUTS/V1.1.0/Soldered Inkplate 5 Gen2 3D.step.ARCHIVED.md`](../../OUTPUTS/V1.1.0/Soldered Inkplate 5 Gen2 3D.step.ARCHIVED.md)
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:

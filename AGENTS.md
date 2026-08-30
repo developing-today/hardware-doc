@@ -211,7 +211,13 @@ The symlink target is always relative and always routes through this repo's **ow
 directly. That leaves a single indirection point: if the archive moves, the top-level
 `archive` link is the only thing that changes and every artifact link follows it.
 
-Run `./scripts/init.sh --link-archived` to create or refresh them.
+Run `./scripts/init.sh --link-archived` to create or refresh them. `archive_artifact.py`
+creates them itself when it archives something, so this is only needed to repair a tree.
+
+**Git's own control files are never linked** — `.gitignore`, `.gitattributes`, `.gitmodules`.
+Git reads those as configuration rather than content, so a symlinked one makes it print
+`Too many levels of symbolic links` on every command, and would in principle let a vendored
+upstream's ignore rules take effect here. They stay covered by their directory's record.
 
 ### The placeholder is mandatory
 
@@ -271,12 +277,19 @@ when the material moved as a set, and have the placeholders point at it.
 Two tools, both safe to re-run:
 
 ```bash
-python3 tools/audit_archive.py     # archived material with no marker at its original path
+python3 tools/audit_archive.py     # markers, and records short of two independent sources
 python3 tools/link_archived.py     # dry run; --apply creates the symlinks
 ```
 
-`audit_archive.py` exits non-zero when something in the archive is mentioned **nowhere** in the
-repo — the failure that actually loses things. Run it after any bulk archive operation.
+`audit_archive.py` reports two different failures. It exits non-zero when something in the
+archive is mentioned **nowhere** in the repo, which is the one that actually loses things. It
+also lists records carrying fewer than two URLs, and records whose URLs all point at a **single
+host** — five links to one vendor CDN are one outage from useless, so that is tracked separately.
+Neither is a hard gate: two sources is the rule *where it is possible*, and where it is not, the
+record should say so plainly instead of leaving a silent gap.
+
+Run it after any bulk archive operation. Nothing runs it automatically.
+
 
 ### Patched or derived artifacts
 

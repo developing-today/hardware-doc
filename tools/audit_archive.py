@@ -14,6 +14,7 @@ loses things: a reader browsing the directory has no way to know the file existe
     python3 tools/audit_archive.py --verbose  # every unrepresented entry
 """
 import os
+import re
 import subprocess
 import sys
 from collections import Counter
@@ -91,6 +92,37 @@ def walk(d, gaps, covered):
                 gaps.append(er)
 
 
+def check_records():
+    """Placeholders and set records that fall short of two independent sources.
+
+    Distinct hosts matter more than raw URL count: five links to one vendor CDN are
+    one outage from useless. Reported separately so the weaker case is visible.
+    """
+    thin_urls, thin_hosts, total = [], [], 0
+    for dp, dns, fns in os.walk(REPO):
+        dns[:] = [d for d in dns if d not in (".git", "archive", "scratch")]
+        for f in fns:
+            if not (f.endswith(".ARCHIVED.md")
+                    or (f.startswith("ARCHIVED-") and f.endswith(".md"))):
+                continue
+            p = os.path.join(dp, f)
+            if os.path.islink(p):
+                continue
+            try:
+                t = open(p, encoding="utf-8", errors="replace").read()
+            except OSError:
+                continue
+            total += 1
+            u = set(re.findall(r'https?://[^\s<>)\]"]+', t))
+            h = {re.sub(r'^https?://([^/]+).*', r'\1', x) for x in u}
+            rel = os.path.relpath(p, REPO)
+            if len(u) < 2:
+                thin_urls.append((len(u), rel))
+            elif len(h) < 2:
+                thin_hosts.append((len(h), rel))
+    return total, thin_urls, thin_hosts
+
+
 def main():
     verbose = "--verbose" in sys.argv
     if not os.path.isdir(ARCHIVE):
@@ -132,6 +164,19 @@ def main():
         print("Named in prose but lacking a path-level marker:")
         for g in prose:
             print(f"  {g}")
+    total, thin_urls, thin_hosts = check_records()
+    print()
+    print(f"placeholders / set records         : {total}")
+    print(f"  fewer than 2 URLs                 : {len(thin_urls)}")
+    print(f"  2+ URLs but a single host         : {len(thin_hosts)}")
+    for n, r in thin_urls:
+        print(f"    [{n} url] {r}")
+    for n, r in thin_hosts:
+        print(f"    [1 host] {r}")
+    if thin_urls or thin_hosts:
+        print("  Two independent sources is the rule where it is possible. Where it")
+        print("  genuinely is not, say so in the record rather than leaving a silent gap.")
+
     return 1 if silent else 0
 
 

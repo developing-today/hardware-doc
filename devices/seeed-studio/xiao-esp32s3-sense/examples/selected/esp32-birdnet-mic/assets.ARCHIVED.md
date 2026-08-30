@@ -31,6 +31,26 @@
 | `connection.png` | 1,806,937 | `b86845950142e7e38781f580ca28ab594f91ad49d876ba857d6924c9a48328fc` |
 | `webui.png` | 293,447 | `2ba3381cf813ef30d09950c51081a9f32ad7c37be2a11a68d6a47c61b3e9ca54` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`Sukecz/esp32-birdnet-mic`](https://github.com/Sukecz/esp32-birdnet-mic) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`Sukecz/esp32-birdnet-mic`](https://github.com/Sukecz/esp32-birdnet-mic) |
+| Base commit | [`8552b12aa44487c1cb935467a93ac35ecdc681d6`](https://github.com/Sukecz/esp32-birdnet-mic/tree/8552b12aa44487c1cb935467a93ac35ecdc681d6) |
+| Tree at that commit | <https://github.com/Sukecz/esp32-birdnet-mic/tree/8552b12aa44487c1cb935467a93ac35ecdc681d6> |
+
+```bash
+git clone https://github.com/Sukecz/esp32-birdnet-mic
+git -C esp32-birdnet-mic checkout 8552b12aa44487c1cb935467a93ac35ecdc681d6
+```
+
+**3 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/manual-ota-firmware.ARCHIVED.md`](manual-ota-firmware.ARCHIVED.md)
+- [`devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/web-flasher.ARCHIVED.md`](web-flasher.ARCHIVED.md)
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:

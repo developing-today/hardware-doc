@@ -244,6 +244,33 @@
 | `Basic/Inkplate6_TextBox/Roboto_Light_36.h` | 41,632 | `e7dc9d111a4c4647f0f2be79cfd6a4711cd467ff50d3f823ed49b0d5a1a08575` |
 | `Basic/Inkplate6_Partial_Update/Inkplate6_Partial_Update.ino` | 4,768 | `e6d83c0b81eb79dcb79b9d1fc68d98aa3a05d66bd9ba3c8874805610581fd124` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`SolderedElectronics/Inkplate-Arduino-library`](https://github.com/SolderedElectronics/Inkplate-Arduino-library) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`SolderedElectronics/Inkplate-Arduino-library`](https://github.com/SolderedElectronics/Inkplate-Arduino-library) |
+| Base commit | [`1751cbe578522e5ea9ef713f32980186bde38077`](https://github.com/SolderedElectronics/Inkplate-Arduino-library/tree/1751cbe578522e5ea9ef713f32980186bde38077) |
+| Tree at that commit | <https://github.com/SolderedElectronics/Inkplate-Arduino-library/tree/1751cbe578522e5ea9ef713f32980186bde38077> |
+
+```bash
+git clone https://github.com/SolderedElectronics/Inkplate-Arduino-library
+git -C Inkplate-Arduino-library checkout 1751cbe578522e5ea9ef713f32980186bde38077
+```
+
+**10 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/ARCHIVED-IMAGE-PAYLOADS.md`](../ARCHIVED-IMAGE-PAYLOADS.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate10.ARCHIVED.md`](Inkplate10.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate13SPECTRA.ARCHIVED.md`](Inkplate13SPECTRA.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate2.ARCHIVED.md`](Inkplate2.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate4TEMPERA.ARCHIVED.md`](Inkplate4TEMPERA.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Advanced/microSD/Inkplate5V2_microSD_Pictures.ARCHIVED.md`](Inkplate5V2/Advanced/microSD/Inkplate5V2_microSD_Pictures.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6COLOR.ARCHIVED.md`](Inkplate6COLOR.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6FLICK.ARCHIVED.md`](Inkplate6FLICK.ARCHIVED.md)
+- [`devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6PLUS.ARCHIVED.md`](Inkplate6PLUS.ARCHIVED.md)
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:

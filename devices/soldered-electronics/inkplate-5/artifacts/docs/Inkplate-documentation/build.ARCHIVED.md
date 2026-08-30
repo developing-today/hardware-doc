@@ -516,6 +516,25 @@
 | `html_old/_static/images/inkplate6plus_back.jpg` | 3,685,029 | `ad199995fac8cfadd6cc7ab6f1d289227c8eb9e516ead0806b48c204902911e0` |
 | `html_old/_static/images/inkplate6plus_front.jpg` | 2,117,906 | `b1ce0df5c4817b87fdbc8d4e7d62399d9d22c445b00eb25125b1117075913da8` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`SolderedElectronics/Inkplate-documentation`](https://github.com/SolderedElectronics/Inkplate-documentation) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`SolderedElectronics/Inkplate-documentation`](https://github.com/SolderedElectronics/Inkplate-documentation) |
+| Base commit | [`1b3d3329915dbddf8f923ce61945d0842cad6c63`](https://github.com/SolderedElectronics/Inkplate-documentation/tree/1b3d3329915dbddf8f923ce61945d0842cad6c63) |
+| Tree at that commit | <https://github.com/SolderedElectronics/Inkplate-documentation/tree/1b3d3329915dbddf8f923ce61945d0842cad6c63> |
+
+```bash
+git clone https://github.com/SolderedElectronics/Inkplate-documentation
+git -C Inkplate-documentation checkout 1b3d3329915dbddf8f923ce61945d0842cad6c63
+```
+
+**2 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images.ARCHIVED.md`](source/images.ARCHIVED.md)
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:

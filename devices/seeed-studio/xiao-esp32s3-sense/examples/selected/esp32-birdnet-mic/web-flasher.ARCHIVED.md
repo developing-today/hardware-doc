@@ -113,6 +113,26 @@
 | `assets/bird.png` | 107,183 | `ef1149ef6472f0ac45e8795a49a34dd965afdc0dce227bc5388d060787b0065c` |
 | `assets/favicon-96x96.png` | 16,335 | `cd53013cb1e5945e4bc3dfce3367de4d87513f3cf7b3cffb71728097f9d772d4` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`Sukecz/esp32-birdnet-mic`](https://github.com/Sukecz/esp32-birdnet-mic) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`Sukecz/esp32-birdnet-mic`](https://github.com/Sukecz/esp32-birdnet-mic) |
+| Base commit | [`8552b12aa44487c1cb935467a93ac35ecdc681d6`](https://github.com/Sukecz/esp32-birdnet-mic/tree/8552b12aa44487c1cb935467a93ac35ecdc681d6) |
+| Tree at that commit | <https://github.com/Sukecz/esp32-birdnet-mic/tree/8552b12aa44487c1cb935467a93ac35ecdc681d6> |
+
+```bash
+git clone https://github.com/Sukecz/esp32-birdnet-mic
+git -C esp32-birdnet-mic checkout 8552b12aa44487c1cb935467a93ac35ecdc681d6
+```
+
+**3 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/assets.ARCHIVED.md`](assets.ARCHIVED.md)
+- [`devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/manual-ota-firmware.ARCHIVED.md`](manual-ota-firmware.ARCHIVED.md)
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:

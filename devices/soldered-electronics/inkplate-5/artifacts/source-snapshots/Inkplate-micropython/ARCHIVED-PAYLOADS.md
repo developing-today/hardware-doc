@@ -2,12 +2,14 @@
 
 **9 files, 7,115,995 bytes (6.79 MiB)** moved out of the repository on **2026-08-30**. Not deleted.
 
-> **These files are absent from the repository.** They are not symlinks and not placeholders-in-place —
-> the paths simply do not exist here any more. This record is the only thing standing in for them,
-> which is why it carries a SHA-256, a byte count and a pinned reacquisition URL for every file.
+> **A symlink now stands in for each file at its original path**, pointing through this repo's
+> `archive/` link. With the archive present the paths resolve and the tree behaves as though
+> nothing moved; without it they dangle, and this record is what remains.
 >
-> The archive copy is a **convenience for whoever holds it, not part of the contract**: it lives
-> outside the repository at a machine-local path, so nothing here may depend on it.
+> That is why this record still carries a SHA-256, a byte count and a pinned reacquisition URL
+> for every file: **the archive copy is a convenience for whoever holds it, not part of the
+> contract.** It lives outside the repository at a machine-local path, so nothing here may
+> depend on it, and the symlinks are a local nicety rather than a substitute for these hashes.
 
 This took the vendored library from **8.5 MiB to 4.2 MiB while removing no Python at all.**
 
@@ -32,6 +34,21 @@ around them.
 
 **Checked before archiving:** each file was tested by full relative path, as a fixed string,
 against all authored Markdown outside this tree. **Zero were cited.**
+
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`SolderedElectronics/Inkplate-micropython`](https://github.com/SolderedElectronics/Inkplate-micropython) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`SolderedElectronics/Inkplate-micropython`](https://github.com/SolderedElectronics/Inkplate-micropython) |
+| Base commit | [`4a2b2926`](https://github.com/SolderedElectronics/Inkplate-micropython/tree/4a2b2926) |
+| Tree at that commit | <https://github.com/SolderedElectronics/Inkplate-micropython/tree/4a2b2926> |
+
+```bash
+git clone https://github.com/SolderedElectronics/Inkplate-micropython
+git -C Inkplate-micropython checkout 4a2b2926
+```
 
 ## Reacquisition
 

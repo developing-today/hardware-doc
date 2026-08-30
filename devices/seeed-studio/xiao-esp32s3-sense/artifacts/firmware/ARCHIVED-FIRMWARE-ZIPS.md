@@ -33,6 +33,23 @@ curl -fsSL "$B/XIAO-ESP32S3-firmware.zip"                -o xiao-esp32s3-firmwar
 
 Retrieved 2026-08-24. Linked from the wiki's *Resources → Factory Firmware* section.
 
+## Independent sources
+
+Every `curl` above resolves to `files.seeedstudio.com`, so the commands are one hostname's
+lifetime from useless. Two independent ways to rediscover the links:
+
+- **Seeed wiki page** (separate host, *Resources → Factory Firmware*):  
+  <https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/>
+- **Wiki source on GitHub** — different infrastructure, and the markdown carries the download
+  URLs verbatim, so they survive changes to the rendered wiki:  
+  <https://raw.githubusercontent.com/Seeed-Studio/wiki-documents/docusaurus-version/sites/en/docs/Sensor/SeeedStudio_XIAO/SeeedStudio_XIAO_ESP32S3/XIAO_ESP32S3_Getting_Started.md>  
+  (branch `docusaurus-version`; `main` 404s and `master` is a near-empty tree)
+
+> **Filenames carry date suffixes that drift.** The sibling schematic and 3D-model records cite
+> `..._260226.zip` where the wiki snapshot references `..._230327.zip` for the same designs. If a
+> firmware URL 404s, list the *Resources* section rather than assuming the artifact is gone, and
+> **match by SHA-256, not by filename** — the four hashes above are the identity, the names are not.
+
 ## What was extracted before archiving
 
 Everything of value is already in committed Markdown — see [`factory-firmware.md`](../../factory-firmware.md):

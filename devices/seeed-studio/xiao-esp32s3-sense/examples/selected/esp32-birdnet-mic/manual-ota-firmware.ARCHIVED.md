@@ -33,6 +33,26 @@
 | `firmware-app-s3.bin` | 1,163,808 | `cd9071f689524d29118f437336a82b496ccec6f1ad0b1c3befc78cada169fcc3` |
 | `firmware-app.bin` | 1,289,024 | `6e300493bcd2c61aa8039650b551a77dce3e8b2029323735e60a8a8933b17732` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`Sukecz/esp32-birdnet-mic`](https://github.com/Sukecz/esp32-birdnet-mic) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`Sukecz/esp32-birdnet-mic`](https://github.com/Sukecz/esp32-birdnet-mic) |
+| Base commit | [`8552b12aa44487c1cb935467a93ac35ecdc681d6`](https://github.com/Sukecz/esp32-birdnet-mic/tree/8552b12aa44487c1cb935467a93ac35ecdc681d6) |
+| Tree at that commit | <https://github.com/Sukecz/esp32-birdnet-mic/tree/8552b12aa44487c1cb935467a93ac35ecdc681d6> |
+
+```bash
+git clone https://github.com/Sukecz/esp32-birdnet-mic
+git -C esp32-birdnet-mic checkout 8552b12aa44487c1cb935467a93ac35ecdc681d6
+```
+
+**3 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/assets.ARCHIVED.md`](assets.ARCHIVED.md)
+- [`devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/web-flasher.ARCHIVED.md`](web-flasher.ARCHIVED.md)
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:

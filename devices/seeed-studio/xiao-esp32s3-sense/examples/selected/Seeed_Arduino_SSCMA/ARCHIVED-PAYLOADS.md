@@ -2,12 +2,14 @@
 
 Three large non-source files were moved out of the repository on **2026-08-30**. Not deleted.
 
-> **These files are absent from the repository.** They are not symlinks and not placeholders-in-place —
-> the paths simply do not exist here any more. This record is the only thing standing in for them,
-> which is why it carries a SHA-256, a byte count and a pinned reacquisition URL for every file.
+> **A symlink now stands in for each file at its original path**, pointing through this repo's
+> `archive/` link. With the archive present the paths resolve and the tree behaves as though
+> nothing moved; without it they dangle, and this record is what remains.
 >
-> The archive copy is a **convenience for whoever holds it, not part of the contract**: it lives
-> outside the repository at a machine-local path, so nothing here may depend on it.
+> That is why this record still carries a SHA-256, a byte count and a pinned reacquisition URL
+> for every file: **the archive copy is a convenience for whoever holds it, not part of the
+> contract.** It lives outside the repository at a machine-local path, so nothing here may
+> depend on it, and the symlinks are a local nicety rather than a substitute for these hashes.
 
 ## What was archived
 
@@ -54,6 +56,26 @@ The practical answer to *"is the `.ino` the real code and the rest vendored?"* i
 files are the device-relevant part, but they are only ~1 % of the tree, and they are not the only
 real code.** The `.cpp` files beside them matter just as much. What made this library big was one
 generated firmware blob and four documentation GIFs — not library code, and not examples.
+
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`Seeed-Studio/Seeed_Arduino_SSCMA`](https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`Seeed-Studio/Seeed_Arduino_SSCMA`](https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA) |
+| Base commit | [`65a1b2061e80f1bd3814f688451a66646782fe1f`](https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA/tree/65a1b2061e80f1bd3814f688451a66646782fe1f) |
+| Tree at that commit | <https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA/tree/65a1b2061e80f1bd3814f688451a66646782fe1f> |
+
+```bash
+git clone https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA
+git -C Seeed_Arduino_SSCMA checkout 65a1b2061e80f1bd3814f688451a66646782fe1f
+```
+
+**3 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif.ARCHIVED.md`](examples/camera_web_server/img/example_0.gif.ARCHIVED.md)
+- [`devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_1.gif.ARCHIVED.md`](examples/camera_web_server/img/example_1.gif.ARCHIVED.md)
 
 ## Reacquisition
 

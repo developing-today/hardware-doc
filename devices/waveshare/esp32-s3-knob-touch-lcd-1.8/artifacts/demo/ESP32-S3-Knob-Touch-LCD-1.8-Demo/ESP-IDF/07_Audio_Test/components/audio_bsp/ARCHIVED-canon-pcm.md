@@ -2,12 +2,14 @@
 
 Moved out of the repository on **2026-08-30**. Not deleted. 
 
-> **These files are absent from the repository.** They are not symlinks and not placeholders-in-place —
-> the paths simply do not exist here any more. This record is the only thing standing in for them,
-> which is why it carries a SHA-256, a byte count and a pinned reacquisition URL for every file.
+> **A symlink now stands in for each file at its original path**, pointing through this repo's
+> `archive/` link. With the archive present the paths resolve and the tree behaves as though
+> nothing moved; without it they dangle, and this record is what remains.
 >
-> The archive copy is a **convenience for whoever holds it, not part of the contract**: it lives
-> outside the repository at a machine-local path, so nothing here may depend on it.
+> That is why this record still carries a SHA-256, a byte count and a pinned reacquisition URL
+> for every file: **the archive copy is a convenience for whoever holds it, not part of the
+> contract.** It lives outside the repository at a machine-local path, so nothing here may
+> depend on it, and the symlinks are a local nicety rather than a substitute for these hashes.
 
 | | |
 |---|---|
@@ -72,6 +74,25 @@ sha256sum canon.pcm   # expect 8e0693da7412f2743b07b285bc46fca879e31222d1db521a8
 > entries**. Waveshare rotate and silently update these archives, and the wiki sits behind a WAF
 > that required a MediaWiki-API workaround to read. If the hash above does not match, you have a
 > different revision of the demo — which is itself worth recording.
+
+### Second sources
+
+Two or more independent sources is the standing rule; this artifact is one of the few where it
+genuinely cannot be met, so the shortfall is recorded rather than left implicit. `canon.pcm` has
+**no standalone URL anywhere** — it exists only inside the demo ZIP.
+
+What does exist are two ways to rediscover that ZIP if the direct link rots, both on a different
+host from `files.waveshare.com` (verified 200, browser UA, 2026-08-30):
+
+- Wiki page, *Demo* / *Resources* section: <https://www.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8>
+- Product page: <https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm>
+
+Both are the same vendor, so this is **redundancy of path, not of custodian** — if Waveshare
+withdraw the product, all three go together. There is no third-party mirror, and the file is too
+large and too obscure to expect one.
+
+**If you hold a copy, that copy is significant.** Verify it against the SHA-256 above and say so
+somewhere durable; for this artifact the local archive is closer to the contract than usual.
 
 ## Restoring a file
 

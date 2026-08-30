@@ -32,6 +32,33 @@
 | `Zerowriter Inkplate 5 Gen2.kicad_pro` | 8,183 | `25009ad8a3e3cfd5db094696c680d4cf064619f4db812ebb7e54eb5d2d0717f2` |
 | `fp-info-cache` | 2 | `9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`zerowriter/zerowriter_ink`](https://github.com/zerowriter/zerowriter_ink) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`zerowriter/zerowriter_ink`](https://github.com/zerowriter/zerowriter_ink) |
+| Base commit | [`996207aca0677300ed5f1fdf762d9c9ec79f516e`](https://github.com/zerowriter/zerowriter_ink/tree/996207aca0677300ed5f1fdf762d9c9ec79f516e) |
+| Tree at that commit | <https://github.com/zerowriter/zerowriter_ink/tree/996207aca0677300ed5f1fdf762d9c9ec79f516e> |
+
+```bash
+git clone https://github.com/zerowriter/zerowriter_ink
+git -C zerowriter_ink checkout 996207aca0677300ed5f1fdf762d9c9ec79f516e
+```
+
+**10 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups.ARCHIVED.md`](PANEL/Zerowriter Inkplate 5 Gen2-backups.ARCHIVED.md)
+- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Soldered Inkplate 5 Gen2 3D.step.ARCHIVED.md`](../OUTPUTS/Soldered Inkplate 5 Gen2 3D.step.ARCHIVED.md)
+- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL.ARCHIVED.md`](../../../Zerowriter Keyboard/v1.2.0/CAD/PANEL.ARCHIVED.md)
+- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups.ARCHIVED.md`](../../../Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups.ARCHIVED.md)
+- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard 3D.step.ARCHIVED.md`](../../../Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard 3D.step.ARCHIVED.md)
+- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL.ARCHIVED.md`](../../../Zerowriter breakout board/v1.2.0/CAD/PANEL.ARCHIVED.md)
+- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL/Zerowriter breakout board-backups.ARCHIVED.md`](../../../Zerowriter breakout board/v1.2.0/CAD/PANEL/Zerowriter breakout board-backups.ARCHIVED.md)
+- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step.ARCHIVED.md`](../../../Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step.ARCHIVED.md)
+- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard-backups.ARCHIVED.md`](../../../../zw_keyboard/Kicad/CAD/Zerowriter Keyboard-backups.ARCHIVED.md)
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:

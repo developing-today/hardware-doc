@@ -2,15 +2,18 @@
 
 **15 images, 5,809,346 bytes**, moved out of the repository on **2026-08-30**. Not deleted.
 
-> **These files are absent from the repository.** They are not symlinks and not placeholders-in-place —
-> the paths simply do not exist here any more. This record is the only thing standing in for them,
-> which is why it carries a SHA-256, a byte count and a pinned reacquisition URL for every file.
+> **A symlink now stands in for each file at its original path**, pointing through this repo's
+> `archive/` link. With the archive present the paths resolve and the tree behaves as though
+> nothing moved; without it they dangle, and this record is what remains.
 >
-> The archive copy is a **convenience for whoever holds it, not part of the contract**: it lives
-> outside the repository at a machine-local path, so nothing here may depend on it.
+> That is why this record still carries a SHA-256, a byte count and a pinned reacquisition URL
+> for every file: **the archive copy is a convenience for whoever holds it, not part of the
+> contract.** It lives outside the repository at a machine-local path, so nothing here may
+> depend on it, and the symlinks are a local nicety rather than a substitute for these hashes.
 
-link says *"this file exists elsewhere"*, where a missing file says nothing. **This record, not the
-symlink, is the contract**: everything needed to re-obtain and verify each file is below.
+Even dangling, a symlink says *"this file exists elsewhere"*, where a missing file says nothing.
+But **this record, not the symlink, is the contract**: everything needed to re-obtain and verify
+each file is below.
 
 ## Why these and not the others
 
@@ -52,6 +55,21 @@ contradiction ("super-speed 480MBit") that had not previously been recorded. Tho
 
 Archive root:
 `archive/devices/nicolai-electronics/tanmatsu/artifacts/source-snapshots/tanmatsu-documentation/`
+
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`Nicolai-Electronics/tanmatsu-documentation`](https://github.com/Nicolai-Electronics/tanmatsu-documentation) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`Nicolai-Electronics/tanmatsu-documentation`](https://github.com/Nicolai-Electronics/tanmatsu-documentation) |
+| Base commit | [`bd3ded51548433bd7d614f5607b7d36f5eed61fa`](https://github.com/Nicolai-Electronics/tanmatsu-documentation/tree/bd3ded51548433bd7d614f5607b7d36f5eed61fa) |
+| Tree at that commit | <https://github.com/Nicolai-Electronics/tanmatsu-documentation/tree/bd3ded51548433bd7d614f5607b7d36f5eed61fa> |
+
+```bash
+git clone https://github.com/Nicolai-Electronics/tanmatsu-documentation
+git -C tanmatsu-documentation checkout bd3ded51548433bd7d614f5607b7d36f5eed61fa
+```
 
 ## Reacquisition
 

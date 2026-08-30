@@ -32,6 +32,21 @@
 | `xiao_case_left.stl` | 68,184 | `4c990ce3b2d82f900406553b6008159ccded45a25e38057b9159bca402c737c5` |
 | `xiao_case_right.stl` | 62,484 | `3f84c73f5a1f3b63c5429f52e1a1b028e009c5c5656c925708b9bd7cb12aefbe` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera`](https://github.com/barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera`](https://github.com/barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera) |
+| Base commit | [`442a6971622a406cc5cbd323276f74cfe4c5fe2a`](https://github.com/barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera/tree/442a6971622a406cc5cbd323276f74cfe4c5fe2a) |
+| Tree at that commit | <https://github.com/barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera/tree/442a6971622a406cc5cbd323276f74cfe4c5fe2a> |
+
+```bash
+git clone https://github.com/barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera
+git -C XIAO-ESP32S3-Sense_Retro_Camera checkout 442a6971622a406cc5cbd323276f74cfe4c5fe2a
+```
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:

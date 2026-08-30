@@ -22,6 +22,26 @@
 | License | MIT |
 | Path within upstream repo | `examples/camera_web_server/img/example_1.gif` |
 
+## Derived from a common base
+
+This material is **not standalone**. It is part of a snapshot of [`Seeed-Studio/Seeed_Arduino_SSCMA`](https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+
+| Field | Value |
+| --- | --- |
+| Base repository | [`Seeed-Studio/Seeed_Arduino_SSCMA`](https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA) |
+| Base commit | [`65a1b2061e80f1bd3814f688451a66646782fe1f`](https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA/tree/65a1b2061e80f1bd3814f688451a66646782fe1f) |
+| Tree at that commit | <https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA/tree/65a1b2061e80f1bd3814f688451a66646782fe1f> |
+
+```bash
+git clone https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA
+git -C Seeed_Arduino_SSCMA checkout 65a1b2061e80f1bd3814f688451a66646782fe1f
+```
+
+**3 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
+
+- [`devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/ARCHIVED-PAYLOADS.md`](../../../ARCHIVED-PAYLOADS.md)
+- [`devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif.ARCHIVED.md`](example_0.gif.ARCHIVED.md)
+
 ## How to get it back
 
 Independent recovery URLs, most reliable first:
