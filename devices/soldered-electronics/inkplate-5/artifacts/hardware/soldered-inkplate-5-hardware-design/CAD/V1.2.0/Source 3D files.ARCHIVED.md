@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/Source 3D files` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/Source 3D files` |
+| Archived to | `archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/Source 3D files` |
 | Type | directory |
 | Size | 15,621,056 B (14.90 MiB) |
 | File count | 2 |
@@ -44,17 +44,11 @@ Independent recovery URLs, most reliable first:
 - additional mirror:  
   <https://github.com/SolderedElectronics/Soldered-Inkplate-5-hardware-design>
 
-> **Resolving `../hardware-doc-archive`** — it is a sibling of the **real repository root**,
-> not of your working directory. Under a git worktree, resolve it with the *common* dir:
->
-> ```bash
-> ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
-> ```
 
 Restore from the local archive:
 
 ```bash
-mv "../hardware-doc-archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/Source 3D files" \
+mv "archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/Source 3D files" \
    "devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/Source 3D files"
 ```
 

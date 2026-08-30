@@ -65,6 +65,29 @@ Substituting makes the worktree differ from `HEAD`, so the script then marks the
 > only thing that suppresses it. The `archive/*` and `doc/hardware/*` ignore entries exist
 > to stop the link *contents* being committed if a link is replaced by a real directory.
 
+### Reference archived artifacts as `archive/…`
+
+**`archive/` is the canonical way to point at an archived artifact from inside this repo.**
+Placeholders and restore commands use it; do not write `../hardware-doc-archive/…` in a
+concrete path.
+
+```
+| Archived to | `archive/doc/hardware/devices/<vendor>/<board>/artifacts/…` |
+```
+
+The indirection is the point: if the archive is ever moved or renamed, **one symlink changes**
+and every placeholder keeps working. Paths are relative to the repository root, so run restore
+commands from there.
+
+Two things to know:
+
+- The archive's internal layout still begins `doc/hardware/…`, a leftover from when this
+  content lived at that path inside another repo. Hence `archive/doc/hardware/…`. Harmless,
+  and not worth rewriting 5 GB to tidy.
+- **Prose that explains the layout keeps the real sibling path** (`../hardware-doc-archive`),
+  because it is describing where the directory actually is. Only concrete, followable paths
+  use `archive/`.
+
 **Caveat.** While `--skip-worktree` is set, git refuses to update that path. If a committed
 link target ever legitimately changes upstream, a clone carrying the flag will **not** pick
 it up on pull, and merges or checkouts touching it can fail with `Entry ... not uptodate`.

@@ -57,7 +57,7 @@ curl -fsSL "https://raw.githubusercontent.com/SolderedElectronics/Inkplate-micro
 A public MIT-licensed GitHub repository at a pinned commit — low reacquisition risk.
 
 Archive root:
-`../hardware-doc-archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-micropython/`
+`archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-micropython/`
 
 ## Restoring a file
 

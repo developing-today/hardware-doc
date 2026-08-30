@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `examples/selected/esp32-birdnet-mic/manual-ota-firmware` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/manual-ota-firmware` |
+| Archived to | `archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/manual-ota-firmware` |
 | Type | directory |
 | Size | 6,346,672 B (6.05 MiB) |
 | File count | 6 |
@@ -50,17 +50,11 @@ Independent recovery URLs, most reliable first:
 - additional mirror:
   <https://github.com/Sukecz/esp32-birdnet-mic/releases>
 
-> **Resolving `../hardware-doc-archive`** — it is a sibling of the **real repository root**,
-> not of your working directory. Under a git worktree, resolve it with the *common* dir:
->
-> ```bash
-> ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
-> ```
 
 Restore from the local archive:
 
 ```bash
-mv "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/manual-ota-firmware" \
+mv "archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/manual-ota-firmware" \
    "examples/selected/esp32-birdnet-mic/manual-ota-firmware"
 ```
 

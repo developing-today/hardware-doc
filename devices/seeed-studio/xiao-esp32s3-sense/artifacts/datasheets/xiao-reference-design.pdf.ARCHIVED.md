@@ -22,7 +22,7 @@ curl -fsSL "https://files.seeedstudio.com/wiki/XIAO/XIAO-Reference-Design.pdf" \
 
 Fallbacks, in order: the [XIAO wiki resources section](https://wiki.seeedstudio.com/SeeedStudio_XIAO_Series_Introduction/) · `https://web.archive.org/web/2/https://files.seeedstudio.com/wiki/XIAO/XIAO-Reference-Design.pdf`
 
-Archive copy (if you hold it): `../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/datasheets/xiao-reference-design.pdf`
+Archive copy (if you hold it): `archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/datasheets/xiao-reference-design.pdf`
 
 ## What was extracted before archiving
 

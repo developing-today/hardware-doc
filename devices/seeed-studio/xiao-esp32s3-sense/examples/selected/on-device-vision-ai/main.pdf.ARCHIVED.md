@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `examples/selected/on-device-vision-ai/main.pdf` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/main.pdf` |
+| Archived to | `archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/main.pdf` |
 | Type | file |
 | Size | 7,819,852 B (7.46 MiB) |
 | SHA-256 | `e15655073c260720189721035723ae4aef98b6b45a4f1c13f7bc120715a70d7c` |
@@ -39,17 +39,11 @@ Independent recovery URLs, most reliable first:
 - additional mirror:
   <https://github.com/webmcu-ai/on-device-vision-ai>
 
-> **Resolving `../hardware-doc-archive`** — it is a sibling of the **real repository root**,
-> not of your working directory. Under a git worktree, resolve it with the *common* dir:
->
-> ```bash
-> ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
-> ```
 
 Restore from the local archive:
 
 ```bash
-mv "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/main.pdf" \
+mv "archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/main.pdf" \
    "examples/selected/on-device-vision-ai/main.pdf"
 ```
 

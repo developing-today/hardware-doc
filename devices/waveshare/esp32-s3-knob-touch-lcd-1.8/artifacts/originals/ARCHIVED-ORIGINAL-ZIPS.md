@@ -1,7 +1,7 @@
 # Archived original ZIPs — reacquisition record
 
 > Analysis and archive date: **2026-08-24**. Extended the same day with the Demo ZIP (§3).
-> "Archived" means moved to `../hardware-doc-archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/`,
+> "Archived" means moved to `archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/`,
 > preserving this repository's relative path. **Nothing was deleted.**
 
 **Three** of the four original Waveshare downloads in this directory have now been archived.
@@ -31,7 +31,7 @@ archiving defensible. The `README.md` statement should be read as superseded by 
 | Field | Value |
 |---|---|
 | Original relative path | `devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/ESP32-S3-Knob-Touch-LCD-1.8-BIN.zip` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/ESP32-S3-Knob-Touch-LCD-1.8-BIN.zip` |
+| Archived to | `archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/ESP32-S3-Knob-Touch-LCD-1.8-BIN.zip` |
 | What it is | Waveshare's as-shipped **factory firmware images** for both MCUs on this board, distributed as a ZIP from the product wiki's "Demo" section |
 | Archive SHA-256 | `7d29fc1fb356059f7291eccd74bfb5c9fa7538998bc3f5ff811cd87f04c1691c` |
 | Archive size (pre-extract, on-disk ZIP) | **2,032,893 bytes** (1.94 MiB) |
@@ -118,7 +118,7 @@ find . -type f -exec sha256sum {} + | sed 's|  \./|  |' | sort -k2 | sha256sum
 | Field | Value |
 |---|---|
 | Original relative path | `devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/ESP32-S3-Knob-Touch-LCD-1.8-schematic.zip` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/ESP32-S3-Knob-Touch-LCD-1.8-schematic.zip` |
+| Archived to | `archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/ESP32-S3-Knob-Touch-LCD-1.8-schematic.zip` |
 | What it is | Waveshare's published **schematic for this board, as five PNG page renders**. Not EDA source; not PDF. This is the only schematic Waveshare publishes for the product |
 | Archive SHA-256 | `baa5ac1bf75fbbd86a8135b123ff498bd7db4a5c68184481db6b82cadbaca0e5` |
 | Archive size (pre-extract, on-disk ZIP) | **672,290 bytes** (656.5 KiB) |
@@ -210,7 +210,7 @@ Both Internet Archive captures share the CDX content digest `PY44LGYDHPOB43FTZF5
 | Field | Value |
 |---|---|
 | Original relative path | `devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/ESP32-S3-Knob-Touch-LCD-1.8-Demo.zip` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/ESP32-S3-Knob-Touch-LCD-1.8-Demo.zip` |
+| Archived to | `archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/originals/ESP32-S3-Knob-Touch-LCD-1.8-Demo.zip` |
 | What it is | Waveshare's complete **demo/example distribution** for this board: the Arduino sketch tree, eight ESP-IDF projects, the two factory firmware binaries, and two bundled third-party libraries |
 | Archive SHA-256 | `11e382444fe93470fbe463829c1e0ebad5bdb5115fd2d72f6159cd7700015030` |
 | Archive size (on-disk ZIP) | **68,704,748 bytes** (65.5 MiB) |
@@ -266,7 +266,7 @@ statements are now superseded:
    identical, zero differing files.** The name-independent content digest of both is
    `b786db26f67146c92028fc5a11c653eaaf3ff813a7150e96f41d9c9060ca7c38`. The only name-level
    differences are the three documented ASCII datasheet renames.
-3. **The archived library trees also still exist** under `../hardware-doc-archive/`, and
+3. **The archived library trees also still exist** under `archive/`, and
    `diff -rq` between them and the freshly restored trees is clean.
 4. **Two independent URLs were downloaded in full and hashed**, both exact matches (below).
 
@@ -366,7 +366,7 @@ The Internet Archive CDX content digest for the capture is
 | | Originally | After BIN + schematic | After Demo ZIP |
 |---|---:|---:|---:|
 | `artifacts/originals/` in repository | 71,476,469 B (68.2 MiB) | 68,771,286 B (65.6 MiB) | **66,538 B (65 KiB)** |
-| Moved to `../hardware-doc-archive/` | — | 2,705,183 B (2.58 MiB) | **71,409,931 B (68.1 MiB)** |
+| Moved to `archive/` | — | 2,705,183 B (2.58 MiB) | **71,409,931 B (68.1 MiB)** |
 
 This directory now holds a single product photograph and these records. Everything else has a
 verified reacquisition path.

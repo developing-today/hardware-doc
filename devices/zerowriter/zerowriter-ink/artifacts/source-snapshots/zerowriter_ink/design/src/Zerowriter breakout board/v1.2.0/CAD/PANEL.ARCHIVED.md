@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL` |
+| Archived to | `archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL` |
 | Type | directory |
 | Size | 8,514,350 B (8.12 MiB) |
 | File count | 5 |
@@ -47,17 +47,11 @@ Independent recovery URLs, most reliable first:
 - additional mirror:  
   <https://github.com/zerowriter/zerowriter_ink>
 
-> **Resolving `../hardware-doc-archive`** — it is a sibling of the **real repository root**,
-> not of your working directory. Under a git worktree, resolve it with the *common* dir:
->
-> ```bash
-> ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
-> ```
 
 Restore from the local archive:
 
 ```bash
-mv "../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL" \
+mv "archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL" \
    "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL"
 ```
 

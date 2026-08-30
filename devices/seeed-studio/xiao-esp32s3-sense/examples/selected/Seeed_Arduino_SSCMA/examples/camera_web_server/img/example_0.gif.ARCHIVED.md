@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif` |
+| Archived to | `archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif` |
 | Type | file |
 | Size | 3,797,725 B (3.62 MiB) |
 | SHA-256 | `2a19f1b672b6ee57939e66c6d08b5cfc8fdbcb3d722b7906b6617b1a5ce612f2` |
@@ -39,17 +39,11 @@ Independent recovery URLs, most reliable first:
 - additional mirror:
   <https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA>
 
-> **Resolving `../hardware-doc-archive`** — it is a sibling of the **real repository root**,
-> not of your working directory. Under a git worktree, resolve it with the *common* dir:
->
-> ```bash
-> ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
-> ```
 
 Restore from the local archive:
 
 ```bash
-mv "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif" \
+mv "archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif" \
    "examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif"
 ```
 

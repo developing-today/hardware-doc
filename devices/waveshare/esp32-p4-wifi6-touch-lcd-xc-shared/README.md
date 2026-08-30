@@ -139,7 +139,7 @@ Upstream `Last-Modified`: schematic **2025-05-26**, demo ZIP **2025-06-28**.
 | Probe 2026-08-24 | `HTTP/1.1 200`, `Content-Length: 117768225` — **matches local byte size exactly** |
 | Extracted | 289 MiB, **5052 files** |
 | Extracted tree digest | `a856b1941de93ba892b244f03f139d958cb200807284f4ed66cd5d74b428c838` |
-| Location | `../hardware-doc-archive/doc/hardware/devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/originals/` |
+| Location | `archive/doc/hardware/devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/originals/` |
 
 289 MiB extracted is dominated by three bundled third-party trees that are reproducible from
 upstream and were **not** vendored:

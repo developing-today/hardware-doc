@@ -31,7 +31,7 @@ and 3D-printable outputs all remain in place.
 | Field | Value |
 |---|---|
 | Original repo path | `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard-backups` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard-backups` |
+| Archived to | `archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard-backups` |
 | Type | directory of ZIP archives |
 | Size | **1327732 B** |
 | File count | **2** ZIP files |

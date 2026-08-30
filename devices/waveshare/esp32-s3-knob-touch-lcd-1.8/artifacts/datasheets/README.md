@@ -5,7 +5,7 @@
 
 **This directory is now empty of PDFs.** Every file that was here has been moved — either into
 the matching `components/<vendor>/<part>/artifacts/` record (when it was a genuinely distinct
-document) or to `../hardware-doc-archive/` (when it was a byte-identical duplicate of a file
+document) or to `archive/` (when it was a byte-identical duplicate of a file
 already held in `components/`).
 
 Rationale: a component datasheet belongs in the component record, not in a device record. The
@@ -51,7 +51,7 @@ Totals: **28,392,294 bytes** relocated into `components/`; **3,576,806 bytes** a
 duplicates; 31,969,100 bytes accounted for in total.
 
 Archived files are at
-`../hardware-doc-archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/datasheets/`.
+`archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/datasheets/`.
 Nothing was deleted.
 
 ## Why the older Espressif revisions were kept rather than archived

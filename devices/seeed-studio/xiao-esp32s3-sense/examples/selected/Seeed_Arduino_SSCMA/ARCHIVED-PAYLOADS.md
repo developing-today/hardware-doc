@@ -20,7 +20,7 @@ Three large non-source files were moved out of the repository on **2026-08-30**.
 `example_0.gif` and `example_1.gif` were archived earlier, on 2026-08-28.
 
 Archive root:
-`../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/`
+`archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/`
 
 ## What these actually are, and why the split falls where it does
 

@@ -5,7 +5,7 @@
 > Source: [`esphome/devices.esphome.io`](https://github.com/esphome/devices.esphome.io),
 > `src/docs/devices/ESP32S3-1.8-inch-JC3636K518C/index.md`, published **2025-08-22**.
 >
-> Local copy: `../hardware-doc-archive/scratch/esp32-s3-knob-touch-lcd-1.8/community-probe/`
+> Local copy: `archive/scratch/esp32-s3-knob-touch-lcd-1.8/community-probe/`
 
 ## The finding
 

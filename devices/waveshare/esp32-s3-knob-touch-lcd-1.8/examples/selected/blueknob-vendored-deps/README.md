@@ -2,7 +2,7 @@
 
 > Archive/removal date: **2026-08-23**.
 > "Archived" means moved to
-> `../hardware-doc-archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/examples/selected/`,
+> `archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/examples/selected/`,
 > preserving this repository's relative path. Nothing was deleted.
 
 ## What BlueKnob is
@@ -182,7 +182,7 @@ for p in ../../../blueknob-vendored-deps/patches/sensorlib-0.3.1-blueknob-*.patc
 done
 
 # 4. Regenerate ui_img_*.c from BlueKnob-UI/*.spj via SquareLine Studio,
-#    or copy them back from ../hardware-doc-archive/
+#    or copy them back from archive/
 ```
 
 Upstream projects: <https://github.com/lvgl/lvgl> · <https://github.com/lewisxhe/SensorLib>

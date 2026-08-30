@@ -91,7 +91,7 @@ Computed with [`tools/step_bbox.py`](tools/step_bbox.py), which reads `CARTESIAN
 Reproduce:
 
 ```bash
-python3 tools/step_bbox.py ../hardware-doc-archive/scratch/tanmatsu/sources/tanmatsu-mechanical/tanmatsu.step
+python3 tools/step_bbox.py archive/scratch/tanmatsu/sources/tanmatsu-mechanical/tanmatsu.step
 ```
 
 ### What the measurements show

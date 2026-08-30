@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images` |
+| Archived to | `archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images` |
 | Type | directory |
 | Size | 141,217,541 B (134.68 MiB) |
 | File count | 92 |
@@ -136,17 +136,11 @@ Independent recovery URLs, most reliable first:
 - additional mirror:
   <https://inkplate.readthedocs.io>
 
-> **Resolving `../hardware-doc-archive`** — it is a sibling of the **real repository root**,
-> not of your working directory. Under a git worktree, resolve it with the *common* dir:
->
-> ```bash
-> ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
-> ```
 
 Restore from the local archive:
 
 ```bash
-mv "../hardware-doc-archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images" \
+mv "archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images" \
    "devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images"
 ```
 

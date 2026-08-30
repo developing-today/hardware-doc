@@ -64,7 +64,7 @@ Library Manager** — among the lowest reacquisition risks in this repository, w
 archiving safe here.
 
 Archive root:
-`../hardware-doc-archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/`
+`archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/`
 
 ## Restoring a file
 

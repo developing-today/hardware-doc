@@ -31,7 +31,7 @@ and 3D-printable outputs all remain in place.
 | Field | Value |
 |---|---|
 | Original repo path | `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups` |
-| Archived to | `../hardware-doc-archive/scratch/zerowriter-provenance-2026-08-30/upstream/zerowriter_ink-996207aca0677300ed5f1fdf762d9c9ec79f516e/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups` |
+| Archived to | `archive/scratch/zerowriter-provenance-2026-08-30/upstream/zerowriter_ink-996207aca0677300ed5f1fdf762d9c9ec79f516e/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups` |
 | Type | directory of ZIP archives |
 | Size | **18449694 B** |
 | File count | **7** ZIP files |
@@ -63,7 +63,7 @@ uncompressed in the parent directory. Inspect on demand with `unzip -l` / `unzip
 
 
 > ⚠ **Path corrected 2026-08-30.** This placeholder originally pointed at
-> `../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups`.
+> `archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups`.
 > A later archiving pass moved the whole parent `PANEL/` directory onto that same archive path, which
 > replaced it. **The content was not lost** — it survives in full inside the upstream tarball
 > extraction under `scratch/zerowriter-provenance-2026-08-30/`, and the path above now points there.

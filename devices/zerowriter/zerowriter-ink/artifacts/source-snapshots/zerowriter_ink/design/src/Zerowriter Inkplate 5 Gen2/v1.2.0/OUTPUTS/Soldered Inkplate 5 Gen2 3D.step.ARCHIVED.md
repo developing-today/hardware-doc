@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Soldered Inkplate 5 Gen2 3D.step` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Soldered Inkplate 5 Gen2 3D.step` |
+| Archived to | `archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Soldered Inkplate 5 Gen2 3D.step` |
 | Type | file |
 | Size | 14,189,797 B (13.53 MiB) |
 | SHA-256 | `6b03def0d0063e81f1002c0fd9959e3c6acddc1a31b99599e3eeb107fbd169d7` |
@@ -39,17 +39,11 @@ Independent recovery URLs, most reliable first:
 - additional mirror:  
   <https://github.com/zerowriter/zerowriter_ink>
 
-> **Resolving `../hardware-doc-archive`** — it is a sibling of the **real repository root**,
-> not of your working directory. Under a git worktree, resolve it with the *common* dir:
->
-> ```bash
-> ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
-> ```
 
 Restore from the local archive:
 
 ```bash
-mv "../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Soldered Inkplate 5 Gen2 3D.step" \
+mv "archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Soldered Inkplate 5 Gen2 3D.step" \
    "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Soldered Inkplate 5 Gen2 3D.step"
 ```
 

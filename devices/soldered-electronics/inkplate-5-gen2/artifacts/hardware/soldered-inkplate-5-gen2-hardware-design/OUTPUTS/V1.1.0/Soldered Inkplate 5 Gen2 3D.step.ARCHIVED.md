@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/OUTPUTS/V1.1.0/Soldered Inkplate 5 Gen2 3D.step` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/OUTPUTS/V1.1.0/Soldered Inkplate 5 Gen2 3D.step` |
+| Archived to | `archive/doc/hardware/devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/OUTPUTS/V1.1.0/Soldered Inkplate 5 Gen2 3D.step` |
 | Type | file |
 | Size | 30,413,013 B (29.00 MiB) |
 | SHA-256 | `3d403ca00dec23a30a4cc5b5a1490d73c32eb7e0b969732dbe6153fab4d059ed` |
@@ -39,17 +39,11 @@ Independent recovery URLs, most reliable first:
 - additional mirror:  
   <https://github.com/SolderedElectronics/Soldered-Inkplate-5-Gen2-hardware-design>
 
-> **Resolving `../hardware-doc-archive`** — it is a sibling of the **real repository root**,
-> not of your working directory. Under a git worktree, resolve it with the *common* dir:
->
-> ```bash
-> ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
-> ```
 
 Restore from the local archive:
 
 ```bash
-mv "../hardware-doc-archive/doc/hardware/devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/OUTPUTS/V1.1.0/Soldered Inkplate 5 Gen2 3D.step" \
+mv "archive/doc/hardware/devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/OUTPUTS/V1.1.0/Soldered Inkplate 5 Gen2 3D.step" \
    "devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/OUTPUTS/V1.1.0/Soldered Inkplate 5 Gen2 3D.step"
 ```
 

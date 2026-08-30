@@ -460,7 +460,7 @@ sheet (86.75 mm) is slightly **wider** than the keypad (85.80 mm).
 | 3D STEP | archive only | `KeebDeck_Keyboard.3dshapes/` (14 MB) — keypad, dome sheet **and `ADBM-A350.step`**, the optical finger-navigation module |
 
 Non-KiCad libraries and the 14 MB of STEP models are in
-`../hardware-doc-archive/scratch/tanmatsu/sources/keebdeck_keyboard_hw/`; re-fetch with
+`archive/scratch/tanmatsu/sources/keebdeck_keyboard_hw/`; re-fetch with
 [`tools/fetch_sources.sh`](tools/fetch_sources.sh).
 
 ### Checklist for building a board around a spare keypad

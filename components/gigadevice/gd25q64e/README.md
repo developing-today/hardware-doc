@@ -77,7 +77,7 @@ The practical mitigations, in order of preference: read **SFDP** (JEDEC JESD216)
 Thirteen URLs were tried across three sessions; all failed. Full log in [`component-download-failures.txt`](../../../component-download-failures.txt). Two failures are worth repeating because they are traps rather than plain 404s:
 
 - **`gigadevice.com.cn` 404 pages are ~139 KB of HTML** (the `.com` ones are 86 bytes). A size-based sanity check would pass them.
-- The `wmsc.lcsc.com/.../v2/...` recipe that genuinely works for other parts returned, for a **guessed** GD25Q64E filename, **a valid 1,062,428-byte PDF that is an NPN bias-resistor transistor datasheet** (MMUN2211 series). Archived to `../hardware-doc-archive/.../WRONG-PART-mmun22xx-transistor-lcsc-C2919772.pdf`. **LCSC serves *something* for any plausible filename; the filename must be read off the real product page, and the extracted text must be grepped for the part number before the file is trusted.**
+- The `wmsc.lcsc.com/.../v2/...` recipe that genuinely works for other parts returned, for a **guessed** GD25Q64E filename, **a valid 1,062,428-byte PDF that is an NPN bias-resistor transistor datasheet** (MMUN2211 series). Archived to `archive/.../WRONG-PART-mmun22xx-transistor-lcsc-C2919772.pdf`. **LCSC serves *something* for any plausible filename; the filename must be read off the real product page, and the extracted text must be grepped for the part number before the file is trusted.**
 
 **Consequently unverified here:** the QE bit location and default, the exact JEDEC device/capacity bytes, erase and program timings, supply and current limits, endurance and retention, and the SFDP contents.
 

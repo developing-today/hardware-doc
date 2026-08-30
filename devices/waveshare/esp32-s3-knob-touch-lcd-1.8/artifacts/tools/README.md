@@ -1,7 +1,7 @@
 # Tools — archived artifacts and reacquisition record
 
 > Archive/removal date: **2026-08-23**.
-> "Archived" means moved to `../hardware-doc-archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/tools/`,
+> "Archived" means moved to `archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/tools/`,
 > preserving this repository's relative path. Nothing was deleted.
 
 All URLs below were enumerated from the local wikitext snapshot
@@ -210,7 +210,7 @@ Secondary sources (WCH is the true origin; Waveshare is a mirror):
 | | Before | After |
 |---|---:|---:|
 | `artifacts/tools/` in repository | 108 MiB | **1.1 MiB** |
-| Moved to `../hardware-doc-archive/` | — | 106.6 MiB |
+| Moved to `archive/` | — | 106.6 MiB |
 | Newly extracted and kept (CH34X PDF) | — | 0.68 MiB |
 
 Net repository reduction: **≈107 MiB**, with every archived byte hash-recorded and

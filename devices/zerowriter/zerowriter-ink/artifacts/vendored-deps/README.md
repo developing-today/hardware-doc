@@ -15,7 +15,7 @@ and analysed in [`../../zerowriter1-epaper-driver-notes.md`](../../zerowriter1-e
 | Field | Value |
 |---|---|
 | Removed path | `artifacts/source-snapshots/zerowriter1/e-Paper/` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper/` |
+| Archived to | `archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper/` |
 | What it is | Waveshare's official Python driver library + demo images for their whole e-paper module range, as vendored into the **ZeroWriter 1** (Raspberry Pi) project |
 | Why it was here | ZeroWriter 1 is the Raspberry-Pi-based predecessor of ZeroWriter Ink. Its repository vendors this library wholesale; the snapshot was taken as-is. |
 | Removed tree size | **32,575,902 B (31.07 MiB)** across **272 files** in 16 directories |
@@ -163,7 +163,7 @@ find e-Paper -type f -printf '%s\n' | awk '{s+=$1}END{print s}'   # expect 32575
 ### Restore from the local archive
 
 ```bash
-mv ../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper \
+mv archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper \
    devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper
 ```
 

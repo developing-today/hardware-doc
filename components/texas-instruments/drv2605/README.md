@@ -53,7 +53,7 @@ reacquire, since TI serves only the current revision from the `symlink` path.
 The Waveshare device record previously held its own copy of this document at
 `devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/datasheets/Drv2605.pdf`. It was confirmed
 **byte-identical** to `drv2605-datasheet-slos825-2025-06-02.pdf` (same SHA-256 `bd754913…`, same
-2,478,601 bytes, `cmp` clean). The device-side copy was moved to `../hardware-doc-archive/` on
+2,478,601 bytes, `cmp` clean). The device-side copy was moved to `archive/` on
 2026-08-24; the copy here is canonical. See the placeholder at
 `devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/datasheets/README.md`.
 

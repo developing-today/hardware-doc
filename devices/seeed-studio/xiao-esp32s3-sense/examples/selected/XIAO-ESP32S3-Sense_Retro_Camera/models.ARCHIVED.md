@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models` |
+| Archived to | `archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models` |
 | Type | directory |
 | Size | 10,770,720 B (10.27 MiB) |
 | File count | 5 |
@@ -47,17 +47,11 @@ Independent recovery URLs, most reliable first:
 - additional mirror:
   <https://github.com/barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera>
 
-> **Resolving `../hardware-doc-archive`** — it is a sibling of the **real repository root**,
-> not of your working directory. Under a git worktree, resolve it with the *common* dir:
->
-> ```bash
-> ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
-> ```
 
 Restore from the local archive:
 
 ```bash
-mv "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models" \
+mv "archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models" \
    "examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models"
 ```
 

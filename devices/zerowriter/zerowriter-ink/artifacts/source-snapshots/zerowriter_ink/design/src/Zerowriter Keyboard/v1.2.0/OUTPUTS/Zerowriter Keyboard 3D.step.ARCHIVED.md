@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard 3D.step` |
-| Archived to | `../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard 3D.step` |
+| Archived to | `archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard 3D.step` |
 | Type | file |
 | Size | 4,502,629 B (4.29 MiB) |
 | SHA-256 | `a6a11311707ed4ee1d1e17308d2e8877d8e7d84ec0abbc21321a457757ed5758` |
@@ -39,17 +39,11 @@ Independent recovery URLs, most reliable first:
 - additional mirror:  
   <https://github.com/zerowriter/zerowriter_ink>
 
-> **Resolving `../hardware-doc-archive`** — it is a sibling of the **real repository root**,
-> not of your working directory. Under a git worktree, resolve it with the *common* dir:
->
-> ```bash
-> ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
-> ```
 
 Restore from the local archive:
 
 ```bash
-mv "../hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard 3D.step" \
+mv "archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard 3D.step" \
    "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard 3D.step"
 ```
 

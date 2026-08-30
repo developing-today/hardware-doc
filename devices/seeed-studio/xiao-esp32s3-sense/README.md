@@ -188,7 +188,7 @@ artifacts/
 └── wiki-snapshot/   230 markdown files — the complete official wiki source
 ```
 
-Large binaries and media were moved to `../hardware-doc-archive/` and replaced with `*.ARCHIVED.md` placeholders carrying hashes and multiple recovery URLs. Exact-duplicate files were replaced with `*.DUPLICATE.md` pointers. Nothing was discarded.
+Large binaries and media were moved to `archive/` and replaced with `*.ARCHIVED.md` placeholders carrying hashes and multiple recovery URLs. Exact-duplicate files were replaced with `*.DUPLICATE.md` pointers. Nothing was discarded.
 
 ## Provenance note
 

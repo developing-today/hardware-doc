@@ -465,7 +465,7 @@ publish datasheets openly; the Waveshare mirror is effectively the primary sourc
 The Waveshare device record previously held a second copy at
 `devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/datasheets/CST816D_datasheet_En_V1.3.pdf`.
 It was confirmed **byte-identical** to the file above — same SHA-256 `a0b14a06…`, same 1,098,205
-bytes, `cmp` clean. The device-side copy was moved to `../hardware-doc-archive/` on 2026-08-24 and
+bytes, `cmp` clean. The device-side copy was moved to `archive/` on 2026-08-24 and
 the copy here is canonical. See the placeholder at
 `devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/datasheets/README.md`.
 

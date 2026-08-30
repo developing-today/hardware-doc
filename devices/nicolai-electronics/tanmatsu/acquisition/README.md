@@ -15,7 +15,7 @@ Exits non-zero on any mismatch, so it is usable as a CI or post-clone check.
 ## Re-acquire everything — one command
 
 ```bash
-tools/fetch_sources.sh ../hardware-doc-archive/scratch/tanmatsu/sources
+tools/fetch_sources.sh archive/scratch/tanmatsu/sources
 ```
 
 Clones all twelve repositories at their **pinned commits**, enumerates the badge.team Konsool
@@ -23,7 +23,7 @@ documentation from `sitemap.xml`, and fetches the solder.party product pages. Id
 clones are checked out to the pinned commit rather than re-cloned. ~930 MB.
 
 > **Lesson learned:** the original clones were made under `/tmp` and were destroyed by a system
-> cleanup. Fetch into `../hardware-doc-archive/scratch/<device>/sources` instead, and keep the
+> cleanup. Fetch into `archive/scratch/<device>/sources` instead, and keep the
 > acquisition script **in the repository** so it cannot be lost with the data.
 
 ## Re-acquire step by step

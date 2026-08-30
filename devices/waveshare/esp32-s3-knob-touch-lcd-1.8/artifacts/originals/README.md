@@ -16,7 +16,7 @@ In every case the served `Content-Length` matched the local byte size exactly.
 > [`ARCHIVED-ORIGINAL-ZIPS.md` §3](./ARCHIVED-ORIGINAL-ZIPS.md#3-esp32-s3-knob-touch-lcd-18-demozip).
 >
 > `ESP32-S3-Knob-Touch-LCD-1.8-BIN.zip` and `ESP32-S3-Knob-Touch-LCD-1.8-schematic.zip` were moved
-> to `../hardware-doc-archive/` after their contents were verified byte-identical to trees that
+> to `archive/` after their contents were verified byte-identical to trees that
 > remain here, and after Internet Archive mirrors were found and hash-verified. See
 > [`ARCHIVED-ORIGINAL-ZIPS.md`](./ARCHIVED-ORIGINAL-ZIPS.md). **The "single-source risk" note at
 > the end of this file is superseded for all three ZIPs** — each now has multiple working,
@@ -104,6 +104,6 @@ and the product page <https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm>
 
 See [`../vendored-deps/README.md`](../vendored-deps/README.md). Summary: the bundled
 **LVGL 8.4.0** (158 MiB) and **SensorLib 0.3.1** (43 MiB) trees were moved to
-`../hardware-doc-archive/`, after being verified as unmodified upstream releases apart from one
+`archive/`, after being verified as unmodified upstream releases apart from one
 one-line patch each, both of which are preserved as patch files. All 15 SensorLib datasheets were
 promoted into reusable component records first.
