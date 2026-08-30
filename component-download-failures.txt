@@ -970,7 +970,7 @@ normand/sk6805-ec20/sk6805-ec20-datasheet.pdf: *** RESOLVED 2026-08-30 via wmsc.
          occurrences of "SK6805". It passes every automated check. MAGIC-BYTE VALIDATION
          IS NECESSARY BUT NOT SUFFICIENT -- grep the extracted text for the part number.
          Archived, not deleted:
-         ../hardware-doc-archive/doc/hardware/components/normand/sk6805-ec20/artifacts/
+         ../repo-archive/doc/hardware/components/normand/sk6805-ec20/artifacts/
              WRONG-PART-ipixel-catalog-adafruit-4492.pdf
     https://datasheet.lcsc.com/lcsc/2110250930_Normand-SK6805-EC20_C2890036.pdf
       -> 200 but text/html anti-bot interstitial, 56572 B. Rejected.
@@ -1086,7 +1086,7 @@ omnivision/ov5640 software application notes: RESOLVED 2026-08-30 -- NEW to the 
   components/omnivision/ov2640/artifacts/ov2640-camera-module-software-application-notes.pdf
     was byte-identical (4460f2f1...) to the OV2640 datasheet -- uctronics serves the same
     file from OV2640DS.pdf and OV2640_DS.pdf. There is no separate OV2640 app-notes doc.
-    Archived to ../hardware-doc-archive/doc/hardware/components/omnivision/ov2640/artifacts/
+    Archived to ../repo-archive/doc/hardware/components/omnivision/ov2640/artifacts/
       DUPLICATE-of-ov2640-datasheet.pdf
 
 ## TOOLING (this shell, 2026-08-30)
@@ -1103,7 +1103,7 @@ GD25Q64E with a GUESSED filename:
       -> 200, VALID %PDF, 1062428 B, 4 pages ... AND IT IS AN NPN TRANSISTOR DATASHEET
          (MMUN2211/2212/2213/... bias-resistor transistors). Nothing to do with flash.
   Archived, not deleted:
-    ../hardware-doc-archive/doc/hardware/components/gigadevice/gd25q64e/artifacts/
+    ../repo-archive/doc/hardware/components/gigadevice/gd25q64e/artifacts/
         WRONG-PART-mmun22xx-transistor-lcsc-C2919772.pdf
 
   *** LESSON, and this is the SECOND instance today (see the SK6805/Adafruit case above):

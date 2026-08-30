@@ -35,7 +35,7 @@ def _repo_root():
 #
 #   <repo-parent>/
 #   |- <repo>/                     this repository
-#   \- hardware-doc-archive/       shared archive
+#   \- repo-archive/       shared archive
 #      |- <repo>/                  <- our namespace, mirrors in-repo paths
 #      \- scratch/<repo>/          <- working files
 #
@@ -45,7 +45,7 @@ REPO_ROOT = _repo_root()
 NAMESPACE = os.path.basename(REPO_ROOT)
 ARCHIVE_ROOT = os.environ.get(
     "REPO_ARCHIVE_ROOT",
-    os.path.join(os.path.dirname(REPO_ROOT), "hardware-doc-archive"))
+    os.path.join(os.path.dirname(REPO_ROOT), "repo-archive"))
 ARCHIVE = os.path.join(ARCHIVE_ROOT, NAMESPACE)
 SCRATCH = os.path.join(ARCHIVE_ROOT, "scratch", NAMESPACE)
 

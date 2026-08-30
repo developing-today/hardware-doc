@@ -32,7 +32,7 @@ Environment for all executed commands: Linux, bash, Python 3.14, `uvx` for ad-ho
 | 14 | `uvx --from pypdf python tools/extract_showcase.py xiao-reference-design.pdf out.json` | Extract 117 projects + `/Annots` hyperlinks | `executed-success` — 116/117 with URLs |
 | 15 | `python3 tools/diff_vendored_lib.py --vendored <zip> --upstream-repo <o/r> --out <patch>` | Detect patched vs stale vendored libraries | `executed-success` — 1 identical, 2 stale-but-unmodified; found an **expired root CA** |
 | 16 | `python3 tools/dedupe_pointer.py <keep> <dup> "<why>"` | Replace exact-duplicate files with pointer notes | `executed-success` — 4 duplicates, 3.07 MB reclaimed |
-| 17 | `python3 tools/archive_artifact.py --repo-root . --manifest tools/archive-manifest.json` | Move bulky artifacts to `../hardware-doc-archive` with recovery placeholders | `executed-success` — 108.86 MB relocated, nothing deleted |
+| 17 | `python3 tools/archive_artifact.py --repo-root . --manifest tools/archive-manifest.json` | Move bulky artifacts to `../repo-archive` with recovery placeholders | `executed-success` — 108.86 MB relocated, nothing deleted |
 
 Notable failure worth preserving: **`pdftotext` is not installed** in this environment, and there is no system wordlist at `/usr/share/dict/words`. PDF work therefore uses `uvx --from pypdf python`, and the de-kerning vocabulary is built from the PDF's own clean pages rather than a dictionary.
 

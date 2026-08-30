@@ -47,13 +47,13 @@ This taxonomy is open: add a category when material genuinely fits none of the f
 ```
 <repo-parent>/
 ├── hardware-doc/            ← this repository
-└── hardware-doc-archive/    ← bulk artifacts moved out of it (separate repo, usually unpublished)
+└── repo-archive/    ← bulk artifacts moved out of it (separate repo, usually unpublished)
 ```
 
-Write `../hardware-doc-archive` — **relative to the repository root**, never `~/…`. The home-directory form is correct only when the repo happens to sit at `~/hardware-doc`, and is wrong under worktrees. Resolve it properly with the git *common* directory:
+Write `../repo-archive` — **relative to the repository root**, never `~/…`. The home-directory form is correct only when the repo happens to sit at `~/hardware-doc`, and is wrong under worktrees. Resolve it properly with the git *common* directory:
 
 ```bash
-ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
+ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/repo-archive"
 ```
 
 `--git-common-dir` rather than `--show-toplevel`: inside a linked worktree the toplevel is the worktree, whose parent is the wrong directory; the common dir always points at the main repository's `.git`.
@@ -336,7 +336,7 @@ Record failed or blocked reacquisition honestly (`automatic`, `manual`, `blocked
 
 **Placeholder conventions vary** (`*.ARCHIVED.md`, `*.REMOVED.md`, `*.DUPLICATE.md`, `ARCHIVED-*.md`, directory `README.md`). When auditing coverage, walk **all ancestor directories** — a directory-level placeholder shadows everything beneath it, and checking only a file's immediate parent reports large numbers of false gaps.
 
-**Use one archive root.** Do not create a near-identical sibling (`hardware-doc-archive` vs `hardware-docs-archive`); check for existing roots before creating one, and prefer a symlink over a second directory.
+**Use one archive root.** Do not create a near-identical sibling (`repo-archive` vs `repo-archive`); check for existing roots before creating one, and prefer a symlink over a second directory.
 
 Never save an error page or HTML response with a `.pdf`, `.zip`, or firmware extension. Validate file type from content, not just URL or suffix.
 

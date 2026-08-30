@@ -107,7 +107,7 @@ differently under a UTF-8 locale.
 ## Restore from the local archive
 
 ```bash
-mv "$HOME/hardware-doc-archive/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups" \
+mv "$HOME/repo-archive/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups" \
    "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups"
 ```
 

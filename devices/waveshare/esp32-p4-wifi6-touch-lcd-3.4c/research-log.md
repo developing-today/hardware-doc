@@ -152,7 +152,7 @@ produce no text token to pair against.
 |---|---|---|
 | 52 | RTC circuit | **Mapped** — `J1` 2-pin, `D2` B5819WS Schottky from `ESP_3V3`, `C39` 1 µF. **No current-limiting resistor** → **C18, a safety finding** |
 | 53 | Re-verify demo ZIP | Re-downloaded 2026-08-26: SHA-256 **matches the recorded manifest hash exactly** — vendor still serving identical bytes |
-| 54 | `/tmp` durability | Set up `/tmp/hardware-doc-archive/` after `/tmp/p4r` and `/tmp/hw` were both reclaimed mid-session, losing downloads |
+| 54 | `/tmp` durability | Set up `/tmp/repo-archive/` after `/tmp/p4r` and `/tmp/hw` were both reclaimed mid-session, losing downloads |
 
 The RTC finding is the clearest example in this research of **why schematic reading pays off**:
 Waveshare's "rechargeable cells only" note reads like a preference in prose. The circuit shows it

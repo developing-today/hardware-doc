@@ -37,7 +37,7 @@ describing the Sense v1.5 board. See
 ## Restore, if you need the file at this exact path
 
 ```bash
-cp "$HOME/hardware-doc-archive/devices/seeed-studio/xiao-esp32s3-sense/artifacts/schematics/xiao-esp32s3-sense-v1.5-sch-pcb.zip" \
+cp "$HOME/repo-archive/devices/seeed-studio/xiao-esp32s3-sense/artifacts/schematics/xiao-esp32s3-sense-v1.5-sch-pcb.zip" \
    xiao-esp32s3-v1.4-sch-pcb.zip
 ```
 

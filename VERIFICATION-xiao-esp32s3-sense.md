@@ -18,7 +18,7 @@ Research pass **2026-08-24**. All figures recomputed from the files on disk at c
 | Component records created | **9** (+1 updated); 1 unidentified part **resolved** |
 | Tools written | **9** Python scripts |
 | Media catalogued | 14 images |
-| Relocated to `../hardware-doc-archive` | **110 MiB** |
+| Relocated to `../repo-archive` | **110 MiB** |
 
 ## Automated checks
 

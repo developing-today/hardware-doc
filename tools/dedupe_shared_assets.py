@@ -183,7 +183,7 @@ cp --remove-destination "$(readlink -f <file>)" <file>
 ```
 
 Or re-fetch from the pool's archive copy:
-`../hardware-doc-archive/doc/hardware/shared-assets/`
+`../repo-archive/doc/hardware/shared-assets/`
 
 The full set of sharing relationships, including every location that links to each
 entry, is in [`shared-assets/manifest.json`]({pool_rel}/manifest.json).

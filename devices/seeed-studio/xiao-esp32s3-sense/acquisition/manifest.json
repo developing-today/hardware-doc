@@ -51,7 +51,7 @@
       "redistribution_status": "allowed",
       "disposition": "archived",
       "repository_state": "not-present",
-      "archive_path": "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/schematics/xiao-esp32s3-sense-v1.5-sch-pcb.zip",
+      "archive_path": "../repo-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/schematics/xiao-esp32s3-sense-v1.5-sch-pcb.zip",
       "placeholder": "artifacts/schematics/ARCHIVED-SCHEMATIC-ZIPS.md",
       "archived_date": "2026-08-30",
       "note": "ZIP wrapper archived; the full extraction remains in the repository at artifacts/extracted/."
@@ -125,7 +125,7 @@
       "redistribution_status": "allowed",
       "disposition": "archived",
       "repository_state": "not-present",
-      "archive_path": "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/schematics/xiao-esp32s3-v1.1-sch-pcb.zip",
+      "archive_path": "../repo-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/schematics/xiao-esp32s3-v1.1-sch-pcb.zip",
       "placeholder": "artifacts/schematics/ARCHIVED-SCHEMATIC-ZIPS.md",
       "archived_date": "2026-08-30",
       "note": "ZIP wrapper archived; the full extraction remains in the repository at artifacts/extracted/."
@@ -161,7 +161,7 @@
       "redistribution_status": "allowed",
       "disposition": "archived",
       "repository_state": "not-present",
-      "archive_path": "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/schematics/xiao-esp32s3-expansion-board-v1.0-sch-pcb.zip",
+      "archive_path": "../repo-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/schematics/xiao-esp32s3-expansion-board-v1.0-sch-pcb.zip",
       "placeholder": "artifacts/schematics/ARCHIVED-SCHEMATIC-ZIPS.md",
       "archived_date": "2026-08-30",
       "note": "ZIP wrapper archived; the full extraction remains in the repository at artifacts/extracted/."
@@ -197,7 +197,7 @@
       "redistribution_status": "allowed",
       "disposition": "archived",
       "repository_state": "not-present",
-      "archive_path": "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/kicad/xiao-esp32s3-plus-v1.1-kicad.zip",
+      "archive_path": "../repo-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/kicad/xiao-esp32s3-plus-v1.1-kicad.zip",
       "placeholder": "artifacts/kicad/ARCHIVED-PLUS-KICAD-ZIP.md",
       "archived_date": "2026-08-30",
       "note": "ZIP wrapper archived; the full extraction remains in the repository at artifacts/extracted/."
@@ -441,7 +441,7 @@
       "redistribution_status": "unknown",
       "disposition": "archived",
       "repository_state": "not-present",
-      "archive_path": "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/cad/xiao-esp32s3-3d-model.zip",
+      "archive_path": "../repo-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/cad/xiao-esp32s3-3d-model.zip",
       "placeholder": "artifacts/cad/ARCHIVED-3D-MODELS.md",
       "archived_date": "2026-08-28"
     },
@@ -460,7 +460,7 @@
       "redistribution_status": "unknown",
       "disposition": "archived",
       "repository_state": "not-present",
-      "archive_path": "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/cad/xiao-esp32s3-sense-3d-model.zip",
+      "archive_path": "../repo-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/cad/xiao-esp32s3-sense-3d-model.zip",
       "placeholder": "artifacts/cad/ARCHIVED-3D-MODELS.md",
       "archived_date": "2026-08-28"
     },
@@ -511,7 +511,7 @@
       "redistribution_status": "unknown",
       "disposition": "archived",
       "repository_state": "not-present",
-      "archive_path": "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/firmware/xiao-esp32s3-sense-firmware-20240814.zip",
+      "archive_path": "../repo-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/firmware/xiao-esp32s3-sense-firmware-20240814.zip",
       "placeholder": "artifacts/firmware/ARCHIVED-FIRMWARE-ZIPS.md",
       "archived_date": "2026-08-28"
     },
@@ -530,7 +530,7 @@
       "redistribution_status": "unknown",
       "disposition": "archived",
       "repository_state": "not-present",
-      "archive_path": "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/firmware/xiao-esp32s3-firmware-20240814.zip",
+      "archive_path": "../repo-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/firmware/xiao-esp32s3-firmware-20240814.zip",
       "placeholder": "artifacts/firmware/ARCHIVED-FIRMWARE-ZIPS.md",
       "archived_date": "2026-08-28"
     },
@@ -549,7 +549,7 @@
       "redistribution_status": "unknown",
       "disposition": "archived",
       "repository_state": "not-present",
-      "archive_path": "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/firmware/xiao-esp32s3-sense-firmware-legacy.zip",
+      "archive_path": "../repo-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/firmware/xiao-esp32s3-sense-firmware-legacy.zip",
       "placeholder": "artifacts/firmware/ARCHIVED-FIRMWARE-ZIPS.md",
       "archived_date": "2026-08-28"
     },
@@ -568,7 +568,7 @@
       "redistribution_status": "unknown",
       "disposition": "archived",
       "repository_state": "not-present",
-      "archive_path": "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/firmware/xiao-esp32s3-firmware-legacy.zip",
+      "archive_path": "../repo-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/firmware/xiao-esp32s3-firmware-legacy.zip",
       "placeholder": "artifacts/firmware/ARCHIVED-FIRMWARE-ZIPS.md",
       "archived_date": "2026-08-28"
     },
@@ -683,7 +683,7 @@
       "redistribution_status": "unknown",
       "disposition": "archived",
       "repository_state": "not-present",
-      "archive_path": "../hardware-doc-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/datasheets/xiao-reference-design.pdf",
+      "archive_path": "../repo-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/datasheets/xiao-reference-design.pdf",
       "placeholder": "artifacts/datasheets/xiao-reference-design.pdf.ARCHIVED.md",
       "archived_date": "2026-08-28"
     },

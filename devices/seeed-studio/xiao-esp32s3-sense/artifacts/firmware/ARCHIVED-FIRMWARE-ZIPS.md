@@ -52,7 +52,7 @@ Both extractions contained a **7 671 328-byte Windows `esptool.exe`** (SHA-256 `
 byte-identical to each other — 14.6 MiB for one redundant binary.
 
 > ⚠ **This size and hash are no longer verifiable.** The binary was deleted rather than archived,
-> and no copy survives in `../hardware-doc-archive`. The figures above are as recorded at the time
+> and no copy survives in `../repo-archive`. The figures above are as recorded at the time
 > of deletion and could not be re-checked during the 2026-08-30 audit. The hash is also truncated,
 > and cannot now be completed. To verify, re-fetch a firmware ZIP (above) and re-extract.
 >

@@ -9,7 +9,7 @@ consumes it, and symlinked into place from there.
 ├── code/                     ← consuming repo (config, infra, …)
 │   └── the repository root  ──────┐   symlink
 ├── hardware-doc/     ←─────┘   THIS REPO
-└── hardware-doc-archive/       bulk artifacts moved out of this repo (separate repo, usually unpublished)
+└── repo-archive/       bulk artifacts moved out of this repo (separate repo, usually unpublished)
 ```
 
 ## Paths — always resolve, never hardcode
@@ -20,7 +20,7 @@ root**, not the working directory and not `~`.
 | What | Location |
 |---|---|
 | This repo | `<repo-parent>/hardware-doc` |
-| Bulk artifact archive | `<repo-parent>/hardware-doc-archive` |
+| Bulk artifact archive | `<repo-parent>/repo-archive` |
 
 The archive is **its own git repository**, typically **unpublished/private** because of its
 size (multiple GB). It is not a submodule of this repo and is not required — every archived
@@ -31,16 +31,16 @@ artifact leaves a placeholder here carrying hashes and recovery URLs.
 ```bash
 ROOT="$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")"
 PARENT="$(dirname "$ROOT")"
-ARCHIVE="$PARENT/hardware-doc-archive"
+ARCHIVE="$PARENT/repo-archive"
 ```
 
 `--git-common-dir` matters: inside a linked worktree, `--git-dir` points at
 `.git/worktrees/<name>` while `--git-common-dir` still points at the main `.git`. Using
 `--show-toplevel` would give you the *worktree* root, which is the wrong parent.
 
-Historically the archive was referred to as `../hardware-doc-archive`. That happens to be
+Historically the archive was referred to as `../repo-archive`. That happens to be
 correct when the repo lives at `~/hardware-doc`, but it is wrong under worktrees and on
-any machine with a different layout. **Write `../hardware-doc-archive` relative to the
+any machine with a different layout. **Write `../repo-archive` relative to the
 repo root, or resolve it with the command above.**
 
 ## Symlinks and `--skip-worktree`
@@ -49,7 +49,7 @@ Two symlinks are **tracked**, both committed in **relative** form:
 
 | Link | Committed target | Points at |
 |---|---|---|
-| `archive` (this repo) | `../hardware-doc-archive` | the bulk-artifact archive |
+| `archive` (this repo) | `../repo-archive` | the bulk-artifact archive |
 | `doc/hardware` (consuming repo) | `../../hardware-doc` | this repo |
 
 Relative is right for the normal sibling layout and keeps every clone identical to
@@ -71,8 +71,8 @@ Two tracked symlinks point into this repo's **own slice** of the shared archive:
 
 | Link | Target | Contains |
 |---|---|---|
-| `archive` | `../hardware-doc-archive/hardware-doc` | bulky artifacts moved out of here |
-| `scratch` | `../hardware-doc-archive/scratch/hardware-doc` | raw fetches, provenance snapshots, working files |
+| `archive` | `../repo-archive/hardware-doc` | bulky artifacts moved out of here |
+| `scratch` | `../repo-archive/scratch/hardware-doc` | raw fetches, provenance snapshots, working files |
 
 So a placeholder reads:
 
@@ -86,7 +86,7 @@ remember, nothing to recompute.
 The archive is namespaced by source repository:
 
 ```
-hardware-doc-archive/
+repo-archive/
 ├── hardware-doc/          ← what `archive` points at
 └── scratch/hardware-doc/  ← what `scratch` points at
 ```
@@ -97,7 +97,7 @@ relative to the repository root, so run restore commands from there.
 The indirection is the point: **if the archive moves or is renamed, two symlinks change** and
 every reference keeps working.
 
-> Prose that explains the layout keeps the real sibling path (`../hardware-doc-archive`),
+> Prose that explains the layout keeps the real sibling path (`../repo-archive`),
 > because it describes where the directory actually is. Only followable paths use the links.
 
 **Caveat.** While `--skip-worktree` is set, git refuses to update that path. If a committed
@@ -118,7 +118,7 @@ relative default genuinely does not work.
 |---|---|
 | Authored research — device records, component records, feature guides, vendor guides | **this repo** |
 | Small primary artifacts — schematics, datasheets, BOMs, firmware images, EDA sources | **this repo**, under `devices/**/artifacts/` or `components/**/artifacts/` |
-| Bulky derived output — 3D STEP models, panelisation files, generated doc builds, enclosure meshes, prebuilt binaries already published upstream | **`../hardware-doc-archive/`**, with a `*.ARCHIVED.md` placeholder left behind |
+| Bulky derived output — 3D STEP models, panelisation files, generated doc builds, enclosure meshes, prebuilt binaries already published upstream | **`../repo-archive/`**, with a `*.ARCHIVED.md` placeholder left behind |
 | Scratch downloads, raw HTML fetches, working files | `../hardware-doc-scratch/` |
 
 Never delete an acquired artifact. Move it to the archive and leave a placeholder that

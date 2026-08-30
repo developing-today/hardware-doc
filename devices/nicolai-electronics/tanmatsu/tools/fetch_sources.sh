@@ -75,4 +75,4 @@ cd ..
 echo
 echo "Done. Sources in: $WORK"
 echo "Archive them outside the repo so a /tmp or worktree clean cannot destroy them:"
-echo "  cp -a \"$WORK\" ../hardware-doc-archive/scratch/tanmatsu/sources"
+echo "  cp -a \"$WORK\" ../repo-archive/scratch/tanmatsu/sources"

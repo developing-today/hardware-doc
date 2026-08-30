@@ -39,7 +39,7 @@
       "url": "https://files.waveshare.com/wiki/ESP32-P4-WIFI6-Touch-LCD-XC/ESP32-P4-WIFI6-Touch-LCD-XC-Demo.zip",
       "sha256": "b5319593738e114270852d84be0fdd8ccdc21ef1dac897b15f4fad5069dd66b8",
       "bytes": 117768225,
-      "destination": "../hardware-doc-archive/doc/hardware/devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/originals/ESP32-P4-WIFI6-Touch-LCD-XC-Demo.zip",
+      "destination": "../repo-archive/doc/hardware/devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/originals/ESP32-P4-WIFI6-Touch-LCD-XC-Demo.zip",
       "retrieved": "2026-08-24",
       "upstream_last_modified": "2025-06-28T09:28:46Z",
       "upstream_version": null,

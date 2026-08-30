@@ -15,7 +15,7 @@ It is normally checked out **beside** the repo that consumes it and symlinked in
 ├── code/                        consuming repo (config, infra, …)
 │   └── the repository root  ─────────┐ symlink, created by scripts/hardware-doc-init.sh
 ├── hardware-doc/         ←────┘ THIS REPO
-└── hardware-doc-archive/        bulk artifacts moved out of here (separate repo, usually unpublished)
+└── repo-archive/        bulk artifacts moved out of here (separate repo, usually unpublished)
 ```
 
 It is **not a submodule and not vendored** into the consuming repo: at ~440 MB it would
@@ -27,11 +27,11 @@ git clone https://github.com/developing-today/hardware-doc.git
 
 ### Resolving the sibling archive
 
-`../hardware-doc-archive` is a sibling of the **real repository root** — not of your working
+`../repo-archive` is a sibling of the **real repository root** — not of your working
 directory, and not `~`. Under a git worktree resolve it via the *common* dir:
 
 ```bash
-ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/hardware-doc-archive"
+ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")")/repo-archive"
 ```
 
 `--git-common-dir` rather than `--show-toplevel`: inside a linked worktree the toplevel is the
@@ -40,7 +40,7 @@ out of this repo; every one leaves a `*.ARCHIVED.md` placeholder here carrying s
 upstream commit/author/licence and multiple recovery URLs, so **the archive is optional** —
 its absence costs you convenience, not information.
 
-`hardware-doc-archive` is **itself a git repository**, but it is normally **unpublished or
+`repo-archive` is **itself a git repository**, but it is normally **unpublished or
 private** — at multiple gigabytes it is impractical to host alongside this one. Treat it as a
 local companion: if you have it, placeholders resolve to real bytes; if you do not, they
 resolve to recovery URLs.
@@ -48,7 +48,7 @@ resolve to recovery URLs.
 ### The `archive/` symlink
 
 When the archive is present locally it is reachable at **`./archive/`** — a tracked symlink
-to `../hardware-doc-archive`. That gives `*.ARCHIVED.md` placeholders a stable in-repo path
+to `../repo-archive`. That gives `*.ARCHIVED.md` placeholders a stable in-repo path
 to point at.
 
 Both tracked symlinks in this project (`archive` here, `doc/hardware` in a consuming repo)

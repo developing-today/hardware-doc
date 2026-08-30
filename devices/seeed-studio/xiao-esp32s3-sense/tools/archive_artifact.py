@@ -2,7 +2,7 @@
 """Relocate bulky/duplicate artifacts out of the repository without losing them.
 
 Policy (per user instruction, 2026-08-24): never delete a downloaded artifact.
-Move it to ../hardware-doc-archive/ preserving its relative path, and leave a
+Move it to ../repo-archive/ preserving its relative path, and leave a
 Markdown placeholder in its place carrying everything needed to get the exact
 bytes back: size, SHA-256, mtime, upstream repo + commit + author, and several
 independent recovery URLs.
@@ -20,7 +20,7 @@ Directories are archived recursively as a unit with one placeholder.
 
 import argparse, hashlib, json, os, re, shutil, subprocess, datetime, sys
 
-ARCHIVE = os.path.expanduser("../hardware-doc-archive")
+ARCHIVE = os.path.expanduser("../repo-archive")
 
 
 def sha256(p):
