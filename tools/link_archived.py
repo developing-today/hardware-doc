@@ -25,8 +25,11 @@ ARCHIVE = os.path.join(REPO, "archive")
 # Never symlink git's own control files. Git reads .gitignore/.gitattributes as
 # configuration rather than content: pointing them through the archive symlink makes
 # it emit "Too many levels of symbolic links" on every command, and in principle lets
-# a vendored upstream's ignore rules bleed into this repo. They are trivial text files
-# covered by the enclosing tree's record anyway.
+# a vendored upstream's ignore rules bleed into this repo.
+#
+# They are a few hundred bytes each, so where one would otherwise be the only thing
+# missing from a tree, commit the real file instead of linking it. That keeps "every
+# archived path resolves" true without handing git a symlinked config to interpret.
 SKIP_NAMES = {".gitignore", ".gitattributes", ".gitmodules"}
 
 

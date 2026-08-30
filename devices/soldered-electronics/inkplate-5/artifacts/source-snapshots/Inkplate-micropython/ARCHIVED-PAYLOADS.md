@@ -35,6 +35,18 @@ around them.
 **Checked before archiving:** each file was tested by full relative path, as a fixed string,
 against all authored Markdown outside this tree. **Zero were cited.**
 
+## Sources beyond GitHub
+
+Everything above resolves to GitHub. That is a single custodian and a single company's
+availability decision, so these are recorded as Soldered / Inkplate paths that do not depend on it
+(all verified reachable 2026-08-30):
+
+- Vendor documentation: <https://docs.soldered.com/inkplate/>
+- Product category: <https://soldered.com/categories/inkplate/>
+
+> Vendor pages are **not** equivalent to the pinned commit above: they track the current
+> release, so use them to rediscover the project, then verify against the hashes here.
+
 ## Derived from a common base
 
 This material is **not standalone**. It is part of a snapshot of [`SolderedElectronics/Inkplate-micropython`](https://github.com/SolderedElectronics/Inkplate-micropython) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.

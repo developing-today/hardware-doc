@@ -57,6 +57,20 @@ files are the device-relevant part, but they are only ~1 % of the tree, and they
 real code.** The `.cpp` files beside them matter just as much. What made this library big was one
 generated firmware blob and four documentation GIFs — not library code, and not examples.
 
+## Sources beyond GitHub
+
+Everything above resolves to GitHub. That is a single custodian and a single company's
+availability decision, so these are recorded as Seeed paths that do not depend on it
+(all verified reachable 2026-08-30):
+
+- Vendor wiki: <https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/>
+- Product page: <https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html>
+- **PlatformIO registry** — independent custodian redistributing this library:
+  <https://registry.platformio.org/libraries/seeed-studio/Seeed_Arduino_SSCMA>
+
+> Vendor pages are **not** equivalent to the pinned commit above: they track the current
+> release, so use them to rediscover the project, then verify against the hashes here.
+
 ## Derived from a common base
 
 This material is **not standalone**. It is part of a snapshot of [`Seeed-Studio/Seeed_Arduino_SSCMA`](https://github.com/Seeed-Studio/Seeed_Arduino_SSCMA) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.

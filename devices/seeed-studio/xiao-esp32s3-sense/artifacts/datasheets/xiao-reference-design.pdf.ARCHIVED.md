@@ -13,6 +13,18 @@
 | Licence | Unstated — Seeed marketing catalogue |
 | Reason archived | Largest file in the repo; **its content is fully extracted into committed Markdown and JSON** |
 
+## Source repository
+
+The Seeed wiki is generated from a public repository, which is a genuinely separate custodian
+from `files.seeedstudio.com` and carries the vendor download URLs verbatim in Markdown:
+
+- Repository: <https://github.com/Seeed-Studio/wiki-documents> (branch `docusaurus-version` —
+  `main` 404s and `master` is a near-empty tree)
+- This device's page in that repo: <https://raw.githubusercontent.com/Seeed-Studio/wiki-documents/docusaurus-version/sites/en/docs/Sensor/SeeedStudio_XIAO/SeeedStudio_XIAO_ESP32S3/XIAO_ESP32S3_Getting_Started.md>
+
+If a `files.seeedstudio.com` link 404s, read the *Resources* section there rather than assuming
+the artifact is gone: the filenames carry date suffixes that drift. **Match by SHA-256.**
+
 ## Reacquisition
 
 ```bash

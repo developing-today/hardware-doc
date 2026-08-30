@@ -378,6 +378,20 @@ reproducible**: `../../tools/restore-demo-deps.sh` closes the gap from upstream,
 verified against this exact ZIP before it was moved. Combined with two independently
 hash-verified download URLs, the archive is recoverable by four separate routes.
 
+## Source repositories
+
+Waveshare publish no repository for this demo, so the vendor ZIP is the only first-party route.
+Third parties have mirrored the tree to GitHub, which is a different custodian entirely:
+
+- <https://github.com/mylesdebastion/Waveshare-ESP32-S3-Knob-Touch-LCD-1.8-Demo> — full demo
+  tree; one file from it was fetched and **verified byte-identical** to our archived copy on
+  2026-08-30, so the mirror is a real recovery path rather than a hopeful link
+- <https://github.com/nkinnan/Waveshare-ESP32-S3-Knob-Touch-LCD-1.8_and_Guition-K5-Knob-Series-JC3636K518>
+- <https://github.com/EmbeddedWizardGUI/ESP32-S3-Knob-Touch-LCD-1.8-EN>
+
+> A mirror is a copy of unknown provenance. Trust it only where the SHA-256 in this record
+> matches, and expect no guarantee that a third party keeps their repository.
+
 ## Related records
 
 - [`README.md`](./README.md) — acquisition record for all four original downloads. Its

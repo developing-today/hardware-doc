@@ -43,6 +43,18 @@ product**, and no evidence of a non-English-first documentation track. Had a tra
 carried material the English lacked, that would have been a finding and it would have
 stayed in the repository.
 
+## Sources beyond GitHub
+
+Everything above resolves to GitHub. That is a single custodian and a single company's
+availability decision, so these are recorded as Seeed wiki paths that do not depend on it
+(all verified reachable 2026-08-30):
+
+- Rendered wiki: <https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/>
+- Product page: <https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html>
+
+> Vendor pages are **not** equivalent to the pinned commit above: they track the current
+> release, so use them to rediscover the project, then verify against the hashes here.
+
 ## Reacquisition
 
 All five languages come from the same source as the English corpus — the wiki is an

@@ -98,7 +98,7 @@ def check_records():
     Distinct hosts matter more than raw URL count: five links to one vendor CDN are
     one outage from useless. Reported separately so the weaker case is visible.
     """
-    thin_urls, thin_hosts, total = [], [], 0
+    thin_urls, thin_hosts, no_repo, gh_only, total = [], [], [], [], 0
     for dp, dns, fns in os.walk(REPO):
         dns[:] = [d for d in dns if d not in (".git", "archive", "scratch")]
         for f in fns:
@@ -120,7 +120,23 @@ def check_records():
                 thin_urls.append((len(u), rel))
             elif len(h) < 2:
                 thin_hosts.append((len(h), rel))
-    return total, thin_urls, thin_hosts
+            # A record sourced only from GitHub depends on one company's availability
+            # decision, and one sourced with no repository at all usually means the
+            # upstream was never looked for. Both are worth surfacing; neither is fatal,
+            # and for genuinely closed-source artifacts "no repository" is the right answer.
+            repos = set()
+            for pat in (r'github\.com/([\w.-]+/[\w.-]+?)(?:\.git)?[/)\s`">]',
+                        r'raw\.githubusercontent\.com/([\w.-]+/[\w.-]+?)/',
+                        r'gitlab\.com/([\w.-]+/[\w.-]+?)[/)\s`">]'):
+                repos |= set(re.findall(pat, t + " "))
+            repos = {x for x in repos
+                     if x.split("/")[0] not in ("orgs", "features", "about",
+                                                "sponsors", "topics", "repos", "search")}
+            if not repos:
+                no_repo.append(rel)
+            if not {x for x in h if "github" not in x}:
+                gh_only.append(rel)
+    return total, thin_urls, thin_hosts, no_repo, gh_only
 
 
 def main():
@@ -164,7 +180,7 @@ def main():
         print("Named in prose but lacking a path-level marker:")
         for g in prose:
             print(f"  {g}")
-    total, thin_urls, thin_hosts = check_records()
+    total, thin_urls, thin_hosts, no_repo, gh_only = check_records()
     print()
     print(f"placeholders / set records         : {total}")
     print(f"  fewer than 2 URLs                 : {len(thin_urls)}")
@@ -173,9 +189,20 @@ def main():
         print(f"    [{n} url] {r}")
     for n, r in thin_hosts:
         print(f"    [1 host] {r}")
-    if thin_urls or thin_hosts:
-        print("  Two independent sources is the rule where it is possible. Where it")
-        print("  genuinely is not, say so in the record rather than leaving a silent gap.")
+    print(f"  no git repository cited           : {len(no_repo)}")
+    for r in no_repo:
+        print(f"    [no repo] {r}")
+    print(f"  sourced only from GitHub          : {len(gh_only)}")
+    for r in gh_only:
+        print(f"    [gh only] {r}")
+    if thin_urls or thin_hosts or no_repo or gh_only:
+        print()
+        print("  Two independent sources is the rule where it is possible, and a second")
+        print("  custodian beats a second path under the same one. Where a repository or")
+        print("  a non-GitHub source genuinely does not exist - proprietary tools, vendor")
+        print("  ZIPs with no upstream - say so in the record. An absent line should read")
+        print("  as checked and absent, not as an omission waiting to be 'fixed' with a")
+        print("  plausible-looking link.")
 
     return 1 if silent else 0
 

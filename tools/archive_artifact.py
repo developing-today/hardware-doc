@@ -330,7 +330,19 @@ def placeholder(rel, dest, meta, src, is_dir, files=None, collision_note=None):
         lines.append("")
         lines.append("| Field | Value |")
         lines.append("| --- | --- |")
-        for k, label in (("repo", "Base repository"), ("commit", "Base commit"),
+        # `repo` accepts a string or a list. Upstreams move, get forked, or are
+        # mirrored - a vendor repo that also lives on GitLab, or a project whose
+        # canonical home changed owner - and one dead URL should not strand the base.
+        repos = base.get("repo") or []
+        if isinstance(repos, str):
+            repos = [repos]
+        for i, r in enumerate(repos):
+            label = "Base repository" if i == 0 else "Mirror / fork"
+            url = r if r.startswith("http") else f"https://github.com/{r}"
+            lines.append(f"| {label} | [`{r}`]({url}) |")
+        if len(repos) > 1:
+            lines.append(f"| Repository count | {len(repos)} known locations |")
+        for k, label in (("commit", "Base commit"),
                          ("tag", "Base tag / release"), ("url", "Base URL"),
                          ("note", "Relationship")):
             if base.get(k):

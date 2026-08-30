@@ -39,6 +39,21 @@ fixed string, against all authored Markdown outside this tree. **Zero were cited
 > `.` in `image.h` was being read as a regex wildcard. Verified again with fixed-string matching on
 > the full relative path.
 
+## Sources beyond GitHub
+
+Everything above resolves to GitHub. That is a single custodian and a single company's
+availability decision, so these are recorded as Soldered / Inkplate paths that do not depend on it
+(all verified reachable 2026-08-30):
+
+- Vendor documentation: <https://docs.soldered.com/inkplate/>
+- Product category, if the docs path moves: <https://soldered.com/categories/inkplate/>
+- **PlatformIO registry** — a genuinely independent custodian redistributing this library, so
+  it survives both GitHub and the vendor:
+  <https://registry.platformio.org/libraries/e-radionicacom/InkplateLibrary>
+
+> Vendor pages are **not** equivalent to the pinned commit above: they track the current
+> release, so use them to rediscover the project, then verify against the hashes here.
+
 ## Derived from a common base
 
 This material is **not standalone**. It is part of a snapshot of [`SolderedElectronics/Inkplate-Arduino-library`](https://github.com/SolderedElectronics/Inkplate-Arduino-library) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.

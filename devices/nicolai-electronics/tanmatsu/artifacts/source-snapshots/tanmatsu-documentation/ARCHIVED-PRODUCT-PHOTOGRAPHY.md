@@ -56,6 +56,18 @@ contradiction ("super-speed 480MBit") that had not previously been recorded. Tho
 Archive root:
 `archive/devices/nicolai-electronics/tanmatsu/artifacts/source-snapshots/tanmatsu-documentation/`
 
+## Sources beyond GitHub
+
+Everything above resolves to GitHub. That is a single custodian and a single company's
+availability decision, so these are recorded as Nicolai Electronics paths that do not depend on it
+(all verified reachable 2026-08-30):
+
+- Vendor documentation (independent of GitHub): <https://nicolaielectronics.nl/docs/tanmatsu/>
+- Vendor site root, if the docs path moves: <https://nicolaielectronics.nl/>
+
+> Vendor pages are **not** equivalent to the pinned commit above: they track the current
+> release, so use them to rediscover the project, then verify against the hashes here.
+
 ## Derived from a common base
 
 This material is **not standalone**. It is part of a snapshot of [`Nicolai-Electronics/tanmatsu-documentation`](https://github.com/Nicolai-Electronics/tanmatsu-documentation) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.

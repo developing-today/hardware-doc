@@ -69,30 +69,44 @@ unzip -j demo.zip '*/ESP-IDF/07_Audio_Test/components/audio_bsp/canon.pcm'
 sha256sum canon.pcm   # expect 8e0693da7412f2743b07b285bc46fca879e31222d1db521a8bd6a36e7eeffa41
 ```
 
-> ⚠ **This is the least reliably reacquirable source in the repository.** The ZIP is
-> vendor-hosted, **unversioned, untagged and carries no LICENSE file anywhere in its 5,052
-> entries**. Waveshare rotate and silently update these archives, and the wiki sits behind a WAF
-> that required a MediaWiki-API workaround to read. If the hash above does not match, you have a
-> different revision of the demo — which is itself worth recording.
+> ⚠ **Waveshare's own copy is weakly sourced.** The ZIP is vendor-hosted, **unversioned,
+> untagged and carries no LICENSE file anywhere in its 5,052 entries**. Waveshare rotate and
+> silently update these archives, and the wiki sits behind a WAF that required a MediaWiki-API
+> workaround to read. If the hash does not match, you have a different revision of the demo —
+> itself worth recording.
 
-### Second sources
+### Independent mirror — verified byte-identical
 
-Two or more independent sources is the standing rule; this artifact is one of the few where it
-genuinely cannot be met, so the shortfall is recorded rather than left implicit. `canon.pcm` has
-**no standalone URL anywhere** — it exists only inside the demo ZIP.
+A third party mirrored the whole demo tree to GitHub, which gives this file something the
+vendor path does not: a **direct, unauthenticated, single-request URL under a different
+custodian**.
 
-What does exist are two ways to rediscover that ZIP if the direct link rots, both on a different
-host from `files.waveshare.com` (verified 200, browser UA, 2026-08-30):
+```bash
+curl -fsSL "https://raw.githubusercontent.com/mylesdebastion/Waveshare-ESP32-S3-Knob-Touch-LCD-1.8-Demo/HEAD/ESP-IDF/07_Audio_Test/components/audio_bsp/canon.pcm" \
+  -o canon.pcm
+sha256sum canon.pcm   # 8e0693da7412f2743b07b285bc46fca879e31222d1db521a8bd6a36e7eeffa41
+```
 
-- Wiki page, *Demo* / *Resources* section: <https://www.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8>
+**Verified 2026-08-30**, not merely cited: fetched, and the bytes match this record's SHA-256
+and the local archive copy exactly — 5,297,084 bytes, `8e0693da…ffa41` from all three.
+
+- Mirror repository: <https://github.com/mylesdebastion/Waveshare-ESP32-S3-Knob-Touch-LCD-1.8-Demo>
+- Two further third-party trees carrying the same demo, unverified here but worth trying if the
+  above disappears:
+  <https://github.com/nkinnan/Waveshare-ESP32-S3-Knob-Touch-LCD-1.8_and_Guition-K5-Knob-Series-JC3636K518>
+  and <https://github.com/EmbeddedWizardGUI/ESP32-S3-Knob-Touch-LCD-1.8-EN>
+
+> A mirror is a **copy of unknown provenance**, not an authority. It is trustworthy here only
+> because the hash matches; if a future fetch disagrees with the SHA-256 above, believe the hash
+> and treat the mirror as having drifted. Nothing guarantees a third party keeps the repository.
+
+### Vendor rediscovery paths
+
+Both on a different host from `files.waveshare.com` (verified 200, browser UA, 2026-08-30) —
+but the **same custodian**, so this is redundancy of path, not of party:
+
+- Wiki page, *Demo* / *Resources*: <https://www.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8>
 - Product page: <https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm>
-
-Both are the same vendor, so this is **redundancy of path, not of custodian** — if Waveshare
-withdraw the product, all three go together. There is no third-party mirror, and the file is too
-large and too obscure to expect one.
-
-**If you hold a copy, that copy is significant.** Verify it against the SHA-256 above and say so
-somewhere durable; for this artifact the local archive is closer to the contract than usual.
 
 ## Restoring a file
 

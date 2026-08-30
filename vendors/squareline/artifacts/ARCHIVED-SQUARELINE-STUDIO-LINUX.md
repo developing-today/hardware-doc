@@ -26,7 +26,17 @@ Nothing was lost. Everything this repository needs from the archive was extracte
 | **Licence** | Proprietary, all rights reserved — **no licence file ships inside the archive** |
 | **Why it is not in the repository** | Size combined with an explicit all-rights-reserved licence and no redistribution permission |
 
-### Reacquisition
+### Source repository
+
+**None exists.** SquareLine Studio is proprietary, closed-source, distributed only as a signed
+installer from the vendor. There is no upstream repository to pin, no commit, and no third-party
+redistribution that would be lawful to rely on — so the two vendor URLs above are the whole of
+the recovery story, and the SHA-256 is doing more work here than usual.
+
+This is recorded explicitly because an absent repository line should read as *checked and
+absent*, not as an omission someone might later "fix" with a plausible-looking link.
+
+## Reacquisition
 
 **Verified 2026-08-30.** This host returns **HTTP 206 for non-existent paths too**, so check `Content-Type`: `application/x-zip-compressed` means a real file, `text/html` is a soft 404.
 
