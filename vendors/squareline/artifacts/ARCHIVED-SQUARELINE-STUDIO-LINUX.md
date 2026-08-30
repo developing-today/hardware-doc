@@ -26,15 +26,38 @@ Nothing was lost. Everything this repository needs from the archive was extracte
 | **Licence** | Proprietary, all rights reserved — **no licence file ships inside the archive** |
 | **Why it is not in the repository** | Size combined with an explicit all-rights-reserved licence and no redistribution permission |
 
-### Source repository
+### Source repository — none, by design
 
-**None exists.** SquareLine Studio is proprietary, closed-source, distributed only as a signed
-installer from the vendor. There is no upstream repository to pin, no commit, and no third-party
-redistribution that would be lawful to rely on — so the two vendor URLs above are the whole of
-the recovery story, and the SHA-256 is doing more work here than usual.
+SquareLine Studio is proprietary and closed-source, distributed only as a vendor download. There
+is **no upstream repository to pin and no commit**, and this is recorded explicitly so the absent
+line reads as *checked and absent* rather than an omission someone later "fixes" with a
+plausible-looking link.
 
-This is recorded explicitly because an absent repository line should read as *checked and
-absent*, not as an omission someone might later "fix" with a plausible-looking link.
+### Second source — deliberately not sought for the binary
+
+Two independent sources is the standing rule. **This artifact is the documented exception, and
+the exception is on purpose.** The ZIP is 172 MiB of all-rights-reserved binaries with no
+redistribution grant — the same reason it is not committed here. A second custodian for the
+binary would necessarily be an unauthorised mirror, so citing one would recommend a route this
+record's own reasoning rejects. **Do not add one.**
+
+What is legitimately available is a third-party record of *the download page*, which preserves
+what existed and where, without redistributing anything:
+
+- Wayback capture of the downloads page, **2026-08-11**:
+  <http://web.archive.org/web/20260811204105/https://squareline.io/downloads>
+- Wayback capture of the site root, same date:
+  <http://web.archive.org/web/20260811204050/https://squareline.io/>
+
+> ⚠ **Existence confirmed, contents not.** These snapshots were reported by the Wayback
+> availability API on 2026-08-30, but fetching them that day returned *"Internet Archive:
+> Temporarily Offline"* rather than the page. **Nobody has confirmed the capture actually shows
+> the 1.6.1 Linux link.** Treat it as a lead to check, not a verified recovery path, and update
+> this line once someone has looked.
+
+So the honest position for this artifact: **one custodian for the bytes, and the SHA-256 above
+is doing more work than usual.** If you hold a copy that matches that hash, it is more valuable
+than the usual archived duplicate.
 
 ## Reacquisition
 

@@ -26,6 +26,10 @@ ARCHIVE = os.path.join(REPO, "archive")
 # configuration, so symlinking them produces ELOOP warnings on every command.
 SKIP_NAMES = {".gitignore", ".gitattributes", ".gitmodules"}
 
+# Registrable-domain suffixes needing three labels, so vendor.co.uk is not read as
+# the party "co.uk". Not exhaustive; it only has to cover what this repo cites.
+MULTI_TLD = {"co.uk", "com.cn", "co.jp", "org.uk", "com.au", "co.nz", "com.br"}
+
 
 def mentioned_in_prose(rel):
     """True if some committed markdown names this artifact.
@@ -114,27 +118,42 @@ def check_records():
                 continue
             total += 1
             u = set(re.findall(r'https?://[^\s<>)\]"]+', t))
-            h = {re.sub(r'^https?://([^/]+).*', r'\1', x) for x in u}
             rel = os.path.relpath(p, REPO)
+
+            # Count distinct PARTIES, not URLs or hostnames. github.com/X/Y and
+            # raw.githubusercontent.com/X/Y are one source, not two; so are
+            # squareline.io and static.squareline.io. Counting URLs flatters a record
+            # that cites the same place five ways, which is exactly the record most
+            # likely to go missing.
+            parties = set()
+            for pat in (r'github\.com/([\w.-]+/[\w.-]+?)(?:\.git)?(?=[/)\s`">]|$)',
+                        r'raw\.githubusercontent\.com/([\w.-]+/[\w.-]+?)(?=/)',
+                        r'api\.github\.com/repos/([\w.-]+/[\w.-]+?)(?=[/)\s`">]|$)'):
+                for m in re.findall(pat, t + " "):
+                    if m.split("/")[0] not in ("orgs", "features", "about", "sponsors",
+                                               "topics", "repos", "search"):
+                        parties.add(("gh", m.lower()))
+            for x in u:
+                host = re.sub(r'^https?://([^/]+).*', r'\1', x).lower()
+                if "github" in host:
+                    continue
+                bits = host.split(".")
+                dom = (".".join(bits[-3:])
+                       if len(bits) > 2 and ".".join(bits[-2:]) in MULTI_TLD
+                       else ".".join(bits[-2:]))
+                parties.add(("web", dom))
+
             if len(u) < 2:
                 thin_urls.append((len(u), rel))
-            elif len(h) < 2:
-                thin_hosts.append((len(h), rel))
+            elif len(parties) < 2:
+                thin_hosts.append((len(parties), rel))
             # A record sourced only from GitHub depends on one company's availability
             # decision, and one sourced with no repository at all usually means the
             # upstream was never looked for. Both are worth surfacing; neither is fatal,
             # and for genuinely closed-source artifacts "no repository" is the right answer.
-            repos = set()
-            for pat in (r'github\.com/([\w.-]+/[\w.-]+?)(?:\.git)?[/)\s`">]',
-                        r'raw\.githubusercontent\.com/([\w.-]+/[\w.-]+?)/',
-                        r'gitlab\.com/([\w.-]+/[\w.-]+?)[/)\s`">]'):
-                repos |= set(re.findall(pat, t + " "))
-            repos = {x for x in repos
-                     if x.split("/")[0] not in ("orgs", "features", "about",
-                                                "sponsors", "topics", "repos", "search")}
-            if not repos:
+            if not {d for kind, d in parties if kind == "gh"}:
                 no_repo.append(rel)
-            if not {x for x in h if "github" not in x}:
+            if not {d for kind, d in parties if kind == "web"}:
                 gh_only.append(rel)
     return total, thin_urls, thin_hosts, no_repo, gh_only
 
@@ -184,11 +203,11 @@ def main():
     print()
     print(f"placeholders / set records         : {total}")
     print(f"  fewer than 2 URLs                 : {len(thin_urls)}")
-    print(f"  2+ URLs but a single host         : {len(thin_hosts)}")
+    print(f"  2+ URLs but a single party        : {len(thin_hosts)}")
     for n, r in thin_urls:
         print(f"    [{n} url] {r}")
     for n, r in thin_hosts:
-        print(f"    [1 host] {r}")
+        print(f"    [1 party] {r}")
     print(f"  no git repository cited           : {len(no_repo)}")
     for r in no_repo:
         print(f"    [no repo] {r}")
