@@ -51,7 +51,7 @@ Totals: **28,392,294 bytes** relocated into `components/`; **3,576,806 bytes** a
 duplicates; 31,969,100 bytes accounted for in total.
 
 Archived files are at
-`archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/datasheets/`.
+`archive/hardware-doc/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/datasheets/`.
 Nothing was deleted.
 
 ## Why the older Espressif revisions were kept rather than archived

@@ -3,7 +3,7 @@
 One large Espressif **framework documentation** PDF that used to live in this directory has been moved out of the repository. It was **regenerable from a stable, verified Espressif URL** and is not scarce, unlike the datasheet, technical reference manual, errata and hardware-design guidelines in this directory, **all of which are retained**.
 
 - **Archived:** 2026-08-24
-- **Moved to:** `archive/doc/hardware/components/espressif/esp32-p4/artifacts/` (same relative path)
+- **Moved to:** `archive/hardware-doc/components/espressif/esp32-p4/artifacts/` (same relative path)
 - **Total reclaimed here:** 13 656 675 bytes (~13.0 MiB)
 
 Nothing was deleted. The knowledge worth keeping was extracted into committed Markdown **before** the file was moved — see [What was extracted](#what-was-extracted-and-where-it-now-lives).

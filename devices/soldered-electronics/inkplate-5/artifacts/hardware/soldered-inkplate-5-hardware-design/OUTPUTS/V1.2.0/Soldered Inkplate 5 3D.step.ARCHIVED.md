@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/Soldered Inkplate 5 3D.step` |
-| Archived to | `archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/Soldered Inkplate 5 3D.step` |
+| Archived to | `archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/Soldered Inkplate 5 3D.step` |
 | Type | file |
 | Size | 27,802,592 B (26.51 MiB) |
 | SHA-256 | `7ea0a3d53948e734777815e19258492a93cac346c5cf51e3488ec4adc085a124` |
@@ -43,7 +43,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/Soldered Inkplate 5 3D.step" \
+mv "archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/Soldered Inkplate 5 3D.step" \
    "devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/Soldered Inkplate 5 3D.step"
 ```
 

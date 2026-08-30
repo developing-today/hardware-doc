@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL` |
-| Archived to | `archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL` |
+| Archived to | `archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL` |
 | Type | directory |
 | Size | 6,099,031 B (5.82 MiB) |
 | File count | 5 |
@@ -51,7 +51,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL" \
+mv "archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL" \
    "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL"
 ```
 

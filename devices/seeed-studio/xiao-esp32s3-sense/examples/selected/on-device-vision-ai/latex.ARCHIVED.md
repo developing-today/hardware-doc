@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `examples/selected/on-device-vision-ai/latex` |
-| Archived to | `archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/latex` |
+| Archived to | `archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/latex` |
 | Type | directory |
 | Size | 7,553,457 B (7.20 MiB) |
 | File count | 7 |
@@ -53,7 +53,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/latex" \
+mv "archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/latex" \
    "examples/selected/on-device-vision-ai/latex"
 ```
 

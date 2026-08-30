@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate13SPECTRA` |
-| Archived to | `archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate13SPECTRA` |
+| Archived to | `archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate13SPECTRA` |
 | Type | directory |
 | Size | 18,984,896 B (18.11 MiB) |
 | File count | 258 |
@@ -304,7 +304,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate13SPECTRA" \
+mv "archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate13SPECTRA" \
    "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate13SPECTRA"
 ```
 

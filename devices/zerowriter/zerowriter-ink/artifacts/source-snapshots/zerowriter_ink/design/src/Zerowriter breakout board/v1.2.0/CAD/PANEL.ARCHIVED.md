@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL` |
-| Archived to | `archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL` |
+| Archived to | `archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL` |
 | Type | directory |
 | Size | 8,514,350 B (8.12 MiB) |
 | File count | 5 |
@@ -51,7 +51,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL" \
+mv "archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL" \
    "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL"
 ```
 

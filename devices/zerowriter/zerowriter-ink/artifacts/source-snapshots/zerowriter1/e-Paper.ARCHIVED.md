@@ -25,7 +25,7 @@ repository** as patches plus a written analysis:
 | Field | Value |
 |---|---|
 | Original repo path | `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper` |
-| Archived to | `archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper` |
+| Archived to | `archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper` |
 | Type | directory |
 | Size | **32,575,902 B (31.07 MiB)** |
 | File count | **272** (in 16 directories) |
@@ -110,7 +110,7 @@ differently under a UTF-8 locale, producing a different (and non-portable) diges
 ## Restore from the local archive
 
 ```bash
-mv archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper \
+mv archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper \
    devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter1/e-Paper
 ```
 

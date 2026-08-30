@@ -59,7 +59,7 @@ uncompressed in the parent directory. Inspect on demand with `unzip -l` / `unzip
 
 
 > ⚠ **Path corrected 2026-08-30.** This placeholder originally pointed at
-> `archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups`.
+> `archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups`.
 > A later archiving pass moved the whole parent `PANEL/` directory onto that same archive path, which
 > replaced it. **The content was not lost** — it survives in full inside the upstream tarball
 > extraction under `scratch/zerowriter-provenance-2026-08-30/`, and the path above now points there.
@@ -103,7 +103,7 @@ differently under a UTF-8 locale.
 ## Restore from the local archive
 
 ```bash
-mv "$HOME/hardware-doc-archive/doc/hardware/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups" \
+mv "$HOME/hardware-doc-archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups" \
    "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups"
 ```
 

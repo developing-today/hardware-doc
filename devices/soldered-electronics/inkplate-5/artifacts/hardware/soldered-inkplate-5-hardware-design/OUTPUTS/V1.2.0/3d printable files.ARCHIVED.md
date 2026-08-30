@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/3d printable files` |
-| Archived to | `archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/3d printable files` |
+| Archived to | `archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/3d printable files` |
 | Type | directory |
 | Size | 15,748,484 B (15.02 MiB) |
 | File count | 1 |
@@ -47,7 +47,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/3d printable files" \
+mv "archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/3d printable files" \
    "devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/OUTPUTS/V1.2.0/3d printable files"
 ```
 

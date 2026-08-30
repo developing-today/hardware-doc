@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/CAD/V1.1.0/Source 3D files` |
-| Archived to | `archive/doc/hardware/devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/CAD/V1.1.0/Source 3D files` |
+| Archived to | `archive/hardware-doc/devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/CAD/V1.1.0/Source 3D files` |
 | Type | directory |
 | Size | 2,684,318 B (2.56 MiB) |
 | File count | 2 |
@@ -48,7 +48,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/doc/hardware/devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/CAD/V1.1.0/Source 3D files" \
+mv "archive/hardware-doc/devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/CAD/V1.1.0/Source 3D files" \
    "devices/soldered-electronics/inkplate-5-gen2/artifacts/hardware/soldered-inkplate-5-gen2-hardware-design/CAD/V1.1.0/Source 3D files"
 ```
 

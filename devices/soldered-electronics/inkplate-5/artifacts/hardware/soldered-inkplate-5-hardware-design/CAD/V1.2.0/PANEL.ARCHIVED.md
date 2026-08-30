@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/PANEL` |
-| Archived to | `archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/PANEL` |
+| Archived to | `archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/PANEL` |
 | Type | directory |
 | Size | 17,225,271 B (16.43 MiB) |
 | File count | 2 |
@@ -48,7 +48,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/PANEL" \
+mv "archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/PANEL" \
    "devices/soldered-electronics/inkplate-5/artifacts/hardware/soldered-inkplate-5-hardware-design/CAD/V1.2.0/PANEL"
 ```
 

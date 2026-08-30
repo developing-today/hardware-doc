@@ -72,7 +72,7 @@ Placeholders and restore commands use it; do not write `../hardware-doc-archive/
 concrete path.
 
 ```
-| Archived to | `archive/doc/hardware/devices/<vendor>/<board>/artifacts/…` |
+| Archived to | `archive/hardware-doc/devices/<vendor>/<board>/artifacts/…` |
 ```
 
 The indirection is the point: if the archive is ever moved or renamed, **one symlink changes**
@@ -82,7 +82,7 @@ commands from there.
 Two things to know:
 
 - The archive's internal layout still begins `doc/hardware/…`, a leftover from when this
-  content lived at that path inside another repo. Hence `archive/doc/hardware/…`. Harmless,
+  content lived at that path inside another repo. Hence `archive/hardware-doc/…`. Harmless,
   and not worth rewriting 5 GB to tidy.
 - **Prose that explains the layout keeps the real sibling path** (`../hardware-doc-archive`),
   because it is describing where the directory actually is. Only concrete, followable paths

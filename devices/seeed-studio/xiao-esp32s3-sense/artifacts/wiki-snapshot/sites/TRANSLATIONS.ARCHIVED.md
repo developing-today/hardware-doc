@@ -20,7 +20,7 @@ find <lang> -type f -exec sha256sum {} \; | sort -k2 | sha256sum
 **Archive path** (repo-relative, so it maps 1:1):
 
 ```
-archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/wiki-snapshot/sites/<lang>/
+archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/artifacts/wiki-snapshot/sites/<lang>/
 ```
 
 ## Why only English was kept — the translations add nothing

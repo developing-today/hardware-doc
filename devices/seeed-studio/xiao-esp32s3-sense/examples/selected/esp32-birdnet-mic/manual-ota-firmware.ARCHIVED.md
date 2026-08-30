@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `examples/selected/esp32-birdnet-mic/manual-ota-firmware` |
-| Archived to | `archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/manual-ota-firmware` |
+| Archived to | `archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/manual-ota-firmware` |
 | Type | directory |
 | Size | 6,346,672 B (6.05 MiB) |
 | File count | 6 |
@@ -54,7 +54,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/manual-ota-firmware" \
+mv "archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/manual-ota-firmware" \
    "examples/selected/esp32-birdnet-mic/manual-ota-firmware"
 ```
 

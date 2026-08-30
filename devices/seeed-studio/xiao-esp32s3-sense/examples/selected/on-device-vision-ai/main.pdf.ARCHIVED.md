@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `examples/selected/on-device-vision-ai/main.pdf` |
-| Archived to | `archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/main.pdf` |
+| Archived to | `archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/main.pdf` |
 | Type | file |
 | Size | 7,819,852 B (7.46 MiB) |
 | SHA-256 | `e15655073c260720189721035723ae4aef98b6b45a4f1c13f7bc120715a70d7c` |
@@ -43,7 +43,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/main.pdf" \
+mv "archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/on-device-vision-ai/main.pdf" \
    "examples/selected/on-device-vision-ai/main.pdf"
 ```
 

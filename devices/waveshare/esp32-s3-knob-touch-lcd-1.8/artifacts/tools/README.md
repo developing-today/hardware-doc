@@ -1,7 +1,7 @@
 # Tools — archived artifacts and reacquisition record
 
 > Archive/removal date: **2026-08-23**.
-> "Archived" means moved to `archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/tools/`,
+> "Archived" means moved to `archive/hardware-doc/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/tools/`,
 > preserving this repository's relative path. Nothing was deleted.
 
 All URLs below were enumerated from the local wikitext snapshot

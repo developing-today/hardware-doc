@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6PLUS` |
-| Archived to | `archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6PLUS` |
+| Archived to | `archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6PLUS` |
 | Type | directory |
 | Size | 17,999,532 B (17.17 MiB) |
 | File count | 226 |
@@ -272,7 +272,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/doc/hardware/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6PLUS" \
+mv "archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6PLUS" \
    "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate6PLUS"
 ```
 

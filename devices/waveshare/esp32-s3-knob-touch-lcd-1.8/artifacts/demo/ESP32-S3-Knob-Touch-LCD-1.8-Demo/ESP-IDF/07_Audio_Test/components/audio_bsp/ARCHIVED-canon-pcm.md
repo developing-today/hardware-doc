@@ -14,7 +14,7 @@ Moved out of the repository on **2026-08-30**. Not deleted.
 | Original path | `ESP-IDF/07_Audio_Test/components/audio_bsp/canon.pcm` |
 | **SHA-256** | `8e0693da7412f2743b07b285bc46fca879e31222d1db521a8bd6a36e7eeffa41` |
 | **Size** | **5,297,084 bytes** (5.05 MiB) |
-| Archive path | `archive/doc/hardware/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/07_Audio_Test/components/audio_bsp/canon.pcm` |
+| Archive path | `archive/hardware-doc/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/07_Audio_Test/components/audio_bsp/canon.pcm` |
 
 ## Why this one
 

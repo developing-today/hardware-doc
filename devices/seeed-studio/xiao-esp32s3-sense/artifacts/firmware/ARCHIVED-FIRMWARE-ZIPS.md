@@ -13,7 +13,7 @@
 | `xiao-esp32s3-firmware-20240814.zip` | 8 219 852 | `7e4cc51fca6e5b16393e3bc6ed9d929b8c7e36c8a3107b4750d7991312f3fd68` |
 | `xiao-esp32s3-firmware-legacy.zip` | 8 217 189 | `0383237f78e873dc7d7cd5d5ea559805ea3269b82ec2d62c9874526cf555ceda` |
 
-Archive path: `archive/doc/hardware/devices/seeed-studio/xiao-esp32s3-sense/artifacts/firmware/`
+Archive path: `archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/artifacts/firmware/`
 
 > **The four ZIPs are four distinct files.** Note this does *not* contradict the finding below
 > that the 20240814 and legacy *binaries* are identical: the ZIP wrappers differ in the flasher

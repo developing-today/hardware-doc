@@ -91,7 +91,7 @@ directory, with **no third-party mirror located**. Unlike Waveshare's `/wiki/com
 are not shared across product lines and would disappear with the product.
 
 Both are good candidates for `https://web.archive.org/save/`. The archived local copy under
-`archive/doc/hardware/devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/originals/`
+`archive/hardware-doc/devices/waveshare/esp32-p4-wifi6-touch-lcd-xc-shared/artifacts/originals/`
 is currently the only guaranteed-identical source for the demo ZIP's exact bytes. The archive
 mirrors the **repository-root** path, so restoring is a straight copy back.
 
