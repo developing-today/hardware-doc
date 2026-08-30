@@ -45,6 +45,19 @@ private** — at multiple gigabytes it is impractical to host alongside this one
 local companion: if you have it, placeholders resolve to real bytes; if you do not, they
 resolve to recovery URLs.
 
+### The `archive/` symlink
+
+When the archive is present locally it is reachable at **`./archive/`** — a tracked symlink
+to `../hardware-doc-archive`. That gives `*.ARCHIVED.md` placeholders a stable in-repo path
+to point at.
+
+Both tracked symlinks in this project (`archive` here, `doc/hardware` in a consuming repo)
+are committed **relative**, and `hardware-doc-init.sh` swaps in an **absolute** path only
+where the relative form cannot resolve — then marks the path `--skip-worktree`, because
+`.gitignore` has no effect on tracked files. See
+[`AGENTS.md` § Symlinks and `--skip-worktree`](AGENTS.md#symlinks-and---skip-worktree) for
+the caveat that matters: while the flag is set, git will not update that path.
+
 See [`AGENTS.md`](AGENTS.md) for working conventions and
 [`.agents/skills/hardware-device-research/SKILL.md`](.agents/skills/hardware-device-research/SKILL.md)
 for the research method.

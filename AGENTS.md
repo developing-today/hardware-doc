@@ -43,6 +43,40 @@ correct when the repo lives at `~/hardware-doc`, but it is wrong under worktrees
 any machine with a different layout. **Write `../hardware-doc-archive` relative to the
 repo root, or resolve it with the command above.**
 
+## Symlinks and `--skip-worktree`
+
+Two symlinks are **tracked**, both committed in **relative** form:
+
+| Link | Committed target | Points at |
+|---|---|---|
+| `archive` (this repo) | `../hardware-doc-archive` | the bulk-artifact archive |
+| `doc/hardware` (consuming repo) | `../../hardware-doc` | this repo |
+
+Relative is right for the normal sibling layout and keeps every clone identical to
+`HEAD`. It breaks only where `../..` does not reach the target — most often a linked
+worktree parked outside the repo parent. There, `hardware-doc-init.sh` substitutes an
+**absolute** path derived from the git common dir.
+
+Substituting makes the worktree differ from `HEAD`, so the script then marks the path
+`--skip-worktree`.
+
+> **`.gitignore` cannot do this.** It applies only to *untracked* paths. A tracked file
+> keeps reporting modifications no matter what `.gitignore` says. `--skip-worktree` is the
+> only thing that suppresses it. The `archive/*` and `doc/hardware/*` ignore entries exist
+> to stop the link *contents* being committed if a link is replaced by a real directory.
+
+**Caveat.** While `--skip-worktree` is set, git refuses to update that path. If a committed
+link target ever legitimately changes upstream, a clone carrying the flag will **not** pick
+it up on pull, and merges or checkouts touching it can fail with `Entry ... not uptodate`.
+Clear it with:
+
+```bash
+git update-index --no-skip-worktree archive        # or doc/hardware in the consumer
+```
+
+The script prints that exact command whenever it sets the flag, and only sets it when the
+relative default genuinely does not work.
+
 ## What belongs where
 
 | Content | Goes in |
