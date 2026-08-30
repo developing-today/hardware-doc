@@ -7,7 +7,7 @@ consumes it, and symlinked into place from there.
 ```
 <repo-parent>/
 ├── code/                     ← consuming repo (config, infra, …)
-│   └── the repository root  ──────┐   symlink
+│   └── doc/hardware  ──────────┐   symlink
 ├── hardware-doc/     ←─────┘   THIS REPO
 └── repo-archive/       bulk artifacts moved out of this repo (separate repo, usually unpublished)
 ```

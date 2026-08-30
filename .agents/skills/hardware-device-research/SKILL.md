@@ -24,11 +24,12 @@ Research a hardware device recursively: document the complete product, identify 
 | **[Workflow](#workflow)** — 18 steps | **Core.** The pass itself, in order |
 | [1. Inspect the repository](#1-inspect-the-repository) · [2. Identify the device](#2-identify-the-exact-device) · [3. Source-priority research](#3-research-in-source-priority-order) | orientation and evidence ranking |
 | [4. Gather artifacts](#4-gather-device-artifacts) | **Core.** Acquisition, validation, archiving, placeholders |
+| &nbsp;&nbsp;↳ [Mine before archiving](#mine-the-artifact-before-it-leaves--write-the-findings-up-as-their-own-document) | **Core.** When to archive, what to extract, writing custom docs |
 | [5. Visual/product/market dossier](#5-build-the-visual-product-community-and-market-dossier) · [6. Inventory hardware](#6-inventory-the-complete-hardware) · [7. Recurse into components](#7-research-every-component-recursively) | breadth |
 | [8. Pinouts and architecture](#8-document-pinouts-and-architecture) · [9. Development and recovery](#9-document-development-and-recovery) · [10. Audit vendor source](#10-audit-vendor-firmware-and-driver-source-against-the-primary-documents) | the technically load-bearing steps |
 | [11. Examples](#11-survey-and-select-examples) · [12. Feature guides](#12-write-feature-oriented-development-guides) · [13. Common guides](#13-reuse-common-development-knowledge) · [14. Vendor sourcing](#14-record-vendor-documentation-sourcing-knowledge) | reusable output |
 | [15. Coverage/conflicts](#15-map-coverage-resources-and-compatibility) · [16. Performance](#16-characterize-performance-by-workload) | mapping and measurement |
-| [17. Licensing and storage](#17-handle-licensing-and-storage-honestly) · [18. Vendored deps and large artifacts](#18-analyze-vendored-dependencies-near-duplicates-and-large-artifacts) | **Core.** What may be kept, moved or omitted |
+| [17. Licensing as metadata](#17-record-licensing-as-metadata) · [18. Vendored deps and large artifacts](#18-analyze-vendored-dependencies-near-duplicates-and-large-artifacts) | **Core.** What may be kept, moved or omitted |
 | [Required Device README Content](#required-device-readme-content) | The output template |
 | [Artifact and Acquisition Manifests](#artifact-and-acquisition-manifests) | **Core.** Provenance schema and the downloader contract |
 | [Research stopping criteria](#research-stopping-criteria) | When a pass is done |
@@ -40,7 +41,7 @@ Research a hardware device recursively: document the complete product, identify 
 
 ## What makes this different from summarising a datasheet
 
-Five habits do most of the work. If you internalise nothing else, internalise these.
+Six habits do most of the work. If you internalise nothing else, internalise these.
 
 **Prefer primary evidence, and say which kind you used.** Vendor prose is the weakest source in the stack and is frequently wrong. Published EDA files, parsed firmware images and vendor board-support headers are authoritative and usually available. Label every consequential claim: `executed-success` · `reported-working` · `inferred` · `not-tested`, and never present an untested command as though it were verified.
 
@@ -49,6 +50,8 @@ Five habits do most of the work. If you internalise nothing else, internalise th
 **Record conflicts; do not resolve them by preference.** When sources disagree, state the disagreement, cite both, and say what evidence would settle it. Vendors contradict themselves often, and the contradiction is usually the finding.
 
 **Preserve failures and negative results.** A URL that 404s, an HTML error page saved with a `.pdf` extension, a search that returned nothing, a translation that added nothing — each saves the next agent from repeating the work. They belong in the record.
+
+**Mine the artifact, then write it up.** The download is raw material; the Markdown is the deliverable. Extract what matters *before* a file is archived, and give a real finding its own document rather than burying it in a template section. See [Mine the artifact before it leaves](#mine-the-artifact-before-it-leaves--write-the-findings-up-as-their-own-document).
 
 **Nothing useful may exist in only one place.** Every artifact is either in the repository, or archived with a placeholder carrying its hash and reacquisition instructions. Scratch is not storage.
 
@@ -347,11 +350,72 @@ devices/<manufacturer>/<product>/
 
 Err toward downloading, validating, inspecting, and preserving potentially useful artifacts rather than omitting them because their size or license is initially unclear. Vendor useful artifacts by default unless they are excessively large for the repository after measured analysis or explicit terms very clearly forbid repository redistribution. Retain original archives and extract useful contents for direct access. Preserve upstream directory structure, licenses, copyright notices, and filenames unless a filename is unsafe or nonportable. Record any rename.
 
-Extract useful facts from downloaded material into authored research documents so future development does not depend on reopening the artifact. This includes pin mappings, register details, build settings, toolchain versions, firmware metadata, example structure, dependency versions, revision identifiers, and recovery procedures.
+Extract useful facts from downloaded material into authored research documents so future development does not depend on reopening the artifact — see [Mine the artifact before it leaves](#mine-the-artifact-before-it-leaves--write-the-findings-up-as-their-own-document). This includes pin mappings, register details, build settings, toolchain versions, firmware metadata, example structure, dependency versions, revision identifiers, and recovery procedures.
 
 Record the retrieval date and all available immutable identity information: document version/revision, release/tag, repository commit hash, archive checksum, file build identifier, and upstream publication/update date.
 
 At completion, no useful or uniquely acquired information may exist only in `/tmp`. Promote the artifact into the repository tree, move it to an ignored persistent cache under the knowledge-base root, or create complete reacquisition metadata and derived documentation before removing temporary files.
+
+#### Mine the artifact before it leaves — write the findings up as their own document
+
+**The artifact is raw material. The write-up is the deliverable.** A 50 MB PDF sitting in the
+tree that nobody has read is not research; it is a download. Before an artifact is archived —
+and ideally as soon as it is acquired — pull what matters out of it and write that up in
+Markdown, in your own words, organised for the reader rather than mirroring the source.
+
+**Archive only after the extraction exists.** Once a file moves to `../repo-archive` most
+readers will never open it: they have a placeholder and, if they are lucky, a URL. Whatever
+you did not extract is effectively lost to them.
+
+##### When to archive
+
+Move an artifact out when **all** of these hold:
+
+- Its content has been mined into repository Markdown, or it demonstrably carries nothing
+  worth mining (a 3D mesh, a panelised gerber, a generated doc build)
+- It is **derived, bulky, or off-topic** — regenerable output, a duplicate, examples for a
+  different board, prebuilt images that are also published upstream
+- A placeholder can carry enough provenance to reacquire it
+
+Keep it in the repository when it is **primary and irreplaceable**: schematics, netlist
+sources, BOMs, firmware images that are not byte-reproducible, and datasheets whose source
+URLs are already dead or likely to rot. Size alone is not a reason to archive; *derivedness*
+is.
+
+##### What extraction looks like
+
+Not a summary of the document — the **facts a future reader needs**, restructured:
+
+| Source artifact | What to write |
+|---|---|
+| Schematic / PCB (KiCad, EAGLE) | Parsed netlist as pin tables, connector pinouts, BOM with roles, and the **conflicts and shared pins** that a table alone hides |
+| Firmware image | Parsed headers, build metadata, partition map, embedded strings, and what the device therefore *does* on power-up |
+| Datasheet | The handful of numbers this board actually depends on, plus errata and the traps — not a spec dump |
+| Compliance / regulatory PDFs | SKUs, barcodes, tariff codes, certification dates, and the constraints they imply |
+| Vendor doc corpus (wiki, `.rst`, HTML) | The API/behaviour that is load-bearing, and the places the vendor contradicts itself |
+| Campaign updates, blogs, forum threads | **Design rationale** — why the hardware is the way it is. Usually the only place this exists |
+
+##### Write custom documents, not just the template
+
+The required README sections are a floor, not a ceiling. **When a subject has a story, give it
+its own file** and link it from the README's task index. Documents that earned their place in
+past passes:
+
+- `development-history.md` — why the design changed, drawn from campaign updates
+- `inter-board-wiring.md` — connector pinouts recovered from PCB files
+- `keymap-format.md` — a file format nobody had documented
+- `regulatory-and-skus.md` — extracted from compliance PDFs
+- `peripheral-mode.md` — a protocol the vendor documents in an obsolete form
+- `arduino-api.md` — the ~5 % of a 4,500-line API reference that is actually load-bearing
+
+Name them for what a reader would search for. A finding buried in a section of a long README
+is a finding nobody will locate.
+
+##### The test
+
+For every artifact you archive, ask: **if the archive were deleted tomorrow, what would the
+repository still know?** If the answer is "only that a file used to exist", the extraction was
+not done.
 
 #### Placeholders must stand alone
 

@@ -13,8 +13,8 @@ It is normally checked out **beside** the repo that consumes it and symlinked in
 ```
 <repo-parent>/
 ├── code/                        consuming repo (config, infra, …)
-│   └── the repository root  ─────────┐ symlink, created by scripts/hardware-doc-init.sh
-├── hardware-doc/         ←────┘ THIS REPO
+│   └── doc/hardware  ───────────┐ symlink, created by scripts/hardware-doc-init.sh
+├── hardware-doc/         ←──────┘ THIS REPO
 └── repo-archive/        bulk artifacts moved out of here (separate repo, usually unpublished)
 ```
 
