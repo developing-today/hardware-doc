@@ -234,16 +234,21 @@ For repository content, a branch name is not identity — branches move. Cite th
 The archive has exactly **two** states. Keep it that way — a third invites stranding.
 
 ```
-<archive-root>/
-  doc/<repo-relative-path>     # DECIDED: mirrors the repository, placeholder in repo
-  scratch/<subject-slug>/      # UNDECIDED: raw fetches, intermediates, working files
+<archive-root>/                        ../repo-archive
+  <source-repo>/<repo-relative-path>   # DECIDED: mirrors the repo, placeholder left behind
+  scratch/<source-repo>/<subject>/     # UNDECIDED: raw fetches, intermediates, working files
 ```
 
-**The moment a file's home is known, move it to `doc/` at its repo-relative path** and write the placeholder. Mirroring the repository's own path inside the archive means the mapping needs no lookup table and survives reorganisation. Do not add a staging tier inside `scratch/` that mirrors repo paths — it would only give work somewhere to stall. *(Measured on an ~11,000-file archive: every file with a decided path was already in `doc/`; none of the ~5,800 scratch files had one.)*
+Both tiers are **namespaced by source repository**, so material archived out of a second repo
+sits beside this one rather than colliding. From inside the repository they are reachable as the
+tracked symlinks **`archive/`** and **`scratch/`**, which already point at this repo's own slice —
+so `archive/devices/foo/…` is the same path the artifact had here.
+
+**The moment a file's home is known, move it to `archive/` at its repo-relative path** and write the placeholder. Mirroring the repository's own path inside the archive means the mapping needs no lookup table and survives reorganisation. Do not add a staging tier inside `scratch/` that mirrors repo paths — it would only give work somewhere to stall. *(Measured on an ~11,000-file archive: every file with a decided path was already under the repo namespace; none of the ~5,800 scratch files had one.)*
 
 **Download into `scratch/` directly; do not stage in `/tmp` and copy later.** The files must reach the archive regardless, so `/tmp` adds a mandatory step that can fail. `/tmp` is also not dependable — it is cleared between sessions on many hosts, and has been observed losing an agent's files mid-task. Use it only for work you will discard: peeking inside an archive, probing a URL, checking magic bytes. If you do put something there you may want, `mv` it immediately — on a shared filesystem that is a rename, not a copy. *(In one session a 230-file wiki corpus, FCC exhibits and vendor headers vanished from `/tmp` mid-task. On that host `/tmp` was a bind mount of the same filesystem as `$HOME`, so it was neither faster nor cheaper than writing straight to the archive.)*
 
-**Inside `scratch/<subject-slug>/`, organise however the subject needs.** No layout is prescribed. Reusable material needs no special place: a chip datasheet is a *component* artifact, so once recognised it belongs in `components/…`, which is where a parallel agent will look for it.
+**Inside `scratch/<subject>/`, organise however the subject needs.** No layout is prescribed. Reusable material needs no special place: a chip datasheet is a *component* artifact, so once recognised it belongs in `components/…`, which is where a parallel agent will look for it.
 
 **Namespace by subject, never by agent** — agents are concurrent and ephemeral; the subject outlives them. **List the parent before creating any directory**; a convention probably exists. *(Three agents in one session independently created `workspace/`, `tmp-workspace/` and `_tmp-sweep-*/` for the same job — 363 MB of duplication, reconciled by hand.)*
 
@@ -319,7 +324,7 @@ At completion, no useful or uniquely acquired information may exist only in `/tm
 
 #### Placeholders must stand alone
 
-When an artifact is moved out of the repository, the placeholder left in its place is the **only** thing most readers will ever see. The archive is machine-local: someone cloning the repository has no `~/…-archive/` and never will. A placeholder that merely says "moved to the archive" is useless to them.
+When an artifact is moved out of the repository, the placeholder left in its place is the **only** thing most readers will ever see. The archive is machine-local: someone cloning the repository has no `../repo-archive/` and never will. A placeholder that merely says "moved to the archive" is useless to them.
 
 **A placeholder must be sufficient to reacquire the file without the archive.** It is the same provenance the [acquisition manifest](#artifact-and-acquisition-manifests) already records for every artifact — SHA-256, byte size, canonical URL, retrieval date, upstream version/date, and commit hash or release tag where applicable — written for a human instead of a parser. Keep the two consistent; if they disagree, the manifest is authoritative and the placeholder is stale.
 

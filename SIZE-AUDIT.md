@@ -1,7 +1,12 @@
-# Size audit — ``
+# Size audit — `hardware-doc`
 
 > Where the megabytes are, what can be regenerated, and what must stay.
-> Measured **2026-08-24**. Total: **442 MB on disk / 429.5 MB in 3,322 files**.
+> Measured **2026-08-24**, re-checked **2026-08-30** after the repository split — still 442 MB.
+> Total: **442 MB on disk / 429.5 MB in 3,322 files**.
+>
+> Paths below are relative to this repository's root. When this audit was first written the tree
+> lived at `doc/hardware/` inside the config repo; it is now the root of its own repository, and
+> bulky artifacts sit in the sibling `../repo-archive` reachable as `archive/` and `scratch/`.
 
 ## Executive summary
 
