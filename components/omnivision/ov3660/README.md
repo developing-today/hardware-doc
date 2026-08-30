@@ -227,10 +227,10 @@ The OV3660 datasheet and Seeed module specification currently live in the **devi
 > `devices/seeed-studio/xiao-esp32s3-sense/artifacts/datasheets/`; hashes re-verified unchanged after the
 > move, and a [pointer](../../../devices/seeed-studio/xiao-esp32s3-sense/artifacts/datasheets/RELOCATED-ov3660.md)
 > remains at the old location. This was a **move, not a copy** (duplication is what the shared-asset pass is
-> removing, and redistribution is `prohibited`) and **not an archive** — with all five re-fetch URLs 404 as of
+> removing, and the document limits redistribution) and **not an archive** — with all five re-fetch URLs 404 as of
 > 2026-08-30, these are scarce and stay in the repository.
 
-> **Redistribution: `prohibited`.** The datasheet states: *"Individuals and/or organizations are not allowed to re-distribute said information."* Rehosting by Seeed does not relicense it. The specification tables in this record are extracted factual data, not a reproduction of the document.
+> **Redistribution: `restricted`.** The datasheet states: *"Individuals and/or organizations are not allowed to re-distribute said information."* Rehosting by Seeed does not relicense it. The specification tables in this record are extracted factual data, not a reproduction of the document.
 
 ### 9.1 Independent re-acquisition failed
 

@@ -19,7 +19,7 @@ Moved out of the repository on **2026-08-30**. Not deleted.
 ## Why this one
 
 It was **54 % of the entire remaining demo tree** and the **only file in it cited by no authored
-document**. Of 140 files in this demo, 139 are referenced by path somewhere in ``;
+document**. Of 140 files in this demo, 139 are referenced by path somewhere in the knowledge base;
 this was the exception. It is a media asset, not board-specific code — nothing about the hardware
 can be learned from it that `audio_bsp.c` does not state directly.
 

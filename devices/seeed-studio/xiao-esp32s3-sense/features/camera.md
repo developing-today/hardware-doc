@@ -65,7 +65,7 @@ The `esp32-camera` driver probes over SCCB and loads the right register set auto
 
   The AF routine is **not in the sensor's ROM** — a firmware blob must be uploaded to the OV5640's embedded microcontroller over SCCB at every power-up, which is what this library does.
 
-> **Licensing note.** The OV3660 and OV5640 datasheets carry an explicit restriction: *"Individuals and/or organizations are not allowed to re-distribute said information."* They are retained in this tree for research use, but their redistribution status is **`prohibited`/`unknown`** and they are flagged for review in [`acquisition/manifest.json`](../acquisition/manifest.json). The specification tables above are factual data extracted from them, not a reproduction of the documents.
+> **Licensing note.** The OV3660 and OV5640 datasheets carry an explicit restriction: *"Individuals and/or organizations are not allowed to re-distribute said information."* They are retained in this tree for research use, but their redistribution status is **`restricted`/`unknown`** and they are flagged for review in [`acquisition/manifest.json`](../acquisition/manifest.json). The specification tables above are factual data extracted from them, not a reproduction of the documents.
 
 ## 2. Pin wiring
 

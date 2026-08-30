@@ -111,7 +111,7 @@ Do not confuse enclosure colors, battery bundles, language suffixes, or sales bu
 - Check documentation conventions, symlinks, ignore rules, existing device/component records, and unrelated working-tree changes.
 - Preserve unrelated changes.
 - Do not commit unless explicitly requested.
-- Staging is allowed as part of organizing the research, but keep large or licensing-uncertain artifacts unstaged until the user reviews the categorized artifact report. Prefer staging authored research, manifests, acquisition tooling, and artifacts with clear terms.
+- Stage the research, manifests, tooling and artifacts as you go. Very large additions are worth mentioning in your summary so the user knows what landed, but they do not need pre-approval.
 - Add or update umbrella, device, and component indexes.
 
 ### 2. Identify the exact device
@@ -351,7 +351,7 @@ Extract useful facts from downloaded material into authored research documents s
 
 Record the retrieval date and all available immutable identity information: document version/revision, release/tag, repository commit hash, archive checksum, file build identifier, and upstream publication/update date.
 
-At completion, no useful or uniquely acquired information may exist only in `/tmp`. Promote the artifact into the repository tree, move it to an ignored persistent cache under ``, or create complete reacquisition metadata and derived documentation before removing temporary files.
+At completion, no useful or uniquely acquired information may exist only in `/tmp`. Promote the artifact into the repository tree, move it to an ignored persistent cache under the knowledge-base root, or create complete reacquisition metadata and derived documentation before removing temporary files.
 
 #### Placeholders must stand alone
 
@@ -382,7 +382,7 @@ Create custom prose and structured evidence describing the device as a physical 
 
 #### Visual identification
 
-Find useful front, back, side, port/label, enclosure-open, teardown-stage, PCB front/back, revision-marking, component close-up and representative-use images. Retain and embed useful images when practical; if rights are unclear, they may remain unstaged pending user review. Every image must record creator/rightsholder when known, source page and direct URL, publication/retrieval dates, applicable device/revision, license/permission evidence, redistribution status, modifications, local path, caption and alt text. Captions explain what the image demonstrates and any crop, annotation, rotation or processing. Do not remove watermarks or present an image-search result as provenance.
+Find useful front, back, side, port/label, enclosure-open, teardown-stage, PCB front/back, revision-marking, component close-up and representative-use images. Retain and embed useful images when practical. Every image must record creator/rightsholder when known, source page and direct URL, publication/retrieval dates, applicable device/revision, license/permission evidence, redistribution status, modifications, local path, caption and alt text. Captions explain what the image demonstrates and any crop, annotation, rotation or processing. Do not remove watermarks or present an image-search result as provenance.
 
 #### Identity, history, family and culture
 
@@ -613,35 +613,39 @@ For network/VPN/container results include interfaces/link rates, peers, protocol
 
 Explain what results mean for real workloads and cumulative feature combinations. Distinguish official claims, silicon limits, independent measurements, isolated owner reports, locally reproduced results and estimates. If evidence cannot support a comparison, mark it unresolved rather than inventing precision.
 
-### 17. Handle licensing and storage honestly
+### 17. Record licensing as metadata
 
-- Public availability does not imply redistribution permission, and a user request cannot grant third-party redistribution rights.
-- Identify applicable terms from authoritative license text, download terms, publisher policy, and license/notice files found inside downloaded artifacts. Record the exact license expression/name, evidence URL or retained license path, scope, and obligations. Do not infer that one license covers unrelated neighboring files.
-- Preserve license files, copyright notices, source offers, and required attribution.
-- Treat an archive as mixed-license when its members have different or incomplete terms. A bundled dependency's license does not cover the surrounding archive.
-- Distinguish official source, bundled dependencies, opaque binaries, proprietary tools, and community code.
-- Avoid treating installers or unrelated toolchains as normal repository content, but download them to temporary inspection space when they are relevant to understanding versions, bundled files, recovery procedures, or license terms.
-- Record intentional duplication caused by retaining archives beside extracted contents.
-- Repository size policy and Git LFS do not replace a licensing decision.
+**Gather the artifact first.** Licensing is a field on the record, not a gate on acquisition.
+A datasheet you did not download is a gap in the research; a datasheet with an unrecorded
+licence is a record you can complete later in five seconds.
 
-Record two independent fields for every artifact:
+Download it, keep it, and note what the terms appear to be. That is the whole of it.
 
-**Redistribution status** describes known legal permission, not where the file is stored:
+**Note, per artifact:**
 
-- `allowed`: explicit evidence permits repository redistribution with no unmet artifact-specific obligation.
-- `conditional`: redistribution is permitted only after recorded obligations are satisfied, such as preserving notices, attribution, source availability, or no-modification requirements.
-- `prohibited`: applicable terms prohibit the intended repository redistribution.
-- `unknown`: applicable terms were not found, conflict, or have unclear scope.
+- The licence expression or name if one is stated (`MIT`, `TAPR OHL v1.0`, `LGPL-3.0`, …)
+- Where you saw it — a `LICENSE` file, a page footer, a notice inside the PDF
+- `restricted` if the document itself carries wording limiting redistribution, `unknown` if
+  nothing was stated
 
-**Disposition** describes the current or proposed storage behavior and may change after user review:
+**Redistribution status** — a descriptive label, not a verdict:
 
-- `repository`: retained in the repository tree; separately record whether it is `unstaged`, `staged`, or already tracked.
-- `local-cache`: downloaded under an ignored, untracked path for local use and reproducible through the acquisition manifest.
-- `reference-only`: normally retain metadata and a URL rather than the artifact in the repository; it may still be downloaded temporarily or into a local inspection cache to validate content, hashes, metadata, and embedded license terms.
+- `allowed` — an explicit permissive licence
+- `conditional` — permissive with obligations worth preserving (attribution, notices, source offer)
+- `restricted` — the document states a limitation
+- `unknown` — nothing stated. **This is the common case and is entirely fine.**
 
-Treat these fields as research findings and planning aids, not automatic legal judgments. Absence of a discovered license is not a reason to skip acquisition or prevent the artifact from being placed in the repository tree. Unless explicit terms prominently forbid copying or sharing, a useful datasheet, PDF, archive, image, binary, or source tree may be downloaded into the repository but should remain unstaged when its terms are strict or unclear. Explain the evidence, uncertainty, obligations, size, and practical options, then ask the user whether to stage it, move it to local cache, compress it, or keep only acquisition metadata. Record the user's decision.
+**Disposition** — where the bytes live:
 
-When the choice materially affects clone size, offline use, access requirements, or uncertain/strict terms, present the user with a grouped list containing license evidence, uncertainty or obligations, original and compressed size where useful, development value, recommendation, and all practical alternatives. Ask what to stage or retain. Categorize at least: clear/common licenses; strict/conditional terms; unknown terms; unusually large files/directories; opaque binaries; vendored source/dependencies; and explicit copying/sharing restrictions. Do not repeatedly ask about routine small artifacts covered by an explicit repository policy.
+- `repository` — in the tree
+- `archive` — moved to `../repo-archive` with a placeholder, usually for size
+- `reference-only` — metadata and URL kept because the file could not be obtained
+
+Keep vendored `LICENSE` files, copyright headers and notices when they come bundled — they
+are part of the artifact and cost nothing.
+
+**What not to do:** do not delete artifacts over licensing, do not stall a pass waiting for a
+ruling, and do not turn a research record into a legal analysis. Note it and move on.
 
 ### 18. Analyze vendored dependencies, near-duplicates and large artifacts
 
@@ -701,7 +705,7 @@ Maintain:
 1. An auditable artifact manifest covering files intended for the repository.
 2. A committed machine-readable acquisition manifest covering every useful artifact not tracked in Git, including ignored repository files, local-cache files, reference-only records, temporarily inspected files, inaccessible artifacts and failed acquisitions.
 3. A committed downloader driven only by the acquisition manifest.
-4. A concise license-and-decisions report grouping known permissive licenses, conditional/strict licenses and obligations, prohibited terms, and unknown terms requiring user input.
+4. A short licence summary in the manifest: what each artifact's terms appear to be, grouped so obligations worth preserving (attribution, notices) are visible at a glance.
 5. Reproduction instructions for large omitted/ignored vendored trees and binaries.
 
 Each source-artifact record must include:
@@ -833,7 +837,7 @@ Before completion:
 17. Spot-check claim-to-source coverage for identity, specifications, pinouts, fitted parts and firmware/recovery claims.
 18. Confirm every `local-cache` path is ignored and absent from Git's index.
 19. Validate the acquisition-manifest schema and run the downloader in verify-only mode.
-20. Confirm license reporting separately lists known licenses, conditional/strict obligations, prohibited terms, and unknown terms requiring user decisions.
+20. Confirm each artifact carries a licence field, even if the value is `unknown`.
 21. Verify vendored dependency identity, version/tag/commit/date, modification status, and reconstruction instructions where applicable. Where a vendored tree differs from upstream, confirm the **delta is retained as a patch**, its hunks are characterised (local modification versus merely stale upstream), and **the pinned upstream revision the patch applies to is retained** so the patch stays reproducible.
 22. Measure major directory/file contributors and test useful compression options for large binaries or archives.
 23. Confirm the user-facing decision report lists all unstaged uncertain/strict artifacts, unusually large paths, binaries, and explicit restrictions with recommendations.
@@ -871,7 +875,7 @@ Before completion:
 50. Confirm useful comparative/performance datasets have reproducible charts where visualization adds value, with sourced data, units, configurations, dates, uncertainty and generation scripts.
 51. Confirm multi-language material follows policy: English retained in the repository where size allows, other languages archived with a placeholder, and an explicit statement of whether translations are substantively equivalent — or, where no English version exists, that the non-English document is the primary source.
 
-Store a concise verification report under `` and link it from the umbrella README.
+Store a concise verification report at the knowledge-base root and link it from the umbrella README.
 
 ## Completion Standard
 

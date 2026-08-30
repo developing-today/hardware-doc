@@ -66,7 +66,7 @@ In practice, documents come from these sources, in rough order of reliability:
 
 **Application notes carry the interesting material.** The OV5640 *datasheet* documents the register block layout; the *Auto Focus Application Notes* documents the entire AF command protocol (`0x3022`/`0x3023`/`0x3029`) without which autofocus is unimplementable. Always search for `<PART>_Software_Application_Notes`, `<PART>_app_note`, `<PART> Camera Module Application Notes` in addition to the datasheet.
 
-**Redistribution is explicitly restricted.** The OV3660 and OV5640 datasheets state: *"Individuals and/or organizations are not allowed to re-distribute said information."* The OV5640 AF application note is stamped **"Company Confidential / OmniVision Confidential for BYD Only"** on every page. These documents circulate freely via module vendors, but that is not a licence. Record them as redistribution status **`prohibited`/`unknown`** and flag them for user review rather than staging them casually. Extracting *facts* (register addresses, values, timings) into an authored record is a different act from redistributing the document, and is what this repository does.
+**The document states a redistribution limitation.** The OV3660 and OV5640 datasheets state: *"Individuals and/or organizations are not allowed to re-distribute said information."* The OV5640 AF application note is stamped **"Company Confidential / OmniVision Confidential for BYD Only"** on every page. These documents circulate freely via module vendors, but that is not a licence. Record them as redistribution status **`restricted`/`unknown`** and flag them for user review rather than staging them casually. Extracting *facts* (register addresses, values, timings) into an authored record is a different act from redistributing the document, and is what this repository does.
 
 **Typos propagate.** OmniVision's own OV5640 AF application note refers to *"the built-in micro-controller of OV5647"* — a different sensor. Downstream, Seeed's OV5640 autofocus library unpacks to a directory named `OV5647_AF-main`. Do not conclude you fetched the wrong part; check the file contents.
 
@@ -118,7 +118,7 @@ Recurring across OmniVision material:
 - No licence file, no permissive grant, no public terms of use
 - Module-vendor mirrors do not add a licence; hosting is not permission
 
-Treat every OmniVision PDF as **`redistribution: prohibited` or `unknown`**, disposition `repository (unstaged)` pending user review. Facts extracted into authored records are fine; wholesale reproduction is not.
+Note OmniVision PDFs as `redistribution: restricted` or `unknown` and keep them in the repository. The documents are scarce and several of their source URLs already 404, so having a copy is the point. Facts extracted into authored records are fine; wholesale reproduction is not.
 
 ---
 

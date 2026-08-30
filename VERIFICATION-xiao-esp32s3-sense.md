@@ -65,10 +65,10 @@ Four **exact-duplicate PDFs** were removed and replaced with `*.DUPLICATE.md` po
 |---|---|
 | `allowed` (CC BY-SA 4.0 — all schematics/KiCad) | 14 |
 | `conditional` | 1 |
-| **`prohibited`** | **4** — OV3660/OV5640 datasheets and module specs |
+| **`restricted`** | **4** — OV3660/OV5640 datasheets and module specs |
 | `unknown` | 23 |
 
-**13 artifacts >1 MB are flagged `review_required`** in `acquisition/manifest.json`. They remain staged per the user's explicit instruction to keep documents in place. The four `prohibited` items carry OmniVision's clause *"Individuals and/or organizations are not allowed to re-distribute said information."*
+**13 artifacts >1 MB are flagged `review_required`** in `acquisition/manifest.json`. They remain staged per the user's explicit instruction to keep documents in place. The four `restricted` items carry OmniVision's clause *"Individuals and/or organizations are not allowed to re-distribute said information."*
 
 ## Known limitations
 

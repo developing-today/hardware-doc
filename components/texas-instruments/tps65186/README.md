@@ -754,7 +754,7 @@ curl -L -o tps65186.pdf           https://www.ti.com/lit/gpn/TPS65186
 
 ### Design files read
 
-All under ``, all read with `devices/soldered-electronics/inkplate-5/tools/kicad_pcb_nets.py` (resolved nets) and `.../tools/parse_kicad_sch.py` (BOM):
+All under the knowledge-base root, all read with `devices/soldered-electronics/inkplate-5/tools/kicad_pcb_nets.py` (resolved nets) and `.../tools/parse_kicad_sch.py` (BOM):
 
 | File | What it established |
 |---|---|

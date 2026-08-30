@@ -64,10 +64,10 @@ Findings, not legal advice. Full per-artifact detail in [`manifest.json`](manife
 |---|---:|---|
 | **`allowed`** | 14 | All schematics and KiCad libraries — **CC BY-SA 4.0**, stated on every schematic sheet |
 | **`conditional`** | 1 | Espressif ESP32-S3 datasheet (attribution) |
-| **`prohibited`** | 4 | **OV3660 / OV5640 datasheets and module specs** — explicitly state *"Individuals and/or organizations are not allowed to re-distribute said information."* |
+| **`restricted`** | 4 | **OV3660 / OV5640 datasheets and module specs** — explicitly state *"Individuals and/or organizations are not allowed to re-distribute said information."* |
 | **`unknown`** | 23 | Firmware bundles, CAD/3D assets, pinout spreadsheets, the reference-design catalogue — Seeed publishes these as support downloads with no stated terms |
 
-**13 artifacts over 1 MB are flagged in `manifest.json` under `review_required`** because they combine size with `prohibited` or `unknown` terms. They are currently **staged** in the repository at the user's explicit instruction to keep all documents in place for now. The notable ones:
+**13 artifacts over 1 MB are flagged in `manifest.json` under `review_required`** because they combine size with `restricted` or `unknown` terms. They are currently **staged** in the repository at the user's explicit instruction to keep all documents in place for now. The notable ones:
 
 - `ov3660-datasheet.pdf` (1.9 MB) and `ov5640-datasheet.pdf` (1.7 MB) — **explicit no-redistribution clause**
 - `xiao-reference-design.pdf` (49.9 MB) — largest single artifact; no stated terms; contains third-party project descriptions

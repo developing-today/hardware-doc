@@ -135,7 +135,7 @@ Plain HTTP, no referer, no cookie. A bare `curl` User-Agent was not tested, so w
 
 Every page of the ES8156 datasheet is stamped **"Everest Semiconductor Confidential"**, yet the file is served without authentication from the manufacturer's own public web root and carries **no explicit redistribution clause**. That combination is common with this vendor.
 
-Treat Everest datasheets as **`redistribution: unknown`**, disposition `repository (unstaged)`, flagged for user review. The *driver* sources used to reconstruct register maps are separately and clearly licensed (ESPRESSIF MIT for esp-adf, GPL-2.0 for Linux ASoC) — attribute them correctly and do not let the codec's documentation ambiguity contaminate the licence status of the code.
+Note Everest datasheets as **`redistribution: unknown`** and keep them in the repository. Flagged for user review. The *driver* sources used to reconstruct register maps are separately and clearly licensed (ESPRESSIF MIT for esp-adf, GPL-2.0 for Linux ASoC) — attribute them correctly and do not let the codec's documentation ambiguity contaminate the licence status of the code.
 
 ---
 

@@ -269,4 +269,4 @@ references. Do not infer from their presence that any of these parts is on this 
 
 Redistribution status for all fifteen is `unknown` — they are third-party manufacturer datasheets
 redistributed by SensorLib under its MIT license, but MIT covers SensorLib's own code, **not**
-these bundled third-party documents. They are kept unstaged pending review.
+these bundled third-party documents. They are kept pending review.

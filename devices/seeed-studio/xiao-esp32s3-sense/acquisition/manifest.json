@@ -230,7 +230,7 @@
       "license": "OmniVision proprietary",
       "license_evidence": "Datasheet states: \"Individuals and/or organizations are not allowed to re-distribute said information.\"",
       "license_scope": "file",
-      "redistribution_status": "prohibited",
+      "redistribution_status": "restricted",
       "disposition": "repository",
       "repository_state": "staged"
     },
@@ -246,7 +246,7 @@
       "license": "OmniVision proprietary",
       "license_evidence": "Datasheet states: \"Individuals and/or organizations are not allowed to re-distribute said information.\"",
       "license_scope": "file",
-      "redistribution_status": "prohibited",
+      "redistribution_status": "restricted",
       "disposition": "repository",
       "repository_state": "staged"
     },
@@ -262,7 +262,7 @@
       "license": "OmniVision proprietary",
       "license_evidence": "Datasheet states: \"Individuals and/or organizations are not allowed to re-distribute said information.\"",
       "license_scope": "file",
-      "redistribution_status": "prohibited",
+      "redistribution_status": "restricted",
       "disposition": "repository",
       "repository_state": "staged"
     },
@@ -278,7 +278,7 @@
       "license": "OmniVision proprietary",
       "license_evidence": "Datasheet states: \"Individuals and/or organizations are not allowed to re-distribute said information.\"",
       "license_scope": "file",
-      "redistribution_status": "prohibited",
+      "redistribution_status": "restricted",
       "disposition": "repository",
       "repository_state": "staged"
     },

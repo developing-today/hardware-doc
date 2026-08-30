@@ -5,7 +5,7 @@ The SquareLine Studio Linux ZIP that this directory would otherwise hold has bee
 - **Archived:** 2026-08-30
 - **Moved to:** `archive/vendors/squareline/artifacts/` (same relative path)
 - **Kept out of the repository:** 180 438 276 bytes (~172.1 MiB)
-- **Redistribution status:** **prohibited** · **Disposition:** **local-cache**
+- **Redistribution status:** **restricted** · **Disposition:** **local-cache**
 
 Nothing was lost. Everything this repository needs from the archive was extracted into Markdown before it was set aside — see [What was extracted](#what-was-extracted-and-where-it-now-lives).
 

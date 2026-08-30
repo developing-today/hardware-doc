@@ -114,7 +114,7 @@ Missing the `micropython` servers or `lv_font_conv-linux` yields an application 
 | **Tiers** | Free tier with limits; 30-day full-featured trial requiring no account [S1] |
 | **Account required to download** | No |
 | **Account/internet required to activate** | Yes, at first launch [S6] |
-| **Redistribution status** | **prohibited** — no evidence of any redistribution grant, and no licence file ships in the archive |
+| **Redistribution status** | **restricted** — no evidence of any redistribution grant, and no licence file ships in the archive |
 | **Disposition** | **local-cache** — archived outside the repository; never staged |
 
 ## 8. Sources

@@ -299,7 +299,7 @@ The 15 fps full-resolution figure in §2 is a sensor number. On an ESP32-S3 over
 - The exact provenance and module-specificity of the AF blob in the Seeed-distributed library is unverified; whether it is OmniVision's reference image or a module-house variant is unknown.
 - No measured frame rates on ESP32-S3 for this record.
 - The `0x3600`–`0x37FF` analog register meanings remain undocumented by OmniVision; nothing in this record resolves them.
-- [AN] is marked *"Company Confidential / OmniVision Confidential for BYD Only"* on every page. It circulates widely via module vendors, but its redistribution status is **`prohibited`/`unknown`** and it is retained here for research use only. Flagged for review.
+- [AN] is marked *"Company Confidential / OmniVision Confidential for BYD Only"* on every page. It circulates widely via module vendors, but its redistribution status is **`restricted`/`unknown`** and it is retained here for research use only. Flagged for review.
 
 ---
 

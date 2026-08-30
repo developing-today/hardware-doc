@@ -109,7 +109,7 @@ simply chose not to route its interrupt. See the device's
 
 **Redistribution status:** `unknown`. This is a Goodix datasheet redistributed inside an
 MIT-licensed library; the MIT licence covers SensorLib's own code, **not** the bundled
-third-party document. Held unstaged pending review.
+third-party document. Kept in the repository; terms noted above.
 
 Reacquire:
 

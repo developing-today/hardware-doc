@@ -49,5 +49,5 @@ All hashes re-verified unchanged after the move; all validate as `application/pd
 > ⚠ **The OV3660 datasheet is scarce — do not archive it out of the repository.** It is a
 > **v1.3, May 2011 PRELIMINARY** document that OmniVision does not publish; it reached us through a
 > Seeed mirror that no longer serves it, and **all five independent re-fetch URLs returned 404 on
-> 2026-08-30**. Its redistribution status is `prohibited`, which is also why it was **moved rather
+> 2026-08-30**. Its redistribution status is `restricted`, which is also why it was **moved rather
 > than copied** — a second copy would be the wrong direction on both counts.

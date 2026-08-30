@@ -6,5 +6,5 @@ module specs).
 
 Short version: both OV3660 PDFs now live under
 [`components/omnivision/ov3660/artifacts/`](../../../../../components/omnivision/ov3660/artifacts/).
-They were **moved, not copied, and not archived** — redistribution is `prohibited`, and the datasheet
+They were **moved, not copied, and not archived** — the document limits redistribution, and the datasheet
 is scarce (all five re-fetch URLs 404 as of 2026-08-30), so it stays in the repository.
