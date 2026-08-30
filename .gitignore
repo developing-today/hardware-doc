@@ -1,5 +1,13 @@
-# Bulk artifacts live in the sibling ../hardware-doc-archive (not a git repo).
-# Each one leaves a *.ARCHIVED.md placeholder here with hashes and recovery URLs.
+# Bulk artifacts live in the sibling ../hardware-doc-archive - its own git repository,
+# but normally unpublished/private because of its size. Each artifact moved there leaves
+# a *.ARCHIVED.md placeholder here carrying size, SHA-256 and recovery URLs.
+#
+# `archive` is a tracked symlink to it (relative: ../hardware-doc-archive), so the
+# archive is reachable as ./archive/... when present. This entry stops the archive's
+# CONTENTS being committed here if the link is ever replaced by a real directory; it
+# does not (and cannot) affect the tracked symlink itself - .gitignore never applies to
+# tracked paths. See AGENTS.md "Symlinks and --skip-worktree".
+archive/*
 
 __pycache__/
 *.pyc
