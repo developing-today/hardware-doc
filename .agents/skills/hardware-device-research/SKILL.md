@@ -200,7 +200,7 @@ A worked example of the full chain, using strikethrough to show the file is no l
 
 ```markdown
 | ~~esp-dev-kits-en-master-esp32p4.pdf~~ **archived 2026-08-24** | 30 482 003 |
-  `04d75d2a…` | Offline user guides — [archive record](../shared-artifacts/ARCHIVED-FRAMEWORK-GUIDES.md) |
+  `04d75d2a…` | Offline user guides — archive record (`devices/espressif/shared-artifacts/ARCHIVED-FRAMEWORK-GUIDES.md`) |
 ```
 
 Where several devices share one component, the placeholder is written **once** in the component directory and cited by **every** device that uses it. Do not copy the artifact per device.
