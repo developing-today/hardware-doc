@@ -2,7 +2,7 @@
 
 > What already exists to plug into the two expansion ports, and what you need to build your own.
 > Snapshot **2026-08-24**. All repositories cloned and inspected directly; sources archived under
-> `archive/scratch/tanmatsu/sources/`.
+> `scratch/tanmatsu/sources/`.
 > **No hardware was available** — nothing here was built, fitted or powered.
 
 Expansion hardware is developed under the **Konsool** name by Badge.Team, while front panels come

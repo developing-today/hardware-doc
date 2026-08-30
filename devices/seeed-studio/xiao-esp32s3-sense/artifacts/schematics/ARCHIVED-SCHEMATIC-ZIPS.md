@@ -21,7 +21,7 @@ recorded separately in
 [`xiao-esp32s3-v1.4-sch-pcb.zip.DUPLICATE.md`](xiao-esp32s3-v1.4-sch-pcb.zip.DUPLICATE.md).
 Its identical extraction was removed at the same time.
 
-Archive path: `archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/artifacts/{schematics,kicad}/`
+Archive path: `archive/devices/seeed-studio/xiao-esp32s3-sense/artifacts/{schematics,kicad}/`
 
 ## Reacquisition
 

@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images` |
-| Archived to | `archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images` |
+| Archived to | `archive/devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images` |
 | Type | directory |
 | Size | 141,217,541 B (134.68 MiB) |
 | File count | 92 |
@@ -140,7 +140,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images" \
+mv "archive/devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images" \
    "devices/soldered-electronics/inkplate-5/artifacts/docs/Inkplate-documentation/source/images"
 ```
 

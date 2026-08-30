@@ -2,7 +2,8 @@
 """Relocate bulky/duplicate artifacts out of the repository without losing them.
 
 Policy (per user instruction, 2026-08-24): never delete a downloaded artifact.
-Move it to ../hardware-doc-archive/ preserving its relative path, and leave a
+Move it into the archive (resolved from the git common dir, namespaced by repo)
+preserving its relative path, and leave a
 Markdown placeholder in its place carrying everything needed to get the exact
 bytes back: size, SHA-256, mtime, upstream repo + commit + author, and several
 independent recovery URLs.
@@ -20,7 +21,33 @@ Directories are archived recursively as a unit with one placeholder.
 
 import argparse, hashlib, json, os, re, shutil, subprocess, datetime, sys
 
-ARCHIVE = os.path.expanduser("../hardware-doc-archive")
+def _repo_root():
+    """Real repository root, worktree-safe (--git-common-dir, not --show-toplevel)."""
+    out = subprocess.run(
+        ["git", "rev-parse", "--path-format=absolute", "--git-common-dir"],
+        capture_output=True, text=True)
+    if out.returncode != 0:
+        raise SystemExit("not inside a git repository")
+    return os.path.dirname(out.stdout.strip())
+
+
+# Resolve the archive rather than hardcoding it. Layout:
+#
+#   <repo-parent>/
+#   |- <repo>/                     this repository
+#   \- hardware-doc-archive/       shared archive
+#      |- <repo>/                  <- our namespace, mirrors in-repo paths
+#      \- scratch/<repo>/          <- working files
+#
+# Namespacing by source repository means a second repo's material sits beside ours
+# instead of colliding. Overridable for testing.
+REPO_ROOT = _repo_root()
+NAMESPACE = os.path.basename(REPO_ROOT)
+ARCHIVE_ROOT = os.environ.get(
+    "REPO_ARCHIVE_ROOT",
+    os.path.join(os.path.dirname(REPO_ROOT), "hardware-doc-archive"))
+ARCHIVE = os.path.join(ARCHIVE_ROOT, NAMESPACE)
+SCRATCH = os.path.join(ARCHIVE_ROOT, "scratch", NAMESPACE)
 
 
 def sha256(p):

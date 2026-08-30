@@ -2,7 +2,7 @@
 
 > Archive/removal date: **2026-08-23**.
 > "Archived" means moved to
-> `archive/hardware-doc/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/examples/selected/`,
+> `archive/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/examples/selected/`,
 > preserving this repository's relative path. Nothing was deleted.
 
 ## What BlueKnob is

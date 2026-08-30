@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Advanced/microSD/Inkplate5V2_microSD_Pictures` |
-| Archived to | `archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Advanced/microSD/Inkplate5V2_microSD_Pictures` |
+| Archived to | `archive/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Advanced/microSD/Inkplate5V2_microSD_Pictures` |
 | Type | directory |
 | Size | 5,640,314 B (5.38 MiB) |
 | File count | 4 |
@@ -50,7 +50,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/hardware-doc/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Advanced/microSD/Inkplate5V2_microSD_Pictures" \
+mv "archive/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Advanced/microSD/Inkplate5V2_microSD_Pictures" \
    "devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Advanced/microSD/Inkplate5V2_microSD_Pictures"
 ```
 

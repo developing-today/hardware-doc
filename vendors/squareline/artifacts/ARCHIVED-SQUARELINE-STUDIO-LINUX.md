@@ -3,7 +3,7 @@
 The SquareLine Studio Linux ZIP that this directory would otherwise hold has been kept **outside the repository**. It is 172 MiB of proprietary, all-rights-reserved binaries with no redistribution grant, so it is neither committed nor staged.
 
 - **Archived:** 2026-08-30
-- **Moved to:** `archive/hardware-doc/vendors/squareline/artifacts/` (same relative path)
+- **Moved to:** `archive/vendors/squareline/artifacts/` (same relative path)
 - **Kept out of the repository:** 180 438 276 bytes (~172.1 MiB)
 - **Redistribution status:** **prohibited** · **Disposition:** **local-cache**
 

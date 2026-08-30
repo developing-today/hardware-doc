@@ -143,7 +143,7 @@ Two things worth noting:
 - **The Gerbers are dated `2026-02-07`**, eighteen days before the repository's last commit (`640805dd`, 2026-02-25). So the published manufacturing data slightly predates the final commit — check both if you intend to fabricate.
 
 The ZIP is not vendored (it is regenerable from the KiCad source); it lives in the archive at
-`archive/scratch/tanmatsu/sources/tanmatsu-hardware/production/tanmatsu.zip`.
+`scratch/tanmatsu/sources/tanmatsu-hardware/production/tanmatsu.zip`.
 
 ## Component records
 

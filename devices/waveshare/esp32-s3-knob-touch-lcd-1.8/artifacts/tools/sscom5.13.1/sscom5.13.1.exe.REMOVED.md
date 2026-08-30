@@ -5,7 +5,7 @@ This file is a placeholder standing in for a binary that was moved out of the re
 | Field | Value |
 |---|---|
 | Original relative path | `devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/tools/sscom5.13.1/sscom5.13.1.exe` |
-| Archived to | `archive/hardware-doc/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/tools/sscom5.13.1/sscom5.13.1.exe` |
+| Archived to | `archive/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/tools/sscom5.13.1/sscom5.13.1.exe` |
 | Archive date | **2026-08-24** |
 | What it is | The **SSCOM V5.13.1 Windows serial terminal executable** — a 32-bit Windows GUI program. See [`README.md`](./README.md) for what SSCOM is and why it is here at all |
 | SHA-256 | `51ea245a3d07436a86a4449b2791c1f37fa60e181dd128e8d7dd79cc1ad836ce` |

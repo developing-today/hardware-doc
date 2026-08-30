@@ -51,7 +51,7 @@ contradiction ("super-speed 480MBit") that had not previously been recorded. Tho
 | `hardware/case/extra4.jpg` | 57,977 | `ad28a3bf7cd1e1ae6000f7f6329c7cbd8b78ccbbb82edd189e62fb837b3984d9` |
 
 Archive root:
-`archive/hardware-doc/devices/nicolai-electronics/tanmatsu/artifacts/source-snapshots/tanmatsu-documentation/`
+`archive/devices/nicolai-electronics/tanmatsu/artifacts/source-snapshots/tanmatsu-documentation/`
 
 ## Reacquisition
 

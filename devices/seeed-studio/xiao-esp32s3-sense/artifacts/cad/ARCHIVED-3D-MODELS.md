@@ -15,7 +15,7 @@
 > An earlier revision of this record listed the *uncompressed* totals under a plain "Bytes"
 > heading, which would have failed a `sha256sum`/size check on a re-fetched ZIP.
 
-Archive path: `archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/artifacts/cad/`
+Archive path: `archive/devices/seeed-studio/xiao-esp32s3-sense/artifacts/cad/`
 
 ## Reacquisition
 

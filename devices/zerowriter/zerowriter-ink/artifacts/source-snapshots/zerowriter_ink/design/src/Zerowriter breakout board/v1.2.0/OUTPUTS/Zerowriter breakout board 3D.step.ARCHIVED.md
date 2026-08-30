@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step` |
-| Archived to | `archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step` |
+| Archived to | `archive/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step` |
 | Type | file |
 | Size | 5,785,156 B (5.52 MiB) |
 | SHA-256 | `b0b4d4bf157a42395efd0e0f383609e5ee2743cd7fc63196ce8360ed4885c94c` |
@@ -43,7 +43,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step" \
+mv "archive/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step" \
    "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step"
 ```
 

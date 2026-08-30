@@ -12,7 +12,7 @@
 | **Size** | 678 481 bytes |
 | Root directory inside the ZIP | `202004052_XIAO ESP32S3 Plus_v1.1_KiCad` (vendor part number `202004052`) |
 | Retrieved | 2026-08-24 |
-| Archive path | `archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/artifacts/kicad/` |
+| Archive path | `archive/devices/seeed-studio/xiao-esp32s3-sense/artifacts/kicad/` |
 
 Full details, alongside the three schematic ZIPs archived at the same time, are in
 [`../schematics/ARCHIVED-SCHEMATIC-ZIPS.md`](../schematics/ARCHIVED-SCHEMATIC-ZIPS.md).

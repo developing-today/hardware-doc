@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `examples/selected/esp32-birdnet-mic/web-flasher` |
-| Archived to | `archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/web-flasher` |
+| Archived to | `archive/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/web-flasher` |
 | Type | directory |
 | Size | 71,702,460 B (68.38 MiB) |
 | File count | 86 |
@@ -134,7 +134,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/web-flasher" \
+mv "archive/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/web-flasher" \
    "examples/selected/esp32-birdnet-mic/web-flasher"
 ```
 

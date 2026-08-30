@@ -3,7 +3,7 @@
 One large Espressif **development-board documentation** PDF that used to live in this directory has been moved out of the repository. It was **regenerable from a stable, verified Espressif URL** and is not scarce, unlike the board schematics, PCB layouts, dimension drawings and component datasheets in this directory, **all of which are retained**.
 
 - **Archived:** 2026-08-24
-- **Moved to:** `archive/hardware-doc/devices/espressif/shared-artifacts/` (same relative path)
+- **Moved to:** `archive/devices/espressif/shared-artifacts/` (same relative path)
 - **Total reclaimed here:** 30 482 003 bytes (~29.1 MiB)
 
 Nothing was deleted.

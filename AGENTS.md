@@ -65,28 +65,40 @@ Substituting makes the worktree differ from `HEAD`, so the script then marks the
 > only thing that suppresses it. The `archive/*` and `doc/hardware/*` ignore entries exist
 > to stop the link *contents* being committed if a link is replaced by a real directory.
 
-### Reference archived artifacts as `archive/…`
+### Reference archived artifacts as `archive/…` and `scratch/…`
 
-**`archive/` is the canonical way to point at an archived artifact from inside this repo.**
-Placeholders and restore commands use it; do not write `../hardware-doc-archive/…` in a
-concrete path.
+Two tracked symlinks point into this repo's **own slice** of the shared archive:
+
+| Link | Target | Contains |
+|---|---|---|
+| `archive` | `../hardware-doc-archive/hardware-doc` | bulky artifacts moved out of here |
+| `scratch` | `../hardware-doc-archive/scratch/hardware-doc` | raw fetches, provenance snapshots, working files |
+
+So a placeholder reads:
 
 ```
-| Archived to | `archive/hardware-doc/devices/<vendor>/<board>/artifacts/…` |
+| Archived to | `archive/devices/<vendor>/<board>/artifacts/…` |
 ```
 
-The indirection is the point: if the archive is ever moved or renamed, **one symlink changes**
-and every placeholder keeps working. Paths are relative to the repository root, so run restore
-commands from there.
+— the path after `archive/` is **the same path it had in this repository**. No prefix to
+remember, nothing to recompute.
 
-Two things to know:
+The archive is namespaced by source repository:
 
-- The archive's internal layout still begins `doc/hardware/…`, a leftover from when this
-  content lived at that path inside another repo. Hence `archive/hardware-doc/…`. Harmless,
-  and not worth rewriting 5 GB to tidy.
-- **Prose that explains the layout keeps the real sibling path** (`../hardware-doc-archive`),
-  because it is describing where the directory actually is. Only concrete, followable paths
-  use `archive/`.
+```
+hardware-doc-archive/
+├── hardware-doc/          ← what `archive` points at
+└── scratch/hardware-doc/  ← what `scratch` points at
+```
+
+A second repository's material would sit beside these rather than colliding. Paths are
+relative to the repository root, so run restore commands from there.
+
+The indirection is the point: **if the archive moves or is renamed, two symlinks change** and
+every reference keeps working.
+
+> Prose that explains the layout keeps the real sibling path (`../hardware-doc-archive`),
+> because it describes where the directory actually is. Only followable paths use the links.
 
 **Caveat.** While `--skip-worktree` is set, git refuses to update that path. If a committed
 link target ever legitimately changes upstream, a clone carrying the flag will **not** pick
@@ -107,7 +119,7 @@ relative default genuinely does not work.
 | Authored research — device records, component records, feature guides, vendor guides | **this repo** |
 | Small primary artifacts — schematics, datasheets, BOMs, firmware images, EDA sources | **this repo**, under `devices/**/artifacts/` or `components/**/artifacts/` |
 | Bulky derived output — 3D STEP models, panelisation files, generated doc builds, enclosure meshes, prebuilt binaries already published upstream | **`../hardware-doc-archive/`**, with a `*.ARCHIVED.md` placeholder left behind |
-| Scratch downloads, raw HTML fetches, working files | `../hardware-doc-archive/scratch/` |
+| Scratch downloads, raw HTML fetches, working files | `../hardware-doc-scratch/` |
 
 Never delete an acquired artifact. Move it to the archive and leave a placeholder that
 records size, SHA-256, upstream commit/author/licence and **multiple recovery URLs**.

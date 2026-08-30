@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif` |
-| Archived to | `archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif` |
+| Archived to | `archive/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif` |
 | Type | file |
 | Size | 3,797,725 B (3.62 MiB) |
 | SHA-256 | `2a19f1b672b6ee57939e66c6d08b5cfc8fdbcb3d722b7906b6617b1a5ce612f2` |
@@ -43,7 +43,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif" \
+mv "archive/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif" \
    "examples/selected/Seeed_Arduino_SSCMA/examples/camera_web_server/img/example_0.gif"
 ```
 

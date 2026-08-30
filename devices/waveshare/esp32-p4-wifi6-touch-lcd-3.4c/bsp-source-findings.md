@@ -3,7 +3,7 @@
 > Compiled **2026-08-26** from `waveshareteam/Waveshare-ESP32-components`,
 > `bsp/esp32_p4_wifi6_touch_lcd_xc/` (Apache-2.0, repo 74★, last push 2026-08-25).
 >
-> Local copy: `archive/scratch/esp32-p4-wifi6-touch-lcd-xc/bsp-source/`
+> Local copy: `scratch/esp32-p4-wifi6-touch-lcd-xc/bsp-source/`
 >
 > This BSP was found on 2026-08-26 by **code search**, after earlier passes had recorded it as
 > *"resolved by the Component Manager, not vendored"* and stopped. It is the single most

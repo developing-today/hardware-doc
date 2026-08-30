@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models` |
-| Archived to | `archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models` |
+| Archived to | `archive/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models` |
 | Type | directory |
 | Size | 10,770,720 B (10.27 MiB) |
 | File count | 5 |
@@ -51,7 +51,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models" \
+mv "archive/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models" \
    "examples/selected/XIAO-ESP32S3-Sense_Retro_Camera/models"
 ```
 

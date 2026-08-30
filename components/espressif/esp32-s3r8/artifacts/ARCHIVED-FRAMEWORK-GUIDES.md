@@ -3,7 +3,7 @@
 Three large Espressif **framework documentation** PDFs that used to live in this directory have been moved out of the repository. They were **regenerable from stable, verified Espressif URLs** and are not scarce, unlike the chip datasheet, TRM, errata and hardware-design guidelines in this directory, **all of which are retained**.
 
 - **Archived:** 2026-08-24
-- **Moved to:** `archive/hardware-doc/components/espressif/esp32-s3r8/artifacts/` (same relative path)
+- **Moved to:** `archive/components/espressif/esp32-s3r8/artifacts/` (same relative path)
 - **Total reclaimed here:** 80 963 336 bytes (~77.2 MiB)
 
 Nothing was deleted. The knowledge worth keeping was extracted into committed Markdown **before** the files were moved — see [What was extracted](#what-was-extracted-and-where-it-now-lives).

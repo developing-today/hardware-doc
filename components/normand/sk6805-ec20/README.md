@@ -256,7 +256,7 @@ Three attempts failed before one succeeded. All are recorded in `component-downl
 |---|---|
 | `https://cdn-shop.adafruit.com/product-files/4960/4960_SK6805-EC20_REV02_EN.pdf` | HTTP 404 (9-byte `Not found`) |
 | `https://cdn-shop.adafruit.com/product-files/4960/4960_SK6805-EC20_REV01_EN.pdf` | HTTP 404 |
-| `https://cdn-shop.adafruit.com/product-files/4492/Datasheet.pdf` | ⚠ **HTTP 200, valid `%PDF`, 3 094 006 B — but the WRONG PART.** A 17-page image-only **iPixel LED** (Shenzhen) catalogue with no extractable text and no occurrence of "SK6805". Archived to `archive/hardware-doc/components/normand/sk6805-ec20/artifacts/WRONG-PART-ipixel-catalog-adafruit-4492.pdf` rather than deleted |
+| `https://cdn-shop.adafruit.com/product-files/4492/Datasheet.pdf` | ⚠ **HTTP 200, valid `%PDF`, 3 094 006 B — but the WRONG PART.** A 17-page image-only **iPixel LED** (Shenzhen) catalogue with no extractable text and no occurrence of "SK6805". Archived to `archive/components/normand/sk6805-ec20/artifacts/WRONG-PART-ipixel-catalog-adafruit-4492.pdf` rather than deleted |
 | `https://datasheet.lcsc.com/lcsc/2110250930_Normand-SK6805-EC20_C2890036.pdf` | HTTP 200 but **`text/html`** anti-bot interstitial, 56 572 B. Rejected by magic-byte check |
 | **`https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2110250930_Normand-SK6805-EC20_C2890036.pdf`** | ✅ **HTTP 200, `%PDF`, 804 947 B** — with a Chrome 131 UA and an `https://www.lcsc.com/` referer |
 

@@ -10,7 +10,7 @@
 | Field | Value |
 |---|---|
 | Original repo path | `examples/selected/esp32-birdnet-mic/assets` |
-| Archived to | `archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/assets` |
+| Archived to | `archive/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/assets` |
 | Type | directory |
 | Size | 4,729,511 B (4.51 MiB) |
 | File count | 4 |
@@ -50,7 +50,7 @@ Independent recovery URLs, most reliable first:
 Restore from the local archive:
 
 ```bash
-mv "archive/hardware-doc/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/assets" \
+mv "archive/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/esp32-birdnet-mic/assets" \
    "examples/selected/esp32-birdnet-mic/assets"
 ```
 
