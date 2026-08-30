@@ -1,0 +1,1 @@
+../../../../../../../../../../archive/devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/demo/ESP32-S3-Knob-Touch-LCD-1.8-Demo/ESP-IDF/03_DRV2605_Test/components/SensorLib/keywords.txt

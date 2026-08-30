@@ -111,31 +111,13 @@ link scratch "$SCR"
 #     ./scripts/init.sh --link-archived     create/refresh them
 #     ./scripts/init.sh --unlink-archived   remove them
 case "${1:-}" in
-  --link-archived|--unlink-archived)
-    mode="$1"; made=0; removed=0
-    while IFS= read -r ph; do
-      target_rel="${ph%.ARCHIVED.md}"                 # original path, minus the suffix
-      [ "$target_rel" = "$ph" ] && continue
-      inner="${target_rel#./}"                        # path as the archive mirrors it
-      arch_path="$ART/$inner"
-      if [ "$mode" = "--unlink-archived" ]; then
-        [ -L "$target_rel" ] && { rm -f "$target_rel"; removed=$((removed+1)); }
-        continue
-      fi
-      [ -e "$target_rel" ] && [ ! -L "$target_rel" ] && continue   # real file present, leave it
-      [ -e "$arch_path" ] || continue                              # not in the archive
-      # Hop up to the repo root, then back down through our own `archive/` symlink.
-      up=""; d="$(dirname "$inner")"
-      while [ "$d" != "." ] && [ -n "$d" ]; do up="../$up"; d="$(dirname "$d")"; done
-      ln -sfn "${up}archive/$inner" "$target_rel" && made=$((made+1))
-      # A matching *.ARCHIVED.link beside the placeholder, so the three files for an
-      # archived artifact sit together under one predictable naming scheme.
-      ln -sfn "$(basename "$target_rel")" "${target_rel}.ARCHIVED.link" 2>/dev/null || true
-    done < <(find . -name '*.ARCHIVED.md' -not -path './.git/*' -not -path './archive/*' -not -path './scratch/*')
-    [ "$mode" = "--link-archived" ] && ok "linked $made archived artifact(s) back into place"
-    [ "$mode" = "--unlink-archived" ] && ok "removed $removed archived-artifact symlink(s)"
-    dim "  Links point through ./archive/ so they follow the top-level archive symlink."
-    dim "  They are committed alongside the *.ARCHIVED.md placeholders."
+  --link-archived)
+    python3 "$ROOT/tools/link_archived.py" --apply | sed 's/^/  /'
+    dim "  Links route through ./archive/, so they follow the top-level archive symlink."
+    dim "  Run tools/audit_archive.py to check nothing was archived without a marker."
+    ;;
+  --unlink-archived)
+    python3 "$ROOT/tools/link_archived.py" --apply --remove | sed 's/^/  /'
     ;;
 esac
 

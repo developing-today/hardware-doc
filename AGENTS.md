@@ -228,6 +228,39 @@ placeholder that silently omits sourcing is a defect; one that says "see
 The **acquisition manifest is a required part of research**, not an optional extra. It is the
 backstop that keeps a bulk operation from quietly producing forty under-documented files.
 
+### Write the prose, not just the fields
+
+Hashes and URLs make an artifact *recoverable*; they do not make it *understandable*. A
+directory-level `README.md` or `ARCHIVED-<TOPIC>.md` is the right place for the things that
+have no field to live in, and it is actively encouraged to write it at length:
+
+- **What** was archived, in plain terms — "the vendor demo bundle, all seventeen ESP-IDF
+  example projects and their vendored components".
+- **Why** it went out — size, redundancy, a vendored copy of an upstream library, a duplicate
+  of something already held, or material that turned out to be the wrong part.
+- **Why it is safe to have moved it** — reproducible from a named upstream at a named commit,
+  regenerable by a documented command, or simply held elsewhere. If it is *not* reproducible,
+  say that too; that artifact is the one to guard.
+- **What was learned from it** before it was moved, so the reasoning survives even if the file
+  never comes back.
+- **How hard it was to obtain** — dead vendor links, a login wall, a UA-blocked CDN, a forum
+  attachment that exists in one place. This is often the most valuable line in the file.
+
+A set record covering forty files well is worth more than forty thin placeholders. Prefer it
+when the material moved as a set, and have the placeholders point at it.
+
+### Check your work
+
+Two tools, both safe to re-run:
+
+```bash
+python3 tools/audit_archive.py     # archived material with no marker at its original path
+python3 tools/link_archived.py     # dry run; --apply creates the symlinks
+```
+
+`audit_archive.py` exits non-zero when something in the archive is mentioned **nowhere** in the
+repo — the failure that actually loses things. Run it after any bulk archive operation.
+
 ### Patched or derived artifacts
 
 An artifact that is *upstream at some commit, plus changes* is meaningless without its base.

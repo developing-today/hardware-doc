@@ -1,0 +1,1 @@
+../../../../../../../../../../../archive/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Projects/Inkplate5_Quotables/Fonts/exmouth_40pt7b.h

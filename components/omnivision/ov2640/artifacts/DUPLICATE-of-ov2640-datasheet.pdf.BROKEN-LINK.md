@@ -1,0 +1,1 @@
+../../../../archive/components/omnivision/ov2640/artifacts/DUPLICATE-of-ov2640-datasheet.pdf.BROKEN-LINK.md
