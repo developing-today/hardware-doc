@@ -110,11 +110,28 @@ ARCHIVE="$(dirname "$(dirname "$(git rev-parse --path-format=absolute --git-comm
 `--git-common-dir` rather than `--show-toplevel`: inside a linked worktree the toplevel is the
 worktree, whose parent is the wrong directory.
 
-> **When invoked from a consuming repository** (this repo symlinked in as `doc/hardware`),
-> resolve the symlink and work at the real root — records belong here, not in the consumer.
-> That repo may have its own `archive/` and `doc/archive/` shortcuts; those are conveniences
-> for a human browsing it and **must never appear in a record written here**, because they do
-> not exist from this repository's perspective.
+#### Working from a consuming repository
+
+When this repo is symlinked into another as `doc/hardware`, **you can navigate the whole
+structure from that repo directly** — the consumer carries its own shortcuts, and they resolve
+to exactly the same bytes:
+
+| From the consuming repo | Resolves to | Same as, from here |
+|---|---|---|
+| `doc/hardware/…` | the repository root | `./…` |
+| `archive/…` *or* `doc/archive/…` | `repo-archive/hardware-doc/…` | `archive/…` |
+| `scratch/…` *or* `doc/scratch/…` | `repo-archive/scratch/hardware-doc/…` | `scratch/…` |
+
+So an agent working out of the consumer can read, write, download into and archive from those
+paths without resolving anything by hand — `archive/devices/foo/bar.step` reaches the same
+file from either side. Use whichever root you are already standing in.
+
+Two things still hold regardless of where you are working:
+
+- **Records are written here**, in `hardware-doc`, and committed here — not in the consumer.
+- **Inside a record, write the path as this repository sees it**: `archive/…`, `scratch/…`,
+  and repo-relative links. A consumer-relative path such as `doc/hardware/devices/…` is
+  correct from over there and broken from here, and this repo is also read standalone.
 
 ## Required Inputs
 
