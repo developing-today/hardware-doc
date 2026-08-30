@@ -178,6 +178,66 @@ Duplicate content is pooled into `shared-assets/` as relative symlinks by
 duplicate-detection script must skip symlinks** or it will double-count ~154 files and
 report phantom waste.
 
+## Archived artifacts: three files, one artifact
+
+When an artifact is moved into `archive/`, its original path does **not** go empty. Three
+things sit together, and all three are committed:
+
+| Path | What it is |
+|---|---|
+| `foo.step` | **symlink** into `archive/`, so the file still resolves in place |
+| `foo.step.ARCHIVED.md` | **placeholder** — the required record: hash, size, sourcing, recovery URLs |
+| `foo.step.ARCHIVED.link` | symlink to `foo.step`, for a predictable naming scheme |
+
+The symlink target is always relative and always routes through this repo's **own**
+`archive/` symlink — `../../../archive/devices/foo/bar.step`, never `../../repo-archive/…`
+directly. That leaves a single indirection point: if the archive moves, the top-level
+`archive` link is the only thing that changes and every artifact link follows it.
+
+Run `./scripts/init.sh --link-archived` to create or refresh them.
+
+### The placeholder is mandatory
+
+**Every archived artifact must have a `*.ARCHIVED.md`.** No exceptions — it is what a reader
+without the archive sees, and the only thing standing between a removed file and a lost one.
+The symlinks are convenience; the placeholder is the contract.
+
+Each placeholder must carry, or explicitly point at, the following:
+
+- **Two or more independent re-acquisition URLs.** One host disappearing should not strand the
+  artifact. If only one exists — or genuinely none — the placeholder says so in as many words
+  rather than leaving a silent gap that reads like an oversight.
+- **Sourcing detail**: version, tag, release, author, publication date, licence, how hard it was
+  to obtain, and any access quirks. Whatever is known. Nothing is not an option; *unknown,
+  recorded as unknown* is.
+
+### Detail may live elsewhere, but must be findable
+
+Bulk archiving often cannot establish per-file provenance, and repeating the same twenty lines
+across forty placeholders is worse than not repeating it. So the detail may live in:
+
+- a **directory-level record** — `README.md` or an `ARCHIVED.md` in the containing or parent
+  directory, prose or structured, describing the set as a whole;
+- the **acquisition manifest** for that device, which is the machine-readable form.
+
+When it does, the placeholder must **name where it lives** (`documented_in`). The rule is not
+"every placeholder repeats everything" — it is *no fact is absent without a pointer to it*. A
+placeholder that silently omits sourcing is a defect; one that says "see
+`../ACQUISITION.md`" is correct.
+
+The **acquisition manifest is a required part of research**, not an optional extra. It is the
+backstop that keeps a bulk operation from quietly producing forty under-documented files.
+
+### Patched or derived artifacts
+
+An artifact that is *upstream at some commit, plus changes* is meaningless without its base.
+Record a `base` block — repository, commit, tag, the patches applied in order, and the sibling
+artifacts sharing that base — and it is rendered into **every** placeholder derived from it.
+
+State it on each file rather than once in a README. Placeholders get read one at a time, by
+someone who found only that file, and "this is a two-line patch over `abc123`" is exactly the
+fact that makes the difference between recoverable and not.
+
 ## Git conventions
 
 ### Commit from inside the symlinks
@@ -216,30 +276,26 @@ artifact is the one that gets lost; a scruffy commit is not a problem.
 The same applies here in `hardware-doc`: staging and committing all files you can see is
 fine and expected.
 
-### Do not disturb work you did not create
+### Don't worry about other agents' files
 
-Several agents and sessions may share these checkouts concurrently.
+These checkouts are shared, but this needs no ceremony: **`git add -A` and commit.** It
+respects `.gitignore`, and sweeping up another session's in-progress files is harmless — a
+scruffy commit is not a problem, and an uncommitted artifact is the one that gets lost.
 
-**Never** run `git reset`, `git stash`, `git checkout -- <path>`, `git clean`, or delete or
-revert files you did not create — in any of the three repositories. Another session may be
-mid-task, and its uncommitted work is unrecoverable once discarded.
+What *is* worth avoiding:
 
-If something is in the way:
+- **Don't `reset`, `stash`, `checkout --`, or `clean`** — those discard work irrecoverably.
+  Committing someone else's file is fine; deleting it is not.
+- **Don't stage deletions in `archive/`** unless they are renames. The archive is the last copy
+  of things; a rename is fine, an outright removal usually isn't. In `scratch/`, don't care.
 
-- **Unexpected files present?** Commit them or leave them. They are someone's work in progress.
-- **A merge or rebase conflicts?** Stop and report it. Do not resolve by discarding a side.
-- **A tracked symlink looks wrong?** Say so and print both values — do not silently retarget
-  and mark it `--skip-worktree`; that is how a stale committed target survives unnoticed.
-- **Need a clean tree to proceed?** You do not. Commit what is there and carry on.
-
-Removing an artifact is the one irreversible act available here. Archive it with a placeholder
-instead — that is what the archive exists for.
+That's the whole rule. Add everything, commit, don't delete.
 
 ### Other conventions
 
-- Do not commit, amend or push **in this repository** unless asked. (`archive/` and `scratch/`
-  are the exception — commit freely there, per above.)
+- Do not amend or push **in this repository** unless asked.
 - Never stage a deletion as part of an archive operation: stage the file's content, then
-  move it, and leave the resulting worktree deletion **unstaged**.
+  move it. With the artifact symlinks in place the original path stays populated anyway, so
+  an archive operation should show up as *added symlink + added placeholder*, not a delete.
 - Filenames contain spaces (vendor EDA exports). Use `-z`/NUL-delimited git plumbing when
   scripting over `git status`.

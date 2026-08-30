@@ -193,10 +193,24 @@ def urls(src, rel, is_dir=False):
         )
     if src.get("url"):
         out.append(("original download URL", src["url"]))
-    if src.get("extra_urls"):
-        for u in src["extra_urls"]:
-            out.append(("additional mirror", u))
-    return out
+    # First-class multi-URL list. Not everything archived is a git repo - vendor
+    # datasheets, forum attachments and archive.org captures have no commit to
+    # derive a URL from, so they must be listed explicitly. Each entry is either a
+    # bare string or {"url": ..., "desc": ...}.
+    for key in ("urls", "extra_urls"):
+        for u in src.get(key) or []:
+            if isinstance(u, dict):
+                out.append((u.get("desc") or "additional source", u["url"]))
+            else:
+                out.append(("additional source", u))
+    # De-duplicate while preserving order; the same link often arrives from two
+    # places (derived from repo+commit, and listed by hand).
+    seen, uniq = set(), []
+    for desc, link in out:
+        if link not in seen:
+            seen.add(link)
+            uniq.append((desc, link))
+    return uniq
 
 
 def placeholder(rel, dest, meta, src, is_dir, files=None, collision_note=None):
@@ -229,16 +243,26 @@ def placeholder(rel, dest, meta, src, is_dir, files=None, collision_note=None):
     else:
         lines.append(f"| File count | {meta.get('nfiles', '?')} |")
     lines.append(f"| Last modified (mtime) | {meta['mtime']} |")
+    # Git-sourced material is only half of what gets archived. Vendor PDFs have a
+    # version and a publication date but no commit or author, and are usually the
+    # hard ones to re-obtain - so difficulty and access notes matter more for them
+    # than a hash does. Render whatever the manifest supplies; omit the rest.
     for k, label in (
         ("repo", "Upstream repository"),
         ("commit", "Commit"),
+        ("tag", "Tag / release"),
+        ("version", "Document version"),
         ("author", "Author / committer"),
         ("committed", "Commit date"),
+        ("published", "Published / revised"),
+        ("retrieved", "Retrieved"),
         ("license", "License"),
         ("path_in_repo", "Path within upstream repo"),
+        ("difficulty", "Difficulty to re-obtain"),
+        ("access_notes", "Access notes"),
     ):
         if src.get(k):
-            v = f"`{src[k]}`" if k in ("commit", "path_in_repo") else src[k]
+            v = f"`{src[k]}`" if k in ("commit", "path_in_repo", "tag", "version") else src[k]
             lines.append(f"| {label} | {v} |")
     lines.append("")
     if meta.get("notes"):
@@ -260,6 +284,44 @@ def placeholder(rel, dest, meta, src, is_dir, files=None, collision_note=None):
         for f, b, s in files:
             lines.append(f"| `{f}` | {b:,} | `{s}` |")
         lines.append("")
+    # A patch-over-upstream artifact is meaningless without its base. State the
+    # relationship on EVERY placeholder derived from it, not once in a README:
+    # placeholders are read one at a time, usually by someone who found only this file.
+    base = src.get("base")
+    if base:
+        lines.append("## Derived from a common base")
+        lines.append("")
+        lines.append(
+            "This artifact is **not standalone** - it is a modification of the source below. "
+            "Re-acquiring it means obtaining that base and re-applying the changes."
+        )
+        lines.append("")
+        lines.append("| Field | Value |")
+        lines.append("| --- | --- |")
+        for k, label in (("repo", "Base repository"), ("commit", "Base commit"),
+                         ("tag", "Base tag / release"), ("url", "Base URL"),
+                         ("note", "Relationship")):
+            if base.get(k):
+                v = f"`{base[k]}`" if k in ("commit", "tag") else base[k]
+                lines.append(f"| {label} | {v} |")
+        lines.append("")
+        if base.get("patches"):
+            lines.append("Patches applied over that base, in order:")
+            lines.append("")
+            for i, pt in enumerate(base["patches"], 1):
+                if isinstance(pt, dict):
+                    lines.append(f"{i}. {pt.get('desc', '(undescribed)')}"
+                                 + (f" - `{pt['path']}`" if pt.get("path") else ""))
+                else:
+                    lines.append(f"{i}. {pt}")
+            lines.append("")
+        if base.get("siblings"):
+            lines.append("Other archived artifacts sharing this base:")
+            lines.append("")
+            for sib in base["siblings"]:
+                lines.append(f"- `{sib}`")
+            lines.append("")
+
     lines.append("## How to get it back")
     lines.append("")
     u = urls(src, rel, is_dir)
@@ -268,6 +330,22 @@ def placeholder(rel, dest, meta, src, is_dir, files=None, collision_note=None):
         lines.append("")
         for desc, link in u:
             lines.append(f"- {desc}:  \n  <{link}>")
+        lines.append("")
+    # Two independent URLs is the target: one host disappearing should not strand
+    # the artifact. Sometimes only one exists, or none - say so explicitly rather
+    # than leaving a silent gap that reads like an oversight.
+    if len(u) < 2:
+        lines.append(
+            f"> **Only {len(u) or 'no'} recovery URL{'' if len(u) == 1 else 's'} "
+            "recorded.** Two or more independent sources are the target. If you find "
+            "another - a mirror, a vendor page, an archive.org capture - add it here."
+        )
+        lines.append("")
+    # Bulk archiving cannot always establish per-file provenance. That is acceptable
+    # only if the detail lives somewhere findable, and the placeholder names it.
+    if src.get("documented_in"):
+        lines.append(f"Fuller sourcing for this artifact is recorded in "
+                     f"`{src['documented_in']}`.")
         lines.append("")
     lines.append("Restore from the local archive:")
     lines.append("")

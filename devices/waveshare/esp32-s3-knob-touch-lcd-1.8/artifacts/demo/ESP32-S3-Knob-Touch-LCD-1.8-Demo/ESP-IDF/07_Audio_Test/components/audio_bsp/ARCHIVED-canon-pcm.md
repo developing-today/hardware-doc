@@ -24,7 +24,7 @@ this was the exception. It is a media asset, not board-specific code — nothing
 can be learned from it that `audio_bsp.c` does not state directly.
 
 Everything else in this demo stays. The tree had already had **LVGL 8.4.0 and SensorLib removed**
-(see [`../../../../vendored-deps/README.md`](../../../../vendored-deps/README.md)); what remains is
+(see [`../../../../../../vendored-deps/README.md`](../../../../../../vendored-deps/README.md)); what remains is
 Waveshare BSP code, examples and `sdkconfig` snapshots, all heavily cited.
 
 ## Format — derived from the source, not from the file
