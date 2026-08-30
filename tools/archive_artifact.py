@@ -213,6 +213,38 @@ def urls(src, rel, is_dir=False):
     return uniq
 
 
+# Git reads these as configuration rather than content. A symlinked .gitignore makes
+# git print "Too many levels of symbolic links" on every command, and would let a
+# vendored upstream's ignore rules bleed into this repo.
+NO_LINK_NAMES = {".gitignore", ".gitattributes", ".gitmodules"}
+
+
+def stand_in(rel, full):
+    """Symlink `rel` to its archive copy, plus a matching *.ARCHIVED.link.
+
+    The target is relative and routes through this repo's own `archive/` symlink -
+    `../../../archive/devices/foo/bar` - never at the archive root directly. That
+    leaves one indirection point: relocating the archive means editing a single
+    symlink rather than every artifact link in the tree.
+    """
+    if os.path.basename(rel) in NO_LINK_NAMES:
+        return
+    depth = len(os.path.dirname(rel).split(os.sep)) if os.path.dirname(rel) else 0
+    target = os.path.join(*([".."] * depth), "archive", rel) if depth else os.path.join("archive", rel)
+    try:
+        if os.path.lexists(full):
+            if not os.path.islink(full):
+                return          # something real is there; do not clobber it
+            os.unlink(full)
+        os.symlink(target, full)
+        link = full + ".ARCHIVED.link"
+        if os.path.lexists(link):
+            os.unlink(link)
+        os.symlink(os.path.basename(full), link)
+    except OSError as e:
+        print(f"  !! could not create stand-in symlink for {rel}: {e}")
+
+
 def placeholder(rel, dest, meta, src, is_dir, files=None, collision_note=None):
     lines = []
     name = os.path.basename(rel)
@@ -425,6 +457,7 @@ def main():
     total = 0
     verified = 0
     failures = []
+    thin_urls = []
 
     if a.verify:
         return verify_mode(a.repo_root, items)
@@ -438,8 +471,8 @@ def main():
         b = du(full)
         meta = {
             "bytes": b,
-            "mtime": datetime.datetime.utcfromtimestamp(
-                os.path.getmtime(full)
+            "mtime": datetime.datetime.fromtimestamp(
+                os.path.getmtime(full), datetime.timezone.utc
             ).strftime("%Y-%m-%d %H:%M:%SZ"),
             "reason": it.get("reason"),
         }
@@ -531,6 +564,29 @@ def main():
         with open(ph, "w") as f:
             f.write(placeholder(rel, dest, meta, it.get("source", {}), is_dir,
                                 files, collision_note))
+
+        # Leave a symlink standing in for the artifact at its original path, so a
+        # checkout holding the archive behaves as though nothing moved: relative
+        # references from KiCad projects and build scripts keep resolving, and the
+        # directory still shows that the file exists. Without this, an archived file
+        # vanishes from the tree and is discoverable only via the placeholder.
+        stand_in(rel, full)
+
+        # Two independent sources is the bar: one host going away should not strand
+        # the artifact. Warn loudly at archive time, when the person still has the
+        # context to fix it - not months later when the link has rotted.
+        nurl = len(urls(it.get("source", {}), rel, is_dir))
+        if nurl < 2:
+            thin_urls.append((rel, nurl))
+            print(f"  !! only {nurl} recovery URL(s) for {rel}\n"
+                  f"       add more to the manifest's source.urls[], or record in the "
+                  f"directory's ARCHIVED-*.md why no second source exists")
+    if thin_urls:
+        print(f"\n!! {len(thin_urls)} artifact(s) archived with fewer than two recovery URLs:")
+        for r, n in thin_urls:
+            print(f"     [{n}] {r}")
+        print("   These are the ones that go missing. Add sources before they rot.")
+
     print(f"\nTOTAL {'would be ' if a.dry_run else ''}archived: {size_str(total)}")
     if not a.dry_run:
         print(f"Verified after move: {verified}/{verified + len(failures)}")

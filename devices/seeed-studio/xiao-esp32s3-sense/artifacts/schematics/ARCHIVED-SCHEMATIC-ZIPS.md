@@ -34,6 +34,27 @@ curl -fsSL "$B/XIAO_ESP32S3_ExpBoard_v1.0_SCH%26PCB.zip"                   -o xi
 
 Retrieved **2026-08-24** from the wiki's *Resources → Schematic / PCB* section.
 
+## Independent sources
+
+`files.seeedstudio.com` is a single point of failure: every `curl` above resolves to that one
+host, so the commands are one hostname's lifetime from useless. Two independent ways to
+rediscover the links:
+
+- **Seeed wiki page** (separate host, human-readable *Resources* section):  
+  <https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/>
+- **Wiki source on GitHub** — different infrastructure entirely, and the markdown carries the
+  download URLs verbatim, so the links survive even if the rendered wiki changes:  
+  <https://raw.githubusercontent.com/Seeed-Studio/wiki-documents/docusaurus-version/sites/en/docs/Sensor/SeeedStudio_XIAO/SeeedStudio_XIAO_ESP32S3/XIAO_ESP32S3_Getting_Started.md>  
+  (branch `docusaurus-version`; `main` 404s and `master` is a near-empty tree)
+
+> **Filenames carry a date suffix that changes.** This record cites
+> `..._SCH%26PCB_260226.zip`, while the wiki snapshot in
+> [`../wiki-snapshot/`](../wiki-snapshot/) references `..._SCH&PCB_230327.zip` and
+> `XIAO_ESP32S3_ExpBoard_v1.0_SCH&PCB_230324.zip` for the same designs. If a URL 404s, list the
+> *Resources* section rather than assuming the artifact is gone — the suffix has most likely
+> moved on. Match by SHA-256, not by filename.
+
+
 > ⚠ The expansion-board ZIP is the **Sense daughterboard** design, published under the
 > misleading name `XIAO_ESP32S3_ExpBoard_v1.0_SCH&PCB`. It is not an "expansion board" in the
 > shield sense — see [`sense-daughterboard.md`](../../sense-daughterboard.md). This naming is
