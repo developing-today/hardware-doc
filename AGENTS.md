@@ -180,7 +180,65 @@ report phantom waste.
 
 ## Git conventions
 
-- Do not commit, amend or push unless asked.
+### Commit from inside the symlinks
+
+`archive/` and `scratch/` are symlinks into a **different repository** (`../repo-archive`).
+Git will not cross a symlink boundary, so from this repo:
+
+```
+$ git add archive/devices/foo/bar.step
+fatal: pathspec 'archive/...' is beyond a symbolic link
+```
+
+Writing through the link works fine — it is only `git` that refuses. To commit archived or
+scratch material, `cd` into the link (or use `git -C`) so you are inside the archive repo:
+
+```bash
+cd archive && git add -A && git commit -m "..."      # or: git -C archive add -A
+```
+
+**Both links land in the same repository**, so you do not need to do it twice:
+
+| From `archive/` or `scratch/` | Stages |
+|---|---|
+| `git add -A` | **the whole archive repo — both tiers.** This is what you want |
+| `git add .` | only the directory you are standing in |
+| `git add -A :/` | explicit whole-repo, same as `-A` |
+
+So one `cd archive && git add -A && git commit` covers scratch material too.
+
+### Commit freely inside `archive/` and `scratch/`
+
+These are working stores, not a curated tree. **Stage and commit everything you see there**,
+including half-finished downloads, undecided material and obvious temporaries. An uncommitted
+artifact is the one that gets lost; a scruffy commit is not a problem.
+
+The same applies here in `hardware-doc`: staging and committing all files you can see is
+fine and expected.
+
+### Do not disturb work you did not create
+
+Several agents and sessions may share these checkouts concurrently.
+
+**Never** run `git reset`, `git stash`, `git checkout -- <path>`, `git clean`, or delete or
+revert files you did not create — in any of the three repositories. Another session may be
+mid-task, and its uncommitted work is unrecoverable once discarded.
+
+If something is in the way:
+
+- **Unexpected files present?** Commit them or leave them. They are someone's work in progress.
+- **A merge or rebase conflicts?** Stop and report it. Do not resolve by discarding a side.
+- **A tracked symlink looks wrong?** Say so and print both values — do not silently retarget
+  and mark it `--skip-worktree`; that is how a stale committed target survives unnoticed.
+- **Need a clean tree to proceed?** You do not. Commit what is there and carry on.
+
+Removing an artifact is the one irreversible act available here. Archive it with a placeholder
+instead — that is what the archive exists for.
+
+### Other conventions
+
+- Do not commit, amend or push **in this repository** unless asked. (`archive/` and `scratch/`
+  are the exception — commit freely there, per above.)
 - Never stage a deletion as part of an archive operation: stage the file's content, then
   move it, and leave the resulting worktree deletion **unstaged**.
 - Filenames contain spaces (vendor EDA exports). Use `-z`/NUL-delimited git plumbing when

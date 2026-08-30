@@ -23,7 +23,13 @@ make every clone of that repo roughly 6.5× larger. Consumers clone it on demand
 
 ```bash
 git clone https://github.com/developing-today/hardware-doc.git
+./scripts/init.sh        # only needed if the archive is not already a sibling
 ```
+
+`scripts/init.sh` points `archive/` and `scratch/` at the sibling artifact archive. A fresh
+clone usually needs nothing — the symlinks are committed relative, so they already resolve when
+`repo-archive/` sits beside this repo. Run it when the archive is elsewhere, newly added, or
+this repo is a linked worktree. It never clones and never deletes.
 
 ### Resolving the sibling archive
 
