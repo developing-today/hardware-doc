@@ -7,6 +7,37 @@ description: Build or audit a source-traceable hardware knowledge base. Use when
 
 Research a hardware device recursively: document the complete product, identify its functional components, create a reusable record for each component or interface, preserve relevant artifacts, and verify the resulting knowledge base.
 
+> **Read this file once, end to end, before starting a research pass.** It is ~870 lines and the
+> parts interlock — the workflow assumes the evidence rules, the verification list assumes the
+> manifest format, and the failure modes explain why several steps exist. Skimming for the step
+> you think you need is how passes end up with unsourced claims and stranded artifacts.
+>
+> After that first full read, use this table to jump back to what you need.
+
+## Contents
+
+| Section | Why it matters |
+|---|---|
+| [What makes this different](#what-makes-this-different-from-summarising-a-datasheet) | **Core.** Five habits that do most of the work |
+| [Where research is written](#where-research-is-written) | **Core.** Repo layout, the two sibling directories, path resolution |
+| [Required Inputs](#required-inputs) | What to establish before starting |
+| **[Workflow](#workflow)** — 18 steps | **Core.** The pass itself, in order |
+| [1. Inspect the repository](#1-inspect-the-repository) · [2. Identify the device](#2-identify-the-exact-device) · [3. Source-priority research](#3-research-in-source-priority-order) | orientation and evidence ranking |
+| [4. Gather artifacts](#4-gather-device-artifacts) | **Core.** Acquisition, validation, archiving, placeholders |
+| [5. Visual/product/market dossier](#5-build-the-visual-product-community-and-market-dossier) · [6. Inventory hardware](#6-inventory-the-complete-hardware) · [7. Recurse into components](#7-research-every-component-recursively) | breadth |
+| [8. Pinouts and architecture](#8-document-pinouts-and-architecture) · [9. Development and recovery](#9-document-development-and-recovery) · [10. Audit vendor source](#10-audit-vendor-firmware-and-driver-source-against-the-primary-documents) | the technically load-bearing steps |
+| [11. Examples](#11-survey-and-select-examples) · [12. Feature guides](#12-write-feature-oriented-development-guides) · [13. Common guides](#13-reuse-common-development-knowledge) · [14. Vendor sourcing](#14-record-vendor-documentation-sourcing-knowledge) | reusable output |
+| [15. Coverage/conflicts](#15-map-coverage-resources-and-compatibility) · [16. Performance](#16-characterize-performance-by-workload) | mapping and measurement |
+| [17. Licensing and storage](#17-handle-licensing-and-storage-honestly) · [18. Vendored deps and large artifacts](#18-analyze-vendored-dependencies-near-duplicates-and-large-artifacts) | **Core.** What may be kept, moved or omitted |
+| [Required Device README Content](#required-device-readme-content) | The output template |
+| [Artifact and Acquisition Manifests](#artifact-and-acquisition-manifests) | **Core.** Provenance schema and the downloader contract |
+| [Research stopping criteria](#research-stopping-criteria) | When a pass is done |
+| [Conflict Protocol](#conflict-protocol) | **Core.** What to do when sources disagree |
+| [Evidence discipline and known failure modes](#evidence-discipline-and-known-failure-modes) | **Core.** The mistakes this skill exists to prevent |
+| [Working alongside other sessions](#working-alongside-other-sessions) | concurrency |
+| [Verification](#verification) | **Core.** The checklist a pass must survive |
+| [Completion Standard](#completion-standard) | What "done" means |
+
 ## What makes this different from summarising a datasheet
 
 Five habits do most of the work. If you internalise nothing else, internalise these.
@@ -256,7 +287,7 @@ so `archive/devices/foo/…` is the same path the artifact had here.
 
 **Do not tidy other agents' scratch.** It is working space; its mess is not a defect.
 
-When a fetched file resembles one you already hold — same name, same version, a vendored copy of a known library, or the same document in another language — see [step 17](#17-analyze-vendored-dependencies-near-duplicates-and-large-artifacts) before discarding either.
+When a fetched file resembles one you already hold — same name, same version, a vendored copy of a known library, or the same document in another language — see [step 17](#18-analyze-vendored-dependencies-near-duplicates-and-large-artifacts) before discarding either.
 
 #### What to collect, and where it lands
 
