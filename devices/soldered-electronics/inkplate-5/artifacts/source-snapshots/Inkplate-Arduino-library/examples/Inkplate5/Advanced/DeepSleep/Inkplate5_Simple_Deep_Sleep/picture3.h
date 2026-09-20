@@ -1,0 +1,1 @@
+../../../../../../../../../../../archive/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5/Advanced/DeepSleep/Inkplate5_Simple_Deep_Sleep/picture3.h

@@ -1,0 +1,1399 @@
+{
+ "device": "nicolai-electronics/tanmatsu",
+ "generated": "2026-08-30",
+ "generator": "tools/build_manifest.py",
+ "note": "All artifacts derive from pinned git commits or from server-rendered documentation pages. No artifact required authentication, paywall or manual steps. Web pages are stored as extracted plain text (see 'note' per source) so they are diffable; the original HTML was not retained.",
+ "redistribution_review": {
+  "CERN-OHL-P": "hardware + mechanical design files - permissive, redistribution allowed, attribution required",
+  "MIT": "firmware, BSP, i2c_puppet - redistribution allowed",
+  "Apache-2.0": "radio firmware - redistribution allowed",
+  "none": "tanmatsu-documentation, tanmatsu-template, app-repository and esp32-component-tanmatsu-coprocessor have NO licence file. Text is quoted and snapshotted for research; wholesale redistribution is legally unclear. FLAGGED FOR REVIEW.",
+  "web-docs": "badge.team and solder.party pages carry no stated licence. Stored as extracted text for research use. FLAGGED FOR REVIEW.",
+  "branding": "Nicolai Electronics / Tanmatsu names, logos and artwork are ALL RIGHTS RESERVED and explicitly excluded from CERN-OHL-P."
+ },
+ "sources": {
+  "tanmatsu-hardware": {
+   "kind": "git",
+   "url": "https://github.com/Nicolai-Electronics/tanmatsu-hardware",
+   "commit": "640805dd4304f4bfaac24965f8eecf81bec97bf1",
+   "license": "CERN-OHL-P",
+   "provides": "KiCad design, schematic.pdf, production BOM/positions/IPC netlist",
+   "reacquire": "git clone https://github.com/Nicolai-Electronics/tanmatsu-hardware && git -C tanmatsu-hardware checkout 640805dd4304f4bfaac24965f8eecf81bec97bf1",
+   "reacquisition": "automatic"
+  },
+  "tanmatsu-documentation": {
+   "kind": "git",
+   "url": "https://github.com/Nicolai-Electronics/tanmatsu-documentation",
+   "commit": "bd3ded51548433bd7d614f5607b7d36f5eed61fa",
+   "license": "none",
+   "provides": "Sphinx/MyST documentation source",
+   "reacquire": "git clone https://github.com/Nicolai-Electronics/tanmatsu-documentation && git -C tanmatsu-documentation checkout bd3ded51548433bd7d614f5607b7d36f5eed61fa",
+   "reacquisition": "automatic"
+  },
+  "tanmatsu-mechanical": {
+   "kind": "git",
+   "url": "https://github.com/Nicolai-Electronics/tanmatsu-mechanical",
+   "commit": "c623cd548c9cafb95773624fe775001984449a89",
+   "license": "CERN-OHL-P",
+   "provides": "Case/spacer/speaker-adapter FreeCAD + STEP",
+   "reacquire": "git clone https://github.com/Nicolai-Electronics/tanmatsu-mechanical && git -C tanmatsu-mechanical checkout c623cd548c9cafb95773624fe775001984449a89",
+   "reacquisition": "automatic"
+  },
+  "tanmatsu-coprocessor-firmware": {
+   "kind": "git",
+   "url": "https://github.com/Nicolai-Electronics/tanmatsu-coprocessor-firmware",
+   "commit": "57ff2505d7256b55cc5fea4eb9be10a9a077bafa",
+   "license": "MIT",
+   "provides": "CH32V203 firmware: keyboard.c, i2c_registers.h, hardware.h",
+   "reacquire": "git clone https://github.com/Nicolai-Electronics/tanmatsu-coprocessor-firmware && git -C tanmatsu-coprocessor-firmware checkout 57ff2505d7256b55cc5fea4eb9be10a9a077bafa",
+   "reacquisition": "automatic"
+  },
+  "esp32-component-tanmatsu-coprocessor": {
+   "kind": "git",
+   "url": "https://github.com/Nicolai-Electronics/esp32-component-tanmatsu-coprocessor",
+   "commit": "6eea3735346ee1b689898c77e500fb1d0c4e024e",
+   "license": "none",
+   "provides": "Coprocessor driver header (keymap struct)",
+   "reacquire": "git clone https://github.com/Nicolai-Electronics/esp32-component-tanmatsu-coprocessor && git -C esp32-component-tanmatsu-coprocessor checkout 6eea3735346ee1b689898c77e500fb1d0c4e024e",
+   "reacquisition": "automatic"
+  },
+  "esp32-component-tanmatsu-wifi": {
+   "kind": "git",
+   "url": "https://github.com/Nicolai-Electronics/esp32-component-tanmatsu-wifi",
+   "commit": "d8ce0bf106141d6bccf4cb9a927bd494facc31af",
+   "license": "MIT",
+   "provides": "Wi-Fi wrapper",
+   "reacquire": "git clone https://github.com/Nicolai-Electronics/esp32-component-tanmatsu-wifi && git -C esp32-component-tanmatsu-wifi checkout d8ce0bf106141d6bccf4cb9a927bd494facc31af",
+   "reacquisition": "automatic"
+  },
+  "tanmatsu-radio": {
+   "kind": "git",
+   "url": "https://github.com/Nicolai-Electronics/tanmatsu-radio",
+   "commit": "cb4e38c02aa8ad533fd17b24921c4ca4848eeaf6",
+   "license": "Apache-2.0",
+   "provides": "ESP32-C6 radio firmware",
+   "reacquire": "git clone https://github.com/Nicolai-Electronics/tanmatsu-radio && git -C tanmatsu-radio checkout cb4e38c02aa8ad533fd17b24921c4ca4848eeaf6",
+   "reacquisition": "automatic"
+  },
+  "tanmatsu-launcher": {
+   "kind": "git",
+   "url": "https://github.com/Nicolai-Electronics/tanmatsu-launcher",
+   "commit": "20022fce316d768a1ff966b973ee2127511713f5",
+   "license": "MIT",
+   "provides": "Launcher firmware",
+   "reacquire": "git clone https://github.com/Nicolai-Electronics/tanmatsu-launcher && git -C tanmatsu-launcher checkout 20022fce316d768a1ff966b973ee2127511713f5",
+   "reacquisition": "automatic"
+  },
+  "tanmatsu-template": {
+   "kind": "git",
+   "url": "https://github.com/Nicolai-Electronics/tanmatsu-template",
+   "commit": "907fb9657658995efab210b754f28a3ace06d03a",
+   "license": "none",
+   "provides": "Template app",
+   "reacquire": "git clone https://github.com/Nicolai-Electronics/tanmatsu-template && git -C tanmatsu-template checkout 907fb9657658995efab210b754f28a3ace06d03a",
+   "reacquisition": "automatic"
+  },
+  "app-repository": {
+   "kind": "git",
+   "url": "https://github.com/Nicolai-Electronics/app-repository",
+   "commit": "f83e1559553497903c083525a10d2aaf53344377",
+   "license": "none",
+   "provides": "57 app metadata.json files",
+   "reacquire": "git clone https://github.com/Nicolai-Electronics/app-repository && git -C app-repository checkout f83e1559553497903c083525a10d2aaf53344377",
+   "reacquisition": "automatic"
+  },
+  "badge-bsp": {
+   "kind": "git",
+   "url": "https://github.com/badgeteam/esp32-component-badge-bsp",
+   "commit_short": "9037f0e",
+   "license": "MIT",
+   "provides": "Board support package: tanmatsu target + Kconfig",
+   "reacquire": "git clone --depth 1 https://github.com/badgeteam/esp32-component-badge-bsp",
+   "reacquisition": "automatic"
+  },
+  "i2c_puppet": {
+   "kind": "git",
+   "url": "https://github.com/solderparty/i2c_puppet",
+   "commit_short": "f085518",
+   "license": "MIT",
+   "provides": "BlackBerry keyboard firmware + protocol README",
+   "reacquire": "git clone --depth 1 https://github.com/solderparty/i2c_puppet",
+   "reacquisition": "automatic"
+  },
+  "badge.team": {
+   "kind": "web",
+   "url": "https://badge.team/docs/badges/konsool/",
+   "license": "unknown",
+   "provides": "42 Konsool documentation pages, text-extracted",
+   "enumerate": "https://badge.team/sitemap.xml (filter /konsool/)",
+   "note": "Server-rendered Hugo site; plain curl with a browser User-Agent works. Stored as extracted text, not original HTML.",
+   "reacquisition": "automatic"
+  },
+  "solder.party": {
+   "kind": "web",
+   "url": "https://www.solder.party/docs/",
+   "license": "unknown",
+   "provides": "7 product documentation pages, text-extracted",
+   "note": "Server-rendered Hugo site; /docs/ index enumerates every product.",
+   "reacquisition": "automatic"
+  }
+ },
+ "file_count": 209,
+ "total_bytes": 33092154,
+ "files": [
+  {
+   "path": "artifacts/app-repository-catalog.json",
+   "bytes": 12452,
+   "sha256": "740f5ffcb03921813cc7b6f834da42c6da0d4d39d0bf3cd7452d4cb4c37c007b",
+   "source": "app-repository"
+  },
+  {
+   "path": "artifacts/schematics/LICENSE-CERN-OHL-P",
+   "bytes": 8852,
+   "sha256": "6e471d647db50527d0c75ee5f1a55a74012ab177c73282bef0bdc7f6562b7ded",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/hardware-repo-README.md",
+   "bytes": 954,
+   "sha256": "59518191336a74fc495d3254251225f3b1fe9284ff16090460a5022cc998f8d2",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/tanmatsu-schematic.pdf",
+   "bytes": 1153359,
+   "sha256": "96d1010100b9707d638d3f7478d36153f0650225326ebc26ac1ec7250394d604",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/audio.kicad_sch",
+   "bytes": 138284,
+   "sha256": "18dae719e7bdc6af528e2b4845056ba8a904b1272678d8c5c79775d77813175b",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/coprocessor.kicad_sch",
+   "bytes": 468152,
+   "sha256": "39691f850071c2b1e2425fd29b7b463a468eb2c8bcd7cea849e60307dbec2e19",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/display.kicad_sch",
+   "bytes": 55921,
+   "sha256": "1ef7cd7e074f0761d1e7db9449788f1bcb6256b3f44d61baa84f3d4672c2ad98",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/esp32p4.kicad_sch",
+   "bytes": 441553,
+   "sha256": "9634b1e616b16c852c0c31fa7cb9d01b7e531f8c12637d82dce9bb815665edbd",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/keyboard_matrix.kicad_sch",
+   "bytes": 289440,
+   "sha256": "8059380a161984cdb8b892cbfaf40bcb34189805c92a4a2530afc2905644757b",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/leds.kicad_sch",
+   "bytes": 40660,
+   "sha256": "6d17a506486d62dbcf769a417131c7775504b733842df47f59cf8e9353a1484f",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/power.kicad_sch",
+   "bytes": 288368,
+   "sha256": "ec1adee5a54c571d13d9e2540a5ff1a9e78c7a11f0dbe899f077c756d11abcf1",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/radio.kicad_sch",
+   "bytes": 130260,
+   "sha256": "26f48bc3335ed480a0d73c5bfa51e643f09eaea233e60f3a05e0b6f7baca83c1",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/sensors.kicad_sch",
+   "bytes": 52532,
+   "sha256": "8891b91e05ff5921b95f601c112aa30942d092aeae38cea3210e8d980b3cb7b5",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/tanmatsu.kicad_pcb",
+   "bytes": 10601503,
+   "sha256": "6596368422600f147f3d60f918d9e984153146526afdf4fd9b0cab2d853125de",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/tanmatsu.kicad_pro",
+   "bytes": 20920,
+   "sha256": "db125d8a951d3e72a9278e0318730fbf7864560ad0b7901932407c9d93713d15",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/schematics/kicad/tanmatsu.kicad_sch",
+   "bytes": 386545,
+   "sha256": "a6524a240732e3fee5d0f1e4f63481c60bda18276130f39b0fb7e23d9dca78d4",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/production/bom.csv",
+   "bytes": 4481,
+   "sha256": "db385cd1ca78c0ea0d4e8f16413e264ee8da765ae96bd2c9be718cb3c49b2578",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/production/designators.csv",
+   "bytes": 2162,
+   "sha256": "1dd8d7b2004f80b9248588c2f8c0e200d239506a3dc29b9a3062ce83a1ba4496",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/production/netlist.ipc",
+   "bytes": 190893,
+   "sha256": "e09aff4e30a0f7572516822c33b594f73eef73a661c177bb6848af014fcbfb64",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/production/positions.csv",
+   "bytes": 9575,
+   "sha256": "9540faff84265154fffb601b7ceb52b9b46e67e98a09f145c6767dcca89f000f",
+   "source": "tanmatsu-hardware"
+  },
+  {
+   "path": "artifacts/keebdeck-keyboard/KeebDeck_Keyboard.kicad_sym",
+   "bytes": 165811,
+   "sha256": "da88a69d8af97742dc1dd2d485b72e39ccabcaf3b314fdb1d60458296bd45ef6",
+   "source": "unknown"
+  },
+  {
+   "path": "artifacts/keebdeck-keyboard/LICENSE.md",
+   "bytes": 9118,
+   "sha256": "8c01284aaba9f6d796936278ff053cda9bce56a68f3843fc84d51929bc2cd088",
+   "source": "unknown"
+  },
+  {
+   "path": "artifacts/keebdeck-keyboard/PROVENANCE.txt",
+   "bytes": 299,
+   "sha256": "9b145a343b514180f556e3de46b96d166021b248c8ceeb9dc9baa98aa308670f",
+   "source": "unknown"
+  },
+  {
+   "path": "artifacts/keebdeck-keyboard/README.md",
+   "bytes": 1055,
+   "sha256": "0d2b0dafef5ee51338cbce5019087a55eda35f005f2d3966c124be8e13730dbf",
+   "source": "unknown"
+  },
+  {
+   "path": "artifacts/keebdeck-keyboard/dimensions.pdf",
+   "bytes": 84689,
+   "sha256": "4cef5fffa11eb24b295b8aafbf99dc845fc9b96815c49bd6c6bc7891eedc6f2e",
+   "source": "unknown"
+  },
+  {
+   "path": "artifacts/keebdeck-keyboard/KeebDeck_Keyboard.pretty/Keyboard_4R11C.kicad_mod",
+   "bytes": 91591,
+   "sha256": "15834365cee64e28dc53a4b0a029b5469f48b5b4798e32d0c59dac9ceb3a79bf",
+   "source": "unknown"
+  },
+  {
+   "path": "artifacts/keebdeck-keyboard/KeebDeck_Keyboard.pretty/Keyboard_4R12C.kicad_mod",
+   "bytes": 99353,
+   "sha256": "9f04ee7b06b2ec9492f7722ac9eb6d51867351eeb3d0ec584becdab93d559aeb",
+   "source": "unknown"
+  },
+  {
+   "path": "artifacts/keebdeck-keyboard/KeebDeck_Keyboard.pretty/Keyboard_5R11C.kicad_mod",
+   "bytes": 111744,
+   "sha256": "b0dadccf9c508492fa01720cfb00744acd3c3d4732a74ffc7fc76597488d10f8",
+   "source": "unknown"
+  },
+  {
+   "path": "artifacts/keebdeck-keyboard/KeebDeck_Keyboard.pretty/Keyboard_6R13C.kicad_mod",
+   "bytes": 149158,
+   "sha256": "fe380478b34272e728cb7a11e65da7a6d5a0d1dabf7be1878f3ebb361ac767ce",
+   "source": "unknown"
+  },
+  {
+   "path": "artifacts/mechanical/mechanical-repo-README.md",
+   "bytes": 2431,
+   "sha256": "4a168acbc67014390bc977d1641a3add40aa0fd050ad89c5a1866273a58e8eaa",
+   "source": "tanmatsu-mechanical"
+  },
+  {
+   "path": "artifacts/source-snapshots/README.md",
+   "bytes": 1148,
+   "sha256": "5a39ffaa784cd46626cfc0b59c11e94b8e4ba971e6ffc177fb0aca7f839ff483",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/example.md",
+   "bytes": 6027,
+   "sha256": "8b501e9284cabe783a6ddcf039cc90e08a03db5287ae57b2eef3a6908d1c3360",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu_coprocessor.c",
+   "bytes": 40440,
+   "sha256": "b9ef51c92a7a434a4e9623b204e4ba0650400f50e0cb10c19fff7c1964075723",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu_coprocessor.h",
+   "bytes": 12899,
+   "sha256": "d470d75644df1a207b8682bac7876fcd0a986da7d0d5cd783864a212a23f6a95",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/LICENSE",
+   "bytes": 1072,
+   "sha256": "75b1de01986f2547f326dc80139d41394c8c2130d5e6e022d719393b08df421d",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/PROVENANCE.txt",
+   "bytes": 156,
+   "sha256": "03f9989c866d41e8e195a04436fdef283e72e12fda542d7c79c1d79e0daec067",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/README.md",
+   "bytes": 14556,
+   "sha256": "df9263beffe6e5a9a728457cb87eab58c9a644a11891d595710fe6f22698d190",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/CMakeLists.txt",
+   "bytes": 503,
+   "sha256": "0d71b96e3dc84d87ab3ae90521f4ceaecae990bd9ede35d95833eb29e291074b",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/app_config.h",
+   "bytes": 134,
+   "sha256": "e0f60070364c5f0d64d2f3cc91cd1c1c703f19f5f8508882652500cde6cd1750",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/backlight.c",
+   "bytes": 425,
+   "sha256": "4759abd957a5adf911bc46aefc125d9e43f1293b88fb2b32cebdb2a520b975c3",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/backlight.h",
+   "bytes": 89,
+   "sha256": "20aaf983791c8d1ad6ec2b211a87317dc1b12b2c411d8680511ffc92c64f3032",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/debug.c",
+   "bytes": 2547,
+   "sha256": "6617845676585011551c0fc6931cc8228de8f507d9c372972ea6740de1b4d67c",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/debug.h",
+   "bytes": 37,
+   "sha256": "3def6eba96999019f980a721f4c438bc8a3ecdf6c2cfdb026e3d936903128137",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/fifo.c",
+   "bytes": 928,
+   "sha256": "9373bf514e59dd26b40ad3a2236752b999be3f00034114f6ac3a64f5417abab7",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/fifo.h",
+   "bytes": 282,
+   "sha256": "fab38b3c4c1904590b344c599fe702814b88c0ecfa7ee55c507562d7f8538216",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/gpioexp.c",
+   "bytes": 4715,
+   "sha256": "3997002f0fb19fed80c8f9990bf1b72fd04d1d319209bc3585742f63b4b2b8ab",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/gpioexp.h",
+   "bytes": 457,
+   "sha256": "007b0c34a7189462faac999a31ba49ff65f4ba9c014a604fe74e221fd358afde",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/interrupt.c",
+   "bytes": 2040,
+   "sha256": "6360a4013b625b2003f020b34565f7fe9bf539abbdfa0d3020a495e176721146",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/interrupt.h",
+   "bytes": 41,
+   "sha256": "7d5c7b642c08f4675a0b95c8892df27507d1c8b55124b14e920e043b7d9f84f9",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/keyboard.c",
+   "bytes": 9669,
+   "sha256": "78d073b24014b632eb2219f97553e9dca2008c9e4c1d9187099c976a97ac6e4e",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/keyboard.h",
+   "bytes": 1291,
+   "sha256": "ea7a5535f60690f88043c68cca811d2d16c320a7cdf9975124574583c3c2c540",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/main.c",
+   "bytes": 1067,
+   "sha256": "bb85b6cad1187f9f338da7973739ef1cacfaf3da80cafbb6f379cdaf7a15b185",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/puppet_i2c.c",
+   "bytes": 2010,
+   "sha256": "a2f9db9a19d1c783a121d4aecb921d87a4c37033f5a398107fb76c06480c13ff",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/puppet_i2c.h",
+   "bytes": 79,
+   "sha256": "9cc01b40c58d3a315a43e5a4f66c4c5f91d103d37cf50d720288ea4d13615a69",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/reg.c",
+   "bytes": 4339,
+   "sha256": "73a1746a498138860cc08a4e4452b073f788bc1a045da3af2f45219e2df29591",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/reg.h",
+   "bytes": 3007,
+   "sha256": "e2a53fe98df4d3f4097b5f87be952f63ac646ed0468200b5a2b31131256d2ae1",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/touchpad.c",
+   "bytes": 3951,
+   "sha256": "108c4d97539c03b30482461ac816e30e9a6c8b64305bd09526d0c5b34ef30bd1",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/touchpad.h",
+   "bytes": 295,
+   "sha256": "b3d79db6957242c6a4f1d4f72faa290bd4c1c8c982b8655f735dee2c0005e56b",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/tusb_config.h",
+   "bytes": 758,
+   "sha256": "535e7d694a3329101f155cfa005aad9b8331080f930442f6ff17c100d19987a5",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/usb.c",
+   "bytes": 4291,
+   "sha256": "aac0abfd73bc875125b75d0c39001fb45e51c2596a6761bb9468c3a7e19b8e09",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/usb.h",
+   "bytes": 97,
+   "sha256": "a7909fc79e09ae042812eae642e8705f9c45014e6c492e12caff2bbbebf6ade8",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/app/usb_descriptors.c",
+   "bytes": 3252,
+   "sha256": "d8985080f796ded53efe163c5a43f9d1d9dd18b4fc7cd65c722ba6956bd84aca",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/boards/bbq20kbd_breakout.h",
+   "bytes": 774,
+   "sha256": "343abc00bd02adef6c4b85cf084e7d29bdde7cebef9c3f230ef4736762b11b8e",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/etc/99-i2c_puppet.rules",
+   "bytes": 129,
+   "sha256": "f0c3ae083a83cb0e510b1d3b60e07e6449cc36bec2b655af21fc8fbfb66a7f3b",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/i2c_puppet/etc/i2c_puppet.py",
+   "bytes": 3734,
+   "sha256": "744373d5f41dc246bce5eba652952aab5c5b225822dead387c0f93d4cf9a8cbe",
+   "source": "i2c_puppet"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/conf.py",
+   "bytes": 1843,
+   "sha256": "aea990676c0831f2c243eb6c43aa21f0e5078eb8b9a05466662f3ade6de39422",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/get_github_rev.py",
+   "bytes": 474,
+   "sha256": "cbcb86c34ced8e1d6f27a8357042e08aae75b6d58701510286e11d80449b6e2f",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/index.md",
+   "bytes": 5269,
+   "sha256": "54280a8c8bb37180bfd793d146d4546b03ff52dfe0a32b4690a46d974570e931",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/tanmatsu.png",
+   "bytes": 467553,
+   "sha256": "2ec7a54438c15bc23d7aedbca56f8ad9604e470e61e820a65739b6ae2e2c24fd",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/user_manual/index.md",
+   "bytes": 7983,
+   "sha256": "968e1dcf5dcc8947f23d608c49bdddbb98f788cfd25cd812e050976458b9cb4b",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/user_manual/right_side.png",
+   "bytes": 318964,
+   "sha256": "7e775f333ab967c17be23bf619343fb58e637757fef758927925f78d6a83877f",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/user_manual/right_side_no_text.jpg",
+   "bytes": 419300,
+   "sha256": "da9b43654ad1c17d7f2bb590d4cbe44312dfd3cff820f52da9bc7a3b507478bf",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/index.md",
+   "bytes": 4889,
+   "sha256": "15fd134a39ba8302abb2fe7659c55a738df8d004e29fe7f398cbe45368daede2",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/meshtastic/index.md",
+   "bytes": 6463,
+   "sha256": "144be0ce4974a66140dc3a98f2b0f8d053b04cca8622a15cb2cd035b7e6adf1b",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/meshtastic/tanmatsu-meshtastic-preview.zip",
+   "bytes": 1973617,
+   "sha256": "797db6f670e2b9eadef3e679c2fb1291f4ae4d86926bc12aa601e8c0a79c7bc1",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/appfs/index.md",
+   "bytes": 4049,
+   "sha256": "c4bb25dc2eed3adc7c6a934d3cc97f4013aec886d8dfdf4164259d3759d4d8ba",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/esp_idf_from_scratch/index.md",
+   "bytes": 7740,
+   "sha256": "60840de47e8a203737e04bc39d70b30e7c462a3cf40e99031eea4caf6a3d94e2",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/badgelink/index.md",
+   "bytes": 8813,
+   "sha256": "4d842f5b5f77e49568c6b2afa1a9af42a8468a663a79e153b6b8e7ca77e3f4ee",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/compiling_the_template_app/8.png",
+   "bytes": 63810,
+   "sha256": "70001ce6fa88dc3ef7fecec893be19e0dcce02b7f8a762eaf93e21322f701e3d",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/compiling_the_template_app/bash_shell.png",
+   "bytes": 44428,
+   "sha256": "a97db58c853ce95648cd74b1491c42b2d4234df8fe45ba39ca6989070ee6cbb5",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/compiling_the_template_app/clone.png",
+   "bytes": 24200,
+   "sha256": "17c0737f5742794674f228f5d866a6644a5ab6ce33d6d86b5025ad5b0a0b6e58",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/compiling_the_template_app/esp_idf.png",
+   "bytes": 33516,
+   "sha256": "bf2b8e03183334e9a146a25b1ace9753b55262b1fb3c42c1a3384f21de053a2f",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/compiling_the_template_app/esp_idf2.png",
+   "bytes": 72227,
+   "sha256": "9b64915e387932ef7506091d2a1f7a4e6644c56e6e0a6c0f95678dd72078123e",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/compiling_the_template_app/index.md",
+   "bytes": 2897,
+   "sha256": "fb2d5834c6f093fc50dc5a7e990ed03cc1813d9023062299f85ae9a1bfc47bad",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/compiling_the_template_app/microsoft_store.png",
+   "bytes": 194608,
+   "sha256": "bc84479b6db6410aadb778facd6ace60cd57805cea7d8d41b0c6233dbbb3a9c2",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/compiling_the_template_app/packages.png",
+   "bytes": 79424,
+   "sha256": "f4e3fa479d3b8ae7c6a763f63d0f198a051a61b1ae2e42f3fc36616f8c56ad44",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/compiling_the_template_app/start_menu.png",
+   "bytes": 45135,
+   "sha256": "49df935fc55e99c93f842665d5e85d0feed68a63e915e32fac2e8470198d1dea",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/software/flash_layout/index.md",
+   "bytes": 3607,
+   "sha256": "c1d1bd26552467e4587c876cd796a19c5d4f3ae5cc3f15068d88f32a48bf2eaa",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/add-on/index.md",
+   "bytes": 58,
+   "sha256": "a12682550718b18eb1b5154c2d87c4fd459e91771049fe29759e8d38b7fed59b",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/add-on/jtag/catt.png",
+   "bytes": 17092,
+   "sha256": "e51f99e8d7c1153cdf926d3cd76086e93488b8983b66b832b5477125ef0e4b0a",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/add-on/jtag/index.md",
+   "bytes": 3111,
+   "sha256": "201f5b4d777edd7dd27c0910ff169e4a325fe6bef6ddccdfa57330158f413ade",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/add-on/jtag/jtag-1.jpg",
+   "bytes": 585352,
+   "sha256": "4622691f8ccca0f4296185347547184bc60aa5ee6e72dfacd46b5a74bd7c463f",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/add-on/jtag/jtag-2.jpg",
+   "bytes": 2867364,
+   "sha256": "3818d46ab31db07c01bfe10661e67af808e20e1d2f30807357c31225b402ddc5",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/add-on/jtag/jtag.png",
+   "bytes": 21988,
+   "sha256": "13de520eac28462eaf2b4a61b9a7a45f4f275ab908b5ee94730626de90d8c40d",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/add-on/jtag/led.png",
+   "bytes": 4945,
+   "sha256": "2dd795453a8455041666bcf7f277b3dd7e25322cd589c24df3be60012c79fe36",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/add-on/jtag/qwiic.png",
+   "bytes": 8035,
+   "sha256": "d2ac669731950273df1a81f329398ced5f5a36c825edd3c3a588eb01cf05747c",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/add-on/jtag/schematic.pdf",
+   "bytes": 28600,
+   "sha256": "f74c638a8f764c37808fc7742785775ca43d2e2dcfc0255d2b2b532b349937b7",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/_static/tanmatsu.png",
+   "bytes": 25643,
+   "sha256": "2f647aa02203114d0797f9eea1387b7206e51d59c4f30319cd7b8ae2a36ed10b",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/_static/theme_overrides.css",
+   "bytes": 1150,
+   "sha256": "c16ef4b6694d5171d92d26f3be197ce9914617ede228db60b3ef9eef008f0dab",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/back-annotated.png",
+   "bytes": 1219086,
+   "sha256": "e44fe211c957ca950d38a7bccdd4e0c33ae589d8b8f3a4a2b7cb4b6af70d147f",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/black-front-2.png",
+   "bytes": 2046427,
+   "sha256": "54c91d88fb64cbfdab787188db029c3ce69da99bb8e54987836c4eb10e50ae22",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/black-front.png",
+   "bytes": 552643,
+   "sha256": "4db9f899de5ad91545ceb7eaaffac6241ed38b05daf1cd44fd777fd433e7de14",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/blockdiagram.png",
+   "bytes": 1003766,
+   "sha256": "60561c251ab1f5af4877500334bf0363740dbb6700851923230f11869e1d7774",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/blockdiagram2.png",
+   "bytes": 47175,
+   "sha256": "de17ba3fa11d611cc1ce692becc6fb07f1d6aef923b09b01a6d0c7cf07ce77bf",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/components.png",
+   "bytes": 786948,
+   "sha256": "312f05e05de91f428fc7b7abba8e76c2bf57e2db483de69dcec821d15bf3be87",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/cyberdeck-front.png",
+   "bytes": 640958,
+   "sha256": "b34d6f40549928fa4f81f06f4d003489016b1fa473a35ec4c2a1b18960ca351c",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/index.md",
+   "bytes": 6303,
+   "sha256": "493a5bed46865896001f746e605e0628729d7c8227bb0d9feafbfea40fd7e0c0",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/pcb-back.png",
+   "bytes": 786948,
+   "sha256": "312f05e05de91f428fc7b7abba8e76c2bf57e2db483de69dcec821d15bf3be87",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/purple-front.png",
+   "bytes": 625872,
+   "sha256": "3d47e7ec63ffa20679f3d742bb96208765a617150e6a0dcabcace1dcf4c2a8cb",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/red-front.png",
+   "bytes": 614346,
+   "sha256": "8d71d9b52c9c3e14020b455b94f489561aa5ba12ab6b787601511c7601ddb7aa",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/side1.png",
+   "bytes": 192690,
+   "sha256": "cd2f135125590fcd593de2afdda4aed9b98b930a1280c444905463f2d6807379",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/side2.png",
+   "bytes": 165992,
+   "sha256": "2f7753a726698a2492c9cb1deaadbbb676b77a5125a6050c09c3f1a53a3326df",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/specifications/index.md",
+   "bytes": 9340,
+   "sha256": "1f4bfc2950b56403b44276d9d07745719412e08f206909b8b6cab35327500db3",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/keyboard/index.md",
+   "bytes": 2596,
+   "sha256": "a0270f44cb623a95207872ad16ccecaeb76a8cb5d0bbae76671690a0b99decc4",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/case/extra1.jpg",
+   "bytes": 84203,
+   "sha256": "7db642faf46c129500e79357bcd54084bfb11c248d1800f4c57c839e8faabc96",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/case/extra2.jpg",
+   "bytes": 80960,
+   "sha256": "9338fb491b04d694eedbb603f403e2333b991e13ffc9ad3fa04bc24a766c360e",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/case/extra3.jpg",
+   "bytes": 84719,
+   "sha256": "8ee358b0e383130b27c8aeafe6361663de4828c1077d8d8b1d3d990c34fabd82",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/case/extra4.jpg",
+   "bytes": 57977,
+   "sha256": "ad28a3bf7cd1e1ae6000f7f6329c7cbd8b78ccbbb82edd189e62fb837b3984d9",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/case/extra5.jpg",
+   "bytes": 58358,
+   "sha256": "6fb709f306b3fea031464a233584fe377da9d38d34bf66f3f1f967b8ec495d61",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/case/index.md",
+   "bytes": 1416,
+   "sha256": "06aa873983cd7c966bea68837a72bdc695ebd4268640cf67a203e02b0579bab2",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/case/main1.jpg",
+   "bytes": 98352,
+   "sha256": "8ca39ad42ddbf598ac645a56b9ac27d0221ced0be0d2543a1a06fcb4cbcf762b",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/case/main2.jpg",
+   "bytes": 86549,
+   "sha256": "dfd1ce3948c2360af955e2a84267870e97ea2bf901a0a6118f6df5a5cd02831a",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/i2c/index.md",
+   "bytes": 2899,
+   "sha256": "a83194231801e12c1d6392e18787772e799db2ee7c0cf56fedd323ff271c3934",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/connectors/index.md",
+   "bytes": 4738,
+   "sha256": "3a92ffdcfec68b45842b6938546d11f7a5f4240749cf3a35e21f1af3eac19bae",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/connectors/internal-add-on-port/index.md",
+   "bytes": 12642,
+   "sha256": "1d3d818036536f8c70934040b17d78c3fe4c26e27d75914e2486415db9ee257a",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/connectors/external-add-on-port/catt-connector.svg",
+   "bytes": 53501,
+   "sha256": "04f239fadf44fe2d74a4a2e6f53ba18621e54d974be05752d0a4e33c7535219b",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/connectors/external-add-on-port/catt.pdf",
+   "bytes": 280867,
+   "sha256": "60e892652422e139d4e8dd74a858107af60ed5e2a24c9fdb8783e6227e38bd66",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/connectors/external-add-on-port/index.md",
+   "bytes": 2908,
+   "sha256": "503cf7e9637feff8406f487b7c733b5f100b5ae35b83bfdf644b963ac250fa68",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/connectors/external-add-on-port/tanmatsu-left.svg",
+   "bytes": 484741,
+   "sha256": "47b71e9cf6752ea8162a897802e399f9c8121182cc36dd18141b1fb257a98ab8",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/connectors/external-add-on-port/sao-adapter/1.jpg",
+   "bytes": 112883,
+   "sha256": "4f07b7ed3924d7aa846a12e47211ea202aa43e3373a95b62061352d65601fe53",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/connectors/external-add-on-port/sao-adapter/2.jpg",
+   "bytes": 110015,
+   "sha256": "c9e7fdfe5e71f1be98f3324408a3eaed6ab1d595344a9bc3d2272ba112980295",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/connectors/external-add-on-port/sao-adapter/combined.jpg",
+   "bytes": 31261,
+   "sha256": "b2fc6e27722c706714600c8ecb5bfbe7d58054d58df1f6bc3a99cdbfa23915a3",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/tanmatsu-documentation/hardware/connectors/external-add-on-port/sao-adapter/index.md",
+   "bytes": 1172,
+   "sha256": "5d46dd6b9ac112737bc6900e91a7cb3d21bb3f28796756b108ab8a411f9ceded",
+   "source": "tanmatsu-documentation"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/LICENSE",
+   "bytes": 1139,
+   "sha256": "0b4b0915515b35645f60b696b46c8d46cc62e9f3421ce8cfc95f3070bf325339",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/README.md",
+   "bytes": 2070,
+   "sha256": "8772d48c5f4ecc27eac41c5b005f2fd7bd711d6b6001b75ce098940de99c3315",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/hardware.h",
+   "bytes": 597,
+   "sha256": "e736bfff0a8ff40147319899089629b2aa478e576e32f2429d9dd476b299bb69",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/i2c_registers.h",
+   "bytes": 3977,
+   "sha256": "febd73e6603d85d29b83a1724d1756b8fa811a15117cd0626194f68143a26bd2",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/keyboard.c",
+   "bytes": 2766,
+   "sha256": "25eedd26f0a30ae9c22db11f2e41782b285ab728712b6997bd0080468a4af7ee",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/keyboard.h",
+   "bytes": 249,
+   "sha256": "29ffa45b90f52de2a5359e1b5b331e24d716785179fd729d45c18b718c86709e",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/leds.c",
+   "bytes": 5013,
+   "sha256": "b01c823774b3e6212e31f21e63cf757cbcc18c13b1d1418f32e3fc29fafc62a2",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/leds.h",
+   "bytes": 466,
+   "sha256": "94ccbb2c8b61f5ab9e9a42dc00db4dea6a06582338193bb5076925d0359a2464",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/main.c",
+   "bytes": 35048,
+   "sha256": "e4188f4f9e6934b10a8442c1398c9ad0cc6ebfbc7f20f41e80e2d6cf69025359",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/pmic.c",
+   "bytes": 43037,
+   "sha256": "b2f2b89664bbed1740a50e2cc06d82640da05dc4d2b55af696dc54ea651c8c27",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/pmic.h",
+   "bytes": 8084,
+   "sha256": "b82e8f39d90c6debc0e31bd03234d092262d89f61961e323d5418903377c1079",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/coprocessor-firmware/pmic_regs.h",
+   "bytes": 7149,
+   "sha256": "3156b754daa8192e14f0a0546a96832e5274e5f6111e2e9b5c6d85038d473851",
+   "source": "tanmatsu-coprocessor-firmware"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/Kconfig",
+   "bytes": 916,
+   "sha256": "965c88957ffc4dde82535dcd3dfe49c315284c7f08a98e8ff1aa779eeea2ac82",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/LICENSE",
+   "bytes": 1109,
+   "sha256": "61288fecfb9995d2c532191e510b20fc395b83e6d836b24151daaf3399347409",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/PROVENANCE.txt",
+   "bytes": 59,
+   "sha256": "54988825bf9b62f6afe875922fff3030860b0a0a479b6d6db6d6e8362d0be650",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/README.md",
+   "bytes": 242,
+   "sha256": "59af5f512c7ea3ac4f85764181370be5bb082ca8dbf36295e62de95b047ac55b",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/tanmatsu/badge_bsp_audio.c",
+   "bytes": 3968,
+   "sha256": "1a5b61995c10715f65897e13211f64b65f728e2998b9fc7f0e952e3aeac0a24c",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/tanmatsu/badge_bsp_catt.c",
+   "bytes": 5103,
+   "sha256": "b62da7d9084917f4f3e1bce0e94fac5d6c4a4ea21b8a1779d353987e7c65eb3f",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/tanmatsu/badge_bsp_device.c",
+   "bytes": 2915,
+   "sha256": "c513253613862f9a8c2dd1363dd1c68a8431fb71b8dfc6f67d8dada308f219ce",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/tanmatsu/badge_bsp_display.c",
+   "bytes": 7623,
+   "sha256": "a8e5e91182089ff01f0eae3dff07478aaaaabddc7ee7f0faa0570b77c6e45f0b",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/tanmatsu/badge_bsp_i2c.c",
+   "bytes": 2162,
+   "sha256": "a41901bddd88965e028a0fa85cd5984e44609d17aa52335f6d8c97992ac7fc18",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/tanmatsu/badge_bsp_input.c",
+   "bytes": 40216,
+   "sha256": "a4cba72f14d568711da58a67ea378b2ec1f6852326241d9c417cfddb15e5317c",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/tanmatsu/badge_bsp_led.c",
+   "bytes": 5550,
+   "sha256": "4492bb6cbdd4d9a2122550f2987f7fd3be1fa1da7395123185bee1d9a48e6627",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/tanmatsu/badge_bsp_orientation.c",
+   "bytes": 6441,
+   "sha256": "51e4c6efa90e94742a4ba5fe49d572cd0f4dd01fd858a0532c8663a629e32317",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/tanmatsu/badge_bsp_power.c",
+   "bytes": 10031,
+   "sha256": "e1bb7c8669fbfb93935c48048d8271f2c3e5df9b9480a9d68cc2f441b8053e76",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/tanmatsu/badge_bsp_rtc.c",
+   "bytes": 1980,
+   "sha256": "697b6af1e8316fcc4ad4837584657b288be14e2abac54d29039bbf819a32aa43",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/source-snapshots/badge-bsp/tanmatsu/tanmatsu_hardware.h",
+   "bytes": 1964,
+   "sha256": "4e8df1a5174b0d0593e7c3fbdee00f88d1a69f3df5579f3d0a9e5d936436b913",
+   "source": "badge-bsp"
+  },
+  {
+   "path": "artifacts/solder-party-docs/bbq20kbd.txt",
+   "bytes": 1344,
+   "sha256": "4c9a499c39bdf5ea71059c1cb89a149627e971e63bbfa90972b8ff798c4d5479",
+   "source": "solder.party"
+  },
+  {
+   "path": "artifacts/solder-party-docs/keebdeck_basic.txt",
+   "bytes": 2515,
+   "sha256": "37af121eb9e747cb19820786a4812399f91e872417ea93297136593203817145",
+   "source": "solder.party"
+  },
+  {
+   "path": "artifacts/solder-party-docs/keebdeck_keyboard.txt",
+   "bytes": 3854,
+   "sha256": "6684c805dbbb6126cab4d7c9dbf31d79893ac85791ac7fa0d3828237c81aae8e",
+   "source": "solder.party"
+  },
+  {
+   "path": "artifacts/solder-party-docs/keyboard-featherwing_rev1.txt",
+   "bytes": 876,
+   "sha256": "a17a4ef200d8053bdb24ee4c57dc8aef6ba0e68409f003e0ab6cc2722931baf5",
+   "source": "solder.party"
+  },
+  {
+   "path": "artifacts/solder-party-docs/keyboard-featherwing_rev2.txt",
+   "bytes": 926,
+   "sha256": "cb68aaec4b7242c6de09dbe3e4d04184a75725b3b96c97d6c511a79ef64de3b4",
+   "source": "solder.party"
+  },
+  {
+   "path": "artifacts/solder-party-docs/keyboard-pmod.txt",
+   "bytes": 566,
+   "sha256": "aa4fcbefabfa1f5822cec5b30bc7d70d8e04a6e6aacc53f115b6bbbc8802452b",
+   "source": "solder.party"
+  },
+  {
+   "path": "artifacts/solder-party-docs/rp2350-stamp-xl.txt",
+   "bytes": 2419,
+   "sha256": "88b18ed038a30c68b35852babe1db1acedbd28f1b1a20ba76b0c6571cd45c3b0",
+   "source": "solder.party"
+  },
+  {
+   "path": "artifacts/badge-team-docs/compatibility.txt",
+   "bytes": 126,
+   "sha256": "8be687e3b0d0bbca06a8632cd58e6139b0863b790b95e60f0e6e35e33935e9c4",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/compatibility_camera.txt",
+   "bytes": 787,
+   "sha256": "c44b4a9b431c61da4076ea7d9f32469900e0126cf631f3abc261b2ac03ae2874",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/expansion_boards.txt",
+   "bytes": 168,
+   "sha256": "e8652578ec80ce01da3f7cd77399d82fd63e3b96c85b235952a1be29704c307c",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/expansion_boards_18650-expansion.txt",
+   "bytes": 801,
+   "sha256": "4ae0c4971389f8e601efb5518808649b076480a34527f691acba00ec1329d143",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/expansion_boards_zero-expansion.txt",
+   "bytes": 2978,
+   "sha256": "7aa4edce7155eab41ef6b6577c8d8015374d1b48aa5fbc7bc9193fa1c386d348",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/faq.txt",
+   "bytes": 139,
+   "sha256": "f8fa1619bdff7009ef5e2baac21e179243c4bdc43a44f7a9dc53e9c8f11e02a4",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware.txt",
+   "bytes": 198,
+   "sha256": "667f22ec61d113b45653dd8375e50e5390ea1808149da0fbbebd01e718b096f0",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_camera.txt",
+   "bytes": 2361,
+   "sha256": "1dc8d2d4147ee0fe8c573b5d636ea846dabb3303318dc291768c245388cab7b7",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_diagram.txt",
+   "bytes": 132,
+   "sha256": "1e2680f39da3ab08e997868c33fe819b6ab8b9793b05f8acba4f70e870c142b7",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_frontpanel.txt",
+   "bytes": 2235,
+   "sha256": "d1e4de080b1c2ac706ceb9c38dce760b3e9471af6638d05235ff906ff9363be4",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_frontpanel_artwork.txt",
+   "bytes": 121,
+   "sha256": "29003d79556972f6af405d686e688595a6ef4553e0cccff94997e33c78ff5ed2",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_pinout.txt",
+   "bytes": 234,
+   "sha256": "e56d48988283068f5901ae6d45cacd48cf84f7138ffe6c80403a6d0fbed3b4b6",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_pinout_connectors.txt",
+   "bytes": 173,
+   "sha256": "5ad9c11e847ef683760ddf8b17e8fedab6139836d3c646797e5113858baf5bcc",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_pinout_connectors_back_expansion.txt",
+   "bytes": 4489,
+   "sha256": "cc6f86abc54e4b3ad5783877257b3a0574c78886dd79dfe9e81afbaeb3e60a27",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_pinout_connectors_catt.txt",
+   "bytes": 556,
+   "sha256": "4f42fa69b664041ffe6c3aa06251e6c7108e580b5643e393b3fcc3256c772487",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_pinout_connectors_qwiic.txt",
+   "bytes": 439,
+   "sha256": "52be874f2d0de433fef84d865ff3887774eb214b85cbbda0455eef35027b41cb",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_pinout_ics.txt",
+   "bytes": 208,
+   "sha256": "7ff63144e00517b8a7b242734e827c3cff03156702211bb78ca3c8b55dec52fd",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_pinout_ics_ch32v203.txt",
+   "bytes": 2551,
+   "sha256": "8184d7bfe5a751a3eb334f52ab46f7cd6c9d58e88270eaf5b710e92c918fc2e9",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_pinout_ics_esp32c6.txt",
+   "bytes": 1642,
+   "sha256": "b7c0863d9c663ba312ed367cc45cef852cdb842e91068eaf72d81b92cc50757f",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_pinout_ics_esp32p4.txt",
+   "bytes": 5164,
+   "sha256": "43c9153b052b20c487a1037b0784c599c42c286128482b2748ff189b10878fc2",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_specifications.txt",
+   "bytes": 206,
+   "sha256": "fc26e05a0c7aa4ec91d328b96bdea870fa586cac5e1f3e4501c35e63cb2b37c6",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_specifications_battery.txt",
+   "bytes": 249,
+   "sha256": "6d6effb63f42b838b5d25a688b11bb72538114fee0aa8befce60005902cf77b1",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_specifications_esp-c6.txt",
+   "bytes": 381,
+   "sha256": "6cc63638c4c03cdeca83d445b7bac8bb14ac0afce62ca395a759200adee1f0b0",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_specifications_esp-p4.txt",
+   "bytes": 359,
+   "sha256": "8dce9b156a8400efc848892c01e7d25f81a1f013c8c1135f88eb3c31965b28b7",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_specifications_keyboard.txt",
+   "bytes": 169,
+   "sha256": "9d5c302fe5e6250674d1911ddef58fca8334a00597ef00fbf1675d95858f2305",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/hardware_specifications_screen.txt",
+   "bytes": 120,
+   "sha256": "edc8cf6d6e144e064c6def5f2a368df4fb54779616afd4b04601894dde53a6b3",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/index.txt",
+   "bytes": 4502,
+   "sha256": "cb732cfaf076d1a706653ee9203c101a6a7500e573ca16cf1f957eb91198c383",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/quickstart.txt",
+   "bytes": 1162,
+   "sha256": "9bdfb4427691108435e91098c8c82a54ac412ca40d52c086ac68ffc7d1c96772",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software.txt",
+   "bytes": 224,
+   "sha256": "22bbfc200dcd8ee31dfb87cff89979eceae6218a4aa3d64e92e8b2b5c88c488c",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_apps.txt",
+   "bytes": 162,
+   "sha256": "27c9e1b7f243b10614f84f2e5519a24cf1117baa2348c3ce50472e26e24c7ab6",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_apps_local-apps.txt",
+   "bytes": 124,
+   "sha256": "3aa148a77207b64b929e691db5cb7b60f0f335bb792e835aab7be724d22550a1",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_apps_software-hub.txt",
+   "bytes": 224,
+   "sha256": "83f017bdc16f2ea4d8623d9d833ce73a4b982c66ac20aef96fe5e7c42e4b15bf",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_apps_software-hub_creating.txt",
+   "bytes": 119,
+   "sha256": "d5ab853c2e819d288569634ce34132a016b4fd5b861f32e2c771ef762cb6cdb2",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_apps_software-hub_downloading.txt",
+   "bytes": 122,
+   "sha256": "c4b695455c8d168de7618afcf3de71ad837ac0234559d3ed0da585b2c3519623",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_apps_software-hub_uploading.txt",
+   "bytes": 120,
+   "sha256": "68439aa4b6a77de47cfbe067c63875a906ee1274b57122c2802b8544db0999bc",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_settings.txt",
+   "bytes": 178,
+   "sha256": "eb6430b2a49524e82dcf75a4f0c950c5569e86b4bc411ef39e816efb75e5ce2e",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_settings_lora.txt",
+   "bytes": 185,
+   "sha256": "bfa88009571c6d44dc25db05d0c5cd5df40395e47d6a118c1ffa0580a108de40",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_settings_softwarehub.txt",
+   "bytes": 190,
+   "sha256": "0d766b4c51860b74832298ddf0e8fab7fd9c4248354523296b1bc50d32487213",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_settings_wifi.txt",
+   "bytes": 173,
+   "sha256": "f21b3452bb64bbea665a60e7442109c85eb228d6012d410cce6e133a67b16382",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_updating.txt",
+   "bytes": 207,
+   "sha256": "8aff5350c854774cd119e531fc4c9b2eed2333b982a5b1dfc2aa6159d3c039a5",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_updating_apps.txt",
+   "bytes": 173,
+   "sha256": "cb24626518e5ef90b77d738fd5654143121ed034a74475a73fee2583d0411c2a",
+   "source": "badge.team"
+  },
+  {
+   "path": "artifacts/badge-team-docs/software_updating_firmware.txt",
+   "bytes": 177,
+   "sha256": "7d352eebd3763f4b7d4282e583515f108d8c58b1ebd18033a091076040fe1af3",
+   "source": "badge.team"
+  }
+ ]
+}

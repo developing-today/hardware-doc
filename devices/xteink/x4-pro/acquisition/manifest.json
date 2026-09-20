@@ -1,0 +1,130 @@
+{
+  "device": "xteink/x4-pro",
+  "generated": "2026-09-04",
+  "note": "No artifact acquired. Not a scope decision: no public firmware image, teardown, schematic, datasheet or regulatory filing exists for this device. Every technical claim derives from Free-Ink/freeink-sdk @ 24003795381a6c23630a26472ae3b06550333e71 plus the vendor Shopify API.",
+  "artifacts": [],
+  "wanted": [
+    {
+      "id": "x4pro-stock-dump",
+      "kind": "firmware-image",
+      "canonical_url": null,
+      "sha256": null,
+      "bytes": null,
+      "destination": "devices/xteink/x4-pro/artifacts/firmware/",
+      "retrieved": null,
+      "upstream_version": "xteink_app 7.4.4 (ESP-IDF 6.0.1, built 2026-08-27); earlier 7.0.8",
+      "license": "unknown (vendor firmware)",
+      "redistribution_status": "unknown",
+      "disposition": "not-downloaded",
+      "repo_state": "not-downloaded",
+      "reacquisition": "blocked",
+      "reason": "No public X4 Pro image exists. The X3 has four published stock images and the X4 has a community dump; the flagship has neither.",
+      "target_hardware": "Xteink X4 Pro, ESP32-S3, 16 MB flash, 8 MB PSRAM",
+      "firmware": {
+        "target_mcu": "ESP32-S3",
+        "image_role": "merged full-flash image",
+        "flash_offset": "0x0",
+        "partitions": [
+          [
+            "nvs",
+            "0x009000",
+            "0x005000"
+          ],
+          [
+            "otadata",
+            "0x00E000",
+            "0x002000"
+          ],
+          [
+            "app0",
+            "0x010000",
+            "0x7E0000"
+          ],
+          [
+            "app1",
+            "0x7F0000",
+            "0x7E0000"
+          ],
+          [
+            "spiffs",
+            "0xFD0000",
+            "0x014000"
+          ],
+          [
+            "coredump",
+            "0xFE4000",
+            "0x01C000"
+          ]
+        ],
+        "companion_images": null,
+        "flash_instructions": "esptool.py --chip esp32s3 --port <port> --baud 921600 write_flash 0 <file>  [INFERRED, not executed]",
+        "notes": "CRITICAL: the dump carries TWO app images for DIFFERENT variants. app0 = ESP32S3_X4_TL (a different, Arduino-era variant with a WRONG pin map). app1 = XTEink X4 Pro / ESP32S3_X4_TL_SSD1677 (the real firmware). otadata selects app1. Every early RE pass read app0 and derived a scrambled display pinout."
+      }
+    },
+    {
+      "id": "x4pro-ota-package",
+      "kind": "firmware-image",
+      "canonical_url": null,
+      "sha256": null,
+      "bytes": null,
+      "destination": "devices/xteink/x4-pro/artifacts/firmware/xteink_app_update_x4pro_7.4.4_20260827_133901.xota",
+      "retrieved": null,
+      "upstream_version": "7.4.4 (package metadata claims V7.4.5; the embedded app descriptor is authoritative)",
+      "license": "unknown",
+      "redistribution_status": "unknown",
+      "disposition": "not-downloaded",
+      "repo_state": "not-downloaded",
+      "reacquisition": "blocked",
+      "reason": "Filename is named in docs/xteink-x4pro-support.md but no download URL was found anywhere.",
+      "notes": "The .xota container appears encrypted - the SDK refers to 'the decrypted ESP32-S3 app'. Mechanism undocumented."
+    },
+    {
+      "id": "x4pro-ota-feed",
+      "kind": "api-response",
+      "canonical_url": "http://gotaserver.xteink.com/api/check-update",
+      "sha256": null,
+      "bytes": null,
+      "destination": "scratch/xteink/vendor/",
+      "retrieved": null,
+      "license": "n/a",
+      "redistribution_status": "unknown",
+      "disposition": "not-downloaded",
+      "repo_state": "not-downloaded",
+      "reacquisition": "manual",
+      "reason": "Endpoint recovered by string extraction from the X4 (ESP32-C3) dump; assumed shared brand-wide but unverified for this model. Request format unknown. Not queried this session.",
+      "notes": "Plain HTTP. Would likely give the current stock version and a download URL - the cheapest route to the two blocked firmware entries above."
+    },
+    {
+      "id": "x4pro-teardown",
+      "kind": "teardown-photography",
+      "canonical_url": null,
+      "sha256": null,
+      "bytes": null,
+      "destination": "devices/xteink/x4-pro/media/",
+      "retrieved": null,
+      "license": "unknown",
+      "redistribution_status": "unknown",
+      "disposition": "not-downloaded",
+      "repo_state": "not-downloaded",
+      "reacquisition": "lost",
+      "reason": "No X4 Pro teardown exists in 2,136 Reddit posts or a ~200-repository GitHub census.",
+      "notes": "Would close SEVEN unknowns simultaneously: battery capacity, mass, dimensions, charger IC, panel module part, antenna type, debug pads."
+    },
+    {
+      "id": "x4pro-vendor-imagery",
+      "kind": "image",
+      "canonical_url": "https://www.xteink.com/products/xteink-x4-pro-pocket-ereader",
+      "sha256": null,
+      "bytes": null,
+      "destination": "devices/xteink/x4-pro/media/",
+      "retrieved": null,
+      "license": "vendor, all rights reserved (presumed)",
+      "redistribution_status": "unknown",
+      "disposition": "not-downloaded",
+      "repo_state": "not-downloaded",
+      "reacquisition": "automatic",
+      "reason": "Deliberately not downloaded: marketing renders establish nothing beyond the text record, and rights are unexamined.",
+      "notes": "URLs are in scratch/xteink/vendor/products-p1.json under products[].images[].src, retrieved 2026-09-04. CAPTURE BEFORE DELISTING - the X4's imagery was lost that way."
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+[
+ {
+  "repo": "limengdu/SeeedStudio-XIAO-ESP32S3-Sense-camera",
+  "commit": "bb67cd0a0f2d5efae95ab42f300ecf615956d194",
+  "bytes": 1992096,
+  "sha256": "e2e9e2c6248634ee286493194644db72809abbdc45ddbbbbe57c25ac5841e2b9",
+  "license": "MIT",
+  "status": "vendored",
+  "dest": "examples/selected/SeeedStudio-XIAO-ESP32S3-Sense-camera",
+  "extracted_bytes": 3401272
+ },
+ {
+  "repo": "Mjrovai/XIAO-ESP32S3-Sense",
+  "commit": "770dfef0745c2ec4dc49dafe67b986bceafd07b2",
+  "bytes": 93486173,
+  "sha256": "693fab006509ef748b6824b45612a0e8a130037d261de8cb9bb426cd67250b46",
+  "license": "Apache-2.0",
+  "status": "metadata-only"
+ },
+ {
+  "repo": "fabio-garavini/Xiao_Sense_CameraWebServer_Audio",
+  "commit": "47bb9edca88ae1209b40c2533157bd16829f3e3b",
+  "bytes": 464223,
+  "sha256": "7465b9a40e08ae93f293adcc49889faa426e9d589b82f77e8c036fe33f4f735c",
+  "license": null,
+  "status": "metadata-only"
+ },
+ {
+  "repo": "Sukecz/esp32-birdnet-mic",
+  "commit": "8552b12aa44487c1cb935467a93ac35ecdc681d6",
+  "bytes": 39049664,
+  "sha256": "388fe1ee5f941a89728ce14f5ed0b5f6e85a862c13a45bcb4ee6f642c3cbeae2",
+  "license": "MIT",
+  "status": "vendored",
+  "dest": "examples/selected/esp32-birdnet-mic",
+  "extracted_bytes": 83235287
+ },
+ {
+  "repo": "2b-t/esp32s3-microros",
+  "commit": "09f08b1827177bee2a3799c914daa28dd8d54bbb",
+  "bytes": 8317,
+  "sha256": "6b663016c835825959b53fa754862decfd0b53a55a61690286e10b435de9e7c8",
+  "license": null,
+  "status": "metadata-only"
+ },
+ {
+  "repo": "KamranAghlami/XIAO_Webcam",
+  "commit": "aed81505774e30832fce70e66b0fe36017b979ac",
+  "bytes": 2693976,
+  "sha256": "02b8e49e010d096ece83518dccd12caf38fde5c449d7893f83c2ec33614d53f8",
+  "license": "MIT",
+  "status": "vendored",
+  "dest": "examples/selected/XIAO_Webcam",
+  "extracted_bytes": 2948663
+ },
+ {
+  "repo": "fabio-garavini/Xiao-Sense_Assist_ESPHome",
+  "commit": "1d90f1eded004ded2fa7ed08150bd3589e63481b",
+  "bytes": 816660,
+  "sha256": "5b8c51111685cd5dbc62fd496e357c483fd80fed685b93d0ccbd08ce6f63ba12",
+  "license": null,
+  "status": "metadata-only"
+ },
+ {
+  "repo": "limengdu/XIAO-ESP32S3Sense-Speech2ChatGPT",
+  "commit": "f80f5c967d519999053b81df8ba83e4de6158885",
+  "bytes": 11354349,
+  "sha256": "7bda36a64bd392640ed93d90f06a0500ce37a178733bb0968119b799b1f4c046",
+  "license": null,
+  "status": "metadata-only"
+ },
+ {
+  "repo": "trzy/esp32s3-wifi-speed-test",
+  "commit": "daf2f200fce0c76907fe150b6b6d2b39db1c1103",
+  "bytes": 5310,
+  "sha256": "4deb55fb448584f00d307d7bef46ff9281e632e2dc1c85cea7df734cd662e88d",
+  "license": null,
+  "status": "metadata-only"
+ },
+ {
+  "repo": "TuzaaBap/Seeed-Studio-XIAO-ESP32S3-GPIOViewer",
+  "commit": "ddd1c1ccf5a80adc7a92fe36324368c7689d76aa",
+  "bytes": 634998,
+  "sha256": "e5654ebc8ad3d254b83160cf18eb18f189eff5ba8bdcfd31882d6bd56793f120",
+  "license": "MIT",
+  "status": "vendored",
+  "dest": "examples/selected/Seeed-Studio-XIAO-ESP32S3-GPIOViewer",
+  "extracted_bytes": 655231
+ },
+ {
+  "repo": "wrsturgeon/xiao-esp32s3-sense",
+  "commit": "c6927949a4edfc8d6f68db3d476d79daafef28be",
+  "bytes": 29003,
+  "sha256": "2fd6aca73de237dcb731741c71467d8d32641d966e3f63d09a72b08bee1d935d",
+  "license": null,
+  "status": "metadata-only"
+ },
+ {
+  "repo": "Mi-Bee-Studio/seeed-esp32s3-cam",
+  "commit": "a5c2b97ad246eb34a7d7830637dccb29327b5857",
+  "bytes": 803373,
+  "sha256": "aa7a3f7c7fb9ce3847bdd3e4e893c93b5e111797763b5903ede3015d3f07d300",
+  "license": "NOASSERTION",
+  "status": "metadata-only"
+ },
+ {
+  "repo": "jmleclercq/xiao-esp32s3-sense-ha-cam",
+  "commit": "00a269f6a689da7ad831f3872bbfd5f8f5651164",
+  "bytes": 5370,
+  "sha256": "81c2e80d33e8de11164dab39fe88df148ee74a1937e990c6bfb56b0e69ee534e",
+  "license": "MIT",
+  "status": "vendored",
+  "dest": "examples/selected/xiao-esp32s3-sense-ha-cam",
+  "extracted_bytes": 10679
+ },
+ {
+  "repo": "webmcu-ai/on-device-vision-ai",
+  "commit": "8a8d92ef1157f3c4c6fb260c5b4ef0ac478e715e",
+  "bytes": 16696539,
+  "sha256": "6f5c62b9a4e5984bb6f8188f0d30a0d6b060346b1157cb0fa965ce654e7409dc",
+  "license": "MIT",
+  "status": "vendored",
+  "dest": "examples/selected/on-device-vision-ai",
+  "extracted_bytes": 19174590
+ },
+ {
+  "repo": "barkinsarikartal/XIAO-ESP32S3-Sense_Retro_Camera",
+  "commit": "442a6971622a406cc5cbd323276f74cfe4c5fe2a",
+  "bytes": 4924932,
+  "sha256": "9aa201e227da1761cd9c4cf8213b9bb8535b461234f10bfc3e44ba4787041b06",
+  "license": "MIT",
+  "status": "vendored",
+  "dest": "examples/selected/XIAO-ESP32S3-Sense_Retro_Camera",
+  "extracted_bytes": 11371754
+ },
+ {
+  "repo": "limengdu/XIAO-ESP32S3-Geolocation",
+  "commit": "61f0c27fcdbde58ac980598c6d71ad422a600dae",
+  "bytes": 340763,
+  "sha256": "e82b42125ffa3ad5cf2b7e43c2f44bd254341f6c373f2598145699cad858d8b9",
+  "license": "MIT",
+  "status": "vendored",
+  "dest": "examples/selected/XIAO-ESP32S3-Geolocation",
+  "extracted_bytes": 406321
+ },
+ {
+  "repo": "Seeed-Studio/Seeed_Arduino_SSCMA",
+  "commit": "65a1b2061e80f1bd3814f688451a66646782fe1f",
+  "bytes": 7283129,
+  "sha256": "ddf80ce8b1db0ab5cfb3cb27aa216eec84c0d71876bd893ed27fc96332c6f3ae",
+  "license": "MIT",
+  "status": "vendored",
+  "dest": "examples/selected/Seeed_Arduino_SSCMA",
+  "extracted_bytes": 8935066
+ },
+ {
+  "repo": "Seeed-Studio/edgelab-example-esp32",
+  "commit": "9eba82d307c9139eaf4f6b526a27d9e1b0a4179c",
+  "bytes": 28777423,
+  "sha256": "ffdebddb9c5c6be40478bb54eab8ee0d4e09603e0881b0320816a7170199d7d6",
+  "license": "Apache-2.0",
+  "status": "metadata-only"
+ }
+]

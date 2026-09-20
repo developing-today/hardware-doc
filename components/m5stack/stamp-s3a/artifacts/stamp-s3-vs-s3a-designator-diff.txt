@@ -1,0 +1,13 @@
+S3_v0.2: CO=54 textDesig=54 union=55
+  text-only (no CO marker recovered): ['C26']
+S3A_v0.3.3: CO=59 textDesig=59 union=59
+  text-only (no CO marker recovered): []
+
+== present on Stamp-S3 v0.2 only (REMOVED in v0.3.3) ==
+  ['D6', 'JP1', 'JP4', 'M2', 'R3', 'R6', 'R17']
+
+== present on Stamp-S3A v0.3.3 only (ADDED) ==
+  ['C15', 'C16', 'C18', 'C19', 'C20', 'C24', 'C25', 'L4', 'L6', 'L7', 'U4']
+
+== common ==
+  ['ANT1', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10', 'C11', 'C12', 'C13', 'C14', 'C17', 'C21', 'C22', 'C23', 'C26', 'D1', 'D2', 'D3', 'D4', 'D14', 'F1', 'J1', 'J2', 'J3', 'JP2', 'JP3', 'L1', 'L2', 'L3', 'L5', 'M1', 'PHD1', 'R1', 'R2', 'R4', 'R5', 'R7', 'R16', 'S1', 'U1', 'U2', 'U3', 'X1']

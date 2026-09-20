@@ -1,0 +1,5 @@
+Konsool pinouts
+In this section you can find the pinout of the chips and connectors of the device.
+Konsool connectors
+IC pinouts
+Last modified August 21, 2026: Merge pull request #257 from badgeteam/fix-hatchery-swagger-url (14c0a0c)

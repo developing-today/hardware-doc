@@ -1,0 +1,1 @@
+../../../../../../../../../../archive/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Diagnostics/Inkplate5V2_Factory_Programming_VCOM/image.h

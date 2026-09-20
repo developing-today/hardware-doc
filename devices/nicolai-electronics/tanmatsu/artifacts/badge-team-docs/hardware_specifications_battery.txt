@@ -1,0 +1,9 @@
+Konsool battery
+Battery
+Specifications
+label | Value |
+Brand | Tewaycell |
+Type | Lithium ion |
+Voltage | 3.7V |
+Capacity | 2500 mAH (9.25Wh) |
+Last modified August 21, 2026: Merge pull request #257 from badgeteam/fix-hatchery-swagger-url (14c0a0c)

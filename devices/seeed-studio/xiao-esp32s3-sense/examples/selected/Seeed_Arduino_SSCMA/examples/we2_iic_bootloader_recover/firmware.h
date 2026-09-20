@@ -1,0 +1,1 @@
+../../../../../../../../archive/devices/seeed-studio/xiao-esp32s3-sense/examples/selected/Seeed_Arduino_SSCMA/examples/we2_iic_bootloader_recover/firmware.h

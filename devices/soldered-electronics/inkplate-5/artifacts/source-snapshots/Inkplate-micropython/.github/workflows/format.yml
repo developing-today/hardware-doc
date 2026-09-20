@@ -1,0 +1,22 @@
+name: Format
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install ruff
+        run: pip install -r requirements-dev.txt
+      - name: ruff format --check (Python)
+        run: ruff format --check .
+      - name: clang-format check (C)
+        run: |
+          sudo apt-get update && sudo apt-get install -y clang-format-18
+          clang-format-18 --dry-run --Werror $(find firmware -name '*.c' -o -name '*.h')

@@ -1,0 +1,86 @@
+# DinMeter — sources
+
+Schema per the research method: `ID | Title | Publisher/author | Class | Medium | URL | Retrieved | Published/updated | Establishes | Scope/limitations | Local path`.
+
+`Class` ∈ `primary` · `authorized mirror` · `credible mirror` · `standard` · `community`.
+All retrievals 2026-09-04 unless stated. Covers **both** K134 and K134-V11; the v1.1 record's
+own additions are in [`../dinmeter-v1.1/sources.md`](../dinmeter-v1.1/sources.md).
+
+---
+
+## Vendor product documentation
+
+| ID | Title | Publisher/author | Class | Medium | URL | Retrieved | Published/updated | Establishes | Scope/limitations | Local path |
+|---|---|---|---|---|---|---|---|---|---|---|
+| S-01 | DinMeter product documentation (SKU K134) | M5Stack | primary | official page | <https://docs.m5stack.com/en/core/M5DinMeter> | 2026-09-04 | unversioned; page regenerated per request | Full specification table, PinMap, Learn (power on/off, download mode), datasheet links, bundle contents | Rendered client-side; content extracted from the server-sent `#document` block. **`/en/core/DinMeter` returns HTTP 404** — negative control | `artifacts/docs/docs-en-core-M5DinMeter.txt` |
+| S-02 | DinMeter documentation, printable export | M5Stack | primary | official PDF | `https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/pdf/static/en/core/M5DinMeter.pdf` | 2026-09-04 | unversioned | Same content plus product photography | 7 459 888 B, SHA-256 `8b3db00a…`; **archived** | [placeholder](artifacts/docs/docs-en-core-M5DinMeter.pdf.ARCHIVED.md) |
+| S-03 | DinMeter v1.1 product documentation (K134-V11) | M5Stack | primary | official page | <https://docs.m5stack.com/en/core/DinMeter_v1.1> | 2026-09-04 | page created ~2026-01-30 | ST7789P3, Stamp-S3A, RGB-LED/GPIO38 note, product-comparison table | as S-01 | `../dinmeter-v1.1/artifacts/docs/docs-en-core-DinMeter_v1.1.txt` |
+| S-04 | DinMeter schematic | M5Stack | primary | schematic (Altium PDF) | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/500/DIN_Meter_v1.0.pdf` | 2026-09-04 | titled `DIN_Meter_v1.0` | **The primary evidence for this record.** 84 designators, complete `M1` pinout, full power tree | 1 sheet, 433 658 B, SHA-256 `03ec3353…`. `%PDF` validated; text layer validated against visible headings | `artifacts/schematic/K134_DIN_Meter_v1.0-schematic.pdf` |
+| S-05 | DinMeter v1.1 "schematic" | M5Stack | primary | schematic | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1211/K134-V11_DIN_Meter_v1.0_2025_11_25_17_15_58.pdf` | 2026-09-04 | filename says `v1.0` | **Byte-identical to S-04.** Establishes that no v1.1 schematic is published | same hash as S-04 | `../dinmeter-v1.1/artifacts/schematic/…` |
+| S-06 | DinMeter dimension/assembly drawing | M5Stack | primary | drawing | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1211/K134-din_meter_asm_v1.pdf` | 2026-09-04 | unversioned | Mechanical envelope | 117 405 B, `db42c8a9…`. **The same URL is linked from both product pages** | `artifacts/mechanical/K134-din_meter_asm_v1-dimensions.pdf` |
+| S-07 | DinMeter structure model | M5Stack | primary | repository (STL) | `m5stack/M5_Hardware` → `Products/K134_DinMeter/Structures/DinMeter.stl` | 2026-09-04 | HEAD `a240115c94b19ecf647f229c47fa9a8ce46ccdc4`, 2026-08-17 | 3D envelope | 573 284 B, `90f04d6a…`; **byte-identical to `DinMeter_v1.1.stl`**. Repo has **no `LICENSE`** | `artifacts/mechanical/DinMeter.stl` |
+| S-08 | M5Stack shop listing, DinMeter (K134) | M5Stack | primary | store listing | `https://shop.m5stack.com/products/m5stack-din-meter-w-m5stamps3.js` | 2026-09-04 | published 2024-03-08 | Title **`[EOL] M5Stack Din Meter w/ M5StampS3`**, SKU `K134`, USD 24.50, **`available: false`** | Shopify JSON; price is USD | `scratch/m5stack-dinmeter/shop/` |
+| S-09 | M5Stack shop listing, DinMeter v1.1 | M5Stack | primary | store listing | `https://shop.m5stack.com/products/m5stack-din-meter-v1-1-with-m5stamps3a.js` | 2026-09-04 | created 2026-01-30T10:02:16+08:00 | SKU `K134-V11`, USD 24.50, in stock, product id 9014041182465, tags `ESP32-S3`/`STAMP` | as S-08 | `scratch/m5stack-dinmeter/shop/` |
+| S-10 | `docs.m5stack.com` sitemap | M5Stack | primary | sitemap | <https://docs.m5stack.com/sitemap.xml> | 2026-09-04 | — | **5 703 URLs.** The only reliable way to enumerate product pages; the `/en/products` index is a JS shell | 499 000 B | `scratch/m5stack-dinmeter/docs/` |
+
+## Stamp module documentation
+
+| ID | Title | Publisher/author | Class | Medium | URL | Retrieved | Published/updated | Establishes | Scope/limitations | Local path |
+|---|---|---|---|---|---|---|---|---|---|---|
+| S-11 | Stamp-S3 product documentation (S007) | M5Stack | primary | official page | <https://docs.m5stack.com/en/core/StampS3> | 2026-09-04 | — | ESP32-S3FN8, 8 MB, MUN3CAD01-SC, WS2812B-2020, PROANT-class 3D antenna, 23 IOs, 24 × 18 × 4.7 mm, power figures | — | `scratch/m5stack-dinmeter/docs/` |
+| S-12 | Stamp-S3A product documentation (S007-V033) | M5Stack | primary | official page | <https://docs.m5stack.com/en/core/Stamp-S3A> | 2026-09-04 | — | Same 23 IOs, **26 × 18 × 4.7 mm**, improved power figures, **the two-row product-comparison table** | ⚠ Its `DC-DC: MUN3CAD01-SC` row is contradicted by S-14 | `scratch/m5stack-dinmeter/docs/pages/` |
+| S-13 | Stamp-S3 schematic, board rev **v0.2** | M5Stack | primary | schematic | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/522/Sch_M5StampS3_v0.2.pdf` | 2026-09-04 | v0.2 | `M2` = MUN3CAD01-SC, `U2` = SGM2578/WS4622C-4, `U3` WS2812 on `VDD_3V3`, `ANT1` = PROANT440 | 348 884 B, `6d92e1ae…` | `components/m5stack/stamp-s3/artifacts/Sch_M5StampS3_v0.2.pdf` |
+| S-14 | Stamp-S3A schematic, board rev **v0.3.3** | M5Stack | primary | schematic | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1150/Sch_StampS3_v0.3.3.pdf` | 2026-09-04 | v0.3.3 | `U4` unidentified buck + `L4`, `U2` = AW35122FDR, `U3` WS2812 on **`BL_3V3`**, rebuilt antenna match | 369 766 B, `2f9610ae…`. **Filename says `StampS3`, not `StampS3A`** | `components/m5stack/stamp-s3a/artifacts/Sch_StampS3_v0.3.3-StampS3A.pdf` |
+| S-15 | Stamp-S3A dimension drawing | M5Stack | primary | drawing | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1150/STAMP-S3A.pdf` | 2026-09-04 | — | Mechanical | 95 380 B, `27ba5206…` | `components/m5stack/stamp-s3a/artifacts/STAMP-S3A-dimensions.pdf` |
+| S-16 | Stamp-S3 / Stamp-S3A pin-map images | M5Stack | primary | diagram | `…/684/S007_PinMap_01.jpg`, `…/1150/S007-V033_PinMap_01.jpg` | 2026-09-04 | — | Official pin maps | JPEG; **not OCR'd** in this pass | `components/m5stack/stamp-s3{,a}/artifacts/` |
+| S-17 | Stamp-S3 / Stamp-S3A STL models | M5Stack | primary | repository | `m5stack/M5_Hardware` @ `a240115c…` | 2026-09-04 | 2026-08-17 | **Byte-identical to each other** (`f72c1af2…`); no Stamp-S3A footprint exists | no `LICENSE` in repo | `components/m5stack/stamp-s3{,a}/artifacts/` |
+| S-18 | Stamp-S3 KiCad footprints | M5Stack | primary | repository | `m5stack/M5_Hardware` → `KiCad/Footprints/M5Stack.pretty/Stamp-S3-{SMD,DIP}.kicad_mod` | 2026-09-04 | @ `a240115c…` | The DinMeter `M1` footprint | no `LICENSE` | `components/m5stack/stamp-s3/artifacts/` |
+| S-19 | Stamp-S3 STEP model | M5Stack | primary | repository | `m5stack/M5_Hardware` → `KiCad/3D/M5Stack.3dshapes/Stamp-S3.step` | 2026-09-04 | @ `a240115c…` | 3D solid | 2 904 597 B, `7f29337c…`; **archived** | [placeholder](../../../components/m5stack/stamp-s3/artifacts/Stamp-S3.step.ARCHIVED.md) |
+| S-20 | Shop listings: Stamp-S3, Stamp-S3A, M5Dial v1.1 | M5Stack | primary | store listing | `shop.m5stack.com/products/{m5stamp-esp32s3-module,m5stamps3a-with-2-54-header-pin,m5stack-dial-v1-1}.js` | 2026-09-04 | 2023-02-10 / 2025-09-11 / 2025-03-07 | Stamp-S3 = **`[EOL]`, unavailable**, USD 7.50; Stamp-S3A USD 7.50 in stock; M5Dial v1.1 USD 34.90 | Shopify JSON | `scratch/m5stack-dinmeter/shop/` |
+
+## Component datasheets (filed under their components)
+
+| ID | Title | Publisher/author | Class | Medium | URL | Retrieved | Version | Establishes | Limitations | Local path |
+|---|---|---|---|---|---|---|---|---|---|---|
+| S-21 | ST7789V2 datasheet | Sitronix | authorized mirror (M5Stack-hosted) | datasheet | `https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/lcd/ST7789V2_SPEC_V1.0.pdf` | 2026-09-04 | **V1.0, 2016/11** | Display controller | 3 216 854 B, `89376784…`. No Sitronix-hosted copy located | `components/sitronix/st7789v2/artifacts/` |
+| S-22 | BM8563 datasheet | unattributed (no vendor on page 1) | authorized mirror | datasheet | `https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/core/BM8563_V1.1_cn.pdf` | 2026-09-04 | V1.1 | RTC: address 0x51, 1.5–5.5 V, 0.25 µA | 590 599 B, `a847c85a…`. **Chinese only** — primary source. ⚠ carries a stray `MAX1937` string in its header (derived document) | `components/generic/bm8563/artifacts/` |
+| S-23 | TP4057 datasheet | unattributed | authorized mirror | datasheet | `https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/core/M5DinMeter/tp4057.pdf` | 2026-09-04 | unversioned | Charger: SOT23-6, 500 mA max, **4.24 V float** | 628 588 B, `c949a7c3…`. Chinese only. Note M5Stack files a *chip* datasheet under a *product* path | `components/generic/tp4057/artifacts/` |
+| S-24 | MUN3CAD01-SC datasheet | Murata (inferred from the µPOL trademark; no vendor name on page 1) | authorized mirror | datasheet | `https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/Stamp/S007%20StampS3/MUN3CAD01-SC.pdf` | 2026-09-04 | unversioned | 1 A µPOL, 2.7–5.5 V in, 0.8–4.0 V out, 2.9 × 2.3 × 1.05 mm | 2 045 960 B, `90e2ecbd…` | `components/murata/mun3cad01-sc/artifacts/` |
+| S-25 | ESP32-S3 datasheet | Espressif | authorized mirror | datasheet | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/472/esp32-s3_datasheet_en.pdf` | 2026-09-04 | v2.0 | SoC | **Byte-identical** (`b6db403d…`) to `components/espressif/esp32-s3r8/artifacts/esp32-s3-datasheet-v2.0-m5stack-mirror.pdf` already held. **Not duplicated**; URL recorded only | *(existing)* |
+| S-26 | DC terminal `DB2EK-2.54-2P-GN-S` | 宁波地博电气有限公司 (Ningbo Dibo Electric) | authorized mirror | datasheet | `…/resource/docs/products/core/M5Dial/DB2EK-2.54-2P-GN-S%202.54mm%202Pin%20Green.pdf` | 2026-09-04 | — | The 6–36 V screw terminal | 383 085 B, `ed6e82d9…`. Filed under M5Dial's path but linked from DinMeter's page | `scratch/m5stack-dinmeter/docs/` |
+| S-27 | Battery socket `1.25WT-2P` | unattributed | authorized mirror | datasheet | `…/resource/docs/products/core/M5Dial/1.25WT-2P.pdf` | 2026-09-04 | — | The battery connector | 1 110 811 B, `743d2118…`. **No text layer** — image-only scan | `scratch/m5stack-dinmeter/docs/` |
+
+## Software and board support
+
+| ID | Title | Publisher/author | Class | Medium | URL | Retrieved | Commit / release | Establishes | Limitations | Local path |
+|---|---|---|---|---|---|---|---|---|---|---|
+| S-28 | `m5stack/M5DinMeter` Arduino library | M5Stack | primary | repository | <https://github.com/m5stack/M5DinMeter> | 2026-09-04 | HEAD `8ccbad7297beb82a140f812e5606e060d8a5e0dc`; release `1.0.0` (2024-03-07) | Encoder pins 41/40, the six vendor examples, the M5Unified façade | **No `LICENSE` file**; GitHub reports no licence. Header guard is `M5DIAL_H` (copied from M5Dial) | `artifacts/source-snapshots/M5DinMeter-8ccbad72….tar.gz` |
+| S-29 | `m5stack/M5DinMeter-UserDemo` | M5Stack | primary | repository | <https://github.com/m5stack/M5DinMeter-UserDemo> | 2026-09-04 | HEAD `d2fdfe44e9baf810f82335faa6f5962e9fc59a44`; release `V0.1` (2024-03-04) | **The factory-firmware source.** LovyanGFX config (offset 52/40, invert, 40 MHz, BL PWM 200 Hz ch 7), the eight factory tests, pinned deps | **MIT** (`LICENSE`, © 2024 M5Stack). Mixed-licence: bundles PJRC `Encoder`, `ESP32Encoder`, `I2C_BM8563`, `Button` | `artifacts/source-snapshots/M5DinMeter-UserDemo-d2fdfe44….tar.gz` |
+| S-30 | `m5stack/M5Unified` | M5Stack | primary | repository | <https://github.com/m5stack/M5Unified> | 2026-09-04 | master `8530f5377d782e4a25a6c482de2e71c3f75ca8eb`; latest release 0.2.21 (2026-08-26) | `board_M5DinMeter` tables: I²C `:96`, Port B `:159`, RGB `:246`, power-hold `:282`, pinMode `:2400`, speaker `:2921`, buttons `:3502` | MIT. **No `board_M5StampS3A`, no v1.1 board enum** | *(read from a fetched tarball; not vendored — reproducible from the commit)* |
+| S-31 | `espressif/esp-board-manager` — `m5stack_dinmeter` | Espressif | primary | repository | <https://github.com/espressif/esp-board-manager> | 2026-09-04 | HEAD `2beb9b22b0892b343bd555a1ebc9929a7edce8fc` (2026-09-03) | **The best technical description of this board anywhere**: GRAM gap 52/40, PCNT decoder, LEDC configs, the GPIO3-vs-GPIO42 resolution, an ESP32-S3 build trap | Its own header cites M5Stack's PinMap as source, so its Grove colour note is a *reproduction*, not corroboration | `artifacts/source-snapshots/dinmeter-board_{info,devices,peripherals}.yaml` |
+| S-32 | `bmorcelli/Launcher` — DinMeter board file | Bruno Morcelli | community | repository | <https://github.com/bmorcelli/Launcher> | 2026-09-04 | `main`, board `boards/m5stack-dinmeter/platformio.ini`; ★2054; last push 2026-09-04 | **Independent corroboration** of display pins, GRAM offsets, battery divider ratio 2.0, no-PSRAM; and an SD-over-Grove demonstration | MIT. Community, but a *shipped, CI-built* target — MD5 `bccbefef5284357a2a7c3c7cc196fd98` → `Launcher-m5stack-dinmeter.bin` | `artifacts/source-snapshots/launcher-m5stack-dinmeter-platformio.ini` |
+| S-33 | DinMeter Arduino tutorials | M5Stack | primary | official page | `docs.m5stack.com/en/arduino/m5dinmeter/{program,display,encoder,rtc,buzzer,button,battery,wakeup,wifi}` | 2026-09-04 | — | Per-feature vendor tutorials, 9 pages, all HTTP 200 | JS-rendered | `scratch/m5stack-dinmeter/docs/pages/` |
+| S-34 | DinMeter UiFlow2 tutorial | M5Stack | primary | official page | <https://docs.m5stack.com/en/uiflow2/m5dinmeter/program> | 2026-09-04 | — | UiFlow2 is supported | — | `scratch/m5stack-dinmeter/docs/pages/` |
+
+## Community
+
+| ID | Title | Publisher/author | Class | Medium | URL | Retrieved | Date | Establishes | Evidence type |
+|---|---|---|---|---|---|---|---|---|---|
+| S-35 | "Check out what's new this week!" | u/M5Stack (official) | community | forum/social post | <https://old.reddit.com/r/M5Stack/comments/1qr0ju2/check_out_whats_new_this_week/> | 2026-09-04 | **2026-01-30** | The v1.1 launch date, corroborating the shop `created_at` | **marketing** (vendor-posted); 22–23 points, **1 comment** |
+| S-36 | GitHub repository search, `DinMeter` | GitHub | community | repository | GitHub Search API | 2026-09-04 | — | 19 repositories, 13 genuinely targeting the device | catalogued in [`projects-and-community.md`](projects-and-community.md) |
+| S-37 | `community.m5stack.com` search | M5Stack | primary | forum | `…/api/search?term=dinmeter` and `…/search?term=dinmeter` | 2026-09-04 | — | **API HTTP 401 (login required); HTML is a NodeBB JS shell.** Blocked, not empty | negative result |
+
+---
+
+## Notes on evidence quality
+
+- **The schematic is the backbone of this record.** Where the vendor's prose and the schematic
+  disagree (Grove colours, Stamp-S3A DC-DC, Grove rail voltage), the schematic is treated as the
+  stronger evidence and the disagreement is recorded in
+  [`gaps-and-conflicts.md`](gaps-and-conflicts.md) rather than resolved silently.
+- **Espressif's `esp-board-manager` is the most useful secondary source** and is unusually
+  candid, but its Grove wire-colour note derives from M5Stack's disputed table and must not be
+  counted as an independent confirmation.
+- **`bmorcelli/Launcher` is genuinely independent** — different author, different toolchain,
+  shipped binaries — and agrees with the schematic on every point it touches.
+- **Nothing in this record was tested on hardware.**

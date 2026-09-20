@@ -1,0 +1,1 @@
+../../../../../../../../../../archive/devices/soldered-electronics/inkplate-5/artifacts/source-snapshots/Inkplate-Arduino-library/examples/Inkplate5V2/Basic/Inkplate5V2_Grayscale/image.h

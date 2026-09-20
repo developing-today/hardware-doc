@@ -1,0 +1,43 @@
+{
+  "$schema-note": "Image provenance manifest for images DERIVED from retained schematic PDFs by local rasterisation. Kept separate from media/manifest.json so that no pre-existing file is modified; an index owner may merge them.",
+  "device": "m5stack/cap-cc1101",
+  "generated": "2026-09-07",
+  "generator": "2026-09-07 schematic net-tracing pass; poppler 26.06.0 + ImageMagick",
+  "global_notes": [
+    "These are NOT photographs and NOT vendor-published images. Each is a crop of a page the vendor published as a vector PDF, rasterised locally at 300 dpi.",
+    "pdfimages could not be used: pdfimages -list reports ZERO embedded rasters in every source PDF here. The drawings are vector, so pdftoppm plus a crop is the only route. This is recorded because reaching for pdfimages is the obvious wrong first move.",
+    "Copyright in the underlying drawing remains with the vendor named in creator_rightsholder. Licence is UNKNOWN: no licence statement appears in any of the source PDFs. Redistribution status unknown; disposition repository, unstaged pending user review.",
+    "Every image is reproducible byte-for-byte from the retained artifact using the recorded generation_command, so none of them is uniquely held here.",
+    "Each image exists because it settles a specific documented question; see why_retained."
+  ],
+  "images": [
+    {
+      "local_path": "media/schematic-P1-cap-bus-14pin.png",
+      "filename": "schematic-P1-cap-bus-14pin.png",
+      "sha256": "339cb8c0c7340481dbf405ca3ecf9ee7e87526f3042825d623d2894c8eda6ddc",
+      "bytes": 78531,
+      "format": "PNG (validated: \\x89PNG magic)",
+      "magic_ok": true,
+      "kind": "schematic detail (derived)",
+      "creator_rightsholder": "M5Stack Technology Co., Ltd",
+      "source_page": "not applicable - derived locally from a retained artifact",
+      "derived_from": "artifacts/schematic/U219-Cap_CC1101_SCH_V0.3_20260528.pdf",
+      "derived_from_page": 1,
+      "source_pdf_metadata": "Altium Designer export; 3 pages; pdfimages -list reports ZERO embedded rasters",
+      "generation_command": "nix-shell -p poppler-utils imagemagick --run 'pdftoppm -f 1 -l 1 -r 300 -png <pdf> /tmp/page && magick /tmp/page-1.png -crop 950x300+2140+1020 +repage -bordercolor white -border 14 -strip <out>'",
+      "crop_geometry_px_at_300dpi": "950x300+2140+1020",
+      "render_dpi": 300,
+      "retrieved": "2026-09-07",
+      "published_or_updated": "inherits the source PDF's date; see source_pdf_metadata",
+      "applies_to_revision": "U219 Cap CC1101 v0.3",
+      "licence": "unknown",
+      "licence_evidence": "none found; the source PDF carries the vendor's own title block and no licence statement",
+      "redistribution_status": "unknown",
+      "disposition": "repository (unstaged pending user review)",
+      "modifications": "DERIVED IMAGE. Rasterised from the vendor's vector PDF at 300 dpi with pdftoppm, cropped to the stated geometry, given a 14 px white border, and stripped of metadata. No content was altered, annotated, rotated or retouched. The command above reproduces the file exactly.",
+      "caption": "Schematic crop: the Cap-Bus connector P1, HDR_14P-P2.54, with POWER_EN on pin 8",
+      "alt_text": "Schematic detail of a fourteen-pin connector symbol P1 captioned HDR_14P-P2.54, with the same printed pin names as the Cap LoRa-1262's connector. The functional net labels differ: pin 8 reads POWER_EN beside host alias G3, pin 9 NFC_IRQ beside G4, pin 10 NFC_CS beside G6, pins 11 to 14 SPI_SCLK, SPI_MOSI, SPI_MISO and CC1101_CS beside G40, G14, G39 and G5.",
+      "why_retained": "Shows that the bus pinout and host-GPIO assignment are identical to the Cap LoRa-1262's, and that the reported pin-8 discrepancy is a difference in board function, not in the bus."
+    }
+  ]
+}

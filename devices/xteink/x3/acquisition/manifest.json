@@ -1,0 +1,473 @@
+{
+  "device": "xteink/x3",
+  "generated": "2026-09-04",
+  "artifacts": [
+   {
+     "id": "fcc-2BTR9-XTEINKX3-8932220",
+     "kind": "regulatory-exhibit",
+     "canonical_url": "https://fccid.io/2BTR9-XTEINKX3/Test-Report/ANT-Test-Report-8932220.pdf",
+     "fallback_urls": [
+      "https://apps.fcc.gov/eas/GetApplicationAttachment.html?id=8932220",
+      "https://fcc.report/FCC-ID/2BTR9-XTEINKX3/8932220.pdf",
+      "https://fccid.io/2BTR9-XTEINKX3",
+      "https://web.archive.org/web/2/https://fccid.io/2BTR9-XTEINKX3/Test-Report/ANT-Test-Report-8932220.pdf"
+     ],
+     "sha256": "9608834e81bf0f0baf019a5c4c0391fb33c95b56833fe3e0ee5218151327210f",
+     "bytes": 1001831,
+     "destination": "devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-ant-test-report.pdf",
+     "retrieved": "2026-09-11",
+     "upstream_version_or_date": "2025-12-26",
+     "fcc_id": "2BTR9-XTEINKX3",
+     "fcc_document_id": "8932220",
+     "exhibit_type": "Test Report",
+     "exhibit_title_as_filed": "ANT Test Report",
+     "grant_date": "2025-12-26",
+     "applicant": "Shenzhen Xiaohu Xingtong Technology Co., Ltd. \ud83c\udde8\ud83c\uddf3",
+     "test_firm": "Shenzhen CTB Testing Technology Co., Ltd.",
+     "license": "US Government public record (47 CFR 2.1033); no agency copyright claim",
+     "license_evidence": "FCC Equipment Authorization System publication",
+     "redistribution_status": "allowed",
+     "disposition": "archive",
+     "repo_state": "placeholder-only",
+     "archived_to": "/home/user/repo-archive/hardware-doc/devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-ant-test-report.pdf",
+     "placeholder": "devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-ant-test-report.pdf.ARCHIVED.md",
+     "extraction": null,
+     "target_hardware": "devices/xteink/x3",
+     "reacquisition": "automatic",
+     "reacquisition_note": "fccid.io requires a non-browser User-Agent; a Chrome UA receives a Cloudflare 403. The `.pdf` suffix is mandatory.",
+     "last_verified": "2026-09-11",
+     "notes": "Filed by the round-2 index merge, 2026-09-11."
+    },
+    {
+     "id": "fcc-2BTR9-XTEINKX3-8932225",
+     "kind": "regulatory-exhibit",
+     "canonical_url": "https://fccid.io/2BTR9-XTEINKX3/External-Photos/External-Photos-8932225.pdf",
+     "fallback_urls": [
+      "https://apps.fcc.gov/eas/GetApplicationAttachment.html?id=8932225",
+      "https://fcc.report/FCC-ID/2BTR9-XTEINKX3/8932225.pdf",
+      "https://fccid.io/2BTR9-XTEINKX3",
+      "https://web.archive.org/web/2/https://fccid.io/2BTR9-XTEINKX3/External-Photos/External-Photos-8932225.pdf"
+     ],
+     "sha256": "eee16223c0806e6a529a9abe53421612103c4a4cc491f8ee442dfbf4a5aae3ce",
+     "bytes": 512425,
+     "destination": "devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-external-photos.pdf",
+     "retrieved": "2026-09-11",
+     "upstream_version_or_date": "2025-12-26",
+     "fcc_id": "2BTR9-XTEINKX3",
+     "fcc_document_id": "8932225",
+     "exhibit_type": "External Photos",
+     "exhibit_title_as_filed": "External Photos",
+     "grant_date": "2025-12-26",
+     "applicant": "Shenzhen Xiaohu Xingtong Technology Co., Ltd. \ud83c\udde8\ud83c\uddf3",
+     "test_firm": "Shenzhen CTB Testing Technology Co., Ltd.",
+     "license": "US Government public record (47 CFR 2.1033); no agency copyright claim",
+     "license_evidence": "FCC Equipment Authorization System publication",
+     "redistribution_status": "allowed",
+     "disposition": "archive",
+     "repo_state": "placeholder-only",
+     "archived_to": "/home/user/repo-archive/hardware-doc/devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-external-photos.pdf",
+     "placeholder": "devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-external-photos.pdf.ARCHIVED.md",
+     "extraction": null,
+     "target_hardware": "devices/xteink/x3",
+     "reacquisition": "automatic",
+     "reacquisition_note": "fccid.io requires a non-browser User-Agent; a Chrome UA receives a Cloudflare 403. The `.pdf` suffix is mandatory.",
+     "last_verified": "2026-09-11",
+     "notes": "Filed by the round-2 index merge, 2026-09-11."
+    },
+    {
+     "id": "fcc-2BTR9-XTEINKX3-8932228",
+     "kind": "regulatory-exhibit",
+     "canonical_url": "https://fccid.io/2BTR9-XTEINKX3/Label/ID-Label-Location-Info-8932228.pdf",
+     "fallback_urls": [
+      "https://apps.fcc.gov/eas/GetApplicationAttachment.html?id=8932228",
+      "https://fcc.report/FCC-ID/2BTR9-XTEINKX3/8932228.pdf",
+      "https://fccid.io/2BTR9-XTEINKX3",
+      "https://web.archive.org/web/2/https://fccid.io/2BTR9-XTEINKX3/Label/ID-Label-Location-Info-8932228.pdf"
+     ],
+     "sha256": "ce6218cf3519448b227e6c7a5a4a6a150362cf5eaa165fda3798ece3481c8204",
+     "bytes": 367446,
+     "destination": "devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-id-label-location-info.pdf",
+     "retrieved": "2026-09-11",
+     "upstream_version_or_date": "2025-12-26",
+     "fcc_id": "2BTR9-XTEINKX3",
+     "fcc_document_id": "8932228",
+     "exhibit_type": "ID Label/Location Info",
+     "exhibit_title_as_filed": "ID Label/Location Info",
+     "grant_date": "2025-12-26",
+     "applicant": "Shenzhen Xiaohu Xingtong Technology Co., Ltd. \ud83c\udde8\ud83c\uddf3",
+     "test_firm": "Shenzhen CTB Testing Technology Co., Ltd.",
+     "license": "US Government public record (47 CFR 2.1033); no agency copyright claim",
+     "license_evidence": "FCC Equipment Authorization System publication",
+     "redistribution_status": "allowed",
+     "disposition": "repository",
+     "repo_state": "untracked",
+     "archived_to": null,
+     "placeholder": null,
+     "extraction": null,
+     "target_hardware": "devices/xteink/x3",
+     "reacquisition": "automatic",
+     "reacquisition_note": "fccid.io requires a non-browser User-Agent; a Chrome UA receives a Cloudflare 403. The `.pdf` suffix is mandatory.",
+     "last_verified": "2026-09-11",
+     "notes": "Filed by the round-2 index merge, 2026-09-11."
+    },
+    {
+     "id": "fcc-2BTR9-XTEINKX3-8932226",
+     "kind": "regulatory-exhibit",
+     "canonical_url": "https://fccid.io/2BTR9-XTEINKX3/Internal-Photos/Internal-Photos-8932226.pdf",
+     "fallback_urls": [
+      "https://apps.fcc.gov/eas/GetApplicationAttachment.html?id=8932226",
+      "https://fcc.report/FCC-ID/2BTR9-XTEINKX3/8932226.pdf",
+      "https://fccid.io/2BTR9-XTEINKX3",
+      "https://web.archive.org/web/2/https://fccid.io/2BTR9-XTEINKX3/Internal-Photos/Internal-Photos-8932226.pdf"
+     ],
+     "sha256": "b3affd56115e9c3e49428f9727ba194c0eec6705ddd0b039fd9b4ce28b430a45",
+     "bytes": 869708,
+     "destination": "devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-internal-photos.pdf",
+     "retrieved": "2026-09-11",
+     "upstream_version_or_date": "2026-06-24",
+     "fcc_id": "2BTR9-XTEINKX3",
+     "fcc_document_id": "8932226",
+     "exhibit_type": "Internal Photos",
+     "exhibit_title_as_filed": "Internal Photos",
+     "grant_date": "2025-12-26",
+     "applicant": "Shenzhen Xiaohu Xingtong Technology Co., Ltd. \ud83c\udde8\ud83c\uddf3",
+     "test_firm": "Shenzhen CTB Testing Technology Co., Ltd.",
+     "license": "US Government public record (47 CFR 2.1033); no agency copyright claim",
+     "license_evidence": "FCC Equipment Authorization System publication",
+     "redistribution_status": "allowed",
+     "disposition": "repository",
+     "repo_state": "untracked",
+     "archived_to": null,
+     "placeholder": null,
+     "extraction": null,
+     "target_hardware": "devices/xteink/x3",
+     "reacquisition": "automatic",
+     "reacquisition_note": "fccid.io requires a non-browser User-Agent; a Chrome UA receives a Cloudflare 403. The `.pdf` suffix is mandatory.",
+     "last_verified": "2026-09-11",
+     "notes": "Filed by the round-2 index merge, 2026-09-11."
+    },
+    {
+     "id": "fcc-2BTR9-XTEINKX3-8932224",
+     "kind": "regulatory-exhibit",
+     "canonical_url": "https://fccid.io/2BTR9-XTEINKX3/RF-Exposure-Info/RF-Exposure-Info-8932224.pdf",
+     "fallback_urls": [
+      "https://apps.fcc.gov/eas/GetApplicationAttachment.html?id=8932224",
+      "https://fcc.report/FCC-ID/2BTR9-XTEINKX3/8932224.pdf",
+      "https://fccid.io/2BTR9-XTEINKX3",
+      "https://web.archive.org/web/2/https://fccid.io/2BTR9-XTEINKX3/RF-Exposure-Info/RF-Exposure-Info-8932224.pdf"
+     ],
+     "sha256": "78c21f6f8ab043cb08b9c4848c3509bedd7f673dd2ca6c10ce2804c1bc121fed",
+     "bytes": 119149,
+     "destination": "devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-rf-exposure-info.pdf",
+     "retrieved": "2026-09-11",
+     "upstream_version_or_date": "2025-12-26",
+     "fcc_id": "2BTR9-XTEINKX3",
+     "fcc_document_id": "8932224",
+     "exhibit_type": "RF Exposure Info",
+     "exhibit_title_as_filed": "RF Exposure Info",
+     "grant_date": "2025-12-26",
+     "applicant": "Shenzhen Xiaohu Xingtong Technology Co., Ltd. \ud83c\udde8\ud83c\uddf3",
+     "test_firm": "Shenzhen CTB Testing Technology Co., Ltd.",
+     "license": "US Government public record (47 CFR 2.1033); no agency copyright claim",
+     "license_evidence": "FCC Equipment Authorization System publication",
+     "redistribution_status": "allowed",
+     "disposition": "archive",
+     "repo_state": "placeholder-only",
+     "archived_to": "/home/user/repo-archive/hardware-doc/devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-rf-exposure-info.pdf",
+     "placeholder": "devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-rf-exposure-info.pdf.ARCHIVED.md",
+     "extraction": null,
+     "target_hardware": "devices/xteink/x3",
+     "reacquisition": "automatic",
+     "reacquisition_note": "fccid.io requires a non-browser User-Agent; a Chrome UA receives a Cloudflare 403. The `.pdf` suffix is mandatory.",
+     "last_verified": "2026-09-11",
+     "notes": "Filed by the round-2 index merge, 2026-09-11."
+    },
+    {
+     "id": "fcc-2BTR9-XTEINKX3-8932229",
+     "kind": "regulatory-exhibit",
+     "canonical_url": "https://fccid.io/2BTR9-XTEINKX3/User-Manual/Users-Manual-8932229.pdf",
+     "fallback_urls": [
+      "https://apps.fcc.gov/eas/GetApplicationAttachment.html?id=8932229",
+      "https://fcc.report/FCC-ID/2BTR9-XTEINKX3/8932229.pdf",
+      "https://fccid.io/2BTR9-XTEINKX3",
+      "https://web.archive.org/web/2/https://fccid.io/2BTR9-XTEINKX3/User-Manual/Users-Manual-8932229.pdf"
+     ],
+     "sha256": "f3cc9a89924739bc7ab80bdeea2dc52970c327fde0f33e4ff8b2bd739eaf7fa1",
+     "bytes": 1373110,
+     "destination": "devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-users-manual.pdf",
+     "retrieved": "2026-09-11",
+     "upstream_version_or_date": "2026-06-24",
+     "fcc_id": "2BTR9-XTEINKX3",
+     "fcc_document_id": "8932229",
+     "exhibit_type": "Users Manual",
+     "exhibit_title_as_filed": "Users Manual",
+     "grant_date": "2025-12-26",
+     "applicant": "Shenzhen Xiaohu Xingtong Technology Co., Ltd. \ud83c\udde8\ud83c\uddf3",
+     "test_firm": "Shenzhen CTB Testing Technology Co., Ltd.",
+     "license": "US Government public record (47 CFR 2.1033); no agency copyright claim",
+     "license_evidence": "FCC Equipment Authorization System publication",
+     "redistribution_status": "allowed",
+     "disposition": "archive",
+     "repo_state": "placeholder-only",
+     "archived_to": "/home/user/repo-archive/hardware-doc/devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-users-manual.pdf",
+     "placeholder": "devices/xteink/x3/artifacts/certification/2BTR9-XTEINKX3-users-manual.pdf.ARCHIVED.md",
+     "extraction": null,
+     "target_hardware": "devices/xteink/x3",
+     "reacquisition": "automatic",
+     "reacquisition_note": "fccid.io requires a non-browser User-Agent; a Chrome UA receives a Cloudflare 403. The `.pdf` suffix is mandatory.",
+     "last_verified": "2026-09-11",
+     "notes": "Filed by the round-2 index merge, 2026-09-11."
+    },
+    {
+      "id": "x3-teardown-imgur",
+      "kind": "teardown-photography",
+      "canonical_url": "https://imgur.com/a/xteink-x3-teardown-OA6CS2C",
+      "fallback_urls": [
+        "https://imgur.com/ajaxalbums/getimages/OA6CS2C/hit.json",
+        "https://old.reddit.com/r/xteinkereader/comments/1uksv6s/xteink_x3_teardown/"
+      ],
+      "bytes": 19513196,
+      "sha256": null,
+      "file_count": 14,
+      "destination": "devices/xteink/x3/artifacts/teardown/imgur-2026-07-01/",
+      "retrieved": "2026-09-04",
+      "upstream_date": "2026-07-01T17:44:53",
+      "license": "unknown - Reddit/Imgur user post, no terms stated",
+      "license_evidence": "none found",
+      "redistribution_status": "unknown",
+      "disposition": "local-cache",
+      "repo_state": "untracked-symlink-with-placeholder",
+      "archived_to": "archive/devices/xteink/x3/artifacts/teardown/imgur-2026-07-01",
+      "placeholder": "devices/xteink/x3/artifacts/teardown/imgur-2026-07-01.ARCHIVED.md",
+      "reacquisition": "automatic",
+      "extraction": "none - individual JPEGs plus manifest.json carrying per-image captions",
+      "acquisition_note": "The album HTML is a JS shell yielding only 2 of 13 images. Use the ajaxalbums endpoint to enumerate hashes, then fetch https://i.imgur.com/<hash>.jpg .",
+      "establishes": [
+        "650 mAh battery, glued, connectorised",
+        "pogo magnets glued to the back cover",
+        "ESP32-C3 main CPU",
+        "128 Mbit (16 MB) external flash",
+        "a chip captioned 'DS1307 RTC' - CONFLICTS with the SDK's DS3231",
+        "glass back, removable with heat gun + suction cup",
+        "PCB silkscreen keep-outs where the back-cover magnets sit"
+      ],
+      "members": [
+        {
+          "name": "01-u60Rtxi.jpg",
+          "bytes": 1157440,
+          "sha256": "0cbdb9fa877731b61a114b133a024c7c433264ef1eebea441c9fce5efa5bf4b9"
+        },
+        {
+          "name": "02-tdku70e.jpg",
+          "bytes": 1136501,
+          "sha256": "5eb74bd33e03f742449da5b41359b6b4951126c8526ab02878d5ccf9d74a75b5"
+        },
+        {
+          "name": "03-Q5jsUoi.jpg",
+          "bytes": 1908658,
+          "sha256": "6e076711cabf6d37231cc7dc28e7c8001b1aec5b5108d138cb708e2bd70c6caf"
+        },
+        {
+          "name": "04-WAlvma8.jpg",
+          "bytes": 1615687,
+          "sha256": "af78bf675054744550811f88eeda252acc3e8b64d0fc4d2fce3d3384fb059680"
+        },
+        {
+          "name": "05-lBJtD4I.jpg",
+          "bytes": 740345,
+          "sha256": "97cbad3d4787586d0c7f0698945a99c5af46915b3de0619e3358fac01315c665"
+        },
+        {
+          "name": "06-pcqe4Q0.jpg",
+          "bytes": 1061091,
+          "sha256": "7f8299b06fd938e47c22e1555af0ae340cf557e3093e1b001b563c41321d0c2c"
+        },
+        {
+          "name": "07-QQz92jU.jpg",
+          "bytes": 1175909,
+          "sha256": "0cdc4eefc11f1dd44077b35186971418892c8c7fac5ad1ec3b8149eb758e408f"
+        },
+        {
+          "name": "08-ZkQliFL.jpg",
+          "bytes": 2021156,
+          "sha256": "d1662b9d3effbecbe9ac23ccfd4dd991a046bf4869a32680319f936557392a11"
+        },
+        {
+          "name": "09-Q0UGXpo.jpg",
+          "bytes": 688065,
+          "sha256": "ba1106d72f7b58e27a15cee3cac0dad6a94233902d0207e3cc9be8c2a215f902"
+        },
+        {
+          "name": "10-YgdHbR1.jpg",
+          "bytes": 1935873,
+          "sha256": "2fb568c906bbdf4e3331981e5d1d5fe0b8835c88ac319ed518d081d0de8f02aa"
+        },
+        {
+          "name": "11-bgXQoVr.jpg",
+          "bytes": 2028489,
+          "sha256": "bf11e447d41a133801421793b0c68b2a27cbae10368c30fa50e0556d0974ffa6"
+        },
+        {
+          "name": "12-wKlM8uS.jpg",
+          "bytes": 2003480,
+          "sha256": "4fbe14446f9754b800978abf2039d5691a3ba191219de78c354a413f7a7d2378"
+        },
+        {
+          "name": "13-Ay3rpJg.jpg",
+          "bytes": 2037024,
+          "sha256": "a005cdf12c7907907b4e7a93c09e3161290cf69dd0882bf5a63e46c448a1f39d"
+        },
+        {
+          "name": "manifest.json",
+          "bytes": 3478,
+          "sha256": "e6d63042f523e91759fbf46481fe1ea4e832820b91e0d3ed7e9af73bfb4e1a67"
+        }
+      ]
+    },
+    {
+      "id": "x3-teardown-sunwoods-cn",
+      "kind": "teardown-photography-and-schematic",
+      "canonical_url": "https://github.com/sunwoods/Xteink-X3/tree/main/readme-img",
+      "fallback_urls": [
+        "https://raw.githubusercontent.com/sunwoods/Xteink-X3/main/readme-img/02.jpg",
+        "https://github.com/sunwoods/Xteink-X3"
+      ],
+      "bytes": 5034272,
+      "sha256": null,
+      "file_count": 11,
+      "destination": "devices/xteink/x3/artifacts/teardown/sunwoods-cn/",
+      "retrieved": "2026-09-04",
+      "upstream_repo": "sunwoods/Xteink-X3",
+      "path_in_repo": "readme-img/",
+      "license": "none declared - no LICENSE file in the repository",
+      "license_evidence": "repository tree checked 2026-09-04",
+      "redistribution_status": "unknown",
+      "disposition": "local-cache",
+      "repo_state": "untracked-symlink-with-placeholder",
+      "archived_to": "archive/devices/xteink/x3/artifacts/teardown/sunwoods-cn",
+      "placeholder": "devices/xteink/x3/artifacts/teardown/sunwoods-cn.ARCHIVED.md",
+      "reacquisition": "automatic",
+      "establishes": [
+        "hand-drawn SCHEMATIC SKETCH (02.jpg) - the only schematic-like document for any Xteink device",
+        "BOM: ESP32-C3, PUYA 128 Mbit flash, QMI8658, DS-series RTC, TP4056-class charger, TI BQ27220",
+        "an ISO/IEC 14443A NFC tag - present in no firmware and no English source",
+        "pins measured with a multimeter and cross-checked against CrossPoint source"
+      ],
+      "caveats": [
+        "Schematic uses substitute footprints for some parts (upstream: \u90e8\u5206\u5668\u4ef6\u7528\u5176\u4ed6\u7c7b\u4f3c\u5c01\u88c5\u66ff\u4ee3) - functional sketch, NOT fabrication-accurate",
+        "Some part numbers were borrowed from the CrossPoint project rather than read from markings"
+      ],
+      "members": [
+        {
+          "name": "01.jpg",
+          "bytes": 413548,
+          "sha256": "a6d982ea2571381fb431e90063bdbfb0224b7f9482aa2ccbcd5f8dc86c189997"
+        },
+        {
+          "name": "02.jpg",
+          "bytes": 1265063,
+          "sha256": "09d65eb222c11a5be601d48ca35ea580dbe7e4cce5a751f5f2c376244d92e8e2"
+        },
+        {
+          "name": "03.jpg",
+          "bytes": 508365,
+          "sha256": "efa40a9bcc5a1c40f40a5375d25a110a3868cc64ea4ce3b8e0ad390087a1e3ca"
+        },
+        {
+          "name": "04.jpg",
+          "bytes": 458675,
+          "sha256": "b36a6b60eea4de0f6ed08b0aaad28af77688b2d6d4166ee94711a85180e6df40"
+        },
+        {
+          "name": "05.jpg",
+          "bytes": 787871,
+          "sha256": "82fae7b72354604613028f39f6090d60794e89b345002123e44f3c4e58b41897"
+        },
+        {
+          "name": "06.jpg",
+          "bytes": 755206,
+          "sha256": "56b38759f56431dd3b120466f9163c99b160c3ccc70b494e7dd6bfd1d9567538"
+        },
+        {
+          "name": "07.jpg",
+          "bytes": 239875,
+          "sha256": "ecbd42a7c6660fc2fbdac8dfd831a69646b3e0ec232a6cb3af9f78e88d601258"
+        },
+        {
+          "name": "08.jpg",
+          "bytes": 221681,
+          "sha256": "5f1dc8708057411850d94dcb5d1eb059fdd2d509ee3aea1f10a51e09b2bb330b"
+        },
+        {
+          "name": "09.jpg",
+          "bytes": 235823,
+          "sha256": "3aa7a9c7370cfdc08e21d89383ae24286fc53a1bc53ad983cd8871823d867b20"
+        },
+        {
+          "name": "10.jpg",
+          "bytes": 146545,
+          "sha256": "4849f58f3a2e96c72acd08e635ab01f8b7dc07a303f62b12e5e70a9d9fb4be4a"
+        },
+        {
+          "name": "README.upstream.md",
+          "bytes": 1620,
+          "sha256": "ded2c73ec87ecf306b745d33df70892d6d897e397df09f762adeafb61403f1dd"
+        }
+      ]
+    }
+  ],
+  "wanted": [
+    {
+      "id": "x3-stock-images",
+      "kind": "firmware-image",
+      "canonical_url": "https://github.com/zocs/eink-quick-flasher/tree/main/firmware",
+      "sha256": null,
+      "bytes": null,
+      "destination": "devices/xteink/x3/artifacts/firmware/",
+      "retrieved": null,
+      "upstream_version": "V1.0.7 and V5.2.13 (CN + EN, full and OTA)",
+      "license": "none declared",
+      "redistribution_status": "unknown",
+      "disposition": "not-downloaded",
+      "repo_state": "not-downloaded",
+      "reacquisition": "manual",
+      "reason": "Git LFS pointers (~130 bytes each in the tree). Needs git-lfs or the LFS batch API.",
+      "notes": "The X3 is the ONLY Xteink with published FULL-FLASH stock images. Upstream states CN/EN differ only by default UI language."
+    },
+    {
+      "id": "x3-flasher-guide",
+      "kind": "documentation",
+      "canonical_url": "https://raw.githubusercontent.com/zocs/eink-quick-flasher/main/X3-FLASHER-GUIDE-EN.md",
+      "fallback_urls": [
+        "https://raw.githubusercontent.com/zocs/eink-quick-flasher/main/X3-FLASHER-GUIDE.md"
+      ],
+      "sha256": null,
+      "bytes": 13615,
+      "destination": "devices/xteink/x3/artifacts/",
+      "retrieved": null,
+      "license": "MIT (repository)",
+      "redistribution_status": "allowed",
+      "disposition": "not-downloaded",
+      "repo_state": "not-downloaded",
+      "reacquisition": "automatic",
+      "reason": "Identified but not fetched this session.",
+      "notes": "The most detailed X3 flashing documentation in existence; EN 13,615 B and CN 16,732 B."
+    },
+    {
+      "id": "x3-vendor-imagery",
+      "kind": "image",
+      "canonical_url": null,
+      "sha256": null,
+      "bytes": null,
+      "destination": "devices/xteink/x3/media/",
+      "retrieved": null,
+      "license": "vendor, all rights reserved (presumed)",
+      "redistribution_status": "unknown",
+      "disposition": "not-downloaded",
+      "repo_state": "not-downloaded",
+      "reacquisition": "automatic",
+      "reason": "URLs are in scratch/xteink/vendor/products-p1.json under products[].images[].src .",
+      "notes": "CAPTURE BEFORE DELISTING. The X4's vendor imagery was lost when that product was delisted before this research began."
+    }
+  ]
+}

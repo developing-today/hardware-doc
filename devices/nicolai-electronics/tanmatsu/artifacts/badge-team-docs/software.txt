@@ -1,0 +1,6 @@
+Konsool software
+(work in progress, please check this page again later)
+Konsool apps
+Konsool settings
+Konsool updating
+Last modified August 21, 2026: Merge pull request #257 from badgeteam/fix-hatchery-swagger-url (14c0a0c)

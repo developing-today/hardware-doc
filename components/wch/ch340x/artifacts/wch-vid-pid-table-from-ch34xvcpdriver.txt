@@ -1,0 +1,36 @@
+WCH USB-serial VID/PID table
+============================
+Extracted 2026-08-21 from cn.wch.CH34xVCPDriver Info.plist (IOKitPersonalities),
+inside CH34xVCPDriver.dmg inside CH34XSER_MAC.7z --- the macOS driver package that
+Waveshare itself mirrors for this board at
+https://files.waveshare.com/wiki/common/CH34XSER_MAC.7z
+(local copy: ../../../../devices/waveshare/esp32-s3-knob-touch-lcd-1.8/artifacts/tools/CH34XSER_MAC.7z)
+
+Driver bundle: cn.wch.CH34xVCPDriver, CFBundleShortVersionString 1.0, DriverKit DEXT,
+built 2022-11-06 (BuildMachineOSBuild 21C52, DTPlatformVersion driverkit 21.0.1).
+
+This is WCH's own first-party enumeration table and is therefore [DOC]-grade
+evidence for which USB IDs belong to which WCH part.
+
+Part            VID       PID
+----            ---       ---
+CH330           0x1A86    0xE523
+CH340  (all)    0x1A86    0x7523     <-- includes CH340G/C/N/K/E/X/B/T/R
+CH340 "@k"      0x1A86    0x7522
+CH340 "@n"      0x1A86    0x5523     (this is the CH341 serial PID)
+CH342           0x1A86    0x55D2
+CH343           0x1A86    0x55D3
+CH344           0x1A86    0x55D5
+CH347           0x1A86    0x55DA / 0x55DB / 0x55DD
+CH9101          0x1A86    0x55D8
+CH9102          0x1A86    0x55D4
+CH9103          0x1A86    0x55D7
+CH9104          0x1A86    0x55DF
+CH9143          0x1A86    0x55D6
+
+Non-WCH comparison value used in the ranking in ../README.md:
+Silicon Labs CP2102/CP2102N  0x10C4  0xEA60   (not from this file; SiLabs published value)
+
+Note: the CH340 family shares ONE PID across every package variant. Reading the USB
+ID therefore confirms "a CH340" but does NOT by itself distinguish CH340X from
+CH340E/K/C/N. See ../README.md section on how to finish the identification.

@@ -1,0 +1,107 @@
+{
+  "device": "m5stack/papermono",
+  "device_record": "devices/m5stack/papermono",
+  "product": "M5Stack PaperMono (SKU C153) and PaperMono-Lite (SKU C153-LITE)",
+  "hardware_revision": "schematic V0.6.2",
+  "retrieved": "2026-09-01",
+  "count": 0,
+  "images": [],
+
+  "status": "EMPTY BY DECISION, NOT BY OMISSION",
+
+  "rights": "No imagery is retained. M5Stack states no licence for its product photography, PinMap diagrams, store imagery or M5Burner cover art on any page retrieved on 2026-09-01, so its redistribution status is 'unknown' - and 'unknown' is not permission. The only known independent photography is four unboxing photos in a private individual's 2026-08-21 social post (@henry19840301). No independent teardown, PCB photograph, enclosure-open view, revision marking or component close-up existed at the snapshot date: that is a verified absence, not a failed search. No watermark was removed, no image was altered and no image-search result is presented as provenance, because no image was taken.",
+
+  "reason_empty": [
+    "LICENCE - all vendor imagery carries no stated licence; redistribution status 'unknown'; committing it to a published repository would be redistribution.",
+    "THIRD-PARTY COPYRIGHT - the only independent photographs are an individual's social-media unboxing shots, cited as evidence in community.md rather than copied.",
+    "DERIVATIVE - frames from the two YouTube videos would inherit a rights problem and add no provenance.",
+    "DOES NOT EXIST - teardown, PCB front/back, enclosure-open, revision markings and component close-ups have never been published by anyone. The product was purchasable for approximately nine minutes on 2026-08-21 and was still out of stock at the snapshot date."
+  ],
+
+  "narrative": "devices/m5stack/papermono/media.md",
+
+  "visual_evidence_held_elsewhere": [
+    {
+      "kind": "schematic",
+      "file": "devices/m5stack/papermono/artifacts/schematic/PaperMono_SCH_V0.6.2_20260522.pdf",
+      "source_id": "S14",
+      "bytes": 1462039,
+      "sha256": "b5abecac97cb043a6d1af7a673f2111d40d9254b0b5108635cb924d9b37ad6fa",
+      "pages": 6,
+      "licence": "unknown",
+      "redistribution": "unknown",
+      "disposition": "repository",
+      "shows": "Block diagram with the power-state matrix (sheet 1); main board (sheets 2-4); KEY/RGB/PDM sub-board (sheet 5); NFC sub-board (sheet 6, numbered 2/2 - sheet 1 of that document is absent from the published PDF).",
+      "note": "Not media, but it is the primary visual evidence of the board's construction."
+    },
+    {
+      "kind": "mechanical drawing",
+      "file": "devices/m5stack/papermono/artifacts/mechanical/C153_PaperMono_model_size.pdf",
+      "source_id": "S15",
+      "bytes": 21346,
+      "sha256": "b833a3e52594a3175bc131006d41a3eb5662be5936d0b2f25030180033a6703b",
+      "pages": 1,
+      "licence": "unknown",
+      "redistribution": "unknown",
+      "disposition": "repository",
+      "shows": "Outline dimensions, corner radii and port positions.",
+      "note": "Dimensions are typeset in full-width CJK numerals, so text extraction yields '\uff16\uff12' rather than '62'. Legible to a human, not machine-comparable without normalisation."
+    }
+  ],
+
+  "derived_renders_not_retained": {
+    "reason": "Exactly reproducible from artifacts the repository already holds, by the documented command in commands.md section 2.4. Storing ~7.7 MB of regenerable raster beside its 1.5 MB source is what SIZE-AUDIT.md exists to prevent.",
+    "locations": [
+      "scratch/m5stack-papermono/sheets/ - 200 dpi renders and crops of schematic sheets 1, 2 and 4 (~4.0 MB)",
+      "scratch/m5stack-papermono/epd-pages/ - 22 page renders of the DKE panel manual, which belongs to components/dke/depg0397bbs770f3 (~3.7 MB)"
+    ]
+  },
+
+  "schema": {
+    "note": "Per-image record format for whoever fills this in. Every field is required. Where a value is not known, write the string \"unknown\" - do not omit the key. This extends the minimal {file,url,bytes,sha256,renamed_from} shape used by older manifests in this repository to the full field set required by the research method's visual-identification rules.",
+    "image_record": {
+      "file": "string - filename within devices/m5stack/papermono/media/",
+      "caption": "string - what the image DEMONSTRATES, plus any crop, annotation, rotation or processing applied. Not a label",
+      "alt_text": "string - descriptive alternative text for the embedded image",
+      "creator": "string - creator or rightsholder where known, else \"unknown\"",
+      "source_page": "string - the page the image was published on (NOT an image-search result page)",
+      "url": "string - direct URL to the image file",
+      "published": "string - YYYY-MM-DD publication date of the image or its page, else \"unknown\"",
+      "retrieved": "string - YYYY-MM-DD retrieval date",
+      "applies_to": "string - device SKU and hardware revision the image depicts, e.g. \"C153, schematic V0.6.2\", or \"unknown\"",
+      "licence": "string - licence expression or name, else \"unknown\"",
+      "licence_evidence": "string - where the licence was seen: a LICENSE file, a page footer, a notice inside the document, or \"none located\"",
+      "redistribution": "string - one of: allowed | conditional | restricted | unknown",
+      "disposition": "string - one of: repository | archive | reference-only",
+      "modifications": "string - crop, rotation, annotation, resize, format conversion, or \"none\"",
+      "renamed_from": "string or null - the original upstream filename if the file was renamed",
+      "bytes": "integer",
+      "sha256": "string - lowercase hex",
+      "source_id": "string or null - the S## row in sources.md, if one exists",
+      "shows": "string - which of the visual-identification classes this satisfies: front | back | ports-and-labels | enclosure-open | teardown-stage | pcb-front | pcb-back | revision-marking | component-close-up | representative-use | other"
+    }
+  },
+
+  "wanted": [
+    { "shows": "pcb-front",         "priority": 1,  "settles": "Confirms the fitted BOM against a schematic whose connectivity was recovered from invisible Altium marker text by spatial adjacency - text adjacency, not electrical connectivity" },
+    { "shows": "pcb-back",          "priority": 1,  "settles": "Same" },
+    { "shows": "component-close-up","priority": 2,  "settles": "Top markings of CN4040M000157A530001 (crystal), LMD4737T261-AC02 (PDM microphone) and RS-C1415MBAR (RGB LED) - three parts with no obtainable datasheet anywhere (gaps-and-conflicts.md G6)" },
+    { "shows": "pcb-front",         "priority": 3,  "settles": "NFC sub-board, both faces - schematic sheet 1 of 2 is unpublished (G1); a photograph is the only available substitute" },
+    { "shows": "component-close-up","priority": 4,  "settles": "Stamp-LoRa-1262-mini module - could settle TCXO versus XTAL, which no datasheet anywhere establishes (G5)" },
+    { "shows": "back",              "priority": 5,  "settles": "Any regulatory label. M5Stack publishes no certification identifier for this board (G2), so the enclosure is the only possible source" },
+    { "shows": "enclosure-open",    "priority": 6,  "settles": "The three-PCB-plus-three-FPC construction, currently asserted from title blocks and connector lists and never verified" },
+    { "shows": "revision-marking",  "priority": 7,  "settles": "There is currently no way to distinguish hardware revisions in hand; only V0.6.2 is in evidence, from a schematic filename" },
+    { "shows": "other",             "priority": 8,  "settles": "Panel at 1, 2 and 4 grey levels under fixed lighting with a grey step wedge - bears on C1, the 4-grey-versus-2-grey conflict" },
+    { "shows": "other",             "priority": 9,  "settles": "Ghosting series after 1, 5, 10, 20, 50 partial refreshes, with and without the vendor's 1-in-10 full refresh" },
+    { "shows": "other",             "priority": 10, "settles": "Frontlight on and off, same scene and exposure - nothing shows what the frontlight actually does" },
+    { "shows": "front",             "priority": 11, "settles": "Basic identification. Requires either a licence grant from M5Stack or independent photography" }
+  ],
+
+  "leads_not_requiring_hardware": [
+    "FCC / CE / TELEC grantee databases - NEVER ATTEMPTED in this pass. FCC filings routinely include internal photographs, external photographs and label-location exhibits with clear public-record provenance. This is the highest-value untaken imagery lead and it needs no hardware.",
+    "community.m5stack.com - auth-walled at HTTP 401; the vendor forum is the likeliest first home for owner photographs.",
+    "PaperMono-Lite_PRJ_V0.6.2_20260522.pdf (sources.md S16) - not fetched; PRJ-named with 4 sheets against the full model's 6, so it may render different views.",
+    "Re-run after the restock - every 'does not exist' here is a consequence of supply, not of the product.",
+    "Request redistribution permission from M5Stack for product imagery."
+  ]
+}

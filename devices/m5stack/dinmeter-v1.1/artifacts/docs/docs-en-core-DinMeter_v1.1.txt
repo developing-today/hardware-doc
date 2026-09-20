@@ -1,0 +1,294 @@
+id="document" class="header-nav-item">Documentation 
+ About Us 
+ Contact 
+ English
+ English
+ 简体中文
+ 日本語
+ CONTENTS
+ 
+ 
+ No Results Found
+ Hot Searches
+ Camera
+ WiFi
+ RS485
+ RS232
+ Relay
+ LoRaWAN
+ GPS
+ NB-IoT
+ LTE
+ GSM
+ Zigbee
+ Servo
+ StepMotor
+ Ethernet
+ E-Paper
+ 
+ Product
+ Contents
+ 
+ Search
+ DinMeter v1.1
+ SKU:K134-V11
+ 
+ 
+ 
+ Description
+ DinMeter v1.1 is an iterative upgrade of the DinMeter product, with the core enhancement being the main control module upgraded from Stamp-S3 to Stamp-S3A. DinMeter v1.1 adopts the 1/32 DIN standard digital meter cutout size, allowing direct installation into reserved mounting openings of mainstream equipment such as industrial control cabinets and PLC control boxes, without the need for custom brackets or panel modifications. This significantly reduces integration cost and assembly time. It supports two mounting methods—double-sided adhesive and screw hole fixation—to meet installation requirements in different scenarios. The product integrates a 1.14-inch ST7789 display and a rotary encoder with button, enabling precise knob position tracking and interactive operation. An onboard RTC real-time clock, buzzer, and function buttons support scheduled reminders and wake-up functions. The power supply design is flexible, supporting a wide DC input range of 6 ~ 36V, and includes a lithium battery interface with charging circuitry to adapt to various power scenarios. In addition, the development board provides PORT.A and PORT.B expansion interfaces for easy connection of I2C and GPIO peripherals, making it suitable for various embedded instrumentation display and control input applications.
+Tutorial
+ Arduino IDE
+ Arduino IDE
+ This tutorial introduces how to program and control the DinMeter v1.1 device using Arduino IDE. 
+ UiFlow2
+ UiFlow2
+ This tutorial introduces how to control the DinMeter v1.1 device using the UiFlow2 graphical programming platform. 
+Features
+ ST7789P3 display
+ Stamp-S3A as the main controller
+ Rotary encoder
+ Wide voltage input
+ Reserved PORT.A and PORT.B interfaces
+ Lithium battery interface (rechargeable)
+ 1/32 DIN standard (45 x 22.5mm)
+ Two mounting methods:Double-sided adhesive
+ Screw hole fixation
+ Development PlatformUiFlow2
+ Arduino IDE
+ ESP-IDF
+ PlatformIO
+ Includes
+ 1 x DinMeter v1.1
+ 1 x 250mAh Polymer Lithium Battery
+ 1 x 2.54-2P Terminal
+ 1 x Plastic Back Clip
+ 1 x Adhesive Tape
+ 1 x Pin Sticker
+ Applications
+ Smart home monitoring and control systems
+ Access control systems
+ Industrial control
+ Maker and DIY projects
+ Specifications
+ Specification
+ Parameter
+ | SoC
+ ESP32-S3FN8 @ Xtensa® 32-bit LX7 dual-core processor, clock frequency 240MHz
+ Flash
+ 8MB
+ Wi-Fi
+ 2.4 GHz Wi-Fi
+ USB
+ USB OTG, USB Serial/JTAG
+ Wide Voltage Input Range
+ 6 ~ 36V
+ Display Driver
+ ST7789P3
+ Display Resolution
+ 135 x 240
+ Charging Current
+ 100mA
+ Grove Load Capability
+ PORT.A Load: DC 5V@220mA | PORT.B Load: DC 5V@220mA
+ Standby Current (Battery Power)
+ DC 4.2V@38.4uA
+ Battery Socket Specification
+ 1.25mm-2P
+ Power Supply Methods
+ USB / DC Power / Battery
+ Operating Temperature
+ 0 ~ 40°C
+ Product Size
+ 53.0 x 30.0 x 32.0mm
+ Product Weight
+ 17.8g
+ Package Size
+ 136.0 x 95.0 x 24.0mm
+ Gross Weight
+ 44.9g
+Learn
+ Power On/Off
+ Power On: When powered only by the battery, the device can be woken up by pressing the WAKE button or via an RTC scheduled interrupt (IRQ). After the wake-up signal is triggered, the initialization program must set the HOLD (GPIO46) pin to high level (1) to maintain power supply; otherwise, the device will return to sleep.
+ Power Off: When there is no USB external power (battery power only), the device can be powered off using either of the following methods:
+(1) Press the RST button;
+(2) The program actively sets the HOLD (GPIO46) pin to low level (0) to cut off battery power.
+ Download Mode
+ To enter download mode, press and hold the G0 button on the Stamp-S3A before powering on, then release it after power is applied.
+ RGB LED Power Supply
+ RGB LED Power Supply Instructions
+ The device uses Stamp-S3A as its main controller. To optimize overall power consumption, Stamp-S3A adds an independent electronic switch for the RGB LED power supply compared with the previous Stamp-S3. Before controlling the RGB LED in software, set GPIO38, which controls this switch, to a high level.
+Power Supply
+ Three power supply methods are provided: USB / DC / BAT
+ DIN Size Standard
+ Schematics
+ DinMeter v1.1 Schematics PDF
+ 
+ 
+ 1/1
+ 
+ PinMap
+ RTC8563 & ENCODER
+ ESP32-S3FN8
+ G12
+ G11
+ G40
+ G41
+ G3
+ G42
+ | RTC8563
+ SCL
+ SDA
+ 
+ 
+ ENCODER
+ 
+ B
+ A
+ 
+ BEEP
+ 
+ 
+ beep
+ BUTTON (ENCODER)
+ 
+ 
+ BTN(WAKE)
+ST7789P3
+ ESP32-S3FN8
+ G7
+ G6
+ G4
+ G5
+ G8
+ G9
+ | ST7789P3
+ CS
+ SCK
+ RS
+ MOSI
+ RESET
+ BL
+HY2.0-4P
+ HY2.0-4P
+ Black
+ Red
+ Yellow
+ White
+ | PORT.A
+ GND
+ 5V
+ G13
+ G15
+ PORT.B
+ GND
+ 5V
+ G2
+ G1
+Model Size
+ DinMeter v1.1 Model Size PDF
+ Structure
+ DinMeter v1.1 Structure Files
+ Datasheets
+ BM8563
+ tp4057
+ Spec of external DC power connector
+ Lithium battery seat
+ Softwares
+ Quick Start
+ DinMeter v1.1 Arduino Quick Start
+ Arduino
+ DinMeter v1.1 Arduino Driver Library
+ DinMeter v1.1 Factory Firmware
+ UiFlow2
+ DinMeter v1.1 UiFlow2 Quick Start
+ Easyloader
+ Easyloader
+ Download
+ Note
+ | DinMeter User Demo Easyloader
+ download
+ /
+Video
+ Product Comparison
+ Product Compare
+ DinMeter v1.1 
+ DinMeter 
+ | Main Controller
+ Stamp-S3A
+ Stamp-S3
+ 
+ Page Tools
+ PDF Copy page 
+ 
+ About Us
+ About M5Stack
+News
+Blog
+Events
+Contact Us
+ Where to buy
+ Distributors
+Official Store
+AliExpress
+Amazon
+Taobao
+ Solution
+ For Business
+For Developers
+ Software
+ UiFlow1
+UiFlow2
+M5Burner
+Block Designer
+EzData 2.0
+EasyLoader Packer
+VLW Font Creator
+Device USB Driver
+ Documentation
+ Product Documents
+UiFlow1
+UiFlow2
+Arduino
+ESP-IDF
+StackFlow AI
+Home Assistant
+nanoFramework
+Product Guide
+Product Certifications
+I2C Table
+Product Selector
+Hardware Design Files
+Release History
+Stack Compatibility
+Stack Screw Length
+ 
+ Stay in the Loop
+ 
+ Weekly updates on new products, innovations, and announcements.
+ 
+ Subscribe
+ 
+ Email is invalid!
+ 
+ Thanks for subscribing
+ 
+ 
+ M5Stack Technology Co., Ltd
+ 
+ Address: 
+ Block A10, Expo Bay South Coast, Fuhai Street, Bao'an District, Shenzhen, China
+ 
+ TEL: 
+ +86 755 8657 5379
+ 
+ Email: 
+ support@m5stack.com
+ 
+ Copyright ©
+ M5Stack Technology Co., Ltd.
+ All rights reserved.
+ Privacy Policy| Terms of Service| Shipping Policy| Refund Policy| Payment Method
+ 粤ICP备16010631号
+ 
+ 

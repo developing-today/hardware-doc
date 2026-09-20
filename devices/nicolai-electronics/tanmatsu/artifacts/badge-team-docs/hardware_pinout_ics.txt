@@ -1,0 +1,6 @@
+IC pinouts
+IC pinout mapping to functions on the board.
+CH32V203 pinout
+ESP32C6 pinout
+ESP32-P4 pinout
+Last modified August 21, 2026: Merge pull request #257 from badgeteam/fix-hatchery-swagger-url (14c0a0c)

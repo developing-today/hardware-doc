@@ -1,0 +1,254 @@
+T5S3-4.7-e-paper-PRO	2026-09-01T03:24:55Z	H752-01	114	UI written for the LilyGo-EPD47-S3 project
+T-Display-S3-MicroPython	2026-09-04T06:51:48Z	main	4	
+lilygobox-espidf	2026-09-02T10:20:17Z	main	2	
+T-Echo-Lite-MicroPython	2026-09-04T01:27:42Z	main	0	
+lilygo_device_driver_example	2026-09-04T01:11:50Z	main	0	
+lilygo_device_driver	2026-09-04T01:11:27Z	main	1	
+T-Halow-P4	2026-08-05T08:10:13Z	master	8	
+T-Display-S3	2026-08-31T07:24:25Z	main	1167	
+T-2Can	2026-08-24T08:06:47Z	main	35	
+T-CAN485	2026-08-27T06:57:53Z	arduino-esp32-libs_v3.0.1	164	
+T-Display-K230	2026-09-03T09:49:04Z	main	1	
+T-QT-C6	2026-09-03T08:34:34Z	main	16	TQT-C6 is a mini development board based on the ESP32C6 chip, which is only the size of two thumbnails. It features a 128x128px TFT full-color touch screen, a separate charging indicator light, and an independent battery. It can communicate with the power path management chip to modify the power bus status and limit values.
+T-Display-S3-Pro	2026-08-06T09:33:36Z	master	63	
+LilyGo-Modem-Series	2026-09-03T07:54:45Z	main	348	LilyGo A7670X A7608X SIM7670G SIM7000G SIM7080 SIM7600 series
+LILYGO-Spark	2026-09-03T05:21:51Z	main	28	A firmware hub and flashing tool for esp32 series boards — discover, share, and flash firmware with ease.
+T-Embed-CC1101	2026-08-24T09:43:54Z	master	495	
+T-Deck	2026-09-03T03:33:36Z	master	602	LilyGo-T-Deck & T-Deck-Plus
+LilyGo-Modem-Series-MicroPython	2025-09-18T02:59:57Z	main	2	
+T-Display-K230_canmv_rt	2026-08-03T02:27:11Z	main	25	
+LilyGo-T-Display-S2	2022-09-23T02:46:48Z	master	48	
+T-Keyboard-S3-Pro	2025-09-06T09:15:56Z	main	23	This is an upgraded version of the T-Keyboard-S3 developed based on the T-Keyboard-S3 project, named T-Keyboard-S3-Pro. 
+T-Display-P4	2026-09-01T05:37:13Z	main	58	The T-Display-P4 is a versatile development board based on the ESP32-P4 core.
+T-Radar	2026-05-27T07:32:33Z	master	5	
+LilyGO-T-HiGrow-LoRaWLAN	2022-10-14T09:45:11Z	master	15	
+T-Display-CM0	2026-09-02T09:12:42Z	main	2	board base CM0_Lite
+T-Halow	2026-01-16T02:48:47Z	master	88	
+documentation	2026-09-02T02:38:17Z	master	1	LILYGO Documentation Site: https://wiki.lilygo.cc/
+T-Display-Bar	2026-04-07T02:04:37Z	master	7	Equipped with esp32s3, a 2.25-inch screen, BHI260AP 6-axis AI sensor, and a buzzer
+LilyGo-LoRa-Series	2026-08-28T02:48:29Z	master	983	LILYGO LoRa Series examples
+T-C5-Base	2026-08-22T06:55:24Z	master	0	
+TTGO-T-Display	2025-02-20T08:56:26Z	master	1192	
+LilyGO-T-ETH-Series	2026-06-01T02:15:56Z	master	226	
+T-Echo-Card	2026-08-31T10:05:36Z	main	16	
+LilyGoLib	2026-08-11T01:12:57Z	master	136	T-Watch Ultra &  T-LoRa-Pager & T-Watch-S3 & T-Watch-S3-Plus
+T-Dongle-S3	2026-07-24T03:51:10Z	main	412	An ESP32S3 development board that can freely use WIFI, BLE, TF, LED, TFT_LCD functions.
+LilyGo-AMOLED-Series	2026-05-06T02:31:43Z	master	226	LilyGo AMOLED Series
+LilyGo-Display-IDF	2025-11-03T01:07:57Z	master	69	This project is an esp-idf sample repository for the LilyGo display family.
+LilyGo-EPD47	2026-08-19T01:19:03Z	esp32s3	560	
+Lilygo-T-Pico2	2025-03-28T02:50:30Z	master	26	2.33-inch screen development board with RP2350 and esp32c3
+LilyGo-T-SIM7080G	2026-08-27T06:27:20Z	master	136	
+LilyGo-T-SIM7080G-MicroPython	2025-09-17T10:03:47Z	main	3	
+T-Panel	2026-08-20T02:54:52Z	main	36	 This is an RGB screen with a pixel resolution of 480x480, featuring dual chips on board, ESP32S3 and ESP32H2 chips, supporting 7-24V voltage input, RS485 communication, and more.
+T-Glass-V3	2026-08-28T05:55:06Z	master	0	
+T7-C6	2026-04-23T09:46:45Z	main	6	
+T-Echo	2026-07-17T08:30:12Z	main	233	
+T-Impulse-Plus	2026-08-24T07:29:26Z	main	5	
+T-HMI	2026-05-20T04:02:15Z	master	59	
+T-Lora-Dual	2025-12-31T07:30:20Z	master	19	two LR1121, LED, ExpressLRS
+T-Display-SF32	2026-08-20T03:26:06Z	master	1	
+T-PicoC3	2024-01-18T03:35:18Z	main	185	
+T-Embed	2026-04-27T05:43:14Z	main	262	
+T-Display-S3-AMOLED	2024-08-09T06:52:33Z	main	182	An upgraded version of T-Display-S3. It has a high-resolution color screen and more configurable GPIO ports. Enrich your needs.
+T-QT	2026-04-13T01:56:10Z	main	149	
+T7-S3	2023-08-23T06:07:20Z	main	37	ESP32-S3 Development Board
+LilyGo-T5-Grayscale	2025-05-20T03:31:12Z	master	9	
+T-Dongle-C5	2026-08-17T03:04:18Z	master	31	ESP32C5 + LED + TF + LCD + USB
+T-Display-K230-nRF52840	2026-08-23T07:04:03Z	master	0	
+lilygo-assistant-skill	2026-07-20T09:45:41Z	master	3	
+lilygo-micropython	2023-07-12T22:28:57Z	master	127	Micropython for LILYGO boards
+T-keyboard	2024-01-06T06:35:52Z	main	88	mini ble Keyboard for IOS/Android/Windows
+telink-zigbee-sdk	2022-11-14T05:53:42Z	master	5	
+SlFli-SDK-Lilygo	2026-08-21T06:53:31Z	master	0	
+T-Deck-MAX	2026-06-18T04:13:00Z	master	18	
+LilyGo-T5-Epaper-Series	2026-07-22T02:57:40Z	master	227	
+T7-C5	2026-01-20T06:18:09Z	master	3	ESP32-C5 development board
+T-Display-S3-Long	2026-06-15T05:48:18Z	T-Display-S3-Long-cst3530	80	
+T3-S3-MVSRBoard	2026-01-12T04:14:31Z	main	26	The T3-S3-MVSRBoard is the backplate design for the T3-S3_V1.2 motherboard, featuring onboard speaker and microphone expansion with extremely low static current. Additionally, it includes vibration and RTC (Real-Time Clock) functions.
+LilyGo-T-PCIE	2025-03-25T03:00:31Z	master	108	
+RFID-UHF-reader	2021-10-29T02:59:07Z	main	28	MagicRF M100/QM100
+T5-E-Paper-Basic	2026-08-19T09:03:21Z	master	1	
+lilygo-linux-dtoverlays	2026-08-19T08:54:02Z	master	0	
+T-Knob	2025-02-17T07:05:45Z	master	19	
+LilyGo-Cam-ESP32S3	2026-04-01T02:59:12Z	master	80	
+LilyGO-T-Wristband-and-T-Glass	2024-12-24T07:10:12Z	master	81	
+LilyGo-EPD-4-7-OWM-Weather-Display	2024-04-02T09:55:28Z	main	99	Using the LilyGo EPD 4.7" display to show OWM Weather Data
+VGA32	2022-09-04T03:24:01Z	master	44	ESP32 Display Controller (VGA, PAL/NTSC Color Composite), PS/2 Mouse and Keyboard Controller, Graphics Library, Sound Engine, Game Engine and ANSI/VT Terminal
+T-Display-C5	2026-08-17T06:17:39Z	master	2	The LilyGO T-Display-C5 is a development board based on the ESP32-C5, featuring a 1.9-inch ST7789 LCD touchscreen, an AXP2602 power management chip, and a CST816S capacitive touch controller. It supports wake-up from deep sleep via button (IO0) and I2C (IO2, IO3).
+T-Circle-S3	2026-06-12T02:49:48Z	arduino-esp32-libs_V2.0.14	33	T-Circle-S3 is a development board with a 0.75-inch onboard small screen developed based on the ESP32S3, equipped with a speaker, microphone, and three-color LED lights. It has six programmable input/output IO ports on the back, which can be expanded to connect a variety of peripherals.
+T-Wristband	2023-03-27T02:39:37Z	master	321	DIY Programmable Bracelet
+T-Display-K230-nRF9151	2026-08-14T03:17:12Z	main	0	
+T-Halow-RJ45	2026-06-26T07:10:40Z	main	6	
+T-Deck-Pro	2026-08-11T09:01:39Z	master	116	
+T-Energy-S3	2026-04-24T05:35:45Z	main	22	
+T-Display-S3-AMOLED-1.43-1.75	2026-06-17T01:56:39Z	main	34	T-Display-AMOLED-1.43-1.75 is a development board featuring a high-definition AMOLED display with a circular shape, based on the ESP32S3, designed for standalone battery connectivity.
+LilyGo-T-Pico2-MicroPython	2026-08-13T06:38:05Z	main	0	
+T-01C3	2022-01-14T08:43:35Z	main	25	
+TTGO_TWatch_Library	2026-01-08T06:12:31Z	master	1069	
+T-Track	2026-08-12T02:57:07Z	main	12	
+LilyGo-HiGrow	2026-06-22T08:07:50Z	master	137	https://pt.aliexpress.com/item/32815782900.html
+T-Panle-P4	2026-08-11T07:23:34Z	master	0	
+LilyGo-T-Call-SIM800	2025-10-25T02:25:49Z	master	542	
+T-Motor	2026-08-10T06:25:24Z	main	24	
+T-Echo-Lite	2026-08-10T01:36:48Z	main	15	
+T-MixRF	2026-05-08T02:49:17Z	main	4	
+esp-claw	2026-09-02T10:01:05Z	master	1	ESP-Claw, a "Chat Coding" AI agent framework for IoT devices
+LilyGo-Esp-Claw	2026-08-08T08:42:35Z	main	6	
+T-Internet-COM	2023-05-24T02:18:37Z	main	65	
+LilyGoLib-PlatformIO	2025-11-04T07:28:07Z	master	14	
+T-SIM7600X	2025-08-09T06:15:27Z	master	169	
+LilyGo-Document	2024-04-18T06:21:58Z	master	56	
+esp32-camera-screen	2019-11-28T06:39:31Z	master	91	TTGO T-camera Plus
+T-FPGA	2026-06-01T09:29:34Z	main	82	The circuit board is an integrated ESP32S3 and FPGA (GW1NSR-LV4CQN48PC6/I5) control chip. With the power management AXP2101 can be used to switch the voltage of different BANK areas.
+T-Vending	2026-03-17T02:43:54Z	master	10	
+CH9102_Driver	2022-04-27T01:30:27Z	main	41	
+T-CameraPlus-S3	2026-07-31T02:47:08Z	arduino-esp32-libs_V2.0.14	32	 T-CameraPlus-S3 is an intelligent camera module developed based on the ESP32S3 chip, equipped with a 240x240 TFT display, digital microphone, speaker, one independent button, power control chip, and SD card module.
+lilygo-skills	2026-07-29T11:27:35Z	main	4	A skill runtime for AI-assisted LilyGO board development.
+LilyGo-T-Relay	2026-03-30T01:53:09Z	main	87	
+LilyGO-T-DisplayGD32	2021-09-08T08:14:38Z	master	41	LilyGo GD32
+LilyGo-display-library	2026-07-27T07:03:28Z	main	0	
+LilyGo_Txx	2024-07-17T02:54:51Z	master	76	LilyGo T4 and T10 test code
+LilyGO-T-SIM7000G	2025-08-09T06:20:02Z	master	336	LilyGO T-SIM7000G
+FastEPD	2025-08-31T16:26:14Z	main	1	Optimized library for driving parallel eink displays with the ESP32
+T-TWR	2025-08-05T03:59:33Z	master	142	Programmable walkie-talkie.
+T-Display-S3-AMOLED-1.64	2026-07-22T03:38:11Z	arduino-esp32-libs_V2.0.14	18	
+lilygo-doc-mcp	2026-07-21T02:48:57Z	master	0	
+tlorapager-claude-os	2026-07-20T01:24:34Z	main	0	
+T-Panel-Lite	2026-07-17T05:51:00Z	main	3	T-Panel_ Lite is a streamlined version of T-Panel
+LilyGo-T-OI-PLUS	2023-03-29T08:30:17Z	main	80	esp32-c3 development board with 16340 battery holder
+LilyGoLib-MicroPython	2026-03-17T02:54:17Z	main	11	
+T-Weigh	2022-01-19T09:35:03Z	main	9	
+T-Encoder-Pro	2026-06-24T03:31:42Z	arduino-esp32-libs_V3.0.7	51	 T-Encoder-Pro is a smart control knob equipped with a AMOLED screen, developed based on the ESP32S3R8 chip, which is controlled by a dial.
+T3-STM32	2026-07-08T02:50:47Z	master	5	
+T-Keyboard-S3-Pro-Library	2026-06-30T08:52:35Z	master	0	
+LilyGo-Camera-Series	2026-04-02T01:41:08Z	master	175	🔰 Compatible with all TTGO camera products
+T-Connect	2026-02-24T01:26:24Z	main	11	T-Connect is a board with four different sets of module output data. It supports the mutual switching between two different modules, CAN and RS485. It can support up to three groups of RS485 and one group of CAN bus to output different data.
+T-Watch-2021	2025-10-28T08:04:10Z	main	87	
+T-Dongle-ESP32S2	2023-04-01T09:35:28Z	main	24	
+T-Keyboard-S3-Library	2026-06-22T08:55:51Z	master	0	
+esp32-oled-sh1106	2022-04-01T08:19:32Z	master	7	Driver for the SSD1306 and SH1106 based 128x64, 128x32, 64x48 pixel OLED display running on ESP8266/ESP32
+T-Display-S3-Pro-MVSRBoard	2026-06-16T01:10:32Z	main	5	The T-Display-S3-Pro-MVSRBoard is the backplate design for the T-Display-S3-Pro motherboard, featuring onboard speaker and microphone expansion with extremely low static current. Additionally, it includes vibration and RTC (Real-Time Clock) functions.
+LilyGoLib-ThirdParty	2026-06-13T07:04:48Z	master	1	
+Lilygo-LoRa-Epaper-series	2025-12-26T03:35:07Z	master	8	
+LilyGo-T-RGB	2025-06-26T02:56:49Z	main	100	
+T-Bao	2026-06-09T06:32:05Z	main	0	
+T-Spe	2026-06-05T08:58:55Z	main	1	
+T-Display-S3-Pro-MVSRLora	2026-04-29T03:05:50Z	main	5	The T-Display-S3-Pro-MVSRLora is the backplate design for the T-Display-S3-Pro motherboard. It includes onboard speaker and microphone expansion, featuring extremely low static current. Additionally, it offers functionalities such as vibration, RTC (Real-Time Clock), and LoRa.
+TTGO-LoRa-Series	2020-07-26T12:07:30Z	master	191	TTGO Lora  Test code
+T-Connection-P4-Pro	2026-05-22T02:48:09Z	main	0	The main control is ESP32P4 MCU, while the slave is ESP32C6. It is equipped with RS485/RS232, network port, LoRa, relay, GPS, ADC current detection, and 8 optocoupler input ports.
+LilyGo-esp32s2-base	2021-01-16T07:08:47Z	master	37	
+LilyGo-W5500-Lite	2020-12-09T02:47:22Z	master	20	
+T-Connect-Pro	2026-03-16T02:47:30Z	main	15	T-Connect-Pro is a product based on the ESP32S3 microcontroller, consisting of three stacked circuit boards.
+T-HiGrow-Dashboard	2019-12-24T02:31:10Z	master	10	
+T-ZigBee	2023-03-06T00:54:37Z	main	85	Zigbee Ultra Low Power IOT Development Board
+LilyGo-T-PicoPro	2024-07-10T02:23:05Z	master	15	
+T-RSC3	2025-12-23T07:25:55Z	main	22	
+LilyGo-K210-Script	2025-09-29T09:22:03Z	master	6	
+T-Camera	2019-04-22T02:28:54Z	master	9	OV2640 V16
+ESP32_S2	2023-11-20T07:33:58Z	main	16	
+T-Keyboard-S3	2025-04-01T04:18:16Z	main	31	A Smart Screen Keyboard Based on ESP32s3
+LilyGO-T-Motion	2021-11-16T08:45:39Z	master	12	LilyGO-T-Motion
+Wrist-E-Paper	2025-11-27T02:05:31Z	main	35	
+T5-Ink-Screen-Series	2021-12-18T09:36:49Z	master	165	TTGO T5 V2.2 ESP32 2.9“EPaper Plus
+LILYGO-T-display-RP2040	2023-11-23T03:27:59Z	main	87	
+TTGO-T-Watch	2019-10-10T09:23:27Z	master	116	Obsolete, please visit https://github.com/Xinyuan-LilyGO/TTGO_TWatch_Library
+T8-S3	2025-09-29T09:13:05Z	main	6	
+LILYGO-T8	2025-05-13T05:49:58Z	main	6	
+LilyGO-Mini-Epaper-S3	2025-07-12T06:07:58Z	main	3	
+Launchpad	2026-03-03T06:27:34Z	main	0	LILYGO web flash tool
+T-Micro32-Series	2024-06-12T09:21:12Z	main	9	
+T-Encoder	2022-06-24T10:07:49Z	main	15	
+Meshtastic-Python	2024-11-24T19:44:41Z	master	2	The Python CLI and API for talking to Meshtastic devices
+CH9102_Mac_Driver	2022-03-29T05:44:39Z	main	5	
+Meshtastic_firmware	2024-11-26T04:49:13Z	master	3	Meshtastic device firmware
+T-0.99TFT	2023-04-08T03:03:01Z	main	11	
+T-HC32	2022-09-09T06:33:03Z	main	16	
+T-Impulse	2022-06-24T02:06:12Z	master	57	Wristband with LoRa and GPS
+LilyGo-HAL	2021-02-01T02:37:50Z	master	17	
+LilyGO-Mini-Epaper	2024-08-21T03:34:11Z	main	17	
+T-A7608X	2023-11-16T07:13:30Z	main	23	
+T-Touch_Bar	2023-11-23T03:22:22Z	main	22	
+LilyPi	2023-06-10T08:18:13Z	main	8	
+T-Display-keyboard	2023-06-26T09:34:17Z	main	9	
+SoftRF	2021-06-22T17:57:12Z	master	4	:airplane:  Multifunctional, compatible DIY general aviation proximity awareness system
+esp32-camera-plus-bigiot	2019-03-12T10:57:52Z	master	33	Use TTGO-Camera-Plus to upload captured images to the BIGIOT platform every 10 seconds
+esp-gitee-tools	2025-08-20T09:32:55Z	main	1	
+My-TTGO-Watch	2020-07-10T07:49:50Z	master	4	Firmware for a smartwatch based on ESP32 from LilyGo.
+T-Touchbar-AMOLED	2025-09-22T02:33:30Z	master	9	
+micropython	2025-10-27T02:25:18Z	main	0	
+LilyGo-T-Wristband-NRF52	2023-10-27T09:51:40Z	master	26	
+T-Watch-Deps	2024-11-19T03:15:40Z	master	5	
+T-Connect-Pro-MicroPython	2025-08-20T10:07:48Z	main	0	T-Connect-Pro is a product based on the ESP32S3 microcontroller, consisting of three stacked circuit boards.
+esp-idf	2025-08-20T10:06:21Z	main	0	
+LilyGO-Mini-E-paper-S3	2025-04-26T02:20:09Z	main	2	
+LilyGO-ETH-Gateway	2024-07-08T01:03:39Z	master	2	
+Ka-Radio32	2020-03-09T01:59:19Z	master	7	esp32 version of Ka-Radio (https://github.com/karawin/Ka-Radio)
+T96-OLED-SSD1306	2021-12-15T09:47:26Z	main	7	
+tbeam-helium-mapper	2024-06-26T16:15:37Z	main	16	
+T8-C3	2024-12-04T06:25:54Z	main	12	
+T-GlassV2	2025-01-07T03:55:33Z	master	1	T-GlassV2 comprehensive examples
+T-Circle	2024-08-27T09:08:30Z	master	1	
+Q445	2024-12-02T01:55:43Z	main	1	
+Meshtastic-Web	2024-11-24T22:16:25Z	master	2	Meshtastic Web Client
+Meshtastic-Apple	2024-11-26T00:10:51Z	main	4	Apple iOS, iPadOS & macOS Clients For Meshtastic
+Meshtastic-Android	2024-11-25T23:09:53Z	master	1	Android application for Meshtastic
+Meshtastic	2024-11-25T22:44:10Z	master	1	Meshtastic project website and documentation
+LilyGo-TTV	2025-02-15T08:14:20Z	master	21	
+LILYGO-T-TWR-Plus-case	2023-07-04T19:36:08Z	main	4	3D model and case for the LILYGO T-TWR Plus (https://www.lilygo.cc/products/t-twr-plus)
+MicroPython_ESP32_psRAM_LoBo	2023-01-12T08:52:59Z	master	5	MicroPython for ESP32 with psRAM support
+LilyGo-eink-v2.3-micropython	2020-06-09T01:53:41Z	master	12	
+DabbleESP32	2019-12-03T05:42:00Z	master	8	DabbleESP32 is library for using Dabble app with ESP32. It uses BLE of ESP32 for communicating with the app. The app consists virtual modules that help in accessing certain features of smartphone via hardware and helps in providing hardware control via smartphone. 
+twatch-series-modules	2019-08-09T09:04:44Z	master	15	
+T-U2T	2022-04-12T02:35:41Z	main	13	
+EPD47-HC08	2021-06-07T01:53:14Z	main	7	
+T-SimHat	2023-05-13T06:32:40Z	main	1	
+T-WATCH-Keyboard	2023-07-26T06:28:28Z	main	6	
+esp32-face-recognition	2019-02-15T03:10:38Z	master	44	TTGO T-Câmera
+SX1302_HAL_GATEWAY	2022-11-29T03:29:20Z	master	6	
+3.71-Inch-Capacitive-Touch-E-Paper	2021-11-24T09:12:58Z	main	4	
+T5-ePaper-NewPanel	2020-12-28T09:44:07Z	master	6	
+T-Encoder-shield	2023-02-03T01:33:06Z	main	8	Customize Macro Keys and APA102 RGB Full Color LED light.
+TTGO_Camera_Mini	2021-10-27T06:29:27Z	master	25	TTGO_Camera_Mini
+CubOS	2022-02-02T20:36:01Z	main	1	
+TTGO_T_Watch_Baidu_Rec	2019-08-11T06:47:24Z	master	4	用 TTGO_T_Watch 手表做的百度语音识别终端
+MaixPy	2022-05-11T03:35:27Z	master	5	MicroPython for K210 RISC-V, let's play with edge AI easier
+TTGO-Camer-Mic	2019-10-07T01:20:43Z	master	13	TTGO Camera Microphone version
+LilyGo-TWR-Library	2024-03-19T11:00:09Z	master	0	LilyGo-TWR project dependent libraries
+LilyGO-SIM7000-Cayenne	2020-02-25T07:00:50Z	master	2	The code was moved to sim7000g master 
+S76G_GPS_Firmware	2020-06-16T03:20:43Z	master	3	
+LilyGo-OLED	2021-04-14T00:54:55Z	master	2	
+T-Watch-2021-lvgl	2023-05-31T07:19:51Z	master	2	
+CH340K_Driver	2023-05-08T03:12:20Z	main	4	
+LilyGo-HeartRate-Kit	2020-08-19T06:51:45Z	master	22	
+ESP32-Paxcounter	2022-01-05T08:31:11Z	master	6	Wifi & BLE driven passenger flow metering with cheap ESP32 boards
+S7xG	2020-04-19T13:29:48Z	master	2	HAB Firmware for the S7xG board in the LilyGo Watch, to provide basic GPS and LoRa for UKHAS telemetry
+open-smartwatch-os	2021-04-28T06:16:48Z	master	7	The Open-Smartwatch Operating System.
+T-NixieTube	2021-06-05T06:32:04Z	main	5	
+arduino-nofrendo	2020-11-03T00:56:07Z	master	3	Clone from source http://www.baisoku.org/nofrendo-2.0pre1.zip
+LilyGO-TM	2023-04-24T09:08:39Z	master	0	
+Adafruit_nRF52_Bootloader	2021-05-10T08:32:01Z	master	1	USB-enabled bootloaders for the nRF52 BLE SoC chips
+T-solar	2019-12-24T06:32:36Z	master	10	
+netdisk	2022-06-23T03:28:13Z	master	0	
+T-Color	2022-06-20T06:11:44Z	main	0	
+Document_List	2021-12-15T01:52:27Z	main	1	
+ESP_AT_Lib	2021-12-22T05:00:43Z	master	1	An ESP8266/ESP32 wrapper library for Arduino providing an easy-to-use way to manipulate ESP8266/ESP32-AT shields.
+WiFiEspAT	2022-01-05T14:01:23Z	master	0	Arduino networking library. Standard Arduino WiFi networking API over ESP8266 or ESP32 AT commands.
+T-Watch-2019-reissue-peak	2021-11-06T08:31:15Z	main	0	
+Twatch-example	2019-11-20T02:17:05Z	master	4	
+T-Block	2021-10-11T08:39:19Z	main	0	T-Block/T-Block-V1
+GxEPD	2021-09-30T08:49:52Z	master	1	A simple E-Paper display library with common base class and separate IO class for Arduino.
+3d-files	2021-04-27T14:45:46Z	master	1	3D printable design files. Sources as well as stl
+bbq10kbd_i2c_sw	2020-07-16T05:43:45Z	master	1	
+LilyGo-T-Node	2021-02-26T01:24:31Z	master	4	
+open-smartwatch-light	2021-04-09T11:01:35Z	main	0	Hardware design files. Light version (no GPS, no uSD) of the open-smartwatch
+MAX7219LedMatrix	2018-08-02T20:49:35Z	master	3	Library for the ESP8266 on Arduino IDE displaying text on multiple 8x8 led matrices
+TTCar_3D_Model	2019-10-22T10:21:53Z	master	8	
+LilyGo-T-Controlle	2021-01-03T04:00:35Z	master	1	
+Maixduino	2019-11-20T13:35:19Z	master	2	Arduino port on Maix board ( k210 )
+arduino-dw1000	2020-11-20T07:54:31Z	master	0	A library that offers functionality to use Decawave's DW1000 chips/modules with Arduino.
+T_Watch_Game	2020-05-23T10:44:36Z	master	1	GAME1.Tic Tac Toe
+esp32-soil-dash	2019-02-16T02:07:46Z	master	5	Higrow ESP32 Rev1
+sx1302_hal	2020-08-05T07:26:47Z	master	0	SX1302 Hardware Abstraction Layer and Tools (packet forwarder...)
+THABWatch	2020-04-22T09:38:19Z	master	0	TTGO T-Watch HAB Firmware for receiving and chasing LoRa balloons
+TTGO_T_Watch_See_Camera	2020-05-23T06:01:52Z	master	0	TTGO_T_Watch_See_Raspberry pi Camera  
+T-Quick	2019-10-22T07:33:42Z	master	2	

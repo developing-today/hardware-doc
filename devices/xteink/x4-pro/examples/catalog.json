@@ -1,0 +1,553 @@
+{
+  "device": "xteink/x4-pro",
+  "generated": "2026-09-04",
+  "method": "GitHub repository search API (5 queries x 2 pages, authenticated) + code search + GraphQL discussions + 2,136 Reddit posts. NOTHING WAS BUILT, FLASHED OR RUN - no hardware was available. Every build_status is 'not-attempted' and every finding is 'inferred' from source/metadata unless stated.",
+  "examples": [
+    {
+      "id": "freeink-sdk",
+      "title": "Free-Ink/freeink-sdk",
+      "author": "Free-Ink project",
+      "source_class": "community",
+      "canonical_url": "https://github.com/Free-Ink/freeink-sdk",
+      "immutable_url": "https://github.com/Free-Ink/freeink-sdk/tree/24003795381a6c23630a26472ae3b06550333e71",
+      "commit": "24003795381a6c23630a26472ae3b06550333e71",
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-09-01",
+      "device": "Xteink X4 Pro (env x4pro)",
+      "hw_revision": "unknown",
+      "framework": "Arduino-ESP32 / PlatformIO",
+      "board": "esp32-s3-devkitc1-n16r8",
+      "features": [
+        "display",
+        "controller-autodetect",
+        "gt911-touch",
+        "frontlight",
+        "sdmmc",
+        "cw2017",
+        "bm8563",
+        "buttons",
+        "power-rails",
+        "sleep"
+      ],
+      "dependencies": [
+        "SdFat",
+        "Arduino-ESP32"
+      ],
+      "license": "unknown (LICENSE present, not read)",
+      "license_evidence": "LICENSE file exists in tree; contents not read this session",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "Only authoritative hardware source for this device",
+        "Annotates each claim Confirmed-on-hardware / Corrected / Pending",
+        "Carries all three panel drivers plus the boot probe"
+      ],
+      "pitfalls": [
+        "Consumed as a git submodule, not a package",
+        "Consumer must define USE_BLOCK_DEVICE_INTERFACE=1 for SD"
+      ],
+      "lineage": "upstream",
+      "decision": "SELECTED - best starting point",
+      "local_path": "scratch/eink-software/repos/freeink-sdk"
+    },
+    {
+      "id": "freeink-reader",
+      "title": "Free-Ink/freeink-reader",
+      "author": "Free-Ink project",
+      "source_class": "community",
+      "canonical_url": "https://github.com/Free-Ink/freeink-reader",
+      "immutable_url": null,
+      "commit": null,
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-07-08",
+      "device": "Xteink family via SDK",
+      "hw_revision": "unknown",
+      "framework": "Arduino-ESP32 / PlatformIO",
+      "board": "per SDK env",
+      "features": [
+        "display",
+        "storage",
+        "reader-ui"
+      ],
+      "dependencies": [
+        "freeink-sdk"
+      ],
+      "license": "MIT",
+      "license_evidence": "GitHub API license field",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "Smallest real application on the SDK"
+      ],
+      "pitfalls": [
+        "Less actively maintained than the mainlines",
+        "Makes no X4 Pro-specific claim"
+      ],
+      "lineage": "independent",
+      "decision": "SELECTED - minimal consumer",
+      "local_path": null
+    },
+    {
+      "id": "crosspoint-reader",
+      "title": "crosspoint-reader/crosspoint-reader",
+      "author": "CrossPoint Reader project",
+      "source_class": "community",
+      "canonical_url": "https://github.com/crosspoint-reader/crosspoint-reader",
+      "immutable_url": "https://github.com/crosspoint-reader/crosspoint-reader/tree/e6139861a2a8c634aa18c333b7e214ee51a9965c",
+      "commit": "e6139861a2a8c634aa18c333b7e214ee51a9965c",
+      "tag": "1.5",
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-09-01",
+      "device": "X4 Pro listed in ROADMAP.md:40 as an ESP32-S3-class target",
+      "hw_revision": "unknown",
+      "framework": "Arduino-ESP32 / PlatformIO",
+      "board": "varies by env",
+      "features": [
+        "display",
+        "touch",
+        "frontlight",
+        "buttons",
+        "storage",
+        "battery",
+        "rtc",
+        "wifi",
+        "ble",
+        "ota"
+      ],
+      "dependencies": [
+        "freeink-sdk (submodule)"
+      ],
+      "license": "MIT",
+      "license_evidence": "GitHub API license field",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "Reference implementation",
+        "Exercises every fitted capability",
+        "1.5 release notes document ecosystem brick risks"
+      ],
+      "pitfalls": [
+        "ROADMAP listing is not shipped support",
+        "Upstream release URLs target C3 builds - flashing one onto an S3 is wrong"
+      ],
+      "lineage": "upstream",
+      "decision": "SELECTED - integrated application",
+      "local_path": "scratch/eink-software/repos/crosspoint-reader"
+    },
+    {
+      "id": "crossink",
+      "title": "uxjulia/CrossInk",
+      "author": "uxjulia",
+      "source_class": "community",
+      "canonical_url": "https://github.com/uxjulia/CrossInk",
+      "immutable_url": "https://github.com/uxjulia/CrossInk/tree/cab4f24922f05811e7f44be1057f62ea2d978c52",
+      "commit": "cab4f24922f05811e7f44be1057f62ea2d978c52",
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-08-18",
+      "device": "x4pro device type added to bug-report template 2026-08-18",
+      "hw_revision": "unknown",
+      "framework": "Arduino-ESP32 / PlatformIO",
+      "board": "varies",
+      "features": [
+        "display",
+        "touch",
+        "reader-ui",
+        "reading-stats"
+      ],
+      "dependencies": [
+        "freeink-sdk"
+      ],
+      "license": "MIT",
+      "license_evidence": "GitHub API license field",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "Independent lineage, not a CrossPoint fork",
+        "Ships an SDL simulator - the only way to exercise UI code without hardware"
+      ],
+      "pitfalls": [
+        "Less documented than CrossPoint"
+      ],
+      "lineage": "independent",
+      "decision": "SELECTED - distinct approach",
+      "local_path": "scratch/eink-software/repos/CrossInk"
+    },
+    {
+      "id": "inkback-freeink-sdk",
+      "title": "goodyttoor/inkback-freeink-sdk",
+      "author": "goodyttoor",
+      "source_class": "community",
+      "canonical_url": "https://github.com/goodyttoor/inkback-freeink-sdk",
+      "immutable_url": null,
+      "commit": null,
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-08-18",
+      "device": "Xteink X4 Pro (explicit)",
+      "hw_revision": "unknown",
+      "framework": "PlatformIO",
+      "board": "esp32-s3-devkitc1-n16r8",
+      "features": [
+        "psram-multibuffer",
+        "damage-windows",
+        "ghost-budget",
+        "display"
+      ],
+      "dependencies": [
+        "freeink-sdk (fork)"
+      ],
+      "license": "MIT",
+      "license_evidence": "GitHub API license field",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "The ONLY project exercising what distinguishes the X4 Pro from the C3 models: 8 MB PSRAM"
+      ],
+      "pitfalls": [
+        "A fork of the SDK - carries the two-moving-upstreams problem"
+      ],
+      "lineage": "fork of Free-Ink/freeink-sdk",
+      "decision": "SELECTED - best X4 Pro-specific work",
+      "local_path": null
+    },
+    {
+      "id": "crossplay",
+      "title": "ma-r-s/crossplay",
+      "author": "Mario Alejandro Ruiz",
+      "source_class": "community",
+      "canonical_url": "https://github.com/ma-r-s/crossplay",
+      "immutable_url": null,
+      "commit": null,
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-09-02",
+      "device": "X4 Pro is the stated design floor",
+      "hw_revision": "unknown",
+      "framework": "Arduino-ESP32 / PlatformIO",
+      "board": "ESP32-S3",
+      "features": [
+        "display",
+        "touch",
+        "buttons",
+        "apps",
+        "games"
+      ],
+      "dependencies": [
+        "freeink-sdk (fork: x4pro-measured-insets)"
+      ],
+      "license": "MIT",
+      "license_evidence": "GitHub API license field",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "LOCAL_SCOPE.md accounts for every upstream file touched",
+        "Documents the C3-image-onto-S3 OTA hazard",
+        "Already fully analysed in this knowledge base"
+      ],
+      "pitfalls": [
+        "Single author, bus factor 1",
+        "65 commits behind upstream at snapshot - a brick-risk signal in this ecosystem"
+      ],
+      "lineage": "fork of crosspoint-reader/crosspoint-reader",
+      "decision": "SELECTED - fork-maintenance study",
+      "local_path": "scratch/eink-software/crossplay",
+      "record": "software/applications/crossplay/README.md"
+    },
+    {
+      "id": "esphome-xteink",
+      "title": "vjFaLk/esphome-xteink",
+      "author": "vjFaLk",
+      "source_class": "community",
+      "canonical_url": "https://github.com/vjFaLk/esphome-xteink",
+      "immutable_url": "https://github.com/vjFaLk/esphome-xteink/tree/b36c09f2f3926c07aeb4b91ff4371db94037ef79",
+      "commit": "b36c09f2f3926c07aeb4b91ff4371db94037ef79",
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-09-02",
+      "device": "Xteink X4 / X3 / X4 Pro",
+      "hw_revision": "unknown",
+      "framework": "ESPHome",
+      "board": "varies",
+      "features": [
+        "display",
+        "non-reader-use",
+        "home-automation"
+      ],
+      "dependencies": [
+        "freeink-sdk (vendored under components/xteink/sdk/)"
+      ],
+      "license": "MIT",
+      "license_evidence": "GitHub API license field",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "Demonstrates the device as a general ESP32-S3 e-paper platform, not only a reader"
+      ],
+      "pitfalls": [
+        "Vendors the whole SDK - staleness risk"
+      ],
+      "lineage": "independent",
+      "decision": "SELECTED - non-reader use",
+      "local_path": null
+    },
+    {
+      "id": "proink-os",
+      "title": "thepropm/proink-os",
+      "author": "thepropm",
+      "source_class": "community",
+      "canonical_url": "https://github.com/thepropm/proink-os",
+      "immutable_url": null,
+      "commit": null,
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-09-04",
+      "device": "Xteink X4 Pro (explicit)",
+      "hw_revision": "unknown",
+      "framework": "PlatformIO",
+      "board": "ESP32-S3",
+      "features": [
+        "display",
+        "reader-ui"
+      ],
+      "dependencies": [
+        "freeink-sdk"
+      ],
+      "license": "unknown",
+      "license_evidence": "no license field returned by the API",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "From-scratch rather than a fork",
+        "Most recently active X4 Pro-specific project"
+      ],
+      "pitfalls": [
+        "New; maturity unknown",
+        "Licence unknown"
+      ],
+      "lineage": "independent",
+      "decision": "SELECTED - from-scratch alternative",
+      "local_path": null
+    },
+    {
+      "id": "xteink-x4-escape",
+      "title": "togotago/xteink-x4-escape",
+      "author": "togotago",
+      "source_class": "community",
+      "canonical_url": "https://github.com/togotago/xteink-x4-escape",
+      "immutable_url": null,
+      "commit": null,
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-05-10",
+      "device": "Xteink X4 (OTA path shared with X4 Pro)",
+      "hw_revision": "unknown",
+      "framework": "Python (host tool)",
+      "board": null,
+      "features": [
+        "recovery",
+        "ota"
+      ],
+      "dependencies": [
+        "esptool"
+      ],
+      "license": "MIT",
+      "license_evidence": "GitHub API license field",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "Documents a NAMED, reproducible brick (CrossPoint 1.2.0, OTA fails at esp_ota_end()) and its cure",
+        "The only published recovery recipe in the ecosystem"
+      ],
+      "pitfalls": [
+        "For the C3 X4, not the Pro - the OTA path is shared but the chip is not"
+      ],
+      "lineage": "independent",
+      "decision": "SELECTED - negative example",
+      "local_path": null
+    },
+    {
+      "id": "x4-dual-boot",
+      "title": "lvturner/x4-dual-boot",
+      "author": "lvturner",
+      "source_class": "community",
+      "canonical_url": "https://github.com/lvturner/x4-dual-boot",
+      "immutable_url": null,
+      "commit": null,
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-08-17",
+      "device": "USB-locked Xteink X4",
+      "hw_revision": "unknown",
+      "framework": "Shell + submodules",
+      "board": null,
+      "features": [
+        "sd-install",
+        "dual-boot",
+        "usb-lock-workaround"
+      ],
+      "dependencies": [
+        "MicroSlate",
+        "CrossInk"
+      ],
+      "license": "unknown",
+      "license_evidence": "no license field",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "Documents working around the factory USB lock, the constraint shaping every first flash"
+      ],
+      "pitfalls": [
+        "Meta-repo of submodules; relies on stock-bootloader behaviour the author does not control"
+      ],
+      "lineage": "independent",
+      "decision": "SELECTED - negative example",
+      "local_path": null
+    },
+    {
+      "id": "xteink-backup-utility",
+      "title": "HomeAssistantPi/xteink-backup-utility",
+      "author": "HomeAssistantPi",
+      "source_class": "community",
+      "canonical_url": "https://github.com/HomeAssistantPi/xteink-backup-utility",
+      "immutable_url": null,
+      "commit": null,
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-08-10",
+      "device": "XTEINK 4 PRO (explicit, author's own)",
+      "hw_revision": "unknown",
+      "framework": "Shell (host tool)",
+      "board": null,
+      "features": [
+        "flash-backup",
+        "storage"
+      ],
+      "dependencies": [
+        "esptool"
+      ],
+      "license": "MIT",
+      "license_evidence": "GitHub API license field",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "The only X4 Pro-specific flash/backup tool located"
+      ],
+      "pitfalls": [
+        "Not inspected in depth this session"
+      ],
+      "lineage": "independent",
+      "decision": "SELECTED - backup tooling",
+      "local_path": null
+    },
+    {
+      "id": "crosspoint-llama-pro",
+      "title": "MrStu82/crosspoint-llama-pro",
+      "author": "MrStu82",
+      "source_class": "community",
+      "canonical_url": "https://github.com/MrStu82/crosspoint-llama-pro",
+      "immutable_url": null,
+      "commit": null,
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-08-31",
+      "device": "Xteink X4 Pro (ESP32-S3, GT911 touch, dual warm/cold frontlight)",
+      "hw_revision": "unknown",
+      "framework": "Arduino-ESP32",
+      "board": "ESP32-S3",
+      "features": [
+        "display",
+        "touch",
+        "frontlight",
+        "reader-ui"
+      ],
+      "dependencies": [
+        "crosspoint-reader"
+      ],
+      "license": "MIT",
+      "license_evidence": "GitHub API license field",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "Its description independently corroborates the hardware profile"
+      ],
+      "pitfalls": [
+        "A personal fork; no distinct technical contribution identified"
+      ],
+      "lineage": "fork of crosspoint-reader",
+      "decision": "CATALOGED - corroboration only",
+      "local_path": null
+    },
+    {
+      "id": "community-sdk",
+      "title": "crosspoint-reader/community-sdk",
+      "author": "CrossPoint Reader project",
+      "source_class": "community",
+      "canonical_url": "https://github.com/crosspoint-reader/community-sdk",
+      "immutable_url": "https://github.com/crosspoint-reader/community-sdk/tree/198ad267219c25c8ab84418b806c66f1fb5216a3",
+      "commit": "198ad267219c25c8ab84418b806c66f1fb5216a3",
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2026-06-24",
+      "device": "X3 grayscale preconditioning",
+      "hw_revision": "unknown",
+      "framework": "PlatformIO",
+      "board": null,
+      "features": [
+        "display",
+        "grayscale"
+      ],
+      "dependencies": [],
+      "license": "unknown",
+      "license_evidence": "LICENSE present, not read",
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [
+        "Grayscale preconditioning work"
+      ],
+      "pitfalls": [
+        "X3-focused, not X4 Pro"
+      ],
+      "lineage": "independent",
+      "decision": "CATALOGED - adjacent",
+      "local_path": "scratch/eink-software/repos/community-sdk"
+    },
+    {
+      "id": "os2world-openxp",
+      "title": "OS2World/APP-INTERNET-OpenXP",
+      "author": "OS2World",
+      "source_class": "community",
+      "canonical_url": "https://github.com/OS2World/APP-INTERNET-OpenXP",
+      "immutable_url": null,
+      "commit": null,
+      "tag": null,
+      "retrieved": "2026-09-04",
+      "last_activity": "2013-07-04",
+      "device": null,
+      "hw_revision": null,
+      "framework": null,
+      "board": null,
+      "features": [],
+      "dependencies": [],
+      "license": "unknown",
+      "license_evidence": null,
+      "build_status": "not-attempted",
+      "test_env": null,
+      "strengths": [],
+      "pitfalls": [
+        "NAME COLLISION: a 2013 OS/2 mail and news reader also called 'CrossPoint'. Unrelated to this ecosystem."
+      ],
+      "lineage": null,
+      "decision": "REJECTED - name collision",
+      "local_path": null
+    }
+  ],
+  "uncovered_features": [
+    "USB-MSC - present in stock firmware, not ported to the SDK, no example anywhere",
+    "Deep-sleep power measurement - implemented but never measured by any project"
+  ],
+  "vendored": [],
+  "vendoring_rationale": "No example source is copied into this repository. None is small enough to be a snippet; all are actively developed and a stale copy would mislead; all are one pinned-commit clone away. Only the FreeInk SDK is held locally, in scratch/eink-software/repos/freeink-sdk at 24003795381a6c23630a26472ae3b06550333e71 (fetched by an earlier session)."
+}

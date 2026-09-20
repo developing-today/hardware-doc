@@ -1,0 +1,26 @@
+==========================================================================
+C153-PaperMono-UserDemo-v1.2.bin  (2868208 bytes)
+-- bootloader image header @0x0 --
+    {'offset': '0x0', 'magic': '0xe9', 'segments': 3, 'flash_mode': 'DIO', 'flash_size': '16MB', 'flash_freq': '80MHz', 'entry': '0x403c8924', 'chip_id': '9 (ESP32-S3)', 'min_rev': 0}
+-- app image header @0x10000 --
+    {'offset': '0x10000', 'magic': '0xe9', 'segments': 7, 'flash_mode': 'DIO', 'flash_size': '16MB', 'flash_freq': '80MHz', 'entry': '0x40375bec', 'chip_id': '9 (ESP32-S3)', 'min_rev': 0}
+-- partition table @0x8000 --
+    nvs              type=data(1) subtype=0x02 addr=0x009000 size=0x006000 (24K)
+    phy_init         type=data(1) subtype=0x01 addr=0x00f000 size=0x001000 (4K)
+    factory          type=app(0) subtype=0x00 addr=0x010000 size=0xf00000 (15360K)
+-- esp_app_desc_t --
+    {'at': '0x10020', 'app_version': 'c78f6c5-dirty', 'project_name': 'PaperMono-UserDemo', 'build_time': '16:12:13', 'build_date': 'Aug  6 2026', 'idf_version': 'v5.5.1'}
+==========================================================================
+crosspoint-paper-mono-cjk-1.5.0-RC.bin  (10319500 bytes)
+-- bootloader image header @0x0 --
+    {'offset': '0x0', 'magic': '0xe9', 'segments': 3, 'flash_mode': 'DIO', 'flash_size': '16MB', 'flash_freq': '80MHz', 'entry': '0x403c88b8', 'chip_id': '9 (ESP32-S3)', 'min_rev': 0}
+-- app image header @0x10000 --
+    {'offset': '0x10000', 'magic': '0xe9', 'segments': 7, 'flash_mode': 'DIO', 'flash_size': '16MB', 'flash_freq': '80MHz', 'entry': '0x40375fe0', 'chip_id': '9 (ESP32-S3)', 'min_rev': 0}
+-- partition table @0x8000 --
+    nvs              type=data(1) subtype=0x02 addr=0x009000 size=0x005000 (20K)
+    app0             type=app(0) subtype=0x00 addr=0x010000 size=0x640000 (6400K)
+    cjkfont          type=data(1) subtype=0x40 addr=0x650000 size=0x400000 (4096K)
+    spiffs           type=data(1) subtype=0x82 addr=0xc90000 size=0x360000 (3456K)
+    coredump         type=data(1) subtype=0x03 addr=0xff0000 size=0x010000 (64K)
+-- esp_app_desc_t --
+    {'at': '0x10020', 'app_version': 'paper-mono-v2-15-g87a191f', 'project_name': 'crosspoint-reader-mono', 'build_time': '19:58:33', 'build_date': 'Aug 22 2026', 'idf_version': '5.5.2.260206'}

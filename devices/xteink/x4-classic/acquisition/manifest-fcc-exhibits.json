@@ -1,0 +1,43 @@
+{
+ "record": "devices/xteink/x4-classic",
+ "generated": "2026-09-11",
+ "note": "Sibling of `manifest.json`. That file's `artifacts` array is written inline as `[]`, so it cannot be extended without rewriting an existing line; this pass is append-only. Merge on the next non-append-constrained edit.",
+ "artifacts": [
+  {
+   "id": "fcc-2BTR9-X4C-9480914",
+   "kind": "regulatory-exhibit",
+   "canonical_url": "https://fccid.io/2BTR9-X4C/Test-Report/Antenna-Report-9480914.pdf",
+   "fallback_urls": [
+    "https://apps.fcc.gov/eas/GetApplicationAttachment.html?id=9480914",
+    "https://fcc.report/FCC-ID/2BTR9-X4C/9480914.pdf",
+    "https://fccid.io/2BTR9-X4C",
+    "https://web.archive.org/web/2/https://fccid.io/2BTR9-X4C/Test-Report/Antenna-Report-9480914.pdf"
+   ],
+   "sha256": "720ce021f0d403a69e7095bb5ef29f393cb49a8ad4676f8e2652245ffbd355cb",
+   "bytes": 1548468,
+   "destination": "devices/xteink/x4-classic/artifacts/certification/2BTR9-X4C-antenna-report.pdf",
+   "retrieved": "2026-09-11",
+   "upstream_version_or_date": "2026-07-20",
+   "fcc_id": "2BTR9-X4C",
+   "fcc_document_id": "9480914",
+   "exhibit_type": "Test Report",
+   "exhibit_title_as_filed": "Antenna Report",
+   "grant_date": "2026-07-20",
+   "applicant": "Shenzhen Xiaohu Xingtong Technology Co., Ltd. \ud83c\udde8\ud83c\uddf3",
+   "test_firm": "Shenzhen BKC Testing Co., Ltd.",
+   "license": "US Government public record (47 CFR 2.1033); no agency copyright claim",
+   "license_evidence": "FCC Equipment Authorization System publication",
+   "redistribution_status": "allowed",
+   "disposition": "repository",
+   "repo_state": "untracked",
+   "archived_to": null,
+   "placeholder": null,
+   "extraction": null,
+   "target_hardware": "devices/xteink/x4-classic",
+   "reacquisition": "automatic",
+   "reacquisition_note": "fccid.io requires a non-browser User-Agent; a Chrome UA receives a Cloudflare 403. The `.pdf` suffix is mandatory.",
+   "last_verified": "2026-09-11",
+   "notes": "Filed by the round-2 index merge, 2026-09-11."
+  }
+ ]
+}

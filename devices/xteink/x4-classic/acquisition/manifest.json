@@ -1,0 +1,58 @@
+{
+  "device": "xteink/x4-classic",
+  "generated": "2026-09-04",
+  "note": "No artifact was acquired. Every technical claim derives from Free-Ink/freeink-sdk at commit 24003795381a6c23630a26472ae3b06550333e71, which is a source repository rather than a device artifact.",
+  "artifacts": [],
+  "wanted": [
+    {
+      "id": "x4c-stock-dump",
+      "kind": "firmware-image",
+      "canonical_url": null,
+      "sha256": null,
+      "bytes": null,
+      "destination": "devices/xteink/x4-classic/artifacts/firmware/flashx4c.bin",
+      "retrieved": null,
+      "upstream_version": "xteink_app v7.0.11",
+      "license": "unknown (vendor firmware)",
+      "redistribution_status": "unknown",
+      "disposition": "not-downloaded",
+      "repo_state": "not-downloaded",
+      "reacquisition": "blocked",
+      "reason": "Referenced only inside the FreeInk SDK documentation; held privately by its authors. No public URL exists.",
+      "target_hardware": "Xteink X4 Classic, board tag ESP32S3_X4_CLA, revision ESP32S3_X4R2_CLA",
+      "notes": "Would confirm: partition layout, GPIO4's role, charge-STAT polarity, and the NVS hw_calib/screenType default as shipped."
+    },
+    {
+      "id": "x4c-vendor-video-2026-06",
+      "kind": "media",
+      "canonical_url": null,
+      "sha256": null,
+      "bytes": null,
+      "destination": "devices/xteink/x4-classic/media/",
+      "retrieved": null,
+      "license": "unknown",
+      "redistribution_status": "unknown",
+      "disposition": "not-downloaded",
+      "repo_state": "not-downloaded",
+      "reacquisition": "manual",
+      "reason": "Referenced in https://old.reddit.com/r/XTEINK/comments/1ud0d9c/ ; no stable URL captured in the retrieved JSON.",
+      "notes": "Currently the ONLY known imagery of this device anywhere."
+    },
+    {
+      "id": "x4c-ota-feed",
+      "kind": "api-response",
+      "canonical_url": "http://gotaserver.xteink.com/api/check-update",
+      "sha256": null,
+      "bytes": null,
+      "destination": "scratch/xteink/vendor/",
+      "retrieved": null,
+      "license": "n/a",
+      "redistribution_status": "unknown",
+      "disposition": "not-downloaded",
+      "repo_state": "not-downloaded",
+      "reacquisition": "manual",
+      "reason": "Endpoint recovered by string extraction from the X4 (ESP32-C3) factory dump. Request format for the X4C is unknown. Not queried this session.",
+      "notes": "Plain HTTP. Would give the current stock version and possibly a download URL."
+    }
+  ]
+}

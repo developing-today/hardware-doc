@@ -1,0 +1,623 @@
+{
+ "retrieved": "2026-08-24",
+ "source": "forum.seeedstudio.com Discourse JSON API",
+ "threads": {
+  "camera-sleep-current": {
+   "id": 271258,
+   "title": "Xiao esp32s3 sense camera sleep current",
+   "posts_count": 74,
+   "url": "https://forum.seeedstudio.com/t/271258",
+   "created": "2023-07-11T22:41:38.577Z",
+   "posts": [
+    {
+     "username": "Ceria",
+     "created_at": "2023-07-11T22:41:38.654Z",
+     "text": "When I put the Xiao sense in deep sleep mode I still see 20ma of current and not the 3ma spec\u2019d. Could you please provide some code that would work? I have tried my current code using the esp32 ai thinker camera, I am able to obtain a 6ma sleep current therefore I think something different must be done for the xiao sense."
+    },
+    {
+     "username": "MarcusTseng",
+     "created_at": "2023-12-14T17:00:46.844Z",
+     "text": "Hi, Any chance to know how do you achieve this deep sleep setting? Thanks!"
+    },
+    {
+     "username": "JaBa",
+     "created_at": "2023-12-27T22:19:42.022Z",
+     "text": "I have the same or similar question as I was not able to achieve low power after using the camera. I searched the schematics for the XIAO ESP32S3 main and sense extension board. It looks for me that the OV2640 RESET and PWDN pins are not accessible via GPIOs, they seem to be fixed to VCC_3V3 unfortunately. This is also stated in the arduino-esp32. I want to use a trigger e.g. PIR to enable the camera, take a photo and then enter low power deep sleep. But it seems that the sense board is consuming at least 50mA. Does anyone know how to de-init the camera after having the camera use to achieve low power with the XIAO SENSE extension board?"
+    },
+    {
+     "username": "cgwaltney",
+     "created_at": "2023-12-27T23:17:13.923Z",
+     "text": "may be the wifi handler using the extra power"
+    },
+    {
+     "username": "JaBa",
+     "created_at": "2023-12-28T17:07:06.808Z",
+     "text": "I think it is not related to Wifi. I am using esphome and tried everything without the camera module setup (just Wifi), then I automatically have ~140\u00b5A when entering deep sleep (via esphome), but when the camera module is configured and connected it is ~90 mA in deep sleep. As it happens not automatically on entering deep sleep, I am looking for something I can do before it manually e.g. send an I2C message to the OV2640 or an internal API call."
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2023-12-28T17:25:40.568Z",
+     "text": "Hi there, Are you using the SD card? If you have a PPK2 and can look at it under the sleep state or not, is the PSRAM in sleep also? Seems very High for at rest. maybe reducing the Wire clk frequency could lower it too? HTH GL PJ"
+    },
+    {
+     "username": "DariusDuke",
+     "created_at": "2024-01-19T10:30:07.679Z",
+     "text": "Ceria: When I put the Xiao sense in deep sleep mode I still see 20ma of current and not the 3ma spec\u2019d. Could you please provide some code that would work? I have tried my current code using the esp32 ai thinker camera, I am able to obtain a 6ma sleep current therefore I think something sesderma different must be done for the xiao sense. I found that the current draw was consistently higher than the specified 3mA. Strangely, my existing code, which successfully achieved a 6mA sleep current on an ESP32 AI Thinker camera, didn\u2019t yield similar results on the Xiao Sense. I\u2019ve meticulously reviewed my code, delved into the documentation, and experimented with various pin configurations to no avail."
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-01-20T16:58:48.710Z",
+     "text": "Hi there, Can you post up the code , if it\u2019s not proprietary we can have a look , the MCU power code NinJa msfujino can chime in with always good suggestions. HTH GL PJ"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-01-26T10:34:17.926Z",
+     "text": "If I deep sleep a XIAO ESP32S3 Sense with the camera and SD card (but not initialised) in place the deep sleep current is circa 2.8mA. A bit high perhaps, but you can live with it. However if you take a picture and save it to SD, the \u2018deep sleep\u2019 current is then 90mA, a little high. The issue is discussed here; Random Nerd Tutorials \u2013 9 Mar 20 Change ESP32-CAM OV2640 Camera Settings: Brightness, Resolution, Quality,... This guide shows how to change the ESP32-CAM OV2640 camera settings such as contrast, brightness, resolution, quality, saturation and more using Arduino IDE. But the \u2018esp_camera_deinit();\u2019 function makes no differance for me. You might think that if the internals of the camera are in a state after reset\\powerup that gives a 2.8mA not in use current it ought to be possible to reverse all the changes the camera init does to cut the idle current from 90mA back down to 2.8mA. What am I missing, surely having the camera constantly consume 90mA if its only used ocaisionaly is not good for it ?"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-01-26T18:00:58.502Z",
+     "text": "An el cheapo ESP32CAM, when used with a low IQ regulator such as the MCP1700 has a deep sleep current of 3.75mA, in a mode where you take a picture, save it to SD and then go into deep sleep. The ESP32CAM does have a GPIO that turns of the regulators that supply power to the OV2640, but SEEED do not seem to have followed that design path."
+    },
+    {
+     "username": "jhon",
+     "created_at": "2024-01-31T16:24:48.442Z",
+     "text": "To optimize power consumption on the Xiao ESP32-S3 with a Sense Camera during sleep, ensure proper configuration of the ESP32-S3 deep sleep mode and utilize low-power camera capture settings. By minimizing clock frequencies, disabling unnecessary peripherals, and leveraging sleep modes for both the ESP32-S3 and the camera module, you can achieve lower sleep currents for power-efficient operation."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-01-31T18:16:38.418Z",
+     "text": "No actual helpful or useful information there on how to actually get the camera into a 3mA deep sleep after its been used."
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-01-31T18:36:45.960Z",
+     "text": "Hi there, Lurking in on this one\u2026 Seems odd, if it\u2019s low when Uninitialized, is a reset not possible? so there is no code you are saying to turn off the reg\u2019s either? I\u2019m sure there is a work around but seems like allot of hoop jumping for a pretty straight forward op? Power-On (selftest) Take a Picture Save to SD card SLEEP! (lowest power of course) OR ? save something to Flash to indicate primary op was good, reset system and sleep? HTH GL PJ"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-01-31T18:56:50.216Z",
+     "text": "PJ_Glasso: Hi there, Lurking in on this one\u2026 Seems odd, if it\u2019s low when Uninitialized, is a reset not possible? It seems not. There are pins on the OV2640 that are RESET and PWRDWN, but none are connected to GPIOs on the XIAO ESP32S3, so nothing doing there. The ESP32CAM does power down (and thus reset) the camera by turning off the voltage regulators. The code for the camera is mostly hidden in a *.a file so there is little detail of the actual comms. There are commands to apparently deint the camera, esp_camera_deinit(void) but all the info I can find on githubs etc say that that command does not work. The accepted narrative appears to be that once initialised the camera cannot be de-initialised by software, in that the camera library code provides no workin mechanism to do so. PJ_Glasso: I\u2019m sure there is a work around but seems like allot of hoop jumping for a pretty straight forward op? Sure ? If its easy then where is the published code ?"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-01-31T19:34:13.784Z",
+     "text": "One of the reasons I am interested in the ESP32S3 and camera is that it has potential security and wildlife monitoring type applications with image transfers over long distances via LoRa. The software for that is written and done. The ESP32CAM does work, low sleep cureent, but has so few IO pins that you really cannot easily add other sensors or GPS etc, so not that useful really."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-02-01T08:32:45.752Z",
+     "text": "Its possible the reason why the ESP32CAM turns of the regulators for the OV2640 via a GPIO and MOSFET is that they could not find a way to do it in software ?"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-02-03T08:49:41.645Z",
+     "text": "Post reported, its Spam."
+    },
+    {
+     "username": "Sky_Rolnick",
+     "created_at": "2024-06-05T03:14:25.234Z",
+     "text": "I\u2019m having the same issue. The Wiki says Simultaneously connect the camera and the SD card: Deep Sleep Model: 3.8V/3.98 mA I\u2019m starting to doubt this is possible given that the PWDN_GPIO_NUM is not used and there is no way to completely turn off the camera. Has anybody been able to achieve this? If so, can you please post your code? ppk-deep-sleep-bat-with-camera2541\u00d71475 286 KB"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-06-08T03:21:06.448Z",
+     "text": "Hi there, No I would say it\u2019s not possible looking at the Sense schematic. the 1.8v and 2.8v Camera power supplies , those LDO\u2019s can\u2019t be turned off. It would be possible if you made a board to snap in between the camera and B2B connector on the S3, then use the extra io D11 &amp; 12 perhaps with some FET\u2019s to switch off those or to cut the VSS/VIN to the daughter board all together would be nice. But not in the current form. HTH GL PJ check out the schematic on the wiki you will see what I mean."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-06-08T15:55:07.679Z",
+     "text": "Couold one option be a sense board that used the two microphone GPIOs to turn off the camera and SD card ?"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-06-08T18:46:31.443Z",
+     "text": "Hi there I would say Yes , but already D11 &amp; D12 are on there OPEN so that could be considered , or the mic GPIO\u2019s two It just always seems half baked\u2026 anything LOW power would or should be able to turn OFF. just makes sense to me NO pun intended\u2026 GL PJ"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-06-09T06:34:13.730Z",
+     "text": "Well, as the design of the Camera Sense board currently stands, it is difficult to see a practical application for the board. The power requirements of the camera are very significant and it gets hot too. Maybe you could build it into the head of a mains power plug. I can think of a way of powering the entire board on\\off and waking up using a seperate RTC, the board then behaving like an ESP32S3 in deep sleep, though you loose the ability to save stuff in the ESP32S3 RTC RAM. Then there might be applications for such a small remote camera. But so much easier if the design were modified."
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-06-09T15:35:53.293Z",
+     "text": "Hi there, Preaching to the Quire here, I agree in the present form it\u2019s more of a Novelty device. I don\u2019t see the point of the SD card on there no advantage at all over an add on one. and LOL add it to the round display and you have TWO (well one doesn\u2019t work, when you do that) It\u2019s cool that such things exists as demo though. Also some folks are having better luck with the Heatsink on the back as well as other camera models . HTH GL PJ"
+    },
+    {
+     "username": "cgwaltney",
+     "created_at": "2024-06-09T18:06:41.681Z",
+     "text": "i think this was a good R&amp;D project to see what they could do, and in that regard it is a success, we learned about the new fast SD channel \u2026 but the camera does not have a flash or IR backlight, it was more of a proof of concept, trying to find a market for the S3 Additional IO"
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-08-01T09:48:49.177Z",
+     "text": "I have also been bashing my head against this wall for a while. The ESP32Cam provided hardware support to cut power to the OV2640 during deep sleep which allows it to achieve the lower current drain it does. Seeedstudio did not provide any means in the Sense design to cut power nor to drive the POWERDWN pin so there are no hardware options open to us. However, the spec for the OV2640 does talk about putting it into a software standby mode by setting bit 4 of register 0x109 to 1. I and others have tried this: see OV2640 standby support \u00b7 Issue #101 \u00b7 espressif/esp32-camera \u00b7 GitHub but it doesn\u2019t work. Perhaps there is some clever bit twiddling that will make it work but I haven\u2019t found it yet. My conclusion is that the OV2640 has a silicon bug that we can\u2019t work around which makes the Xiao Sense useless for battery-powered applications as supplied. The good news is that the OV3660 is plug-and-play compatible with the Sense connector, has a better sensor and the software standby command works. See OV2640 standby support \u00b7 Issue #672 \u00b7 espressif/esp32-camera \u00b7 GitHub Taking a picture every minute and putting the OV3660 camera into software standby mode between pics I\u2019m getting a current draw of around 20mA. Or you can put the camera into standby mode and then deep sleep the cpu for a current draw of less than 5mA which is the smallest I can measure."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-08-04T09:53:16.006Z",
+     "text": "Current draw in deep sleep is just less than 1mA"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-08-07T17:47:50.406Z",
+     "text": "That sounds very promising, and worth a try TVM."
+    },
+    {
+     "username": "Seeed_Seraphina",
+     "created_at": "2024-08-14T08:32:38.403Z",
+     "text": "Sky_Rolnick: The Wiki says Simultaneously connect the camera and the SD card: Deep Sleep Model: 3.8V/3.98 mA Sorry I\u2019m late. Need some clarification here. The wiki shows the difference in low power consumption values for different peripherals. The intention is to illustrate how much the actual impact on low power consumption can vary when connecting different peripherals, so that users can decide whether to connect hardware based on the extent of this impact. This means that when we measure low power consumption, it is tested in a scenario where the camera or SD card functionality is not initialized in the code, but the hardware expansion board module is connected. The power reference provided does not accurately reflect the power consumption when actually using features like the camera and SD card"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-01T07:11:47.061Z",
+     "text": "jksemple: The good news is that the OV3660 is plug-and-play compatible with the Sense connector, has a better sensor and the software standby command works. See OV2640 standby support \u00b7 Issue #672 \u00b7 espressif/esp32-camera \u00b7 GitHub That Github issue suggests that you can execute; sensor-&gt;set_reg(sensor, 0x3008, 0x40, enable ? 0x40 : 0x00); How do you actually achieve that in the Arduino IDE examples for the XIAO ESP32S3 sense board provided by SEEED such as \u2018take_photos.ino\u2019, there is a compile error; \u2018sensor\u2019 was not declared in this scope And set_reg( is not recognized too."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-01T09:42:23.783Z",
+     "text": "Sorry - I left out obtaining the sensor pointer. Once you have that it should resolve sensor-&gt;set_reg(\u2026) ok : sensor_t* sensor = esp_camera_sensor_get(); NB the enable parameter enables camera standby mode so set it to false to start the camera up again"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-01T10:53:51.401Z",
+     "text": "StuartsProjects: sensor-&gt;set_reg(sensor, 0x3008, 0x40, enable ? 0x40 : 0x00); TVM. So to enable standby you should use; sensor_t* sensor = esp_camera_sensor_get(); sensor-&gt;set_reg(sensor, 0x3008, 0x40, true ? 0x40 : 0x00); And to disable it; sensor_t* sensor = esp_camera_sensor_get(); sensor-&gt;set_reg(sensor, 0x3008, 0x40, false ? 0x40 : 0x00);"
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-01T11:06:07.964Z",
+     "text": "Yes. This worked for me using a Xiao ESP32S3 Sense with OV3660 camera fitted. The registers on the OV5640 appear to be the same so I expect it will work on that too. I understand that OV5640 runs so hot that it needs a heatsink. Putting it into software standby using this trick when not required might make it useable for still photos. I\u2019d be interested to know if it works. I have avoided the OV5640 so far because of the overheating issue."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-01T14:38:49.649Z",
+     "text": "The; sensor_t* sensor = esp_camera_sensor_get(); sensor-&gt;set_reg(sensor, 0x3008, 0x40, true ? 0x40 : 0x00); Does enable standby on an OV3660, the current consumption of the board drops from about 135mA to 50mA when the standby command is issued. However, if you then attempt to cancel standby mode the camera appears to stop working, all I get is images which are a pink screen. And re-initialising the camera results in an error; 'Camera probe failed with error 0x103. It would be really good if you could just light sleep the ESP32S3 so that the sketch can just pause rather than do complete restart as with deep sleep, with an OV3660 fitted the current used then drops to 4.7mA in light sleep."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-01T16:19:44.911Z",
+     "text": "Using the register shutdown option I just compared the deep sleep battery current on the 3 cameras, sketch takes a picture and goes into deep sleep; No register shutdown OV2640 22.3mA No register shutdown OV3360 37.8mA No register shutdown OV5640 104mA With register shutdown OV2640 22.3mA With register shutdown OV3360 1.45mA With register shutdown OV5640 1.4mA"
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-01T17:28:49.713Z",
+     "text": "That wasn\u2019t my experience. I agree that you cannot reinitialise. Unfortunately I don\u2019t seem to have saved the sketch in which I experimented. I think you may need to take 2 or 3 pics after coming out of standby to re-establish the white balance but the camera did work. You do need to reinitialise the camera after a deep sleep. I will be returning to this topic later this month when i have got my Image library working."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-01T17:30:45.958Z",
+     "text": "Great to see that the standby trick works on OV5640 too"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-01T17:49:53.583Z",
+     "text": "OK thanks for the tip, I will try taking several pics."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-02T07:55:46.668Z",
+     "text": "I re-tried the light sleep modification I had added to the \u2018take_photos.ino\u2019 example with an OV3660 camera. I set it to take 4 pictures at every wake; #define uS_TO_S_FACTOR 1000000ULL //Conversion factor for micro seconds to seconds void loop() { uint8_t index; sensor_t* sensor = esp_camera_sensor_get(); if (camera_sign &amp;&amp; sd_sign) { char filename[32]; for (index = 1; index &lt;= pictures; index++) { sprintf(filename, \"/image%d.jpg\", imageCount); photo_save(filename); Serial.printf(\"Saved picture: %s\\r\\n\", filename); imageCount++; delay(500); } } sensor-&gt;set_reg(sensor, 0x3008, 0xFF, 0x42); //camera to standby delay(1000); esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR); esp_light_sleep_start(); Serial.println(); Serial.println(); Serial.println(F(\"Awake !\")); sensor-&gt;set_reg(sensor, 0x3008, 0xFF, 0x02); //camera to ready delay(2000); } I let it run a while, it took over 100 pictures, all were fine. Light sleep current was 4mA."
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-09-02T16:37:03.322Z",
+     "text": "StuartsProjects: Light sleep current was 4mA. Man \u201clight SLEEP\u201d = dead battery. IMO. way too high seeed. my .02 GL PJ"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-02T17:35:05.912Z",
+     "text": "PJ_Glasso: Man \u201clight SLEEP\u201d = dead battery. IMO. way too high seeed. Is that some form of code saying you think the light sleep current is too high ?"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-09-02T21:54:06.808Z",
+     "text": "Hi there, I\u2019ll go George Washington on that, YES \u2026 I can NOT tell a lie. In my own opinion GL PJ"
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-03T07:39:47.338Z",
+     "text": "That\u2019s great. Do you know what was going wrong when you were getting pink images earlier?"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-03T07:50:00.274Z",
+     "text": "jksemple: Do you know what was going wrong when you were getting pink images earlier? Nope. But around the time I had that problem I did sort out the focus of the camera, it was quite a way out. I will check if the delays after the switch from standby to active are critical."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-03T08:38:09.185Z",
+     "text": "Light sleep current of the bare bones ESP32S3 board is 3mA, so 4mA for the board with camera and SD card is not too much of an issue. I doubt SEEED can do much about the ESP32S3 light sleep current, that would be down to Espressif."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-03T09:22:06.084Z",
+     "text": "Yup. It depends on what you\u2019re trying to achieve. If you want your device to run for months 4mA is not going to be good enough but it\u2019s just fine for my application which needs to run pretty much continuously during the day but deep sleep at night. Having switched to OV3660 I can now get 1mA deep sleep current overnight and if I can stretch out the day time activity with short periods of light sleep I might get battery life up to one week and then I\u2019d be delighted."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-03T09:26:24.893Z",
+     "text": "Yes - I had problems with adjusting the focus. The camera lenses seem to be glued into an \u2018infinity\u2019 position and the glue needs breaking before the lens can be focussed. I ended up making a 3D printed focus puller which fits over the lens and engages with the crenellated edges to allow me to change the focus without requiring the services of an 8-year old with nimble fingers."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-03T09:44:52.613Z",
+     "text": "In your example sketch you didn\u2019t post your definition of photo_save(filename). Not sure if you\u2019re aware but the camera driver typically actually \u2018takes\u2019 the photo when you return the frame buffer using esp_camera_fb_return(). So if you return the frame buffer before putting the camera into standby I think you\u2019ll find the first photo you get when you call esp_camera_fb_get() will be the last one before standby. Each photo has a fb-&gt;timestamp and fb-&gt;timestamp.tv_sec can be compared with millis() *1000 to see how old it is in seconds. Might be interesting to explore. Supposedly the driver was altered so that if you set config.grab_mode to CAMERA_GRAB_LATEST and config.fb_count to 2 or more it will keep replacing old frames with new ones in the background. (The driver sets up an RTOS task called cam_task to do this in another thread). I\u2019m not sure that this always works and anyway I don\u2019t really want new frames continually being transferred from the camera to the CPU just in case you happen to call esp_camera_fb_get and want the latest. This must consume power. I\u2019d rather be in control with grab_mode = CAMERA_GRAB_WHEN_EMPTY and unblock the driver by calling esp_camera_fb_return immediately before esp_camera_fb_get() so it requests a new frame only when you\u2019ve made space for it. It would be interesting to explore if there is a difference in current drain when taking occasional pictures in CAMERA_GRAB_LATEST mode vs CAMERA_GRAB_WHEN_EMPTY mode."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-03T09:57:53.891Z",
+     "text": "NB Looking at the datasheet for OV3660 the standby current is apparently 20uA -40 uA so I guess most of the additional power consumption in light sleep when using the Sense board is due to the regulators, SD card and microphone."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-03T15:48:49.896Z",
+     "text": "jksemple: It would be interesting to explore if there is a difference in current drain when taking occasional pictures in CAMERA_GRAB_LATEST mode vs CAMERA_GRAB_WHEN_EMPTY mode. Circa 34.7mA in CPU idle mode with CAMERA_GRAB_WHEN_EMPTY and 34.7mA in CAMERA_GRAB_LATEST mode."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-03T15:52:59.900Z",
+     "text": "Looks like the issue with \u2018pink images\u2019 was mainly due to SD card issues. It took a while to spot. but on the SD card I was using Windows explorer would display the wrong thumbnail images for the actual image for reasons unknown. Which was confusing. Anyway with a \u2018better\u2019 SD card I do still get the occasional \u2018pink\u2019 image but its about one in every couple of hundred."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-03T15:58:43.209Z",
+     "text": "Surprising. I thought there would be a difference. Thanks for checking. And yes - I\u2019ve also noticed that Windows Explorer sometimes caches out of date thumbnails."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-03T17:32:27.728Z",
+     "text": "jksemple: And yes - I\u2019ve also noticed that Windows Explorer sometimes caches out of date thumbnails. Glad its not just my PC. What was misleading was that the same wrong thumbnail was used for lots of files, so if you got one pink image, it could in explorer look like the SD was full of pinkness. On the ESP32 in particular I have found that the SD can also be a tad unreliable, especially if its shares the SPI bus with another device such as LoRa."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-03T18:17:21.424Z",
+     "text": "Re shared SPI: I assume you\u2019re using different CS plns for the two devices? I found two devices could co-exist quite happily on the same SPI bus: See this sketch: github.com jksemple/ESP32CamSPI/blob/main/ESP32CamSPI.ino /* * Using SPI on the ESP32-Cam to access the SD card and expand GPIOs * * The ESP32-Cam uses most of its GPIOs to manage the onboard camera, RAM and SD-card reader. * If the SD-card is not required there are a number of free GPIOs however if the SD-card is needed the number of available GPIOs is very limited. * * Most SD-cards can be operated in three modes: * - 4 bit SD mode = uses 6 pins and is supported by the SD_MMC library by default SD_MMC.begin(\"/sdcard\", false) * - 1 bit SD mode = uses 3 pins and is also supported by the SD_MMC library SD_MMC.begin(\"/sdcard\", true); * - SPI mode = uses 4 pins and is supported by the SPI and SD libraries but not SD_MMC * * In 4-bit SD mode there are no properly free GPIOs * In 1-bit SD mode there are three free GPIOs (GPIO12, GPIO13, GPIO4) * In SPI mode there are 2 free GPIOs (GPIO12, GPIO4) * * NB GPIO4 is also the flashlight so although it can be used it has unwanted side effects * * Under SPI it is possible to connect multiple slave SPI devices to the same SPI master bus. * Each device then requires a dedicated GPIO to control Chip Select (CS) * The SD-card reader on the ESP32 is already hardwired for SPI as follows: This file has been truncated. show original However, it was only a proof of concept. When I discovered the ESP32S3 had more IO pins and PS RAM I gave up on expanding GPIO on the ESP32Cam. It wasn\u2019t worth the trouble"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-09-04T00:21:22.092Z",
+     "text": "More I/O 5b6f8e9d4a80a9984197f46d5c14a37c12ef402d_2_420x750420\u00d7750 92.5 KB Xiao IO expander COMING, and Going.. Roll your own. XIAO Hi there, I took matters into my own hands, LOL MORE I/O for the Xiao ESP32S3 .(12 more) Testing it now. [20240529_144538][20240529_144528][20240529_144516] [20240529_144502][20240529_144445][20240529_144813] [20240529_144812][20240529_144745][20240529_144445][20240529_144431] schematic\u2026 [Schematic_Xiao-more-IO_] [more_IO_sch] GL PJ [more_IO_PINs_b][more_IO_PINs][more_IO_PCB_final_3d][more_IO_PCB_final]"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-09-04T00:25:11.279Z",
+     "text": "Hi there, agree, But with the C6 doing 15-22 uA sleep current, surprised it\u2019s not in the mix? GL PJ none will get close to the nordic single digit uA chips. and get one of these if your using a S3 seeedstudio.com Aluminum Heat Sink For XIAO (2pcs)- Specialized for XIAO ESP32S3 Sense Experience superior cooling capabilities with our latest heat sink for the XIAO ESP32S3 Sense. This innovative design specifically targets and resolves cooling issues identified in XIAO ESP32S3 Sense, especially noticeable during intensive tasks like... Price: USD 0.5"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-04T07:23:26.306Z",
+     "text": "jksemple: Re shared SPI: I assume you\u2019re using different CS plns for the two devices? For sure. I have used a LoRa device and SD on the same SPI bus extensively for LoRa to LoRa file\\image transfers for ESP32CAM etc, see here; https://stuartsprojects.github.io/ I did find a way of, reliably, using a LoRa device and SD card on a ESP32CAM, but it was a challenge, and it involves starting devices in the right order and using deep sleep to re-init the interfaces. On ESP32 in particular when the LoRa device and SD card are on the same SPI bus, the SD card can stop working, The recovery is a power down of the card which is not that convenient. I don\u2019t get the same issue on say an Arduino DUE."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-04T07:32:35.577Z",
+     "text": "PJ_Glasso: and get one of these if your using a S3 Switch to an OV3360 camera and you dont need one, for picture taking. A light sleep current of 4mA between pictures does not generate much heat. Maybe SEEED should offer the OV3660 as an option ?"
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-04T10:21:49.298Z",
+     "text": "This is inspirational work. I hadn\u2019t thought the Sense connector would be available as a CAD/CAM component but it clearly is. I was also confused initially as you\u2019ve used a 30-way connector and the Sense connector is 34-way and by the pin numbering which is quite different from the Seeedstudio schematic numbering. But then I realised the 4 outer-most Sense connector pins are just extra GND and VCC pins and the numbering actually works if you squint hard enough! I wonder if there\u2019s a way to re-engineer the Seeedstudio board retaining the camera connector and Mic but adding control of the Powerdown camera pin. That might make the OV2640 useable in low power applications given that the software standby feature is broken. It doesn\u2019t matter much to me now as I\u2019m happy switching to the OV3660 but it could be of interest to others and maybe you could sell the design back to Seeedstudio"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-04T11:34:21.726Z",
+     "text": "jksemple: That might make the OV2640 useable in low power applications given that the software standby feature is broken Do you know what the register write commands should be to put the OV2640 into standby ? The OV2640 has a different register structure to the OV3660, it looks like you need to write register 0x09 in bank 1 with a value of 0x10. I tried this; sensor-&gt;set_reg(sensor, 0xFF, 0xFF, 0x01); //camera to reg bank 1 sensor-&gt;set_reg(sensor, 0x09, 0xFF, 0x10); //camera to standby but get an error; E (29729) sccb: SCCB_Write Failed addr:0x30, reg:0xff, data:0x01, ret:263 E (31730) sccb: SCCB_Write Failed addr:0x30, reg:0x09, data:0x00, ret:263"
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-04T11:52:30.174Z",
+     "text": "This is my source on putting OV2640 into standby: github.com/espressif/esp32-camera OV2640 standby support opened 10:02PM - 12 Dec 19 UTC closed 09:25AM - 11 Sep 21 UTC brian90013 no-issue-activity Hello, Has anyone been able to use the software power-down available on the O\u2026V2640? When I send the command, I see a drop in power, but the sensor also locks the I2C SDA pin low until it is power-cycled. The OV2640 datasheet claims \"Executing a software power-down through the SCCB interface suspends internal circuit activity but does not halt the device. All register content is maintained in standby mode.\" That's exactly what I would like to do - configure the camera, put it in standby, then bring it out of standby and be able to use it immediately. I added a set_sleep function to the ov2640.c driver: ``` static int set_sleep(sensor_t * sensor, int enable) { sensor-&gt;status.sleep = enable; int ret = set_reg_bits(sensor, BANK_SENSOR, COM2, 4, 1, enable?1:0); return ret; } ``` When I call this function, I see my board current drop ~30mA (@5V input) which seems reasonable. However, watching the I2C SDA pin, I see it is being held low by the camera. This means I can't send a command to come out of standby. I also can't use any other I2C devices on the bus until a power cycle of the camera. Based on several I2C troubleshooting documents, I tried sending a series of SCL pulses to see if that would reset the camera with no luck. At this point, entering software standby appears to be a one-way operation that has no advantage over the hardware PWDN signal since it in not reversible. I'd love to hear from anyone who has been able to use this feature and learn what I should do differently. It doesn\u2019t seem to work, although there might be some bit twiddling niceties that we\u2019re missing. That\u2019s why I was interested in controlling the PWDN pin"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-04T12:29:53.949Z",
+     "text": "The Arduino IDE does not have an OV2640.c file. jksemple: That\u2019s why I was interested in controlling the PWDN pin You would need to solder a (fine) wire onto pin 8 of the camera connector on the sense board. Not easy."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-04T13:58:32.493Z",
+     "text": "You don\u2019t need to modify OV2640.c. Just call the sensor-&gt;set_reg_bits(\u2026 ) function directly. Regarding PWDN I had ruled out altering the existing Sense board. I thought if PJ_Glasso were to reverse engineer it in Eagle CAD (like his More I/O board) he could connect Camera pin 8 (PWDN) to, say, IO21/USER_LED."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-04T14:17:22.803Z",
+     "text": "jksemple: You don\u2019t need to modify OV2640.c. Just call the sensor-&gt;set_reg_bits(\u2026 ) function directly. \u2018sensor_t\u2019 {aka \u2018struct _sensor\u2019} has no member named \u2018set_reg_bits\u2019; did you mean \u2018set_reg\u2019? jksemple: could connect Camera pin 8 (PWDN) to, say, IO21/USER_LED. 21 is also used as SD CS."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-04T16:05:36.849Z",
+     "text": "Sorry - I meant: int ret = set_reg_bits(sensor, BANK_SENSOR, COM2, 4, 1, enable?1:0); In the Seeed expansion board schematic there is a D2/SD_CS coming in from the CPU and this is grouped up with D8/D9/D10 and labelled as \u201cSD Card\u201d however D2 is connected through R11 which is marked as DNP (Do not place) so D2, despite the labelling doesn\u2019t actually control the SD CS. As you point out the SD card CS pin is in fact driven by IO21/USER_LED through R12. Given that all the example code says use pin 21 I guess it would be perverse to change it despite the schematic labelling. So, PWDN could instead be controlled by D2/SD_CS on a re-engineered Sense board.given that it is not used for anything else. Basically, there is a spare GPIO going through that connector and it could be used to drive the hardware PWDN pin of an OV2640."
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-04T16:39:41.933Z",
+     "text": "jksemple: set_reg_bits( Does not seem to exist in the Arduino IDE core 2.0.14 for ESP32. Were you using the Arduino IDE ? For a PWDN pin you could grab one of the MIC pins \u2026"
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-04T18:01:47.161Z",
+     "text": "Ah yes. Looking at my notes I see I could not access set_reg_bits either however set_reg is accessible. I called it as sensor-&gt;set_reg(sensor, 0x109, 0x10, 0x10) but I got: E (61522) sccb: SCCB_Write Failed addr:0x30, reg:0x09, data:0x12, ret:263 just as the other guy reported. This seems to imply that the camera does shutdown but the SCCB interface closes too and cannot complete the write properly. NB 0x109 does the bank switch and addresses register 09 all in one go github.com espressif/esp32-camera/blob/7aa37d4f22503fdac9ccd449e4678c4894c40055/sensors/ov2640.c#L476 static int get_reg(sensor_t *sensor, int reg, int mask) { int ret = read_reg(sensor, (reg &gt;&gt; 8) &amp; 0x01, reg &amp; 0xFF); if(ret &gt; 0){ ret &amp;= mask; } return ret; } static int set_reg(sensor_t *sensor, int reg, int mask, int value) { int ret = 0; ret = read_reg(sensor, (reg &gt;&gt; 8) &amp; 0x01, reg &amp; 0xFF); if(ret &lt; 0){ return ret; } value = (ret &amp; ~mask) | (value &amp; mask); ret = write_reg(sensor, (reg &gt;&gt; 8) &amp; 0x01, reg &amp; 0xFF, value); return ret; }"
+    },
+    {
+     "username": "cgwaltney",
+     "created_at": "2024-09-04T21:23:59.609Z",
+     "text": "with all this sleep current talk\u2026 im gonna def have to take a nap\u2026"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-09-05T00:03:01.492Z",
+     "text": "B2B_mechanical1920\u00d71062 76.1 KB Those 4 are just mechanical connections to the board its a SMD component. A sandwich board could be made to address the shortcomings by intercepting some of the connections. its a male female connector pair. JlcPCB had it in the library from LCSC HTH GL PJ"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2024-09-05T08:10:19.569Z",
+     "text": "One of the issues does appear to be differences between the library that espressif publish on the Github and whats included in the Arduino IDE. For instance there is no ov2640.c file in the Arduino IDE, most of the code used seems hidden inside pre complied files so you dont seem to be able to see the exact form of functions such as set_reg() etc\u2026"
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-05T08:40:30.211Z",
+     "text": "I think what has been compiled into the Arduino platform for esp32 is the full published driver code however the external api is what is published as esp-camera.h and sensor.h in driver/include. So you can\u2019t see functions declared in the files in sensors/private_include, which is where set_reg_bits is found. When you include the driver files in your sketch I think you are allowing your code to reference compiled functions in .a files that are part of the platform. You can probably download the esp-camera library from github, rename and modify it and then reference your own alternative library instead of the one in the platform. That would allow you to add extra functionality or correct mistakes in the library. I haven\u2019t tried this yet but if the author of the library doesn\u2019t respond to some of my issues I may try this."
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-05T09:31:37.042Z",
+     "text": "When you call set_reg() you are not calling the Ov2640.c implementation directly. You are calling the set_reg() function stored in the sensor_t structure. When you initialise the camera a pointer to the Ov2640 implementation of it gets stored there. So you are limited in what you can call in the sensor specific .c files to what pointers have been copied into the sensor_t structure. But you are ultimately running the published code in Ov2640.c. Or ov3660.c as appropriate"
+    },
+    {
+     "username": "jksemple",
+     "created_at": "2024-09-05T11:21:57.811Z",
+     "text": "A sandwich board is a really good idea in principle (and I\u2019m going to salt that idea away for future reference) however in this case the PWDN pin (pin 8) on the 24-pin \u2018golden finger\u2019 camera connector is pulled down to GND by R10 (10k) on the Sense expansion board so no amount of switching pins in the B2B connector is going to fix that."
+    },
+    {
+     "username": "Congduc_Pham",
+     "created_at": "2025-02-09T22:35:32.147Z",
+     "text": "Hi, despite all my efforts and trying all proposed solutions, it seems that the camera is still powered quite a lot when put in sleep. After to only 10 minutes of \u201csupposed\u201d sleep, it was heating significantly I think I\u2019m going for the solution of an external Pro Mini driving a MOSFET. The Pro Mini has a 5uA deep sleep current so it is hard to beat."
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2025-02-10T00:01:27.721Z",
+     "text": "Hi there, So , do give a good visual inspection. Look for any solder bridges or cold joints. Try the Heatsink also but we feel your pain it\u2019s NOT optimum for sure. Seeed would do well to Rework this unit an make a number of improvement. IMO GL PJ"
+    }
+   ]
+  },
+  "schematic-error-vcc1v8": {
+   "id": 273213,
+   "title": "Error in XIAO ESP32S3 Sense Schematic?",
+   "posts_count": 7,
+   "url": "https://forum.seeedstudio.com/t/273213",
+   "created": "2023-11-08T15:44:32.943Z",
+   "posts": [
+    {
+     "username": "StuartsProjects",
+     "created_at": "2023-11-08T15:44:33.023Z",
+     "text": "On the XIAO ESP32S3 Sense Schematic the OV2640 DVDD on connector JA1 is labeled as VCC_1V8. However the regulator used to provide that voltage is an SGM2036S-1.3XXDH4G/TR which is a 1.3V regulator. Screenshot - 08_11_2023 , 15_43_52283\u00d7291 2.41 KB"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2023-11-08T17:43:43.967Z",
+     "text": "Hi there, Do you have a picture? That\u2019s very interesting. Not sure if that\u2019s even in the range the camera\u2019s VCC ? Hmmm? Sharp EYE TY GL PJ"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2023-11-08T19:13:14.305Z",
+     "text": "The \u2018picture\u2019 of the schematic is as shown. The stated limits for the camera module used, for that particular power pin are; Min 1.24V, Typ 1.3V, Max 1.36V. There are of course other power pins."
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2023-11-09T00:23:33.671Z",
+     "text": "Hi there, no\u2026LOL The actual Chip. the IC , I see the schematic. the part no. reflects a 1.3v @300ma dropout reg. SGM2036 300mA, Low Power, Low Dropout, RF Linear Regulators You don\u2019t give allot of info ? Did you measure it? or are you saying a type-o thing? clarify if you would please. TY GL PJ"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2023-11-10T09:01:19.909Z",
+     "text": "PJ_Glasso: The actual Chip. the IC , I see the schematic. the part no. reflects a 1.3v @300ma dropout reg. SGM2036 300mA, Low Power, Low Dropout, RF Linear Regulators Correct. And the net on the schematic is labelled VCC_1V8 as per the section of the schematic I posted. Perhaps it was meant to be labeled as VCC_1V3 ? Check it in Eagle."
+    },
+    {
+     "username": "Seeed_Seraphina",
+     "created_at": "2023-11-13T03:27:27.102Z",
+     "text": "Thank you very much for your feedback. We are using SGM2036S-1.3XXDH4G/TR at U2, which outputs 1.3V. The network label (VCC_1V8) on the schematic is incorrect and should be changed to 1V3. We will update the schematic as soon as possible. Thank you again for your feedback!"
+    },
+    {
+     "username": "StuartsProjects",
+     "created_at": "2023-11-13T15:51:01.768Z",
+     "text": "Thank you. I spotted the problem because I was trying to replicate the XIAO ESP32S3 Sense Camera layout with an ESP32S3 Dev Kit board and a FPC 24P 0.5mm adapter board which breaks out the OV2640 camera connections to 0.1\" headers. I did get the camera and SD working and this much larger setup makes developing applications a lot easier."
+    }
+   ]
+  },
+  "battery-problem": {
+   "id": 275754,
+   "title": "Seeed Studio XIAO ESP32S3 Sense - battery problem",
+   "posts_count": 37,
+   "url": "https://forum.seeedstudio.com/t/275754",
+   "created": "2024-03-18T02:24:11.773Z",
+   "posts": [
+    {
+     "username": "MTVachev",
+     "created_at": "2024-03-18T02:24:11.858Z",
+     "text": "Hello, this is my first encounter with Seeed Studio XIAO ESP32S3 Sense and I don\u2019t have much experience with these gadgets. I programmed the Seeed Studio XIAO ESP32S3 Sense to take pictures every 3 seconds and save them to the sd card, but it only happens when the board is powered via the usb-c port. When I power the board through a battery connected to the rear pins, there is no indication of life. When I connect the battery and usb cable to the board, the device works and indicates that the battery is charging. When I unplug the usb cable but leave the battery connected to the board, the device continues to work and take/record photos. When I restart the device and connect it to the battery only, there is no sign of life. It\u2019s like using the usb port as the start button to start the device. Where am I going wrong and can the Seeed Studio XIAO ESP32S3 Sense run on battery only? Connecting a battery - starting to work, disconnecting the battery - stops the operation of the device. Thanks!"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-03-18T04:20:11.954Z",
+     "text": "Hi there, You have a (While Serial) in the Startup portion of the Sketch So it\u2019s waiting on the USB connection, Comment that out and it will work as you like. HTH GL PJ"
+    },
+    {
+     "username": "MTVachev",
+     "created_at": "2024-03-19T11:03:11.927Z",
+     "text": "Hi, I didn\u2019t write the code I\u2019m using. I used an internet tutorial with a code walkthrough. My programming level is pretty low. Would you please suggest what I should change or add in the source code, if of course I\u2019m not making it difficult for you. \u0422hank you! #include \u201cesp_camera.h\u201d #include \u201cFS.h\u201d #include \u201cSD.h\u201d #include \u201cSPI.h\u201d #define CAMERA_MODEL_XIAO_ESP32S3 #include \u201ccamera_pins.h\u201d unsigned long lastCaptureTime = 0; int imageCount = 1; bool camera_sign = false; bool sd_sign = false; void photo_save(const char * fileName) { camera_fb_t *fb = esp_camera_fb_get(); if (!fb) { Serial.println(\u201cFailed to get camera frame buffer\u201d); return; } writeFile(SD, fileName, fb-&gt;buf, fb-&gt;len); esp_camera_fb_return(fb); Serial.println(\u201cPhoto saved to file\u201d); } void writeFile(fs::FS &amp;fs, const char * path, uint8_t * data, size_t len){ Serial.printf(\u201cWriting file: %s\\n\u201d, path); File file = fs.open(path, FILE_WRITE); if(!file){ Serial.println(\"Failed to open file for writing\"); return; } if(file.write(data, len) == len){ Serial.println(\"File written\"); } else { Serial.println(\"Write failed\"); } file.close(); } void setup() { Serial.begin(115200); while(!Serial); camera_config_t config; config.ledc_channel = LEDC_CHANNEL_0; config.ledc_timer = LEDC_TIMER_0; config.pin_d0 = Y2_GPIO_NUM; config.pin_d1 = Y3_GPIO_NUM; config.pin_d2 = Y4_GPIO_NUM; config.pin_d3 = Y5_GPIO_NUM; config.pin_d4 = Y6_GPIO_NUM; config.pin_d5 = Y7_GPIO_NUM; config.pin_d6 = Y8_GPIO_NUM; config.pin_d7 = Y9_GPIO_NUM; config.pin_xclk = XCLK_GPIO_NUM; config.pin_pclk = PCLK_GPIO_NUM; config.pin_vsync = VSYNC_GPIO_NUM; config.pin_href = HREF_GPIO_NUM; config.pin_sscb_sda = SIOD_GPIO_NUM; config.pin_sscb_scl = SIOC_GPIO_NUM; config.pin_pwdn = PWDN_GPIO_NUM; config.pin_reset = RESET_GPIO_NUM; config.xclk_freq_hz = 20000000; config.frame_size = FRAMESIZE_UXGA; config.pixel_format = PIXFORMAT_JPEG; // for streaming config.grab_mode = CAMERA_GRAB_WHEN_EMPTY; config.fb_location = CAMERA_FB_IN_PSRAM; config.jpeg_quality = 12; config.fb_count = 1; if(config.pixel_format == PIXFORMAT_JPEG){ if(psramFound()){ config.jpeg_quality = 10; config.fb_count = 2; config.grab_mode = CAMERA_GRAB_LATEST; } else { config.frame_size = FRAMESIZE_SVGA; config.fb_location = CAMERA_FB_IN_DRAM; } } else { // Best option for face detection/recognition config.frame_size = FRAMESIZE_240X240; #if CONFIG_IDF_TARGET_ESP32S3 config.fb_count = 2; #endif } // camera init esp_err_t err = esp_camera_init(&amp;config); if (err != ESP_OK) { Serial.printf(\u201cCamera init failed with error 0x%x\u201d, err); return; } camera_sign = true; if(!SD.begin(21)){ Serial.println(\u201cCard Mount Failed\u201d); return; } uint8_t cardType = SD.cardType(); if(cardType == CARD_NONE){ Serial.println(\u201cNo SD card attached\u201d); return; } Serial.print(\"SD Card Type: \"); if(cardType == CARD_MMC){ Serial.println(\u201cMMC\u201d); } else if(cardType == CARD_SD){ Serial.println(\u201cSDSC\u201d); } else if(cardType == CARD_SDHC){ Serial.println(\u201cSDHC\u201d); } else { Serial.println(\u201cUNKNOWN\u201d); } sd_sign = true; Serial.println(\u201cPhotos will begin in one minute, please be ready.\u201d); } void loop() { if(camera_sign &amp;&amp; sd_sign){ // Get the current time unsigned long now = millis(); if ((now - lastCaptureTime) &gt;= 3000) { char filename[32]; sprintf(filename, \"/image%d.jpg\", imageCount); photo_save(filename); Serial.printf(\"Saved picture\uff1a%s\\n\", filename); Serial.println(\"Photos will begin in one minute, please be ready.\"); imageCount++; lastCaptureTime = now; } } }"
+    },
+    {
+     "username": "Friedjof",
+     "created_at": "2024-03-19T11:26:28.778Z",
+     "text": "MTVachev: while(!Serial); The problem is \u201cwhile(!Serial);\u201d. You can simply remove this line I think."
+    },
+    {
+     "username": "MTVachev",
+     "created_at": "2024-03-19T12:12:56.399Z",
+     "text": "Thank you! Device is work. I\u2019m very happy !"
+    },
+    {
+     "username": "hyper_woven",
+     "created_at": "2024-03-25T15:40:27.898Z",
+     "text": "I have a similar problem. The code work, when I have added the LiPo with the Adadfruit BFF Charger, where I have an on/off button. When soldering the LiPo directly on the Xiao, it does not work. Only one picture, which cannot be opened and is always stored as picture17, although the SD card is empty before. May anyone have any idea? Much appreciated."
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-03-25T15:49:26.570Z",
+     "text": "Hi there, and Welcome here, I would check two things, one the first thing is the while serial statement, means the cable must be plugged in to run. Change that by commenting it out, and try again. Then if it\u2019s still an issue be sure that the PSram is turned on or enabled in the tools menu of the IDE for the S3 chip. Try that and report back. You\u2019re not the first to have some startup issue\u2019s, one step at a time and you\u2019ll have success. HTH GL PJ"
+    },
+    {
+     "username": "hyper_woven",
+     "created_at": "2024-03-25T18:50:34.602Z",
+     "text": "Thank you so much! Figured out, that I needed to press the Reset Button. Then it worked."
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2024-03-25T18:54:24.814Z",
+     "text": "Great!, Sometimes it is just the basic things, Good Job! GL PJ"
+    },
+    {
+     "username": "Wobex",
+     "created_at": "2025-03-07T19:38:44.905Z",
+     "text": "Me too! Lots of problems with the XIAO esp32s3. I just assembled about 15 battery driven low power climatic sensors. I had a few dying onboard LEDs. Killing them just by switching them on to show that the configuration website of the sensor is active. And even worse five out of 15 sensors are refusing to run from a 18350 battery which I carefully soldered to the +/- pads. The sensors are all build exactly the same and I can measure the 3V3 at the according pin - no matter if connect them to USB or battery only. So I think there is no problem with the battery and the onboard voltage regulator but even a simple three line blinky program (using those sensors with a still working LED and without use of Serial.something()) will only run if the device is powerd by USB. When I pull the USB cable the device stops blinking immediately and goes dead. Ok, I may connect the battery to the VBus-pin (5V pin) and the device will start running. According to the wiring diagram the VBus-path and the VBat-path both are using the same 3v3 voltage regulator. But I just don\u2019t get it why the USB power can drive the sensor but the battery can not using exactly the same regulator and providing 3V3 as well. At least is that what I can measure at the 3V3 pin. Crazy! May be I should use another board."
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2025-03-10T02:00:43.373Z",
+     "text": "Hi there, And Welcome here\u2026 15 is a lot and 5 bad is GIGANTIC! Wth is going on? You are using 18650\u2019s ? DO you have a schematic or picture (after 3-posts) of this, something else seems off. If you manually press the reset will it go? can you make the code use the RGB/LED to say which part it\u2019s stuck in? HTH GL PJ are you connected to any of the strapping pins ? causing unknown boot states?"
+    },
+    {
+     "username": "cgwaltney",
+     "created_at": "2025-03-10T04:27:40.745Z",
+     "text": "you will probably have to level up to to paste pictures"
+    },
+    {
+     "username": "Wobex",
+     "created_at": "2025-03-10T10:47:37.947Z",
+     "text": "Thank you PJ_Gasso and cgwaltney for your response! Post 2: I\u2019m using protected Keeppower 18350\u2019s batteries wich work great in 10 of 15 sensors."
+    },
+    {
+     "username": "Wobex",
+     "created_at": "2025-03-10T10:49:08.429Z",
+     "text": "Post3: Manual reset does not help. The sensors are running only if they are powered by USB. Schemtic and picture are following\u2026"
+    },
+    {
+     "username": "Wobex",
+     "created_at": "2025-03-10T10:53:12.600Z",
+     "text": "There\u2019s not much to show: schematic_SMARTtemp_esp321348\u00d7852 79.1 KB SMARTtemp_Sensor_esp321920\u00d71943 295 KB May be I\u2019ve got problems when the battery is installed but the battery cable to the XIAO is not connected. There might be the full battery voltage supplied to RTC_GPIO_09 if the voltage devider R2/R1 is not grounded. I\u2019ve to check the PCB\u2026"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2025-03-10T14:05:23.730Z",
+     "text": "Hi there, Looks pretty Steller to me. How confident are you on the Battery Pad connections? Sounds like they may be not 100% You can Power the sensor from the Xiao 3.3v if it works at that VCC? you wouldn\u2019t need the Voltage divider, etc. first as-is\u2026 Also have you tried to connect the GND battery PAD to the rest of the GND\u2019s.(looks Isolated) You should do that. and try it again. my .02 HTH GL PJ"
+    },
+    {
+     "username": "Wobex",
+     "created_at": "2025-03-10T15:00:01.344Z",
+     "text": "PJ_Glasso: Also have you tried to connect the GND battery PAD to the rest of the GND\u2019s.(looks Isolated) You should do that. and try it again. Thank you again. I\u2019m quite confident in the soldering of the bat pads. I double checked it and fixed it with hotglue. The voltage divider R2/R1 is for monitoring the battery voltage. The other voltage devider R3/R4 is to detect an external 5V power supply (USB). In the case of using an external power supply, the sensor will work in a more power consuming mode: Not going to deepsleep, staying connected to the WIFI and publishing the measuring values not only to a MQTT broker but also by it\u2019s website, collecting data from other ESP-NOW sensors and publish them as well. The GND pad of the battery is connected to the GND of the XIAO if (and that may be the problem) the cable from the XIAO bat pads is connected to J7. The question is what happens in the following scenario while assembling the sensor: Battery is installed (4.2V), but the cable is not connected to J7? Then I will have about 800mV coming from the bat monitor voltage devider to RTC_GPIO_09 but the XIAO is not powered at all because of the missing connection to the battery. May be that grills somthing inside the XIAO soc?"
+    },
+    {
+     "username": "cgwaltney",
+     "created_at": "2025-03-10T16:18:46.019Z",
+     "text": "I reported this post to Seeed Technical they are looking into it"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2025-03-10T23:49:25.564Z",
+     "text": "Hi there, Yes, I suppose that is indeed possible. In this case if you assemble and use a USB-c power bank connected, the Xiao\u2019s battery charging circuit would protect from that, when connected. Sux tho 5 units? hopefully they can look too and make some suggestions. Probably put a diode in there. The more i look at it GPIO9 is hitting me funny. Let it marinate a while\u2026 GL PJ"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2025-03-11T00:10:42.369Z",
+     "text": "Hi there, Ok, So FWIW\u2026 The default hardware I2C pins on the Xiao ESP32S3 are: SDA (Data) \u2192 GPIO6 (D6) SCL (Clock) \u2192 GPIO7 (D7) I2C Wiring (Recommended) BME280 Pin Xiao ESP32S3 Pin VCC 3.3V GND GND SDA D6 (GPIO6) SCL D7 (GPIO7) Pull-up resistors (4.7k\u03a9 on SDA &amp; SCL) are recommended but often already included on BME280 modules. can you try this Code? #include &lt;Wire.h&gt; #include &lt;Adafruit_BME280.h&gt; #define SDA_PIN 6 // D6 (GPIO6) #define SCL_PIN 7 // D7 (GPIO7) Adafruit_BME280 bme; void setup() { Serial.begin(115200); Wire.begin(SDA_PIN, SCL_PIN); // Initialize I2C with custom pins if (!bme.begin(0x76)) { // Try I2C address 0x76 or 0x77 Serial.println(\"BME280 not found!\"); while (1); } Serial.println(\"BME280 Initialized!\"); } void loop() { Serial.print(\"Temperature = \"); Serial.print(bme.readTemperature()); Serial.println(\" \u00b0C\"); delay(2000); } Change 0x76 to 0x77 if your sensor uses a different I2C address. sure you can pick any pins, but must call them out.. #include &lt;Wire.h&gt; #include &lt;Adafruit_BME280.h&gt; #define SDA_PIN 5 // GPIO5 (D5) &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; :grin: #define SCL_PIN 6 // GPIO6 (D6) &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; :blush: Adafruit_BME280 bme; void setup() { Serial.begin(115200); Wire.begin(SDA_PIN, SCL_PIN); // Initialize I2C on GPIO5 (SDA) &amp; GPIO6 (SCL) if (!bme.begin(0x76)) { // Try I2C address 0x76 or 0x77 Serial.println(\"BME280 not found!\"); while (1); } Serial.println(\"BME280 Initialized!\"); } void loop() { Serial.print(\"Temperature = \"); Serial.print(bme.readTemperature()); Serial.println(\" \u00b0C\"); delay(2000); } So you looking for lowest power then , instead of speed. I2C vs SPI 3.4HhZ or 10Mhz. .1 ua sleep ..WOW HTH GL PJ BME2801042\u00d7507 78.8 KB This may be a dumb ask , but have you tried it without all the Battery monitor stuff. Just the Xiao , Battery and Sensor? and I\u2019m NOT a fan of that Battery"
+    },
+    {
+     "username": "Seeed_Kevin",
+     "created_at": "2025-03-11T01:16:46.518Z",
+     "text": "The GND pad of the battery is connected to the GND of the XIAO Hmm, that doesn\u2019t sound right. The GND pad of your battery should be isolated with the XIAO\u2019s GND Pin. Battery is installed (4.2V) We recommended the 3.7 - 3.8 V battery, check our wiki about the bat usage guide: wiki.seeedstudio.com Getting Started with Seeed Studio XIAO ESP32S3 Series | Seeed Studio Wiki Getting Started with Seeed Studio XIAO ESP32S3 Series. And 10 of 15 sensors worked great on your batteries, are those 10 sensors all based on XIAO ESP32S3? Perhaps for easy cross reference, you can try switching a 3.7V Lithium battery with JST connector, try powering XIAO in the BAT pad directly and see if you can get a stable 3.3V output on the pins you wish to use."
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2025-03-11T01:59:53.644Z",
+     "text": "Seeed_Kevin: The GND pad of your battery should be isolated with the XIAO\u2019s GND Pin. Indeed I got this WRONG! , DO NOT common those GND\u2019s (isolate the Battery) I did this for extra drive current for a FET connected relay and needed to use the battery directly, The Xiao didn\u2019t like it, It does work However it is prone to oscillations on the BASE or Gate forget which, but that was connected to the relay, If you touched it with your finger it would CHATTER the relay fierce I do LOVE me a 3.85Vdc Round Lipo battery 450Mah (with O&amp;U prot) Xiao likes it too. Last for over a month on single charge seems the 450Mah is the sweet spot for the charge controller in there. @Wobex Your on the hunt you will get it. GL PJ image0000001200\u00d71200 106 KB OUR AI boi says this: On the Xiao ESP32S3, the battery GND (BATT_GND pad) should be isolated from the main GND unless properly managed. Why Isolating BATT_GND Matters? The battery pads (VBAT &amp; BATT_GND) are part of the power management circuit. Connecting BATT_GND to the main GND directly bypasses the built-in charging and power protection. This could lead to incorrect voltage regulation, possible short circuits, or even prevent proper battery charging."
+    },
+    {
+     "username": "cgwaltney",
+     "created_at": "2025-03-11T04:04:29.681Z",
+     "text": "MTVachev: I programmed the Seeed Studio XIAO ESP32S3 Sense to take pictures every 3 seconds and save them to the sd card, but it only happens when the board is powered via the usb-c port. take and save in 3 seconds is probably a heavy lift and the camera is known to draw power and heat\u2026 so i am thinking the battery doesnt have the horsepower or the staying power to handle that workload\u2026 you may try changing the speed to 30 seconds\u2026 but i dont think the battery has the amp draw capacity for that type of work image1920\u00d71080 247 KB 2v cutoff voltage is way below XIAO Brownout level\u2026 even thought is says it can deliver 10-15 amps\u2026 \u2026 I think the batteries are discharged or have an internal short \u2026 maybe try adding a capacitor across the power rail\u2026 also try applying 3.7v at the battery terminals from a power supply"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2025-03-11T04:28:51.540Z",
+     "text": "Hi there, LOL, I\u2019m thinking the Wait on Serial is messing him up code wise? HTH GL PJ"
+    },
+    {
+     "username": "Wobex",
+     "created_at": "2025-03-11T09:45:50.982Z",
+     "text": "PJ_Glasso: The more i look at it GPIO9 is hitting me funny. I use RTC_GPIO_08/09 for measuring and USB voltage detection because I can isolate them from the Xiao\u2019s IO-matrix and minimize the leakage current in deepsleep. See rtc_gpio_isolate(rtc-gpio-pinnr). btw: the i2c communication and climate data measuring works fine. Seeed_Kevin: Hmm, that doesn\u2019t sound right. The GND pad of your battery should be isolated with the XIAO\u2019s GND Pin. Well, looking to the Seeedstudio wiring diagrams of the Xiao esp32s3 there is no isolated GND for battery and Xiao. Look at the battery charging circuit: XIAO charging cicuit581\u00d7250 14.2 KB The battery seems to be connected to the common ground, doesn\u2019t it? Let\u2019s have a look at the voltage regulator circuit: 3V3 voltage regulator1073\u00d7382 30.8 KB As you can see there is one input VBat (that is + bat) and one input VBus (that is the external 5V USB power supply). There is no isolated input f\u00fcr - bat. This circuit and the charging circuit are both referenced to common GND. So if we really should isolate - bat from common GND I suggest to correct the schematics. Seeed_Kevin: We recommended the 3.7 - 3.8 V battery, check our wiki about the bat usage guide: Yes of course, but the inbuild charger stops charging the bat at about 4.2V. So this is the voltage you got when the battery is fully loaded. I appriciate your help!"
+    },
+    {
+     "username": "cgwaltney",
+     "created_at": "2025-03-11T16:42:04.420Z",
+     "text": "i was going to ask\u2026 but he said it was a power issue\u2026 so i move forward from there"
+    },
+    {
+     "username": "msfujino",
+     "created_at": "2025-03-11T23:56:50.153Z",
+     "text": "Hi Wobek, Comparing the photo to the schematic, I have a few questions. Is the actual circuit the schematic below? Or is it different? where does J8 appear in the photo? And is it connected? schematic1348\u00d7852 136 KB"
+    },
+    {
+     "username": "Renars_Liepins",
+     "created_at": "2025-03-12T07:15:35.943Z",
+     "text": "Hi everyone, I\u2019m considering buying the Seeed Studio XIAO ESP32S3 Sense for a wearable camera project that takes pictures every 30 seconds, stores them locally, and uploads them to the cloud when charging for daily activity classification. Before purchasing, I want to understand how to power it with a battery, preferably without soldering. I saw others had issues running it on battery alone\u2014does anyone have a reliable setup? A few questions: Which battery should I buy? I couldn\u2019t find one on the Seeed store. How do I connect it without soldering? Will it power on automatically from a battery, or is extra setup needed? Any beginner-friendly advice would be greatly appreciated! Thanks!"
+    },
+    {
+     "username": "Wobex",
+     "created_at": "2025-03-12T08:13:48.229Z",
+     "text": "Thank\u2019s for your question! J8 is not existent on the PCB. And bat+ / bat- is exactly connected via J7 like you added it. The additional pin header J5 that you can see in the photo is to connect an e-paper display. It is not part of the schematic."
+    },
+    {
+     "username": "msfujino",
+     "created_at": "2025-03-12T09:50:13.979Z",
+     "text": "Since the actual device is not on my desk, it may be difficult to give reliable advice. Use the simplest Blink sketch to see how it works with a USB connection, but not with a battery. Be sure to use the following sketches. void setup() { pinMode(LED_BUILTIN, OUTPUT); } void loop() { digitalWrite(LED_BUILTIN, LOW); delay(50); digitalWrite(LED_BUILTIN, HIGH); delay(50); } Both JST and USB are connected and USB is connected to PC The battery is charged and the red LED blinks about every second. The yellow LED will flash every 0.1 second depending on the bulink sketch. Once confirmed LEDs, disconnect the USB from the PC. The red LED will turn off and the yellow LED will flash every 0.1 second. If Blink does not work with batteries, measure the voltage according to the following procedure while running Blink without USB connected. XIAO\u2019s 3V3 pin 2.The metal part of the terminal of the red wire of JST 3.The battery\u2019s positive terminal (Be sure to connect the black probe of the multimeter to the GND pin of the XIAO, not to the appropriate GND) If you check, let us know the results."
+    },
+    {
+     "username": "msfujino",
+     "created_at": "2025-03-12T23:21:03.136Z",
+     "text": "Wobex, Can you post a close-up photo of the GYBMEP board and resistors R1, R2, R3, and R4 so that we can see their color codes, and the battery label? We can check the resistor values and see if LDOs, pull-up resistors or level shifters are implemented on the GYBMEP."
+    },
+    {
+     "username": "Wobex",
+     "created_at": "2025-03-13T09:37:48.006Z",
+     "text": "Thank\u2019s msfujino! The BME280 breakout boord has no LDO and no level shifters, but 10K pullups on SDA, SCL and - in the 6-pin version, which is also availabe - CSB and a 10K pulldown on SDO which is the i2c address select bit in i2c mode. So thank you for this hint. I connected SDO permanently to 3V3 of my PCB. If I use the 4-pin breakout board as shown in my photo there will be no problem because the the CSB and SDO pins are not existent. Using the 6-pin version would lead to a leakage current of 3V3/10K = 33\u00b5A via SDO. Not good - one more thing to keep in mind for the next PCB version. The resistor values are correct - minimum quadrupple checked! As I wrote: If powered by USB all devices work fine. Climatic data measuring is plausible, battery voltage monitoring is surprisingly correct (it\u2019s a quite high impedance voltage divider!), deep sleep and necessary time correction works as expected. The e-paper display (J5 in the photo) is driven correctly and yes even the charging of the batteries is ok. But a few devices simply won\u2019t run on battery. Same code, same hardware. Yesterday I checked again as you suggested with a blinky program. I erased the flash and uploaded the five line blinky program. It ran correctly if powerd by USB only. It ran correctly if powered by USB with a fully charged battery inserted, the charging LED blinked as expected. If I pulled the USB cable the Xiao stopped immediately - no more blinking. With battery inserted and USB pulled I could measure 3.3V from the 3V3-pin of the Xiao to it\u2019s GND pin but the device did simply do absolutely nothing. I allready described this behavoir. And then out of the blue sitting for some hours on my shelf of electronic waste - battery still inserted - that mean little thing started to blink! Gosh! We came to the following decision: Given that let\u2019s say slightly quirky behavior (which I\u2019m quite sure now is caused by some deep sleep bugs - I just read an espressif document about flash behavior in light and deep sleep which really puzzled me) together with the almost unreachable boot and reset pushbuttons and the uncomfortable battery connection (yes I know, we can do a better PCB to solve this) we will be looking out for another platform. Which is a pitty because the Xiao really is a neat little sexy thing. Well, the prototype series of 15 devices now has been manufactured and we will do some long time testing with the flawless running devices. The quirky ones are going to our student\u2019s microcontroller lab - they should have the time and the motivation to find out, what was going wrong. If so I will let them post their results here. Thank you all again for your help!"
+    },
+    {
+     "username": "msfujino",
+     "created_at": "2025-03-13T10:29:34.252Z",
+     "text": "One last question. If I run the problematic device with just XIAO and battery, without mounting it on the board, will the same problem occur? In other words, is the problem with the board or with the XIAO?"
+    },
+    {
+     "username": "Wobex",
+     "created_at": "2025-03-13T12:14:57.993Z",
+     "text": "Good question! The boards were assembled by two students and we only encountered the problems very late because they tested - very optimistic - USB powered only. Since then we change our modus operandi: Upload program an web files to the unmounted pure Xiao Test the basic functions: Configuration web site, deep sleep, MQTT publishing, will the onboard LED live or die? Solder battery cable to Xiao Test the bassic function again USB and battery powered! Bat pad soldering is prone to mistakes! Glue battery cabel, solder pin headers carefully Put Xiao in a fully equipped breadboard test environment which emulates the PCB board and test all functions running on USB and running on battery. Basic functions, measuring of climatic data, battery voltage monitoring, battery charging, ext 5V detection, and for some driving e-paper display Assemble PCB board with all peripheral components and the tested Xiao Do the final test run. We did this with the last 4 or 5 devices and they all were running flawlessly. So I tend to think that we have no board problem. (Ok, I have to rethink the inbuild battery protection but\u2026 uhh, no I think that can\u2019t be a problem) We will unsolder a Xiao from a quirky device and do the test you suggested. It will take a while but I\u2019ll report back."
+    },
+    {
+     "username": "msfujino",
+     "created_at": "2025-03-13T22:47:14.970Z",
+     "text": "Two tips. If the BME280 board without LDOs is selected, the consumption current will be reduced by about 20 uA. When S3 is in sleep mode, is BME280 also in sleep mode?"
+    },
+    {
+     "username": "PJ_Glasso",
+     "created_at": "2025-03-13T23:21:58.043Z",
+     "text": "PJ_Glasso: void loop() { Serial.print(\"Temperature = \"); Serial.print(bme.readTemperature()); Serial.println(\" \u00b0C\"); delay(2000); } Man, You definitely got a handle on this, I did some looking and found out about \u201cForced\u201d mode Saves running power based on the sample rate! , You knew that \u2026 According to the BME280 datasheet, the typical power consumption is based on the data refresh rate, which is normally quoted for 1 Hz operation. Since the provided code reads data at 0.5 Hz (one sample every 2 seconds), the power consumption will be lower than the values listed for 1 Hz operation. FROM the datasheet\u2026 Average current consumption (typ.) (1Hz data refresh rate) 1.8 \u03bcA @ 1 Hz (H, T) 2.8 \u03bcA @ 1 Hz (P, T) 3.6 \u03bcA @ 1 Hz (H, P, T) T = temperature Average current consumption in sleep mode 0.1 \u03bcA The BME280 power consumption scales approximately linearly with sample rate. The provided typical values at 1 Hz are: Humidity + Temperature (H, T): 1.8 \u03bcA Pressure + Temperature (P, T): 2.8 \u03bcA Humidity + Pressure + Temperature (H, P, T): 3.6 \u03bcA Sleep mode: 0.1 \u03bcA Since the given code reads only temperature (bme.readTemperature()), it falls under T-only operation. At 1 Hz, temperature-only mode would typically be around 1.8 \u03bcA. Since the sample rate in the code is 0.5 Hz (half of 1 Hz), we can estimate the average current draw as: 1.8 \u03bcA ----- =0.9 \u03bcA (approximate) 2 BME280 in Sleep Mode (Most of the Time) The BME280 automatically enters sleep mode (0.1 \u03bcA) between measurements. Since the delay(2000); is much longer than the sensor\u2019s measurement time (~1.5 ms), it will be in sleep mode most of the time. I2C Power Consumption If the microcontroller keeps the I2C bus active, there could be additional power drain from pull-up resistors (typically in the \u03bcA range). MCU Power Consumption Dominates The BME280 is ultra-low power, so the MCU\u2019s power consumption (e.g., nRF52840) will be significantly higher than the sensor\u2019s sub-\u03bcA draw. considering this: AI suggest this code #include &lt;Wire.h&gt; #include &lt;Adafruit_Sensor.h&gt; #include &lt;Adafruit_BME280.h&gt; #include &lt;esp_sleep.h&gt; #define SEALEVELPRESSURE_HPA (1013.25) Adafruit_BME280 bme; // I2C void setup() { Serial.begin(115200); Wire.begin(); if (!bme.begin(0x76)) { Serial.println(\"BME280 not found! Check wiring.\"); while (1); } // Set BME280 to Forced Mode (low power) bme.setSampling( Adafruit_BME280::MODE_FORCED, Adafruit_BME280::SAMPLING_X1, Adafruit_BME280::SAMPLING_NONE, Adafruit_BME280::SAMPLING_NONE, Adafruit_BME280::FILTER_OFF ); Serial.println(\"BME280 Initialized. Taking measurement...\"); // Take a single measurement bme.takeForcedMeasurement(); Serial.print(\"Temperature = \"); Serial.print(bme.readTemperature()); Serial.println(\" \u00b0C\"); // Configure ESP32C6 to wake up after 2 seconds esp_sleep_enable_timer_wakeup(2000000); // 2 seconds in microseconds Serial.println(\"Going to deep sleep...\"); esp_deep_sleep_start(); } void loop() { // ESP32C6 will never reach here; it resets after deep sleep. } This code: Uses Forced Mode for BME280 (auto-sleeps after reading). Puts ESP32C6 into deep sleep for 2 seconds (instead of delay(2000);). Wakes up using RTC Timer to read BME280 again. Dramatically reduces power consumption! Expected Power Savings Mode ESP32C6 Power Draw BME280 Power Draw Total Always On (delay(2000)) ~20mA ~1.8\u00b5A ~20mA Forced Mode (BME280 auto-sleeps) ~20mA (active) 0.9\u00b5A ~20mA Deep Sleep Mode (ESP32C6 sleeps) 10-20\u00b5A 0.1\u00b5A 10-20\u00b5A Massive power savings! Your battery will last MUCH longer. I\u2019ll be testing it time permitting , I have a BME280 here somewhere I thought it worthy a highlight HTH GL PJ"
+    },
+    {
+     "username": "msfujino",
+     "created_at": "2025-03-13T23:37:49.366Z",
+     "text": "PJ, Here is an example of nRF52840, previously reported. XIAO_BLE wakes up from System_ON_Sleep and Writes weather data to on-board Flash XIAO In post 6, I did not know how to release the internal Flash from DeepPowerDown mode (DPD), so I used it without DPD. As a result, the current during the sleep period only dropped to 26uA. Since post 7, we have discussed how to release from DPD, and I have confirmed that Flash will release from DPD using SPIClass. Also, the BME280 breakout board had a mounted LDO and level shifter, which consumed current, so I changed to a breakout board that did not have these mounted. With these measures, I\u2026"
+    }
+   ]
+  }
+ }
+}

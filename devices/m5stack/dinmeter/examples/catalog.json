@@ -1,0 +1,834 @@
+{
+ "$schema-note": "Example catalogue for M5Stack DinMeter (K134 / K134-V11). Every meaningful discovered example has a disposition, including rejected and inaccessible candidates.",
+ "device": [
+  "m5stack/dinmeter",
+  "m5stack/dinmeter-v1.1"
+ ],
+ "generated": "2026-09-04",
+ "global": {
+  "build_environment": "none - no toolchain installed and no hardware available during this pass",
+  "all_build_statuses": "not-attempted",
+  "framework_versions_referenced": {
+   "arduino_board_package": "M5Stack Arduino Board Manager v2.1.1 (named in every vendor example header)",
+   "M5DinMeter": "1.0.0",
+   "M5Unified": ">=0.1.13 declared; 0.2.21 current",
+   "M5GFX": "0.2.28 current",
+   "platformio_platform": "espressif32@6.3.1 (pinned by M5Stack's factory project)",
+   "LovyanGFX": "1.1.12 (pinned)",
+   "SmoothUIToolKit": "1.0.1 (pinned)",
+   "mathertel/RotaryEncoder": "1.5.3 (pinned by Launcher)"
+  }
+ },
+ "examples": [
+  {
+   "id": "OFF-01",
+   "title": "encoder.ino",
+   "author": "SeanKwok (shaoxiang@m5stack.com), M5Stack",
+   "source_class": "primary",
+   "url": "https://github.com/m5stack/M5DinMeter/blob/main/examples/Basic/encoder/encoder.ino",
+   "immutable_url": "https://github.com/m5stack/M5DinMeter/blob/8ccbad7297beb82a140f812e5606e060d8a5e0dc/examples/Basic/encoder/encoder.ino",
+   "commit": "8ccbad7297beb82a140f812e5606e060d8a5e0dc",
+   "release": "1.0.0",
+   "file_date": "2024-03-07",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-08-03",
+   "device": "K134 (applies unchanged to K134-V11)",
+   "framework": "Arduino, M5Stack board pkg v2.1.1",
+   "features": [
+    "rotary encoder",
+    "button",
+    "display",
+    "buzzer"
+   ],
+   "resources": [
+    "GPIO41",
+    "GPIO40",
+    "GPIO42",
+    "GPIO4-9",
+    "GPIO3"
+   ],
+   "dependencies": {
+    "M5DinMeter": "1.0.0",
+    "M5Unified": ">=0.1.13"
+   },
+   "license": "unknown",
+   "license_evidence": "No LICENSE file exists at the pinned commit and GitHub reports no licence for m5stack/M5DinMeter. The README lists MIT only for M5GFX and M5Unified, and 'original' for the bundled PJRC Encoder.",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "Shows the enableEncoder=true argument, the single most common omission",
+    "Demonstrates read/readAndReset/write and pressedFor(5000)",
+    "Adds a 20 ms 8 kHz click per detent - a good UX pattern"
+   ],
+   "pitfalls": [
+    "begin() defaults enableEncoder=false",
+    "x4 decoding: one detent is four counts, and the example does not say so"
+   ],
+   "selected": true,
+   "selection_reason": "Best minimal example for the device's defining feature."
+  },
+  {
+   "id": "OFF-02",
+   "title": "display.ino",
+   "author": "SeanKwok (shaoxiang@m5stack.com), M5Stack",
+   "source_class": "primary",
+   "url": "https://github.com/m5stack/M5DinMeter/blob/main/examples/Basic/display/display.ino",
+   "immutable_url": "https://github.com/m5stack/M5DinMeter/blob/8ccbad7297beb82a140f812e5606e060d8a5e0dc/examples/Basic/display/display.ino",
+   "commit": "8ccbad7297beb82a140f812e5606e060d8a5e0dc",
+   "release": "1.0.0",
+   "file_date": "2024-03-07",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-08-03",
+   "device": "K134 (applies unchanged to K134-V11)",
+   "framework": "Arduino, M5Stack board pkg v2.1.1",
+   "features": [
+    "display"
+   ],
+   "resources": [
+    "SPI2_HOST",
+    "GPIO4-9"
+   ],
+   "dependencies": {
+    "M5DinMeter": "1.0.0",
+    "M5Unified": ">=0.1.13"
+   },
+   "license": "unknown",
+   "license_evidence": "No LICENSE file exists at the pinned commit and GitHub reports no licence for m5stack/M5DinMeter. The README lists MIT only for M5GFX and M5Unified, and 'original' for the bundled PJRC Encoder.",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "Shortest path to pixels",
+    "Shows both DinMeter.Display and a raw LovyanGFX* draw function"
+   ],
+   "pitfalls": [
+    "Does not show setRotation or setBrightness",
+    "Hides the GRAM offset - M5GFX applies it internally, which conceals something you must know if you drop to raw LovyanGFX"
+   ],
+   "selected": true,
+   "selection_reason": "Best minimal display example."
+  },
+  {
+   "id": "OFF-03",
+   "title": "rtc.ino",
+   "author": "SeanKwok (shaoxiang@m5stack.com), M5Stack",
+   "source_class": "primary",
+   "url": "https://github.com/m5stack/M5DinMeter/blob/main/examples/Basic/rtc/rtc.ino",
+   "immutable_url": "https://github.com/m5stack/M5DinMeter/blob/8ccbad7297beb82a140f812e5606e060d8a5e0dc/examples/Basic/rtc/rtc.ino",
+   "commit": "8ccbad7297beb82a140f812e5606e060d8a5e0dc",
+   "release": "1.0.0",
+   "file_date": "2024-03-07",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-08-03",
+   "device": "K134 (applies unchanged to K134-V11)",
+   "framework": "Arduino, M5Stack board pkg v2.1.1",
+   "features": [
+    "RTC",
+    "Wi-Fi",
+    "SNTP",
+    "display"
+   ],
+   "resources": [
+    "GPIO11",
+    "GPIO12",
+    "radio"
+   ],
+   "dependencies": {
+    "M5DinMeter": "1.0.0",
+    "M5Unified": ">=0.1.13",
+    "WiFi": "Arduino core"
+   },
+   "license": "unknown",
+   "license_evidence": "No LICENSE file exists at the pinned commit and GitHub reports no licence for m5stack/M5DinMeter. The README lists MIT only for M5GFX and M5Unified, and 'original' for the bundled PJRC Encoder.",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "The only vendor example exercising two subsystems together (RTC + Wi-Fi)",
+    "Handles the esp_sntp.h / sntp.h header split across IDF versions with __has_include",
+    "Explicitly recommends keeping the RTC in UTC",
+    "Lands the time-set on a second boundary"
+   ],
+   "pitfalls": [
+    "Hardcoded SSID/password placeholders",
+    "Busy-waits on WiFi.status()"
+   ],
+   "selected": true,
+   "selection_reason": "Best integrated example; also the de-facto Wi-Fi example."
+  },
+  {
+   "id": "OFF-04",
+   "title": "wakeup.ino",
+   "author": "SeanKwok (shaoxiang@m5stack.com), M5Stack",
+   "source_class": "primary",
+   "url": "https://github.com/m5stack/M5DinMeter/blob/main/examples/Basic/wakeup/wakeup.ino",
+   "immutable_url": "https://github.com/m5stack/M5DinMeter/blob/8ccbad7297beb82a140f812e5606e060d8a5e0dc/examples/Basic/wakeup/wakeup.ino",
+   "commit": "8ccbad7297beb82a140f812e5606e060d8a5e0dc",
+   "release": "1.0.0",
+   "file_date": "2024-03-07",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-08-03",
+   "device": "K134 (applies unchanged to K134-V11)",
+   "framework": "Arduino, M5Stack board pkg v2.1.1",
+   "features": [
+    "power latch",
+    "RTC alarm",
+    "power-off",
+    "button"
+   ],
+   "resources": [
+    "GPIO46",
+    "GPIO42",
+    "RTC"
+   ],
+   "dependencies": {
+    "M5DinMeter": "1.0.0",
+    "M5Unified": ">=0.1.13"
+   },
+   "license": "unknown",
+   "license_evidence": "No LICENSE file exists at the pinned commit and GitHub reports no licence for m5stack/M5DinMeter. The README lists MIT only for M5GFX and M5Unified, and 'original' for the bundled PJRC Encoder.",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "Demonstrates the most device-specific behaviour there is: timerSleep() programmes the BM8563 alarm and then RELEASES the GPIO46 latch - a power-off with an alarm, not an ESP32 deep sleep",
+    "Comments show all three timerSleep overloads and powerOff()"
+   ],
+   "pitfalls": [
+    "Does not explain why the board dies if GPIO46 is not held - the failure mode most users hit first"
+   ],
+   "selected": true,
+   "selection_reason": "Best example of the board's defining power architecture; a limit-testing example in practice."
+  },
+  {
+   "id": "OFF-05",
+   "title": "buzzer.ino",
+   "author": "SeanKwok (shaoxiang@m5stack.com), M5Stack",
+   "source_class": "primary",
+   "url": "https://github.com/m5stack/M5DinMeter/blob/main/examples/Basic/buzzer/buzzer.ino",
+   "immutable_url": "https://github.com/m5stack/M5DinMeter/blob/8ccbad7297beb82a140f812e5606e060d8a5e0dc/examples/Basic/buzzer/buzzer.ino",
+   "commit": "8ccbad7297beb82a140f812e5606e060d8a5e0dc",
+   "release": "1.0.0",
+   "file_date": "2024-03-07",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-08-03",
+   "device": "K134 (applies unchanged to K134-V11)",
+   "framework": "Arduino, M5Stack board pkg v2.1.1",
+   "features": [
+    "buzzer"
+   ],
+   "resources": [
+    "GPIO3",
+    "LEDC"
+   ],
+   "dependencies": {
+    "M5DinMeter": "1.0.0",
+    "M5Unified": ">=0.1.13"
+   },
+   "license": "unknown",
+   "license_evidence": "No LICENSE file exists at the pinned commit and GitHub reports no licence for m5stack/M5DinMeter. The README lists MIT only for M5GFX and M5Unified, and 'original' for the bundled PJRC Encoder.",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "Minimal; shows tone(freq, ms)"
+   ],
+   "pitfalls": [
+    "Blocking delay(1000) between tones"
+   ],
+   "selected": false,
+   "selection_reason": "Superseded for portfolio purposes by OFF-01, which uses the buzzer in context. Retained for completeness."
+  },
+  {
+   "id": "OFF-06",
+   "title": "button.ino",
+   "author": "SeanKwok (shaoxiang@m5stack.com), M5Stack",
+   "source_class": "primary",
+   "url": "https://github.com/m5stack/M5DinMeter/blob/main/examples/Basic/button/button.ino",
+   "immutable_url": "https://github.com/m5stack/M5DinMeter/blob/8ccbad7297beb82a140f812e5606e060d8a5e0dc/examples/Basic/button/button.ino",
+   "commit": "8ccbad7297beb82a140f812e5606e060d8a5e0dc",
+   "release": "1.0.0",
+   "file_date": "2024-03-07",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-08-03",
+   "device": "K134 (applies unchanged to K134-V11)",
+   "framework": "Arduino, M5Stack board pkg v2.1.1",
+   "features": [
+    "button",
+    "display",
+    "buzzer"
+   ],
+   "resources": [
+    "GPIO42"
+   ],
+   "dependencies": {
+    "M5DinMeter": "1.0.0",
+    "M5Unified": ">=0.1.13"
+   },
+   "license": "unknown",
+   "license_evidence": "No LICENSE file exists at the pinned commit and GitHub reports no licence for m5stack/M5DinMeter. The README lists MIT only for M5GFX and M5Unified, and 'original' for the bundled PJRC Encoder.",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "Shows wasPressed/wasReleased"
+   ],
+   "pitfalls": [
+    "Redundant with OFF-01"
+   ],
+   "selected": false,
+   "selection_reason": "Subsumed by OFF-01."
+  },
+  {
+   "id": "OFF-07",
+   "title": "M5DinMeter-UserDemo (factory firmware)",
+   "author": "Forairaaaaa / M5Stack",
+   "source_class": "primary",
+   "url": "https://github.com/m5stack/M5DinMeter-UserDemo",
+   "immutable_url": "https://github.com/m5stack/M5DinMeter-UserDemo/tree/d2fdfe44e9baf810f82335faa6f5962e9fc59a44",
+   "commit": "d2fdfe44e9baf810f82335faa6f5962e9fc59a44",
+   "release": "V0.1",
+   "release_date": "2024-03-04",
+   "retrieved": "2026-09-04",
+   "last_activity": "2024-03-04",
+   "device": "K134 (the shipped image)",
+   "framework": "Arduino via PlatformIO, espressif32@6.3.1, board esp32-s3-devkitc-1",
+   "features": [
+    "display",
+    "encoder",
+    "button",
+    "buzzer",
+    "RTC",
+    "Wi-Fi",
+    "BLE",
+    "GPIO/Grove",
+    "game"
+   ],
+   "resources": [
+    "all board peripherals"
+   ],
+   "dependencies": {
+    "lovyan03/LovyanGFX": "1.1.12",
+    "forairaaaaa/SmoothUIToolKit": "1.0.1"
+   },
+   "license": "MIT (LICENSE, (c) 2024 M5Stack) - MIXED-LICENCE ARCHIVE: bundles PJRC Encoder, ESP32Encoder, I2C_BM8563 and Button, each with its own licence file under lib/",
+   "license_evidence": "LICENSE at repository root; per-library LICENSE / licence.txt under lib/",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "The only complete integrated application",
+    "Contains ft_disp_lgfx_cfg.hpp - the authoritative raw-LovyanGFX panel config (offset 52/40, invert true, 40 MHz write, backlight PWM 200 Hz on channel 7)",
+    "Every dependency pinned, so it should be reproducible",
+    "MIT, so it is a legitimate starting point"
+   ],
+   "pitfalls": [
+    "Uses a generic esp32-s3-devkitc-1 board, not a DinMeter profile",
+    "No partition table specified",
+    "Untouched since 2024-03-04",
+    "Its 200 Hz backlight PWM conflicts with Espressif's 5 kHz"
+   ],
+   "vendored": true,
+   "local_path": "artifacts/source-snapshots/M5DinMeter-UserDemo-d2fdfe44e9baf810f82335faa6f5962e9fc59a44.tar.gz",
+   "selected": true,
+   "selection_reason": "Best integrated application, and the reference for the raw-LovyanGFX path."
+  },
+  {
+   "id": "OFF-08",
+   "title": "espressif/esp-board-manager - m5stack_dinmeter board definition",
+   "author": "Espressif Systems",
+   "source_class": "primary",
+   "url": "https://github.com/espressif/esp-board-manager/tree/main/m5stack_boards/m5stack_dinmeter",
+   "immutable_url": "https://github.com/espressif/esp-board-manager/tree/2beb9b22b0892b343bd555a1ebc9929a7edce8fc/m5stack_boards/m5stack_dinmeter",
+   "commit": "2beb9b22b0892b343bd555a1ebc9929a7edce8fc",
+   "commit_date": "2026-09-03",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-09-03",
+   "device": "K134 (board_info version 1.0.0)",
+   "framework": "ESP-IDF",
+   "features": [
+    "display",
+    "backlight",
+    "encoder (PCNT)",
+    "buzzer (LEDC)",
+    "RTC bus",
+    "power hold",
+    "wake button"
+   ],
+   "resources": [
+    "SPI2_HOST",
+    "LEDC ch0/timer0 + ch1/timer1",
+    "PCNT 1 unit / 2 channels",
+    "I2C port 0",
+    "GPIO46",
+    "GPIO42"
+   ],
+   "dependencies": {
+    "esp-idf": "unspecified; uses the built-in esp_lcd_panel_st7789"
+   },
+   "license": "not verified at file level; esp-board-manager is an Espressif project (their projects are typically Apache-2.0)",
+   "license_evidence": "not checked in this pass - recorded as unverified rather than assumed",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "The most accurate technical description of this board that exists anywhere, vendor documentation included",
+    "Documents the GRAM gap (column +52, row +40) and why the application must apply it",
+    "Documents the two-channel PCNT quadrature pattern and why GPIO40/41 look double-booked",
+    "Documents a real ESP32-S3 build break: en_step_notify_* require SOC_PCNT_SUPPORT_STEP_NOTIFY",
+    "Resolves the vendor pin table's GPIO3-vs-GPIO42 ambiguity by citing M5Unified source",
+    "Explicitly lists what it does NOT model"
+   ],
+   "pitfalls": [
+    "Its Grove wire-colour note derives from M5Stack's disputed PinMap, so it is a reproduction and not independent corroboration",
+    "Does not model the RTC device, the Grove ports, the charger or USB"
+   ],
+   "vendored": true,
+   "local_path": "artifacts/source-snapshots/dinmeter-board_{info,devices,peripherals}.yaml",
+   "selected": true,
+   "selection_reason": "Best maintained and reproducible ESP-IDF starting point; also, in practice, the best documentation."
+  },
+  {
+   "id": "COM-01",
+   "title": "bmorcelli/Launcher - m5stack-dinmeter board target",
+   "author": "Bruno Morcelli",
+   "source_class": "community",
+   "url": "https://github.com/bmorcelli/Launcher/blob/main/boards/m5stack-dinmeter/platformio.ini",
+   "immutable_url": "branch link only - no release was pinned at capture time; content captured 2026-09-04",
+   "commit": "main as of 2026-09-04",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-09-04",
+   "stars": 2054,
+   "device": "K134/K134-V11",
+   "framework": "Arduino via PlatformIO",
+   "features": [
+    "display",
+    "encoder",
+    "battery ADC",
+    "SD card over both Grove ports",
+    "USB CDC"
+   ],
+   "resources": [
+    "GPIO4-9",
+    "GPIO40/41",
+    "GPIO10",
+    "GPIO1/2/13/15"
+   ],
+   "dependencies": {
+    "mathertel/RotaryEncoder": "1.5.3"
+   },
+   "license": "MIT",
+   "license_evidence": "repository LICENSE",
+   "build_status": "not-attempted here, but built by the project's own CI (.github/workflows/main.yml includes { env: \"m5stack-dinmeter\" })",
+   "run_status": "reported-working - distributed as Launcher-m5stack-dinmeter.bin, MD5 bccbefef5284357a2a7c3c7cc196fd98, mapped in support_files/m5burner_post.py",
+   "test_environment": "the project's GitHub Actions matrix",
+   "strengths": [
+    "Independent corroboration of the display pins, the GRAM offsets (52/40 and 53/40), the battery divider ratio 2.0, and the absence of PSRAM",
+    "Demonstrates a software-SPI SD card across BOTH Grove ports (CS=13 SCK=15 MISO=2 MOSI=1) - the only evidenced way to add storage to this board",
+    "Publishes a real partition layout (custom_8Mb.csv, SPIFFS threshold 0x2F0000)",
+    "Actively maintained; last push the day of capture"
+   ],
+   "pitfalls": [
+    "The project README contradicts itself: the port is listed once as [x] and once as [ ] (Beta)",
+    "Uses generic board = esp32s3 rather than a DinMeter profile"
+   ],
+   "vendored": true,
+   "local_path": "artifacts/source-snapshots/launcher-m5stack-dinmeter-platformio.ini",
+   "selected": true,
+   "selection_reason": "Best independent cross-check of the pin map, and a practical limit-testing example for Grove-pin reuse."
+  },
+  {
+   "id": "COM-02",
+   "title": "no-body-in-particular/m5din-hikoki",
+   "author": "no-body-in-particular",
+   "source_class": "community",
+   "url": "https://github.com/no-body-in-particular/m5din-hikoki",
+   "immutable_url": "branch link only; no commit pinned at capture",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-05-05",
+   "stars": 25,
+   "device": "DinMeter",
+   "framework": "Arduino/C++",
+   "features": [
+    "display",
+    "encoder",
+    "external measurement"
+   ],
+   "resources": [],
+   "dependencies": {},
+   "license": "not recorded at capture",
+   "license_evidence": "GitHub repository licence field",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "Most-starred DinMeter application found anywhere",
+    "A real instrument use case: HiKOKI power-tool battery analyser"
+   ],
+   "pitfalls": [
+    "Not inspected in depth in this pass"
+   ],
+   "selected": false,
+   "selection_reason": "Highest-profile community application; catalogued but not read line-by-line."
+  },
+  {
+   "id": "COM-03",
+   "title": "Shark17e/M5DinMeter-KilnController",
+   "author": "Shark17e",
+   "source_class": "community",
+   "url": "https://github.com/Shark17e/M5DinMeter-KilnController",
+   "immutable_url": "branch link only; no commit pinned at capture",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-08-08",
+   "stars": 1,
+   "device": "DinMeter",
+   "framework": "Arduino/C++",
+   "features": [
+    "display",
+    "encoder",
+    "PID control",
+    "temperature curves"
+   ],
+   "resources": [],
+   "dependencies": {},
+   "license": "NOASSERTION",
+   "license_evidence": "GitHub repository licence field",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "The archetypal use case: a panel-mounted process controller",
+    "Most recently active application project"
+   ],
+   "pitfalls": [
+    "Licence not asserted, so code should not be copied without asking",
+    "Italian-language documentation"
+   ],
+   "selected": false,
+   "selection_reason": "Best illustration of the intended use; not needed for feature coverage.",
+   "created": "2026-08-06"
+  },
+  {
+   "id": "COM-04",
+   "title": "kaz-mac/M5Authenticator",
+   "author": "kaz-mac",
+   "source_class": "community",
+   "url": "https://github.com/kaz-mac/M5Authenticator",
+   "immutable_url": "branch link only; no commit pinned at capture",
+   "retrieved": "2026-09-04",
+   "last_activity": "2025-04-26",
+   "stars": 2,
+   "device": "DinMeter",
+   "framework": "Arduino/C++",
+   "features": [
+    "display",
+    "encoder",
+    "RTC",
+    "TOTP"
+   ],
+   "resources": [],
+   "dependencies": {},
+   "license": "MIT",
+   "license_evidence": "GitHub repository licence field",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "Uses the RTC for something that genuinely needs accurate time",
+    "Has a DinMeter-specific UI layer (src/DinMeterUI.h) worth reading"
+   ],
+   "pitfalls": [
+    "Japanese-language documentation"
+   ],
+   "selected": false,
+   "selection_reason": "Good RTC-in-anger example; not selected only because coverage was already complete."
+  },
+  {
+   "id": "COM-05",
+   "title": "viniciusbo/m5-palnagotchi",
+   "author": "Vinicius Bo",
+   "source_class": "community",
+   "url": "https://github.com/viniciusbo/m5-palnagotchi",
+   "immutable_url": "branch link only; no commit pinned at capture",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-01-28",
+   "stars": 81,
+   "device": "DinMeter",
+   "framework": "Arduino/C++",
+   "features": [
+    "display",
+    "Wi-Fi"
+   ],
+   "resources": [],
+   "dependencies": {},
+   "license": "MIT",
+   "license_evidence": "GitHub repository licence field",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "Second-most-starred project touching the device"
+   ],
+   "pitfalls": [
+    "DinMeter is one of many targets; nothing DinMeter-specific to learn"
+   ],
+   "selected": false,
+   "selection_reason": "Multi-board project; adds no DinMeter-specific technique.",
+   "created": "2024-02-14",
+   "lineage": "forked by pfefferle/palnagotchi (star 1, 2026-03)"
+  },
+  {
+   "id": "COM-06",
+   "title": "TuF3i/DinMeterDock",
+   "author": "TuF3i",
+   "source_class": "community",
+   "url": "https://github.com/TuF3i/DinMeterDock",
+   "immutable_url": "branch link only; no commit pinned at capture",
+   "retrieved": "2026-09-04",
+   "last_activity": "2026-06-27",
+   "stars": 0,
+   "device": "DinMeter",
+   "framework": "C",
+   "features": [
+    "display",
+    "encoder"
+   ],
+   "resources": [],
+   "dependencies": {},
+   "license": "MIT",
+   "license_evidence": "GitHub repository licence field",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "Clean hardware-abstraction split (src/Config.h, src/Hardware/Display.h)"
+   ],
+   "pitfalls": [
+    "Chinese-language documentation"
+   ],
+   "selected": false,
+   "selection_reason": "Catalogued.",
+   "created": "2026-06-26"
+  },
+  {
+   "id": "COM-07",
+   "title": "tarmn3/m5dinmeter-ble-volume-knob",
+   "author": "tarmn3",
+   "source_class": "community",
+   "url": "https://github.com/tarmn3/m5dinmeter-ble-volume-knob",
+   "immutable_url": "branch link only; no commit pinned at capture",
+   "retrieved": "2026-09-04",
+   "last_activity": "2025-12-10",
+   "stars": 0,
+   "device": "DinMeter",
+   "framework": "Arduino/C++",
+   "features": [
+    "encoder",
+    "BLE HID"
+   ],
+   "resources": [],
+   "dependencies": {},
+   "license": "none declared",
+   "license_evidence": "GitHub repository licence field",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "The only BLE example found for this device"
+   ],
+   "pitfalls": [
+    "No licence declared - do not copy code from it without asking"
+   ],
+   "selected": false,
+   "selection_reason": "Only BLE example, but unlicensed, which makes it a poor thing to point people at for copying."
+  },
+  {
+   "id": "COM-08",
+   "title": "aoiastro/susuFW",
+   "author": "aoiastro",
+   "source_class": "community",
+   "url": "https://github.com/aoiastro/susuFW",
+   "immutable_url": "branch link only; no commit pinned at capture",
+   "retrieved": "2026-09-04",
+   "last_activity": "2025-09-26",
+   "stars": 1,
+   "device": "DinMeter",
+   "framework": "unknown",
+   "features": [
+    "multi-function firmware"
+   ],
+   "resources": [],
+   "dependencies": {},
+   "license": "none recorded",
+   "license_evidence": "GitHub repository licence field",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "Purpose-built multi-function firmware for this device"
+   ],
+   "pitfalls": [
+    "Not inspected; Japanese-language"
+   ],
+   "selected": false,
+   "selection_reason": "Catalogued."
+  },
+  {
+   "id": "COM-09",
+   "title": "shi78ge/DinMeter-chan",
+   "author": "shi78ge",
+   "source_class": "community",
+   "url": "https://github.com/shi78ge/DinMeter-chan",
+   "immutable_url": "branch link only; no commit pinned at capture",
+   "retrieved": "2026-09-04",
+   "last_activity": "2024-04-15",
+   "stars": 1,
+   "device": "DinMeter",
+   "framework": "Arduino/C++",
+   "features": [
+    "display"
+   ],
+   "resources": [],
+   "dependencies": {},
+   "license": "NOASSERTION",
+   "license_evidence": "GitHub repository licence field",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "Historically the first third-party project, about five weeks after launch"
+   ],
+   "pitfalls": [
+    "Stale since 2024",
+    "Licence not asserted"
+   ],
+   "selected": false,
+   "selection_reason": "Historical interest only.",
+   "created": "2024-04-14"
+  },
+  {
+   "id": "COM-10",
+   "title": "mattytrentini/chipboard - boards/m5stack_din_meter.yaml",
+   "author": "Matt Trentini",
+   "source_class": "community",
+   "url": "https://github.com/mattytrentini/chipboard/blob/main/boards/m5stack_din_meter.yaml",
+   "immutable_url": "branch link only; no commit pinned at capture",
+   "retrieved": "2026-09-04",
+   "last_activity": "unknown",
+   "stars": 0,
+   "device": "DinMeter",
+   "framework": "MicroPython",
+   "features": [
+    "MicroPython board definition"
+   ],
+   "resources": [],
+   "dependencies": {},
+   "license": "not recorded",
+   "license_evidence": "GitHub repository licence field",
+   "build_status": "not-attempted",
+   "run_status": "not-attempted",
+   "test_environment": "none",
+   "strengths": [
+    "The only non-UiFlow MicroPython route found"
+   ],
+   "pitfalls": [
+    "Not evaluated",
+    "Vanilla micropython/micropython has no DinMeter port"
+   ],
+   "selected": false,
+   "selection_reason": "Catalogued as the only generic-MicroPython lead; unverified."
+  },
+  {
+   "id": "REJ-01",
+   "title": "whatnick/din_meter_atm90e26",
+   "author": "whatnick",
+   "source_class": "community",
+   "url": "https://github.com/whatnick/din_meter_atm90e26",
+   "retrieved": "2026-09-04",
+   "device": "NOT THIS DEVICE",
+   "framework": "KiCad + Arduino",
+   "license": "n/a",
+   "build_status": "n/a",
+   "run_status": "n/a",
+   "features": [],
+   "resources": [],
+   "dependencies": {},
+   "strengths": [],
+   "pitfalls": [],
+   "selected": false,
+   "selection_reason": "REJECTED - false positive. An unrelated ATM90E26 DIN-rail energy meter whose Gerber files dominate GitHub code-search results for 'din_meter'. Recorded so the next agent does not re-chase it."
+  },
+  {
+   "id": "REJ-02",
+   "title": "EVerest / SmartEVSE-3 din_msgDefDatatypes.c",
+   "author": "various",
+   "source_class": "community",
+   "url": "https://github.com/EVerest/EVerest",
+   "retrieved": "2026-09-04",
+   "device": "NOT THIS DEVICE",
+   "framework": "C",
+   "license": "n/a",
+   "build_status": "n/a",
+   "run_status": "n/a",
+   "features": [],
+   "resources": [],
+   "dependencies": {},
+   "strengths": [],
+   "pitfalls": [],
+   "selected": false,
+   "selection_reason": "REJECTED - false positive. EV-charging DIN 70121 protocol code matching 'din_'."
+  },
+  {
+   "id": "INA-01",
+   "title": "M5Stack community forum threads",
+   "author": "various",
+   "source_class": "community",
+   "url": "https://community.m5stack.com/search?term=dinmeter",
+   "retrieved": "2026-09-04",
+   "device": "DinMeter",
+   "framework": "n/a",
+   "license": "n/a",
+   "build_status": "n/a",
+   "run_status": "n/a",
+   "features": [],
+   "resources": [],
+   "dependencies": {},
+   "strengths": [],
+   "pitfalls": [],
+   "selected": false,
+   "selection_reason": "INACCESSIBLE - the search API returns HTTP 401 (login required) and the HTML search page is a NodeBB JavaScript shell with no results in the served markup. Blocked, not empty."
+  },
+  {
+   "id": "INA-02",
+   "title": "UiFlow2 DinMeter project",
+   "author": "M5Stack",
+   "source_class": "primary",
+   "url": "https://docs.m5stack.com/en/uiflow2/m5dinmeter/program",
+   "retrieved": "2026-09-04",
+   "device": "DinMeter",
+   "framework": "UiFlow2 / MicroPython",
+   "license": "n/a",
+   "build_status": "n/a",
+   "run_status": "n/a",
+   "features": [],
+   "resources": [],
+   "dependencies": {},
+   "strengths": [],
+   "pitfalls": [],
+   "selected": false,
+   "selection_reason": "INACCESSIBLE as source - UiFlow2 is a browser block editor; the tutorial has no downloadable project file, and the runtime firmware is distributed only through M5Burner with no stable URL."
+  }
+ ],
+ "counts": {
+  "total": 22,
+  "official": 8,
+  "community": 10,
+  "rejected": 2,
+  "inaccessible": 2,
+  "selected": 7,
+  "vendored": 3,
+  "built_here": 0,
+  "hardware_tested_here": 0
+ }
+}

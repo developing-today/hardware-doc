@@ -1,0 +1,91 @@
+{
+  "schema": "xteink-media-manifest/1",
+  "device": "xteink/x4-classic",
+  "compiled": "2026-09-11",
+  "statement": "No photograph of an Xteink X4 Classic is retained in this repository. This manifest records what exists, where, under what rights, and when the definitive images become available. It is deliberately a register of absences.",
+  "images": [
+    {
+      "id": "X4C-IMG-FCC-INT",
+      "what": "FCC Internal Photos - PCB, both sides, the definitive teardown",
+      "status": "EXISTS BUT EMBARGOED",
+      "public_from": "2027-01-16",
+      "size_bytes_reported": 4718592,
+      "size_reported_as": "4.5 MB",
+      "source_page": "https://fccid.io/2BTR9-X4C",
+      "direct_url": null,
+      "rightsholder": "Shenzhen Xiaohu Xingtong Technology Co., Ltd., filed with the US FCC",
+      "local_path": null,
+      "caption": "Not yet public. Short-term confidentiality under the applicant's request of 2026-07-20.",
+      "alt": null
+    },
+    {
+      "id": "X4C-IMG-FCC-EXT",
+      "what": "FCC External Photos",
+      "status": "EXISTS BUT EMBARGOED",
+      "public_from": "2027-01-16",
+      "size_reported_as": "825.3 KB",
+      "source_page": "https://fccid.io/2BTR9-X4C",
+      "local_path": null
+    },
+    {
+      "id": "X4C-IMG-FCC-LABEL",
+      "what": "FCC ID Label and Location Info - contains a photograph of the device rear with the compliance label",
+      "status": "PUBLIC, RETAINED",
+      "retrieved": "2026-09-11",
+      "source_page": "https://fccid.io/2BTR9-X4C",
+      "direct_url": "https://fccid.io/2BTR9-X4C/Label/Label-and-Information-9480913.pdf",
+      "local_path": "../artifacts/certification/2BTR9-X4C-label.pdf",
+      "sha256": "605b978782399a0fdcf267848b5459981fd8069ec6e976e0240aff0bde72ba9c",
+      "bytes": 189803,
+      "embedded_images": 1,
+      "rightsholder": "applicant; published by the US FCC as part of an equipment-authorization record",
+      "redistribution_status": "unknown - US federal publication of a third-party submission; commonly mirrored, no explicit grant located",
+      "disposition": "repository, unstaged",
+      "caption": "Device rear in Mist White with the XTEINK wordmark, the oval magnet outline and the four-contact pogo pad at the bottom edge, photographed beside a millimetre rule with the magnetic charging adapter.",
+      "alt": "White rectangular e-reader, rear view, with a magnetic charging adapter beside it and a ruler for scale."
+    },
+    {
+      "id": "X4C-IMG-VENDOR",
+      "what": "Vendor product photography, 14 images on the Shopify CDN",
+      "status": "PUBLIC, NOT RETAINED",
+      "retrieved": "2026-09-11 (metadata only)",
+      "source_page": "https://xteink.com/products/xteink-x4-classic-pocket-ereader",
+      "example_url": "https://cdn.shopify.com/s/files/1/0759/9344/8689/files/8a4bec83b8bf4fa96b4499b1db6dd84f.jpg?v=1788789486",
+      "rightsholder": "Xteink",
+      "redistribution_status": "prohibited-by-default - vendor marketing imagery, no licence offered",
+      "disposition": "reference-only",
+      "note": "Product images were created 2026-09-05 to 2026-09-08; the Space Black hero image was uploaded 2026-09-07T06:58:05-07:00, one day after the listing went live."
+    },
+    {
+      "id": "X4C-IMG-COMMUNITY",
+      "what": "Owner photographs in launch-week Reddit reviews",
+      "status": "PUBLIC, NOT RETAINED",
+      "examples": [
+        "https://old.reddit.com/r/XTEINK/comments/1w7wjw2/ - thickness comparison against X3 and X4, and a side-by-side text-contrast shot",
+        "https://old.reddit.com/r/XTEINK/comments/1w8bfew/ - in-hand shots; the author links an uncompressed original at https://preview.redd.it/dbzhlleo7tnh1.jpeg",
+        "https://old.reddit.com/r/XTEINK/comments/1wco45y/ - 'X4 Classic with custom housing', 452 points, 2026-09-10",
+        "https://old.reddit.com/r/xteinkereader/comments/1w7tc3g/ - what is in the box"
+      ],
+      "rightsholder": "individual Reddit users",
+      "redistribution_status": "unknown - no licence offered by any poster",
+      "disposition": "reference-only",
+      "note": "All are exterior shots. None shows a PCB."
+    },
+    {
+      "id": "X4C-IMG-PCB-COMMUNITY",
+      "what": "Any community photograph of the X4 Classic PCB",
+      "status": "DOES NOT EXIST",
+      "evidence": "https://old.reddit.com/r/xteinkereader/comments/1wcgqub/ - a direct request for exactly this on 2026-09-10 drew one reply saying no such photographs had been posted and that only a handful of units were in public hands.",
+      "resolves_on": "2027-01-16 via the FCC internal photos, or sooner if an owner opens one"
+    }
+  ],
+  "related_retained_elsewhere": [
+    {
+      "what": "FCC external photographs of the sibling XTEINK X4 Light, which shares the enclosure family, the magnet outline and the four-pin pogo pad",
+      "local_path": "../../x4-light/artifacts/certification/2BTR9-X4L-external-photos.pdf",
+      "sha256": "c6457651f19b4cacf48618ee15abcc50839ffa36d1b13fb98a87bfe0d38106d6",
+      "bytes": 3485136,
+      "why_here": "The X4L exhibits are the best public photographs of this enclosure generation, and they are NOT embargoed. Use them for form-factor questions; do not use them as evidence about the X4 Classic's internals."
+    }
+  ]
+}

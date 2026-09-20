@@ -1,0 +1,894 @@
+{
+  "schema": "hardware-doc/examples-catalog/1",
+  "device": "devices/lilygo/t-display-s3",
+  "generated": "2026-09-07",
+  "search_log": "search-log.md",
+  "selected": "best.md",
+  "caveat": "No example was compiled or run. build_status is 'not-built' for every entry; this is an inventory with reasoned selection, not a validation.",
+  "examples": [
+    {
+      "id": "tds3-factory",
+      "title": "factory",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/factory",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/factory",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "display",
+        "touch",
+        "wifi",
+        "ntp",
+        "lvgl",
+        "buttons",
+        "battery"
+      ],
+      "dependencies": [
+        "lvgl 8.x",
+        "TouchLib",
+        "TFT_eSPI(ignored)"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "The shipped demo. Also the source of the ESP-Touch/LCD-touch naming confusion in issue #212.",
+      "selection_decision": "selected \u2014 integrated"
+    },
+    {
+      "id": "tds3-tft",
+      "title": "tft",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/tft",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/tft",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "display"
+      ],
+      "dependencies": [
+        "TFT_eSPI + Setup206"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "Smallest TFT_eSPI path. Fails if User_Setup_Select.h is not edited \u2014 which is the point.",
+      "selection_decision": "selected \u2014 minimal, and a negative example"
+    },
+    {
+      "id": "tds3-gfxdemo",
+      "title": "Arduino_GFXDemo",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/Arduino_GFXDemo",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/Arduino_GFXDemo",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "display"
+      ],
+      "dependencies": [
+        "GFX Library for Arduino"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "LilyGO's own recommended hardware test (FAQ 2): needs no library-internal config, so it isolates hardware faults from TFT_eSPI config faults.",
+      "selection_decision": "selected \u2014 diagnostic"
+    },
+    {
+      "id": "tds3-gfxpdq",
+      "title": "Arduino_GFX_PDQgraphicstest",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/Arduino_GFX_PDQgraphicstest",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/Arduino_GFX_PDQgraphicstest",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "display",
+        "performance"
+      ],
+      "dependencies": [
+        "GFX Library for Arduino"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "Timed graphics benchmark. The obvious vehicle for the pixel-clock measurements listed in performance.md.",
+      "selection_decision": "selected \u2014 limit testing"
+    },
+    {
+      "id": "tds3-battery",
+      "title": "GetBatteryVoltage",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/GetBatteryVoltage",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/GetBatteryVoltage",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "adc",
+        "battery"
+      ],
+      "dependencies": [
+        "-"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "Vendor reference for the GPIO4 divider. Read alongside issue #190, where naive raw-count arithmetic gives a wrong-but-plausible answer.",
+      "selection_decision": "selected \u2014 feature minimal"
+    },
+    {
+      "id": "tds3-touchtest",
+      "title": "touch_test",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/touch_test",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/touch_test",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "touch",
+        "display",
+        "i2c"
+      ],
+      "dependencies": [
+        "TouchLib"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "Touch probe. Behaviour depends on -DTOUCH_MODULES_CST_MUTUAL vs _SELF; see revision R1.",
+      "selection_decision": "selected \u2014 feature minimal"
+    },
+    {
+      "id": "tds3-captouch",
+      "title": "CapacitiveTouch",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/CapacitiveTouch",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/CapacitiveTouch",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "touch",
+        "display"
+      ],
+      "dependencies": [
+        "TouchLib"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "Second touch example with a bundled image.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-i2cscan",
+      "title": "I2CScan",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/I2CScan",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/I2CScan",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "i2c"
+      ],
+      "dependencies": [
+        "-"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "The fastest way to identify which touch controller a board carries. Punches above its weight.",
+      "selection_decision": "selected \u2014 diagnostic"
+    },
+    {
+      "id": "tds3-sleep",
+      "title": "Sleep",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/Sleep",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/Sleep",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "deep-sleep",
+        "buttons",
+        "display"
+      ],
+      "dependencies": [
+        "-"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "Only vendor sleep guidance. Does not address the GPIO16/17 pull-up draw found in issue #313.",
+      "selection_decision": "selected \u2014 feature minimal"
+    },
+    {
+      "id": "tds3-lvdemos",
+      "title": "lv_demos",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/lv_demos",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/lv_demos",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "display",
+        "lvgl",
+        "psram"
+      ],
+      "dependencies": [
+        "lvgl 8.x"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "LVGL widgets demo. Requires PSRAM=OPI; failing that it exhausts heap.",
+      "selection_decision": "selected \u2014 integrated"
+    },
+    {
+      "id": "tds3-sd",
+      "title": "sd",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/sd",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/sd",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "microsd"
+      ],
+      "dependencies": [
+        "SD_MMC"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "1-bit SDMMC via the separately sold TF Shield. Useless without the shield.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-ota",
+      "title": "ota",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/ota",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/ota",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "ota",
+        "wifi"
+      ],
+      "dependencies": [
+        "ArduinoOTA"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "Generic Arduino OTA; nothing board-specific.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-serial",
+      "title": "SerialExample",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/SerialExample",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/SerialExample",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "usb",
+        "uart"
+      ],
+      "dependencies": [
+        "-"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "Trivial, but the right first test when USB CDC On Boot is in doubt.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-usbhid",
+      "title": "usb_hid_pad",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/usb_hid_pad",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/usb_hid_pad",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "usb-otg",
+        "touch",
+        "display"
+      ],
+      "dependencies": [
+        "TinyUSB"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "Needs USB Mode = USB-OTG, which disables the built-in JTAG debugger. A good demonstration of that trade-off.",
+      "selection_decision": "selected \u2014 alternative approach"
+    },
+    {
+      "id": "tds3-nes",
+      "title": "nes",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/nes",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/nes",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "display",
+        "audio",
+        "buttons"
+      ],
+      "dependencies": [
+        "arduino-nofrendo (vendored)"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "NES emulator. Vendored upstream library; a stress test of the display path more than a feature example.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-ulpadc",
+      "title": "ULP_ADC",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/ULP_ADC",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/ULP_ADC",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "ulp",
+        "adc"
+      ],
+      "dependencies": [
+        "arduino-esp32 3.0.0-rc3"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "States it requires a core newer than the 2.0.14 the rest of the repo pins. An internal contradiction in LilyGO's own repository.",
+      "selection_decision": "catalogued \u2014 negative/conflict"
+    },
+    {
+      "id": "tds3-ulpcount",
+      "title": "ULP_Count",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/ULP_Count",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/ULP_Count",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "ulp"
+      ],
+      "dependencies": [
+        "arduino-esp32 3.0.0-rc3"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "As above.",
+      "selection_decision": "catalogued \u2014 negative/conflict"
+    },
+    {
+      "id": "tds3-mpr121",
+      "title": "MPR121TouchSensor",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/MPR121TouchSensor",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/MPR121TouchSensor",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "i2c"
+      ],
+      "dependencies": [
+        "Adafruit_MPR121 (vendored)"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "External capacitive-touch breakout over I2C; unrelated to the panel touch.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-imgscroll",
+      "title": "ImageScroll",
+      "author": "Rudi Ackermann",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/ImageScroll",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/ImageScroll",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "display"
+      ],
+      "dependencies": [
+        "TFT_eSPI"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "By @Rudi Ackermann. 5 MB of image headers; a good example of why this repo is 180 MB.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-pcbclock",
+      "title": "PCBClock",
+      "author": "VolosR",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/PCBClock",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/PCBClock",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "display",
+        "wifi",
+        "ntp"
+      ],
+      "dependencies": [
+        "TFT_eSPI"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "By @VolosR. Issue #256 reports it not fitting \u2014 an OPI-PSRAM setting problem, not a size problem.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-poker",
+      "title": "PokerS3",
+      "author": "VolosR",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/PokerS3",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/PokerS3",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "display"
+      ],
+      "dependencies": [
+        "TFT_eSPI"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "By @VolosR.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-rainbow",
+      "title": "TFT_Rainbow",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/TFT_Rainbow",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/TFT_Rainbow",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "display"
+      ],
+      "dependencies": [
+        "TFT_eSPI"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "Minimal TFT_eSPI colour test.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-midi",
+      "title": "T-Display-S3-MIDI",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/T-Display-S3-MIDI",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/T-Display-S3-MIDI",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "usb-otg",
+        "midi",
+        "display"
+      ],
+      "dependencies": [
+        "TinyUSB"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "For the separately sold MIDI shield (SKU H656, USD 15.47), which has its own schematic.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-piano",
+      "title": "T-Display-S3-Piano",
+      "author": "sauloverissimo",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/T-Display-S3-Piano",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/T-Display-S3-Piano",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "usb-otg",
+        "midi",
+        "display"
+      ],
+      "dependencies": [
+        "ESP32_Host_MIDI",
+        "Gingoduino"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "By @sauloverissimo. Ships two PDFs including a T-Display-S3 microcontroller reference.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-blerx",
+      "title": "T-Display-S3-BLE-Receiver",
+      "author": "sauloverissimo",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/T-Display-S3-BLE-Receiver",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/T-Display-S3-BLE-Receiver",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "ble",
+        "midi",
+        "display"
+      ],
+      "dependencies": [
+        "ESP32_Host_MIDI"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "By @sauloverissimo.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-bletx",
+      "title": "T-Display-S3-BLE-Sender",
+      "author": "sauloverissimo",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/T-Display-S3-BLE-Sender",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/T-Display-S3-BLE-Sender",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "ble",
+        "midi",
+        "display"
+      ],
+      "dependencies": [
+        "ESP32_Host_MIDI"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "By @sauloverissimo. The clearest vendor-repo BLE example.",
+      "selection_decision": "selected \u2014 feature minimal"
+    },
+    {
+      "id": "tds3-usbdev",
+      "title": "T-Display-S3-USB-Device",
+      "author": "sauloverissimo",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/T-Display-S3-USB-Device",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/T-Display-S3-USB-Device",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "usb-otg",
+        "ble",
+        "midi"
+      ],
+      "dependencies": [
+        "ESP32_Host_MIDI"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "BLE-to-USB MIDI bridge; exercises both radios and USB device mode at once.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-gingo",
+      "title": "T-Display-S3-Gingoduino",
+      "author": "sauloverissimo",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/T-Display-S3-Gingoduino",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/T-Display-S3-Gingoduino",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "midi",
+        "display"
+      ],
+      "dependencies": [
+        "Gingoduino"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "By @sauloverissimo.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-queue",
+      "title": "T-Display-S3-Queue",
+      "author": "sauloverissimo",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/T-Display-S3-Queue",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/T-Display-S3-Queue",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "midi",
+        "display"
+      ],
+      "dependencies": [
+        "ESP32_Host_MIDI"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "By @sauloverissimo.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-music",
+      "title": "T-Display-S3-Music-Explorer",
+      "author": "sauloverissimo",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/T-Display-S3-Music-Explorer",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/T-Display-S3-Music-Explorer",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "midi",
+        "audio",
+        "display"
+      ],
+      "dependencies": [
+        "Gingoduino"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "By @sauloverissimo; ships its own README_AUDIO.md.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-pianodbg",
+      "title": "T-Display-S3-Piano-Debug",
+      "author": "sauloverissimo",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/T-Display-S3-Piano-Debug",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/T-Display-S3-Piano-Debug",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "midi"
+      ],
+      "dependencies": [
+        "ESP32_Host_MIDI"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "By @sauloverissimo.",
+      "selection_decision": "catalogued"
+    },
+    {
+      "id": "tds3-i2saudio",
+      "title": "WIFI_Audio_I2S",
+      "author": "LILYGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/main/examples/WIFI_Audio_I2S",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/T-Display-S3/tree/ec889e789b3cf093412689a143f7f37b42b56af7/examples/WIFI_Audio_I2S",
+      "commit": "ec889e789b3cf093412689a143f7f37b42b56af7",
+      "retrieved": "2026-09-07",
+      "last_activity": "2026-08-31",
+      "device": "LilyGO T-Display-S3",
+      "hw_revision": "unversioned (schematic dated 2024-04-29)",
+      "framework": "Arduino (arduino-esp32 2.0.14 / espressif32@6.5.0)",
+      "features": [
+        "i2s",
+        "wifi"
+      ],
+      "dependencies": [
+        "ESP32-audioI2S 3.0.6 (vendored)"
+      ],
+      "license": "MIT (repository)",
+      "build_status": "not-built",
+      "test_environment": "none \u2014 no hardware available 2026-09-07",
+      "notes": "A .cpp with no .ino \u2014 not a buildable Arduino sketch as shipped. Related: issue #158.",
+      "selection_decision": "catalogued \u2014 broken as shipped"
+    }
+  ],
+  "external_examples": [
+    {
+      "id": "ext-teastain",
+      "title": "LilyGO-T-display-S3-setup-and-examples",
+      "author": "teastainGit",
+      "source_class": "community",
+      "canonical_url": "https://github.com/teastainGit/LilyGO-T-display-S3-setup-and-examples",
+      "commit": null,
+      "retrieved": "2026-09-07",
+      "license": "not established",
+      "build_status": "not-built",
+      "notes": "The de-facto community setup guide; endorsed by LilyGO's maintainer in issue #79 on 2023-03-13. Documents GPIO15, backlight, battery and the User_Setup_Select.h problem. Not pinned to a commit by this pass \u2014 a gap.",
+      "selection_decision": "referenced, not vendored (licence not established)"
+    },
+    {
+      "id": "ext-st7789s3mpy",
+      "title": "st7789s3_mpy",
+      "author": "russhughes",
+      "source_class": "community",
+      "canonical_url": "https://github.com/russhughes/st7789s3_mpy",
+      "commit": null,
+      "retrieved": "2026-09-07",
+      "license": "not established",
+      "build_status": "not-built",
+      "notes": "MicroPython C driver with an 8-bit parallel backend; carries tft_config.py for this board. Linked from LilyGO's own README.",
+      "selection_decision": "referenced"
+    },
+    {
+      "id": "ext-lilygo-idf",
+      "title": "LilyGo-Display-IDF",
+      "author": "Xinyuan-LilyGO",
+      "source_class": "primary",
+      "canonical_url": "https://github.com/Xinyuan-LilyGO/LilyGo-Display-IDF",
+      "immutable_url": "https://github.com/Xinyuan-LilyGO/LilyGo-Display-IDF/tree/b1a1cc54994bf1b417e3bb30c437bbe1036bff7f",
+      "commit": "b1a1cc54994bf1b417e3bb30c437bbe1036bff7f",
+      "retrieved": "2026-09-07",
+      "license": "MIT",
+      "build_status": "not-built",
+      "notes": "The ESP-IDF example set for nine boards. Its main/product_pins.h is the single best cross-variant pin source in the family and is retained in the shared platform record.",
+      "selection_decision": "selected \u2014 the ESP-IDF starting point"
+    }
+  ]
+}

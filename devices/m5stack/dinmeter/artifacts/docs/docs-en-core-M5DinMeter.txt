@@ -1,0 +1,279 @@
+id="document" class="header-nav-item">Documentation 
+ About Us 
+ Contact 
+ English
+ English
+ 简体中文
+ 日本語
+ CONTENTS
+ 
+ 
+ No Results Found
+ Hot Searches
+ Camera
+ WiFi
+ RS485
+ RS232
+ Relay
+ LoRaWAN
+ GPS
+ NB-IoT
+ LTE
+ GSM
+ Zigbee
+ Servo
+ StepMotor
+ Ethernet
+ E-Paper
+ 
+ Product
+ Contents
+ 
+ Search
+ DinMeter
+ SKU:K134
+ 
+ 
+ 
+ Description
+ DinMeter is an embedded development board that adheres to the 1/32DIN standard, featuring a 1.14-inch ST7789 screen and a built-in rotary encoder with buttons for precise knob position recording. Additionally, it includes an RTC circuit, an onboard buzzer, and buttons for device interaction and wake-up alerts. The product is designed to support DC input ranging from 6V to 36V and includes a lithium battery interface and charging circuit to accommodate various power supply needs. The reserved PORT.A and PORT.B interfaces allow for easy expansion of I2C and GPIO devices. This product is suitable for applications such as parameter measurement and detection, smart home control, IoT projects, smart wearables, access control, industrial control, and educational maker projects.
+Tutorial
+ Arduino IDE
+ Arduino IDE
+ This tutorial will introduce how to program and control the DinMeter device using the Arduino IDE. 
+ UiFlow2
+ UiFlow2
+ This tutorial will introduce how to control the DinMeter device through the UiFlow2 graphical programming platform. 
+Features
+ ST7789v2 screen
+ M5StampS3 as the main controller
+ Rotary encoder
+ Wide voltage input
+ Reserved PORTA and PORTB interfaces
+ Lithium battery interface (rechargeable)
+ 1/32DIN standard (45 x 22.5mm)
+ Development PlatformUiFlow2
+ Arduino IDE
+ ESP-IDF
+ PlatformIO
+ Includes
+ 1 x DinMeter
+ 1 x Adhesive tape
+ 1 x 250mAh polymer lithium battery
+ 1 x Silk-screened sticker
+ 1 x DC-JACK terminal input (6-36V)
+ 1 x Back bracket
+ Applications
+ Smart home detection and control systems
+ Access control systems
+ Industrial control
+ Maker and DIY projects
+ Specifications
+ Specification
+ Parameter
+ | SoC
+ ESP32-S3FN8 @ Xtensa® 32-bit LX7 dual-core processor, clock frequency 240MHz
+ Flash
+ 8MB
+ Wi-Fi
+ 2.4 GHz Wi-Fi
+ USB
+ USB OTG, USB Serial/JTAG
+ Wide Voltage Input Range
+ 6 ~ 36V
+ Display Driver
+ ST7789V2
+ Display Resolution
+ 135 x 240
+ Charging Current
+ 100mA
+ Grove Load Capacity
+ PORT.A Load Capacity: DC 5V/Max:220mA | PORT.B Load Capacity: DC 5V/Max:220mA
+ Standby Current (Battery Powered)
+ DC 4.2V@38.4uA
+ Battery Socket Specification
+ 1.25mm-2p
+ Power Supply Method
+ USB/DC Power Supply / Battery
+ Operating Temperature
+ 0 ~ 40°C
+ Product Size
+ 53.0 x 30.0 x 32.0mm
+ Product Weight
+ 17.8g
+ Package Size
+ 136.0 x 93.0 x 23.0mm
+ Gross Weight
+ 47.0g
+Learn
+ Power On/Off Operation 
+ Power On: The device can be woken up by pressing the "WAKE" button or by an RTC-triggered IRQ signal. After the wake-up signal is triggered, the program initialization must set the hold(G46) pin to high (1) to maintain power; otherwise, the device will re-enter sleep mode. | Power Off: When there is no external USB power supply, press the RST button to power off, or set HOLD(GPIO46)=0 in the program to power off.
+ Download Mode 
+ To enter download mode, hold the G0 button on the StampS3 before powering on, then release it after powering up.
+ Power Supply Methods | Three power supply methods: USB/DC/BAT
+ Din Size Standard
+ Schematics
+ DinMeter Schematics PDF
+ 
+ 
+ 1/1
+ 
+ PinMap
+ RTC8563 & ENCODER
+ ESP32-S3FN8
+ G12
+ G11
+ G40
+ G41
+ G3
+ G42
+ | RTC8563
+ SCL
+ SDA
+ 
+ 
+ ENCODER
+ 
+ B
+ A
+ 
+ BEEP
+ 
+ 
+ beep
+ BUTTON (ENCODER)
+ 
+ 
+ BTN(WAKE)
+ST7789V2
+ ESP32-S3FN8
+ G7
+ G6
+ G4
+ G5
+ G8
+ G9
+ | ST7789V2
+ CS
+ SCK
+ RS
+ MOSI
+ RESET
+ BL
+HY2.0-4P
+ HY2.0-4P
+ Black
+ Red
+ Yellow
+ White
+ | PORT.A
+ GND
+ 5V
+ G13
+ G15
+ PORT.B
+ GND
+ 5V
+ G2
+ G1
+Model Size
+ DinMeter Model Size PDF
+ Structure
+ DinMeter Structure Files
+ Datasheets
+ BM8563
+ tp4057
+ ST7789V2
+ Spec of external DC power connector
+ Lithium battery seat
+ Softwares
+ Quick Start
+ DinMeter Arduino Quick Start
+ Arduino
+ DinMeter Arduino Driver Library
+ DinMeter Factory Firmware
+ UiFlow2
+ DinMeter UiFlow2 Quick Start
+ Easyloader
+ Easyloader
+ Download Link
+ Notes
+ | DinMeter User Demo Easyloader
+ download
+ /
+Video
+ 
+ Page Tools
+ PDF Copy page 
+ 
+ About Us
+ About M5Stack
+News
+Blog
+Events
+Contact Us
+ Where to buy
+ Distributors
+Official Store
+AliExpress
+Amazon
+Taobao
+ Solution
+ For Business
+For Developers
+ Software
+ UiFlow1
+UiFlow2
+M5Burner
+Block Designer
+EzData 2.0
+EasyLoader Packer
+VLW Font Creator
+Device USB Driver
+ Documentation
+ Product Documents
+UiFlow1
+UiFlow2
+Arduino
+ESP-IDF
+StackFlow AI
+Home Assistant
+nanoFramework
+Product Guide
+Product Certifications
+I2C Table
+Product Selector
+Hardware Design Files
+Release History
+Stack Compatibility
+Stack Screw Length
+ 
+ Stay in the Loop
+ 
+ Weekly updates on new products, innovations, and announcements.
+ 
+ Subscribe
+ 
+ Email is invalid!
+ 
+ Thanks for subscribing
+ 
+ 
+ M5Stack Technology Co., Ltd
+ 
+ Address: 
+ Block A10, Expo Bay South Coast, Fuhai Street, Bao'an District, Shenzhen, China
+ 
+ TEL: 
+ +86 755 8657 5379
+ 
+ Email: 
+ support@m5stack.com
+ 
+ Copyright ©
+ M5Stack Technology Co., Ltd.
+ All rights reserved.
+ Privacy Policy| Terms of Service| Shipping Policy| Refund Policy| Payment Method
+ 粤ICP备16010631号
+ 
+ 
