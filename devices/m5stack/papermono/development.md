@@ -359,7 +359,7 @@ message out. **The default configuration hides the message that explains the sym
 
 **Holding user button B across a reset perturbs a strapping pin**, and a microphone that is
 still powered and clocking across a reset perturbs two more. The vendor firmware does explicitly
-release the mic pins before reconfiguring them ([`features/microphone.md` §2](features/microphone.md#-2-both-microphone-pins-are-esp32-s3-strapping-pins)), but nothing in
+release the mic pins before reconfiguring them ([`features/microphone.md` §2](features/microphone.md#2--both-microphone-pins-are-esp32-s3-strapping-pins)), but nothing in
 any vendor code guards the button-B case.
 
 This is a **bootstrapping** hazard rather than a bricking one on paper: straps are sampled at

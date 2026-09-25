@@ -274,7 +274,13 @@ are the vendor's pattern, not this product's accident:
 | The vendor **publishes a warning against its own graphics library's waveforms** and points you at the panel maker's example instead | …which means the recommended path bypasses the vendor's own library |
 | Pin tables on the product page are accurate everywhere they overlap the schematic ([R6](gaps-and-conflicts.md#r6--the-vendor-product-pages-pin-tables-are-accurate--confirmed-correct)) | They omit USB, UART0 and two expander pins; and the `PYG<n>` notation is ambiguous between two chips ([`pin-naming-and-the-pyg-ambiguity.md`](pin-naming-and-the-pyg-ambiguity.md)) |
 | Published power-consumption figures for **PaperS3** and **PaperColor** | **None for PaperMono** — the one board whose headline feature is its power architecture ([`performance.md`](performance.md)) |
-| — | **No certification identifier published** for this board: `/en/certification` returns HTTP 200 with zero matches for `PaperMono` and `C153` (S11, a verified negative) |
+| 2025-12-22 | **Main PCB silkscreen date code** `251222`, revision **V0.6** — the earliest hardware date in evidence anywhere in this record, ~8 months before launch (FCC internal photos p. 2, S72) |
+| 2026-02-01 | Antenna specification `RSY-E8131` released at V3.0 by Shenzhen Rongshengyuan (S70) |
+| 2026-07-14 | Sample received by the SAR laboratory (S69 p. 1) |
+| 2026-07-15 | **SAR testing performed** (S69 pp. 5, 25) |
+| 2026-07-25 | SAR report `2604T59815E-SA` issued (S69 pp. 1, 4) |
+| **2026-08-12** | **FCC grants issued** — two, under FCC ID `2AN3WM5PAPERMONO`, nine days before the board went on sale (S68) |
+| — | **Corrected 2026-09-20.** This row previously read *"No certification identifier published for this board"* on the strength of S11's verified negative. M5Stack publishes none — but the board **is** certified, and the exhibits are public. See [`certification.md`](certification.md) and [`gaps-and-conflicts.md` G2](gaps-and-conflicts.md#g2--no-certification-identifiers-exist-on-the-vendor-site) |
 
 The last two rows are the ones a buyer should weigh. A product sold on low power that publishes
 no power figure, and a radio product that publishes no regulatory identifier, are both gaps the

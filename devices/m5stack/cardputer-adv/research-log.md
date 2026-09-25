@@ -134,7 +134,7 @@ At the time of writing, another session was actively creating
 `silergy/sy7088`, `sgmicro/sgm2578`, `generic/tp4057`, `sitronix/st7789v2` and
 `devices/m5stack/cap-lora-1262/` (mtimes within 30 minutes). **Those trees were not written to.**
 This record links to them and leaves proposed *Used By* additions in
-[`scratch/m5stack-cardputer/index-fragments.md`](../../../scratch/m5stack-cardputer/index-fragments.md).
+[`archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md`](../../../archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md).
 
 ## Stopping criterion
 

@@ -474,9 +474,159 @@ Non-KiCad libraries and the 14 MB of STEP models are in
 6. Add **one diode per key position** if you want N-key rollover (Tanmatsu uses 72 × `1N4148WS`).
 7. If backlighting, place **`LTW-010DCG`** LEDs at the positions in the footprint — the dome sheet's
    etched light-guide dots are designed around them.
-8. Reference design: [`solderparty/keebdeck_basic_hw`](https://github.com/solderparty/keebdeck_basic_hw)
-   (also retained in the archive), or Tanmatsu's own
+8. Reference design: **KeebDeck Basic — now read and documented in [§2b](#2b-verified-the-keebdeck-basic-reference-board-read-from-its-schematic)**,
+   or Tanmatsu's own
    [`keyboard_matrix.kicad_sch`](artifacts/schematics/kicad/keyboard_matrix.kicad_sch).
+   ⚠ Read §2b before copying the reference board — **it is a 6×12 board, not 6×13**.
+
+---
+
+## 2b. VERIFIED: the KeebDeck Basic reference board, read from its schematic
+
+§2 cites `solderparty/keebdeck_basic_hw` as "the reference design" without ever having opened it.
+The schematic is now filed at
+[`artifacts/keebdeck-basic/keebdeck-basic-schematic-rev1.1.pdf`](artifacts/keebdeck-basic/keebdeck-basic-schematic-rev1.1.pdf)
+and this section is what it actually contains.
+
+**Provenance.** [`solderparty/keebdeck_basic_hw`](https://github.com/solderparty/keebdeck_basic_hw)
+@ **`2b537ce`**, commit subject **"Rev 1.1 - Production"**. Source file
+`keebdeck_basic.kicad_sch`, exported by **KiCad E.D.A. 9.0.1** / Eeschema-PDF on
+**2025-05-04**. One A4 sheet, `Id: 1/1`. The sheet's own **`Date:` and `Rev:` title-block fields
+are blank** — the "Rev 1.1" designation comes from the Git commit, not from the drawing.
+Retrieved 2026-08-24; filed 2026-09-20. **[SCH]**
+
+**Evidence codes in this section.** **[SCH]** = the schematic's PDF text layer ·
+**[SCH-V]** = read from a 300 dpi render of the sheet (used wherever graphical annotations such
+as DNP crosses carry the meaning).
+
+### ⚠ 2b.1 — Three things that make this a poor drop-in reference for a Tanmatsu-class build
+
+**(a) It is a 6 × 12 matrix, not 6 × 13.** Columns run **`COL0` – `COL11`** and rows
+**`ROW0` – `ROW5`** **[SCH]**. The finished KeebDeck *Keyboard* footprint that §2a documents —
+and that the Tanmatsu uses — is **6 × 13** (`C0`–`C12`). The Basic board is a **71-key**
+arrangement (`SW1`–`SW71`) in a 72-position grid, with **`COL2`/`ROW0` empty** **[SCH-V]**.
+Copying its pin budget and firmware scan loop directly onto a 6×13 keypad leaves you one column
+short.
+
+**(b) There are no diodes in the matrix.** Not one. Every switch connects a row net directly to a
+column net **[SCH-V]**. This is why the sheet carries a designer's note in an orange text box:
+
+> *"TAB and E switched cols to avoid ghosting on TAB and COL0."*
+
+And it is done: on `ROW2`, **`SW25` = `SW_E` sits in `COL0`** and **`SW22` = `SW_TAB` sits in
+`COL3`** **[SCH-V]** — the reverse of where a plain QWERTY assignment would put them. Solder Party
+traded a layout irregularity for one specific ghosting case rather than fitting diodes.
+
+> **Contrast with the Tanmatsu, and take the Tanmatsu's side.** Tanmatsu fits **72 × `1N4148WS`**,
+> one per key position ([`bom.md`](bom.md)), and therefore has real N-key rollover and no need for
+> the column swap. **The reference board's approach is a cost decision for an evaluation board,
+> not a design to copy into a product.** If you follow `keebdeck_basic_hw` you inherit both the
+> ghosting and the non-obvious key positions — and the second will bite you in firmware, months
+> later, as a keymap that is "wrong" for no visible reason.
+
+**(c) Half the interesting circuitry is marked do-not-populate.** The **entire Backlight block**
+(`U1` AP3032KTR, `L1` 6.8 µH, `D1` 1N5819, `R1` 4.7 kΩ, `R2` 4.7 Ω, `C1` 10 µF, `C2` 1 µF and
+**LEDs `D2`–`D9`**) and the **Boot Button `SW72`** are all struck through with DNP crosses
+**[SCH-V]**. The schematic *documents* a backlight driver; the production board does not have one
+fitted. **`D2`–`D9` = eight LEDs**, which matches §1.1's evidence that the KeebDeck light-guide
+design expects eight — so the design intent is real, it is simply unpopulated here.
+
+### 2b.2 — Complete MCU pin map
+
+The controller is an **STM32F042G6Ux** (`U3`) **[SCH]** — the value string on the symbol. The
+board fits **no crystal**, which is consistent with the F042's crystal-less USB, and **no
+external oscillator appears anywhere on the sheet** **[SCH-V]**. *(The `G6U` suffix's flash size
+and package are ST's part-numbering convention, not something this drawing states.)*
+
+| Pin | Port | Net |
+|---:|---|---|
+| 1 | `PB8` | **`ROW3`** — ⚠ also **`BOOT0`** |
+| 2 | `PF0` | `ROW2` |
+| 3 | `PF1` | `ROW1` |
+| 4 | — | `RST` |
+| 6 | `PA0` | `ROW0` |
+| 7 | `PA1` | `COL3` |
+| 8 | `PA2` | `COL4` |
+| 9 | `PA3` | `COL5` |
+| 10 | `PA4` | `COL6` |
+| 11 | `PA5` | `COL7` |
+| 12 | `PA6` | `COL8` |
+| 13 | `PA7` | `COL9` |
+| 14 | `PB0` | `COL10` |
+| 15 | `PB1` | `COL11` |
+| 16 | — | `GND` (test point `TP2`) |
+| 17 | — | `VDD` |
+| 19 | *(not labelled on the sheet)* | `USB_D−` |
+| 20 | *(not labelled on the sheet)* | `USB_D+` |
+| 21 | `PA13` | `COL0` — ⚠ also **`SWDIO`**, test point `TP4` |
+| 22 | `PA14` | `COL1` — ⚠ also **`SWCLK`**, test point `TP5` |
+| 23 | `PA15` | **`BL_CTRL`** — backlight PWM (to the DNP block) |
+| 24 | `PB3` | `COL2` |
+| 25 | `PB4` | `ROW5` |
+| 26 | `PB5` | `ROW4` |
+| 27 | `PB6` | **`SCL`**, also labelled **`UART_TX`** |
+| 28 | `PB7` | **`SDA`** |
+
+Every row is **[SCH]** except the port names for pins 19 and 20: the schematic symbol shows those
+two on the left-hand side labelled only `USB_D−` / `USB_D+`, with **no port name** **[SCH-V]**.
+They are `PA11` / `PA12` on an STM32F042 in UFQFPN28, but that is **a package fact, not a reading
+of this drawing** — recorded as *inferred*.
+
+Test points `TP1`–`TP6`, mounting holes `H1`–`H4`, and `PWR_FLAG` on `+5V` and `GND` **[SCH]**.
+
+> ⚠ **`COL0` and `COL1` are the SWD debug pins.** `PA13` = `SWDIO`, `PA14` = `SWCLK`, and the
+> board brings both out to test points `TP4` and `TP5` **[SCH-V]**. So **the debug port and two
+> of the twelve keyboard columns are the same two wires.** Attaching a debugger while the scan
+> loop is driving `COL0`/`COL1` will fight it; conversely, a scan loop that reconfigures those
+> pins as GPIO **removes SWD access until the next reset**. On a board whose only other recovery
+> path (`SW72`) is unpopulated, that is how you lock yourself out. *(inferred from the pin
+> assignment plus the standard F042 alternate functions; not reproduced here — not-tested.)*
+
+> ⚠ **`ROW3` is `BOOT0`.** `PB8` on the F042 is the BOOT0 pin, and the sheet labels it as such
+> **[SCH-V]**. A row line that the scan loop drives is also the pin that decides whether the part
+> enters the system bootloader at reset.
+> **If your scan state machine happens to leave `ROW3` asserted across a reset, the board boots
+> into DFU instead of your firmware** — and with `SW72` unpopulated (§2b.1c) there is no button to
+> tell you that is what happened. **Drive rows low-active, or park all rows before any reset.**
+> *(inferred from the pin assignment; no failure has been reproduced here — not-tested.)*
+
+> **`PB6` carries two labels, `SCL` and `UART_TX`.** The net is the I²C clock going to the Qwiic
+> connector; the `UART_TX` alias is a debug alternate-function on the same pin. You get one or the
+> other, not both.
+
+### 2b.3 — The rest of the board
+
+| Block | Parts | Notes |
+|---|---|---|
+| **USB** | `J1` `USB_C_Receptacle_USB2.0`; `R3`, `R4` **5.1 kΩ** CC pulldowns | **Device only, no PD.** Two 5.1 kΩ pulldowns is the minimum legal UFP configuration. `D+`/`D−` are doubled on the A- and B-side contacts for reversibility **[SCH]** |
+| **Power** | `U2` **AP2112K-3.3** LDO, `C5` 10 µF in, `C4` 10 µF out, `C3` 0.1 µF at `VDD`, `EN` tied to `VIN` | +5 V → +3.3 V. `EN` strapped on means **always enabled** — no software power control **[SCH]** |
+| **Qwiic / I²C** | `J2` `Conn_Qwiic` 4-pin; `R5`, `R6` **4.7 kΩ** pull-ups on `SCL`/`SDA` | The board is designed to be an **I²C peripheral** — which is how Solder Party's BBQ10-style keyboards present themselves (§3). The pull-ups being *on this board* means it expects to be the bus master or a lone slave; adding it to a bus that already has pull-ups will over-pull **[SCH]** |
+| **Backlight** | `U1` **AP3032KTR** boost LED driver, `L1` 6.8 µH, `D1` 1N5819 Schottky, `R2` 4.7 Ω sense, `R1` 4.7 kΩ on `CTRL`, `C2` 1 µF, `D2`–`D9` | ⚠ **entirely DNP** — see §2b.1c **[SCH-V]** |
+| **Boot** | `SW72` to `+3.3 V` | ⚠ **DNP** **[SCH-V]** |
+
+### 2b.4 — What this changes about §2
+
+§2's line *"Reference design: `solderparty/keebdeck_basic_hw` — Solder Party's own evaluation
+board"* stands, but it needs the qualifiers above. Restated:
+
+| If you want… | Use |
+|---|---|
+| A minimal USB-HID keypad controller you can copy wholesale | **KeebDeck Basic.** STM32F042 + AP2112K + USB-C, ~a dozen parts. Accept 6×12, ghosting and no backlight |
+| A 6×13 keypad, N-key rollover, backlight, and a product-grade result | **Tanmatsu's own `keyboard_matrix.kicad_sch`** ([§2a](#2a-verified-the-keebdeck-footprint-measured-from-the-source-files)) |
+| Just the footprint | `keebdeck_keyboard_hw` `Keyboard_6R13C` — §2a |
+
+**Licence.** `keebdeck_basic_hw` ships a `LICENSE.md`; the sibling `keebdeck_keyboard_hw` is
+**CERN-OHL v1.2** (recorded in [`sources.md`](sources.md)). The Basic repo's own licence text was
+**not re-read in this pass** and is recorded as `unknown` pending a check — see §5.
+
+### 2b.5 — Why the PDF was copied rather than moved
+
+The rest of the repository's scratch policy is *move, don't copy*. This file is the exception:
+`scratch/tanmatsu/sources/keebdeck_basic_hw/` is a **complete, clean `git` checkout** at
+`2b537ce` (`git status` reports no modifications). Removing one file from it would turn a
+reproducible upstream snapshot into a damaged one for no benefit. The same was done for
+`keebdeck_keyboard_hw/dimensions.pdf` in the 2026-08-24 pass. The checkout remains in scratch;
+the repository holds its own copy with the hash recorded below.
 
 ---
 

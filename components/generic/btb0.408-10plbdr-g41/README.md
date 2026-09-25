@@ -290,7 +290,7 @@ curl -s -X POST -H 'Content-Type: application/json' \
 ```
 
 `executed-success`, 2026-09-01. Helper:
-[`scratch/m5stack-papermono/tools/lcsc_lookup.sh`](../../../scratch/m5stack-papermono/tools/lcsc_lookup.sh).
+[`archive/devices/m5stack/papermono/artifacts/research-scratch/tools/lcsc_lookup.sh`](../../../archive/devices/m5stack/papermono/artifacts/research-scratch/tools/lcsc_lookup.sh).
 This belongs in [`ai-crawler-site-access-table.md`](../../../ai-crawler-site-access-table.md).
 
 ## Related pages

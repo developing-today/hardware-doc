@@ -198,7 +198,7 @@ those, 51 kΩ / 500 mA is the closest to 0.5 C.
 **The conflict is unresolved.** Either the datasheet's table is not exhaustive,
 or the resistor selects something the held datasheet version does not describe.
 It is tracked in the
-[IP2315 record](../../injoinic/ip2315/README.md#4-2--the-ntc-and-ichgset-network)
+[IP2315 record](../../injoinic/ip2315/README.md#42--unresolved-which-resistor-lands-on-ichgset)
 and this record does not resolve it. **Do not quote a charge current in
 milliamps as established.**
 
@@ -290,7 +290,7 @@ first two are specific to what this record establishes.
 **Unidentified.** M5Stack publishes the capacity and nothing further; no cell
 vendor, model or dimension code appears on any product page, in the schematic, or
 in the module-size drawing held at
-`scratch/m5stack-papermono/pdf/C153_PaperMono_model_size.pdf`. **No search for a
+`archive/devices/m5stack/papermono/artifacts/research-scratch/pdf/C153_PaperMono_model_size.pdf`. **No search for a
 part number was attempted**, because there is no vendor-specific token to search
 on — the resolution path is a photograph of the cell's own label, or M5Stack's
 BOM, not a catalogue query.
@@ -312,8 +312,8 @@ BOM, not a catalogue query.
 | ID | Title | Publisher | Class | URL | Retrieved | Version | Establishes | Local path |
 |---|---|---|---|---|---|---|---|---|
 | S1 | `PaperMono_SCH_V0.6.2_20260522.pdf` | M5Stack | primary | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | V0.6.2, 6 sheets | **`J2` is 2-pin**, `CON2_SMD`, pin 2 = `VBAT_L0`, pin 1 = GND, `C13` = 22 µF/10 V, `20mil min`; `R15`/`R16`/`R17` placement; the `充电电流 0.5C` annotation | `../../../devices/m5stack/papermono/artifacts/schematic/PaperMono_SCH_V0.6.2_20260522.pdf` |
-| W1 | PaperMono product page | M5Stack | primary | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | — | **1150 mAh** | `../../../scratch/m5stack-papermono/docs/pages/` |
-| W2 | PaperMono-Lite product page | M5Stack | primary | <https://docs.m5stack.com/en/core/PaperMono%20Lite> | 2026-09-01 | — | **1150 mAh on the Lite too** | `../../../scratch/m5stack-papermono/docs/pages/` |
+| W1 | PaperMono product page | M5Stack | primary | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | — | **1150 mAh** | `../../../archive/devices/m5stack/papermono/artifacts/research-scratch/docs/pages/` |
+| W2 | PaperMono-Lite product page | M5Stack | primary | <https://docs.m5stack.com/en/core/PaperMono%20Lite> | 2026-09-01 | — | **1150 mAh on the Lite too** | `../../../archive/devices/m5stack/papermono/artifacts/research-scratch/docs/pages/` |
 | D1 | IP2315 datasheet | Injoinic | primary | see the [IP2315 record](../../injoinic/ip2315/README.md#manufacturer) | 2026-09-01 | V1.0 (cn), 16 pp | 1S CC/CV charging; the `ICHGSET` value table that 15 kΩ is absent from; the NTC worked example | `../../injoinic/ip2315/artifacts/` |
 
 **Local artifacts** — **none.** The cell is unidentified; there is no datasheet to
@@ -324,3 +324,54 @@ this record — was read from a **200 dpi PNG render** of schematic sheet 2 crop
 to the connector. The text layer around `J2` mixes the connector's labels with
 `U4`, `C14`, `C15`, `Q2`, `Q5` and `R9`, and an earlier text-only pass could not
 have established the pin count from it.
+
+## The cell label, read from the FCC internal photographs (2026-09-20)
+
+This record's §1.1 lists **maker/model** and **physical dimensions** as
+unestablished, with the note *"No part number is guessed. M5Stack publishes a
+capacity and nothing else."* The PaperMono's FCC internal-photograph exhibit
+(`2AN3WM5PAPERMONO`, pages 4 and 5) shows the cell removed from the housing with
+its label facing the camera and legible.
+
+**Label, read verbatim:**
+
+```
+-  YS 414250 1150mAh
++  3.7V 4.255Wh  2603
+```
+
+| Field | Reading | Status |
+|---|---|---|
+| **Capacity** | **1150 mAh** | **legible** — confirms M5Stack's published figure from hardware |
+| **Nominal voltage** | **3.7 V** | **legible** — the record's `[INF]` becomes a reading |
+| **Energy** | **4.255 Wh** | **legible, new.** 4.255 Wh ÷ 3.7 V = 1.150 Ah — internally consistent |
+| **Size/type code** | **`414250`** | **legible, new** |
+| Vendor prefix | `YS` | **legible**, but `YS` is not attributable to a maker from the photograph alone |
+| Date/lot | `2603` | **legible**, not interpreted. Consistent with 2026 week 03, but that is a convention, not a reading |
+| Terminal marking | `−` above, `+` below, with black and red leads visible | **legible** |
+
+### What this closes, and what it does not
+
+**Dimensions — closed, by convention.** `414250` is the standard Chinese
+pouch-cell dimension code: **4.1 mm thick × 42 mm wide × 50 mm long**. The
+photographs corroborate this against the millimetre rule beside the cell — it
+measures roughly 42 × 50 mm — and against the enclosure, which is
+62 × 101 × 8 mm overall. **The decoding of the code is a convention, not
+something the label states**, so it is labelled `inferred`; the photographic
+scale check is what makes it credible.
+
+**Maker — still not closed.** `YS` is a two-letter prefix, not a manufacturer
+name, and no logo is legible. **No part number is guessed here either.** A
+replacement should be specified as *"1S Li-polymer, 414250, ≥ 1150 mAh, 2-wire,
+polarity verified before connection"* — and the polarity warning in §3 of this
+record still stands, because the photograph shows the leads but not how they map
+to `J2`.
+
+**Protection circuit — still unknown.** Page 5 shows a yellow tape wrap over one
+end of the pouch, which is where a PCM would normally sit, but nothing is
+visible through it. §4's warning is unchanged.
+
+Exhibit retained at
+[`devices/m5stack/papermono/artifacts/certification/2AN3WM5PAPERMONO-internal-photos.pdf`](../../../devices/m5stack/papermono/artifacts/certification/2AN3WM5PAPERMONO-internal-photos.pdf);
+extraction in
+[`certification.md` §6](../../../devices/m5stack/papermono/certification.md#6--what-the-internal-photographs-show).

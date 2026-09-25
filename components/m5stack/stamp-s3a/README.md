@@ -337,6 +337,7 @@ So: recompile nothing, change nothing — unless you use the RGB LED.
 |---|---:|---|---|---|---|---|
 | [`artifacts/Sch_StampS3_v0.3.3-StampS3A.pdf`](artifacts/Sch_StampS3_v0.3.3-StampS3A.pdf) | 369 766 | `2f9610aecc5a5d2e` | **Primary evidence.** Board rev v0.3.3 schematic. Renamed from upstream `Sch_StampS3_v0.3.3.pdf` to record that it is the S3A's | unknown | unknown | repository |
 | [`artifacts/Sch_StampS3_v0.3.3-StampS3A.plaintext-layout.txt`](artifacts/Sch_StampS3_v0.3.3-StampS3A.plaintext-layout.txt) | 7 830 | `0dddf2cc41d9f6e2` | derived: sheet text as rows | derived | — | repository |
+| [`artifacts/Sch_StampS3_v0.3.3-StampS3A.parsed.txt`](artifacts/Sch_StampS3_v0.3.3-StampS3A.parsed.txt) | 18 737 | `5b7a5aca979ae264` | derived: **the full Altium marker-layer census** behind **[SCH-M]** — 59 `CO` designators, 243 `PI` pin instances, 50 `NL` net labels with coordinates. Promoted from scratch 2026-09-20; previously only the *diff* was retained, so the census this record cites could not be re-read without re-running the parser | derived | — | repository |
 | [`artifacts/stamp-s3-vs-s3a-designator-diff.txt`](artifacts/stamp-s3-vs-s3a-designator-diff.txt) | 716 | `8278f9ab8975d7c5` | derived: the census diff behind §2.2 | derived | — | repository |
 | [`artifacts/STAMP-S3A-dimensions.pdf`](artifacts/STAMP-S3A-dimensions.pdf) | 95 380 | `27ba520610b03e41` | mechanical drawing | unknown | unknown | repository |
 | [`artifacts/Stamp-S3A.stl`](artifacts/Stamp-S3A.stl) | 158 484 | `f72c1af2d42930fc` | mechanical model — **byte-identical to `Stamp-S3.stl`** | unknown | unknown | repository |
@@ -397,4 +398,4 @@ discriminates on the *mainboard*, by driving G9/G8/G6/G5 as input-pulldown and t
 G8 and G9 still read high (the ADV's internal-I²C pull-ups). See
 [`devices/m5stack/cardputer-adv/README.md` § Board autodetect](../../../devices/m5stack/cardputer-adv/README.md).
 
-*Added 2026-09-07 from `scratch/m5stack-cardputer/index-fragments.md` §3.9.*
+*Added 2026-09-07 from `archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md` §3.9.*

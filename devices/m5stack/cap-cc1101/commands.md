@@ -19,7 +19,7 @@ curl -sSL -A "$UA" -o U219-Cap_CC1101_SCH_V0.3_20260528.pdf \
 ## Schematic extraction (3 sheets)
 
 ```bash
-cd scratch/m5stack-lora-expansions
+cd archive/devices/m5stack/shared-artifacts/lora-expansions/research-scratch
 uv run --quiet --with pypdf python tools/pdf_bbox.py \
     artifacts/U219-Cap_CC1101_SCH_V0.3_20260528.pdf \
     pdf/U219-Cap_CC1101_SCH_V0.3_20260528
@@ -74,7 +74,7 @@ grep -n 'CapCC1101NFC' M5UnitUnifiedNFC.hpp
 
 ```bash
 sha256sum components/stmicroelectronics/st25r3916/artifacts/st25r3916-datasheet-m5stack-mirror.pdf \
-          scratch/m5stack-lora-expansions/artifacts/st25r3916_datasheet-m5stack-mirror.pdf
+          archive/devices/m5stack/shared-artifacts/lora-expansions/research-scratch/artifacts/st25r3916_datasheet-m5stack-mirror.pdf
 # 1170f4d74ff501917262ae42bf81c60c38c11d121e2ea2af6b1e845433befef1  (both)
 ```
 `executed-success` → **not stored twice.** The `/1229/` URL was added to the component's

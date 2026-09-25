@@ -206,6 +206,59 @@ On a 3.4C, change page-1 `0x40` from `0x00` to `0x06` (the value every other 800
 
 The Waveshare demos vendor `test_esp_lcd_jd9365.c` into the example rather than pulling the registry component, so their copy does not track upstream fixes.
 
+#### Update — 2026-09-20: **v2.0.2 supersedes v2.0.1, and it changes DMA2D behaviour**
+
+Mined from `esp_lcd_jd9365-2.0.2.zip`, a component-registry package held in
+`scratch/esp32-p4-wifi6-touch-lcd-xc/downloads/` since 2026-08-26 and not previously read.
+The package is 16,200 B, SHA-256 `ab5975120d8c10d5de422bfe6eb0056af7a762ce7e57d67c8529987e858dd72a`,
+13 files. **[SRC]**
+
+| Field | Value |
+|---|---|
+| Version | **2.0.2**, released **2025-12-10** |
+| Upstream | `espressif/esp-iot-solution`, path `components/display/lcd/esp_lcd_jd9365` |
+| Pinned commit | `bd85f52467353dae3bd5f551054795287b0042a4` (from `idf_component.yml` `repository_info.commit_sha`) |
+| Declared IDF floor | **`idf: '>=5.4'`** |
+| Declared targets | `esp32p4` only |
+
+**The v2.0.2 change is behavioural, not cosmetic.** Its entire changelog entry reads:
+
+> *Start from esp-idf v6.0, DMA2D can only be enable by calling `esp_lcd_dpi_panel_enable_dma2d`*
+
+On ESP-IDF v6.0 and later the 2D-DMA acceleration path is **no longer implicitly enabled**.
+Code that relied on DMA2D being on by default will still render, but through the slower path,
+with no error — a silent performance regression. Call `esp_lcd_dpi_panel_enable_dma2d`
+explicitly. This applies to both XC variants, which drive the panel over MIPI-DSI/DPI.
+
+⚠ **Two conflicts with what §6.1 says above. Both are recorded, not resolved.**
+
+| Claim in §6.1 | What the v2.0.2 package says | Status |
+|---|---|---|
+| *"**v2.0.1** is current"* | v2.0.1 (2025-11-12) is superseded by **v2.0.2** (2025-12-10) | **§6.1 is stale.** Resolved in v2.0.2's favour — it is a later release of the same package |
+| *"**v1.0.4** is the last ESP-IDF v5.x line"* | The v2.0.2 `CHANGELOG.md` lists the 1.x line as v0.1.0 → v1.0.0 → v1.0.1 → v1.0.2 → **v1.0.3 (2025-09-15)** → v2.0.0. **There is no v1.0.4 in it.** | **Unresolved.** Either v1.0.4 was published on the 1.0 branch *after* 2025-12-10 and so post-dates this changelog, or the earlier record mis-read the registry. Settle it by querying <https://components.espressif.com/components/espressif/esp_lcd_jd9365/versions> |
+| *"MIPI-DSI requires ESP-IDF v5.3 or later"* (component README) | `idf_component.yml` for v2.0.2 declares **`>=5.4`** | Both are quoted accurately from the same package — the prose README says 5.3, the machine-readable dependency says 5.4. **The manifest is what the component manager enforces**, so treat 5.4 as the real floor for v2.x |
+
+#### The upstream default init table is a third independent witness for §5.2
+
+`esp_lcd_jd9365.c` v2.0.2 `vendor_specific_init_default[]` writes **`{0x40, {0x06}}`** **[SRC]**.
+Espressif's generic default targets the 800-wide panels, and `0x06` is exactly the value
+[§5.2](#52-the-correlation-across-every-panel-in-mainline-linux) derives for 800-wide parts from
+mainline Linux. That is a **third** codebase — vendor demo, mainline DRM driver, and now
+Espressif's registry component — agreeing on the resolution-to-`0x40` mapping, from a source
+that was not used to build the correlation.
+
+It does **not** explain the Waveshare 3.4C's anomalous `0x00`, which remains the open question in
+§5.5. The 3.4C is still the sole 800-wide panel not writing `0x06`.
+
+Reset timing in v2.0.2 is unchanged from what §6.1 assumed: hardware reset drives
+inactive → active → inactive with **5 ms / 10 ms / 120 ms** delays; the software-reset fallback
+is `LCD_CMD_SWRESET` followed by 120 ms **[SRC]** (`esp_lcd_jd9365.c`, `panel_jd9365_reset`).
+
+**The package itself is not retained.** It is a published upstream release, reacquirable from
+<https://components.espressif.com/components/espressif/esp_lcd_jd9365/versions/2.0.2> or from
+`esp-iot-solution` at commit `bd85f52467353dae3bd5f551054795287b0042a4`; everything load-bearing
+in it is transcribed above.
+
 ### 6.2 Linux
 
 **`panel-jadard-jd9365da-h3.c`** in mainline `drivers/gpu/drm/panel/` — a full DRM panel driver with `compatible` entries for **both** Waveshare panels (`waveshare,3.4-dsi-touch-c`, `waveshare,4.0-dsi-touch-c`) plus 11 others. Authors Jagan Teki and Stephen Chen (Radxa). GPL-2.0+. If you are driving these panels from a Linux SoC, this is a complete, upstream, tested implementation — and the best available register reference.

@@ -8,7 +8,7 @@ depth) plus [v1.0](devices/m5stack/cardputer-v1.0/README.md),
 
 *(This file follows the convention of `VERIFICATION-m5stack-papermono.md` and
 `VERIFICATION-xiao-esp32s3-sense.md`. A line linking it from the umbrella `README.md` is staged
-in [`scratch/m5stack-cardputer/index-fragments.md`](scratch/m5stack-cardputer/index-fragments.md)
+in [`archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md`](archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md)
 because that file was out of scope for this session.)*
 
 ## Result

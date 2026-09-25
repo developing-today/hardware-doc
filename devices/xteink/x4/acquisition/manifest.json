@@ -335,7 +335,7 @@
       "canonical_url": "https://www.xteink.com/products/xteink-x4",
       "sha256": null,
       "bytes": null,
-      "destination": "scratch/xteink/web/",
+      "destination": "archive/devices/xteink/shared-artifacts/research-scratch/web/",
       "retrieved": null,
       "license": "unknown",
       "redistribution_status": "unknown",

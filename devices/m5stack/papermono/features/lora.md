@@ -159,17 +159,39 @@ an expander pin. You must do it yourself (§4).
 | Question | Answer |
 |---|---|
 | Band the SKU claims | **868 MHz – 923 MHz**, one wideband range |
+| **Band actually certified (US)** | **903.0 – 914.9 MHz** — FCC ID `2AN3WM5PAPERMONO`, granted 2026-08-12 |
+| **Certified conducted power (US)** | **11.5 dBm** declared tune-up; 11.24 / 11.20 / 11.18 dBm measured peak on low/mid/high |
+| **Antenna gain** | **−5.0 dBi @ 910 MHz**, 15.9 % total efficiency (`RSY-E8131`, 52 × 7.7 mm FPC) |
 | Regional variants | **None.** One SKU, one default variant, both products |
 | What the firmware uses | **868.0 MHz**, hard-coded — the EU band |
 | Regional band plan support | **Not documented anywhere.** No LoRaWAN region table, no channel plan, no duty-cycle handling in any vendor code |
-| Certification | **None published.** `/en/certification` returns HTTP 200 with **zero** matches for `PaperMono` and `C153`. No FCC ID, CE, IC, RCM or TELEC/MIC identifier appears on any of the 13 documentation pages, either product page, or either store listing |
+| Certification | **Corrected 2026-09-20 — it is certified.** M5Stack publishes nothing (`/en/certification` really does return zero matches), but **FCC ID `2AN3WM5PAPERMONO`** was granted 2026-08-12 and the exhibits are public. A Japanese MIC number `Ⓡ 211-260514` appears on the label artwork, **unverified**. **No CE DoC, IC, RCM, UKCA or SRRC record located.** [`certification.md`](../certification.md) |
+| **Duty cycle** | **Not stated anywhere in the fetched exhibits.** The SAR report gives a duty cycle only for 802.11b. If your region imposes a sub-GHz duty-cycle limit, this filing will not tell you what M5Stack assumed |
 | Module datasheet | **Does not exist in any form located.** M5Stack's datasheet list links the *Semtech chip* datasheet, not a module document |
 
-So: RF output power at the connector, antenna gain, the internal matching network, and
-the module's supply current are all **unknown**, and **there is no regulatory paperwork to
-point at**. A single wideband SKU spanning EU 868, US 915 and JP 920 allocations, with no
-per-region variant and no certification, is worth flagging to anyone intending to deploy
-the radio rather than experiment with it on a bench.
+**Revised 2026-09-20.** RF output power at the connector and antenna gain are no
+longer unknown — the FCC filing gives both, and neither is flattering:
+
+- **Conducted power is capped at 11.5 dBm**, and that cap is structural, not a
+  preference. At 11.5 dBm the SAR test-exclusion calculation yields **2.7
+  against a limit of 3.0** (SAR report p. 24). Turning the radio up breaks the
+  exclusion and invalidates the SAR basis of the grant.
+- **The antenna is a 52 × 7.7 mm FPC with −5.0 dBi gain and 15.9 % total
+  efficiency at 910 MHz** (`RSY-E8131`, antenna spec p. 4). Radiated power is
+  therefore around **+6 dBm EIRP** — `inferred`; **no EIRP figure for LoRa
+  appears in any fetched exhibit**.
+
+Any range expectation built on a nominal 0 dBi antenna is optimistic by roughly
+5 dB — a factor of ~1.8 in free-space distance. Nothing in this record is
+contradicted, because LoRa range has never been measured here, but the ceiling
+is lower than a naive estimate.
+
+The module's supply current and the internal matching network are still
+**unknown**. And the deployment warning stands, sharpened: a single wideband SKU
+spanning EU 868, US 915 and JP 920 allocations has **US authorisation for
+903.0–914.9 MHz only**. The vendor firmware's hard-coded **868.0 MHz is outside
+the US grant.** No CE, IC, RCM or SRRC record has been located, so for every
+region other than the US there is still no paperwork to point at.
 
 Meshtastic/MeshCore support was raised as an open question in the largest community
 discussion of this board and **was not answered**. No LoRaWAN stack has been demonstrated

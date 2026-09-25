@@ -369,11 +369,28 @@ optical specification table reads `GN — 2Grey Level`, and its overview describ
 panel binned for mono with usable grey, or a marketing overstatement — and
 nothing in evidence chooses between them. **Unresolved.**
 
+> **2026-09-20:** M5Stack's FCC label exhibit also says **"4-Level Gray"**
+> ([`certification.md` §5](certification.md#5--the-label-exhibit-is-an-architecture-diagram)).
+> That is a third M5Stack statement, but it is still M5Stack — the conflict is
+> with DKE's optical table, and a third statement from the same party does not
+> move it. **Unchanged.**
+
 ### C2 — panel part number
 
 Manual cover and mechanical drawing say `DEPG0397BBS770F3`. The
 `M5PaperMono-OTP-Demo` README calls the fitted panel
 `DEPG0397BBS770F3HP-XM`. The suffix is undocumented. **Unresolved.**
+
+> **2026-09-20 — materially advanced.** The FCC internal-photograph exhibit
+> shows the panel glass laser-etched **`0397BBS770F3HP-`** followed by two
+> characters that are **not legible** at the exhibit's 200 ppi
+> ([`certification.md` §6](certification.md#6--what-the-internal-photographs-show)).
+> So the **`HP` is real and is on the hardware** — not an OTP-demo typo, and not
+> described by DKE's published manual. **`-XM` is neither confirmed nor
+> refuted.** The glass also carries `N2510P10340-01-50519-1` and
+> `15AL11102200347`, neither of which appears in any DKE document held here.
+> What would settle it: a photograph of the glass at ≥ 600 ppi, or DKE's `…HP`
+> ordering documentation.
 
 ### C3 — SPI clock exceeds the panel's rated maximum
 
@@ -438,6 +455,39 @@ and `0x36` in another; an appendix citing pre-`SW:6` register addresses;
 `SW_REV` default disagreeing with the changelog. Documented in the component
 record. **Unresolved.**
 
+### C26 the microSD LDO enable: IOE_G13 (FCC label) versus PYG14 (schematic)
+
+**New 2026-09-20.**
+
+M5Stack's FCC "ID Label" exhibit is in fact its full architecture diagram, and it
+is an independent primary source for the pin map. **It agrees with the
+schematic-derived table in [`pinouts-and-buses.md`](pinouts-and-buses.md) on 30
+of 31 GPIO assignments.** The exception:
+
+| Source | Enable for the microSD rail `TF_3V3_L3B` |
+|---|---|
+| FCC label exhibit | **`IOE_G13`** |
+| Schematic | **`PYG14`** = `PYB_TF_EN` (and `PYG13` = `PYB_TP_EN`, **touch** power) |
+
+This is **not** the off-by-one hazard of
+[`pin-naming-and-the-pyg-ambiguity.md`](pin-naming-and-the-pyg-ambiguity.md): all
+seven other `IOE_G*` labels match the schematic's `PYG*` numbering exactly
+(`G1`/`TF_DET`, `G2`/`LoRa_ANT_SW`, `G3`/`EPD_EN`, `G5`/`EINK_RST`,
+`G6`/`TP_RST`, `G8`/`LED_G`, `G9`/`LED_B`, `G10`/`LoRa_RST`). A systematic
+off-by-one would have shifted all of them.
+
+Either the label has a single typo, or the schematic's `PYB_TF_EN` / `PYB_TP_EN`
+net names are swapped. The first is more economical, but economy is not evidence.
+**Unresolved.**
+
+**Least-risky path:** drive `PYG14` for microSD power (a schematic net label
+outranks a marketing diagram); if the card does not enumerate, try `PYG13` before
+suspecting hardware. Treat **both** as unsafe to repurpose. **What would settle
+it:** read the enable net at the microSD LDO on schematic sheet 2, or toggle each
+pin on hardware and observe which kills the card and which kills touch.
+
+Detail: [`certification.md` §10](certification.md#new-conflict--the-microsd-ldo-enable-ioe_g13-versus-pyg14).
+
 ## Open questions and missing evidence
 
 ### G1 — NFC schematic sheet 1 of 2 is not published
@@ -448,8 +498,53 @@ not absent**.
 
 ### G2 — no certification identifiers exist on the vendor site
 
-`/en/certification` returns HTTP 200 and **zero** matches for `PaperMono` and
-`C153`. Verified negative.
+> ✅ **CLOSED 2026-09-20 — and the original conclusion was wrong.**
+> *The heading is left unchanged so that inbound anchors keep resolving.*
+
+**Original entry, preserved verbatim:**
+
+> `/en/certification` returns HTTP 200 and **zero** matches for `PaperMono` and
+> `C153`. Verified negative.
+
+**The negative was real. The inference drawn from it across this whole record —
+that the board is uncertified — was false.**
+
+| Field | Value |
+|---|---|
+| FCC ID | **`2AN3WM5PAPERMONO`** |
+| Granted | **2026-08-12**, two grants (DTS + DXX), TCB Bay Area Compliance Laboratories |
+| Japan MIC | **`Ⓡ 211-260514`**, printed on the label artwork — **not verified against the MIC registry** |
+| CE | mark present on the label artwork — **no DoC located** |
+| Evidence | eleven public exhibits, now at [`artifacts/certification/`](artifacts/certification/README.md) |
+| Extraction | [`certification.md`](certification.md) |
+
+**Why the search failed.** M5Stack's `/en/certification` page genuinely does not
+list this board, and the vendor SKU `C153` **appears nowhere in the FCC filing**
+— the only string bridging the vendor identity and the regulatory identity is
+`PaperMono`. The FCC grantee database (`2AN3W`) was never searched; the original
+pass recorded that omission honestly (`sources.md` S11: *"an FCC grantee-database
+search was not attempted"*) and then reasoned as though it had been.
+
+**The generalisable lesson**, already recorded in
+[`guides/research/finding-certification-records.md`](../../../guides/research/finding-certification-records.md)
+after the same error was made about Xteink: *the absence of a vendor page, or of
+a printed mark in a photograph, is not the absence of a grant.* This is the
+second time this repository has made that conflation. Search the grantee
+database.
+
+**Documents corrected by this closure:** [`README.md`](README.md),
+[`coverage.md`](coverage.md), [`compatibility-and-status.md`](compatibility-and-status.md),
+[`comparisons-and-recommendations.md`](comparisons-and-recommendations.md),
+[`product-history-and-family.md`](product-history-and-family.md),
+[`media.md`](media.md), [`features/lora.md`](features/lora.md),
+[`features/wifi-and-bluetooth.md`](features/wifi-and-bluetooth.md),
+[`features/nfc.md`](features/nfc.md), [`features/README.md`](features/README.md).
+
+**Still open after the closure:** no CE Declaration of Conformity, no IC, RCM,
+UKCA or SRRC record was located; the Japanese MIC number is transcribed but
+unverified; and **no certification of any kind was located for
+[PaperMono-Lite](../papermono-lite/README.md)** — its status is `unknown`, not
+negative.
 
 ### G3 — the product I²C address table omits this board
 
@@ -463,6 +558,17 @@ limitations. Confirmed by full-text search, not a retrieval failure.
 ### G5 — no `Stamp-LoRa-1262` module datasheet exists anywhere located
 
 Consequently TCXO-versus-XTAL and the semantics of `SX_ANT_SW` are unknown.
+
+> **2026-09-20 — partial.** The FCC internal photographs confirm the module is
+> real: the SX1262 sits on a **castellated sub-PCB** with its own matching
+> network, its own U.FL connector and its own oscillator, soldered to the
+> mainboard. A **4-pad ceramic oscillator marked `M10`** is fitted beside the
+> SX1262 — so a discrete frequency reference definitely exists, which was
+> previously only assumed. `M10` is a house code and the maker's logo is
+> illegible, so **TCXO-versus-XTAL remains open**: both use 4-pad ceramic
+> packages of this size. `SX_ANT_SW` is likewise unresolved, though the label
+> exhibit independently confirms it is driven from **`IOE_G2`**.
+> [`certification.md` §6](certification.md#6--what-the-internal-photographs-show).
 Module pins 11–13 carry pad markers but **no printed name, no net label, and no
 drawn no-connect glyph** — recorded as *unlabelled*, which is not the same as
 *proven no-connect*.
@@ -564,6 +670,15 @@ about different artifacts; recorded so it is not later "resolved" as an error.
 so the programmed charge current is not directly derivable. Sheet 1's annotation
 `充电电流 0.5C` (~575 mA for the 1150 mAh cell) is the only statement of intent
 and is **unverified against the part**. Unresolved.
+
+> **2026-09-20 — a number now exists, and it is a third one.** M5Stack's FCC
+> label exhibit states **`CHG CURRENT = 500 mA`** outright
+> ([`certification.md` §5](certification.md#5--the-label-exhibit-is-an-architecture-diagram)).
+> That is not the ~575 mA that sheet 1's `0.5C` implies. Two M5Stack documents,
+> two figures, neither a measurement. C18 becomes a conflict between vendor
+> statements rather than an absence of evidence. For practical purposes: **about
+> 500 mA**. A bench measurement of charge current at `ICHGSET` = 15 kΩ would
+> close it.
 
 ### C19 — the NFC board-to-board halves disagree on pin numbering
 

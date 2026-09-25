@@ -91,6 +91,6 @@ but a guaranteed source of miscommunication. [`pinouts-and-buses.md` §1](pinout
   the repo's `PI<desig><pin>`→net matcher is **not** under this extractor, so every pin
   assertion was cross-checked against M5Stack's published pin-map rather than taken from
   the matcher. See [`commands.md`](commands.md) and the
-  [scratch README](../../../scratch/m5stack-lora-expansions/README.md).
+  [scratch README](../../../archive/devices/m5stack/shared-artifacts/lora-expansions/research-scratch/README.md).
 - The schematic was **not rendered**; claims that depend on drawn geometry (net routing
   through resistors, no-connect glyphs) are labelled `inferred` where they occur.

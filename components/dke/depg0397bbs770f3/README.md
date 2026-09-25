@@ -532,6 +532,38 @@ Not a contradiction — portrait-native panel, landscape-native RAM, marketing p
 
 ### [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md) — FPC connector `J5`, sheet 4
 
+> **FCC internal photographs — 2026-09-20.** The PaperMono's FCC filing
+> (`2AN3WM5PAPERMONO`) includes an internal-photograph exhibit, now retained at
+> [`devices/m5stack/papermono/artifacts/certification/`](../../../devices/m5stack/papermono/artifacts/certification/README.md).
+> It is the first physical-hardware evidence for this part on this board.
+>
+> **The `HP` suffix is real and is on the glass.** Exhibit p. 1 shows the panel
+> rear laser-etched **`0397BBS770F3HP-`** followed by **two characters that are
+> not legible** at 200 ppi, plus `N2510P10340-01-50519-1` and
+> `15AL11102200347`.
+>
+> This **materially advances**
+> [C2](../../../devices/m5stack/papermono/gaps-and-conflicts.md#c2--panel-part-number):
+> the `…HP` suffix in M5Stack's OTP demo is **not a typo and not an ordering-code
+> artefact** — the fitted panel genuinely carries a variant suffix that DKE's
+> published manual does not describe. **`-XM` is neither confirmed nor
+> refuted**; my best reading of the final two characters is unreliable and is
+> recorded as illegible rather than guessed. Neither of the other two strings
+> appears in any DKE document held here.
+>
+> **What would settle it:** a photograph of the glass at ≥ 600 ppi, or DKE's
+> `…HP` ordering documentation, which
+> [`vendors/dke`](../../../vendors/dke/README.md) records as unobtainable.
+>
+> Separately, M5Stack's FCC label exhibit says **`800x480P`** and its FCC user
+> manual says **`480 × 800`** — the two exhibits in the same filing disagree,
+> which shows the transposition behind
+> [C10](../../../devices/m5stack/papermono/gaps-and-conflicts.md#c10--dke-drawing-note-reversed)
+> is endemic rather than a single DKE error. The label also repeats
+> **"4-Level Gray"**, a third M5Stack statement against DKE's `GN — 2Grey Level`
+> ([C1](../../../devices/m5stack/papermono/gaps-and-conflicts.md#c1--4-grey-levels-versus-2)) —
+> same party, so C1 is **unchanged**.
+
 The panel connects through a **24-pin FPC** to `J5`. The board provides the boost network of §7.4 as discrete parts around the connector, and routes the four SPI signals plus BUSY straight to the ESP32-S3 — but **not** reset or power, which come from the [M5IOE1](../../m5stack/m5ioe1/README.md) expander instead.
 
 | `J5` pin | Panel signal | PaperMono net | Goes to | Evidence |

@@ -83,10 +83,10 @@ NimBLE or Bluedroid, provisioning. There is no PaperMono-specific setup step.
 |---|---|
 | **Silicon** | 2.4 GHz only; **no Bluetooth Classic**; single radio shared between Wi-Fi and BLE with the usual coexistence scheduling |
 | **Board** | The ESP32-S3 is a **bare die, not a shielded module**, alongside a [LoRa module](lora.md) and an [NFC front end](nfc.md) — three radios in a 62 × 101 × 8 mm slab |
-| **Board** | **No antenna part is identified** in any retrieved document. The LoRa module has a stated FPC antenna; the 2.4 GHz antenna is not described anywhere |
-| **Board** | **No certification identifier of any kind is published.** `docs.m5stack.com/en/certification` returns HTTP 200 with **zero** matches for `PaperMono` and `C153` — a verified negative, not a failed search |
+| **Board** | **Antenna identified 2026-09-20.** Supplier Shenzhen Rongshengyuan, part **`RSY-E8131`** (V3.0, 2026-02-01), a multi-band assembly whose 2.4 GHz element is 14.42 × 5.04 mm, IPEX4, VSWR < 4. Measured gain across 2400–2480 MHz is **−0.94 to +0.16 dBi**, total efficiency **19.9–24.1 %**; it is tuned slightly high, peaking at 2490–2500 MHz. The FCC internal photos annotate the Wi-Fi/BLE element on the **bottom edge of the main PCB** |
+| **Board** | **Certified 2026-08-12 — FCC ID `2AN3WM5PAPERMONO`.** Corrected 2026-09-20: `docs.m5stack.com/en/certification` really does return zero matches, but the board is certified. **Wi-Fi channels 1–11 only (2412–2462 MHz); 40 MHz only on 2422–2452 MHz.** Measured conducted output: 17.17 dBm max (802.11b), 16.22 (g), 15.43 (n20), 15.51 (n40); BLE 5.56 dBm. **Wi-Fi and BLE are declared *not* simultaneously transmitting.** [`../certification.md`](../certification.md) |
 | **Framework** | None specific |
-| **Observed** | **Nothing at all.** No throughput, range, sensitivity or power measurement exists from M5Stack or from any independent source |
+| **Observed** | **Nothing at all.** No throughput, range, sensitivity or power measurement exists from M5Stack or from any independent source. The FCC filing gives *conducted* power and antenna gain — not throughput, not range, and **no EIRP figure for any 2.4 GHz mode** |
 
 ## 6. Conflicts and simultaneous use
 

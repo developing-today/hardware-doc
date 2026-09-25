@@ -1,0 +1,8 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "MCU_WCH")(type "KiCad")(uri "${KIPRJMOD}/library/MCU_WCH.kicad_sym")(options "")(descr ""))
+  (lib (name "Device_Extra")(type "KiCad")(uri "${KIPRJMOD}/library/Device_Extra.kicad_sym")(options "")(descr ""))
+  (lib (name "Switch_Extra")(type "KiCad")(uri "${KIPRJMOD}/library/Switch_Extra.kicad_sym")(options "")(descr ""))
+  (lib (name "MCU_STM_Extra")(type "KiCad")(uri "${KIPRJMOD}/library/MCU_STM_Extra.kicad_sym")(options "")(descr ""))
+  (lib (name "Driver_LED_Extra")(type "KiCad")(uri "${KIPRJMOD}/library/Driver_LED_Extra.kicad_sym")(options "")(descr ""))
+)

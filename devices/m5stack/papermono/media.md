@@ -68,10 +68,22 @@ coverage passes** logged in [`research-log.md`](research-log.md) and catalogued 
 | **r/M5Stack, Hacker News** | No teardown, no PCB photograph, no revision marking |
 | **GitHub — five third-party projects** | `MingRZou/PaperMono-Launcher` carries **one photograph** captioned "PaperMono-Launcher on real hardware" — a running screen, not a hardware view. `EggUncle/PaperMonoCalendar` is explicit that its previews are **software-generated, not device photographs** (「非设备实拍」) |
 | **`community.m5stack.com`** | **Auth-walled** (HTTP 401). The vendor forum is the likeliest home for owner photographs and **could not be searched** |
-| **Regulatory databases** | **Not searched.** M5Stack publishes no certification identifier (S11), and an FCC grantee-database search **was not attempted** — see §6 |
+| **Regulatory databases** | ✅ **SEARCHED 2026-09-20 — and this was the lead.** FCC ID **`2AN3WM5PAPERMONO`** exists. Its **Internal Photos exhibit (13 images, 200 ppi, both board sides, housing, antennas, panel, cell) and its ID-Label exhibit (M5Stack's full architecture diagram) are now retained** at [`artifacts/certification/`](artifacts/certification/README.md). US Government public records — redistribution `allowed`, provenance unambiguous. See [`certification.md` §6](certification.md#6--what-the-internal-photographs-show) |
 
-**Two of those rows are the leads.** The vendor forum is inaccessible rather than empty, and the
-FCC database was never tried. Both could yield internal photographs.
+**Two of those rows were the leads, and one of them paid off.** The FCC database
+was never tried, and it held exactly what this page said was missing: PCB
+photographs of both sides, the rear housing with all three antennas annotated,
+the e-paper panel with its part number legible, and the battery cell label —
+under a licence that permits redistribution. **Retained 2026-09-20.**
+
+The vendor forum (HTTP 401) is still inaccessible and is still the likeliest
+source of owner photography. Everything in the table above about *vendor* and
+*community* imagery stands unchanged: none of it is licensed, and none of it is
+retained.
+
+**What the FCC exhibit still does not give you:** anything above 200 ppi. Small
+LGA laser marks — the BMI270, the ST25R3916 part number, the LoRa module's
+oscillator — are not legible, and are recorded as illegible rather than guessed.
 
 ## 3. Why nothing is retained
 
@@ -116,8 +128,8 @@ media, and they are deliberately not promoted into `media/`:**
 
 | Working set | Location | What it is |
 |---|---|---|
-| Schematic sheet renders and crops | `scratch/m5stack-papermono/sheets/` (~4.0 MB) | 200 dpi renders of sheets 1, 2 and 4, plus crops of the charge block, the rails, the RTC and the EPD boost circuit. These were how the [RTC rail error](gaps-and-conflicts.md#r7--rtc-rail-the-vendor-block-diagram-is-wrong--resolved) was found — the text extraction was ambiguous and the sheet had to be *looked at* |
-| Panel-manual page renders | `scratch/m5stack-papermono/epd-pages/` (~3.7 MB) | 22 page images of the DKE panel manual, which belongs to the [panel component](../../../components/dke/depg0397bbs770f3/README.md), not to this device |
+| Schematic sheet renders and crops | `archive/devices/m5stack/papermono/artifacts/research-scratch/sheets/` (~4.0 MB) | 200 dpi renders of sheets 1, 2 and 4, plus crops of the charge block, the rails, the RTC and the EPD boost circuit. These were how the [RTC rail error](gaps-and-conflicts.md#r7--rtc-rail-the-vendor-block-diagram-is-wrong--resolved) was found — the text extraction was ambiguous and the sheet had to be *looked at* |
+| Panel-manual page renders | `archive/devices/m5stack/papermono/artifacts/research-scratch/epd-pages/` (~3.7 MB) | 22 page images of the DKE panel manual, which belongs to the [panel component](../../../components/dke/depg0397bbs770f3/README.md), not to this device |
 
 **Why they are not retained.** They are **derived and exactly reproducible** from artifacts the
 repository already holds, by a documented command

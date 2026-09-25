@@ -105,6 +105,33 @@ The vendor's own tiering, worth following exactly:
 
 `P4_TX` and `P4_RX` are the ESP32-P4 boot console. Their required boot levels (TX low, RX high) are a real trap: an add-on that pulls `P4_RX` low, or drives `P4_TX` high, at power-on can prevent the device booting.
 
+### 2.3 Independently confirmed — and one trap in a real add-on
+
+> **This table was re-verified on 2026-09-20 against two independent primary sources**, and it is
+> correct. `executed-success`.
+>
+> 1. The Tanmatsu's own **IPC-D-356 fabrication netlist**
+>    ([`artifacts/production/netlist.ipc`](artifacts/production/netlist.ipc)) gives all **36** `J7`
+>    pins. Every row above matches, **including the "6, 7 | GND" row** — pins 6 *and* 7 really are
+>    both ground.
+>
+>    That row was originally a reconciliation: the vendor's back-expansion page lists only **35
+>    rows for 36 pins**, and its `Function` column is shifted one row against its `Name` column
+>    (`HUB_USB1_N` is labelled "Power output", `VBATT` is labelled "USB"). Anyone mapping that page
+>    onto the physical connector has to guess which signal is duplicated. **This table guessed
+>    right.**
+>
+> 2. `badgeteam/konsool-zero`, an actual add-on, mates with this connector. **26 of its 36 pin
+>    names match exactly.** The ten that differ are all on its side, not this one.
+>
+> ⚠ **Do not trust pin names copied from konsool-zero.** It labels **pin 7 `VSDCARD`** — a supply
+> name on a ground pin. It is inert there (the net drives nothing), but connecting a rail to pin 7
+> on a board derived from it shorts that rail to ground. It also uses **`E8`/`E9`/`E10` for pins
+> 27/25/23**, which this table calls `E13`/`E12`/`E11`.
+>
+> Full pin-by-pin comparison, and why the E-names diverge, in
+> [**`konsool-zero-wiring.md`**](konsool-zero-wiring.md).
+
 ---
 
 ## 2c. ⚠ VERIFIED FROM COPPER: `E8` and `E10` are NOT free GPIO

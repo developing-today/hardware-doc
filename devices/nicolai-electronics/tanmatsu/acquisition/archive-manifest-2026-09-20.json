@@ -1,0 +1,170 @@
+[
+  {
+    "path": "devices/nicolai-electronics/tanmatsu/artifacts/mechanical/tanmatsu.step",
+    "reason": "Bulky derived mechanical mesh (32.5 MiB). SIZE-AUDIT.md rules STEP/mesh archivable; the one fact it carries (mainboard outline width) is already extracted into pricing-and-dimensions.md.",
+    "notes": [
+      "Whole-device STEP assembly of the Tanmatsu, exported from the FreeCAD mechanical source.",
+      "This is the file the measured mainboard width (~114.9 mm) in `pricing-and-dimensions.md` was taken from, using `tools/step_bbox.py`. That measurement is not vendor-published.",
+      "Carries no netlist, pin or electrical information - it is geometry only."
+    ],
+    "source": {
+      "repo": "Nicolai-Electronics/tanmatsu-mechanical",
+      "commit": "c623cd548c9cafb95773624fe775001984449a89",
+      "tag": "release-5-3-gc623cd5",
+      "path_in_repo": "tanmatsu.step",
+      "author": "Renze Nicolai <renze@rnplus.nl>",
+      "committed": "2026-07-03T21:42:07+02:00",
+      "retrieved": "2026-08-26",
+      "license": "CERN-OHL-P (repository LICENSE); branding/artwork explicitly excluded",
+      "difficulty": "easy - public GitHub repository, permissively licensed",
+      "documented_in": "devices/nicolai-electronics/tanmatsu/artifacts/mechanical/README.md",
+      "urls": [
+        {"url": "https://github.com/Nicolai-Electronics/tanmatsu-mechanical", "desc": "upstream repository home"},
+        {"url": "https://github.com/Nicolai-Electronics/tanmatsu-mechanical/releases", "desc": "releases - STEP files are attached to release assets"}
+      ]
+    }
+  },
+  {
+    "path": "devices/nicolai-electronics/tanmatsu/artifacts/mechanical/frontpanel.step",
+    "reason": "Bulky derived mechanical mesh (10.9 MiB), geometry only.",
+    "notes": [
+      "STEP export of the Tanmatsu front panel. Relevant to `expansion-boards.md` front-panel fabrication specs, which already record the electrically/mechanically meaningful dimensions."
+    ],
+    "source": {
+      "repo": "Nicolai-Electronics/tanmatsu-mechanical",
+      "commit": "c623cd548c9cafb95773624fe775001984449a89",
+      "tag": "release-5-3-gc623cd5",
+      "path_in_repo": "frontpanel.step",
+      "author": "Renze Nicolai <renze@rnplus.nl>",
+      "committed": "2026-07-03T21:42:07+02:00",
+      "retrieved": "2026-08-26",
+      "license": "CERN-OHL-P",
+      "difficulty": "easy - public GitHub repository",
+      "documented_in": "devices/nicolai-electronics/tanmatsu/artifacts/mechanical/README.md",
+      "urls": [
+        {"url": "https://github.com/Nicolai-Electronics/tanmatsu-mechanical", "desc": "upstream repository home"},
+        {"url": "https://github.com/Nicolai-Electronics/tanmatsu-mechanical/releases", "desc": "releases"}
+      ]
+    }
+  },
+  {
+    "path": "devices/nicolai-electronics/tanmatsu/artifacts/mechanical/Tanmatsu_3D-printed.FCStd",
+    "reason": "Bulky FreeCAD enclosure source (15.5 MiB). SIZE-AUDIT.md classes enclosure CAD as archivable.",
+    "notes": [
+      "Editable FreeCAD source for the 3D-printed case - the parametric original the STEP exports are generated from.",
+      "This is the *source*, not a derived mesh; it is archived for size, not for derivedness. It is the file `mechanical-and-case.md` refers to when describing the FreeCAD workflow.",
+      "Sibling variant `Tanmatsu_3D-printed-ebyte.FCStd` covers the Ebyte LoRa module build."
+    ],
+    "source": {
+      "repo": "Nicolai-Electronics/tanmatsu-mechanical",
+      "commit": "c623cd548c9cafb95773624fe775001984449a89",
+      "tag": "release-5-3-gc623cd5",
+      "path_in_repo": "Tanmatsu_3D-printed.FCStd",
+      "author": "Renze Nicolai <renze@rnplus.nl>",
+      "committed": "2026-07-03T21:42:07+02:00",
+      "retrieved": "2026-08-26",
+      "license": "CERN-OHL-P",
+      "difficulty": "easy - public GitHub repository",
+      "documented_in": "devices/nicolai-electronics/tanmatsu/artifacts/mechanical/README.md",
+      "urls": [
+        {"url": "https://github.com/Nicolai-Electronics/tanmatsu-mechanical", "desc": "upstream repository home"},
+        {"url": "https://github.com/Nicolai-Electronics/tanmatsu-mechanical/blob/main/tools/freecad_export.py", "desc": "the export script that regenerates the STEP files from this source"}
+      ]
+    }
+  },
+  {
+    "path": "devices/nicolai-electronics/tanmatsu/artifacts/mechanical/Tanmatsu_3D-printed-ebyte.FCStd",
+    "reason": "Bulky FreeCAD enclosure source (19.5 MiB), Ebyte LoRa variant.",
+    "notes": [
+      "Case variant accommodating the Ebyte E22 LoRa module. Same parametric FreeCAD source family as `Tanmatsu_3D-printed.FCStd`."
+    ],
+    "source": {
+      "repo": "Nicolai-Electronics/tanmatsu-mechanical",
+      "commit": "c623cd548c9cafb95773624fe775001984449a89",
+      "tag": "release-5-3-gc623cd5",
+      "path_in_repo": "Tanmatsu_3D-printed-ebyte.FCStd",
+      "author": "Renze Nicolai <renze@rnplus.nl>",
+      "committed": "2026-07-03T21:42:07+02:00",
+      "retrieved": "2026-08-26",
+      "license": "CERN-OHL-P",
+      "difficulty": "easy - public GitHub repository",
+      "documented_in": "devices/nicolai-electronics/tanmatsu/artifacts/mechanical/README.md",
+      "urls": [
+        {"url": "https://github.com/Nicolai-Electronics/tanmatsu-mechanical", "desc": "upstream repository home"},
+        {"url": "https://github.com/Nicolai-Electronics/tanmatsu-mechanical/releases", "desc": "releases"}
+      ]
+    }
+  },
+  {
+    "path": "devices/nicolai-electronics/tanmatsu/artifacts/keebdeck-basic/mechanical/keebdeck_basic.step",
+    "reason": "Bulky derived mechanical mesh (44.6 MiB) for a reference board the Tanmatsu does not ship. Geometry only.",
+    "notes": [
+      "STEP assembly of Solder Party's KeebDeck Basic reference board (Rev 1.1 - Production).",
+      "The Tanmatsu does NOT use this board; it uses the KeebDeck keypad. The electrical content of this design is mined into `keyboard.md` §2b from `schematics.pdf` and, as of this pass, from `keebdeck_basic.kicad_sch` which is retained in the repository."
+    ],
+    "source": {
+      "repo": "solderparty/keebdeck_basic_hw",
+      "commit": "2b537ce5fef3da50b016c18ca66aac520af5abd1",
+      "tag": "rev1.1",
+      "path_in_repo": "keebdeck_basic.step",
+      "author": "arturo182 <github@solder.party>",
+      "committed": "2025-11-08T06:10:37+01:00",
+      "retrieved": "2026-08-26",
+      "license": "CERN-OHL v1.2 (repository LICENSE.md, read and confirmed 2026-09-20)",
+      "difficulty": "easy - public GitHub repository",
+      "documented_in": "devices/nicolai-electronics/tanmatsu/artifacts/keebdeck-basic/README.md",
+      "urls": [
+        {"url": "https://github.com/solderparty/keebdeck_basic_hw", "desc": "upstream repository home"},
+        {"url": "https://github.com/solderparty/keebdeck_basic_hw/releases/tag/rev1.1", "desc": "rev1.1 release the commit is tagged as"}
+      ]
+    }
+  },
+  {
+    "path": "devices/nicolai-electronics/tanmatsu/artifacts/keebdeck-basic/mechanical/keebdeck_basic_faceplate.step",
+    "reason": "Bulky derived mechanical mesh (2.7 MiB) for a reference board the Tanmatsu does not ship.",
+    "notes": [
+      "Faceplate STEP for the KeebDeck Basic reference board. Geometry only."
+    ],
+    "source": {
+      "repo": "solderparty/keebdeck_basic_hw",
+      "commit": "2b537ce5fef3da50b016c18ca66aac520af5abd1",
+      "tag": "rev1.1",
+      "path_in_repo": "keebdeck_basic_faceplate.step",
+      "author": "arturo182 <github@solder.party>",
+      "committed": "2025-11-08T06:10:37+01:00",
+      "retrieved": "2026-08-26",
+      "license": "CERN-OHL v1.2",
+      "difficulty": "easy - public GitHub repository",
+      "documented_in": "devices/nicolai-electronics/tanmatsu/artifacts/keebdeck-basic/README.md",
+      "urls": [
+        {"url": "https://github.com/solderparty/keebdeck_basic_hw", "desc": "upstream repository home"},
+        {"url": "https://github.com/solderparty/keebdeck_basic_hw/releases/tag/rev1.1", "desc": "rev1.1 release"}
+      ]
+    }
+  },
+  {
+    "path": "devices/flipper-devices/flipper-zero/artifacts/teardown-photos",
+    "reason": "4.0 MiB of third-party teardown photographs, bulky and non-textual. The schematics they annotate are retained in the repository alongside.",
+    "notes": [
+      "Seven PNG photographs of Flipper Zero internals, several carrying hand annotations, vendored by the konsool-zero author while studying the Flipper Zero as prior art.",
+      "Provenance beyond 'included in badgeteam/konsool-zero' is NOT established: the original photographers are unknown and no licence accompanies them. Treat redistribution status as `unknown`.",
+      "`MCU-board.png`, `NFC-RFID_antenna_annotations.png` and `sub1gHz-radio.png` are the annotated ones; they are the visual counterpart to the six Flipper Devices schematic PDFs kept in `../schematics/`."
+    ],
+    "source": {
+      "repo": "badgeteam/konsool-zero",
+      "commit": "0f0b964107c15dd398ee3e44a064fb853b17aaa8",
+      "path_in_repo": "docs/flipper-zero-photos",
+      "author": "Paul Honig <paul@etv.cx>",
+      "committed": "2025-03-22T11:38:10+01:00",
+      "retrieved": "2026-08-26",
+      "license": "unknown - no licence accompanies the images; konsool-zero's own BSD-3-Clause covers the design files, not necessarily vendored third-party photographs",
+      "difficulty": "easy while the repository stands; original photographers unidentified, so no independent source is known",
+      "access_notes": "konsool-zero has exactly one commit and no default-branch named `main` (a `main` URL 404s); use the pinned commit.",
+      "documented_in": "devices/flipper-devices/flipper-zero/README.md",
+      "urls": [
+        {"url": "https://github.com/badgeteam/konsool-zero/tree/0f0b964107c15dd398ee3e44a064fb853b17aaa8/docs/flipper-zero-photos", "desc": "directory at the pinned commit"},
+        {"url": "https://www.cnblogs.com/shangdawei/p/3729375.html", "desc": "the explanation link konsool-zero ships beside these photos (docs/link-to-explanation.txt)"}
+      ]
+    }
+  }
+]

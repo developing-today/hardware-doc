@@ -349,6 +349,44 @@ Additionally: the **M5PM1 library's LICENSE is dated 2025** while every other Pa
 
 ### [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md) — designator `U7`, sheet 2
 
+> **FCC label exhibit and internal photographs — 2026-09-20.** M5Stack filed its
+> full architecture diagram as the FCC "ID Label" exhibit for
+> `2AN3WM5PAPERMONO`
+> ([retained here](../../../devices/m5stack/papermono/artifacts/certification/2AN3WM5PAPERMONO-label-and-label-location.pdf)).
+> It independently confirms, from a source other than the schematic:
+>
+> - **I²C address `0x6E`**, and the host interrupt on **`G1`**
+> - **`PM_G0`** ← RX8130 RTC interrupt · **`PM_G4`** ← BMI270 IMU interrupt —
+>   both landing here rather than on the ESP32-S3, which is the mechanism behind
+>   deep-state wake
+> - **`PM_G3`** → frontlight PWM · **`PM_LED`** → the RGB LED's red channel
+> - **`PM_L1_EN`** → the `3V3_L1` LDO · **`PM_L2_EN`** → the `3V3_L2` JW5712 buck
+> - **`PM_5VIN_ADC`**, **`PM_BAT_ADC_EN`**, **`PM_BAT_ADC`**, `Btn_PWR`
+> - The part numbers this record's power tree depends on: `SSP7615` LDOs
+>   (including the `3V3_L0` one marked **"AlwaysOn"**), `JW5712` buck,
+>   `IP2315` charger, `AW32901` on the USB input
+> - **Power-button semantics**, matching §4.4 exactly:
+>   **Press = ON/RST · Double = OFF · HOLD = BOOT**
+> - **`CHG CURRENT = 500 mA`** — see
+>   [C18](../../../devices/m5stack/papermono/gaps-and-conflicts.md#c18--ip2315-charge-current-cannot-be-read-from-the-datasheet-table),
+>   which this **does not resolve**: the schematic annotates `0.5C` ≈ 575 mA, so
+>   there are now two M5Stack figures and no measurement
+>
+> **SWD is broken out to test pads.** The internal-photograph exhibit shows the
+> main board's bottom side carrying **`SWD1`/`SWC1`/`RESET1`** and
+> **`SWD2`/`SWC2`/`RESET2`** — one pair for this part, one for the
+> [M5IOE1](../m5ioe1/README.md). Also present: `SOC_BOOT`, `SOC_RST`, `Tx`,
+> `Rx`, `GND`, `VBUS_L0`, and all four switched rails `3V3_L0`, `3V3_L1`,
+> `3V3_L2`, `3V3_L2_LoRa`.
+>
+> ⚠ **Untested and risky.** Which SWD pair belongs to which chip is **not
+> marked**. Nothing has been probed. This part owns the ESP32-S3's reset and boot
+> straps, so attaching a debugger to it while the board is live is a plausible
+> route to bricking it — see
+> [`development.md`](../../../devices/m5stack/papermono/development.md). Status:
+> `not-tested`, `inferred` from silkscreen only.
+> [`certification.md` §6](../../../devices/m5stack/papermono/certification.md#the-test-pad-census-on-the-bottom-side).
+
 The M5PM1 is the **only always-on active device** on the board. It sits on rail `L0` (straight off the battery, alongside the RTC) and every other rail exists downstream of a pin it controls. Consequences for the board specifically:
 
 | Role on PaperMono | Pin / register | Evidence |
@@ -402,10 +440,66 @@ A linear brightness write sits commented out at `M5GFX.cpp:847`, superseded by t
 | File | Bytes | SHA-256 | What it is |
 |---|---:|---|---|
 | `artifacts/m5pm1-chip-user-manual-v1.9-en.pdf` | 814 731 | `c6daffd0ab89d8de50c0a19f35f94321bc6c9511ad017dd242a3e765d88a96b6` | **M5PM1 Chip User Manual V1.9**, 33 pp., English. PDF metadata: Author `洋 熊`, Creator/Producer `Microsoft® Word 2021`, created **2026-05-22**. Text layer validated against the rendered page headings before any value here was transcribed |
+| `artifacts/m5pm1-chip-user-manual-en-github-M5PM1-repo-2026-02-04.pdf` | 828 393 | `f008794c8a6b672b61452c77a9359b6332d82194dce92f9a21494e283783b656` | **Same manual, earlier export, English** — the copy shipped in `docs/` of the `m5stack/M5PM1` driver repo. Word 2021, created **2026-02-04**. Retained because it is **not** byte-identical to the docs-site copy and **is missing a behavioural note** — see §10.1 |
+| `artifacts/m5pm1-chip-user-manual-cn-github-M5PM1-repo-2026-02-04.pdf` | 1 063 504 | `38ea524938d923d829c5771f0a0b080be1e05ca00c2f60fa2f1a31257f20b9b8` | **Chinese edition**, 33 pp., Word 2021, created **2026-02-04**, from the same repo. Closes the open item below |
+
+### 10.1 ⚠ Two different M5Stack-published English exports — one is missing a register note
+
+*Added 2026-09-20.* M5Stack publishes this manual from **two** places, and they are **not the
+same file**:
+
+| Source | Bytes | SHA-256 (16) | Created | Pages |
+|---|---:|---|---|---:|
+| `static-cdn.m5stack.com/.../1207/M5PM1_Datasheet_EN.pdf` (docs site) | 814 731 | `c6daffd0ab89d8de` | 2026-05-22 | 35 |
+| `github.com/m5stack/M5PM1` → `docs/M5PM1_Datasheet_EN.pdf` | 828 393 | `f008794c8a6b672b` | 2026-02-04 | 35 |
+
+Both carry the **same revision history**, ending at `HW:5 / SW:6` — so neither is a newer
+*specification*. The text differs by only 173 bytes out of ~98 800, almost all of it reflow.
+**One difference is substantive**, and it is a trap:
+
+> **The docs-site copy contains this note on the wake-up-source register; the GitHub copy does
+> not contain it anywhere in the document.**
+>
+> > *"Note: Writing to this register can only clear the flag bit to ensure valid detection of
+> > the wake-up source the next time; it cannot specify a wake-up source."*
+
+Verified by full-text search: the string `wake-up source` occurs **twice** in the docs-site
+export and **zero** times in the GitHub export.
+
+**Consequence.** A reader working from the copy bundled with the driver library — the copy most
+likely to be opened, since it arrives with the code — has no warning that this register is
+**write-to-clear only**. Writing a bit pattern to select a wake source does nothing. Cite the
+**docs-site copy** (`…v1.9-en.pdf`) for anything touching wake sources.
+
+This also corrects the licence note below, which said the driver library "ships the same PDF in
+`docs/`". **It does not** — it ships a different export.
+
+### 10.2 The Chinese edition — retrieved, and substantively equivalent
+
+*Added 2026-09-20. This closes the open item that previously read "A Chinese-language edition
+exists and was not retrieved … the highest-value untaken lead."*
+
+The CN edition was found already present in `docs/` of the `m5stack/M5PM1` repo clone and is now
+retained at `artifacts/m5pm1-chip-user-manual-cn-github-M5PM1-repo-2026-02-04.pdf`.
+
+**It does not settle the §7 nomenclature inconsistencies, because it does not differ in
+substance.** Language-independent comparison: the CN and EN exports contain the **same 85
+distinct `0xNN` register-address tokens**, and the CN is 33 pp against the EN's 35 pp with the
+difference being typographic. The EN text's untranslated Chinese fragments (`低 8 bit`,
+`电池移除`, `唤醒源二选一`) are therefore not evidence of a richer Chinese original — they are
+an incomplete translation pass over the same content.
+
+**The English copy remains the primary source for this part.** The CN is retained because the
+two are not byte-identical and because recording *that the lead was followed and yielded
+nothing* is worth more than leaving it open. Negative result, dated.
 
 **Text-layer validation.** `pdftotext -layout` output was cross-checked against the document's own running headers (`M5PM1 Chip User Manual`), footers (`n / 33`, `The Innovator of Modular IoT Development Platform | M5Stack`) and section numbering before transcription. No glyph-subsetting or code-point-offset corruption was observed. Some cells retain untranslated Chinese (`低 8 bit`, `电池移除`, `唤醒源二选一`), which is a property of the source document, not of the extraction.
 
 **A Chinese-language edition exists and was not retrieved.** The `zh_CN` product page links `1207/M5PM1_Datasheet_CN.pdf` where the `en`/`ja` pages link `M5PM1_Datasheet_EN.pdf` **[DOC]**. Since these two are the only vendor documentation of this part at all, a CN↔EN diff is the highest-value untaken lead — it would likely settle the nomenclature inconsistencies in §7. Recorded as an open item rather than a gap.
+
+> ✅ **Superseded 2026-09-20 — the lead was taken and came back empty.** The CN edition is now
+> retained (§10.2). It is **substantively equivalent** to the English and does **not** settle
+> §7. Leaving the paragraph above in place so the reasoning is visible, but do not re-open it.
 
 **Licence.** M5Stack copyright, no licence statement on the document. Redistribution status **`unknown`**; disposition `repository`. The driver library that ships the same PDF in `docs/` is MIT, but that licence covers the code, not the manual.
 

@@ -2032,7 +2032,7 @@ summary where they disagree:
 | `devices/m5stack/cardputer-v1.1/artifacts/schematic/Sch_M5Cardputer.pdf` | 717 743 | `6016c1fe6099b9e3f0d0c88f07a3fba1aa44a3da8a7a91dd7040ad0fffa2041e` | M5Stack | no licence stated | unknown | **also served as the v1.0 schematic under product id `481` — byte-identical** |
 | `devices/m5stack/cardputer-v1.1/artifacts/schematic/M5Cardputer_Base.pdf` | 24 076 | `29542fe18b8687e4bd5fe7c533decd6a21e434cac8ac4b3f4cb1a6dd407be2cc` | M5Stack | no licence stated | unknown | base board; likewise served under both ids |
 | `devices/m5stack/cardputer-adv/artifacts/source-snapshots/M5Cardputer-f1392858/` | 117 087 (33 files) | tree `b0f20d35d31d24514320a0263b51aeb33a01a50a4f68c7f341f172d3c2f232d7` | M5Stack | **MIT** | allowed | `M5Cardputer` 1.1.1 @ `f1392858`. **Digest recipe — run from *inside* the snapshot directory**, because `sha256sum` embeds the path it is given: `cd <snapshot> && LC_ALL=C find . -type f \| LC_ALL=C sort \| xargs sha256sum \| sha256sum` |
-| `devices/m5stack/cardputer-adv/artifacts/source-snapshots/M5Cardputer-UserDemo-CardputerADV-b549eac0/` | 4 658 (5 files) | — | M5Stack | MIT ⚠ repo pins LGPL-3.0 RadioLib | conditional | build configuration only. ⚠ **The LGPL-3.0 attribution is contested — RadioLib is MIT**; see [`scratch/index-merge/corrections-requiring-review.md`](scratch/index-merge/corrections-requiring-review.md) |
+| `devices/m5stack/cardputer-adv/artifacts/source-snapshots/M5Cardputer-UserDemo-CardputerADV-b549eac0/` | 4 658 (5 files) | — | M5Stack | MIT ⚠ repo pins LGPL-3.0 RadioLib | conditional | build configuration only. ⚠ **The LGPL-3.0 attribution is contested — RadioLib is MIT**; see [`research/passes/index-merge/corrections-requiring-review.md`](research/passes/index-merge/corrections-requiring-review.md) |
 
 Device HTML snapshots also exist at `devices/m5stack/cardputer-v1.0/artifacts/`,
 `cardputer-v1.1/artifacts/`, `cardputer-zero/artifacts/` and `cardputer-mesh-kit/artifacts/`;
@@ -2129,7 +2129,7 @@ here.
 
 > **Merge note, 2026-09-07.** The T-Display-S3 session was still writing when this section was
 > transcribed; its fragment (SHA-256 `2f3acf08…`) may have grown since. Re-diff before treating
-> the group counts as final. See [`scratch/index-merge/README.md`](scratch/index-merge/README.md).
+> the group counts as final. See [`research/passes/index-merge/README.md`](research/passes/index-merge/README.md).
 
 ---
 
@@ -2260,6 +2260,6 @@ is not append-safe as JSON. 8 images across 5 records.
 | 4 | `components/espressif/esp32-s3-wroom-1{,u}/` | These directories now hold certification evidence for a module with **no component record**. Write the records, or fold the evidence into an existing one? |
 
 Items 1–3 are carried forward from
-[`scratch/xteink/index-fragments-round2.md`](scratch/xteink/index-fragments-round2.md) §5; its
+[`archive/devices/xteink/shared-artifacts/research-scratch/index-fragments-round2.md`](archive/devices/xteink/shared-artifacts/research-scratch/index-fragments-round2.md) §5; its
 items 3 and 4 (the 5.3 MB X4 Pro external photos, and FCC exhibits generally) are **now decided**
 by §1 and §3 above.

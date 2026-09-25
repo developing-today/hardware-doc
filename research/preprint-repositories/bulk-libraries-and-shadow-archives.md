@@ -8,7 +8,7 @@
   Crossref-verified scholarly literature, court reporting, and the operators' own statements as
   relayed by third parties. Operator figures are labelled as *claims*, never as measurements. Raw
   probe log:
-  [`../../scratch/preprint-repositories/bulk-archives/probe-log-2026-09-02.txt`](../../scratch/preprint-repositories/bulk-archives/probe-log-2026-09-02.txt).
+  [`../../archive/research/preprint-repositories/bulk-archives/probe-log-2026-09-02.txt`](../../archive/research/preprint-repositories/bulk-archives/probe-log-2026-09-02.txt).
 - **This record contains no mirror domains, no proxy hosts, no onion addresses and no instructions
   for reaching a blocked service.** Those rotate too fast to capture, are the operational-
   circumvention part, and would make this document wrong within a month. Services are named and
@@ -540,7 +540,7 @@ evidence discipline requires.
 ## 11. Sources
 
 Retrieval date **2026-09-02** throughout. Raw output:
-[`../../scratch/preprint-repositories/bulk-archives/`](../../scratch/preprint-repositories/bulk-archives/).
+[`../../archive/research/preprint-repositories/bulk-archives/`](../../archive/research/preprint-repositories/bulk-archives/).
 
 Wikipedia extracts were taken via `en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1`
 and saved to the scratch directory. All are **[COM]** — press and community reporting, once removed.

@@ -530,7 +530,7 @@ Provenance studies with similar methodology:
 
 Added by the Xteink round-2 research pass. **Append-only; nothing above was
 changed.** Full working notes, including the queries that failed, are in
-[`scratch/xteink/crawler-findings-round2.md`](scratch/xteink/crawler-findings-round2.md).
+[`archive/devices/xteink/shared-artifacts/research-scratch/crawler-findings-round2.md`](archive/devices/xteink/shared-artifacts/research-scratch/crawler-findings-round2.md).
 
 ### Regulatory / FCC databases
 
@@ -569,6 +569,160 @@ from the page's own `datasheet-viewer.php?id=517` link — and requesting
 
 **Magic-byte validation is not sufficient here.** Check `pdfinfo`'s `Title`
 before filing anything from this host.
+
+#### Appended 2026-09-20 — Crystalfontz numeric-id probe, measured
+
+The 2026-09-11 entry above is **confirmed and now quantified.** The probe that
+produced it left twelve files in
+[`archive/devices/xteink/shared-artifacts/research-scratch/datasheets/cfprobe/`](archive/devices/xteink/shared-artifacts/research-scratch/datasheets/cfprobe/README.md)
+— ids **512–523**, every one requested through the *same* decorative path
+`…/controllers/UltraChip/UC8179/<id>/`. All twelve were re-identified on
+2026-09-20 by first-page text, `pdfinfo` metadata and, where the name existed
+only as a raster, by extracting the embedded images. **Nothing above was
+changed; this is additive.**
+
+| id | What the file **actually** is | Vendor | Ver / date | Pages | Bytes |
+|---:|---|---|---|---:|---:|
+| 512 | **FT5436** true multi-touch capacitive touch panel controller | FocalTech Systems | — (PDF 2015-03-25, mod 2023) | 14 | 376 328 |
+| 513 | **FT3267** self-capacitive touch panel controller | FocalTech Systems | D-FT3267 **V0.1** | 13 | 455 700 |
+| 514 | **SSD1683** 400×300 red/black/white active-matrix EPD driver | Solomon Systech | Rev **1.0**, Jan 2021 | 49 | 1 877 699 |
+| 515 | **ST7567S** 132×65 dot-matrix LCD controller/driver | Sitronix | **V1.4**, 2016/07 | 68 | 918 094 |
+| 516 | **ST7567A** 132×65 dot-matrix LCD controller/driver | Sitronix | **V1.3**, 2020/08 | 77 | 3 503 339 |
+| 517 | *(not in `cfprobe/`; the id the UC8179 page itself advertises — see the 2026-09-11 note above)* | UltraChip | — | — | — |
+| 518 | **CH13620** 368RGB×448 AMOLED mobile single-chip driver | **Chip Wealth Technology** (芯颖科技) | **V0.00**, 2023-08-02 | 121 | 1 832 569 |
+| 519 | **CST816D** self-capacitive touch chip | Hynitron (上海海栎创) | **V1.3** | 12 | 1 098 205 |
+| 520 | ⚠ **not a PDF** — HTML | — | — | — | 47 745 |
+| 521 | ⚠ **not a PDF** — HTML (byte-identical to 520) | — | — | — | 47 745 |
+| 522 | ⚠ **not a PDF** — HTML (byte-identical to 520) | — | — | — | 47 745 |
+| 523 | ⚠ **not a PDF** — HTML (byte-identical to 520) | — | — | — | 47 745 |
+
+So the real access pattern is:
+
+**1. The id space is a flat, vendor-agnostic document table.** Eight consecutive
+ids returned documents from **five different manufacturers** — FocalTech,
+Solomon Systech, Sitronix, Chip Wealth and Hynitron — and three different device
+classes (touch controllers, e-paper drivers, LCD and AMOLED drivers). Adjacent
+ids are unrelated. `<Vendor>/<Part>` in the path is decorative confirmed:
+**every** one of these was requested as `UltraChip/UC8179`.
+
+**2. The id space is enumerable and contiguous — up to a live maximum.** 512–519
+all returned distinct real documents. That makes bulk enumeration a viable way
+to mirror this host, and it means an id is a *stable document handle*, not a
+part handle.
+
+**3. ⚠ Correction to the earlier entry: not every probed id returns a PDF.**
+The 2026-09-11 note said requesting an id returns "a real PDF". **Ids 520–523 do
+not.** They return **47 745 bytes of HTML with a `.pdf` filename** — and all four
+are **byte-identical** (`b7138455282f6ddc17d651b3a52f5b34c5db95f764d4a0192c537d769de637c3`).
+
+That hash is **not** merely "some HTML". It is byte-for-byte the same file as
+`cf-uc8179-page.html`, the ordinary controller landing page fetched in the same
+session from `https://www.crystalfontz.com/controllers/UltraChip/UC8179`.
+Confirmed by `sha256sum` on 2026-09-20 — this is a measurement, not an
+inference. Its contents:
+
+```
+<title>UltraChip UC8179 Datasheet</title>
+<link rel="canonical" href="https://www.crystalfontz.com/controllers/UltraChip/UC8179">
+… /controllers/datasheet-viewer.php?id=517 …
+```
+
+**So an id past the end of the table falls through to the page the *path* names,
+served with HTTP 200.** The path is decorative for a valid id and load-bearing
+for an invalid one — the worst of both worlds, because the fallback page is
+*titled after the part you asked for* and therefore looks like success twice
+over. The highest id observed to return a document is **519**; 520 is the first
+fall-through. That boundary is a snapshot, not a constant.
+
+**4. What this means for validation — a three-step rule for this host:**
+
+```bash
+# 1. Is it actually a PDF?  (ids past the end return HTML under a .pdf name)
+head -c 5 "$f" | grep -q '%PDF'   || echo "HTML fall-through, not a document"
+# 2. What does the PDF claim to be?
+pdfinfo "$f" | sed -n 's/^Title: *//p'
+# 3. What does page 1 actually say?  Title is often stale or wrong.
+pdftotext -layout -f 1 -l 1 "$f" - | head -20
+```
+
+Step 3 is not optional. On this set, id **514**'s `pdfinfo` **`Title` is
+`SSD1780`** while page 1 says **`SSD1683`** — the vendor edited one part's Word
+document into another's and the metadata kept the old name. And id **518** names
+its manufacturer **nowhere in its text at all**: `CH13620` is Chip Wealth
+Technology, established only by extracting the cover logo with
+`pdfimages -png -f 1 -l 1`. Do that when the text layer yields no vendor.
+
+**5. The documents are genuine; the URL→part mapping is worthless.** These are
+real vendor datasheets, several of them hard to obtain elsewhere, and they are
+worth fetching. But **nothing in the request identifies what comes back.** Every
+file from this host must be identified by content *before* it is filed, and its
+in-repository name must come from the document, never from the URL.
+
+**6. ⚠ Appended 2026-09-20 — this host stamps page 1, and `pdftotext` cannot see it.**
+Most documents Crystalfontz serves carry a banner across the top of **page 1
+only**:
+
+> *Crystalfontz — This LCD controller datasheet was downloaded from
+> https://www.crystalfontz.com/controllers*
+
+It is a **raster overlay**, not text: a **1700 × 105 RGB image (8 936 B)** plus a
+**2 601 B** grayscale soft mask. `pdfimages -list` shows the pair on page 1 and
+on no other page of ids **512, 513, 514, 515 and 516**, at byte-identical sizes —
+literally the same object. `pdftotext` finds **zero** occurrences of
+"crystalfontz" in any of them. Measured 2026-09-20, `executed-success`.
+
+```bash
+# Is this file a Crystalfontz copy?  Look for the stamp, not for the word.
+pdfimages -list -f 1 -l 1 "$f" | awk '$4==1700 && $5==105'
+```
+
+Three consequences:
+
+- **A Crystalfontz copy never hash-matches the vendor's original**, even when the
+  content is identical. A hash mismatch against another mirror is therefore
+  **expected** and is **not** evidence of a different revision. Compare text
+  layers (`pdftotext -layout` + `diff`) before concluding anything about versions.
+  Worked example: id **514** vs the SSD1683 copy already held here — different
+  hashes, different byte counts, **byte-identical text layers**
+  ([SSD1683 §11](components/solomon-systech/ssd1683/README.md)).
+- **Text-only provenance and dedup checks miss the modification entirely.**
+- **Absence of the stamp does not prove a file did not come from here.**
+  ⚠ Measured exception: id **519** (Hynitron CST816D) is **unstamped** and
+  **byte-identical** to Waveshare's mirror of the same document.
+
+**7. ⚠ And render page 1 — the text layer can hide the licence, too.**
+Id **513** (FocalTech FT3267) carries a large diagonal **"FOCALTECH
+CONFIDENTIAL"** watermark that is **absent from `pdftotext` output entirely**. A
+text-only pass records the ordinary copyright footer and misses the watermark —
+i.e. it mis-states the artifact's redistribution status. Add
+`pdftoppm -r 150 -f 1 -l 1 -png` to the three-step rule above and **look at the
+page** whenever you are about to record a licence field.
+
+Filed from this probe on 2026-09-20:
+[Sitronix ST7567A](components/sitronix/st7567a/README.md) (id 516) and
+[Chip Wealth Technology CH13620](components/chip-wealth-technology/ch13620/README.md)
+(id 518) — and, in a second pass the same day,
+[FocalTech FT5436](components/focaltech/ft5436/README.md) (id 512),
+[FocalTech FT3267](components/focaltech/ft3267/README.md) (id 513) and
+[Sitronix ST7567S](components/sitronix/st7567s/README.md) (id 515).
+
+**Ids 514 and 519 stay in scratch as proven duplicates**, not as unfinished work:
+
+| id | Comparison against the copy already in the repository | Verdict |
+|---:|---|---|
+| **519** CST816D | **byte-identical** — same SHA-256 `a0b14a06…`, same 1 098 205 bytes, `cmp` clean, against `components/hynitron/cst816d/artifacts/cst816d-datasheet-v1.3.pdf` (a Waveshare mirror) | keep **one** copy; the extra URL is recorded |
+| **514** SSD1683 | **not** byte-identical (1 877 699 vs 3 931 534 B) but **`pdftotext -layout` output is byte-identical**; identical `Title`/`Author`/`Creator`/`Producer`/`CreationDate`/page count. Differences are re-optimisation, a 2025 `ModDate`, and **the two extra page-1 stamp objects** from point 6 | content-equivalent derivative; [SSD1683 §11](components/solomon-systech/ssd1683/README.md) already decided to retain only the larger unoptimised copy |
+
+`archive/devices/xteink/shared-artifacts/research-scratch/datasheets/cfprobe/` therefore now holds **only negative results
+and those two proven duplicates**. Details:
+[`archive/devices/xteink/shared-artifacts/research-scratch/datasheets/cfprobe/README.md`](archive/devices/xteink/shared-artifacts/research-scratch/datasheets/cfprobe/README.md).
+
+⚠ **Still unmeasured:** the bounds of the id space (only 512–523 were probed, and
+517 was never fetched), and the site's own controller index — which
+[exposes embedded JSON](components/solomon-systech/ssd1683/README.md) of the form
+`{"id":514,"name":"SSD1683","version":"1.0","summary":"…"}` and would give a
+complete id→part table **without downloading anything**. That is the cheap way to
+map this host and nobody has done it.
 
 ### Electronics distributors / parts catalogues — additions
 

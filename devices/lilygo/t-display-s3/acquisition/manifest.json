@@ -456,7 +456,7 @@
       "canonical_url": "https://lilygo.cc/collections/all/products.json?limit=250&page=1",
       "sha256": null,
       "bytes": 2503053,
-      "destination": "scratch/lilygo-t-display-s3/shop-products.jsonl",
+      "destination": "archive/devices/lilygo/t-display-s3-shared/artifacts/research-scratch/shop-products.jsonl",
       "retrieved": "2026-09-07",
       "upstream_version": "feed updated_at 2026-09-07",
       "license": "vendor store data; not licensed for redistribution",

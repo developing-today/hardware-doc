@@ -78,7 +78,7 @@ is inserted, the speaker amplifier will be disabled."*
 Replaces the [NS4168](../ns4168/README.md) used on the Cardputer v1.0/v1.1, which took I²S
 directly and had no analog input, no enable control and no line-out path.
 
-*Added 2026-09-07 from `scratch/m5stack-cardputer/index-fragments.md` §3.2.*
+*Added 2026-09-07 from `archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md` §3.2.*
 
 ## See also
 

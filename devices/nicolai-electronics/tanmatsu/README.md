@@ -18,6 +18,7 @@ Tanmatsu is a conference-badge-derived, commercially sold handheld computer. It 
 | **How does the keyboard work? / I have spare keyboards** | [`keyboard.md`](keyboard.md) — matrix, keymap, I2C, and the Solder Party family |
 | **How does the display work?** | [`display.md`](display.md) |
 | **How do I build an add-on / front panel?** | [`expansion-boards.md`](expansion-boards.md) |
+| **I'm wiring something to the 36-pin port — what are the real GPIOs?** | [`konsool-zero-wiring.md`](konsool-zero-wiring.md) — a worked add-on, pin by pin, **and three naming traps** |
 | **What does it cost? How big is it?** | [`pricing-and-dimensions.md`](pricing-and-dimensions.md) |
 | **How does BadgeLink / AppFS work internally?** | [`badgelink-and-appfs.md`](badgelink-and-appfs.md) |
 | **How is the software architected? How do I add an app?** | [`software-architecture.md`](software-architecture.md) |
@@ -190,6 +191,7 @@ That last row matters if you fork the design: the electronics are permissively l
 | [`konsool-and-family.md`](konsool-and-family.md) | **What Konsool is**, how WHY2025 differs, the badge family |
 | [`mechanical-and-case.md`](mechanical-and-case.md) | Case, board revisions, front panels, FreeCAD workflow |
 | [`expansion-boards.md`](expansion-boards.md) | Existing add-ons, front-panel fab specs, add-on design rules |
+| [`konsool-zero-wiring.md`](konsool-zero-wiring.md) | `konsool-zero` connector wiring, host GPIO map, and the pin-7 / E-numbering / SPI-domain traps |
 | [`pricing-and-dimensions.md`](pricing-and-dimensions.md) | Prices, spare parts, availability, measured dimensions |
 | [`badgelink-and-appfs.md`](badgelink-and-appfs.md) | BadgeLink wire protocol and AppFS internals |
 | [`software-architecture.md`](software-architecture.md) | Launcher architecture, app tiering, **plugin system**, eFuse identity, recent changes |
@@ -209,10 +211,28 @@ That last row matters if you fork the design: the electronics are permissively l
 ```
 artifacts/
 ├── schematics/         schematic.pdf + full KiCad sources (CERN-OHL-P)
+│   ├── kicad/          12 sheets + tanmatsu.kicad_pcb
+│   │   └── library/    75 custom symbols & footprints — needed to open the project
+│   └── design/         board outline (.kicad_mod, .svg) + coprocessor latch-circuit figure
 ├── production/         bom.csv, designators, positions, netlist.ipc
 ├── source-snapshots/   complete official documentation source
+├── keebdeck-keyboard/  Solder Party keypad footprint, symbol, dimensions.pdf (CERN-OHL v1.2)
+├── keebdeck-basic/     Solder Party reference board — schematic PDF + KiCad source (CERN-OHL v1.2)
+│   └── mechanical/     STEP models — archived, placeholders in place
+├── konsool-zero/       RFID/NFC/sub-GHz add-on — full KiCad source (BSD-3-Clause)
+├── mechanical/         STEP + FreeCAD case sources — archived, placeholders in place
 └── app-repository-catalog.json   57 apps, machine-readable
 ```
+
+Bulky mechanical models (STEP, FreeCAD) live in the archive. Each leaves a `*.ARCHIVED.md`
+placeholder carrying SHA-256, byte size, upstream commit, licence and independent recovery URLs —
+**readable without the archive** — plus a relative symlink so a checkout that holds the archive
+behaves as though nothing moved.
+
+Related record in another namespace:
+[**Flipper Zero**](../../flipper-devices/flipper-zero/README.md) — six schematics and teardown
+photos that konsool-zero vendored as prior art. Filed under the product they describe, not this
+one; it is an artifact-preservation stub, not a researched device.
 
 ## Provenance note
 

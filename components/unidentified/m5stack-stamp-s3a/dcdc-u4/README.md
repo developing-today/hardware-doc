@@ -157,7 +157,7 @@ The real component record already exists:
 
 > ⚠ Note for whoever works that datasheet: it is a **raster scan** — 4 pages, 4 full-page
 > images, `pdftotext` yields **0 words**. It cannot be text-searched. See
-> [`scratch/schematic-tracing/traceability-census.md`](../../../../scratch/schematic-tracing/traceability-census.md) §5.
+> [`guides/reverse-engineering/schematic-pdf-traceability-census.md`](../../../../guides/reverse-engineering/schematic-pdf-traceability-census.md) §5.
 
 Proposed index change (not applied):
-[`scratch/schematic-tracing/index-fragments.md`](../../../../scratch/schematic-tracing/index-fragments.md).
+[`archive/guides/reverse-engineering/artifacts/schematic-tracing-2026-09-07/index-fragments.md`](../../../../archive/guides/reverse-engineering/artifacts/schematic-tracing-2026-09-07/index-fragments.md).

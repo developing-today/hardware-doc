@@ -381,6 +381,7 @@ devices/m5stack/dinmeter/artifacts/
 ├── schematic/
 │   ├── K134_DIN_Meter_v1.0-schematic.pdf            433 658 B  03ec3353…  ← primary evidence
 │   ├── K134_DIN_Meter_v1.0-schematic.bbox.xml        73 682 B  parsed marker layer
+│   ├── K134_DIN_Meter_v1.0-schematic.parsed.txt      17 347 B  parser output: 85 CO / 238 PI / 25 NL
 │   ├── parse_dinmeter_sch.py                          3 198 B  the parser (re-runnable)
 │   ├── K134_DIN_Meter_v1.0-designator-value-census.txt          85 designators → values
 │   ├── K134_DIN_Meter_v1.0-designator-census.txt               full CO/PI/NL census + gaps

@@ -173,14 +173,14 @@ Boards: [Cardputer v1.1](../../../devices/m5stack/cardputer-v1.1/README.md),
 
 > **Provenance note.** `components/unidentified/m5stack-stamp-s3a/dcdc-u4/` was created on
 > 2026-09-04 recording this same `U4` as "part number not established". The label **is** present
-> on the sheet — see §0 of `scratch/m5stack-cardputer/index-fragments.md` for the verifying crop
+> on the sheet — see §0 of `archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md` for the verifying crop
 > and hashes. That directory should be retired in favour of this record.
 >
 > ⚠ **Retiring it would edit another session's record, so it has not been done.** The conflict is
 > parked for review in
-> [`scratch/index-merge/corrections-requiring-review.md`](../../../scratch/index-merge/corrections-requiring-review.md).
+> [`research/passes/index-merge/corrections-requiring-review.md`](../../../research/passes/index-merge/corrections-requiring-review.md).
 
-*Added 2026-09-07 from `scratch/m5stack-cardputer/index-fragments.md` §3.5.*
+*Added 2026-09-07 from `archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md` §3.5.*
 
 ## 5. Drivers and libraries
 
@@ -283,7 +283,7 @@ A separate `..._FirstPage.pdf` (1 page, 2 546 640 B) is also served and is the s
 | D1 | JW5712 / JW5712A datasheet | Joulwatt | primary | datasheet | <https://www.joulwatt.com/jwt/profile/ProductFile/%E8%A7%84%E6%A0%BC%E4%B9%A6/JW5712_JW5712A_Datasheet.pdf> | 2026-09-01 | undated; 4 pp, **image-only**, 2 547 415 B | Existence and identity only — no machine-readable content (§8) | `artifacts/jw5712-jw5712a-datasheet-scanned.pdf` |
 | D2 | Joulwatt product database, record `id 9661` | Joulwatt | primary | API | <https://www.joulwatt.com/jwt/web/product/list> | 2026-09-01 | live | Every parameter in §2: input range, 600/800 mA, 360 nA I<sub>Q</sub>, 8 output voltages via 3 `VSEL` pins, WLCSP-8 1.6 × 0.9 mm, COT/PFM, 100 % duty behaviour, Active status | not vendored (4.4 MB full listing) |
 | S1 | `PaperMono_SCH_V0.6.2_20260522.pdf` | M5Stack | primary | schematic | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | V0.6.2, 6 sheets | `U10` ball/net table, `L2` = 2.2 µH, `R28` = 1 MΩ, `3V3_L2_EN` ← M5PM1 pin 14, every load in §4 | `devices/m5stack/papermono/artifacts/schematic/PaperMono_SCH_V0.6.2_20260522.pdf` |
-| S2 | PaperMono M5PM1/M5IOE1 power-management page | M5Stack | primary | official page | <https://docs.m5stack.com/en/arduino/papermono/m5pm1_m5ioe1> | 2026-09-01 | — | The L0–L3B level definitions and `setDcdcEnable()` | `scratch/m5stack-papermono/docs/pages/en-arduino-papermono-m5pm1_m5ioe1.html` |
+| S2 | PaperMono M5PM1/M5IOE1 power-management page | M5Stack | primary | official page | <https://docs.m5stack.com/en/arduino/papermono/m5pm1_m5ioe1> | 2026-09-01 | — | The L0–L3B level definitions and `setDcdcEnable()` | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/pages/en-arduino-papermono-m5pm1_m5ioe1.html` |
 
 **Local artifacts**
 

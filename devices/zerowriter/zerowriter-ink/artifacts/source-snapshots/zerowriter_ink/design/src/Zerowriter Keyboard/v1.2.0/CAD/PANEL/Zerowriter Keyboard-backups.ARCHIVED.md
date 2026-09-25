@@ -1,125 +1,149 @@
-# ARCHIVED: `Zerowriter Keyboard-backups/`
+# ARCHIVED: `Zerowriter Keyboard-backups`
 
 > This directory was **moved out of the repository**, not deleted.
-> Archived **2026-08-24**.
+> Archived **2026-09-23**.
 
-**What it is:** KiCad's **automatic project backups**. KiCad 7+ writes a timestamped ZIP into
-`<project>-backups/` every time the project is saved (`Preferences → Common → Project Backup`).
-Each ZIP holds intermediate save states of `.kicad_pcb` / `.kicad_pro` / `.kicad_prl`, plus in some
-cases an `_autosave-*.kicad_pcb` crash-recovery file.
-
-**What it is for:** editor crash/undo recovery for the designer. It is **not** a release artifact
-and carries no design intent that is not already in the live project files beside it.
-
-**Why removal was OK:**
-
-1. **Nothing unique.** These are intermediate save states of the *panelised* project whose final
-   state is still present, uncompressed, in the parent directory. The design's real revision
-   history lives in upstream git.
-2. **Fully reacquirable.** The entire `zerowriter_ink` snapshot in this repository was verified on
-   2026-08-24 to be **byte-identical** to `zerowriter/zerowriter_ink` at commit
-   `996207aca0677300ed5f1fdf762d9c9ec79f516e` — `diff -rq` across the whole tree reported
-   **zero** differences. These ZIPs are in that commit and can be pulled back verbatim.
-3. **Poorly compressible duplication.** ZIP-compressed near-copies of the same multi-MiB
-   `.kicad_pcb` defeat git's delta compression, so they cost close to their full size forever.
-
-The **live design files were not touched.** Schematics, PCBs, panels, Gerbers, BOMs, STEP models
-and 3D-printable outputs all remain in place.
+**Reason:** KiCad automatic project-backup ZIPs — editor crash/undo recovery snapshots of the panelised project, not a release artifact. Bulky (2.66 MB of ZIP-compressed near-copies of a multi-MiB .kicad_pcb, which defeats git delta compression) and fully reacquirable from the pinned upstream commit. RESTORED FROM SCRATCH 2026-09-20: a 2026-08-24 pass archived this directory, then a later pass archived the parent PANEL/ onto the same archive path and replaced it; the placeholder was repointed at archive/devices/zerowriter/zerowriter-ink/artifacts/provenance-2026-08-30/, leaving scratch as the only copy. These are the same bytes — the LC_ALL=C tree digest recorded in the previous placeholder was reproduced exactly before this move.
 
 ## Identity
 
 | Field | Value |
 |---|---|
 | Original repo path | `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups` |
-| Archived to | `scratch/zerowriter-provenance-2026-08-30/upstream/zerowriter_ink-996207aca0677300ed5f1fdf762d9c9ec79f516e/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups` |
-| Type | directory of ZIP archives |
-| Size | **2659337 B** |
-| File count | **3** ZIP files |
-| Extracted-tree digest (`LC_ALL=C`) | `4622918c4d871990293f3ece188ead57f941c07c3b9628545ba4e60ee7cd9726` |
-| Producer | KiCad automatic project backup |
-| Author | Adam Wilk / Zerowriter |
-| Upstream repository | <https://github.com/zerowriter/zerowriter_ink> |
-| Upstream commit | `996207aca0677300ed5f1fdf762d9c9ec79f516e` ("source files") |
-| Upstream author / date | Adam Wilk `<adamwilk@MacBook-Air-3.local>` · 2026-05-13T19:02:20-04:00 |
+| Archived to | `/home/user/repo-archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups` |
+| Type | directory |
+| Size | 2,659,337 B (2.54 MiB) |
+| File count | 3 |
+| Last modified (mtime) | 2026-05-13 23:02:20Z |
+| Upstream repository | zerowriter/zerowriter_ink |
+| Commit | `996207aca0677300ed5f1fdf762d9c9ec79f516e` |
+| Author / committer | Adam Wilk <adamwilk@MacBook-Air-3.local> |
+| Commit date | 2026-05-13T19:02:20-04:00 |
+| Retrieved | 2026-08-30 (tarball); re-placed from scratch 2026-09-20 |
+| License | GPL-3.0 (zerowriter_ink/LICENSE — GNU GPL v3, 29 June 2007). Redistribution allowed; copyleft — must carry the licence and source. |
 | Path within upstream repo | `design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups` |
-| License | **GPL-3.0** (`zerowriter_ink/LICENSE` — GNU GPL v3, 29 June 2007) |
-| Redistribution status | allowed (GPL-3.0; copyleft — redistribution must carry the license and source) |
-| Backup timestamps | encoded in the filenames below. The mtimes are all 2026-05-13 — the clone date, not the save date. |
+| Difficulty to re-obtain | easy — one `git clone` + `git checkout` of a public repository |
 
-### Files (these are the compressed originals; sizes are pre-extraction)
+## Contents
 
-| File | Bytes | mtime | SHA-256 |
-|---|---:|---|---|
-| `Zerowriter Keyboard-2025-07-23_105201.zip` | 1325397 | 2026-05-13 | `0e268fe5a8b667633780f1ae9a0d2349e3e38c88bb5b152c3323dcdc2b418db0` |
-| `Zerowriter Keyboard-2025-07-23_105857.zip` | 666920 | 2026-05-13 | `3f03fcc6103626eaa6ecfb6dbd526339173a28ca8fbbf4a42fa0ebb930beda62` |
-| `Zerowriter Keyboard-2025-07-23_110541.zip` | 667020 | 2026-05-13 | `6203f7e61ed259478b6afba52b311e0e6239cf10e2a59b9e54383199850c2931` |
-
-Post-extraction sizes are not recorded: each ZIP is a snapshot of files that already exist
-uncompressed in the parent directory. Inspect on demand with `unzip -l` / `unzip -d`.
-
-
-> ⚠ **Path corrected 2026-08-30.** This placeholder originally pointed at
-> `archive/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups`.
-> A later archiving pass moved the whole parent `PANEL/` directory onto that same archive path, which
-> replaced it. **The content was not lost** — it survives in full inside the upstream tarball
-> extraction under `scratch/zerowriter-provenance-2026-08-30/`, and the path above now points there.
-> Verified present ✅.
+| File | Bytes | SHA-256 |
+|---|---:|---|
+| `Zerowriter Keyboard-2025-07-23_105201.zip` | 1,325,397 | `0e268fe5a8b667633780f1ae9a0d2349e3e38c88bb5b152c3323dcdc2b418db0` |
+| `Zerowriter Keyboard-2025-07-23_105857.zip` | 666,920 | `3f03fcc6103626eaa6ecfb6dbd526339173a28ca8fbbf4a42fa0ebb930beda62` |
+| `Zerowriter Keyboard-2025-07-23_110541.zip` | 667,020 | `6203f7e61ed259478b6afba52b311e0e6239cf10e2a59b9e54383199850c2931` |
 
 ## Derived from a common base
 
-This material is **not standalone**. It is part of a snapshot of [`zerowriter/zerowriter_ink`](https://github.com/zerowriter/zerowriter_ink) taken at a single pinned commit; re-acquiring it means fetching that commit, not hunting the file individually.
+This artifact is **not standalone** - it is a modification of the source below. Re-acquiring it means obtaining that base and re-applying the changes.
 
 | Field | Value |
 | --- | --- |
 | Base repository | [`zerowriter/zerowriter_ink`](https://github.com/zerowriter/zerowriter_ink) |
-| Base commit | [`996207aca0677300ed5f1fdf762d9c9ec79f516e`](https://github.com/zerowriter/zerowriter_ink/tree/996207aca0677300ed5f1fdf762d9c9ec79f516e) |
-| Tree at that commit | <https://github.com/zerowriter/zerowriter_ink/tree/996207aca0677300ed5f1fdf762d9c9ec79f516e> |
+| Base commit | `996207aca0677300ed5f1fdf762d9c9ec79f516e` |
+| Base URL | https://github.com/zerowriter/zerowriter_ink/tree/996207aca0677300ed5f1fdf762d9c9ec79f516e |
+| Relationship | Not standalone: a member of a single pinned snapshot of the upstream repository. Re-acquiring means fetching that commit, not hunting the directory individually. NOTE: the in-repo copy of this snapshot is NOT byte-identical to upstream — 50 of its 152 files were line-ending/trailing-whitespace normalised in-repo on 2026-08-30 (36 CRLF->LF, 14 trailing-whitespace-stripped, 0 semantic differences). See devices/zerowriter/zerowriter-ink/source-snapshot-provenance.md. |
 
-```bash
-git clone https://github.com/zerowriter/zerowriter_ink
-git -C zerowriter_ink checkout 996207aca0677300ed5f1fdf762d9c9ec79f516e
-```
+Other archived artifacts sharing this base:
 
-**10 archive records in this repository share this exact base.** Re-obtaining the commit once satisfies all of them, and any correction to the base details above belongs in every one:
-
-- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL.ARCHIVED.md`](../../../../Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL.ARCHIVED.md)
-- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups.ARCHIVED.md`](../../../../Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups.ARCHIVED.md)
-- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Soldered Inkplate 5 Gen2 3D.step.ARCHIVED.md`](../../../../Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Soldered Inkplate 5 Gen2 3D.step.ARCHIVED.md)
-- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL.ARCHIVED.md`](../PANEL.ARCHIVED.md)
-- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard 3D.step.ARCHIVED.md`](../../OUTPUTS/Zerowriter Keyboard 3D.step.ARCHIVED.md)
-- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL.ARCHIVED.md`](../../../../Zerowriter breakout board/v1.2.0/CAD/PANEL.ARCHIVED.md)
-- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL/Zerowriter breakout board-backups.ARCHIVED.md`](../../../../Zerowriter breakout board/v1.2.0/CAD/PANEL/Zerowriter breakout board-backups.ARCHIVED.md)
-- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step.ARCHIVED.md`](../../../../Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step.ARCHIVED.md)
-- [`devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard-backups.ARCHIVED.md`](../../../../../zw_keyboard/Kicad/CAD/Zerowriter Keyboard-backups.ARCHIVED.md)
+- `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL.ARCHIVED.md`
+- `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups.ARCHIVED.md`
+- `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Soldered Inkplate 5 Gen2 3D.step.ARCHIVED.md`
+- `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL.ARCHIVED.md`
+- `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups.ARCHIVED.md`
+- `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard 3D.step.ARCHIVED.md`
+- `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL.ARCHIVED.md`
+- `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL/Zerowriter breakout board-backups.ARCHIVED.md`
+- `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step.ARCHIVED.md`
+- `devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard-backups.ARCHIVED.md`
 
 ## How to get it back
 
-All statuses verified **2026-08-24**.
+Independent recovery URLs, most reliable first:
+
+- whole-repository tarball at that commit (**works for directories**):  
+  <https://codeload.github.com/zerowriter/zerowriter_ink/tar.gz/996207aca0677300ed5f1fdf762d9c9ec79f516e>
+- browse the directory at that commit:  
+  <https://github.com/zerowriter/zerowriter_ink/tree/996207aca0677300ed5f1fdf762d9c9ec79f516e/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups>
+- jsDelivr directory listing at that commit:  
+  <https://cdn.jsdelivr.net/gh/zerowriter/zerowriter_ink@996207aca0677300ed5f1fdf762d9c9ec79f516e/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups/>
+- current default branch (may have changed):  
+  <https://github.com/zerowriter/zerowriter_ink/tree/HEAD/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups>
+- GitHub zip at the pinned commit (302 -> codeload, application/zip):  
+  <https://github.com/zerowriter/zerowriter_ink/archive/996207aca0677300ed5f1fdf762d9c9ec79f516e.zip>
+- Wayback Machine capture of the repository:  
+  <https://web.archive.org/web/2/https://github.com/zerowriter/zerowriter_ink>
+
+Fuller sourcing for this artifact is recorded in `devices/zerowriter/zerowriter-ink/source-snapshot-provenance.md`.
+
+Restore from the local archive:
 
 ```bash
-# Source 1 — upstream git at the pinned commit (exact, preferred)
-git clone https://github.com/zerowriter/zerowriter_ink.git
-cd zerowriter_ink && git checkout 996207aca0677300ed5f1fdf762d9c9ec79f516e
-#   -> "design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups"
-
-# Source 2 — GitHub tarball at that commit    (HTTP 200 · application/x-gzip)
-curl -L -o zerowriter_ink.tar.gz \
-  https://codeload.github.com/zerowriter/zerowriter_ink/tar.gz/996207aca0677300ed5f1fdf762d9c9ec79f516e
-
-# Source 3 — GitHub zip at that commit        (HTTP 200 · application/zip, 302 -> codeload)
-curl -L -o zerowriter_ink.zip \
-  https://github.com/zerowriter/zerowriter_ink/archive/996207aca0677300ed5f1fdf762d9c9ec79f516e.zip
-
-# Source 4 — Wayback Machine
-#   https://web.archive.org/web/2/https://github.com/zerowriter/zerowriter_ink
+mv "/home/user/repo-archive/hardware-doc/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups" \
+   "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups"
 ```
+
+If every URL above is dead, try the Wayback Machine:
+
+    https://web.archive.org/web/2/https://codeload.github.com/zerowriter/zerowriter_ink/tar.gz/996207aca0677300ed5f1fdf762d9c9ec79f516e
+
+
+---
+
+## What it is, and why moving it is safe
+
+**What it is.** KiCad's **automatic project backups**. KiCad 7+ writes a timestamped ZIP into
+`<project>-backups/` every time the project is saved (`Preferences -> Common -> Project Backup`).
+Each ZIP holds intermediate save states of `.kicad_pcb` / `.kicad_pro` / `.kicad_prl`, and in some
+cases an `_autosave-*.kicad_pcb` crash-recovery file.
+
+**What it is for.** Editor crash/undo recovery for the designer. It is **not** a release artifact
+and carries no design intent that is not already in the live project files beside it.
+
+**Why archiving is safe:**
+
+1. **Nothing unique.** These are intermediate save states of the *panelised* project whose final
+   state is still present, uncompressed, in the parent directory. The design's real revision
+   history lives in upstream git.
+2. **Fully reacquirable.** Every ZIP is a tracked file in `zerowriter/zerowriter_ink` at commit
+   `996207ac`, recoverable verbatim by any of the URLs above.
+3. **Poorly compressible duplication.** ZIP-compressed near-copies of the same multi-MiB
+   `.kicad_pcb` defeat git's delta compression, so they cost close to their full size forever.
+
+The **live design files were not touched.** Schematics, PCBs, panels, Gerbers, BOMs, STEP models
+and 3D-printable outputs all remain in place.
+
+Post-extraction sizes are not recorded: each ZIP is a snapshot of files that already exist
+uncompressed in the parent directory. Inspect on demand with `unzip -l` / `unzip -d`.
+
+## Provenance of this particular placeholder (read this before trusting older text)
+
+This directory has been archived **twice**.
+
+| When | What happened |
+|---|---|
+| **2026-08-24** | Archived to `archive/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups`. Placeholder written. |
+| *(later, 2026-08-30)* | A second pass archived the **parent `PANEL/` directory** onto that same archive path, **replacing** it. The ZIPs were gone from the archive. |
+| **2026-08-30** | A third pass noticed and repointed the placeholder at a copy inside `archive/devices/zerowriter/zerowriter-ink/artifacts/provenance-2026-08-30/upstream/...`. Content preserved, but **scratch is not storage** — the only copy now sat in a working directory. |
+| **2026-09-20** | This pass moved the ZIPs **out of scratch and back into the archive** at the repo-relative path, via `tools/archive_artifact.py` (which verifies by fingerprint after the move). The placeholder above was regenerated and now points at `archive/...` again. |
+
+**Byte-identity was proven before the move**, not assumed: the `LC_ALL=C` tree digest recorded by
+the 2026-08-24 placeholder was recomputed on the scratch copy and matched exactly
+(`4622918c4d871990293f3ece188ead57f941c07c3b9628545ba4e60ee7cd9726`), as did every individual SHA-256 in the Contents table.
+
+⚠ **An older claim in this file's predecessor is now known to be wrong.** It stated that the
+whole `zerowriter_ink` snapshot in this repository was "verified on 2026-08-24 to be
+byte-identical ... `diff -rq` across the whole tree reported **zero** differences". That was true
+when written, but **is not true of the tree today**: on 2026-08-30 00:42 and 16:27 an in-repo pass
+normalised line endings and trailing whitespace across **50 of the snapshot's 152 files**. No
+semantic content changed, but the hashes no longer match upstream. See
+[`source-snapshot-provenance.md`](../../../../../../../../../source-snapshot-provenance.md).
 
 ## Verify
 
 ```bash
-# from the directory containing this placeholder
+# from the directory containing this placeholder, with the archive present
 find "Zerowriter Keyboard-backups" -type f | wc -l                                      # 3
-find "Zerowriter Keyboard-backups" -type f -printf '%s\n' | awk '{s+=$1}END{print s}'    # 2659337
+find "Zerowriter Keyboard-backups" -type f -printf '%s\n' | awk '{s+=$1}END{print s}'   # 2659337
 find "Zerowriter Keyboard-backups" -type f -exec sha256sum {} + | LC_ALL=C sort -k2 | sha256sum
 #   4622918c4d871990293f3ece188ead57f941c07c3b9628545ba4e60ee7cd9726
 ```
@@ -127,14 +151,7 @@ find "Zerowriter Keyboard-backups" -type f -exec sha256sum {} + | LC_ALL=C sort 
 `LC_ALL=C` is pinned deliberately — these filenames contain spaces and digits that sort
 differently under a UTF-8 locale.
 
-## Restore from the local archive
-
-```bash
-mv "$HOME/repo-archive/devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups" \
-   "devices/zerowriter/zerowriter-ink/artifacts/source-snapshots/zerowriter_ink/design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups"
-```
-
 ## See also
 
-- [`../../../../../../../../vendored-deps/README.md`](../../../../../../../../vendored-deps/README.md) — the removed-dependency register for this device
-- [`../../../../../../../../../zerowriter1-epaper-driver-notes.md`](../../../../../../../../../zerowriter1-epaper-driver-notes.md) — analysis of the other archived dependency for this device
+- [`source-snapshot-provenance.md`](../../../../../../../../../source-snapshot-provenance.md) — what is and is not byte-identical to upstream in this snapshot
+- [`archive/devices/zerowriter/zerowriter-ink/artifacts/provenance-2026-08-30/README.md`](../../../../../../../../../../../../archive/devices/zerowriter/zerowriter-ink/artifacts/provenance-2026-08-30/README.md) — the verification pass these ZIPs were recovered from

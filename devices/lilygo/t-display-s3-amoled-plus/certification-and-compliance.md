@@ -83,7 +83,7 @@ grantee listing is absent, not merely un-found.
 | `Test-Report-ATN-Test-Report.pdf` | 1,174,923 | `a1300af9d0563dac…` |
 | `Users-Manual-Users-Manual.pdf` | 1,068,816 | `97096597308fdd0e…` |
 
-Held at `scratch/market-and-certification/fcc/2ASYE-T-DISPLAY-19/` (**unstaged**, 198 MB total for the pass). Reacquire with `https://fccid.io/2ASYE-T-DISPLAY-19/<Type-Slug>/<Doc-Slug>.pdf` and a `curl` UA — see [the method guide](../../../guides/research/finding-certification-records.md).
+Filed under this record's `artifacts/certification/` — ID-label and internal-photo exhibits retained in the repository, the rest archived with `.ARCHIVED.md` placeholders. The scratch copies at `scratch/market-and-certification/fcc/2ASYE-T-DISPLAY-19/` were **consolidated 2026-09-20** after every exhibit was re-hashed and matched byte-for-byte against its filed copy; only `_filing.html` remains there. Reacquire from upstream with `https://fccid.io/2ASYE-T-DISPLAY-19/<Type-Slug>/<Doc-Slug>.pdf` and a `curl` UA — see [the method guide](../../../guides/research/finding-certification-records.md).
 
 ---
 
@@ -110,7 +110,7 @@ a negative result.
 
 - **No hardware was inspected.** The device in front of you may be a different revision than the one the test lab submitted.
 - **A grant is not a mark.** A granted FCC ID does not prove the ID is printed on the unit; 47 CFR §2.935 permits an **e-label** in software instead.
-- **Absence of a mark is not absence of a grant.** The reverse error was made about Xteink by the 2026-09-04 sweep and is corrected in [`scratch/market-and-certification/xteink-certification-and-pricing.md`](../../../scratch/market-and-certification/xteink-certification-and-pricing.md).
+- **Absence of a mark is not absence of a grant.** The reverse error was made about Xteink by the 2026-09-04 sweep and is corrected in [`archive/guides/research/artifacts/certification-and-market-2026-09-11/xteink-certification-and-pricing.md`](../../../archive/guides/research/artifacts/certification-and-market-2026-09-11/xteink-certification-and-pricing.md).
 - **The SRRC, CCC, MIC and ISED rows in §3 are not negative results.** Those searches did not run. Treat them as open work.
 - **Schematics are withheld** on 26 of 26 filings examined, along with block diagrams and operational descriptions. The FCC is not a route to a schematic for these vendors.
 

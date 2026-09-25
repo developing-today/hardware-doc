@@ -49,7 +49,7 @@ the `hardware-doc` repository root:
 
 | Path here | What it is |
 |---|---|
-| `scratch/m5stack-papermono/` | the working tree for this pass (a symlink into `../repo-archive/scratch/hardware-doc/`) |
+| `archive/devices/m5stack/papermono/artifacts/` | the working tree for this pass (a symlink into `../repo-archive/scratch/hardware-doc/`) |
 | `devices/m5stack/papermono/artifacts/` | the artifacts kept in this repository |
 | `tools/` | the repo's parsers, including the three Altium tools below |
 
@@ -78,7 +78,7 @@ From the *consuming* repository the same paths are reachable as
 | Field | Value |
 |---|---|
 | **Source / purpose** | Retrieve the PDFs and HTML pages listed in [`sources.md`](sources.md) and record status, decoded size, SHA-256 and retrieval time in a `.meta` sidecar beside each file |
-| **Working directory** | `scratch/m5stack-papermono/docs/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/` |
 | **Shell / OS** | bash 5.3.15 on Linux 6.18.44 |
 | **Tool + version** | `curl` 8.21.0; `sha256sum`/`stat` coreutils 9.11 |
 | **Prerequisites** | Network access. No credentials — every URL in this record is public |
@@ -99,7 +99,7 @@ curl -sSL --compressed --max-time 90 \
   "$url"
 ```
 
-Full script: `scratch/m5stack-papermono/docs/_tools/fetch.sh`.
+Full script: `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/_tools/fetch.sh`.
 
 > **Record the decoded size, not `%{size_download}`.** With `--compressed`, curl's
 > `size_download` is the **gzipped wire size**, which will not match the SHA-256
@@ -112,7 +112,7 @@ Full script: `scratch/m5stack-papermono/docs/_tools/fetch.sh`.
 | Field | Value |
 |---|---|
 | **Source / purpose** | Establish that a file claiming to be a PDF *is* a PDF, and that a firmware download is an ESP32 image rather than an HTML error page |
-| **Working directory** | `scratch/m5stack-papermono/pdf/` (PDFs) · `…/docs/firmware/` (binaries) |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/research-scratch/pdf/` (PDFs) · `…/docs/firmware/` (binaries) |
 | **Shell / OS** | bash 5.3.15 on Linux |
 | **Tool + version** | `od`, `head`, `sha256sum`, `stat` — coreutils 9.11 |
 | **Prerequisites** | The file downloaded |
@@ -148,7 +148,7 @@ sha256sum C153-PaperMono-UserDemo-v1.2.bin
 | Field | Value |
 |---|---|
 | **Source / purpose** | Produce the fingerprints quoted in [`sources.md`](sources.md) and in each component record |
-| **Working directory** | `scratch/m5stack-papermono/pdf/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/research-scratch/pdf/` |
 | **Tool + version** | coreutils 9.11 |
 | **Status** | **`executed-success`** |
 | **Date** | 2026-09-01 |
@@ -189,7 +189,7 @@ rather than being elided.
 | Field | Value |
 |---|---|
 | **Source / purpose** | Establish each document's own revision, producer and date — the `Published/updated` column of [`sources.md`](sources.md) |
-| **Working directory** | `scratch/m5stack-papermono/pdf/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/research-scratch/pdf/` |
 | **Tool + version** | `pdfinfo`, poppler 26.06.0, via `nix-shell` |
 | **Prerequisites** | Nix with a channel able to resolve `poppler-utils`; network on first use |
 | **Status** | **`executed-success`** |
@@ -231,7 +231,7 @@ nix-shell -p poppler-utils --run "pdfinfo C153_PaperMono_model_size.pdf"
 | Field | Value |
 |---|---|
 | **Source / purpose** | Read revision blocks, register tables and specification tables out of the datasheets and the schematic without opening a viewer |
-| **Working directory** | `scratch/m5stack-papermono/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/` |
 | **Tool + version** | `pdftotext`, poppler 26.06.0 |
 | **Prerequisites** | The PDFs from §1 |
 | **Generated files** | `pdf/sch-p{1..6}.txt`, `pdf/sch-all.txt` (557 153 B), `pdf/model-size.txt` |
@@ -288,7 +288,7 @@ nix-shell -p poppler-utils --run \
 | Field | Value |
 |---|---|
 | **Source / purpose** | Produce the per-page XML that the three schematic parsers consume. **Nothing in §3 works without this step** |
-| **Working directory** | `scratch/m5stack-papermono/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/` |
 | **Tool + version** | `pdftotext`, poppler 26.06.0 |
 | **Generated files** | `pdf/bbox-p{1..6}.xml` (61 006 / 101 824 / 59 009 / 107 504 / 25 060 / 49 966 B) |
 | **Status** | **`executed-success`** |
@@ -306,7 +306,7 @@ done
 | Field | Value |
 |---|---|
 | **Source / purpose** | Render sheets and manual pages as images so that extraction results could be **checked by eye** before being asserted. This is the verification step that makes §3 admissible |
-| **Working directory** | `scratch/m5stack-papermono/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/` |
 | **Tool + version** | `pdftoppm`, poppler 26.06.0 |
 | **Generated files** | `sheets/sch-1.png`, `sheets/sch-2.png` (2339 × 1653 each) · `epd-pages/pg-01…pg-26.png` |
 | **Status** | **`executed-success`** |
@@ -388,7 +388,7 @@ at a pin instance, `NL<netname>` at a net label. Non-alphanumerics are replaced 
 | Field | Value |
 |---|---|
 | **Source / purpose** | Parse the bbox XML into word records, split glued marker/text runs, and enumerate every reference designator in the document. Also the shared library for the other two tools |
-| **Working directory** | `scratch/m5stack-papermono/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/` |
 | **Tool + version** | `python3` 3.14.7 |
 | **Expected output** | `total distinct designators: <n>` followed by a sorted JSON list |
 | **Status** | **`executed-success`** |
@@ -415,7 +415,7 @@ NFC sub-board).
 | Field | Value |
 |---|---|
 | **Source / purpose** | For one component on one sheet, list every pin with the text inside the symbol body (the pin name) and the text outside it (the attached net). **This is the tool that produced the pin tables in [`pinouts-and-buses.md`](pinouts-and-buses.md) and resolved the `PYG` ambiguity** |
-| **Working directory** | `scratch/m5stack-papermono/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/` |
 | **Invocation** | `python3 tools/altium_pdf_pin_table.py <page> <designator> [row-band]` — the optional third argument is the vertical tolerance in points, default `3.5` |
 | **Tool + version** | `python3` 3.14.7 |
 | **Generated files** | `pins/p<page>-<designator>.txt` × 43 |
@@ -476,7 +476,7 @@ Three empty results were also produced and are kept deliberately:
 | Field | Value |
 |---|---|
 | **Source / purpose** | Render a sheet as row-ordered text with the invisible markers stripped and re-attached inline as `[D.pin]` / `<D>`, so a whole sheet can be read — and a §3.2 result checked — without a PDF viewer |
-| **Working directory** | `scratch/m5stack-papermono/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/` |
 | **Invocation** | `python3 tools/altium_pdf_render_sheet.py <page> [row-tolerance]` — tolerance in points, default `3.0` |
 | **Tool + version** | `python3` 3.14.7 |
 | **Generated files** | `pdf/render-p{1..6}.txt` (6 256 / 8 340 / 5 176 / 8 421 / 2 196 / 4 147 B) |
@@ -506,7 +506,7 @@ pin instances re-attached from the markers it stripped.
 
 ### 3.4 A fourth tool that exists in scratch but not in the repository
 
-`scratch/m5stack-papermono/tools/altium_bom.py` builds a
+`archive/devices/m5stack/papermono/artifacts/research-scratch/tools/altium_bom.py` builds a
 designator → nearby-text report. It was **run** (`executed-success`) and used as a
 cross-check on component values, but it was not promoted into
 [`tools/`](../../../tools/) because adjacency to a component outline is a much
@@ -522,7 +522,7 @@ correction than it saved. Recorded so nobody re-writes it.
 | Field | Value |
 |---|---|
 | **Source / purpose** | The firmware pages are React shells with an empty `<div id="root">`. The download endpoint is not in the HTML |
-| **Working directory** | `scratch/m5stack-papermono/docs/burner/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/burner/` |
 | **Tool + version** | `curl` 8.21.0, `grep` |
 | **Status** | **`executed-success`** |
 | **Date** | 2026-09-01 |
@@ -556,7 +556,7 @@ curl -s -A "$UA" 'https://burner.m5stack.com/api/v1/firmwares/208964080799662899
 | Field | Value |
 |---|---|
 | **Source / purpose** | Establish firmware identity, source type, developer, version and `binFileName` — sources S33–S36 |
-| **Working directory** | `scratch/m5stack-papermono/docs/burner/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/burner/` |
 | **Tool + version** | `curl` 8.21.0 |
 | **Prerequisites** | None. **No authentication** |
 | **Status** | **`executed-success`** |
@@ -586,7 +586,7 @@ image.
 | Field | Value |
 |---|---|
 | **Source / purpose** | Retrieve the two firmware images (S38, S39) |
-| **Working directory** | `scratch/m5stack-papermono/docs/firmware/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/firmware/` |
 | **Tool + version** | `curl` 8.21.0, `od`/`sha256sum`/`stat` coreutils 9.11 |
 | **Prerequisites** | The version ids from §4.2 |
 | **Generated files** | `<name>.bin` and `<name>.bin.meta`; on failure `<name>.REJECTED.txt` |
@@ -647,7 +647,7 @@ retrieved_utc=2026-09-01T05:05:22Z
 | Field | Value |
 |---|---|
 | **Source / purpose** | Parse the ESP32 image header, the partition table at `0x8000` and `esp_app_desc_t` at `0x10020`; recover corroborating log strings |
-| **Working directory** | `scratch/m5stack-papermono/docs/firmware/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/firmware/` |
 | **Tool + version** | `python3` 3.14.7 (`_tools/espimg.py`, standard library only); `strings` (GNU binutils) |
 | **Prerequisites** | The `.bin` files from §4.3. **`esptool` was not used and no serial port was opened** |
 | **Generated files** | `esp-image-analysis.txt`, `*.strings.txt` |
@@ -698,14 +698,14 @@ idf_version   v5.5.1
 | Field | Value |
 |---|---|
 | **Source / purpose** | Acquire the vendor libraries and demos (S41–S47) and check two specific vendor claims |
-| **Working directory** | `scratch/m5stack-papermono/repos/` |
+| **Working directory** | `archive/devices/m5stack/papermono/artifacts/source-snapshots/` |
 | **Tool + version** | `git` 2.55.0; `gh` 2.97.0 for metadata |
 | **Prerequisites** | `gh auth login` already done. **The token is never printed and appears nowhere in this repository** — reference it only as `$(gh auth token)` at point of use |
 | **Status** | **`executed-success`** |
 | **Date** | 2026-09-01 |
 
 ```bash
-cd scratch/m5stack-papermono/repos
+cd archive/devices/m5stack/papermono/artifacts/source-snapshots/
 
 git clone https://github.com/m5stack/M5PaperMono-UserDemo.git
 git clone https://github.com/m5stack/M5PaperMono-OTP-Demo.git

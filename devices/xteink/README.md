@@ -384,4 +384,4 @@ this repository.** Zero devices have been in anyone's hands here. Every
 
 [`VERIFICATION-xteink-round2.md`](../../VERIFICATION-xteink-round2.md).
 Proposed additions to shared and protected indexes are staged, unapplied, in
-[`scratch/xteink/index-fragments-round2.md`](../../scratch/xteink/index-fragments-round2.md).
+[`archive/devices/xteink/shared-artifacts/research-scratch/index-fragments-round2.md`](../../archive/devices/xteink/shared-artifacts/research-scratch/index-fragments-round2.md).

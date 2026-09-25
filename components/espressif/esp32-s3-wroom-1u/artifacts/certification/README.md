@@ -59,5 +59,5 @@ was tested against — see §2 of any
 
 The module is fitted on several documented boards, so a full record is worth
 writing. Until one is, treat this directory as evidence storage, not as a record.
-Flagged in [`scratch/index-merge/deferred-round2.md`](../../../../../scratch/index-merge/deferred-round2.md).
+Flagged in [`research/passes/index-merge/deferred-round2.md`](../../../../../research/passes/index-merge/deferred-round2.md).
 

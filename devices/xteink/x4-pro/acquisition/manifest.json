@@ -84,7 +84,7 @@
       "canonical_url": "http://gotaserver.xteink.com/api/check-update",
       "sha256": null,
       "bytes": null,
-      "destination": "scratch/xteink/vendor/",
+      "destination": "vendors/xteink/artifacts/store-snapshots/2026-09-04/",
       "retrieved": null,
       "license": "n/a",
       "redistribution_status": "unknown",
@@ -124,7 +124,7 @@
       "repo_state": "not-downloaded",
       "reacquisition": "automatic",
       "reason": "Deliberately not downloaded: marketing renders establish nothing beyond the text record, and rights are unexamined.",
-      "notes": "URLs are in scratch/xteink/vendor/products-p1.json under products[].images[].src, retrieved 2026-09-04. CAPTURE BEFORE DELISTING - the X4's imagery was lost that way."
+      "notes": "URLs are in vendors/xteink/artifacts/store-snapshots/2026-09-04/products-p1.json under products[].images[].src, retrieved 2026-09-04. CAPTURE BEFORE DELISTING - the X4's imagery was lost that way."
     }
   ]
 }

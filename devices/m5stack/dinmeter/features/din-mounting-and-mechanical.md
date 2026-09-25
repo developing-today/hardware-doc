@@ -58,7 +58,7 @@ Everything is on the back:
 
 | Item | Note |
 |---|---|
-| **DC screw terminal** `J1` (2-pin 2.54 mm, `DB2EK-2.54-2P-GN-S`, green) | 6–36 V. **Strain-relieve it** — it is a screw terminal on a small body |
+| **DC screw terminal** `J1` (2-pin 2.54 mm, green — [`dorabo/db2ek-2.54-2p`](../../../../components/dorabo/db2ek-2.54-2p/README.md)) | 6–36 V. **Strain-relieve it** — it is a screw terminal on a small body. The number behind that warning: **M1.6 screws, 0.1 N·m maximum torque**, 5–6 mm strip length, 26–20 AWG |
 | USB-C | on the Stamp module; used for flashing and 5 V |
 | PORT.A / PORT.B | HY2.0-4P, need ~10 mm of cable bend radius each |
 | Battery | 1.25 mm 2-pin JST-style; the bundled cell tucks inside |

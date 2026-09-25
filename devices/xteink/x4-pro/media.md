@@ -24,7 +24,7 @@ downloaded because:
    be unexamined.
 3. They establish **nothing not already in the text record**.
 
-If wanted later, they are in `scratch/xteink/vendor/products-p1.json` under
+If wanted later, they are in `vendors/xteink/artifacts/store-snapshots/2026-09-04/products-p1.json` under
 `products[].images[].src`, retrieved 2026-09-04.
 
 ## What exists elsewhere in this tree
@@ -77,4 +77,4 @@ The absence was never re-searched in 2026-09-04 because **no FCC ID was known an
 
 Full record, with controls: [`certification-and-compliance.md`](certification-and-compliance.md).
 
-Listed in [`scratch/index-merge/corrections-requiring-review.md`](../../../scratch/index-merge/corrections-requiring-review.md).
+Listed in [`research/passes/index-merge/corrections-requiring-review.md`](../../../research/passes/index-merge/corrections-requiring-review.md).

@@ -59,7 +59,7 @@ granted 2026-08-13, unannounced and unlisted → [`devices/xteink/x4-light/`](de
 | `devices/xteink/x4/` | (+1 PDF) | 1 |
 | `devices/xteink/README.md` | — | 1 |
 | `components/` | **1 new record** (`generic/kh3216-a35-chip-antenna`) + 6 PDFs | 7 |
-| `scratch/xteink/` | 4 authored + ~90 raw | 1 |
+| `archive/devices/xteink/shared-artifacts/research-scratch/` | 4 authored + ~90 raw | 1 |
 | repository root | **1** (this file) | 1 (`ai-crawler-site-access-table.md`) |
 
 `devices/xteink/x4-classic/` went from **13 files to 26**: added
@@ -146,7 +146,7 @@ for f in <every pre-existing .md>:
 → append-only violations: 0
 ```
 
-`scratch/xteink/round2-baseline/` holds the tar and the pre-edit line counts, and
+`archive/devices/xteink/shared-artifacts/research-scratch/round2-baseline/` holds the tar and the pre-edit line counts, and
 documents one caveat honestly: the tar was made *after* the first append to
 `devices/xteink/x4-classic/README.md`, whose pre-edit state is fixed instead by
 its captured line count (239) and the `---` rule at line 240.
@@ -168,7 +168,7 @@ $ git diff -- ai-crawler-site-access-table.md | grep -c '^-[^-]'
 | Protected files modified | **none** — `README.md`, `devices/README.md`, `components/README.md`, `vendors/README.md`, `artifact-manifest.md`, `software/README.md`, `guides/**`, `devices/m5stack/**`, `devices/lilygo/**`, `components/semtech/**` all untouched |
 
 Proposed edits to those files are staged, unapplied, in
-[`scratch/xteink/index-fragments-round2.md`](scratch/xteink/index-fragments-round2.md).
+[`archive/devices/xteink/shared-artifacts/research-scratch/index-fragments-round2.md`](archive/devices/xteink/shared-artifacts/research-scratch/index-fragments-round2.md).
 
 ## 7. Claim-to-source spot checks
 
@@ -228,7 +228,7 @@ Proposed edits to those files are staged, unapplied, in
 ## 11. User decisions still needed
 
 Listed in full in
-[`scratch/xteink/index-fragments-round2.md`](scratch/xteink/index-fragments-round2.md) §5.
+[`archive/devices/xteink/shared-artifacts/research-scratch/index-fragments-round2.md`](archive/devices/xteink/shared-artifacts/research-scratch/index-fragments-round2.md) §5.
 
 1. **`gt911-programming-guide-*.pdf`** declares itself *"GOODIX CONFIDENTIAL …
    distribution … strictly prohibited"*. Keep unstaged, archive with a

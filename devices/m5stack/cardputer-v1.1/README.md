@@ -125,6 +125,30 @@ components: [`knowles/spm1423hm4h-b`](../../../components/knowles/spm1423hm4h-b/
 [`nsiway/ns4168`](../../../components/nsiway/ns4168/README.md),
 [`sitronix/st7789v2`](../../../components/sitronix/st7789v2/README.md).
 
+**The first two were filed and mined on 2026-09-20.** They are held at
+[`components/knowles/spm1423hm4h-b/artifacts/spm1423hm4h-b-datasheet-rev-a-m5stack-mirror.pdf`](../../../components/knowles/spm1423hm4h-b/artifacts/spm1423hm4h-b-datasheet-rev-a-m5stack-mirror.pdf)
+(1 272 831 B, `85ecd7d7…`) and
+[`components/nsiway/ns4168/artifacts/ns4168-user-manual-v0.9-cn-m5stack-mirror.pdf`](../../../components/nsiway/ns4168/artifacts/ns4168-user-manual-v0.9-cn-m5stack-mirror.pdf)
+(829 468 B, `479e75a1…`). Four things they establish that this record did not previously know
+— all read from the datasheets plus a 400 dpi render of `Sch_M5Cardputer.pdf`:
+
+| Finding | Consequence for this board |
+|---|---|
+| The microphone's designator is **`U5`**, not `M1` (`M1` is the **Stamp module footprint**) | corrects the component record |
+| The mic's **`SELECT` pin is tied to `GND`** — the `Data_L` default | the PDM data is valid **after the falling `CLK` edge**; the host must sample that half-cycle. Not changeable in firmware |
+| The amplifier's **`CTRL` pin is strapped to its own `VDD`** (+3.3 V behind ferrite `FB1`) | the speaker plays the **right** I²S channel; **shutdown is physically unreachable**, so the NS4168's quiescent draw cannot be removed in firmware; and its high-pass corner cannot be programmed |
+| Series **33 Ω** resistors sit on all five audio lines (`R16`,`R17`,`R23`,`R24`,`R25`) | edge-rate damping; previously unrecorded |
+
+⚠ **The mic's clock band is 1.0 – 3.25 MHz, and below 1 kHz it sleeps** — with the
+1 kHz … 1 MHz band undefined by Knowles. Because `CLK` **is** the speaker's `LRCLK` (G43), an
+active speaker parks the microphone squarely in that undefined band. That is the hardware reason
+behind "one direction at a time", not merely a driver limitation. *(inferred; not measured.)*
+
+⚠ **M5Stack's "1 W into 8 Ω" speaker figure is not supported by the NS4168 datasheet**, which
+publishes 2.5 W at 5 V / 4 Ω and 1.2 W at 3.6 V / 4 Ω and **no 8 Ω figure at all** — and this
+board runs the part at **3.3 V**. Recorded as an unresolved conflict in
+[the component record §4.3](../../../components/nsiway/ns4168/README.md).
+
 ## Pin map
 
 | Function | Pins |
@@ -149,8 +173,8 @@ Everything except the keyboard rows is identical to the ADV.
 | Part | Designator | Record |
 |---|---|---|
 | 74HC138 | U7 | [`generic/74hc138`](../../../components/generic/74hc138/README.md) |
-| NS4168 | — | [`nsiway/ns4168`](../../../components/nsiway/ns4168/README.md) |
-| SPM1423HM4H-B | M1 | [`knowles/spm1423hm4h-b`](../../../components/knowles/spm1423hm4h-b/README.md) |
+| NS4168 | **U6** | [`nsiway/ns4168`](../../../components/nsiway/ns4168/README.md) — ⚠ `CTRL` strapped to `VDD`: right channel, no shutdown. ⚠ manufacturer attribution unresolved |
+| SPM1423HM4H-B | **U5** *(not `M1` — `M1` is the Stamp footprint)* | [`knowles/spm1423hm4h-b`](../../../components/knowles/spm1423hm4h-b/README.md) — `SELECT` tied low → falling-edge data |
 | ST7789V2 | on the FPC | [`sitronix/st7789v2`](../../../components/sitronix/st7789v2/README.md) |
 | ESP32-S3FN8 | in the module | [`espressif/esp32-s3fn8`](../../../components/espressif/esp32-s3fn8/README.md) |
 | Stamp-S3A | module | [`m5stack/stamp-s3a`](../../../components/m5stack/stamp-s3a/README.md) |

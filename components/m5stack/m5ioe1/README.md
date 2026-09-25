@@ -283,6 +283,54 @@ Examples shipped: `interrupt_hardware`, `interrupt_polling`, `pin_test`. Note th
 
 ### [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md) — designator `U17`, sheet 4
 
+> ⚠ **NEW CONFLICT — C26, 2026-09-20. `IOE_G13` versus `PYG14` for the microSD
+> power enable.**
+>
+> M5Stack filed its **full architecture diagram** as the FCC "ID Label" exhibit
+> for `2AN3WM5PAPERMONO`
+> ([retained here](../../../devices/m5stack/papermono/artifacts/certification/2AN3WM5PAPERMONO-label-and-label-location.pdf)).
+> It is an independent primary source for this expander's pin assignments, and it
+> **agrees with the schematic on seven of eight** `IOE_G*` labels:
+> `G1`/`TF_DET`, `G2`/`LoRa_ANT_SW`, `G3`/`EPD_EN`, `G5`/`EINK_RST`,
+> `G6`/`TP_RST`, `G8`/`LED_G`, `G10`/`LoRa_RST`, plus `G9`/`LED_B`.
+>
+> The exception:
+>
+> | Source | Enable for the microSD rail `TF_3V3_L3B` |
+> |---|---|
+> | FCC label exhibit | **`IOE_G13`** |
+> | PaperMono schematic | **`PYG14`** = `PYB_TF_EN` — and `PYG13` = `PYB_TP_EN`, **touch** power |
+>
+> **This is *not* the `M5IOE1_PIN_n = n − 1` off-by-one of §6.** A systematic
+> off-by-one would have shifted all eight labels; it shifted one. So either the
+> label has a single typo, or the schematic's `PYB_TF_EN` / `PYB_TP_EN` net names
+> are swapped, and the evidence does not choose.
+>
+> **Least-risky path:** drive `PYG14` for microSD power — a schematic net label
+> outranks a marketing diagram — and if the card does not enumerate, try `PYG13`
+> before suspecting a hardware fault. Treat **both** as owned; do not repurpose
+> either. Toggling the wrong one cuts power to the touch panel, which is
+> recoverable and diagnostic.
+>
+> **What would settle it:** read the enable net at the microSD LDO on schematic
+> sheet 2, or toggle each pin on hardware and observe which kills the card and
+> which kills touch. Tracked as
+> [C26](../../../devices/m5stack/papermono/gaps-and-conflicts.md#c26-the-microsd-ldo-enable-ioe_g13-fcc-label-versus-pyg14-schematic).
+>
+> The same exhibit independently confirms this part's I²C address as **`0x4F`**,
+> which [C4](../../../devices/m5stack/papermono/gaps-and-conflicts.md#c4--the-m5ioe1s-i²c-address-is-not-in-its-own-manual)
+> notes is contradicted by the M5IOE1's own manual (`0x6F`–`0x76`). Three
+> M5Stack sources now say `0x4F`; the manual is the outlier. **C4 unchanged** —
+> all four are M5Stack.
+>
+> **SWD is broken out.** The FCC internal photographs show the main board's
+> bottom side carrying labelled test pads **`SWD1`/`SWC1`/`RESET1`** and
+> **`SWD2`/`SWC2`/`RESET2`** — one pair per PY32. This is the physical route to
+> reading or replacing the firmware on this otherwise opaque part. **Which pair
+> belongs to which chip is not marked**, nothing has been probed, and the part is
+> very likely read-protected. `not-tested`, `inferred` from silkscreen only. See
+> [`certification.md` §6](../../../devices/m5stack/papermono/certification.md#the-test-pad-census-on-the-bottom-side).
+
 The M5IOE1 sits on rail **`L2`** (so it is powered only when the ESP32-S3 is) and in turn owns rail **`L3B`**. That ordering matters: the expander is **not** available while the board is in its deepest sleep state, and the peripherals it gates come up only after M5Unified has initialised it **[DOC]**.
 
 | Role on PaperMono | Pin / enum | Evidence |
@@ -335,12 +383,25 @@ The M5IOE1 sits on rail **`L2`** (so it is powered only when the ESP32-S3 is) an
 | File | Bytes | SHA-256 | What it is |
 |---|---:|---|---|
 | `artifacts/m5ioe1-chip-user-manual-v1.4-en.pdf` | 398 463 | `9204d99cb2e03395ffc905e05fbeddf7f9f25de5698a31a65fa439dee700d8d2` | **M5IOE1 Chip User Manual V1.4**, 10 pp., English. PDF metadata: Author `洋 熊`, Creator/Producer `Microsoft® Word 2021`, created **2026-01-26**. Text layer validated against rendered headings before transcription |
+| `artifacts/m5ioe1-chip-user-manual-cn-github-M5IOE1-repo-2026-01-24.pdf` | 536 628 | `4848442f1eee4b7a163ea4305824dbe4548a1e1728fa7b66dfd4365727a4b74d` | **Chinese edition**, 12 pp., Word 2021, created **2026-01-24**, from `docs/` of the `m5stack/M5IOE1` driver repo. Added 2026-09-20 — see below |
+
+> ✅ **The English copy in the driver repo is byte-identical to the docs-site copy** —
+> `9204d99cb2e03395…` in both. Unlike its sibling M5PM1, whose two English exports differ
+> ([`../m5pm1/README.md` §10.1](../m5pm1/README.md)), M5IOE1 has only one English export in
+> circulation. Checked 2026-09-20.
 
 **Text-layer validation.** `pdftotext -layout` output was cross-checked against the running headers (`M5IOE1 Chip User Manual`), footers (`n / 10`, `The Innovator of Modular IoT Development Platform | M5Stack`) and section numbering. No subsetting or code-point-offset corruption observed.
 
 **Metadata note.** The same author string (`洋 熊`) and toolchain produced the M5PM1 manual, and the two documents share their section structure — consistent with one document having been derived by editing the other. Where they disagree about a shared feature (e.g. the `AW8737A` bit layout, §7-C4), neither is automatically authoritative.
 
 **A Chinese-language edition exists and was not retrieved.** The `zh_CN` product page links `1210/IO_Expander_Datasheet_CN.pdf` where `en`/`ja` link `IO_Expander_Datasheet_EN.pdf` **[DOC]**. Note the upstream *filename* is `IO_Expander_Datasheet_EN.pdf`, not `M5IOE1_…` — worth knowing when searching. A CN↔EN diff is the most promising route to settling §7-C1.
+
+> ✅ **Superseded 2026-09-20 — retrieved, and it does not settle §7-C1.** The CN edition was
+> found in `docs/` of the `m5stack/M5IOE1` repo clone and is now retained (table above).
+> Language-independent comparison: CN and EN contain the **same 59 distinct `0xNN`
+> register-address tokens**; the CN is 12 pp against the EN's 10 pp, a typographic difference.
+> **Substantively equivalent — no new register, bit or constraint.** The English copy remains
+> the primary source. Negative result, recorded so the lead is not re-taken.
 
 **Licence.** M5Stack copyright, no licence statement on the document. Redistribution status **`unknown`**; disposition `repository`.
 

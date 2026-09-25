@@ -206,12 +206,27 @@ reacquisition commands, and neither is unique:
 | `zerowriter1/e-Paper/` — Waveshare's vendored Python driver library | 31.07 MiB, 272 files | [`e-Paper.ARCHIVED.md`](artifacts/source-snapshots/zerowriter1/e-Paper.ARCHIVED.md) | 270 of 272 files byte-identical to Waveshare upstream; the 2 that differ are preserved as patches |
 | 4 × KiCad `*-backups/` auto-save ZIP directories | 27.27 MiB, 15 files | one `*.ARCHIVED.md` beside each | editor crash-recovery snapshots of designs that are still present, uncompressed, alongside |
 
-The entire `zerowriter_ink` snapshot was verified **byte-identical** to upstream commit `996207ac`,
-so the backups are recoverable verbatim. **No design file, firmware image or ZeroWriter-authored
-source was removed.**
+**No design file, firmware image or ZeroWriter-authored source was removed.** All 15 backup ZIPs
+are present in the archive and recoverable verbatim from upstream commit `996207ac`
+(re-verified **2026-09-20**, see below).
+
+> ⚠ **Corrected 2026-09-20.** This section previously asserted that the entire `zerowriter_ink`
+> snapshot "was verified **byte-identical** to upstream commit `996207ac`". That was true when
+> written on 2026-08-24 and **is no longer true of the tree today**: on 2026-08-30 an in-repo pass
+> normalised **50 of the snapshot's 152 files** — 36 CRLF → LF, 14 trailing-whitespace-stripped.
+> **Zero semantic differences** were introduced, so every pinout, net and BOM row read out of these
+> files remains sound; but `diff -rq` and raw SHA-256 comparison against upstream will now report
+> 50 false positives, and an in-repo file hash must not be cited as upstream identity.
+> Full file-by-file breakdown, cause analysis and the correct comparison recipe:
+> **[`source-snapshot-provenance.md`](source-snapshot-provenance.md)**.
+>
+> The same document records that three of the four `*-backups/` directories had been lost from the
+> archive (a later pass archived their parent `PANEL/` onto the same path) and survived only in
+> `scratch/`. They were moved back into the archive on 2026-09-20 and verified by fingerprint.
 
 - [`artifacts/vendored-deps/README.md`](artifacts/vendored-deps/README.md) — removed-dependency register: digests, licenses, verified download URLs
 - [`zerowriter1-epaper-driver-notes.md`](zerowriter1-epaper-driver-notes.md) — **what ZeroWriter changed in the Waveshare driver, and why it matters**
+- [`source-snapshot-provenance.md`](source-snapshot-provenance.md) — **what is and is not byte-identical to upstream in this snapshot**, and how to compare it correctly
 
 ## Related
 

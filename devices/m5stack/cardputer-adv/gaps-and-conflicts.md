@@ -103,7 +103,7 @@ looking output containing none of the readable text
 
 **Position: Stamp-S3A `U4` is a JoulWatt `JW5712`.** A ready-to-paste correction, and the
 *Used By* rows this implies, are in
-[`scratch/m5stack-cardputer/index-fragments.md`](../../../scratch/m5stack-cardputer/index-fragments.md).
+[`archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md`](../../../archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md).
 That session's tree was **not edited** — its files were modified within the last 30 minutes.
 
 ## Unresolved identities
@@ -198,7 +198,7 @@ Each of these is a **verified negative** (method stated), not a failed search.
   lowercase-slug 302s, the OSS numeric-product-id scheme, `search/suggest.json` →
   `<handle>.json`, and the warning that `_page_NN.png` renders are not universal. New product
   ids and one new trap are offered for appending in
-  [`../../../scratch/m5stack-cardputer/index-fragments.md`](../../../scratch/m5stack-cardputer/index-fragments.md).
+  [`../../../archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md`](../../../archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md).
 
 ---
 
@@ -211,7 +211,7 @@ first time. Method:
 Full trace: [`schematic-netlist.md`](schematic-netlist.md).
 
 Each item below names the section above that it answers. All three are listed in
-[`scratch/schematic-tracing/corrections-requiring-review.md`](../../../scratch/schematic-tracing/corrections-requiring-review.md).
+[`guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md`](../../../guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md).
 
 ## ✅ C2 — "Which Grove pin is SCL" → **RESOLVED. SCL = G1, SDA = G2.**
 

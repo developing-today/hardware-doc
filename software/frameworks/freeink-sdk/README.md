@@ -154,16 +154,52 @@ tests noticing.
 
 ## Open questions
 
-- **No commit SHA pinned in this record.** Identity is by branch, which moves.
-  A later pass should pin `main`'s HEAD.
-- The drop-in-compatibility claim is untested.
-- The 74 % single-author concentration is carried over, not re-measured.
-- Which board profiles ship today was not enumerated file-by-file.
+Three of four were **closed on 2026-09-20** when the source-level analysis this
+record was citing as "prior analysis" was promoted into the tree as
+[`architecture.md`](architecture.md):
+
+- ~~**No commit SHA pinned in this record.**~~ **Closed.** `main` HEAD at analysis time
+  was **`24003795381a6c23630a26472ae3b06550333e71`** (2026-09-01).
+- ~~**The 74 % single-author concentration is carried over, not re-measured.**~~
+  **Closed — measured** (`executed-success`). Of the last 200 commits on `main`,
+  **Justin Mitchell authored 148 (74 %)** across **18 distinct authors**; the
+  next-largest contributors have 9 each. The figure was correct. **Bus factor is 1**,
+  and "collective" is branding — `LICENSE` and `NOTICE` say "Copyright (c) 2026
+  FreeInk", but one person does three-quarters of the work.
+- ~~**Which board profiles ship today was not enumerated file-by-file.**~~ **Closed.**
+  **15** device flags at `BoardConfig.h:33-77`; the README table documents only **13**
+  (`MURPHY_M4` and `EEGO_A4` have flags and a support doc but no table row — *conflict
+  recorded, the table lags the macro list*). Full enumeration in
+  [`architecture.md` §9](architecture.md#9-devices-supported-today).
+- **The drop-in-compatibility claim is still untested.** It is corroborated but not
+  proven: CrossPoint's own migration commit `ebebc6f2` states *"Out of the box there
+  are NO changes needed in the firmware to support this swap"*, which is consistent
+  with the `EInkDisplay` compat shim — but nobody here has compiled a
+  `community-sdk`-era firmware against FreeInk.
+
+Newly opened:
+
+- **The SDK has no CI and no releases at all** — empty `.github/workflows/`, empty
+  releases API. Nothing mechanically validates a port, and consumers pin raw
+  submodule SHAs. That is the root cause of the
+  [windowed-refresh split](papermono-window-refresh.md).
+- **90°/270° rotation is unsupported** in the SSD1677 driver — mirror and 180° only
+  (`README.md:371-372` upstream). A portrait-mounted landscape panel needs a software
+  transpose that does not exist.
+- `libs/hardware/XteinkDetect` ships `freeink::selectXteinkDevice()`, which **softly
+  contradicts** the README's *"the SDK doesn't ship a detector"*. Recorded, not resolved.
 
 ## See also
 
 - **Devices with records here:** [Xteink X3](../../../devices/xteink/x3/README.md) · [X4](../../../devices/xteink/x4/README.md) · [X4 Pro](../../../devices/xteink/x4-pro/README.md) · [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md)
 
+- [**Architecture**](architecture.md) — the two compile-time axes, the `BoardProfile`
+  porting surface, all 13 panel drivers, the 27-library inventory, and the measured
+  maintainership figures
+- [**PaperMono windowed refresh**](papermono-window-refresh.md) — **which consumer pins
+  have rectangular partial refresh and which silently do not**
+- [**Porting a device**](../../ecosystems/crosspoint-freeink/porting-a-device.md) — the SDK half of a port, with three measured real ports
+- [**Dependency and lineage**](../../ecosystems/crosspoint-freeink/dependency-and-lineage.md) — the commit-level chronology behind the "FreeInk came first" correction
 - [CrossPoint Reader](../../applications/crosspoint-reader/README.md) — the primary consumer
 - [CrossPlay](../../applications/crossplay/README.md) — consumes a fork of this SDK
 - [`guides/hardware`](../../../guides/hardware/README.md) — e-paper waveforms and bias rails

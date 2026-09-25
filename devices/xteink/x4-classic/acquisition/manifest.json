@@ -44,7 +44,7 @@
       "canonical_url": "http://gotaserver.xteink.com/api/check-update",
       "sha256": null,
       "bytes": null,
-      "destination": "scratch/xteink/vendor/",
+      "destination": "vendors/xteink/artifacts/store-snapshots/2026-09-04/",
       "retrieved": null,
       "license": "n/a",
       "redistribution_status": "unknown",

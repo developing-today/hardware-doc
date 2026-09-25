@@ -1,9 +1,26 @@
 # Xteink X3 stock firmware images — acquisition record
 
-**Status: `not-downloaded` into this repository.** This file is a
+**Status: three of four `not-downloaded`; the CN OTA image is held.** This file is a
 **self-sufficient placeholder**: everything needed to obtain and verify all four
 images is here, and **none of it requires `git lfs`, a clone, or access to any
-archive.** Written 2026-09-11.
+archive.** Written 2026-09-11, **corrected 2026-09-20**.
+
+> ⚠ **Correction, 2026-09-20.** This file stated below that the OTA image was
+> *"fetched and parsed but **not retained**"*, and recorded the whole set as
+> `reference-only` / `not-downloaded`. **The OTA image had in fact been retained** —
+> in `archive/devices/xteink/shared-artifacts/research-scratch/x3-lfs/` — from 2026-09-11 onward, where it was the only copy.
+> It has been moved to the archive and fully mined:
+>
+> | | |
+> |---|---|
+> | Bytes | `archive/devices/xteink/x3/artifacts/firmware/x3_cn_v5.2.13_ota.bin` |
+> | Placeholder | [`x3_cn_v5.2.13_ota.bin.ARCHIVED.md`](x3_cn_v5.2.13_ota.bin.ARCHIVED.md) |
+> | Extraction | [`x3-stock-firmware-teardown.md`](x3-stock-firmware-teardown.md) |
+>
+> **The other three images genuinely were never fetched** and everything this file
+> says about them stands unchanged. The licence position is also unchanged:
+> redistribution status `unknown`, which is why the retained image is archived
+> rather than tracked.
 
 ## Why this file exists
 
@@ -70,8 +87,9 @@ sha256sum x3_cn_v5.2.13_ota.bin     # must equal $OID
 
 ## What the fetched image establishes
 
-The OTA image was fetched and parsed but **not retained**. Its ESP image header
-and `esp_app_desc_t` read:
+The OTA image was fetched, parsed and — contrary to the original text here —
+**retained**; it is now archived, see the correction at the top. Its ESP image
+header and `esp_app_desc_t` read:
 
 | Field | Value |
 |---|---|
@@ -105,14 +123,17 @@ firmware carries a BLE component.
 | Field | Value |
 |---|---|
 | Redistribution status | **`unknown`** — proprietary vendor firmware redistributed by a third party with no licence statement |
-| Disposition | **`reference-only`** |
-| Repository state | `not-downloaded` |
-| Reacquisition | **`automatic`** — the recipe above, verified 2026-09-11 |
-| Total if fetched | **56,585,712 bytes** across four files |
+| Disposition | `x3_cn_v5.2.13_ota.bin`: **`archive`** (placeholder in place). The other three: **`reference-only`** |
+| Repository state | `x3_cn_v5.2.13_ota.bin`: archived, stand-in symlink + `.ARCHIVED.md` in the tree. The other three: `not-downloaded` |
+| Reacquisition | **`automatic`** — the recipe above, verified 2026-09-11, re-confirmed against the held bytes 2026-09-20 |
+| Held | **6,254,064 bytes** (1 of 4) |
+| Total if all four fetched | **56,585,712 bytes** |
 
 ## Cited from
 
 [`../../factory-firmware.md`](../../factory-firmware.md) ·
 [`../../gaps-and-conflicts.md`](../../gaps-and-conflicts.md) ·
 [`../../commands.md`](../../commands.md) ·
-[`../../sources.md`](../../sources.md) (source **X310**).
+[`../../sources.md`](../../sources.md) (source **X310**). ·
+[`x3-stock-firmware-teardown.md`](x3-stock-firmware-teardown.md) — **the full extraction of the one image that was fetched** ·
+[`x3_cn_v5.2.13_ota.bin.ARCHIVED.md`](x3_cn_v5.2.13_ota.bin.ARCHIVED.md) — its archive placeholder.

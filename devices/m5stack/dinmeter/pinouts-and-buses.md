@@ -105,11 +105,11 @@ Read directly from the `PIM10xx` pin markers with their row-matched pin names an
 
 | Designator | Part | Role | Key passives | Evidence |
 |---|---|---|---|---|
-| `J1` | 2-pin 2.54 mm screw terminal (`DB2EK-2.54-2P-GN-S`, Ningbo Dibo, green) | **6–36 V DC input** | — | **[SCH]** **[DOC]** |
+| `J1` | 2-pin 2.54 mm pluggable screw terminal, green — [`dorabo/db2ek-2.54-2p`](../../../components/dorabo/db2ek-2.54-2p/README.md) (**Ningbo Dorabo Electric**; earlier rows here said "Ningbo Dibo") | **6–36 V DC input** — connector rated **5 A**, 26–20 AWG, **M1.6 screws, 0.1 N·m max** | — | **[SCH]** **[DOC]** + drawing rev T0-1 |
 | `D13`, `D12`, `D11`, `D9` | B5819W / SD36 Schottky | input protection / clamp | — | **[SCH]** |
 | `U1` | **ME3116AM6G** | wide-input buck → `+5VIN` | `L1` 10 µH (3015), `C24` 10 µF/35 V, FB `R5` 56 kΩ / `R6` 10 kΩ | **[SCH]** |
 | `U7` | **CN809J** | reset supervisor on `+5VIN` | — | **[SCH]** |
-| `J2` | 1.25 mm 2-pin JST-style (`1.25WT-2P`) | Li-ion battery | — | **[SCH]** **[DOC]** |
+| `J2` | 1.25 mm 2-pin horizontal SMT header — [`generic/1.25wt-2p-battery-connector`](../../../components/generic/1.25wt-2p-battery-connector/README.md) (**unattributed**; JST-GH-family geometry) | Li-ion battery. ⚠ **2 contacts only — no NTC**, and the drawing carries **no current rating** | — | **[SCH]** **[DOC]** |
 | `U2` | **TP4057** | linear Li-ion charger, 4.24 V float | `R13` 3.3 kΩ (PROG), `D1`/`D2`/`D3` status LEDs | **[SCH]** |
 | `Q3`, `Q6` | **AP40P05** P-channel MOSFET | battery power path (`VBAT_IN` → `VBAT_OUT`) | `R14`/`R15` 100 kΩ | **[SCH]** |
 | `Q4` | **LN2324DT2AG** | `HOLD` (GPIO46) gate for the latch | `R23` 100 kΩ | **[SCH]** |
@@ -222,7 +222,7 @@ Appended beneath the existing tables; **nothing above is altered, reworded or re
 trace with coordinates: [`schematic-netlist.md`](schematic-netlist.md). Method:
 [`guides/reverse-engineering/tracing-nets-from-schematic-pdfs.md`](../../../guides/reverse-engineering/tracing-nets-from-schematic-pdfs.md).
 Corrections indexed in
-[`scratch/schematic-tracing/corrections-requiring-review.md`](../../../scratch/schematic-tracing/corrections-requiring-review.md).
+[`guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md`](../../../guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md).
 
 Applies to **v1.0 and v1.1** alike: the two schematic PDFs extract to the same 873 words and the
 same 26 `NL` tokens.

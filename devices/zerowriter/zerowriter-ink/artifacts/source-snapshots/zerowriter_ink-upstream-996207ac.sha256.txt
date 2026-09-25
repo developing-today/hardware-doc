@@ -1,0 +1,162 @@
+# SHA-256 of every file in zerowriter/zerowriter_ink at commit
+# 996207aca0677300ed5f1fdf762d9c9ec79f516e, as published upstream.
+#
+# These are the UPSTREAM bytes. 50 of these files were line-ending / trailing-
+# whitespace normalised in this repository on 2026-08-30, so the in-repo copies of
+# those 50 will NOT match. See source-snapshot-provenance.md.
+#
+# Format: <sha256>  <bytes>  <path relative to the repository root of zerowriter_ink>
+# Generated 2026-09-20 from a byte-exact extraction of the upstream tarball.
+# Sorted by path under LC_ALL=C.
+a63589f853521a8865163eeac5875dbcb7f0e2647a709b6bde11be68b492384d  173  .gitignore
+3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986  35149  LICENSE
+8c6d7d106f2aa2c4b6c878a9cc2183a1892bcdb827901a051461c14a4504d60a  551  README.md
+da35e38e62fc2a5c2ae4ed5886a375036e4aa554145111e13fd6a25dab57b830  22628  compiled fonts/Archive.zip
+e297a7a90eac39dd98dd3a0bb3d6768c06c2eec6cefc400c130c03747eb14ec2  9549  compiled fonts/AtkinsonHL24.bbf
+9111b67165cf4d16781618f09a64489877c530539ffab715de288f5dc7a02a02  9137  compiled fonts/OpenDyslexicMono28.bbf
+4b31fefc308716fe4ad285f0ba4f1fdc71c527f106fb6a023a732e5c8fe19c19  8993  compiled fonts/iAWriterMonoS24.bbf
+712af009b5be1956e42d368db0ddc12876903e7518063e9974ce30e77594ee06  139  compiled fonts/readme.txt
+872fd16fd7b4ac2ede6766a9b95920b45b373a9e8368052454d23b1b22c6ed59  2039884  design/enclosure/zw_bottomhousing.stl
+22de71c6ae8b833c14cee3b09a0c6462f57e340663d42e128ecb89fa8dd4de9e  967984  design/enclosure/zw_tophousing.stl
+909bbba81f70757751fe62c76ef5c19122c05144b1054e506f7251c52608e3c4  41129  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/Board Connectors.kicad_sch
+ccaac7d41db177be65e7478682af75e0f11dd96b87b4d4c0b1714a01afd6dd8b  330462  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/CTRL & COMS.kicad_sch
+2ea425a851d58fc5f4ca5ce927b210df9425a5f2451ac40907a6af57c27f3375  225600  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/CTRL & COMS.kicad_sch-bak
+a783a52cf7f9e65e5a0e5d90ecc060315f779e3f50f89c30cc0ca680ecc990cc  158778  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/E-paper.kicad_sch
+ff6b15b91657ac69bb6e9cc84d4d252d749bdca02f8f57b6f5afa1da8215f636  88720  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/E-paper.kicad_sch-bak
+8b0c76722417f3b75e418a185962580a2458ac9a32987b9840f0e8058c93948b  148040  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/MCU.kicad_sch
+3d8712b00e27584ef69787f792073b10cbd020ef2602c6c98e9882b839e282d8  98073  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/MCU.kicad_sch-bak
+7dfbcb60acd21818d6fad9608f3e2d972a0e92b07e63d094c6cf03b247a0e7ca  2831210  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups/Zerowriter Inkplate 5 Gen2-2025-07-23_101610.zip
+71790f0f8a9534bd5ebac895304a6502efca1923d5aec14f353d4360e865c875  2833733  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups/Zerowriter Inkplate 5 Gen2-2025-07-23_102638.zip
+2f19f034f2154ac25b585902b33848738506728944a15f87ed43411252b9098f  2839703  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups/Zerowriter Inkplate 5 Gen2-2025-07-23_103837.zip
+818151460778cf43a476b8729ecfd885ac289b4602ec5133fc2f2d699e80360e  1422185  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups/Zerowriter Inkplate 5 Gen2-2025-07-23_121623.zip
+b6d2f692b193bbe02137791ed3557babc6af0d4fb22b9c406390076a8774f194  2841139  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups/Zerowriter Inkplate 5 Gen2-2025-07-24_074517.zip
+0d81a33c0aeeea9d597909dce8bc0dcdcedfa2ea0eaa9b3ec1851aeaeb792330  2841151  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups/Zerowriter Inkplate 5 Gen2-2025-07-24_080119.zip
+08c1d2b7544812c5f00bc5bc3f04ec6d7602e0dbaec0fa0a59064f19e56b9bfa  2840573  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2-backups/Zerowriter Inkplate 5 Gen2-2025-07-24_081103.zip
+bac36f6b1bdc46f2e3ab68b18467160c0886a2a0357500a85128458cb34d75ca  6260552  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2.kicad_pcb
+bf37e94bd230f36fe92161606380724d0f3c5e9c05d5e2be2b61b6c5b923d4b7  1304  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2.kicad_prl
+25009ad8a3e3cfd5db094696c680d4cf064619f4db812ebb7e54eb5d2d0717f2  8183  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/Zerowriter Inkplate 5 Gen2.kicad_pro
+13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354  3  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/PANEL/fp-info-cache
+26e7383377de77693f303be6c47263f7b542f6389ad5387738d30e32e4d22445  283954  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/POWER.kicad_sch
+f35e822d4dabf885c52b40843adaa9673dad3190d8393f50c95e325df6eb578d  88506  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/SD & RTC.kicad_sch
+97f34d9905a8f27733d5d6cdc229946b5f32988b934d0004a7f8a777ef69a2dc  80720  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/SD & RTC.kicad_sch-bak
+957937542fca0f483606b3c46f62660ad2bb8fb75cb3709ef6e973421055eff8  65820  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/Soldered Engineering SCH template.kicad_wks
+899304a9e05c5618618c36fd4f435702d783e5812318ae0671d7ca1919280e43  129939  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/TestPoints.kicad_sch
+635af4a07592c447af7ec478010ef9e6f13445afd18e3aa82b64b72b2a4bc1b8  3158336  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/Zerowriter Inkplate 5 Gen2.kicad_pcb
+d706ed1148f4ee19236e6454ef05071fdb623c7790dc4aac31925dd6f7c295e3  1315  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/Zerowriter Inkplate 5 Gen2.kicad_prl
+911b8eeb0dc18be22b31e14327148a70ef15114a81ef6fa9275abfa5d2d3faad  17217  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/Zerowriter Inkplate 5 Gen2.kicad_pro
+92f405eea94fff113764f094298be67acf08cb1a20d79413856d2343e27f6f92  6854  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/Zerowriter Inkplate 5 Gen2.kicad_sch
+05e813ad6120ae2b7e807aaf94186aef52596cffd72397b767f9c0200a6d5f73  22675  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/fp-info-cache
+a95c739f2b20edf14891ff1a31ab84b4f4c070eebbeb6c400d5a115510262cff  33  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/CAD/fp-lib-table
+64bc7756fdb00d8d65eb41cb867422d79e2e15808da2b57251019ac6d31a37bf  14190575  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Soldered Inkplate 5 Gen2 3D.step
+db86b4ff47f063d3224cf12360978f774b44e127031521bfe8acf7256c416d5b  1001765  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Zerowriter Inkplate 5 Gen2 Panel Gerber.zip
+bbae88f67d18fb97b9fbb2ce6406d2fb318bb528d113cbd81ed8ad0e88258a5a  1310821  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Zerowriter Inkplate 5 Gen2 Schematics.pdf
+d701bf6bf9697013f38db31098d2663b0b0bc30ede4b605351e95df46d40a0ef  921961  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Zerowriter Inkplate 5 Gen2 ibom.html
+887e7d2c065a968eca01e119844cb463dfa6bff2c5a7d13dfd15ae5912ce1fd0  5059  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/OUTPUTS/Zerowriter Inkplate 5 Gen2.csv
+2f78b0dba8182984481e1a881e3aa538b27d088bb966433e244aa6f0992a9c85  36  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/PCBA/Zerowriter Inkplate 5 Gen2-bottom-pos.csv
+d18b089541ea92f3e122a6fca9eac9ebe572ea68fa52910f155ef4cd87fdfe7b  18273  design/src/Zerowriter Inkplate 5 Gen2/v1.2.0/PCBA/Zerowriter Inkplate 5 Gen2-top-pos.csv
+0e268fe5a8b667633780f1ae9a0d2349e3e38c88bb5b152c3323dcdc2b418db0  1325397  design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups/Zerowriter Keyboard-2025-07-23_105201.zip
+3f03fcc6103626eaa6ecfb6dbd526339173a28ca8fbbf4a42fa0ebb930beda62  666920  design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups/Zerowriter Keyboard-2025-07-23_105857.zip
+6203f7e61ed259478b6afba52b311e0e6239cf10e2a59b9e54383199850c2931  667020  design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard-backups/Zerowriter Keyboard-2025-07-23_110541.zip
+c9cbe1d8b4b613e430cebff1f3e63894d3e12a260735e9883b839560f590cabe  3612958  design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard.kicad_pcb
+5d9946e88b832ea919d88ce719970e260b9db306998fe0f8df1991f5ed8914c3  1298  design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard.kicad_prl
+3f3470ad9c7e933d5db86be03f537f6244fca94270ee1f43550b35bd3d03cb64  7982  design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/Zerowriter Keyboard.kicad_pro
+13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354  3  design/src/Zerowriter Keyboard/v1.2.0/CAD/PANEL/fp-info-cache
+957937542fca0f483606b3c46f62660ad2bb8fb75cb3709ef6e973421055eff8  65820  design/src/Zerowriter Keyboard/v1.2.0/CAD/Soldered Engineering SCH template.kicad_wks
+7e3272c9af7e14c0a3e94710f36a584b7ef66fd1f9012fabebb09cc2d312023c  3589136  design/src/Zerowriter Keyboard/v1.2.0/CAD/Zerowriter Keyboard.kicad_pcb
+b979f796a9fdeb8846a4d2041e55052f07e7212b8a3cced28016547ffdc0c149  1303  design/src/Zerowriter Keyboard/v1.2.0/CAD/Zerowriter Keyboard.kicad_prl
+bde9a53c26d501c8910ea16029a11a037d9c2d77271ad1b314865620b9eaf851  14492  design/src/Zerowriter Keyboard/v1.2.0/CAD/Zerowriter Keyboard.kicad_pro
+4d11c50fbb2f4fa6365afdb5f16ed7bddeeae506e1a46bef8d7703380c6e34e8  304984  design/src/Zerowriter Keyboard/v1.2.0/CAD/Zerowriter Keyboard.kicad_sch
+4019bc8dbab33522a0cd407e62544162aadc824ff18557a5004a4236430e476b  48  design/src/Zerowriter Keyboard/v1.2.0/CAD/Zerowriter Keyboard.lck
+f125d4a7a69faba48af4048884d1ef62cfdd3849e6cbdaeea007d1707676cbe4  111  design/src/Zerowriter Keyboard/v1.2.0/CAD/fabrication-toolkit-options.json
+9db5f281c14fede319093037ac57f2d1fc8133ee0561a26499f1a3bd9fba3490  38096  design/src/Zerowriter Keyboard/v1.2.0/CAD/fp-info-cache
+376c5391fe3acf8a5ad8c3c486960f156f0115fadb05dabcdc85c2499f74bdbf  4502831  design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard 3D.step
+f5b1981d49a14bf359f85581ef2209029f1c4e61d82a236f3ce6eb582fd23266  470886  design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard Panel Gerberi.zip
+28348988f83cfc9c5932885d479dc29d9655a61407a262deb50322b9a170b05a  504511  design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard Schematics.pdf
+f655d64c0f298a3d98187bdb680a648680c68f28bf990b6f78d29d762dfe4258  517361  design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard ibom.html
+5c2e53ccc7f4c4b5e7ccfcf32d4d21942dd1c6e2447b057fd4e0bb035d55c327  1725  design/src/Zerowriter Keyboard/v1.2.0/OUTPUTS/Zerowriter Keyboard.csv
+c82e011fc20eadfc4272684bf3bfe537fda1550d3c57751ff655328990f5e4c9  11092  design/src/Zerowriter Keyboard/v1.2.0/PCBA/Zerowriter Keyboard-bottom-pos.csv
+790f3aae4c4941ee592634852b53e263a8eeaf9bc94cd834f2d7eb5a2c5bf11a  290  design/src/Zerowriter Keyboard/v1.2.0/PCBA/Zerowriter Keyboard-top-pos.csv
+ae176c21a161f2b19628e8a56dd6ec12c0ff818491ef91da47334e974bea8108  100086  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Archive.zip
+dd6a079ac6c100a786c59d04da61ca96c2cd840e1c232cdef6126bbfa7300b1b  44952  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-B_Cu.gbl
+97a54f0d050d99152270e08d4787a8006beb7f549d9ac43322c4844c2f651bc2  955  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-B_Mask.gbs
+5ccbca4eacf7ebbac664e36f9c77b58e7dd69c3d548ad65b4a5ebf692a93bcfa  517  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-B_Paste.gbp
+44fe3d9c9232a990a42815f1cf492f59a3fa1f8aff9a27c55c2972129a25ad5f  965  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-B_Silkscreen.gbo
+9e7a868ef5f991d1c3cb44dcf0cba6928f70589911f3ef2105548dcc031e8e75  484  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-CUT-OUT.gbr
+5a00cb9f6cfcfe402d411c43af11075a07e53de4e4797c79fd093e22004fd3d9  959  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-Edge_Cuts.gm1
+7d69065bd40a7d2ee52ae0be8881b9bc9c781029649daa4baad9c2e1256c34f0  102265  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-F_Cu.gtl
+58e5db0ab57c26c89d6ea33adba282b3393956f8b92c2556dd190a5ab3e0f367  5617  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-F_Mask.gts
+1bd71b68c2ce9c29f05bc41cc3c4a3893b714780e862f413f50de02af30443ee  4462  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-F_Paste.gtp
+ce53166f52c775a7ca640804c0b8f533321c3ce73a416db6e402fa6c26d97715  159846  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-F_Silkscreen.gto
+2a3c8abb3da220bd4fb988facbe0fe799dbcc7c529c05060c392b5923ad6771c  657  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-NPTH.drl
+fd54b8f2c2b246aa05f8fd7849f49ae166e630a71797d74c0ef84354866eac75  2590  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-PTH.drl
+96cd75346721e452f1acae9a225902960f93d79cb7fb75088b41505501411b53  3001  design/src/Zerowriter breakout board/OUTPUTS/SingleBoardOutputs/Zerowriter breakout board-job.gbrjob
+2b1cf39f1790ac09bd8dcf2dda989cc49e4e7c9547ff19856f7c9f20b00cfd99  44952  design/src/Zerowriter breakout board/OUTPUTS/Zerowriter breakout board-B_Cu.gbl
+e01bde790888d21f50e84d4da0a2a5d50b14b0dbc9d6a8c73ffbcc73043b412b  955  design/src/Zerowriter breakout board/OUTPUTS/Zerowriter breakout board-B_Mask.gbs
+3faa3766c64e8990be82c7bc1cbf3db5ee310400256b19301b21317d988dad19  517  design/src/Zerowriter breakout board/OUTPUTS/Zerowriter breakout board-B_Paste.gbp
+5132531ed916c8f9179da4e8ddd149d0a9d832b4bbe4e3848e1170c1590a8abb  965  design/src/Zerowriter breakout board/OUTPUTS/Zerowriter breakout board-B_Silkscreen.gbo
+24a1e2e29c0bb851cff5df53b61c7fbc6574b1e1a2aa6a59e4adb42e03ae2dbd  484  design/src/Zerowriter breakout board/OUTPUTS/Zerowriter breakout board-CUT-OUT.gbr
+64893654692fc86e712324fbb1ff07c8b09b5027e6469f0a26a49b505da93927  959  design/src/Zerowriter breakout board/OUTPUTS/Zerowriter breakout board-Edge_Cuts.gm1
+5e78f42be619323dcaaa966ee9132a260b43ba3d5737f71b9ce7c3e2b09c16e9  102265  design/src/Zerowriter breakout board/OUTPUTS/Zerowriter breakout board-F_Cu.gtl
+c6cfe767c910a5d846d82b08ae6fe80e9610661f5a296a1be2a776966876ee4c  5617  design/src/Zerowriter breakout board/OUTPUTS/Zerowriter breakout board-F_Mask.gts
+26d9195cb2aa93c01a01d7697dc5fb8cc88efa291f4e940e222cd569690bf427  4462  design/src/Zerowriter breakout board/OUTPUTS/Zerowriter breakout board-F_Paste.gtp
+1ed16557fa72d07ed4c4807f5c4a7834c362371d4cdc462466036742f9108e7d  159846  design/src/Zerowriter breakout board/OUTPUTS/Zerowriter breakout board-F_Silkscreen.gto
+c8445b764c85c6946682eb053ca7154ce78d8e119a2d9e07c2d6f50f7f2ce76d  2050341  design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL/Zerowriter breakout board-backups/Zerowriter breakout board-2025-07-23_093840.zip
+751084f5e7451dfb69426cdc496fc65cf60461e787e23b730757264f15c8d586  2054515  design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL/Zerowriter breakout board-backups/Zerowriter breakout board-2025-07-23_095830.zip
+06da1f3aeb522dc04b3489d384bca4889d566dcc6100bb4b184ccead6dae77ac  2054865  design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL/Zerowriter breakout board-backups/Zerowriter breakout board-2025-07-23_122033.zip
+67e07637053fb10d5a4381501d1975f20843ba5c3481f4003c330fe382e14c6b  8702870  design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL/Zerowriter breakout board.kicad_pcb
+63d24e519ffb1bc4680b7e7821ab31619d5fff8f05807ab1ff6e28b85d6b9d0c  1303  design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL/Zerowriter breakout board.kicad_prl
+365a0314e79e870a786d75236f35cd5ab0cd6f1504947a937b9514fa67ea68f9  7988  design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL/Zerowriter breakout board.kicad_pro
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  2  design/src/Zerowriter breakout board/v1.2.0/CAD/PANEL/fp-info-cache
+957937542fca0f483606b3c46f62660ad2bb8fb75cb3709ef6e973421055eff8  65820  design/src/Zerowriter breakout board/v1.2.0/CAD/Soldered Engineering SCH template.kicad_wks
+7dfa52b151650fb0e0f38ef14e0ddc783303fbdceb6eb1f3cbd8fe71577e90d8  494761  design/src/Zerowriter breakout board/v1.2.0/CAD/Zerowriter breakout board.kicad_pcb
+6c049e99f08123753d524281ea715c16bfdfe2e74f908f07080413dab2c3c235  1326  design/src/Zerowriter breakout board/v1.2.0/CAD/Zerowriter breakout board.kicad_prl
+07978553663547a8694c5b8e924b0b6ff032628628ebe81eef1e8a9217f8a798  15197  design/src/Zerowriter breakout board/v1.2.0/CAD/Zerowriter breakout board.kicad_pro
+d5e2cb10b1455c7628a00216640fdb9dadfc6857d8f6b08e85cd10fec7e45209  122377  design/src/Zerowriter breakout board/v1.2.0/CAD/Zerowriter breakout board.kicad_sch
+6b6bda7113e330b585f9cc8a1812f9e9f06b168f832bdf15b30fc2ec99529fb9  605  design/src/Zerowriter breakout board/v1.2.0/CAD/Zerowriter-singlebreakout.csv
+e9a87258144026fa2cb840782c2aabaa6b9afd7c66ebe79b8f2cf6a6d837f70f  33125  design/src/Zerowriter breakout board/v1.2.0/CAD/fp-info-cache
+ba90dc4caaeff965af9e24a54b04e33d280ea57c7b2c3ebdd78e4d894458a798  1505422  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Archive.zip
+96c345f45e5dd5b9a242101bb483f653c8fa9cf5708784bd2a5f237e6430b9c6  5785268  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board 3D.step
+be13e0ac389bbef66a1a5a753238c4153bce0f6322f51c82a0ac3f6875dadb3a  1575953  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board Panel Gerberi.zip
+46f293c8cb738da6d6b4f7e0a55c1c54a377501ed3b97380ab83c376bb181bf7  171679  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board Schematics.pdf
+9b62cd2d03d287678b0def487a0d2049dce8bd8dc724171501e70cef8a51f498  284205  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board ibom.html
+2f71cdd3e81f3a4b5709dca169e1671daf4eb727fda1d033bd43c4afd17c3b20  836727  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board-B_Cu.gbl
+4bf0125155c575e41cdbc26ab6aed11811b3968d91ad2136b4c6aaff7bb75110  6876  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board-B_Mask.gbs
+e7c00b0323fd199e77ec2c7ee5df9025a64361180a167cbf4594bf8f78e8490e  517  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board-B_Paste.gbp
+9a24ed81fbcdf5ac7b913e4134e8492719e6b06b4df34be1d77462b951700423  6886  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board-B_Silkscreen.gbo
+072a7af5e19aace05efc582b43547e9d25ff064ae7552289fb1d723aa12ce2e1  484  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board-CUT-OUT.gbr
+d3bad064548d21e4c0a0decac7c5e5fbc3afcfb21a1ff264202bed365b043e56  9563  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board-Edge_Cuts.gm1
+307a5c5cfc484b74153080c96676de1b64f6979a80abec0e15c99ca08e4b656c  1907682  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board-F_Cu.gtl
+b535d228341eab9008c4e54a86033bb3629383a81224654c9b6110de45dbdeba  56407  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board-F_Mask.gts
+190551c5ab6595b48901ad97cf3123a9cfeb9779ad753f702f41ac0612dfc0f9  56257  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board-F_Paste.gtp
+a4e2d1ee39d2efa412c685b82f1fd8b414dad4f2a993bd5aed23013a75ae0b35  3027376  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board-F_Silkscreen.gto
+8a76b541a0ab138a35e7ad14da3acc361d8ee836d141a06037233e764ffac681  13663  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board-V-CUT.gbr
+b84072bd83c8f1dc0edf553d9618abc2f03162aff3b3f47bc7400a8a0177c98d  903  design/src/Zerowriter breakout board/v1.2.0/OUTPUTS/Zerowriter breakout board.csv
+2f78b0dba8182984481e1a881e3aa538b27d088bb966433e244aa6f0992a9c85  36  design/src/Zerowriter breakout board/v1.2.0/PCBA/Zerowriter breakout board-bottom-pos.csv
+7d783e960d4c2f7f83dd5775538d88ed00c824e7e58677a5024798a4ae9e6bf8  1285  design/src/Zerowriter breakout board/v1.2.0/PCBA/Zerowriter breakout board-top-pos.csv
+1f1016b4faddb7dde6c480616d07907cdaac43290fcc912d9528ba3c77d96a6b  663866  design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard-backups/Zerowriter Keyboard-2026-02-17_161947.zip
+1f1016b4faddb7dde6c480616d07907cdaac43290fcc912d9528ba3c77d96a6b  663866  design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard-backups/Zerowriter Keyboard-2026-04-06_171853.zip
+9af1f51dc5348b1bdc050af964c5fd2d8a42816604385d3c12f439b9445983f5  3457301  design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard.kicad_pcb
+f00e1311f536094e21876f2f6b0b65fc49f652314cc78b2e27636921001ec436  1303  design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard.kicad_prl
+fa5ef6809382abe8977324ea64528bea4a37a15fec92dbdcb00d48cd0d5a1a0f  14510  design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard.kicad_pro
+d49fadb4e7b842e709b3a0bdd3a0b80b92727690d8518c1801e169acf279ea42  304467  design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard.kicad_sch
+4019bc8dbab33522a0cd407e62544162aadc824ff18557a5004a4236430e476b  48  design/zw_keyboard/Kicad/CAD/Zerowriter Keyboard.lck
+f125d4a7a69faba48af4048884d1ef62cfdd3849e6cbdaeea007d1707676cbe4  111  design/zw_keyboard/Kicad/CAD/fabrication-toolkit-options.json
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  2  design/zw_keyboard/Kicad/CAD/fp-info-cache
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  0  design/zw_keyboard/Kicad/OUTPUTS/.gitignore
+734cef6a4831ffc3234b47cc363b3d0e87e3f8020c459fb63c5f3235b81e0a0c  1658  design/zw_keyboard/Kicad/OUTPUTS/Zerowriter Keyboard BOM.csv
+0ade58fe64778708632b2694d6a944eac735b42cbf1b3e8ec7e5dafe0c7ea88f  246433  design/zw_keyboard/PCB Plate/260122_Keyboard Plate.DXF
+3ce9e4ebccd927ba09460b0ee13f97b49d7b9c0d87aed2cec34b11758ca12b96  26458  design/zw_keyboard/PCB Plate/gerber.zip
+d7fa12800c836eecb427f44a40cb1d6e61fadce4547738955cc7ce8ef7f72c54  163909  design/zw_keyboard/schematic.pdf
+849038d0eba05d5df8c5b0961aa45fe5e71f3077d6868677e12f3721ffe73589  1256992  firmware_releases/SD-1.3/firmware.bin
+d4b9f3524910b13518f2e44877105d68201d1227538ce0e5ef63384fb7d33519  2583  firmware_releases/SD-1.3/readme.txt
+bb605889a10912e7cd37914cb2995360012342248ed930021a6611d098326543  1279888  firmware_releases/archived updates/SD - 1.24/firmware.bin
+b319f14f5818348b20157a00f8e56f3c6264f77b8a2186f4ffc93a3146ba09d3  1244592  firmware_releases/archived updates/SD-1.25/firmware.bin
+b564077bdbff038bf978659abe4eb719c4dc0f183dbc83546fa7344990e754bf  1244768  firmware_releases/archived updates/SD-1.27/firmware.bin
+a4c2e6309446a0003e91eb8a7319cc5e74d33b2b26f8c813aaf9431925a360fa  1165  firmware_releases/command line/howto.txt
+a7d41dda2de8cc8ee9ad86305af5d7bf53ab002e590f3c867d879538c2a7022f  4194304  firmware_releases/command line/zw_latest.merged.bin
+ec6a81f3506e3c4b5717b085b0bbff56dec93aa65233422e76b47f7ff013f2dc  472  firmware_releases/updates-readme.txt
+e300f583a2ef6a51f34141beaecf2950d4f9ee4eda45ea5e01abeb53e4bcb7ac  9609  src/keyboard/zwi_kb_feb2026/zwi_kb_feb2026.ino
+68774a79680f11da46b1d02e825d3858434c922eaedb43eab750beaeb2db9435  19861  utils/Ink_Keymap_Editor.html
+f195f5c50ecb93b6888c93bbde4939260f7d73980e9a7e4f97f14da81eda4ff3  3490  utils/USB_Send.html
+4301cd16a068d81dbcff3b3058b0545b1d9af182ac257cddfafde8b8112e7eb7  4223  utils/keymaps/keymap.json
+6176aede8f0ea03dcba29efe261604d254e94dcc41a5e872f4072a77aadde195  9364  utils/zw_utils.zip

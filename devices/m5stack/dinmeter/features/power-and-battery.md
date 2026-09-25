@@ -31,9 +31,9 @@ shows up as "it only fails on battery".
 
 | Source | Connector | Range | Path |
 |---|---|---|---|
-| **DC** | `J1`, 2-pin 2.54 mm screw terminal (`DB2EK-2.54-2P-GN-S`, green) | **6 – 36 V** | `D13`/`D12` → `U1` **ME3116AM6G** buck → `+5VIN` |
+| **DC** | `J1`, 2-pin 2.54 mm screw terminal, green — [`dorabo/db2ek-2.54-2p`](../../../../components/dorabo/db2ek-2.54-2p/README.md) (**5 A**, 26–20 AWG, M1.6 @ 0.1 N·m) | **6 – 36 V** | `D13`/`D12` → `U1` **ME3116AM6G** buck → `+5VIN` |
 | **USB** | USB-C **on the Stamp module** | 5 V | directly onto `+5VIN` |
-| **Battery** | `J2`, 1.25 mm 2-pin | 1S Li-ion; 250 mA·h cell bundled | `U2` **TP4057** charger; `Q3`/`Q6` AP40P05 power path; `U3` **SY7088** boost → `+5VOUT` |
+| **Battery** | `J2`, 1.25 mm 2-pin — [`generic/1.25wt-2p-battery-connector`](../../../../components/generic/1.25wt-2p-battery-connector/README.md) (⚠ **no rating published**, no NTC contact) | 1S Li-ion; 250 mA·h cell bundled | `U2` **TP4057** charger; `Q3`/`Q6` AP40P05 power path; `U3` **SY7088** boost → `+5VOUT` |
 
 Rails produced:
 

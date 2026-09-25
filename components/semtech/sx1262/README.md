@@ -499,7 +499,7 @@ Two are worth dwelling on for this board:
 - RadioLib is **patched by the vendor build to remove `idf_component.yml`**, so it builds as a plain ESP-IDF component rather than a managed one.
 - ⚠ **M5Stack's published PlatformIO snippet pins nothing** — `RadioLib = https://github.com/jgromes/RadioLib` pulls `master`. Reproducing factory behaviour requires the pinned commit **and** the patch **[DOC]** vs **[SRC]**.
 - ⚠ **Licence mismatch, flagged not confirmed:** RadioLib is **LGPL-3.0** upstream while the M5Stack demo carrying it is MIT. Not verified in this pass.
-- ✅ **Correction, 2026-09-07 — the line immediately above is wrong and is left in place only for provenance.** RadioLib is **MIT**, not LGPL-3.0. Verified `executed-success` on 2026-09-04 by the LoRa-generations pass: the licence file is **`license.txt`, lower case** (which is why a `LICENSE` fetch 404s, and is the likely origin of the LGPL-3.0 belief), and it reads `MIT License / Copyright (c) 2018 Jan Gromeš` **byte-identically at tags `7.2.1` and `7.7.1`**. `gh api repos/jgromes/RadioLib --jq .license.spdx_id` → `MIT`. **There is no mismatch with the MIT-licensed M5Stack demo.** The original line was not edited because this pass was append-only; the correction is parked for a maintainer in [`scratch/index-merge/corrections-requiring-review.md`](../../../scratch/index-merge/corrections-requiring-review.md). Source: `scratch/lora-generations/index-fragments.md` §6.1.
+- ✅ **Correction, 2026-09-07 — the line immediately above is wrong and is left in place only for provenance.** RadioLib is **MIT**, not LGPL-3.0. Verified `executed-success` on 2026-09-04 by the LoRa-generations pass: the licence file is **`license.txt`, lower case** (which is why a `LICENSE` fetch 404s, and is the likely origin of the LGPL-3.0 belief), and it reads `MIT License / Copyright (c) 2018 Jan Gromeš` **byte-identically at tags `7.2.1` and `7.7.1`**. `gh api repos/jgromes/RadioLib --jq .license.spdx_id` → `MIT`. **There is no mismatch with the MIT-licensed M5Stack demo.** The original line was not edited because this pass was append-only; the correction is parked for a maintainer in [`research/passes/index-merge/corrections-requiring-review.md`](../../../research/passes/index-merge/corrections-requiring-review.md). Source: `scratch/lora-generations/index-fragments.md` §6.1.
 
 Framework: ESP-IDF **5.5.1**, target `esp32s3`, arduino-esp32 **3.3.10** as a managed component **[SRC]** `dependencies.lock`.
 
@@ -524,7 +524,7 @@ The vendor's integration is deliberately thin: `hal_lora.cpp` implements a `Radi
 | **G11** | **Crystal trimming caps are overwritten by the state machine** unless you are already in `STDBY_XOSC` (§6.5). And `SetDIO3AsTcxoCtrl` unconditionally forces `XTA` to 33.4 pF | **[DS]** §4.1.3 |
 | **G12** | ⚠ **Semtech's canonical datasheet could not be downloaded, and Semtech's own listing is dated 2025-04-07 — later than the Rev 2.2 (Dec 2024) copy held here.** So this document **may be one revision behind**, and that is *unresolved*, not "no lag". See §11 | `executed-failed`, 2026-09-01 |
 | **G13** | **LR-FHSS is patent-encumbered**, and Semtech's disclaimer explicitly declines to grant patent rights with the software (§1) | **[DS]** p. 2 |
-| **G14** | **No certification of any kind is published for the PaperMono**, including for its sub-GHz emitter. A single wideband 868–923 MHz SKU with no per-region variant covers EU 868, US 915 and JP 920 allocations with no regulatory paperwork to point at | **[DOC]** — negative result; [`features/lora.md` §7](../../../devices/m5stack/papermono/features/lora.md) |
+| ~~**G14**~~ | ⚠ **CORRECTED 2026-09-20.** M5Stack *publishes* nothing, but the PaperMono **is certified**: FCC ID **`2AN3WM5PAPERMONO`**, granted 2026-08-12. The sub-GHz emitter is authorised on **903.0–914.9 MHz at 11.5 dBm conducted** into a **−5.0 dBi** antenna — one narrow slice of the 868–923 MHz the SKU claims, and the vendor firmware's 868.0 MHz default falls outside it. The 11.5 dBm figure is a hard ceiling: at that power the SAR test-exclusion calculation gives 2.7 against a limit of 3.0. No CE, IC, RCM or SRRC record located | **[REG]** FCC exhibits, retrieved 2026-09-11; [`certification.md`](../../../devices/m5stack/papermono/certification.md) |
 | **G15** | **Nothing has been measured.** No range, throughput, sensitivity, TX current or battery-impact figure exists from M5Stack or from anyone in the community | **[DOC]**, community — negative result |
 
 ---
@@ -537,7 +537,7 @@ No vendor sourcing guide exists in this repository for Semtech — see the [vend
 >
 > On **G12** (whether a revision newer than Rev 2.2 exists): that catalogue confirms Semtech's current listing is `SX1261/SX1262 Datasheet` — the same document held here at Rev 2.2 — so the "2025-04-07 listing date vs Dec 2024 revision" question is **still `unresolved`**, but it is now known to be a *listing-date* field in a catalogue rather than a document date.
 >
-> The original text was not edited because this pass was append-only. Parked for a maintainer in [`scratch/index-merge/corrections-requiring-review.md`](../../../scratch/index-merge/corrections-requiring-review.md). Source: `scratch/lora-generations/index-fragments.md` §6.2.
+> The original text was not edited because this pass was append-only. Parked for a maintainer in [`research/passes/index-merge/corrections-requiring-review.md`](../../../research/passes/index-merge/corrections-requiring-review.md). Source: `scratch/lora-generations/index-fragments.md` §6.2.
 
 **`www.semtech.com` serves its product pages to a normal browser user-agent** (HTTP 200, 237 407 bytes for the SX1262 page) but **403s a `WhatsApp/2.23.20.0` agent** — the reverse of `www.st.com`, which serves the WhatsApp agent and resets the connection for Chrome. There is no single agent that works everywhere; rotate.
 
@@ -564,6 +564,32 @@ Other Semtech documents enumerated from the product page and **not retrieved** (
 ## 12. Used By
 
 ### [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md) — inside module `U14`, sheet 4
+
+> **FCC internal photographs — 2026-09-20.** The PaperMono's FCC filing
+> (`2AN3WM5PAPERMONO`) includes an internal-photograph exhibit, now retained at
+> [`devices/m5stack/papermono/artifacts/certification/`](../../../devices/m5stack/papermono/artifacts/certification/README.md).
+> It is the first physical-hardware evidence for this part on this board.
+>
+> **Confirmed, and the module boundary is confirmed too.** Exhibit p. 3 shows a
+> 24-pin QFN marked `SX1262` / `LoRa®` / `2237` / `25486` with the Semtech logo —
+> date code 2022 week 37, lot 25486. Critically, it sits **inside a castellated
+> sub-PCB** with a stitched-via perimeter, its own matching network, its own
+> U.FL connector and its own oscillator, soldered onto the main board. This
+> record's scope note — *"the SX1262 is not on the main board"* — is **visually
+> correct**.
+>
+> **Certified radio parameters, as granted** (FCC ID `2AN3WM5PAPERMONO`,
+> 2026-08-12): **903.0–914.9 MHz** in the US, **11.5 dBm** declared conducted
+> tune-up, measured peak 11.24 / 11.20 / 11.18 dBm on low/mid/high. That
+> 11.5 dBm is a structural ceiling, not a preference: at 11.5 dBm the SAR
+> test-exclusion figure is **2.7 against a limit of 3.0**.
+>
+> **A discrete frequency reference is fitted** beside the SX1262 — a 4-pad
+> ceramic oscillator marked **`M10`**. This does **not** settle TCXO-versus-XTAL
+> (both use this package), but it does establish the reference exists rather
+> than being assumed. Manufacturer logo illegible at 200 ppi.
+>
+> Extraction: [`certification.md`](../../../devices/m5stack/papermono/certification.md).
 
 **The SX1262 is not a component of the main board.** It is inside the plug-in [`Stamp-LoRa-1262-mini`](../../m5stack/stamp-lora-1262/README.md) module (`U14`, sheet 4), which presents a 13-pin SPI-plus-control interface. **That record owns the board integration**; this section states only what the *chip* does on this board and points at it.
 

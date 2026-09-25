@@ -112,7 +112,7 @@ Low-battery shutdown is a **userspace policy** (`ui_hardware.c`), not a hardware
 millivolt threshold against the gauge reading, with a confirm count and a recovery log line,
 gated on BQ25896 USB-present. Defaults were tuned post-release in BSP v0.2.2 and v0.2.3.
 
-*Source: `scratch/lilygo-k230/index-fragments.md` §F3.*
+*Source: `archive/devices/lilygo/t-display-k230/artifacts/research-scratch/index-fragments.md` §F3.*
 
 ---
 

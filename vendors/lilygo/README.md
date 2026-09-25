@@ -235,7 +235,7 @@ Before declaring a LilyGO board researched:
 
 ## 10. Findings added by the T-Display K230 pass — 2026-09-04
 
-Appended **2026-09-07** from [`scratch/lilygo-k230/vendor-guide-additions.md`](../../scratch/lilygo-k230/vendor-guide-additions.md).
+Appended **2026-09-07** from [`archive/devices/lilygo/t-display-k230/artifacts/research-scratch/vendor-guide-additions.md`](../../archive/devices/lilygo/t-display-k230/artifacts/research-scratch/vendor-guide-additions.md).
 That pass ran on 2026-09-04, when `vendors/lilygo/README.md` did **not yet exist**, and parked
 its reusable sourcing findings in scratch rather than race the sibling T-Display-S3 session that
 later wrote §§1–9. All observations below were live-verified **2026-09-04**. Where they overlap

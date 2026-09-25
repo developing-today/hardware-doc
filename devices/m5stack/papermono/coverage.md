@@ -57,9 +57,9 @@ Evidence key — **P** primary design data (schematic) · **S** vendor source re
 | **M5IOE1 ADC ×4, PWM3/4, NeoPixel, temperature sensor, retention RAM** | ⚠ fitted silicon, unused | All fourteen expander pins are digital assignments on this board |
 | **M5PM1 retention RAM (32 B), NeoPixel, watchdog** | ⚠ fitted, unused | No vendor code exercises them |
 | **JTAG / hardware debug** | ❌ not evaluated | Not investigated in this pass. GPIO39–42 (the ESP32-S3 JTAG group) carry LoRa SPI and the buzzer, so it is likely unavailable — **`inferred`, unconfirmed** |
-| **Certification** | ❌ **verified negative** | `/en/certification` returns HTTP 200 with **zero** matches for `PaperMono` and `C153` |
+| **Certification** | ✅ **FCC ID `2AN3WM5PAPERMONO`**, granted 2026-08-12 | **Corrected 2026-09-20.** `/en/certification` does return zero matches — but the board is certified and the exhibits are public. Certified bands, conducted power, antenna gain and SAR: [`certification.md`](certification.md). Japan MIC `211-260514` on the label, **unverified**. No CE DoC, IC, RCM or SRRC record located |
 | **Product I²C address table** | ❌ **verified negative** | `/en/product_i2c_addr` returns 200 with zero matches, despite seven fitted I²C devices |
-| **Product/teardown imagery** | ❌ none retained | Vendor imagery is not licensed for redistribution; no independent teardown existed at the snapshot date |
+| **Product/teardown imagery** | ⚠ **partly closed 2026-09-20** | Vendor imagery is still not licensed for redistribution and no independent teardown exists — but the **FCC internal-photograph exhibit is now retained**: 13 images at 200 ppi of both board sides, the housing, the antennas, the panel and the cell. US Government public record, redistribution `allowed`. [`certification.md` §6](certification.md#6--what-the-internal-photographs-show) |
 | **Performance characterisation** | ❌ `performance.md` not written | Nothing to put in it — see §4 |
 
 ## 3. Example inventory

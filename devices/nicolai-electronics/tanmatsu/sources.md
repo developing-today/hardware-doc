@@ -46,13 +46,13 @@ git -C tanmatsu-hardware checkout 640805dd4304f4bfaac24965f8eecf81bec97bf1
 | [`badgeteam/esp32-component-badgelink`](https://github.com/badgeteam/esp32-component-badgelink) | BadgeLink protocol + Python/WebUSB host tools |
 | [`badgeteam/appfs`](https://components.espressif.com/components/badgeteam/appfs) | App filesystem + bootloader modification. Originally by Jeroen Domburg (sprite_tm) for the PocketSprite |
 | [`solderparty/keebdeck_keyboard_hw`](https://github.com/solderparty/keebdeck_keyboard_hw) @ `f1c074c` | **KeebDeck keypad footprints, symbol, dimensional drawing, 3D models.** CERN-OHL v1.2. KiCad subset retained at `artifacts/keebdeck-keyboard/` |
-| [`solderparty/keebdeck_basic_hw`](https://github.com/solderparty/keebdeck_basic_hw) @ `2b537ce` | KeebDeck reference/evaluation board |
+| [`solderparty/keebdeck_basic_hw`](https://github.com/solderparty/keebdeck_basic_hw) @ `2b537ce` ("Rev 1.1 - Production") | KeebDeck reference/evaluation board. **Schematic PDF retained at [`artifacts/keebdeck-basic/`](artifacts/keebdeck-basic/README.md)** (355 080 B, `593aa32d…`, KiCad 9.0.1 export dated 2025-05-04) and **mined into [`keyboard.md` §2b](keyboard.md#2b-verified-the-keebdeck-basic-reference-board-read-from-its-schematic)** on 2026-09-20 — it is a **6×12 diode-less** board with the backlight and boot button **DNP**, so it is a weaker reference than §2 implied. Repo licence **not read**; recorded `unknown` |
 | [`nicolaielectronics/mipi_dsi_abstraction`](https://components.espressif.com/components/nicolaielectronics/mipi_dsi_abstraction) | MIPI DSI setup for the LH397K-IC01 and the ESP32-P4 dev-kit display |
 | [`nicolaielectronics/rvswd`](https://components.espressif.com/components/nicolaielectronics/rvswd) | Reprograms CH32V20x/30x from the ESP32-P4 |
 | [`ranzbak/konsoolnes`](https://github.com/ranzbak/konsoolnes) | NES emulator |
 | [`petrisi/tanmatsu-multimesh`](https://github.com/petrisi/tanmatsu-multimesh) | MeshCore + Meshtastic |
 | [`saarbastler/esp32-component-esp-hosted-tanmatsu`](https://github.com/saarbastler/esp32-component-esp-hosted-tanmatsu) | esp-hosted fork with Tanmatsu modifications |
-| [`badgeteam/konsool-zero`](https://github.com/badgeteam/konsool-zero) @ `0f0b964` | RFID/NFC/sub-GHz expansion (WIP) — ST25R3916, CC1101, STM32WB55CC |
+| [`badgeteam/konsool-zero`](https://github.com/badgeteam/konsool-zero) @ `0f0b964` | RFID/NFC/sub-GHz expansion (WIP) — ST25R3916 `U5`, CC1101 `U1`, **CH32V003 `U19`**. ⚠ *not* STM32WB55CC — corrected 2026-09-20, see below |
 | [`badgeteam/konsool-18650-expansion`](https://github.com/badgeteam/konsool-18650-expansion) @ `69504c4` | 18650 battery expansion, CERN-OHL-P v2 |
 | [`badgeteam/konsool-expansion-template`](https://github.com/badgeteam/konsool-expansion-template) | ⚠ **empty repository** — no commits |
 | [`badgeteam/konsool-template-lvgl`](https://github.com/badgeteam/konsool-template-lvgl) | LVGL app template, CC0-1.0 |
@@ -66,10 +66,92 @@ A GitHub search for `tanmatsu` returned **117 repositories** on 2026-08-24, domi
 | Part | Source |
 |---|---|
 | ESP32-C6-WROOM-1 | <https://www.espressif.com/sites/default/files/documentation/esp32-c6-wroom-1_wroom-1u_datasheet_en.pdf> |
-| CH32V203 | <https://www.wch-ic.com/downloads/CH32V203DS0_PDF.html> |
+| CH32V203 | <https://www.wch-ic.com/downloads/CH32V203DS0_PDF.html> — ✅ **now held locally**, see below |
 | E22-900M22S | <https://www.cdebyte.com/products/E22-900M22S> |
 | Display (SWI) | <http://www.swicn.com/> |
 | **ESP32-P4** | **Not publicly available** at the time the vendor documentation was written |
+
+## Datasheets recovered from `konsool-zero`'s `docs/` folder · *added 2026-09-20*
+
+The `badgeteam/konsool-zero` clone (@ `0f0b964`) carries a `docs/` folder of reference material
+its author collected while designing that expansion board. It held **seven chip documents** plus
+six **Flipper Devices Inc.** schematic sheets and a folder of annotated Flipper Zero teardown
+photographs — konsool-zero is openly derived from studying the Flipper Zero.
+
+All seven chip documents have now been **mined and filed as component artifacts** (a chip
+datasheet is a *component* artifact, even when a device task fetched it). They are no longer in
+scratch.
+
+| Document | Revision | Now filed at | Fitment established? |
+|---|---|---|---|
+| `ch32/CH32V003RM.PDF` | RM **V1.6** | [`components/wch/ch32v003/`](../../../components/wch/ch32v003/README.md) | ✅ **Yes** — `konsool-zero` `U19` = **`CH32V003F4U6`**, QFN-20, from `zero-mcu.kicad_sch`. **Not on the Tanmatsu mainboard** |
+| `ch32/CH32V003DS0.PDF` *(unlisted extra)* | DS **V1.4** | same record | ✅ as above |
+| `ch32/CH32FV2x_V3xRM.PDF` | RM **V2.1**, 595 pp | [`components/wch/ch32f2x-ch32v2x-ch32v3x/`](../../../components/wch/ch32f2x-ch32v2x-ch32v3x/README.md) | ❌ **No CH32F2x/V3x part fitted anywhere.** ⭐ But this manual **is the register reference for the Tanmatsu's own `CH32V203C8T6`** — WCH documents CH32F2x/V2x/V3x in one manual, and it names `CH32V203C8` as a `CH32V20x_D6` device |
+| `ch32/CH32V203DS0.PDF` *(unlisted extra)* | DS **V2.7** | [`components/wch/ch32v203c8t6/artifacts/`](../../../components/wch/ch32v203c8t6/README.md) | ✅ **Yes — Tanmatsu `U12`.** ⭐ This is exactly the datasheet that record listed as *"No local datasheet copy"*. Gap closed |
+| `cc1101_datasheet.pdf` | **`SWRS061I`** | [`components/texas-instruments/cc1101/`](../../../components/texas-instruments/cc1101/README.md) | ✅ **Yes** — `konsool-zero` `U1` = **`CC1101RGPR`**, from `sub-ghz-radio.kicad_sch`. **Not on the Tanmatsu mainboard** |
+| `ST25R3916.PDF` | **`DS12484 Rev 4`** (Alldatasheet) | [`components/stmicroelectronics/st25r3916/`](../../../components/stmicroelectronics/st25r3916/README.md) | ✅ **Yes** — `konsool-zero` `U5` = **`ST25R3916-AQWT`**, VFQFPN32, from `nfc-block.kicad_sch`. **Not on the Tanmatsu mainboard** |
+| `stm32wb55cc.pdf` | **`DS11929 Rev 17`** | [`components/stmicroelectronics/stm32wb55xx/`](../../../components/stmicroelectronics/stm32wb55xx/README.md) | ❌ **NO — and an earlier claim here was wrong.** See below |
+
+### ⚠ Correction: konsool-zero does **not** carry an STM32WB55CC
+
+[`expansion-boards.md` §2](expansion-boards.md) previously listed `STM32WB55CC` under *"Silicon
+identified from the KiCad schematics"*, described as *"an on-board processor, not just a
+peripheral"*. **The schematics do not support this.** Verified 2026-09-20, `executed-success`:
+
+- A case-insensitive search for `stm32` or `wb55` across **every** `.kicad_sch`, `.kicad_pcb`,
+  `.kicad_pro` and `jlcpcb/project.db` in the project returns **zero matches** — and also zero
+  across the project's entire git history (one commit).
+- A **full reference-designator census** of all nine sheets finds no ST microcontroller. The
+  board's only MCU is **`U19` = `CH32V003F4U6`** on `zero-mcu.kicad_sch` — a 16 KB / 2 KB RV32EC
+  helper, not a dual-core wireless MCU.
+
+The datasheet is in `docs/` because **the Flipper Zero's own MCU is an STM32WB55**, and the folder
+is a Flipper Zero prior-art study — the same folder holds Flipper's NFC, RFID, iButton, Power and
+Sub-1 GHz schematics, which independently name the same `CC1101RGPR` and `ST25R3916-AQWT` that
+konsool-zero adopted. The earlier pass appears to have read *presence of a datasheet* as *evidence
+of a fitted part*.
+
+`expansion-boards.md` has been corrected. Recorded here with evidence and date so it is not
+re-investigated.
+
+### ✅ Follow-up completed 2026-09-20 — everything in `docs/` is now filed
+
+The items below were deferred by the earlier pass. **They have since been placed.** Nothing from
+`konsool-zero/docs/` remains unfiled.
+
+| Item | Where it went | Rationale |
+|---|---|---|
+| `docs/*.pdf` — six **Flipper Devices Inc.** schematics (iButton, NFC, Power, Power and vibro, RFID, Sub-1 GHz CC1101) | [`devices/flipper-devices/flipper-zero/artifacts/schematics/`](../../flipper-devices/flipper-zero/README.md) — **in the repository** | They describe a different product, so per *file by what it describes* they belong to it. The record is an explicit **artifact-preservation stub**, not a researched device record, and says so at the top. A SHA-256 sweep confirmed all six were in **no** other location — they existed in exactly one place |
+| `docs/flipper-zero-photos/` — 7 PNGs | [`…/flipper-zero/artifacts/teardown-photos`](../../flipper-devices/flipper-zero/artifacts/teardown-photos.ARCHIVED.md) — **archived**, placeholder in place | 4.0 MB of images with **no established provenance or licence**; recorded as `unknown` rather than guessed |
+| `docs/link-to-explanation.txt` | Filed beside the schematics | **Still not retrieved.** The URL <https://www.cnblogs.com/shangdawei/p/3729375.html> has not been fetched or assessed in any pass. Recorded as an open item |
+
+**What reading them established** — the design lineage of konsool-zero, which was previously an
+assumption:
+
+| | Flipper Zero | konsool-zero |
+|---|---|---|
+| Sub-GHz transceiver | `CC1101RGPR` | `CC1101RGPR` — **same** |
+| RF switches | `BGS13S4N9E6327XTSA1` | `BGS13S4N9E6327XTSA1` — **same** |
+| Balun | `B0310J50100AHF` | `B0310J50100AHF` — **same** |
+| 125 kHz front end | `LMV331`, `LMV358` | `LMV331IDCKR`, `LMV358` — **same** |
+| NFC | `ST25R3916` | `ST25R3916-AQWT` — **same** |
+| CC1101 reference | **26 MHz crystal**, sheet labelled 433 MHz | **27 MHz oscillator** — **changed** |
+| MCU | **`STM32WB55`** | **`CH32V003F4U6`** — **changed** |
+
+The MCU row is the origin of the fabricated STM32WB55CC claim corrected above: the datasheet was in
+`docs/` because the *prior-art device* uses that part.
+
+### konsool-zero's own KiCad source — filed 2026-09-20
+
+The sheets that this correction rests on — `zero-mcu.kicad_sch`, `sub-ghz-radio.kicad_sch`,
+`nfc-block.kicad_sch` and the rest — were **still only in `scratch/`** after the correction was
+written, so the record cited evidence the repository did not hold. They are now at
+[`artifacts/konsool-zero/`](artifacts/konsool-zero/README.md), together with
+`tanmantsu-zero.kicad_pcb`, and were mined into
+[`konsool-zero-wiring.md`](konsool-zero-wiring.md).
+
+Licence, previously recorded as *"none stated"*: **BSD 3-Clause, Copyright (c) 2024, Nicolai
+Electronics** — `LICENSE` is tracked at `0f0b964`. Corrected in `expansion-boards.md` §1 and §2.
 
 ## Attribution
 

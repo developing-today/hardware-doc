@@ -102,7 +102,7 @@ void loop() {
 
 The load-bearing lines, from M5Stack's own power-management page. Full sequence and the
 `ldoSetPowerHold` rationale are in
-[`power-and-sleep.md` §6.2](power-and-sleep.md#62-shut-down-and-wake-on-motion-keeping-l1-alive).
+[`power-and-sleep.md` §6.2](power-and-sleep.md#62-shut-down-and-wake-on-motion-keeping-l1-alive-reported-working-as-a-vendor-fragment).
 
 ```cpp
 Wire1.setPins(M5.getPin(m5::pin_name_t::in_i2c_sda), M5.getPin(m5::pin_name_t::in_i2c_scl));

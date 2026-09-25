@@ -6,7 +6,7 @@
 >
 > Environment for all `executed-*` rows: Linux, bash, `curl 8.x`,
 > `python3 3.14.7`, `gh` authenticated. Working directory
-> `hardware-doc/scratch/waveshare-epaper-esp32/` unless noted.
+> `hardware-doc/archive/devices/waveshare/shared-artifacts/epaper-esp32/research-scratch/` unless noted.
 > Date: **2026-09-01**.
 >
 > **No command in this file was run against hardware.** There is no board.

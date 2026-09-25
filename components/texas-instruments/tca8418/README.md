@@ -159,7 +159,7 @@ later re-muxes that pin, the keyboard IRQ stops with no error.
 Full key map (60 named keys, two `SPACE` codes, two `FN` keys, a `LILYGO` key and a `MIC` key):
 [`pinouts-and-buses.md` §8](../../../devices/lilygo/t-display-k230/pinouts-and-buses.md#8-keyboard-matrix--full-decode).
 
-*Source: `scratch/lilygo-k230/index-fragments.md` §F2.*
+*Source: `archive/devices/lilygo/t-display-k230/artifacts/research-scratch/index-fragments.md` §F2.*
 
 ## Substitutes
 

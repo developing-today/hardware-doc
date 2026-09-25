@@ -44,6 +44,16 @@ Plus characteristic read / write / subscribe / unsubscribe. Every command return
 
 Full reference: `docs/AT_COMMANDS.md` in `Xinyuan-LilyGO/T-Display-K230-nRF52840`.
 
+> **The complete command set has now been recovered from the shipped binary**, independently of
+> that document — all 37 `+HELP:` strings, verbatim, including the six Meshtastic commands and
+> the `AT+PHY=<AUTO|1M|2M|CODED>` long-range option not listed above. See
+> **[`../artifacts/firmware/nrf52840-coprocessor-firmware.md` §3](../artifacts/firmware/nrf52840-coprocessor-firmware.md#3-the-at-command-set)**.
+> Extraction status `executed-success`; the *behaviour* of each command remains `not-tested`.
+>
+> That document also carries the bootloader's flash map, UICR words, SoftDevice identity
+> (S140 v6.1.1 read from the info structure, not the filename) and the UF2 target address —
+> i.e. what you need to unbrick the companion board.
+
 ## Talking to it
 
 From the K230, open `/dev/ttyS1` at 115200 8N1 and write AT lines. The launcher's BLE page

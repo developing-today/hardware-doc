@@ -432,7 +432,7 @@ A **Chinese-language edition also exists** at `https://m5stack-doc.oss-cn-shenzh
 | **C7** | **A non-existent register reads back as all zeros, not a NACK.** Zero data therefore proves nothing about the bus (§3.4) | **[DS]** §4.3.4 |
 | **C8** | **`VDD` and `VDD_TX` must stay within ±0.3 V of each other** — an absolute-maximum, not a recommendation. Both are on `VCC_3V3` here, so it is satisfied by construction; it constrains any redesign that separates the TX supply | **[DS]** Table 118 |
 | **C9** | **NFC schematic sheet 1 of 2 is not published**, and what it contains is unknown. The front end is *not* the answer — that is all on the published sheet 2/2 (§5.1) | **[SCH]** |
-| **C10** | **No certification of any kind is published for this board**, including for the 13.56 MHz emitter. `docs.m5stack.com/en/certification` returns zero matches for `PaperMono` and `C153`. Verified negative | **[DOC]** |
+| ~~**C10**~~ | ⚠ **CORRECTED 2026-09-20.** `docs.m5stack.com/en/certification` really does return zero matches — but **the 13.56 MHz emitter has its own FCC grant**: equipment class **DXX** (Part 15 Low Power Communication Device Transmitter) under FCC ID **`2AN3WM5PAPERMONO`**, granted 2026-08-12. Measured field **66.65 dBµV/m at 3 m = −28.55 dBm (0.0014 mW) EIRP**, against a 443 mW SAR-exclusion threshold — excluded by five orders of magnitude | **[REG]** FCC exhibits, retrieved 2026-09-11; [`certification.md`](../../../devices/m5stack/papermono/certification.md) |
 | **C11** | **Nobody has reported reading a tag on a PaperMono.** M5Stack advertises ISO14443A/B, FeliCa and ISO15693; the library exposes four matching layer classes; the demo cycles all four. **That is a code path, not a read.** No card-compatibility list, no range figure, no community report exists | **[DOC]**, **[SRC]**; the absence is `executed-success` — two independent broad community passes |
 
 ---
@@ -440,6 +440,35 @@ A **Chinese-language edition also exists** at `https://m5stack-doc.oss-cn-shenzh
 ## 10. Used By
 
 ### [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md) — designator `U2`, **sheet 6 (NFC sub-board)**
+
+> **FCC internal photographs — 2026-09-20.** The PaperMono's FCC filing
+> (`2AN3WM5PAPERMONO`) includes an internal-photograph exhibit, now retained at
+> [`devices/m5stack/papermono/artifacts/certification/`](../../../devices/m5stack/papermono/artifacts/certification/README.md).
+> It is the first physical-hardware evidence for this part on this board.
+>
+> ⚠ **Corroborated, NOT confirmed.** Exhibit p. 6 shows the NFC sub-board in
+> close-up: a **32-pin QFN carrying the STMicroelectronics logo**, an
+> antenna-matching network, and a printed loop antenna on the same FPC,
+> silkscreened `Paper_Mono_NFC` / `V0.2` / `M5STACK`. The package type, pin
+> count, manufacturer and function are all consistent with an ST25R3916.
+>
+> **The part-number marking is illegible at 200 ppi.** This record states the
+> exact part as `ST25R3916-AQWT`; the photograph **does not verify that**, and
+> in particular says nothing about the `-AQWT` ordering suffix. Recorded as
+> illegible rather than treated as a reading — the existing identification still
+> rests on the schematic and vendor documentation.
+>
+> The photograph does independently confirm the **"own sub-board, not the main
+> PCB"** claim, and that the antenna is a **printed loop on the same flex**
+> rather than a separate element. Sheet 1 of the NFC schematic remains
+> unpublished, so the matching network visible in the photograph is still
+> undocumented.
+>
+> **Certified:** the 13.56 MHz emitter has its own FCC grant (equipment class
+> **DXX**, Part 15 Low Power Communication Device Transmitter, 2026-08-12).
+> Measured field **66.65 dBµV/m at 3 m = −28.55 dBm (0.0014 mW) EIRP**, against
+> a 443 mW SAR-exclusion threshold.
+> [`certification.md`](../../../devices/m5stack/papermono/certification.md).
 
 The only NFC device on the board, and one of the two features that separate the PaperMono from the Lite — together worth a **USD 10.00** SKU delta **[DOC]**.
 
@@ -531,9 +560,51 @@ Full record: [`devices/m5stack/cap-cc1101/features/nfc.md`](../../../devices/m5s
 
 `shop.m5stack.com` also lists **NFC Universal Unit (ST25R3916)**, SKU **U216**, published **2026-04-17**, USD **7.00** — a Grove-attached ST25R3916. Not researched by the 2026-09-04 pass; recorded so a future agent knows the part appears in a third M5Stack product.
 
+### [`badgeteam/konsool-zero`](https://github.com/badgeteam/konsool-zero) — designator `U5`, sheet `nfc-block` · *added 2026-09-20*
+
+A **work-in-progress** Flipper-Zero-class radio expansion board for the
+[Tanmatsu / Konsool](../../../devices/nicolai-electronics/tanmatsu/README.md) rear 36-pin port.
+**Fitment established** from the project's own KiCad schematic at commit `0f0b964` (2025-03-22,
+the repository's only commit):
+
+| Field | Value |
+|---|---|
+| Reference | **`U5`** |
+| Value | **`ST25R3916-AQWT`** — the *full* part, not the ST25R3917 (see §1.1) |
+| Footprint | `lcsc:VFQFPN-32_L5.0-W5.0-P0.50-TL-EP3.5` — **VFQFPN32 5 × 5 mm**, matching the package documented in both held datasheet revisions |
+| Crystal | **`X1` = `XRCGB27M120F3M00R0`** (LCSC `C1575`), footprint `lcsc:CRYSTAL-SMD_4P-L2.0-W1.6-BL-B` — a **27.12 MHz** 4-pad SMD crystal, exactly 2 × the 13.56 MHz carrier, matching the datasheet's "27.12 MHz crystal with fast start-up" |
+
+Hierarchical nets on the `nfc-block` sheet: `NFC_CS`, `NFC_SCLK`, `NFC_MOSI`, `NFC_MISO`,
+`NFC_IRQ`, `NFC_ANT`, `RFI_N`/`RFI_P`, `RFO1`/`RFO2`, and a fully split supply domain
+(`VDD`, `VDD_A`, `VDD_AM`, `VDD_D`, `VDD_DR`, `VDD_RF`, `VDD_TX`, `AGDC`, `GND_A`, `VSS`).
+
+Two things worth flagging against the rest of this record:
+
+- **This board straps SPI, not I²C.** The four `NFC_{CS,SCLK,MOSI,MISO}` nets are a 4-wire SPI
+  bus. That is the opposite of the M5Stack PaperMono integration documented in §3.1, and it means
+  §3.3's mode-byte discussion (the "reads register `0x7F`" behaviour) does **not** apply here.
+  `RFO1`/`RFO2` present indicates **differential** antenna driving.
+- **`NFC_IRQ` is the only net shared with the board's MCU.** It appears as a hierarchical label on
+  the `zero-mcu` sheet alongside the [CH32V003](../../wch/ch32v003/README.md) (`U19`); the SPI
+  bus itself does not, which is consistent with the ST25R3916 being driven by the **Tanmatsu host
+  across the expansion connector**, with the local MCU receiving only the interrupt.
+
+⚠ **Status: design study, not a buildable board.** One commit, no README, no stated licence, no
+firmware, no BOM, no fabrication output beyond an empty `jlcpcb/project.db`. **Nothing here was
+built, fitted or powered** — the pin roles above are read from the schematic only, and no
+board-level wiring table is asserted. `not-tested`.
+
+The same project's `docs/` folder is where this record's second datasheet copy (§12.1) came from,
+along with **Flipper Devices Inc.** NFC and RFID schematics — the Flipper Zero uses the same
+ST25R3916-AQWT, and konsool-zero is openly derived from studying it.
+
 ---
 
 ## 11. Related components
+
+- [**WCH CH32V003**](../../wch/ch32v003/README.md) — the helper MCU sharing the konsool-zero board; receives `NFC_IRQ`
+- [**TI CC1101**](../../texas-instruments/cc1101/README.md) — the sub-GHz radio beside it on both konsool-zero and the M5Stack Cap
+- [**ST STM32WB55xx**](../stm32wb55xx/README.md) — the Flipper Zero's host MCU; **not fitted** on konsool-zero, contrary to an earlier claim
 
 - [**M5Stack M5IOE1**](../../m5stack/m5ioe1/README.md) — supplies this chip's rail enable on `IO4`. ⚠ its enum values are one *less* than its pin labels
 - [**M5Stack M5PM1**](../../m5stack/m5pm1/README.md) — owns `3V3_L2`, the rail upstream of the sub-board's load switch
@@ -573,6 +644,76 @@ Not retained, recorded as reference-only:
 |---|---|---|
 | ST25R3916 datasheet, **Chinese edition** | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1205/ST25R3916_ZH.pdf` | **Not downloaded.** Confirmed live 2026-09-01: `HTTP 200`, `application/pdf`, **2 915 517 bytes**. Linked only from M5Stack's `zh_CN` product page. Expected to be a translation of the retained English document; equivalence **unverified** |
 
+### 12.1 Second custodian — an **Alldatasheet** copy at `DS12484 Rev 4` · *added 2026-09-20*
+
+A second acquisition of this datasheet arrived by an entirely different route: vendored in the
+`docs/` folder of [`badgeteam/konsool-zero`](https://github.com/badgeteam/konsool-zero) @ `0f0b964`,
+a Tanmatsu expansion board that also fits an ST25R3916 (§10). It is **not** the same document.
+
+| File | Bytes | SHA-256 | What it is |
+|---|---:|---|---|
+| `artifacts/st25r3916-datasheet-ds12484-rev4-alldatasheet-mirror.pdf` | 2 189 303 | `26a8e43143b0ea736220f83671faa59072f0becad49ec196b60c2d3f41776f72` | **ST25R3916/ST25R3917 datasheet, `DS12484 Rev 4`, 06-Aug-2021, 157 pp.** Re-wrappered by **Alldatasheet**: PDF metadata `Title "ST25R3916 STMICROELECTRONICS | Alldatasheet"`, `Author "Provided By alldatasheet.com (free datasheet download site)"`, `Producer "Acrobat Elements 15.0 (Windows); modified using iText 2.1.7 by 1T3XT"`, created 2021-08-06. The ST body text is intact; the ST identity metadata has been overwritten by the aggregator |
+
+#### The comparison — **different documents, four revisions apart**
+
+| | Alldatasheet copy *(new)* | M5Stack / ST copy *(held since 2026-09-01)* |
+|---|---|---|
+| Revision | **DS12484 Rev 4** | **DS12484 Rev 8** |
+| Dated | **06-Aug-2021** | **08-May-2023** |
+| Pages | **157** | **160** |
+| Bytes | 2 189 303 | 2 241 765 |
+| SHA-256 | `26a8e431…` | `1170f4d7…` |
+| Revision-history table | Table **136**, ends at Rev 4 | Table **137**, ends at Rev 8 |
+| Packages documented | **VFQFPN32 + WLCSP36** | **UFQFPN32 + VFQFPN32 + WLCSP36** |
+| Copyright line | © 2021 | © 2023 |
+
+Both are retained. Per the repository's deduplication rule, differing bytes under one document
+name is a finding, and here the finding is substantive rather than cosmetic.
+
+#### ⚠ What Rev 4 is missing — do not use it for register work
+
+Reading Rev 8's revision history for entries **after** Rev 4 gives the exact delta:
+
+| Rev | Date | Change absent from the Rev 4 copy |
+|---|---|---|
+| **5** | 13-Apr-2022 | Note added to **§4.4.5 NFC field ON commands**. **§4.5 Registers updated.** Updates to **Table 16** (test-access register, CSI/CSO signal selection), **Table 21 Operation control register**, **Table 33 Stream mode definition register**, **Table 63 Timer and NFC interrupt register**, Table 125 (SPI 5–10 MHz), Table 129 (DC characteristics). Footnotes added to **Table 22 Mode definition register**, Table 83 and Table 86 (external-field detector thresholds) |
+| **6** | 29-Apr-2022 | **Table 71 Number of transmitted bytes register 2** updated |
+| **7** | 24-Oct-2022 | **UFQFPN32 package introduced** — new §6.1, updated pin-assignment Tables 2 and 3, Table 10 (4-wire SPI signal lines), Table 135 mechanical data, new Figure 38 outline |
+| **8** | 08-May-2023 | **Auto-averaging** updated |
+
+The Rev 5 and Rev 6 entries touch the **operation control**, **mode definition**, **stream mode**,
+**timer/NFC interrupt** and **transmitted-byte-count** registers — the core of any driver. The
+Rev 4 copy is therefore **actively misleading for firmware work** and must not be cited for
+register semantics. All register-level claims in §3, §4 and §9 of this record remain sourced to
+**Rev 8**, per the **[DS]** evidence label in §"Evidence labelling".
+
+**Where Rev 4 is still useful:** as a dated snapshot showing what ST published in 2021, and for
+establishing *when* a given register note first appeared — occasionally decisive when reading
+older third-party drivers written against the then-current document.
+
+**Package note.** Both boards in this repository that fit the part use **VFQFPN32**, which is
+documented in both revisions, so the Rev 7 package addition does not affect either. konsool-zero's
+footprint is `lcsc:VFQFPN-32_L5.0-W5.0-P0.50-TL-EP3.5`; the M5Stack boards are covered in §10.
+
+| Field | Value |
+|---|---|
+| Retrieval date (into this repository) | **2026-09-20** |
+| Original acquisition | by the konsool-zero author, on or before 2025-03-22 (repo commit date) |
+| Upstream URL | Alldatasheet, exact URL **not recorded by the vendoring project** — `lost`. The ST canonical for the *current* revision is `https://www.st.com/resource/en/datasheet/st25r3916.pdf`; **Rev 4 is superseded and ST does not publish historical revisions**, so this copy is **not reacquirable from the manufacturer** |
+| Reacquisition method | **`blocked`** from ST; `manual` via Alldatasheet search or by re-cloning `badgeteam/konsool-zero` @ `0f0b964` |
+| Licence | **`unknown`** — ST's standard notice survives inside; Alldatasheet adds its own wrapper with no grant |
+| Redistribution | **`unknown`** |
+| Disposition | **`repository`, unstaged** |
+| Type validated | Yes — `%PDF-1.3`, 157 pages, `pdfinfo` metadata as above. Text layer cross-checked against the rendered cover heading ("ST25R3916 / ST25R3917 / High performance NFC universal device and EMVCo™ reader") and the `DS12484 Rev 4` page footer before any value above was transcribed — `executed-success` |
+
+> **Why keep a superseded, aggregator-wrappered copy at all?** Because a second custodian is
+> independent evidence. ST withdraws superseded revisions; Alldatasheet does not. This copy is the
+> only thing in the repository that can answer "what did the datasheet say in 2021?" — and the
+> revision-history delta above, which is genuinely useful, could not have been written without
+> holding both. It also documents the aggregator's metadata-overwriting behaviour, which is a
+> retrieval trap worth recognising: **the `Author` field of an Alldatasheet PDF says Alldatasheet,
+> not the chip maker**, so metadata alone cannot be used to judge authenticity.
+
 ---
 
 ## 13. Authoritative sources
@@ -589,6 +730,9 @@ Not retained, recorded as reference-only:
 | S-8 | PaperMono product page, **zh_CN** | M5Stack | primary | vendor docs | `docs.m5stack.com/zh_CN/core/PaperMono` | 2026-09-01 | undated | §8 — the only page linking `ST25R3916_ZH.pdf` |
 | S-9 | Certification index | M5Stack | primary | vendor docs | `docs.m5stack.com/en/certification` | 2026-09-01 | undated | §9-C10 — **negative result**, 0 matches for `PaperMono` / `C153` |
 | S-10 | `C153-PaperMono-UserDemo-v1.2` firmware image | M5Stack via M5Burner | primary | binary | SHA-256 `72c290bc2ffa216041b276660277369bd17ecef92315e367d98bb2c96c8428fa` | 2026-09-01 | v1.2, built 2026-08-06, IDF v5.5.1 | corroborates the board enum and I²C map |
+| **S-11** | ST25R3916/ST25R3917 datasheet, **Alldatasheet copy** | STMicroelectronics, re-wrappered by **Alldatasheet** | **credible mirror** | datasheet | `artifacts/st25r3916-datasheet-ds12484-rev4-alldatasheet-mirror.pdf`; upstream URL **not recorded by the vendoring project** (`lost`) | **2026-09-20** | **DS12484 Rev 4, 2021-08-06**, 157 pp | **§12.1** — the second-custodian comparison and the Rev 4→8 register delta. ⚠ **superseded; not valid for register semantics** |
+| **S-12** | `badgeteam/konsool-zero` KiCad design @ `0f0b964` | Badge.Team | primary | repository (schematic) | `scratch/tanmatsu/sources/konsool-zero/nfc-block.kicad_sch` | **2026-09-20** | single commit, **2025-03-22**, no stated licence | **§10** — fitment `U5 = ST25R3916-AQWT`, VFQFPN32, 27.12 MHz crystal, SPI strap |
+| **S-13** | Flipper Zero **NFC** and **RFID** schematics | **Flipper Devices Inc.** | primary (third-party) | schematic PDF | `scratch/tanmatsu/sources/konsool-zero/docs/NFC schematic.pdf`, `RFID schematic.pdf` | **2026-09-20** | undated; title block reads *Flipper Devices Inc* | §10 — the prior art konsool-zero is derived from; independently names `ST25R3916-AQWT` |
 
 ## Open observation — the inferred EMC-filter pairing does not resonate where it should (2026-09-02)
 

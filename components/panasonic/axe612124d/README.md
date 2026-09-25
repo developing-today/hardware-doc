@@ -181,6 +181,7 @@ and belong in
 ## Related pages
 
 - [Panasonic AXE512127D](../axe512127d/README.md) — **the mating socket**, `J6` sheet 4, and the shared specification table
+- [**A4S datasheet revisions across three distributor mirrors**](../a4s-series-datasheet-revisions.md) — *added 2026-09-20.* Why `AXE612124D` appears **only** in the Digi-Key copy, what the `D` suffix means, and why the 0.8 mm mated height is fixed by **this header**, not by the socket
 - [RS-C1415MBAR](../../generic/rs-c1415mbar-rgb-led/README.md) · [LMD4737T261-AC02](../../generic/lmd4737t261-ac02-pdm-microphone/README.md) — the sub-board's active parts
 - [ESD5311](../../generic/esd5311/README.md) — `DR1`–`DR3` on the same sub-board
 - [Hirose DF40C-30DP-0.4V(51)](../../hirose/df40c-30dp-0.4v/README.md) — comparable 0.4 mm board-to-board
@@ -198,6 +199,14 @@ and belong in
 | File | Bytes | SHA-256 | Pages |
 |---|---:|---|---:|
 | `artifacts/panasonic-a4s-series-connectors-digikey-mirror.pdf` | 399 357 | `292023186ef0758f1862f8aa2a5f545dc1c14659f4ba84f14f7183f6385503b4` | 11 |
+
+> ⚠ **Two older revisions of this same bundle are retained under the socket's record**, at
+> [`../axe512127d/artifacts/`](../axe512127d/artifacts/) — `ACCTB7E 201310-T` (Future mirror)
+> and `ACCTB7E 201303-T` (Mouser mirror). **Neither documents the `D` package suffix**, so
+> `AXE612124D` is absent from both; they print the header as `AXE612124`. They are kept once,
+> under the socket, rather than copied here. Comparison and ordering-key decode:
+> [**`../a4s-series-datasheet-revisions.md`**](../a4s-series-datasheet-revisions.md)
+> *(added 2026-09-20).*
 
 **Method note.** One document covers both halves of the pair. It is held under
 **both** records deliberately, byte-identical and with the same SHA-256, because

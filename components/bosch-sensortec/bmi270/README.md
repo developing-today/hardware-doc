@@ -396,6 +396,27 @@ If your application is "which way up is the device", **an accelerometer-only par
 
 ### M5Stack PaperMono (SKU C153)
 
+> **FCC internal photographs — 2026-09-20.** The PaperMono's FCC filing
+> (`2AN3WM5PAPERMONO`) includes an internal-photograph exhibit, now retained at
+> [`devices/m5stack/papermono/artifacts/certification/`](../../../devices/m5stack/papermono/artifacts/certification/README.md).
+> It is the first physical-hardware evidence for this part on this board.
+>
+> ⚠ **Not confirmed — the marking is illegible.** Exhibit p. 3 shows a small
+> LGA package beside silkscreen reading **`IMU`** with an X/Y/Z axis glyph, in
+> the position sheet 4 assigns to `U15`. At 200 ppi the laser mark on a
+> 2.5 × 3.0 mm LGA is unreadable. **Position and silkscreen are consistent with
+> a BMI270 and nothing more**; the identification still rests on the schematic,
+> M5Stack's source and the factory-firmware strings.
+>
+> Recorded as illegible rather than promoted to a reading. A higher-resolution
+> photograph, or an I²C `CHIP_ID` read (expect `0x24`), would confirm it.
+>
+> The **axis glyph itself is new information**: M5Stack silkscreens the sensor's
+> X/Y/Z orientation beside the part, which is the board-level axis convention
+> this record otherwise has no source for. It was **not** transcribed in detail —
+> the arrow directions are legible but their mapping to the enclosure was not
+> worked out.
+
 *Added 2026-09-01.* Fitted as **`U15`** on schematic sheet 4 of the [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md) and its Lite sibling. Evidence: the published schematic PDF, M5Stack's source, M5Stack's documentation, and strings recovered from the shipped factory firmware image. **No hardware was available.**
 
 This board is the useful counterexample to the Tanmatsu: it does exactly what §6.1 says the Tanmatsu cannot.
@@ -517,7 +538,7 @@ Same part at **`0x68`** (not `0x69` — `SDO` strapped the other way), on the CM
 (`G2`/`G3`), and here it **does** carry a **BMM150 magnetometer at `0x10` on its auxiliary
 interface**. Vendor page marked *work in progress*.
 
-*Both added 2026-09-07 from `scratch/m5stack-cardputer/index-fragments.md` §3.3.*
+*Both added 2026-09-07 from `archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md` §3.3.*
 
 ## Related pages
 
@@ -536,9 +557,9 @@ interface**. Vendor page marked *work in progress*.
 | S2 | `tanmatsu.kicad_pcb` | Nicolai Electronics | primary | repository | in-tree snapshot | 2026-08-24 | `tanmatsu-hardware` @ `640805dd`, CERN-OHL-P | Every net in §6, including the unrouted interrupts and `R86`/`TP22` | `devices/nicolai-electronics/tanmatsu/artifacts/schematics/kicad/` |
 | **D4** | **BMI270 Datasheet — M5Stack mirror** | Bosch Sensortec, mirrored by M5Stack | **credible mirror** | datasheet | <https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Stamp%20Fly/BMI270.PDF> | **2026-09-01** | **revision 1.3, Nov 2020, BST-BMI270-DS000-05, 162 pp, 3 830 973 B** | The revision M5Stack ships to PaperMono users — see [Mirror lag](#mirror-lag-m5stack-serves-a-five-year-old-revision--added-2026-09-01) | `artifacts/bst-bmi270-ds000-05-rev1.3-m5stack-mirror.pdf` |
 | S3 | `PaperMono_SCH_V0.6.2_20260522.pdf` | M5Stack | primary | schematic | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | V0.6.2, 2026-05-22, 6 sheets | The §12.2 pin/net table, `INT1` → M5PM1 GPIO4, `3V3_L1` supply, `R42`/`R43`/`R44`/`R50` | `devices/m5stack/papermono/artifacts/schematic/PaperMono_SCH_V0.6.2_20260522.pdf` |
-| S4 | `M5PaperMono-UserDemo` — `app_sleep_wake.cpp`, `hal_board.cpp`, `repos.json` | M5Stack | primary | repository | <https://github.com/m5stack/M5PaperMono-UserDemo> | 2026-09-01 | `main` @ `c1099107271d31a0678d661a896e2b04dbb331ea`, MIT | `0x68`/`0x69` dual probe, `BMI270_I2C_FREQ_HZ = 100000`, the pinned `Arduino_BMI270_BMM150` commit | `scratch/m5stack-papermono/repos/M5PaperMono-UserDemo/` |
-| S5 | PaperMono M5PM1 & M5IOE1 power-management page | M5Stack | primary | official page | <https://docs.m5stack.com/en/arduino/papermono/m5pm1_m5ioe1> | 2026-09-01 | — | The verbatim wake sketch in §12.3, the SparkFun driver reference, the L0–L3B table placing the IMU alone on `L1`, and the active-high/active-low prose conflict | `scratch/m5stack-papermono/docs/pages/en-arduino-papermono-m5pm1_m5ioe1.html` |
-| S6 | `C153-PaperMono-UserDemo-v1.2.bin` — recovered strings | M5Stack | primary | firmware | M5Burner API, firmware id `2089640807996628993` | 2026-09-01 | v1.2, 2 868 208 B, SHA-256 `72c290bc2ffa216041b276660277369bd17ecef92315e367d98bb2c96c8428fa` | `PM1 shutdown, wake by BMI270 INT1 -> PM1 G4 falling edge`, settling the polarity conflict | `scratch/m5stack-papermono/docs/firmware/` |
+| S4 | `M5PaperMono-UserDemo` — `app_sleep_wake.cpp`, `hal_board.cpp`, `repos.json` | M5Stack | primary | repository | <https://github.com/m5stack/M5PaperMono-UserDemo> | 2026-09-01 | `main` @ `c1099107271d31a0678d661a896e2b04dbb331ea`, MIT | `0x68`/`0x69` dual probe, `BMI270_I2C_FREQ_HZ = 100000`, the pinned `Arduino_BMI270_BMM150` commit | `archive/devices/m5stack/papermono/artifacts/source-snapshots/M5PaperMono-UserDemo/` |
+| S5 | PaperMono M5PM1 & M5IOE1 power-management page | M5Stack | primary | official page | <https://docs.m5stack.com/en/arduino/papermono/m5pm1_m5ioe1> | 2026-09-01 | — | The verbatim wake sketch in §12.3, the SparkFun driver reference, the L0–L3B table placing the IMU alone on `L1`, and the active-high/active-low prose conflict | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/pages/en-arduino-papermono-m5pm1_m5ioe1.html` |
+| S6 | `C153-PaperMono-UserDemo-v1.2.bin` — recovered strings | M5Stack | primary | firmware | M5Burner API, firmware id `2089640807996628993` | 2026-09-01 | v1.2, 2 868 208 B, SHA-256 `72c290bc2ffa216041b276660277369bd17ecef92315e367d98bb2c96c8428fa` | `PM1 shutdown, wake by BMI270 INT1 -> PM1 G4 falling edge`, settling the polarity conflict | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/firmware/` |
 
 ### Local artifacts
 

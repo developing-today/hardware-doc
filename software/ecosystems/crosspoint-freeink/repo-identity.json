@@ -1,0 +1,774 @@
+{
+  "_meta": {
+    "research_date": "2026-09-02",
+    "researcher_note": "Clones are shallow (--depth 400 --no-single-branch). commits_in_clone is therefore a floor, not the true total, for repos with >400 commits. All HEAD SHAs are full and exact. GitHub API fields captured the same day. Nothing here is hardware-verified.",
+    "clone_root": "scratch/eink-software/repos/ — absolute path at research time: /home/user/repo-archive/scratch/hardware-doc/eink-software/repos/ (reachable via /home/user/hardware-doc/scratch/). NOTE: mid-session an external process replaced /home/user/code/doc/hardware (previously a symlink to /home/user/hardware-doc) with a real directory, so /home/user/code/scratch now resolves to a DIFFERENT tree. The 8 clones live only in the first path; these documents are mirrored into both.",
+    "loc_tool": "tokei 14.0.0, excluding .git and nested submodule checkouts",
+    "evidence": "executed-success for all SHAs, LOC, sizes and author counts; GitHub API for dates/stars/license/fork"
+  },
+  "repos": [
+    {
+      "full_name": "crosspoint-reader/crosspoint-reader",
+      "role": "The reader firmware. Anchor consumer of freeink-sdk.",
+      "head_sha": "e6139861a2a8c634aa18c333b7e214ee51a9965c",
+      "branch": "develop",
+      "default_branch": "develop",
+      "head_commit_date": "2026-09-01T18:55:46Z",
+      "head_commit_author": "Amin Alaee",
+      "created_at": "2025-12-03T11:01:12Z",
+      "pushed_at": "2026-09-01T19:43:26Z",
+      "stars": 7488,
+      "fork": false,
+      "parent": null,
+      "archived": false,
+      "open_issues_incl_prs": 490,
+      "license": {
+        "spdx": "MIT",
+        "file": "LICENSE",
+        "holder": "Copyright (c) 2025 Dave Allie"
+      },
+      "repo_size_kb_github": 99857,
+      "clone_size_mb_on_disk": 533,
+      "commits_in_clone": 1226,
+      "loc": {
+        "total_code": 264683,
+        "total_files": 620,
+        "by_language": {
+          "C Header": {
+            "files": 294,
+            "code": 169708,
+            "note": "mostly generated font + hyphenation tables"
+          },
+          "C++": {
+            "files": 177,
+            "code": 46774
+          },
+          "C": {
+            "files": 10,
+            "code": 17858
+          },
+          "YAML": {
+            "files": 34,
+            "code": 14277,
+            "note": "30+ i18n translations"
+          },
+          "Python": {
+            "files": 26,
+            "code": 7934,
+            "note": "build scripts"
+          },
+          "CMake": {
+            "files": 18,
+            "code": 336
+          }
+        },
+        "github_linguist_says": "C",
+        "source_says": "C++20 (-std=gnu++2a); the C label is Linguist counting generated data tables"
+      },
+      "maintainer_distribution_last_200_commits": {
+        "distinct_authors": 56,
+        "span": "2026-07-15T10:53:27-04:00 .. 2026-09-01T18:55:46Z",
+        "top": {
+          "Uri Tauber": 39,
+          "Justin Mitchell": 37,
+          "Leopoldo Pla Sempere": 14,
+          "Thiago Kenji Okada": 10,
+          "Phạm Bình An": 8,
+          "Julia": 7,
+          "winst0niuss": 6,
+          "William Floyd": 6
+        },
+        "assessment": "genuinely community-distributed; top contributor 19.5%"
+      },
+      "governance": {
+        "docs": [
+          "GOVERNANCE.md",
+          "SCOPE.md",
+          "ROADMAP.md"
+        ],
+        "model": "community do-ocracy, maintainer-guided",
+        "escalation_contact": "@daveallie"
+      },
+      "ci": {
+        "workflows": [
+          "ci.yml",
+          "pr-formatting-check.yml",
+          "release.yml",
+          "release_candidate.yml",
+          "release-fonts.yml"
+        ],
+        "build_matrix": [
+          "default",
+          "sticky",
+          "x4pro",
+          "papermono"
+        ]
+      },
+      "releases": {
+        "count_sampled": 12,
+        "latest_stable": "v1.5.0 (2026-08-07)",
+        "latest_prerelease": "1.6.0rc (2026-08-17)",
+        "cadence": "roughly monthly since 2026-01"
+      },
+      "throughput_2026_08_onward": {
+        "prs_merged_since_2026_08_01": 156,
+        "prs_open": 175,
+        "issues_open": 316,
+        "issues_closed_since_2026_08_01": 106
+      },
+      "submodules": [
+        {
+          "path": "freeink-sdk",
+          "url": "https://github.com/Free-Ink/freeink-sdk.git",
+          "branch": "main",
+          "pinned_sha": "68425f8eec1246a0be0c0f311540f60ad733fa76",
+          "pin_date": "2026-08-31T12:44:26-04:00",
+          "commits_behind_sdk_main": 7
+        }
+      ],
+      "build": {
+        "system": "PlatformIO",
+        "verified_pio_version": "6.1.19",
+        "platform": "pioarduino platform-espressif32 55.03.37",
+        "framework": "arduino (Arduino-ESP32 3.3.x / ESP-IDF 5.5.x)",
+        "compiler": "xtensa-esp-elf-gcc (crosstool-NG esp-14.2.0_20251107) 14.2.0",
+        "esptool": "5.3.1",
+        "cxx_standard": "gnu++2a (C++20), -fno-exceptions",
+        "envs": 15,
+        "executed_build": {
+          "command": "pio run -e papermono",
+          "result": "SUCCESS",
+          "wall_time": "00:04:47.763",
+          "artifact": ".pio/build/papermono/firmware.bin",
+          "artifact_bytes": 5364128,
+          "flash_used_pct": 81.8,
+          "flash_used_bytes": 5363622,
+          "flash_total_bytes": 6553600,
+          "ram_used_pct": 32.4,
+          "iram_used_pct": 100.0,
+          "diram_used_pct": 50.6,
+          "evidence": "executed-success"
+        },
+        "executed_tests": {
+          "command": "cmake -S test -B … && ctest -j8",
+          "result": "173/173 passed",
+          "duration_s": 0.25,
+          "framework": "GoogleTest v1.17.0 via FetchContent",
+          "evidence": "executed-success"
+        },
+        "partitions": {
+          "flash": "16MB",
+          "ota_slots": 2,
+          "app_slot_size": "0x640000",
+          "spiffs": "0x360000",
+          "coredump": "0x10000"
+        }
+      },
+      "dependencies": {
+        "vendored_in_tree": [
+          "expat",
+          "miniz",
+          "uzlib",
+          "MiniBidi",
+          "InflateReader",
+          "JsonParser",
+          "Serialization",
+          "Utf8"
+        ],
+        "fetched_pinned": {
+          "bblanchon/ArduinoJson": "7.4.2",
+          "ricmoo/QRCode": "0.0.1",
+          "bitbank2/PNGdec": "1.1.6",
+          "bitbank2/JPEGDEC": "git#86282979224c8a32fd51e091ed5a35b0c699a52b",
+          "links2004/WebSockets": "2.7.3",
+          "wolfssl/Arduino-wolfSSL": "5.7.2"
+        },
+        "from_submodule_symlink": 14
+      },
+      "devices_supported": [
+        "Xteink X4 + X3 (one C3 binary)",
+        "Seeed Sticky",
+        "Xteink X4 Pro",
+        "Xteink X4 Classic",
+        "M5Stack Paper Mono"
+      ],
+      "plugin_system": {
+        "status": "NOT in develop; unmerged feature branches only",
+        "branches": {
+          "feat-sd-plugins": {
+            "head": "a7844957",
+            "ahead": 18,
+            "behind": 26
+          },
+          "feat-sd-web-plugins": {
+            "head": "bdbbbef7",
+            "ahead": 58,
+            "behind": 64
+          }
+        },
+        "roadmap_phase": "Phase 2 (Phase 1 still in progress)"
+      }
+    },
+    {
+      "full_name": "Free-Ink/freeink-sdk",
+      "role": "Hardware-abstraction SDK. Re-architecture derived from open-x4-epaper/community-sdk.",
+      "head_sha": "24003795381a6c23630a26472ae3b06550333e71",
+      "branch": "main",
+      "default_branch": "main",
+      "head_commit_date": "2026-09-01T23:13:16-04:00",
+      "head_commit_author": "Justin Mitchell",
+      "created_at": "2026-06-03T01:24:39Z",
+      "pushed_at": "2026-09-02T03:13:16Z",
+      "stars": 245,
+      "fork": false,
+      "parent": null,
+      "archived": false,
+      "license": {
+        "spdx": "MIT",
+        "file": "LICENSE",
+        "holder": "Copyright (c) 2026 FreeInk",
+        "notice_file": "NOTICE",
+        "derived_from": "open-x4-epaper/community-sdk (MIT, Copyright (c) 2025 Open X4 E-Paper Contributors)"
+      },
+      "repo_size_kb_github": 3447,
+      "clone_size_mb_on_disk": 14,
+      "commits_in_clone": 476,
+      "first_commit": {
+        "sha": "8dff913",
+        "date": "2026-06-02T19:54:05-04:00",
+        "author": "Justin Mitchell",
+        "message": "Initial commit"
+      },
+      "shares_git_history_with_community_sdk": false,
+      "loc": {
+        "total_code": 130278,
+        "total_files": 385,
+        "by_language": {
+          "C": {
+            "files": 27,
+            "code": 36603
+          },
+          "C++": {
+            "files": 70,
+            "code": 27628
+          },
+          "C Header": {
+            "files": 174,
+            "code": 26711
+          },
+          "SVG": {
+            "files": 42,
+            "code": 35614,
+            "note": "vendored Lucide icons"
+          },
+          "Python": {
+            "files": 10,
+            "code": 1525
+          }
+        }
+      },
+      "maintainer_distribution_last_200_commits": {
+        "distinct_authors": 18,
+        "span": "2026-07-27T20:27:52-04:00 .. 2026-09-01T23:13:16-04:00",
+        "top": {
+          "Justin Mitchell": 148,
+          "winst0niuss": 9,
+          "Julia Nguyen": 9,
+          "Antoine Aflalo": 8,
+          "MarsTechHAN": 6,
+          "jpirnay": 3,
+          "Erica Jensen": 3
+        },
+        "assessment": "single-maintainer; 74% one author. 'open-source collective' framing is branding; bus factor 1."
+      },
+      "ci": {
+        "workflows": [],
+        "note": "NO CI. .github contains only FUNDING.yml"
+      },
+      "releases": {
+        "count": 0,
+        "note": "no releases; consumers pin submodule SHAs"
+      },
+      "throughput_2026_08_onward": {
+        "prs_merged_since_2026_08_01": 31,
+        "prs_open": 11,
+        "issues_open": 6,
+        "issues_closed_since_2026_08_01": 1
+      },
+      "submodules": [
+        {
+          "path": "libs/assets/Icons/lucide",
+          "url": "https://github.com/lucide-icons/lucide"
+        }
+      ],
+      "build": {
+        "system": "PlatformIO (library only, consumed via symlink:// lib_deps)",
+        "platform": "pioarduino platform-espressif32 55.03.37",
+        "framework": "arduino",
+        "cxx_standard": "gnu++2a (C++20); FreeInkUI subset is freestanding C++17",
+        "cmake": false,
+        "idf_component_yml": false,
+        "binary_artifacts": "none"
+      },
+      "dependencies": {
+        "vendored": [
+          "expat",
+          "hyphen-patterns",
+          "libunibreak",
+          "miniz",
+          "pngle",
+          "stb",
+          "tjpgd",
+          "unicode"
+        ],
+        "fetched_by_consumer_env": [
+          "LovyanGFX/M5GFX (per-device)",
+          "SdFat (via SDCardManager)"
+        ]
+      },
+      "libs_count": 27,
+      "devices_supported_flags": [
+        "X4",
+        "X3",
+        "X4PRO",
+        "X4CLASSIC",
+        "M5",
+        "MURPHY",
+        "DELINK",
+        "LILYGO",
+        "M5PAPER",
+        "STICKY",
+        "PAPERMONO",
+        "PAPERS3",
+        "MURPHY_M4",
+        "EEGO_A4",
+        "ONEPAGE"
+      ],
+      "mcu_families": [
+        "ESP32-C3",
+        "ESP32-C61",
+        "ESP32-S3",
+        "ESP32 classic"
+      ],
+      "panel_drivers": [
+        "Ssd1677",
+        "Uc8253X3",
+        "Uc8253Murphy",
+        "Uc8179",
+        "Uc8279",
+        "Uc8279X4",
+        "Uc8279cA4",
+        "Ed2208M5",
+        "It8951",
+        "LgfxEpd",
+        "M5Official",
+        "PaperMono"
+      ]
+    },
+    {
+      "full_name": "open-x4-epaper/community-sdk (cloned via fork crosspoint-reader/community-sdk)",
+      "role": "The ORIGINAL SDK. CrossPoint's submodule from 2025-12 to 2026-06. Superseded by freeink-sdk.",
+      "cloned_repo": "crosspoint-reader/community-sdk",
+      "head_sha": "198ad267219c25c8ab84418b806c66f1fb5216a3",
+      "branch": "main",
+      "default_branch": "main",
+      "head_commit_date": "2026-06-24T08:30:35+03:00",
+      "head_commit_author": "Justin Mitchell",
+      "created_at": "2026-05-05T19:24:15Z",
+      "pushed_at": "2026-06-24T05:30:38Z",
+      "stars": 5,
+      "fork": true,
+      "parent": "open-x4-epaper/community-sdk",
+      "archived": false,
+      "license": {
+        "spdx": "MIT",
+        "holder": "Copyright (c) 2025 Open X4 E-Paper Contributors"
+      },
+      "repo_size_kb_github": 170,
+      "clone_size_mb_on_disk": 1,
+      "commits_in_clone": 38,
+      "first_commit": {
+        "sha": "fd8b341",
+        "date": "2025-12-02T19:16:50+11:00",
+        "author": "Dave Allie",
+        "message": "Initial community-sdk structure"
+      },
+      "loc": {
+        "total_code": 2102,
+        "total_files": 15,
+        "by_language": {
+          "C++": {
+            "files": 4,
+            "code": 1750
+          },
+          "C Header": {
+            "files": 4,
+            "code": 211
+          }
+        }
+      },
+      "maintainer_distribution_all_38_commits": {
+        "distinct_authors": 13,
+        "top": {
+          "Dave Allie": 16,
+          "Justin Mitchell": 6,
+          "Jeremy Klein": 3,
+          "CaptainFrito": 3
+        }
+      },
+      "status": "vestigial; last pushed 3 days before CrossPoint migrated away"
+    },
+    {
+      "full_name": "uxjulia/CrossInk",
+      "role": "Major hard fork of crosspoint-reader.",
+      "head_sha": "cab4f24922f05811e7f44be1057f62ea2d978c52",
+      "branch": "main",
+      "default_branch": "main",
+      "head_commit_date": "2026-08-18T11:17:15-04:00",
+      "head_commit_author": "Julia Nguyen",
+      "created_at": "2026-03-13T16:25:25Z",
+      "pushed_at": "2026-09-01T23:46:43Z",
+      "stars": 1431,
+      "fork": true,
+      "parent": "crosspoint-reader/crosspoint-reader",
+      "archived": false,
+      "license": {
+        "spdx": "MIT",
+        "holder": "Copyright (c) 2025 Dave Allie",
+        "note": "inherited from upstream, not relicensed"
+      },
+      "repo_size_kb_github": 204156,
+      "clone_size_mb_on_disk": 316,
+      "commits_in_clone": 1485,
+      "loc": {
+        "total_code": 975840,
+        "total_files": 885,
+        "by_language": {
+          "C Header": {
+            "files": 493,
+            "code": 830816,
+            "note": "much heavier asset/font load than upstream"
+          },
+          "C++": {
+            "files": 209,
+            "code": 85494
+          },
+          "C": {
+            "files": 11,
+            "code": 17884
+          },
+          "Python": {
+            "files": 32,
+            "code": 8991
+          }
+        }
+      },
+      "maintainer_distribution_last_200_commits": {
+        "distinct_authors": 52,
+        "top": {
+          "Julia": 28,
+          "Uri Tauber": 26,
+          "Jeremy Klein": 16,
+          "Zach Nelson": 15
+        }
+      },
+      "submodules": [
+        {
+          "path": "freeink-sdk",
+          "pinned_sha": "1ff020263cd2202ea79ce3eb811f5ac8489b8cde",
+          "note": "DIFFERENT pin from crosspoint-reader — forks have diverged on SDK version"
+        }
+      ]
+    },
+    {
+      "full_name": "Free-Ink/freeink-reader",
+      "role": "Minimal reference consumer of the SDK, by the SDK's own author.",
+      "head_sha": "ca1c53d04e7db0dfcafe7e9dab1414445b33e990",
+      "branch": "main",
+      "default_branch": "main",
+      "head_commit_date": "2026-07-08T14:11:15-04:00",
+      "head_commit_author": "Justin Mitchell",
+      "created_at": "2026-07-08T09:12:02Z",
+      "pushed_at": "2026-07-08T18:11:18Z",
+      "stars": 4,
+      "fork": false,
+      "parent": null,
+      "archived": false,
+      "license": {
+        "spdx": "MIT",
+        "holder": "Copyright (c) 2026 Justin Mitchell"
+      },
+      "repo_size_kb_github": 52,
+      "clone_size_mb_on_disk": 12,
+      "commits_in_clone": 12,
+      "loc": {
+        "total_code": 2949,
+        "total_files": 6,
+        "by_language": {
+          "C++": {
+            "files": 1,
+            "code": 2766
+          },
+          "C Header": {
+            "files": 2,
+            "code": 149
+          }
+        }
+      },
+      "maintainer_distribution_all_12_commits": {
+        "distinct_authors": 1,
+        "top": {
+          "Justin Mitchell": 12
+        }
+      },
+      "submodules": [
+        {
+          "path": "freeink-sdk",
+          "pinned_sha": "1dc8dfc6c689d3c57e49cc4ee0ae156362f0a34b"
+        }
+      ],
+      "status": "demo; one push, never updated"
+    },
+    {
+      "full_name": "MagicCube/free-ink-on-paper-mono",
+      "role": "Independent third-party FreeInk demo on M5Stack PaperMono. Carries an unmerged SDK partial-refresh patch.",
+      "head_sha": "34cc879427d5fc0b35f6af5084d4e7a003457665",
+      "branch": "main",
+      "default_branch": "main",
+      "head_commit_date": "2026-08-27T17:44:36+08:00",
+      "head_commit_author": "Henry Li",
+      "created_at": "2026-08-25T11:29:36Z",
+      "pushed_at": "2026-08-27T09:44:45Z",
+      "stars": 4,
+      "fork": false,
+      "parent": null,
+      "archived": false,
+      "license": {
+        "spdx": "NONE",
+        "file": null,
+        "warning": "NO LICENSE FILE — all rights reserved by default. Do not reuse code."
+      },
+      "repo_size_kb_github": 65905,
+      "clone_size_mb_on_disk": 184,
+      "commits_in_clone": 10,
+      "loc": {
+        "src_only_total_code": 11668,
+        "src_only_files": 38,
+        "note": "10,141 of those lines are generated font headers (src/fonts/*.hpp) → ~1,700 lines of real app code",
+        "repo_total_code": 13656
+      },
+      "maintainer_distribution_all_10_commits": {
+        "distinct_authors": 1,
+        "top": {
+          "Henry Li": 10
+        }
+      },
+      "submodules": [
+        {
+          "path": "freeink-sdk",
+          "pinned_sha": "df4a1b7b7be9f8ac75078b9fe6a2ea4e15639039"
+        }
+      ],
+      "sdk_libs_consumed": 10,
+      "patches_sdk": {
+        "file": "patches/freeink-paper-mono-window-refresh.patch",
+        "bytes": 10747,
+        "target": "libs/display/FreeInkDisplay/src/driver/PaperMonoDriver.cpp",
+        "adds": "RAM window addressing (0x44/0x45/0x4E/0x4F) + _windowBaselineValid → rectangular partial refresh"
+      },
+      "uses_freeinkui": true
+    },
+    {
+      "full_name": "mohitagw15856/Inkkit",
+      "role": "Self-declared 'shared device-layer HAL for freeink-sdk'. ZERO adoption by FreeInk or CrossPoint.",
+      "head_sha": "5e2f741868eb3d3609ad9b72e74afca2e7cba1fd",
+      "branch": "main",
+      "default_branch": "main",
+      "head_commit_date": "2026-07-31T10:19:04+01:00",
+      "head_commit_author": "Mohit",
+      "created_at": "2026-07-29T13:13:25Z",
+      "pushed_at": "2026-07-31T09:19:06Z",
+      "stars": 1,
+      "fork": false,
+      "parent": null,
+      "archived": false,
+      "license": {
+        "spdx": "MIT",
+        "holder": "Copyright (c) 2026 InkCards contributors"
+      },
+      "repo_size_kb_github": 207,
+      "clone_size_mb_on_disk": 2,
+      "commits_in_clone": 9,
+      "loc": {
+        "total_code": 9233,
+        "total_files": 76,
+        "by_language": {
+          "C++": {
+            "files": 27,
+            "code": 6162
+          },
+          "C Header": {
+            "files": 40,
+            "code": 2911
+          }
+        }
+      },
+      "maintainer_distribution_all_9_commits": {
+        "distinct_authors": 3,
+        "top": {
+          "Mohit": 5,
+          "mohitagw15856": 2,
+          "Claude": 2
+        },
+        "note": "'Claude' commits indicate AI-authored content"
+      },
+      "cxx_standard": "C++17",
+      "scope": "ESP32-C3 / Xteink X4+X3 only — a subset of FreeInk's 15 devices",
+      "adoption_check": {
+        "referenced_by_crosspoint_reader": false,
+        "referenced_by_freeink_sdk": false,
+        "method": "grep -ril inkkit over src/, lib/, platformio.ini, libs/, README.md",
+        "evidence": "executed-success"
+      },
+      "assessment": "personal wrapper for the author's own two apps (InkCards, HabitInk), marketed as ecosystem infrastructure. Sits above freeink-sdk; adds no device support."
+    },
+    {
+      "full_name": "ideo2004-afk/crosspoint-reader-lua",
+      "role": "Stale CrossPoint fork, still on the pre-FreeInk open-x4-sdk. Name suggests Lua; no interpreter found.",
+      "head_sha": "6bc3bcd92f9c8db991ac59a262df3ac00948bae1",
+      "branch": "crosspoint-flow",
+      "default_branch": "crosspoint-flow",
+      "head_commit_date": "2026-04-03T15:55:49+08:00",
+      "head_commit_author": "ideo2004-afk",
+      "created_at": "2026-03-09T03:38:11Z",
+      "pushed_at": "2026-04-03T07:56:00Z",
+      "stars": 54,
+      "fork": false,
+      "parent": null,
+      "archived": false,
+      "license": {
+        "spdx": "MIT"
+      },
+      "repo_size_kb_github": 259148,
+      "clone_size_mb_on_disk": 447,
+      "commits_in_clone": 728,
+      "loc": {
+        "total_code": 251484,
+        "total_files": 781,
+        "by_language": {
+          "C Header": {
+            "files": 238,
+            "code": 133806
+          },
+          "C": {
+            "files": 40,
+            "code": 34216
+          },
+          "C++": {
+            "files": 113,
+            "code": 28784
+          },
+          "JavaScript": {
+            "files": 213,
+            "code": 39781
+          }
+        }
+      },
+      "maintainer_distribution_last_200_commits": {
+        "distinct_authors": 1,
+        "top": {
+          "ideo2004-afk": 200
+        }
+      },
+      "submodules": [
+        {
+          "path": "open-x4-sdk",
+          "url": "https://github.com/open-x4-epaper/community-sdk.git",
+          "pinned_sha": "a75faa8880d28df2b8e6fbd21de5a4a5b2906c67",
+          "status": "DANGLING — git submodule update fails: 'upload-pack: not our ref'",
+          "evidence": "executed-success"
+        }
+      ],
+      "lua_interpreter_present": false,
+      "note": "predates the FreeInk migration; last pushed 2026-04-03; not evidence of scripting in upstream CrossPoint"
+    }
+  ],
+  "not_cloned_but_relevant": [
+    {
+      "full_name": "ma-r-s/crossplay",
+      "why_noted": "Sibling fork of crosspoint-reader carrying the GitHub topic 'webassembly' — the only WASM signal in this family, and it is in a fork, not upstream.",
+      "fork": true,
+      "parent": "crosspoint-reader/crosspoint-reader",
+      "default_branch": "xteink",
+      "created_at": "2026-08-07T20:36:42Z",
+      "pushed_at": "2026-09-02T01:33:24Z",
+      "stars": 15,
+      "license": "MIT",
+      "size_kb": 406734,
+      "evidence": "inferred — GitHub API metadata only, repo not cloned or inspected",
+      "provenance_caveat": "This metadata was found in scratch/eink-software/repos/crossplay-*.json, written by a concurrent agent session, not by this research run."
+    },
+    {
+      "full_name": "open-x4-epaper/community-sdk",
+      "why_noted": "The true origin repo. Cloned only via its CrossPoint fork.",
+      "created_at": "2025-12-02 (first commit fd8b341)",
+      "license": "MIT"
+    }
+  ],
+  "dependency_graph": {
+    "edges": [
+      {
+        "from": "crosspoint-reader/crosspoint-reader",
+        "to": "Free-Ink/freeink-sdk",
+        "type": "git submodule + 14 platformio symlink lib_deps",
+        "pinned": "68425f8eec1246a0be0c0f311540f60ad733fa76",
+        "load_bearing": true
+      },
+      {
+        "from": "uxjulia/CrossInk",
+        "to": "Free-Ink/freeink-sdk",
+        "type": "git submodule (inherited from fork parent)",
+        "pinned": "1ff020263cd2202ea79ce3eb811f5ac8489b8cde"
+      },
+      {
+        "from": "uxjulia/CrossInk",
+        "to": "crosspoint-reader/crosspoint-reader",
+        "type": "github fork"
+      },
+      {
+        "from": "MagicCube/free-ink-on-paper-mono",
+        "to": "Free-Ink/freeink-sdk",
+        "type": "git submodule + 10 lib_deps + local patch",
+        "pinned": "df4a1b7b7be9f8ac75078b9fe6a2ea4e15639039"
+      },
+      {
+        "from": "Free-Ink/freeink-reader",
+        "to": "Free-Ink/freeink-sdk",
+        "type": "git submodule",
+        "pinned": "1dc8dfc6c689d3c57e49cc4ee0ae156362f0a34b"
+      },
+      {
+        "from": "Free-Ink/freeink-sdk",
+        "to": "open-x4-epaper/community-sdk",
+        "type": "code derivation (NOT a fork, no shared git history)",
+        "attribution": "NOTICE + README 'Credit & lineage'"
+      },
+      {
+        "from": "crosspoint-reader/community-sdk",
+        "to": "open-x4-epaper/community-sdk",
+        "type": "github fork"
+      },
+      {
+        "from": "ideo2004-afk/crosspoint-reader-lua",
+        "to": "open-x4-epaper/community-sdk",
+        "type": "git submodule (DANGLING pin)"
+      },
+      {
+        "from": "mohitagw15856/Inkkit",
+        "to": "Free-Ink/freeink-sdk",
+        "type": "claimed consumer wrapper; not referenced by either upstream"
+      }
+    ],
+    "critical_finding": "crosspoint-reader -> freeink-sdk is REAL and load-bearing, but freeink-sdk is a June-2026 re-architecture of the SDK CrossPoint already depended on, authored by a CrossPoint co-maintainer. Not an independent upstream. See dependency-and-lineage.md (this directory)."
+  }
+}

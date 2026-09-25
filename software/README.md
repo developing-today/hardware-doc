@@ -32,6 +32,7 @@ with cross-links, rather than duplicated.
 | Record | What | Licence | Status |
 |---|---|---|---|
 | [**CrossPoint Reader**](applications/crosspoint-reader/README.md) | The ecosystem's centre of gravity — ESP32 e-reader firmware, ★7,538, **1,621 forks**. Ships `papermono` build environments | MIT | written 2026-09-04 |
+| [**CrossPoint architecture**](applications/crosspoint-reader/architecture.md) | The firmware read at `develop` HEAD `e6139861`: module map, the **single** application task, EPUB pipeline, partition table — and a **measured build** (flash **81.8 %**, **IRAM 100 % exhausted**, 173/173 host tests pass) | MIT | promoted 2026-09-20 |
 | [**CrossPlay**](applications/crossplay/README.md) | Personal fork of CrossPoint Reader adding ~26 games and tools alongside the reader. ESP32-S3; targets Xteink X4 Pro, Seeed reTerminal Sticky and **M5Stack PaperMono** | MIT | written 2026-09-02 |
 
 ### Frameworks
@@ -39,6 +40,7 @@ with cross-links, rather than duplicated.
 | Record | What | Licence | Status |
 |---|---|---|---|
 | [**FreeInk SDK**](frameworks/freeink-sdk/README.md) | Hardware-independent e-paper reader SDK — panel drivers (incl. **SSD1677**), board profiles, capability gates, and **FreeInkBook**, a full EPUB engine. CrossPoint's submodule | MIT | written 2026-09-04 |
+| [**FreeInk SDK architecture**](frameworks/freeink-sdk/architecture.md) | The two compile-time axes, the `BoardProfile` porting surface, 13 panel drivers, 27 libraries — and the measurement that **74 % of commits are one person's**. No CI, no releases | MIT | promoted 2026-09-20 |
 
 ### Tooling and plugins
 
@@ -46,6 +48,7 @@ with cross-links, rather than duplicated.
 |---|---|
 | [**PaperMono + plugin branch notes**](applications/crosspoint-reader/plugins/papermono-plugin-branch-notes.md) | What is verified vs unknown about running `feat-sd-plugins` on a PaperMono, and the failure modes to expect |
 | [**Plugin source snapshots (archived)**](applications/crosspoint-reader/plugins/source-snapshots.ARCHIVED.md) | 18 snapshots, ~176 MB — **15 unlicensed**, one existing on a single Railway host with no git repo and no Wayback mirror |
+| [**Firmware plugin internals**](applications/crosspoint-reader/plugins/firmware-plugin-internals.md) | The **device** side of the plugin system, read from `CrossPointWebServer.cpp`: ten endpoints with their caps, the 6-slot job queue, the 4-event whitelist — and that **plugin writes are not confined to the plugin's directory** and **the web server has no authentication at all** |
 | [**The Libby path**](applications/crosspoint-reader/plugins/libby-path.md) | **Complete, verified route to reading library loans** — which of three competing plugins works (one), the ByteBooks account nobody mentions, and the four fork catalogues pointing at a dead URL |
 | [**SD-card plugins & protected content**](applications/crosspoint-reader/plugins/sd-plugins-and-protected-content.md) | The browser-plugin API, hard limits, store protocol, and the ADEPT client hosted off-GitHub |
 | [**CrossPoint plugin systems**](applications/crosspoint-reader/plugins/README.md) | **There are two, and they are nothing alike.** Upstream's is browser JS with no MCU-side execution; a fork ships native C++ ELF modules with a versioned host ABI. Answers whether NFC/LoRa can be a plugin |
@@ -75,15 +78,33 @@ with cross-links, rather than duplicated.
 | [**New PaperMono projects (2026-09)**](ecosystems/crosspoint-freeink/new-papermono-projects-2026-09.md) | Two-week re-sweep: five new projects incl. **two in Rust**, one implementing **NFC tag emulation**. Independently confirms this KB's pin map on every contested point |
 | [**Radios on the PaperMono**](ecosystems/crosspoint-freeink/radios-on-papermono.md) | Can LoRa/NFC be added? **Yes — and not via the SDK.** CrossInk already bypasses the abstraction for ESP-NOW. The four missing pin constants, the RadioLib path, and prototype-vs-upstream effort |
 | [**CrossPoint / FreeInk fork network**](ecosystems/crosspoint-freeink/fork-network.md) | The dependency chain, measured divergence for the major forks, why **9 of 14 named forks are invisible to GitHub's `/forks`**, why "commits behind" is a brick-risk signal here, and a generalisable patch-portability classification |
+| [**Dependency and lineage**](ecosystems/crosspoint-freeink/dependency-and-lineage.md) | The commit-level proof behind the correction: **CrossPoint predates its own SDK by six months**, FreeInk is a re-architecture by a CrossPoint co-maintainer with **zero shared commit SHAs**, and the "CrossPoint is C" label is a Linguist artifact. Plus the six secondary repos |
+| [**Porting a device**](ecosystems/crosspoint-freeink/porting-a-device.md) | **Two PRs against two repos, in order.** Three *measured* real ports (7–10 files, 250–400 lines), the canonical SDK file set, and why a new *capability* costs far more than a new *device* |
+| [**PaperMono windowed refresh**](frameworks/freeink-sdk/papermono-window-refresh.md) | **Which SDK pins have rectangular partial refresh and which silently do not.** CrossPoint has it; CrossInk does not — with no code difference between them. The `_windowBaselineValid` trap |
+
+### Source snapshots
+
+| Record | What |
+|---|---|
+| [**CrossPoint core snapshots**](applications/crosspoint-reader/source-snapshots/README.md) | Where the firmware-family clones went. **9 of 10 left in scratch as reacquirable**; one kept because it **no longer exists** |
+| [**`crosspoint-reader-lua` (archived)**](applications/crosspoint-reader/source-snapshots/ideo2004-afk_crosspoint-reader-lua.ARCHIVED.md) | Surveyed 2026-09-01, **404 by 2026-09-20, no Wayback capture**. The only surviving copy. Its SDK submodule pin is lost from *every* source, so its exact build can never be reconstructed |
+| [**Plugin source snapshots (archived)**](applications/crosspoint-reader/plugins/source-snapshots.ARCHIVED.md) | 18 snapshots, ~176 MB — **15 unlicensed**, one existing on a single Railway host with no git repo and no Wayback mirror |
 
 ### Not yet written
 
-Still empty, and **not** to be read as "surveyed and found nothing":
-`applications/crosspoint-reader/plugins/`, `tooling/calibre/` (and its
-`plugins/`), `ecosystems/crosspoint-freeink/`, `libraries/`, and
-`software/guides/`. The plugin system, the Calibre integration, the Libby/DRM
-path, the fork-divergence analysis and the graphics-library survey are all
-**unwritten**.
+The 2026-09-01/02 text here listed `applications/crosspoint-reader/plugins/`,
+`tooling/calibre/`, `ecosystems/crosspoint-freeink/` and `libraries/` as empty.
+**That is no longer true** — all four have records, listed above. Corrected
+2026-09-20.
+
+Still genuinely empty, and **not** to be read as "surveyed and found nothing":
+
+| Path | Note |
+|---|---|
+| `software/guides/` | No project-independent software guides written yet |
+| `software/devices-index/` | Placeholder |
+| `applications/crosspoint-reader/forks/` | The symlink convention below is described but no links exist yet |
+| `tooling/calibre/plugins/` | The Calibre device-plugin survey is unwritten |
 
 ## Fork links
 

@@ -42,7 +42,7 @@ curl -fsSL -H "Authorization: Bearer $(gh auth token)" \
 ```bash
 # Never trust a URL suffix. `file` was NOT available on this host; a magic-byte
 # check was written instead.
-python3 scratch/lilygo-t-display-s3/magic.py <paths...>
+python3 archive/devices/lilygo/t-display-s3-shared/artifacts/research-scratch/magic.py <paths...>
 ```
 `executed-success`. Output columns: detected type, byte size, SHA-256, path. Every artifact in
 this record passed; **no HTML error page was retained under a `.pdf` or `.bin` name.**
@@ -62,7 +62,7 @@ not `0x20`. That is a real limitation worth recording rather than working around
 
 ```bash
 python3 tools/esp_image_info.py <merged.bin>          # bootloader header: chip, flash size/mode
-python3 scratch/lilygo-t-display-s3/appdesc.py <merged.bin>   # scans for magic 0xABCD5432
+python3 archive/devices/lilygo/t-display-s3-shared/artifacts/research-scratch/appdesc.py <merged.bin>   # scans for magic 0xABCD5432
 ```
 Both `executed-success`. The second also decodes the partition table at `0x8000`
 (entry magic `0xAA50`, 32-byte records), which is how the 8 MB-vs-16 MB layout split in
@@ -74,8 +74,8 @@ Both `executed-success`. The second also decodes the partition table at `0x8000`
 package manager on the host. A minimal extractor was written instead:
 
 ```bash
-python3 scratch/lilygo-t-display-s3/pdfall.py <sheet.pdf>   # WinAnsi fonts, Form XObjects
-python3 scratch/lilygo-t-display-s3/pdfcid.py <sheet.pdf>   # Type0/Identity-H via ToUnicode CMap
+python3 archive/devices/lilygo/t-display-s3-shared/artifacts/research-scratch/pdfall.py <sheet.pdf>   # WinAnsi fonts, Form XObjects
+python3 archive/devices/lilygo/t-display-s3-shared/artifacts/research-scratch/pdfcid.py <sheet.pdf>   # Type0/Identity-H via ToUnicode CMap
 ```
 `executed-success`, with two lessons worth carrying forward:
 

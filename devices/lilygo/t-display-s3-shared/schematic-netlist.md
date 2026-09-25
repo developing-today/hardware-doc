@@ -7,7 +7,7 @@ ambiguous cases.
 
 This file is **new** and adds to the record; it does not replace any existing pinout table. Where
 it contradicts one, the contradiction is listed in
-[`scratch/schematic-tracing/corrections-requiring-review.md`](../../../scratch/schematic-tracing/corrections-requiring-review.md).
+[`guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md`](../../../guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md).
 
 Every row cites the **sheet, the designator/pin token and its page coordinate**, so any claim can
 be re-checked with one command. Coordinates are PDF points, top-left origin, as poppler reports

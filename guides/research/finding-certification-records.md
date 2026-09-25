@@ -336,7 +336,7 @@ absence.
 ## 8. Cross-references
 
 - Scratch, raw data and the full failure log:
-  [`scratch/market-and-certification/README.md`](../../scratch/market-and-certification/README.md)
+  [`archive/guides/research/artifacts/certification-and-market-2026-09-11/README.md`](../../archive/guides/research/artifacts/certification-and-market-2026-09-11/README.md)
 - UA/site access matrix, repo-wide:
   [`ai-crawler-site-access-table.md`](../../ai-crawler-site-access-table.md)
 - Vendor documentation-sourcing guides: [`vendors/`](../../vendors/)

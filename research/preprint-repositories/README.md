@@ -291,4 +291,4 @@ Stated so the gaps are visible rather than silent.
   ChinaXiv all decline to state them. engrXiv is the striking exception — it disclosed that roughly
   **half of 2025 submissions were declined** as AI-generated.
 - **No artifact was archived into `archive/`.** This pass produced records, not retained binaries.
-  Raw probe output is under [`../../scratch/preprint-repositories/`](../../scratch/preprint-repositories/).
+  Raw probe output is under [`../../archive/research/preprint-repositories/`](../../archive/research/preprint-repositories/).

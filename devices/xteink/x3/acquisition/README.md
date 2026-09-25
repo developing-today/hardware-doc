@@ -60,7 +60,7 @@ by their authors.
 | `x3_en_v1.0.7_full.bin`, `x3_en_v5.2.13_full.bin`, `x3_cn_v5.2.13_full.bin`, `x3_cn_v5.2.13_ota.bin` | **Git LFS pointers** (~130 B each) in [`zocs/eink-quick-flasher`](https://github.com/zocs/eink-quick-flasher/tree/main/firmware) | **`manual`** — needs `git lfs` or the LFS batch API. **The cheapest way to obtain the first X3 firmware image.** Licence: none declared; vendor firmware; redistribution **unknown** |
 | `X3-FLASHER-GUIDE.md` / `-EN.md` | Present in the same repo, not fetched | **`automatic`** — plain raw fetch. The most detailed X3 flashing documentation that exists |
 | An X3 flash dump | **Never obtained** | **`manual`** — dump a USB-unlocked unit |
-| Vendor product imagery | Listing is **live**; URLs are in `scratch/xteink/vendor/products-p1.json` under `products[].images[].src` | **`automatic`** — **capture before the X3 is delisted**, as happened to the X4 |
+| Vendor product imagery | Listing is **live**; URLs are in `vendors/xteink/artifacts/store-snapshots/2026-09-04/products-p1.json` under `products[].images[].src` | **`automatic`** — **capture before the X3 is delisted**, as happened to the X4 |
 | Vendor OTA feed | `http://gotaserver.xteink.com/api/check-update` | **`manual`** — request format unknown |
 
 ## The most valuable work needs no network at all

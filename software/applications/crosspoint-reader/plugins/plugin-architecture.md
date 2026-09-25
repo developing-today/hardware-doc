@@ -354,15 +354,57 @@ Everything else is a fork.
 
 - **No plugin was installed or run.** Every behavioural claim is from source or
   from an author's report.
-- **The firmware handlers for `/api/relay`, `/api/fetch` and `/api/plugin-fs` were
-  not captured** — so all limits, the 413 path, and Range behaviour are
-  second-hand.
+- ~~**The firmware handlers for `/api/relay`, `/api/fetch` and `/api/plugin-fs`
+  were not captured**~~ — **partly closed 2026-09-20.** A firmware-side read of
+  the same branch is now in the tree as
+  [firmware plugin internals](firmware-plugin-internals.md), which cites the
+  handlers by file and line in `src/network/CrossPointWebServer.cpp`:
+
+  | Endpoint | Handler | Cap | Line |
+  |---|---|---|---|
+  | `/api/relay` | `handleRelay()` | **32 KB** response | `:1769`, cap `:1823` |
+  | `/api/fetch` | `handleFetch()` | **4 MB** per segment | `:2089`, cap `:2096` |
+  | `/api/plugin-fs` | `handlePluginFs()` | **256 KB** | `:2345`, cap `:2376` |
+  | `/api/crypto` | `handleCrypto()` | 64 KB per field | `:1959`, cap `:1971` |
+
+  This **confirms the 2 MB/4 MB reading above** — 2 MB is the browser's request
+  size, 4 MB the firmware's ceiling — and adds two findings this page could not
+  see from the plugin side:
+
+  - **`safeWritePath()` (`:1953`) does not scope writes to the plugin's own
+    directory.** It checks only non-empty, absolute, and no `..`. The `plugin`
+    argument is validated as a *name* by `safeComponent()` (`:1687-1689`) and is
+    **never used to derive the path**. So "Sandbox: none" in the table above is
+    stronger than stated: a plugin can write **anywhere on the SD card**,
+    including another plugin's `token.file` and `/.crosspoint/settings.json`.
+    `/api/fetch` applies the same check to `dest` (`:2098`).
+  - **The web server has no authentication whatsoever.** No handler in the
+    `server->on(...)` table (`:179-234`) gates a request. The practical trust
+    boundary is therefore **network-vs-device**, not plugin-vs-firmware: any LAN
+    host can call these endpoints with no plugin involved. The `plugin` field is
+    **attribution, not authorisation**.
+  - **`handleRelay()` calls `http.setInsecure()` (`:1792`)** — TLS peer
+    verification is disabled because SecureNet ships no CA bundle. Relayed HTTPS
+    is MITM-able. Deliberate and documented, but it means "do crypto over relay"
+    is not a secure channel.
+
+- **The 32 KB overflow behaviour is still unresolved.** The firmware read
+  establishes *where* the constant is (`:1823`) but did **not** quote the
+  overflow branch, so the four-way disagreement in the table above stands. Do not
+  treat it as settled.
+- **Range behaviour on `offset > 0` remains unverified** — the firmware read did
+  not cover it either.
 - **Which branch upstream intends to merge is unknown.**
+- **The branch's position moved between the two passes**, and neither figure is
+  wrong: on **2026-09-02** `feat-sd-plugins` (`a7844957`) measured **+18/−26**
+  against `develop`; by **2026-09-10** it measured **+66/−0**. Consistent with a
+  rebase onto `develop` in that window. Cite the date with the number.
 - Plugin **licensing is largely absent** across the ecosystem — see the
   [plugin source survey](plugin-source-survey.md).
 
 ## See also
 
+- [**Firmware plugin internals**](firmware-plugin-internals.md) — the device side: endpoints, caps, the job queue's 6 slots, the 4-event whitelist, and the sandbox assessment
 - [Plugin source survey](plugin-source-survey.md) — what the DRM plugins are, and their shared lineage
 - [The ContentProtection library](../../../frameworks/freeink-sdk/contentprotection-library.md) — the firmware half of the DRM chain
 - [`dtsbytebooks.com` review](dtsbytebooks-review.md) — who operates ADEPT now

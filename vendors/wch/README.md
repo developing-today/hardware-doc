@@ -194,13 +194,36 @@ consideration for anyone reproducing a design that uses them.
 |---|---|---|
 | [CH445P](../../components/wch/ch445p/README.md) | Quad 2:1 analog switch — audio-source mux. **Datasheet and truth table resolved** | [Waveshare ESP32-S3-Knob-Touch-LCD-1.8](../../devices/waveshare/esp32-s3-knob-touch-lcd-1.8/README.md) |
 | [USB-UART bridge `U10` — **CH340X**](../../components/wch/ch340x/README.md) | USB-to-UART bridge. Identity resolved 2026-08-21 | [Waveshare ESP32-S3-Knob-Touch-LCD-1.8](../../devices/waveshare/esp32-s3-knob-touch-lcd-1.8/README.md) |
+| [CH32V203C8T6](../../components/wch/ch32v203c8t6/README.md) | RISC-V MCU, QingKe **V4B `IMAC`**, 144 MHz, LQFP-48 — always-on management coprocessor. **Datasheet V2.7 now held** (2026-09-20) | [Nicolai Electronics Tanmatsu](../../devices/nicolai-electronics/tanmatsu/README.md) `U12` |
+| [CH32V003](../../components/wch/ch32v003/README.md) | RISC-V MCU, QingKe **V2A `RV32EC`**, 48 MHz, QFN-20. **One-wire SDI debug.** RM V1.6 + DS V1.4 held (2026-09-20) | `badgeteam/konsool-zero` `U19` — a Tanmatsu expansion board |
+| [CH32F2x / CH32V2x / CH32V3x family RM](../../components/wch/ch32f2x-ch32v2x-ch32v3x/README.md) | **Document record.** The single reference manual (V2.1, 595 pp.) covering three series and two ISAs | Cited by the CH32V203C8T6 record; no part fitted |
+
+### ⚠ WCH ships *one* reference manual for three series — and a *separate* one for the V003
+
+This is the WCH-specific trap worth internalising before searching for documentation:
+
+| Manual | Covers | Does **not** cover |
+|---|---|---|
+| `CH32FV2x_V3xRM` | CH32F20x (Cortex-M3), **CH32V20x**, CH32V30x — all QingKe **V4B/V4C/V4F**, `IMAC`/`IMAFC` | the V003 |
+| `CH32V003RM` | CH32V003 only — QingKe **V2A**, `RV32EC` | everything above |
+
+Searching for "CH32V203 reference manual" as a filename **will fail**: the document is named
+`CH32FV2x_V3xRM`. Search by **scope**, not by part name — the same lesson §5 records for the
+file-table API. The two manuals are not interchangeable in either direction: the V003's core has
+no hardware multiply or divide and only 16 registers, so neither the register set nor the
+toolchain flags transfer.
+
+**Naming trap, separately:** `CH32V003` and `CH32V203` differ by one character and are entirely
+different devices. See [Gotchas](#7-gotchas).
 
 The USB-UART record is filed under `components/generic/` rather than `components/wch/` because it was
 created before the part's identity was resolved; the record itself now identifies it as a WCH CH340X.
 **This is a known filing inconsistency**, left in place because moving records is out of scope for
 this pass and the cross-links resolve correctly either way.
 
-No device in this repository is manufactured by WCH.
+No device in this repository is manufactured by WCH. `badgeteam/konsool-zero`, which fits the
+CH32V003, is a third-party expansion board — and the route by which all four WCH documents above
+reached this repository, none of them fetched from WCH directly.
 
 ---
 

@@ -6,7 +6,7 @@
 
 **New file.** It does not replace `pinouts-and-buses.md`; where it contradicts an existing claim,
 the contradiction is appended to that file and listed in
-[`scratch/schematic-tracing/corrections-requiring-review.md`](../../../scratch/schematic-tracing/corrections-requiring-review.md).
+[`guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md`](../../../guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md).
 
 ## 0. Traceability
 

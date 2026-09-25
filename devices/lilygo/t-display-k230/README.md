@@ -23,7 +23,7 @@ files this product in its **T-Display** series, alongside T-Display-S3 and T-Dis
 
 **LilyGO stock codes collide with chip part numbers and carry no information about silicon.**
 Never infer hardware from a LilyGO SKU. (Reusable version of this finding:
-[`scratch/lilygo-k230/vendor-guide-additions.md`](../../../scratch/lilygo-k230/vendor-guide-additions.md).)
+[`archive/devices/lilygo/t-display-k230/artifacts/research-scratch/vendor-guide-additions.md`](../../../archive/devices/lilygo/t-display-k230/artifacts/research-scratch/vendor-guide-additions.md).)
 
 ### Bare board — "T-Display K230", `/products/t-display-k230`
 

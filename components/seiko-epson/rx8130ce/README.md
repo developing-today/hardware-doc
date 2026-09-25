@@ -460,6 +460,19 @@ Two specific consequences:
 
 ### [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md) — designator `U16`, sheet 4
 
+> **FCC internal photographs — 2026-09-20.** The PaperMono's FCC filing
+> (`2AN3WM5PAPERMONO`) includes an internal-photograph exhibit, now retained at
+> [`devices/m5stack/papermono/artifacts/certification/`](../../../devices/m5stack/papermono/artifacts/certification/README.md).
+> It is the first physical-hardware evidence for this part on this board.
+>
+> **Confirmed.** Exhibit p. 3 shows a 12-pad ceramic package marked
+> **`R8130`** / `○3581K` beside the SX1262 module, corroborating the fitted part
+> from hardware rather than from the schematic alone. The `CE` suffix is not on
+> the package marking — Epson's `R8130` house mark does not carry it — so the
+> exact ordering variant is **not** confirmed by the photograph.
+>
+> Extraction: [`certification.md` §6](../../../devices/m5stack/papermono/certification.md#6--what-the-internal-photographs-show).
+
 | Role on PaperMono | Pin | Evidence |
 |---|---|---|
 | I²C slave at **`0x32`** on the shared system bus, driven at **400 kHz** | 2 `SCL` → `G48_SYS_SCL` (GPIO48); 3 `SDA` → `G47_SYS_SDA` (GPIO47) | **[SCH]** `U16`.2/.3; **[SRC]** `hal_board.cpp:17,19` |

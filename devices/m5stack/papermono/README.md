@@ -33,6 +33,7 @@ display, rather than an e-paper display board that happens to have a battery.
 | [**`examples/`**](examples/best.md) | The 43-project population with **every repository pinned to a commit**, the selected portfolio, and the search log |
 | [`projects-and-community.md`](projects-and-community.md) | Third-party firmware and software targeting this board, classified by whether it was actually demonstrated on hardware |
 | [`bill-of-materials.md`](bill-of-materials.md) | The full designator census from the schematic — 290 placed components, 230 designators, and what the gaps mean |
+| [**`certification.md`**](certification.md) | **FCC ID `2AN3WM5PAPERMONO`** — the certified bands, channels and conducted power per mode, the antenna specification and its gain tables, SAR at 0 mm, the internal photographs part by part, and M5Stack's architecture diagram filed as the FCC label |
 | [`gaps-and-conflicts.md`](gaps-and-conflicts.md) | Every recorded contradiction and open question |
 | [`sources.md`](sources.md) | Source table with classes, retrieval dates and versions |
 | [`research-log.md`](research-log.md) | Every service, query, filter and disposition; retrieval findings; the stopping criterion |
@@ -49,15 +50,32 @@ Vendor documentation-sourcing guides produced by this pass:
 | Marketed name | PaperMono | vendor product page |
 | SKU | C153 | vendor product page, store listing |
 | Manufacturer | M5Stack Technology Co., Ltd (Shenzhen) | vendor site |
+| **FCC ID** | **`2AN3WM5PAPERMONO`**, granted **2026-08-12** | [`certification.md`](certification.md) |
+| **Japan MIC** | **`Ⓡ 211-260514`** — transcribed from the FCC label artwork, **not verified against the MIC registry** | [`certification.md` §5](certification.md#5--the-label-exhibit-is-an-architecture-diagram) |
 | Schematic revision | V0.6.2, dated 2026-05-22 | schematic filename and title blocks |
+| **PCB revision, as built** | **`V0.6`**, silkscreen date code `251222` (2025-12-22) | FCC internal photos p. 2 |
+| Hardware / software version, as filed | `V1.0` / `V1.0` — **conflicts with the V0.6 silkscreen** | FCC user manual p. 3 |
 | Sub-board revisions | KEY/RGB sheet dated 2026-04-14; NFC sheet rev V0.2 dated 2026-07-28 | schematic title blocks |
 | Case colour | Grey | vendor comparison table |
 | Variant | PaperMono-Lite, SKU C153-LITE, white case, no NFC, no LoRa | vendor comparison table |
 
-There is exactly one hardware revision in evidence. No regional variants were
-found, and no FCC/CE/TELEC identifier appears anywhere on M5Stack's site —
-`/en/certification` returns zero matches for both `PaperMono` and `C153`. That
-is a verified negative, not a failed search.
+There is exactly one hardware revision in evidence, and the FCC filing confirms
+it: `Multiple Model(s) No.: N/A`.
+
+> **Correction, 2026-09-20 — this board *is* certified.** Every document in this
+> record previously stated that no FCC/CE/TELEC identifier existed for the
+> PaperMono, on the strength of `/en/certification` returning zero matches for
+> `PaperMono` and `C153`. **That verified negative was correct; the conclusion
+> drawn from it was wrong.** M5Stack does not publish an identifier, but the
+> board holds **FCC ID `2AN3WM5PAPERMONO`** under two grants issued 2026-08-12,
+> and the exhibits are public. The vendor SKU `C153` appears nowhere in the
+> filing, which is why searching for it could never have worked. Full extraction
+> in [`certification.md`](certification.md); the refutation is logged at
+> [`gaps-and-conflicts.md` G2](gaps-and-conflicts.md#g2--no-certification-identifiers-exist-on-the-vendor-site).
+>
+> **No regional variants were found**, and the US grant covers LoRa only on
+> **903.0–914.9 MHz** — considerably narrower than the 868–923 MHz the hardware
+> supports.
 
 **Do not read PaperMono as a successor to the M5PaperS3.** See
 [product history](#product-history-family-and-culture).
@@ -76,11 +94,15 @@ e-paper panel, the touch layer and the frontlight, with the LoRa radio on a
 plug-in `Stamp-LoRa-1262-mini` module. See
 [`pinouts-and-buses.md`](pinouts-and-buses.md#board-set--this-is-not-one-pcb).
 
-> **Images: an explicit gap.** No product, teardown or PCB photograph has been
-> retained in this record. The vendor's product imagery is not licensed for
-> redistribution and no independent teardown existed at the snapshot date. The
-> only visual hardware evidence held here is the vendor schematic and the
-> mechanical drawing. Recorded rather than filled with unattributed images.
+> **Images: a gap now partly closed.** No product, teardown or PCB photograph is
+> *retained* in this record — the vendor's product imagery is not licensed for
+> redistribution and no independent teardown existed at the snapshot date. But
+> the **FCC internal-photograph exhibit is now in the repository** at
+> [`artifacts/certification/2AN3WM5PAPERMONO-internal-photos.pdf`](artifacts/certification/2AN3WM5PAPERMONO-internal-photos.pdf):
+> 13 images at 200 ppi covering both sides of the main board, the rear housing,
+> the antennas, the panel and the cell. It is a US Government public record, so
+> redistribution is `allowed`. What is legible in it — and what is not — is set
+> out in [`certification.md` §6](certification.md#6--what-the-internal-photographs-show).
 
 ## Product history, family and culture
 
@@ -208,6 +230,8 @@ Every fitted capability has a task-oriented guide under
 | Understand which GPIO does what | [`pinouts-and-buses.md`](pinouts-and-buses.md) |
 | Avoid the `PYG3` pin-naming hazard | [`pin-naming-and-the-pyg-ambiguity.md`](pin-naming-and-the-pyg-ambiguity.md) |
 | Work out what conflicts with what | [`resources-and-conflicts.md`](resources-and-conflicts.md) |
+| Check what is actually legal to transmit, and where | [`certification.md` §9](certification.md#9--constraints-this-imposes-on-anyone-building-on-the-board) |
+| See what the PCB actually looks like | [`certification.md` §6](certification.md#6--what-the-internal-photographs-show) |
 | Check whether something is known to work | [`compatibility-and-status.md`](compatibility-and-status.md) |
 | Find M5Stack's documentation for another product | [`vendors/m5stack`](../../../vendors/m5stack/README.md) |
 
@@ -315,7 +339,9 @@ USD 55 model has NFC and LoRa. It does not — that is the Lite.
   sets, and a naming ambiguity that can silently cut panel power.
 - 4 grey levels and 480 × 800 are a step down from the PaperS3 it sits beside.
 - No OTA partition in either vendor project.
-- No certification identifiers published.
+- **Certified, but the vendor publishes nothing about it** — FCC ID `2AN3WM5PAPERMONO`
+  exists and is public, yet appears on no M5Stack page. US LoRa operation is limited to
+  903.0–914.9 MHz. See [`certification.md`](certification.md).
 - Out of stock since launch day with conflicting restock guidance.
 - Official firmware not reproducible from published source.
 
@@ -329,8 +355,10 @@ point and the display is a low-duty output.
 **Do not use it** where you need a fast or high-fidelity e-paper display
 (4 grey levels, and the vendor's own refresh guidance is conservative), where
 you need to attach external hardware (no expansion port), where you need field
-updates (no OTA partition as shipped), or where you need regulatory paperwork
-(none published). For a general e-paper development board with expansion, prefer
+updates (no OTA partition as shipped), or where you need LoRa outside
+**903.0–914.9 MHz** in the US — that is the whole of what the FCC grant
+authorises ([`certification.md` §9](certification.md#9--constraints-this-imposes-on-anyone-building-on-the-board)),
+and no CE, IC, RCM or SRRC record has been located. For a general e-paper development board with expansion, prefer
 Inkplate or the [Waveshare ESP32-S3-ePaper-3.97](../../waveshare/esp32-s3-epaper-3.97/README.md)
 (same SoC, memory and panel size, with headers and an audio path instead of
 radios); for a reading device, this is a
@@ -381,11 +409,22 @@ See [`gaps-and-conflicts.md`](gaps-and-conflicts.md) for the full conflict list.
 artifacts/
 ├── schematic/PaperMono_SCH_V0.6.2_20260522.pdf      1,462,039 B  6 sheets, Altium
 ├── mechanical/C153_PaperMono_model_size.pdf            21,346 B
-└── firmware/
-    ├── C153-PaperMono-UserDemo-v1.2.bin            2,868,208 B
-    ├── crosspoint-paper-mono-cjk-1.5.0-RC.bin     10,319,500 B
-    └── esp-image-analysis.txt
+├── firmware/
+│   ├── C153-PaperMono-UserDemo-v1.2.bin            2,868,208 B
+│   ├── crosspoint-paper-mono-cjk-1.5.0-RC.bin     10,319,500 B
+│   └── esp-image-analysis.txt
+└── certification/                                              FCC 2AN3WM5PAPERMONO
+    ├── README.md                                   directory index, hashes, URLs
+    ├── 2AN3WM5PAPERMONO-internal-photos.pdf         1,368,012 B  13 images, 200 ppi
+    ├── 2AN3WM5PAPERMONO-label-and-label-location.pdf  402,449 B  the architecture diagram
+    └── 9 × *.ARCHIVED.md                            placeholders for 8.58 MiB archived
 ```
+
+The nine archived exhibits — SAR report, antenna specification, user manual, the
+SAR annexes and the external photographs — were **mined before they were moved**;
+everything they establish is in [`certification.md`](certification.md), and each
+placeholder carries a hash, byte size, FCC document id and five reacquisition
+URLs.
 
 Component-owned documents are filed under the component they describe, not here:
 the DKE panel manual, the SSD1677, M5PM1, M5IOE1, ST25R3916, SX1262, RX8130CE,

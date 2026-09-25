@@ -1,8 +1,14 @@
 # Xteink X3 — factory firmware
 
-> **No X3 flash dump was obtained by this session.** Stock images are known to
-> exist publicly but are Git LFS blobs that were not fetched. Retrieved
-> **2026-09-04**.
+> **One X3 stock image is now held: the CN V5.2.13 OTA image** (app partition only,
+> 6,254,064 B). Fetched **2026-09-11**, archived and fully parsed **2026-09-20** —
+> see **[`artifacts/firmware/x3-stock-firmware-teardown.md`](artifacts/firmware/x3-stock-firmware-teardown.md)**.
+> The three 16 MB full-flash images remain unfetched. Original survey retrieved **2026-09-04**.
+>
+> ⚠ **Corrected 2026-09-20.** This page previously read *"No X3 flash dump was obtained by this
+> session… Not downloaded."* That was true on 2026-09-04 and became false on 2026-09-11, when a
+> later pass fetched the OTA image via the Git-LFS batch API but left it in a scratch directory
+> without updating this page.
 
 ## Known stock versions
 
@@ -28,9 +34,11 @@ archived), and the X4 Pro and X4C have nothing.
 So there is **no regional firmware split** — only a default setting. A CN unit and
 an EN unit run the same code.
 
-**Not downloaded.** The `.bin` entries in the Git tree are **~130-byte Git LFS
-pointers**. Fetching the real blobs needs `git lfs` or the LFS API. Recorded as a
-gap — this is cheap to close and would give the first X3 image.
+**Three of the four are not downloaded.** The `.bin` entries in the Git tree are
+**~130-byte Git LFS pointers**; fetching the real blobs needs `git lfs` or the LFS
+batch API. The **CN OTA image is held** — see
+[`artifacts/firmware/x3_cn_v5.2.13_ota.bin.ARCHIVED.md`](artifacts/firmware/x3_cn_v5.2.13_ota.bin.ARCHIVED.md)
+for the working recipe, which applies unchanged to the other three.
 
 ## Version numbering
 
@@ -50,6 +58,15 @@ firmware does.
 `coredump` `0xFF0000`.
 
 **Inferred, not confirmed,** that the X3 matches. Verify before writing at offsets.
+An OTA image cannot show a partition table; closing this needs one of the three
+16 MB full-flash images.
+
+⚠ **The data partition's *format* is now known, and it is not SPIFFS.** The X3
+application mounts **LittleFS** at `/littlefs` (`LittleFS`, `LittleFS startup
+failed` and `/littlefs` all appear in the OTA image; `spiffs` appears once, as a
+bare label). The partition *subtype byte* may still carry the `spiffs` value
+`0x82` — harmless, since the subtype is only a label — but **anything that tries
+to read the data partition as SPIFFS will fail.** `executed-success`, 2026-09-20.
 
 ## NVS
 
@@ -132,8 +149,18 @@ and verify every file from it.
 | `x3_cn_v5.2.13_ota.bin` | 6,254,064 | `0b2cbc4a6414aef4ad6e676b59fdefa3b529189758953765b26df02bac77bcb6` |
 
 **One image was actually fetched and parsed** to prove the method — the 6.25 MB
-CN OTA — and its hash matched its oid exactly. It was **not retained** (unknown
-licence, proprietary vendor firmware). What it establishes:
+CN OTA — and its hash matched its oid exactly.
+
+> ⚠ **Corrected 2026-09-20.** The next sentence used to read *"It was **not
+> retained** (unknown licence, proprietary vendor firmware)."* **It was retained**
+> — it sat in `archive/devices/xteink/shared-artifacts/research-scratch/x3-lfs/` from 2026-09-11. It is now archived at
+> `archive/devices/xteink/x3/artifacts/firmware/x3_cn_v5.2.13_ota.bin` with a
+> placeholder, and has been **fully mined**:
+> **[`artifacts/firmware/x3-stock-firmware-teardown.md`](artifacts/firmware/x3-stock-firmware-teardown.md)**.
+> The licence position is unchanged — redistribution status **`unknown`**, so it is
+> archived rather than tracked.
+
+What the header establishes:
 
 | Field | Value |
 |---|---|
@@ -149,4 +176,30 @@ both devices.
 
 **`xteink_ble` is new.** The X3's Bluetooth capability is not characterised
 anywhere in this tree, and this is the first evidence the stock firmware carries
-a BLE component. Recorded as a gap, not a feature claim.
+a BLE component. Recorded as a gap, not a feature claim. The 2026-09-20 teardown
+narrows it: the stack is **NimBLE-Arduino 2.3.6**, the advertised names are
+`xteink_ble` / `XTEPD_BLE_`, the GATT label is `XTEINK App Connection`, and the
+device ships its own protocol description on-flash at `/BLE Protocol.txt` and
+`/system/BLE.txt`.
+
+## What else the OTA image gave up
+
+Full extraction: **[`artifacts/firmware/x3-stock-firmware-teardown.md`](artifacts/firmware/x3-stock-firmware-teardown.md)**.
+Headlines, all `executed-success` 2026-09-20:
+
+| | |
+|---|---|
+| Vendor OS name | **`XTOS V5.2.13`** — not previously recorded anywhere in this tree |
+| Device string sent to the backend | **`ESP32C3_X3`** |
+| Real toolchain | **PlatformIO on Windows** (`/C:/Users/32651/.platformio/…`), `framework-arduinoespressif32`. The `Mar 5 2024` descriptor date is the **Arduino core's** build date, not the firmware's — the image has **no trustworthy build timestamp** |
+| Data filesystem | **LittleFS**, not SPIFFS — see [Partition layout](#partition-layout) |
+| Backends (all plain HTTP) | `api-prod.xteink.cn`, `bofi.xteink.cn`, hardcoded `8.130.157.48:5000`, QR via `active.clewm.net` |
+| On-device HTTP API | ~30 routes incl. `/Put_sdFrequency`, `/setWallpaper`, `/Read_updataAddress`, `/update.bin` |
+| UI languages shipped | **EN, JA, ZH-CN** — Japanese was not previously known |
+| Undocumented file formats | **`.xtc`** (cached book), **`.xtg`** (cover), **`.xth`** (chapter summary) |
+| Extra features | stock ticker, weather, factory burn-in / SD-benchmark mode (`老化测试`) |
+
+**Negative results** (searched for, absent — do not re-search): no display-controller
+part number, **no RTC part number** (so this image does **not** settle the three-way
+X3 RTC conflict), no fuel-gauge part number, no `hw_calib`/`screenType` key, and no
+NFC string.

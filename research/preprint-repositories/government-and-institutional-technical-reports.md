@@ -853,7 +853,7 @@ significant collection:
 ## 7. Sources
 
 Retrieved **2026-09-02** unless stated. Raw probe output is under
-[`../../scratch/preprint-repositories/oa-fulltext/`](../../scratch/preprint-repositories/oa-fulltext/).
+[`../../archive/research/preprint-repositories/oa-fulltext/`](../../archive/research/preprint-repositories/oa-fulltext/).
 
 - **S1** `https://ntrs.nasa.gov/api/citations/search?size=0` and `…?q=radiation%20hardened&size=1` —
   totals, `disseminated`/`distribution`/`stiType`/`center`/`subjectCategory`/`author`/`keyword`/

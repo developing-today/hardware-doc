@@ -246,6 +246,26 @@ IC page        :  0 correct, 8 wrong
 elsewhere, so do not discard it — just ignore its `E` numbering. See
 [`pinouts-and-buses.md` §2d](pinouts-and-buses.md).
 
+> ### ⚠ Escalation 2026-09-20 — the wrong numbering reached a real PCB
+>
+> This was recorded as a documentation inconsistency. It is worse than that: **`badgeteam/konsool-zero`
+> was laid out against the IC page.** Its expansion connector labels pins 23, 25 and 27 as
+> `E10`, `E9`, `E8` — precisely the IC page's names for GPIO52, GPIO51 and GPIO50 — where the
+> Tanmatsu calls them `E11`, `E12`, `E13`.
+>
+> Read from `tanmantsu-zero.kicad_pcb` with `tools/kicad_pcb_nets.py`; `executed-success`.
+>
+> The **wiring is still right** — konsool-zero's "`E10`" is physically pin 23 — but the *name* is
+> not portable across the connector. Firmware written from konsool-zero's schematic that resolves
+> `E10` through Tanmatsu documentation targets **GPIO53** when the IR transmitter is on **GPIO52**.
+>
+> **Rule for add-on work: exchange pin numbers or GPIO numbers, never `E`-names.**
+> Detail: [`konsool-zero-wiring.md` §4](konsool-zero-wiring.md).
+>
+> The same board also mislabels **pin 7 as `VSDCARD`** where the Tanmatsu fabrication netlist says
+> `GND` — inert on konsool-zero, a short waiting to happen on anything derived from it. See
+> [`konsool-zero-wiring.md` §3](konsool-zero-wiring.md).
+
 ## 15. NEW — coprocessor `PM_INT` is wired but unused
 
 badge.team's CH32V203 pinout lists **pin 46 (`PB9`) = `PM_INT`**, an interrupt from the BQ25895 PMIC.
@@ -368,6 +388,10 @@ From the fabrication netlist, absent from all documentation:
 
 
 ## 22. NEW — `frontpanel.step` is exported at the wrong board thickness
+
+> Both STEP models were **archived 2026-09-20**; the findings below were mined first.
+> Placeholders: [`frontpanel.step`](artifacts/mechanical/frontpanel.step.ARCHIVED.md) ·
+> [`tanmatsu.step`](artifacts/mechanical/tanmatsu.step.ARCHIVED.md)
 
 The front-panel STEP model measures **1.63 mm** thick (`tools/step_bbox.py`), but the repository's own
 README instructs fabrication at **0.8 mm**:

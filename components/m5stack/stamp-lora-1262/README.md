@@ -140,7 +140,7 @@ Framework context: ESP-IDF **5.5.1**, target `esp32s3`, arduino-esp32 **3.3.10**
 | **G2** | **Pins 11–13 are unlabelled with no drawn no-connect.** §2.1. Unresolved | **[SCH]** |
 | **G3** | **TCXO vs XTAL is unknown, and it changes the driver setup.** The SX1262 needs `DIO3` configured as a TCXO supply *if* a TCXO is fitted, and getting this wrong produces a radio that appears to initialise and then fails to transmit or receive. The module does not expose `DIO3`, so the decision was made inside the module — but no document says which. **Do not guess:** check what RadioLib's PaperMono configuration does before changing it | **[INF]**; the SX1262 record covers the mechanism |
 | **G4** | **`SX_ANT_SW` semantics are undocumented.** Whether it selects TX/RX paths, enables an external PA/LNA, or switches between antenna connectors is not stated anywhere located. `hal_lora.cpp:31` only assigns the pin | **[SRC]** |
-| **G5** | **No regulatory identifier of any kind.** `docs.m5stack.com/en/certification` returns **0 matches** for `PaperMono` and **0** for `C153`; no FCC ID, CE, IC, RCM or TELEC/MIC identifier appears on any of the 13 documentation pages, either product page, or either store listing. A **single wideband SKU spanning 868–923 MHz** covers EU 868, US 915 and JP 920 allocations with no per-region variant. Worth flagging for anyone intending to deploy the radio | **[DOC]** — negative result, `executed-success` (full-text search of a 382 669-byte page fetched HTTP 200) |
+| ~~**G5**~~ | ⚠ **CORRECTED 2026-09-20 — the board is certified.** The narrow finding survives: `docs.m5stack.com/en/certification` really does return **0 matches** for `PaperMono` and **0** for `C153`, and no identifier appears on any documentation page or store listing. **But the PaperMono holds FCC ID `2AN3WM5PAPERMONO`, granted 2026-08-12**, and the US grant authorises this module on **903.0–914.9 MHz only, at 11.5 dBm conducted** — *not* the 868–923 MHz the SKU claims. The vendor firmware's hard-coded 868.0 MHz is outside that grant. The deployment warning therefore **stands and sharpens**; what changes is that US paperwork now exists. No CE, IC, RCM, UKCA or SRRC record has been located. See [`certification.md`](../../../devices/m5stack/papermono/certification.md) | **[DOC]** negative result superseded by **[REG]** FCC exhibits, retrieved 2026-09-11 |
 | **G6** | **The `-mini` suffix is unexplained.** §1 | **[SCH]** vs **[DOC]** |
 | **G7** | **PDF extraction artifact worth knowing.** In the schematic's net-annotation layer, underscores render as the digit `0` — `G41_LoRa_NSS` appears as `NLG410LoRa0NSS`, `PYB_LoRa_ANT_SW` as `oRa0ANT0SW`. The **visible** net labels are correct; only the hidden annotation strings are affected. Any future automated netlist extraction from this PDF must account for it or it will produce plausible-looking wrong net names | `executed-success` — observed directly in the text-position dump of sheet 4 |
 
@@ -149,6 +149,35 @@ Framework context: ESP-IDF **5.5.1**, target `esp32s3`, arduino-esp32 **3.3.10**
 ## 6. Used By
 
 ### [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md) — designator `U14`, sheet 4
+
+> **FCC internal photographs — 2026-09-20.** The PaperMono's FCC filing
+> (`2AN3WM5PAPERMONO`) includes an internal-photograph exhibit, now retained at
+> [`devices/m5stack/papermono/artifacts/certification/`](../../../devices/m5stack/papermono/artifacts/certification/README.md).
+> It is the first physical-hardware evidence for this part on this board.
+>
+> **The module is confirmed to be a real module.** This record notes that no
+> module datasheet exists and that everything comes from the schematic symbol.
+> Exhibit p. 3 now shows it physically: a **castellated sub-PCB** carrying the
+> SX1262 QFN, a matching network, a **U.FL/IPEX connector** and a **4-pad
+> ceramic oscillator marked `M10`**, soldered onto the main board. Pages 6–7
+> show the antenna it feeds — a **52 × 7.7 mm FPC strip** silkscreened
+> `Paper Mono V3.0`, bonded into the bottom of the rear housing, reached by a
+> coaxial pigtail.
+>
+> **The antenna is now identified**: supplier **Shenzhen Rongshengyuan**, part
+> **`RSY-E8131`**, spec V3.0 dated 2026-02-01, **IPEX4**, VSWR < 4, and measured
+> **−5.00 dBi / 15.9 % efficiency at 910 MHz** (−6.72 to −4.57 dBi across
+> 860–920 MHz). That is a poor antenna, and any link-budget estimate assuming
+> 0 dBi is optimistic by ~5 dB.
+>
+> **Certified US band is 903.0–914.9 MHz at 11.5 dBm conducted** — not the
+> 868–923 MHz the SKU claims. **`SX_ANT_SW` is independently confirmed to be
+> driven from M5IOE1 `IOE_G2`** by M5Stack's FCC label exhibit, though its
+> semantics remain unknown.
+>
+> [G5](../../../devices/m5stack/papermono/gaps-and-conflicts.md#g5--no-stamp-lora-1262-module-datasheet-exists-anywhere-located)
+> is partly advanced by this; extraction in
+> [`certification.md` §3, §6](../../../devices/m5stack/papermono/certification.md#3--antenna-specification).
 
 The only LoRa radio on the board, and one of the two features that distinguish the PaperMono from the PaperMono-Lite (the other is NFC). Priced at a **USD 10.00** delta for both together **[DOC]**.
 
@@ -262,7 +291,7 @@ Also note: pin 10 is `SX_ANT_SW` on the PaperMono symbol and plain **`SW`** on t
 | [`artifacts/Stamp-LoRa-1262-Mini_SCH_A1_20250827.pdf`](artifacts/Stamp-LoRa-1262-Mini_SCH_A1_20250827.pdf) | 184 442 | `6ec29a9240fc8dc41fbe699e74a9f645b9753d7932efc1de28b049fe58e8f03b` | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1208/NEW-1262-SCH_A1-Lora_2025_08_27_10_58_52.pdf`, retrieved **2026-09-04**, HTTP 200, `%PDF-1.4`. Filename encodes rev **A1**, dated **2025-08-27**. Linked from `docs.m5stack.com/en/cap/Cap_LoRa-1262` and `/en/core/Cardputer_Mesh_Kit` as *"Stamp LoRa-1262 Mini Schematics PDF"* |
 
 ⚠ **Downloaded and type-verified, but not yet decoded.** A bbox text dump exists
-(`scratch/m5stack-lora-expansions/pdf/Stamp-LoRa-1262-Mini_SCH_A1_20250827/bbox-p1.xml`,
+(`archive/devices/m5stack/shared-artifacts/lora-expansions/research-scratch/pdf/Stamp-LoRa-1262-Mini_SCH_A1_20250827/bbox-p1.xml`,
 815 words) but was **not analysed** by the 2026-09-04 pass, whose subject was the Cap boards
 rather than the module. Decoding it should settle §5-G3 (TCXO vs XTAL, and which voltage),
 §5-G4 (`SW` semantics) and much of §5-G1. Licence/redistribution: **unknown**. Disposition:

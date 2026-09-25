@@ -87,6 +87,24 @@ standby-current evidence for the "ultra-long standby" claim.
 | `P03` | PhotoPainter (B) — store listing | primary | `https://www.waveshare.com/photopainter-b.htm` | 2026-09-01 | `unknown` |
 | `P04` | `docs.waveshare.com/ESP32-S3-PhotoPainter` → **404** | primary | — | 2026-09-01 | negative result |
 
+
+## Retained artifact
+
+The storefront page this stub was written from is now held with the record:
+
+| File | Bytes | SHA-256 | Retrieved |
+|---|---:|---|---|
+| [`artifacts/source-snapshots/storefront-esp32-s3-photopainter-2026-09-01.html`](artifacts/source-snapshots/storefront-esp32-s3-photopainter-2026-09-01.html) | 194,447 | `6ff39a288525530b7c95b498da6628257114364c3d06bcf7fa08d8974623b238` | 2026-09-01 |
+
+Filed **2026-09-20**; it had been sitting in `archive/devices/waveshare/shared-artifacts/epaper-esp32/research-scratch/survey/`
+since capture, which is why the header above says no artifacts were retrieved. That
+sentence is now out of date in this one respect — the page is here, and the rest of the
+survey set is indexed in
+[`vendors/waveshare/artifacts/epaper-storefront-survey-2026-09-01/`](../../../vendors/waveshare/artifacts/epaper-storefront-survey-2026-09-01/README.md).
+
+It remains a **vendor marketing page** and establishes only that the product was listed
+with these claims on that date. No hardware fact in this record gains authority from it.
+
 ## See also
 
 - [ESP32-S3-ePaper-3.97](../esp32-s3-epaper-3.97/README.md) — researched in depth

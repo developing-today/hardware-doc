@@ -46,7 +46,7 @@ curl -sSL -A "$UA" -o Stamp-LoRa-1262-Mini_SCH_A1_20250827.pdf \
 had nothing to read. Workaround, from the repository root:
 
 ```bash
-cd scratch/m5stack-lora-expansions
+cd archive/devices/m5stack/shared-artifacts/lora-expansions/research-scratch
 uv run --quiet --with pypdf python tools/pdf_bbox.py \
     artifacts/U214-Cap-LoRa1262_SCH_V1.1_20251029.pdf \
     pdf/U214-Cap-LoRa1262_SCH_V1.1_20251029
@@ -134,7 +134,7 @@ Duplicate detection against material already in the repository:
 
 ```bash
 sha256sum components/stmicroelectronics/st25r3916/artifacts/st25r3916-datasheet-m5stack-mirror.pdf \
-          scratch/m5stack-lora-expansions/artifacts/st25r3916_datasheet-m5stack-mirror.pdf
+          archive/devices/m5stack/shared-artifacts/lora-expansions/research-scratch/artifacts/st25r3916_datasheet-m5stack-mirror.pdf
 # identical: 1170f4d74ff501917262ae42bf81c60c38c11d121e2ea2af6b1e845433befef1
 ```
 `executed-success` → the second copy was **not** stored; the extra URL was recorded instead.

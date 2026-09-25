@@ -6,14 +6,22 @@
 
 ## What is in the repository
 
+These four are **archived** as of 2026-09-20 — bulky geometry and CAD, moved out of the tree with
+a placeholder left at each former path. Every placeholder carries SHA-256, byte size, the upstream
+commit and licence, and recovery URLs, so the files are reacquirable **without** the archive.
+
 | File | Size | What |
 |---|---:|---|
-| `Tanmatsu_3D-printed.FCStd` | 16.3 MB | **FreeCAD master design** — all parts integrated |
-| `Tanmatsu_3D-printed-ebyte.FCStd` | 20.4 MB | Variant for the **Ebyte LoRa module** build |
-| `tanmatsu.step` | 34.1 MB | Mainboard PCB as STEP |
-| `frontpanel.step` | 11.4 MB | Front panel PCB as STEP |
-| `tools/freecad_export.py`, `tools/export_manufacturing_files.sh` | — | Automated export pipeline |
-| `.github/workflows/{build,release}.yml` | — | CI that builds and publishes the printable files |
+| [~~`Tanmatsu_3D-printed.FCStd`~~](artifacts/mechanical/Tanmatsu_3D-printed.FCStd.ARCHIVED.md) | 16.3 MB | **FreeCAD master design** — all parts integrated |
+| [~~`Tanmatsu_3D-printed-ebyte.FCStd`~~](artifacts/mechanical/Tanmatsu_3D-printed-ebyte.FCStd.ARCHIVED.md) | 20.4 MB | Variant for the **Ebyte LoRa module** build |
+| [~~`tanmatsu.step`~~](artifacts/mechanical/tanmatsu.step.ARCHIVED.md) | 34.1 MB | Mainboard PCB as STEP |
+| [~~`frontpanel.step`~~](artifacts/mechanical/frontpanel.step.ARCHIVED.md) | 11.4 MB | Front panel PCB as STEP |
+| `tools/freecad_export.py`, `tools/export_manufacturing_files.sh` | — | Automated export pipeline — **left in scratch**, see [`artifacts/mechanical/README.md`](artifacts/mechanical/README.md) |
+| `.github/workflows/{build,release}.yml` | — | CI that builds and publishes the printable files — left in scratch |
+
+Everything this page and [`pricing-and-dimensions.md`](pricing-and-dimensions.md) establish was
+extracted **before** the move, so the archive can be absent without loss. Directory-level notes:
+[`artifacts/mechanical/README.md`](artifacts/mechanical/README.md).
 
 Printable parts, per the README: **case**, **spacer**, **speaker adapter**.
 

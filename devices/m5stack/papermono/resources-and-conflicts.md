@@ -52,6 +52,32 @@ seven devices, no second bus anywhere on the board.
 All seven addresses were confirmed in **both** the vendor firmware source and the vendor
 product page; none conflict.
 
+> **Third source, 2026-09-20.** M5Stack's FCC "ID Label" exhibit is its full
+> architecture diagram, and it independently gives **`0x4F`** for the M5IOE1 and
+> **`0x6E`** for the M5PM1 — the two addresses this record flags as contested or
+> load-bearing. It does **not** show the other five, so `0x32`, `0x38`, `0x50`,
+> `0x68` and `0x75` remain two-source claims.
+> [`certification.md` §5](certification.md#5--the-label-exhibit-is-an-architecture-diagram).
+
+### Radio concurrency — a certified constraint
+
+**Wi-Fi and Bluetooth LE cannot transmit simultaneously on this board.** The SAR
+report (p. 29) lists `WLAN + BLE` as **not** a simultaneous-transmit combination,
+while `WLAN + LoRa + NFC` and `BLE + LoRa + NFC` both are. This follows from the
+ESP32-S3's single 2.4 GHz radio rather than from a board decision, but it is now
+a certified statement and constrains any design that assumed a Wi-Fi uplink and a
+BLE peripheral role could run concurrently at full rate.
+
+LoRa (SPI1) and NFC (I²C) are independent of the 2.4 GHz radio and of each other,
+and are certified to run alongside either. Evidence:
+[`certification.md` §2](certification.md#2--the-certified-radio-envelope).
+
+> ⚠ **C26 — do not repurpose `PYG13` or `PYG14`.** The FCC label exhibit says the
+> microSD power rail is enabled by `IOE_G13`; the schematic says `PYG14`
+> (`PYB_TF_EN`), with `PYG13` being `PYB_TP_EN` (touch power). One of them is
+> wrong and the evidence does not say which. Treat **both** as owned. See
+> [`gaps-and-conflicts.md` C26](gaps-and-conflicts.md#c26-the-microsd-ldo-enable-ioe_g13-fcc-label-versus-pyg14-schematic).
+
 ### Bus arbitration rules that matter
 
 1. **Speed is per-transaction.** The IMU, M5PM1 and M5IOE1 are driven at 100 kHz while the

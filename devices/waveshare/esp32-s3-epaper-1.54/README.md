@@ -86,6 +86,24 @@ board dimensions, community projects. No artifact downloaded, nothing hashed.
 | `E01` | ESP32-S3-ePaper-1.54 — store listing | primary | `https://www.waveshare.com/esp32-s3-epaper-1.54.htm` | 2026-09-01 | `unknown` |
 | `E02` | ESP32-S3-ePaper-1.54 — documentation | primary | `https://docs.waveshare.com/ESP32-S3-ePaper-1.54` | 2026-09-01 | `unknown` (Docusaurus, undated) |
 
+
+## Retained artifact
+
+The storefront page this stub was written from is now held with the record:
+
+| File | Bytes | SHA-256 | Retrieved |
+|---|---:|---|---|
+| [`artifacts/source-snapshots/storefront-esp32-s3-epaper-1.54-2026-09-01.html`](artifacts/source-snapshots/storefront-esp32-s3-epaper-1.54-2026-09-01.html) | 198,993 | `f31b3d44f384350554bf40a0e50d50446e929d11dce7e1e78d1764c5d2c265b6` | 2026-09-01 |
+
+Filed **2026-09-20**; it had been sitting in `archive/devices/waveshare/shared-artifacts/epaper-esp32/research-scratch/survey/`
+since capture, which is why the header above says no artifacts were retrieved. That
+sentence is now out of date in this one respect — the page is here, and the rest of the
+survey set is indexed in
+[`vendors/waveshare/artifacts/epaper-storefront-survey-2026-09-01/`](../../../vendors/waveshare/artifacts/epaper-storefront-survey-2026-09-01/README.md).
+
+It remains a **vendor marketing page** and establishes only that the product was listed
+with these claims on that date. No hardware fact in this record gains authority from it.
+
 ## See also
 
 - [ESP32-C6-ePaper-1.54](../esp32-c6-epaper-1.54/README.md) — same size, RISC-V, Wi-Fi 6, **plus a TCA9554 I/O expander**

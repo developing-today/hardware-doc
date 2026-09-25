@@ -463,9 +463,43 @@ copy:
 - The **RX8130CE** register datasheet is mirrored **only in Chinese**.
 - The **DKE panel manual** has **no text layer at all** — see
   [`vendors/dke`](../dke/README.md).
+- ⚠ **Some "mirrors" are not mirrors of the manufacturer at all.** Both audio datasheets M5Stack
+  serves for the Cardputer v1.x —
+  `datasheet/core/SPM1423HM4H-B_datasheet_en.pdf` and
+  `datasheet/core/NS4168_CN_datasheet.pdf` — carry
+  `Title: DATASHEET SEARCH SITE | WWW.ALLDATASHEET.COM` and
+  `Author: Provided By ALLDATASHEET.COM(FREE DATASHEET DOWNLOAD SITE)` **in their PDF metadata**.
+  M5Stack re-hosted an **aggregator's** copy, so the chain is two hops from the chip maker, and
+  the `ModDate` (2013 and 2019 respectively) dates the *re-wrap*, not the document.
+  Worse, the NS4168 file's **cover logo is a distributor's**
+  (深圳市永阜康科技有限公司 / Shenzhen Yongfukang Technology) and the supposed manufacturer's
+  name appears **nowhere in its 15 pages** — see
+  [`components/nsiway/ns4168` §6](../../components/nsiway/ns4168/README.md).
+  **Read `pdfinfo` on every mirrored datasheet before trusting its provenance.** Verified
+  2026-09-20.
 
 **Always prefer the original manufacturer's copy, and hash both.** Keep the M5Stack mirror
 anyway when it is the only accessible copy, and **label it as a mirror in the filename**.
+
+### 5.5.1 Connector drawings live under a *different product's* path
+
+The DinMeter's two connector drawings are served from **M5Dial's** documentation path, not
+DinMeter's:
+
+```
+…/resource/docs/products/core/M5Dial/DB2EK-2.54-2P-GN-S%202.54mm%202Pin%20Green.pdf
+…/resource/docs/products/core/M5Dial/1.25WT-2P.pdf
+```
+
+This is the same "variant assets live under the parent product" pattern §2.1 records for
+EasyLoader binaries, extended to commodity parts: **a connector shared across products gets one
+copy, filed under whichever product first needed it.** When a product page links a datasheet,
+check the path — it will often tell you which other products share the part. Verified
+2026-09-20.
+
+⚠ **And M5Stack's filename is not the vendor's ordering code.** `DB2EK-2.54-2P-GN-S` uses `GN`
+for green where the vendor's own decode block on the drawing specifies the numeral `1`; the
+orderable part is `DB2EK-2.54-02P-1-S`.
 
 ## 6. Document-class checklist
 

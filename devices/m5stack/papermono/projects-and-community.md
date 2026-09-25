@@ -84,7 +84,7 @@ the correction is fully evidenced.
 
 | Link | Evidence | Retrieved |
 |---|---|---|
-| The binary's build id is `paper-mono-v2-15-g87a191f`, app name `crosspoint-reader-mono` | strings extracted in the prior pass, `scratch/m5stack-papermono/docs/firmware/crosspoint-paper-mono-cjk-1.5.0-RC.strings.txt` | 2026-09-01 |
+| The binary's build id is `paper-mono-v2-15-g87a191f`, app name `crosspoint-reader-mono` | strings extracted in the prior pass, `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/firmware/crosspoint-paper-mono-cjk-1.5.0-RC.strings.txt` | 2026-09-01 |
 | The M5Burner listing for it declares `sourceUrl` = `https://github.com/MarsTechHAN/crosspoint-reader-mono` | `https://burner.m5stack.com/api/v1/firmwares/2091144466157694978` | 2026-09-02 |
 | That repository's `develop` head is **`87a191fcea17a9658686083187765c600ad03866`** — the `g87a191f` in the build id | `git ls-remote https://github.com/MarsTechHAN/crosspoint-reader-mono.git` | 2026-09-02 |
 | It carries an annotated tag **`paper-mono-v2`** (tag object `296eaff965382e4bd2f982fa83f1370c7a8d9ff3`, commit `efbfa3a08605af7bbf77b8e1d19e9ccab5bc43e7`), making `git describe` = `paper-mono-v2-15-g87a191f` exactly | same `ls-remote` | 2026-09-02 |

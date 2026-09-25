@@ -79,4 +79,4 @@ Confidentiality embargoes are a **separate** matter and are unaffected: exhibits
 the applicant had withheld were never published, so there is nothing to
 redistribute until their release dates.
 
-Logged in [`scratch/index-merge/corrections-requiring-review.md`](../../../../../scratch/index-merge/corrections-requiring-review.md).
+Logged in [`research/passes/index-merge/corrections-requiring-review.md`](../../../../../research/passes/index-merge/corrections-requiring-review.md).

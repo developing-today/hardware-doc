@@ -261,7 +261,8 @@ encrypted PDFs will choke on it.
 | ID | Title | Publisher | Class | URL | Retrieved | Version | Establishes | Local path |
 |---|---|---|---|---|---|---|---|---|
 | D1 | Narrow pitch connectors **A4S (0.4 mm pitch)** | Panasonic (via Digi-Key mirror) | primary, via distributor mirror | <https://media.digikey.com/pdf/Data%20Sheets/Panasonic%20Electric%20Works%20PDFs/A4S_Series.pdf> | 2026-09-01 | **`ACCTB7E 201602-T`**, issued **2016-02-29**, 11 pp, 399 357 B, AES-encrypted | the ordering key, the socket/header pairing, all of §2, the 12-pin dimensions, the soldering-terminal note | `artifacts/panasonic-a4s-series-connectors-digikey-mirror.pdf` |
-| D2 | Same document, Future Electronics mirror | Panasonic (via Future) | credible mirror | <https://www1.futureelectronics.com/doc/PANASONIC/AXE610224_panasonic.pdf> | 2026-09-01 | same series doc | second independent host for D1 | not retained (duplicate) |
+| D2 | Same bundle, **older revision**, Future Electronics mirror | Panasonic (via Future) | primary, via distributor mirror | <https://www1.futureelectronics.com/doc/PANASONIC/AXE610224_panasonic.pdf> | 2026-09-01 | **`ACCTB7E 201310-T`** + `ACCTB48E 201303-T`, 10 pp, 324 968 B | that the socket digit was already `7` by 2013-10, but the **`D` package option did not yet exist** | `artifacts/panasonic-a4s-series-connectors-future-mirror-ACCTB7E-201310.pdf` |
+| D3 | `A4S Series`, **oldest revision**, Mouser mirror | Panasonic (via Mouser) | primary, via distributor mirror | <https://www.mouser.com/catalog/specsheets/> `a4s-catalog.pdf` — **`WhatsApp/2.23.20.0` UA required** | 2026-09-01 | **`ACCTB7E 201303-T`** + `ACCTB48E 201303-T`, 10 pp, 298 896 B | that the socket surface-treatment digit was **`4`**, so this revision prints the part as `AXE512124` | `artifacts/panasonic-a4s-series-connectors-mouser-mirror-ACCTB7E-201303.pdf` |
 | S1 | `PaperMono_SCH_V0.6.2_20260522.pdf` | M5Stack | primary | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | V0.6.2, 6 sheets | `J6` = `AXE512127D`, the §3.1 pinout, the tab tie | `../../../devices/m5stack/papermono/artifacts/schematic/PaperMono_SCH_V0.6.2_20260522.pdf` |
 
 **Local artifacts**
@@ -269,6 +270,16 @@ encrypted PDFs will choke on it.
 | File | Bytes | SHA-256 | Pages |
 |---|---:|---|---:|
 | `artifacts/panasonic-a4s-series-connectors-digikey-mirror.pdf` | 399 357 | `292023186ef0758f1862f8aa2a5f545dc1c14659f4ba84f14f7183f6385503b4` | 11 |
+| `artifacts/panasonic-a4s-series-connectors-future-mirror-ACCTB7E-201310.pdf` | 324 968 | `8245f6fa8ced22a64f4af4a836ad7a288598c899ba88ad3de1d82ce313aeabe1` | 10 |
+| `artifacts/panasonic-a4s-series-connectors-mouser-mirror-ACCTB7E-201303.pdf` | 298 896 | `934604bb0b4c27e1bdc0540894b71be4b951cdca9850c4de2d057e450cc201b2` | 10 |
+
+> ⚠ **Three mirrors, three different Panasonic revisions — this matters for the part number.**
+> The `201303` revision prints this socket as **`AXE512124`** (surface-treatment digit `4`),
+> and **neither** 2013 revision documents the `D` package suffix at all, so `AXE512127D`
+> appears only in the Digi-Key copy. Full comparison, ordering-key decode and consequences:
+> [**`../a4s-series-datasheet-revisions.md`**](../a4s-series-datasheet-revisions.md)
+> *(added 2026-09-20).* D2's earlier "not retained (duplicate)" status was **refuted** — the
+> three copies are not the same document.
 
 **Method note.** D1 validated as `%PDF` (`executed-success`) and full-text
 searched: `AXE512127` occurs three times and `AXE512127D` once, in the 4 mm

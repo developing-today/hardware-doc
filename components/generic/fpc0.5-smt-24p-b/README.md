@@ -236,7 +236,7 @@ apply, in particular the `wmsc.lcsc.com` vs `www.lcsc.com/datasheet` trap.
 |---|---|---|---|---|---|---|---|---|
 | S1 | `PaperMono_SCH_V0.6.2_20260522.pdf` | M5Stack | primary | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | V0.6.2, 6 sheets | the designation `FPC0.5-SMT-24P-B`, 24 pin markers, the §3.1 net column, the §3.2 converter | `../../../devices/m5stack/papermono/artifacts/schematic/PaperMono_SCH_V0.6.2_20260522.pdf` |
 | M1 | EPD Module User Manual, p. 7 §5 *Input/output Pin Assignment* | DKE | primary | see the [panel record](../../dke/depg0397bbs770f3/README.md#12-authoritative-sources) | 2026-09-01 | 30 pp, drawing `REV. A0` 2024-09-29 | the §3.1 panel-signal column | `../../dke/depg0397bbs770f3/artifacts/depg0397bbs770f3-epd-module-user-manual.pdf` |
-| S2 | `M5PaperMono-UserDemo` `EDP_SPI.cpp`, `M5GFX.cpp` | M5Stack | primary | <https://github.com/m5stack/M5GFX> | 2026-09-01 | MIT | third corroboration of the GPIO assignments | `../../../scratch/m5stack-papermono/repos/` |
+| S2 | `M5PaperMono-UserDemo` `EDP_SPI.cpp`, `M5GFX.cpp` | M5Stack | primary | <https://github.com/m5stack/M5GFX> | 2026-09-01 | MIT | third corroboration of the GPIO assignments | `../../../archive/devices/m5stack/papermono/artifacts/source-snapshots/` |
 
 **Local artifacts** — none. No datasheet exists for this designation (§5); the
 panel manual that supplies the pin assignment is held under the

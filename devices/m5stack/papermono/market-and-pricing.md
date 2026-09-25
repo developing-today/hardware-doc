@@ -318,7 +318,7 @@ differ in exactly two components. Everything else on this page has a caveat atta
 | **No price history for any row** | Shopify exposes none; the launch-price row in §1 is therefore an inference | Wayback captures of the product pages, if any exist |
 | **Tax and shipping unresolved at three of four sellers** | Landed cost is the number a buyer actually pays, and it is unknown for USD and EUR rows | Requires a checkout simulation, which was not attempted |
 | **XTEINK X4 Pro not priced** | It is the comparison the community actually makes ([`community.md`](community.md)) | `xteink.com` product page, linked from a 2026-01-24 YouTube description |
-| **Waveshare e-paper line not priced** | Named as a competitor; this knowledge base's Waveshare records cover **LCD** boards only | See [`comparisons-and-recommendations.md` §5](comparisons-and-recommendations.md#5-waveshare--an-explicit-gap-not-a-verdict) |
+| **Waveshare e-paper line not priced** | Named as a competitor; this knowledge base's Waveshare records cover **LCD** boards only | See [`comparisons-and-recommendations.md` §5](comparisons-and-recommendations.md#5-waveshare--gap-closed-2026-09-01) |
 | **No used or clone market observation** | Nothing to observe yet (§11) | Re-run after restock |
 
 ## Related

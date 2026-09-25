@@ -3,7 +3,7 @@
 > Every command that mattered, with status. Environment: **Linux (NixOS-style store paths)**,
 > **bash 5**, `curl 8.x`, `git 2.x`, `python3` (stdlib only), `gh` CLI authenticated.
 > Date **2026-09-04**. Working directory for scratch commands:
-> `hardware-doc/scratch/m5stack-cardputer/`.
+> `hardware-doc/archive/devices/m5stack/shared-artifacts/cardputer/`.
 >
 > Status ∈ `executed-success`, `executed-failed`, `reported-working`, `inferred`, `not-tested`.
 
@@ -244,7 +244,7 @@ first attempt; recorded because the error message does not obviously point at th
 
 ## 12. Reusable scripts left in scratch
 
-`scratch/m5stack-cardputer/`: `pdfbbox.py`, `pngcrop.py`, `h2t.py`, `dump.py`, `netlist.py`,
+`archive/devices/m5stack/shared-artifacts/cardputer/`: `pdfbbox.py`, `pngcrop.py`, `h2t.py`, `dump.py`, `netlist.py`,
 `pintable.py`. The first two are general-purpose and are candidates for promotion to
 `hardware-doc/tools/` — `pdfbbox.py` in particular removes this repository's dependency on
 `pdftotext` being installed, which the three existing `altium_pdf_*.py` tools assume.

@@ -130,7 +130,7 @@ the parse: this is a whole-flash image written at `0x0`.
 ### 2.3 Notable strings, and what they establish
 
 Extracted with `strings -n 6` — 8 192 lines, working copy at
-`scratch/m5stack-papermono/docs/firmware/C153-PaperMono-UserDemo-v1.2.strings.txt`
+`archive/devices/m5stack/papermono/artifacts/research-scratch/docs/firmware/C153-PaperMono-UserDemo-v1.2.strings.txt`
 (regenerable from the retained `.bin` by [`commands.md` §5](commands.md#5-firmware-image-inspection)).
 These are the rows that establish something the vendor's prose does not.
 

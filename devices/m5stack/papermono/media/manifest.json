@@ -52,8 +52,8 @@
   "derived_renders_not_retained": {
     "reason": "Exactly reproducible from artifacts the repository already holds, by the documented command in commands.md section 2.4. Storing ~7.7 MB of regenerable raster beside its 1.5 MB source is what SIZE-AUDIT.md exists to prevent.",
     "locations": [
-      "scratch/m5stack-papermono/sheets/ - 200 dpi renders and crops of schematic sheets 1, 2 and 4 (~4.0 MB)",
-      "scratch/m5stack-papermono/epd-pages/ - 22 page renders of the DKE panel manual, which belongs to components/dke/depg0397bbs770f3 (~3.7 MB)"
+      "archive/devices/m5stack/papermono/artifacts/research-scratch/sheets/ - 200 dpi renders and crops of schematic sheets 1, 2 and 4 (~4.0 MB)",
+      "archive/devices/m5stack/papermono/artifacts/research-scratch/epd-pages/ - 22 page renders of the DKE panel manual, which belongs to components/dke/depg0397bbs770f3 (~3.7 MB)"
     ]
   },
 

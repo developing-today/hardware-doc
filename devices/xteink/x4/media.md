@@ -31,7 +31,7 @@ imagery was not archived while the listing was live.
 **Lesson for this knowledge base:** capture vendor product imagery at the time of
 first observation, because delisting removes it. The X4 Pro and X3 listings are
 live *now* and their images are enumerable from
-`scratch/xteink/vendor/products-p1.json` (`products[].images[].src`).
+`vendors/xteink/artifacts/store-snapshots/2026-09-04/products-p1.json` (`products[].images[].src`).
 
 ## Recovery options
 
@@ -71,4 +71,4 @@ The absence was never re-searched in 2026-09-04 because **no FCC ID was known an
 
 Full record, with controls: [`certification-and-compliance.md`](certification-and-compliance.md).
 
-Listed in [`scratch/index-merge/corrections-requiring-review.md`](../../../scratch/index-merge/corrections-requiring-review.md).
+Listed in [`research/passes/index-merge/corrections-requiring-review.md`](../../../research/passes/index-merge/corrections-requiring-review.md).

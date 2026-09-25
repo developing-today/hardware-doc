@@ -200,8 +200,8 @@ Worth noting for this part specifically: the product page's **Technical document
 | D1 | AW39112 datasheet | Awinic | primary | datasheet | `https://www.awinic.com/en/download?file=doc/202512/460d535f-8aa2-4946-862a-131be2e3fb79.pdf&fileName=DS_AW39112DNR_FOR_EN_V1.6` | 2026-09-01 | **V1.6**, Dec 2025, 27 pp, 673 762 B | Pin definition, supply ranges, `VCCA ≤ VCCB` rule, data rates, `OE` sequencing requirement, integrated pull-ups | `artifacts/aw39112dnr-datasheet-en-v1.6.pdf` |
 | D2 | AW39112DNR product page | Awinic | primary | official page | <https://www.awinic.com/en/productDetail/AW39112DNR> | 2026-09-01 | doc dated 2025-12-19 | Category, package options, EVB availability | — |
 | S1 | `PaperMono_SCH_V0.6.2_20260522.pdf` | M5Stack | primary | schematic | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | V0.6.2, 6 sheets | Both instances' net assignments in §4 | `devices/m5stack/papermono/artifacts/schematic/PaperMono_SCH_V0.6.2_20260522.pdf` |
-| S2 | `M5Unified/src/utility/Power_Class.cpp` | M5Stack | primary | repository | <https://github.com/m5stack/M5Unified> | 2026-09-01 | `master` @ `8530f537…`, MIT | The gating discipline in §4.1 | `scratch/m5stack-papermono/repos/M5Unified/` |
-| S3 | PaperMono product page | M5Stack | primary | official page | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | — | The verbatim bus-stability warning | `scratch/m5stack-papermono/docs/pages/en-core-PaperMono.html` |
+| S2 | `M5Unified/src/utility/Power_Class.cpp` | M5Stack | primary | repository | <https://github.com/m5stack/M5Unified> | 2026-09-01 | `master` @ `8530f537…`, MIT | The gating discipline in §4.1 | `archive/devices/m5stack/papermono/artifacts/source-snapshots/M5Unified/` |
+| S3 | PaperMono product page | M5Stack | primary | official page | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | — | The verbatim bus-stability warning | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/pages/en-core-PaperMono.html` |
 
 **Local artifacts**
 

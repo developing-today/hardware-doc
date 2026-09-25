@@ -105,7 +105,23 @@ commands before enabling HS video, so this mostly bites people porting the panel
 hosts that start in HS mode. Symptom if hit: multi-second boot delay between panel
 reset and first frame, not corruption.
 
-## 5. Related
+## 5. ⚠ ESP-IDF v6.0: DMA2D is no longer on by default
+
+`espressif/esp_lcd_jd9365` **v2.0.2** (2025-12-10) records:
+
+> *Start from esp-idf v6.0, DMA2D can only be enable by calling `esp_lcd_dpi_panel_enable_dma2d`*
+
+If you move this board to ESP-IDF v6.x, the 2D-DMA acceleration path is **not** enabled
+implicitly. The panel still renders — there is no error and no visual defect — but through the
+slower path. Call `esp_lcd_dpi_panel_enable_dma2d` explicitly. Full reading of the v2.0.2
+package, including the pinned upstream commit and two version conflicts it exposes, is in
+[`components/jadard/jd9365` §6.1](../../../../components/jadard/jd9365/README.md#update--2026-09-20-v202-supersedes-v201-and-it-changes-dma2d-behaviour).
+
+Note also that v2.0.2's `idf_component.yml` declares **`idf: '>=5.4'`**, while the component's
+prose README still says MIPI-DSI needs v5.3+. The manifest is what the component manager
+enforces.
+
+## 6. Related
 
 - [`features/display.md`](display.md) — board-side usage, vendor init table, Arduino library
 - [4C record §"JD9365 register 0x40"](../../esp32-p4-wifi6-touch-lcd-4c/gaps-and-conflicts.md#jd9365-register-0x40--0x04) — the differing byte

@@ -259,6 +259,23 @@ def placeholder(rel, dest, meta, src, is_dir, files=None, collision_note=None):
         f"**Reason:** {meta.get('reason', 'bulky artifact, reproducible from upstream')}"
     )
     lines.append("")
+    if meta.get("standins"):
+        lines.append("")
+        lines.append("## Entries not included in this archive record")
+        lines.append("")
+        lines.append(
+            "These paths were present in the directory but are **not** part of this "
+            "artifact's content manifest. Each is a stand-in left by an earlier "
+            "archiving pass, or was unreadable. The content they refer to is archived "
+            "under its own path and has its own placeholder — it was not lost, and it "
+            "is not duplicated here."
+        )
+        lines.append("")
+        lines.append("| Path | Points at |")
+        lines.append("|---|---|")
+        for relp, tgt in meta["standins"]:
+            lines.append(f"| `{relp}` | `{tgt}` |")
+        lines.append("")
     if collision_note:
         lines.append(collision_note)
         lines.append("")
@@ -274,6 +291,11 @@ def placeholder(rel, dest, meta, src, is_dir, files=None, collision_note=None):
         lines.append(f"| SHA-256 | `{meta['sha256']}` |")
     else:
         lines.append(f"| File count | {meta.get('nfiles', '?')} |")
+        if meta.get("standins"):
+            lines.append(
+                f"| Entries skipped | **{len(meta['standins'])}** — already archived "
+                f"elsewhere, or unreadable (see below) |"
+            )
     lines.append(f"| Last modified (mtime) | {meta['mtime']} |")
     # Git-sourced material is only half of what gets archived. Vendor PDFs have a
     # version and a publication date but no commit or author, and are usually the
@@ -491,13 +513,35 @@ def main():
         files = None
         if is_dir:
             files = []
+            standins = []
             for dp, _, fs in os.walk(full):
                 for f in sorted(fs):
                     p = os.path.join(dp, f)
+                    # A previous pass may have archived a subtree of this path and
+                    # left a stand-in symlink behind. Those links are relative to
+                    # the repository, so they do not resolve from inside an
+                    # os.walk() of an arbitrary parent - getsize() then raises and
+                    # aborts the whole run part-way through the manifest. Skip
+                    # anything that is not a readable regular file, but record it:
+                    # a silent skip would understate what this artifact contains.
+                    if not os.path.isfile(p):
+                        standins.append(
+                            (os.path.relpath(p, full),
+                             os.readlink(p) if os.path.islink(p) else "<unreadable>")
+                        )
+                        continue
                     files.append(
                         (os.path.relpath(p, full), os.path.getsize(p), sha256(p))
                     )
             meta["nfiles"] = len(files)
+            if standins:
+                meta["standins"] = standins
+                print(f"  i {len(standins)} entr{'y' if len(standins)==1 else 'ies'} "
+                      f"skipped - already archived elsewhere, or unreadable:")
+                for relp, tgt in standins[:5]:
+                    print(f"      {relp} -> {tgt}")
+                if len(standins) > 5:
+                    print(f"      ... and {len(standins)-5} more")
         else:
             meta["sha256"] = sha256(full)
         dest = os.path.join(ARCHIVE, rel)

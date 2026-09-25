@@ -1,0 +1,104 @@
+
+### T-Display  /products/t-display  published=2023-08-04 updated=2026-09-07 type=Electronics
+   USD    8.04  avail=True  sku=Q224                   4MB [Q224]
+   USD    8.94  avail=True  sku=Q125                   16MB [Q125]
+   USD   11.99  avail=True  sku=K163                   4MB With Shell [K163]
+   USD   12.99  avail=True  sku=K198                   16MB With Shell Soldered [K198]
+   USD   12.99  avail=True  sku=K164                   16MB With Shell Non-Soldered [K164]
+
+### T-Display AMOLED Lite  /products/t-display-amoled-lite  published=2022-11-12 updated=2026-09-07 type=Development Board
+   USD   35.66  avail=True  sku=H593                   T-Display AMOLED  Lite [H593]
+
+### T-Display S3  /products/t-display-s3  published=2022-07-15 updated=2026-09-07 type=Development Board
+   USD    9.04  avail=True  sku=H569                   China [For Worldwide] / Non-Soldered Pin [H569]
+   USD   12.61  avail=True  sku=H587                   China [For Worldwide] / Touch Non-Soldered Pin [H587]
+   USD   13.02  avail=True  sku=H589                   China [For Worldwide] / Touch Soldered [H589]
+   USD    9.54  avail=True  sku=H577                   China [For Worldwide] / Soldered Pin [H577]
+   USD   13.22  avail=True  sku=K206                   China [For Worldwide] / With Grey Shell [K206]
+   USD   13.22  avail=True  sku=K204                   China [For Worldwide] / With Black Shell [K204]
+   USD   20.60  avail=False sku=K204-01                China [For Worldwide] / With Black Shell and built-in 700 mAh battery [K204-01]
+   USD   20.60  avail=False sku=K206-01                China [For Worldwide] / With Grey Shell and built-in 700 mAh battery [K206-01]
+   USD   15.47  avail=True  sku=H656                   China [For Worldwide] / Only MIDI Board [H656]
+   USD   17.72  avail=False sku=K204-DE                Germany [ For Europe only] / With Black Shell [K204]
+   USD   14.04  avail=False sku=USH577                 United States [For US only] / Soldered Pin [H577]
+   USD   17.72  avail=False sku=K204US                 United States [For US only] / With Black Shell [K204]
+   USD   14.04  avail=False sku=DEH577                 Germany [ For Europe only] / Soldered Pin [H577]
+
+### T-Display S3  /products/t-display-s3-copy  published=2026-07-27 updated=2026-09-07 type=Development Board
+   USD    9.03  avail=True  sku=H569                   China [For Worldwide] / Non-Soldered Pin [H569]
+
+### T-Display S3 AMOLED  /products/t-display-s3-amoled  published=2023-04-14 updated=2026-09-07 type=Development Board
+   USD   33.98  avail=True  sku=H717                   China [For Worldwide] / Touch With Black Shell [H717]
+   USD   26.94  avail=True  sku=H712                   China [For Worldwide] / V2.0 Soldered Pin [H712]
+   USD   26.44  avail=True  sku=H713                   China [For Worldwide] / V2.0 Non-Soldered Pin [H713]
+   USD   26.94  avail=True  sku=H634                   China [For Worldwide] / V1.0 Soldered Pin [H634]
+   USD   26.44  avail=True  sku=H619                   China [For Worldwide] / V1.0 Non-Soldered Pin [H619]
+   USD   30.44  avail=True  sku=H705                   China [For Worldwide] / Touch Soldered pin [H705]
+   USD   30.03  avail=True  sku=H681                   China [For Worldwide] / Touch Non-Soldered Pin [H681]
+   USD    6.33  avail=True  sku=H679                   China [For Worldwide] / Only Camera Shield [H679]
+   USD   32.00  avail=True  sku=H717CA                 Canada [For CA only] / Touch With Black Shell [H717]
+   USD   30.94  avail=False sku=H712-US                United States [For US only] / V2.0 Soldered Pin [H712]
+   USD   30.94  avail=False sku=H713US                 United States [For US only] / V2.0 Non-Soldered Pin [H713]
+   USD   38.48  avail=True  sku=DEH717                 Germany [ For Europe only] / Touch With Black Shell [H717]
+   USD   34.94  avail=True  sku=DEH705                 Germany [ For Europe only] / Touch Soldered pin [H705]
+   USD   38.48  avail=True  sku=USH717                 United States [For US only] / Touch With Black Shell [H717]
+   USD   34.63  avail=True  sku=USH681                 United States [For US only] / Touch Non-Soldered Pin [H681]
+   USD   33.98  avail=False sku=H712-DE                Germany [ For Europe only] / V2.0 Soldered Pin [H712]
+
+### T-Display S3 AMOLED (DS)  /products/t-display-s3-amoled-1-64  published=2024-07-18 updated=2026-09-07 type=Development Board
+   USD   30.25  avail=True  sku=H741-02                1.75 inch Half Circle Convex Mirror [H741-02]
+   USD   27.86  avail=True  sku=H741-01                1.75 inch [H741-01]
+   USD   23.99  avail=True  sku=H741                   1.43 inch [H741]
+   USD   22.99  avail=True  sku=H708                   1.64 inch [H708]
+
+### T-Display S3 AMOLED Plus  /products/t-display-s3-amoled-plus  published=2024-10-31 updated=2026-09-07 type=Electronics
+   USD   32.68  avail=True  sku=H754                   1.9inch [H754]
+
+### T-Display S3 Long  /products/t-display-s3-long  published=2023-10-27 updated=2026-09-07 type=Development Board
+   USD   32.13  avail=True  sku=H721                   With Shell [H721]
+   USD   29.35  avail=True  sku=H685                   Basic [H685]
+
+### T-Display S3 Pro  /products/t-display-s3-pro  published=2023-09-07 updated=2026-09-07 type=Development Board
+   USD   46.54  avail=True  sku=K239                   China [For Worldwide] / With GC0308 Camera / White
+   USD   46.54  avail=True  sku=K240                   China [For Worldwide] / With GC0308 Camera / White with Orange
+   USD   46.54  avail=True  sku=K241                   China [For Worldwide] / With GC0308 Camera / Black
+   USD   46.54  avail=True  sku=K242                   China [For Worldwide] / With GC0308 Camera / Orange
+   USD   56.99  avail=True  sku=K232                   China [For Worldwide] / With OV5640 Camera / White
+   USD   56.99  avail=True  sku=K235                   China [For Worldwide] / With OV5640 Camera / White with Orange
+   USD   56.99  avail=True  sku=K236                   China [For Worldwide] / With OV5640 Camera / Black
+   USD   56.99  avail=True  sku=K238                   China [For Worldwide] / With OV5640 Camera / Orange
+   USD   37.99  avail=True  sku=K231                   China [For Worldwide] / Without Camera / White
+   USD   37.99  avail=True  sku=K233                   China [For Worldwide] / Without Camera / White with Orange
+   USD   37.99  avail=True  sku=K234                   China [For Worldwide] / Without Camera / Black
+   USD   37.99  avail=True  sku=K237                   China [For Worldwide] / Without Camera / Orange
+   USD    6.02  avail=True  sku=H688                   China [For Worldwide] / Only Black Lens Cover / Only Black Lens Cover
+   USD   10.20  avail=True  sku=H751                   China [For Worldwide] / Only MVSR Board / Only MVSR Board
+   USD   42.33  avail=True  sku=K255                   China [For Worldwide] / Black Mainboard With MVSR Board / Black Mainboard With MVSR Board
+   USD   42.33  avail=True  sku=K255-01                China [For Worldwide] / White Mainboard With MVSR Board / White Mainboard With MVSR Board
+   USD   48.99  avail=True  sku=K239DE                 Germany [ For Europe only] / With GC0308 Camera / White
+   USD   41.72  avail=False sku=K231DE                 Germany [ For Europe only] / Without Camera / White
+
+### T-Display S3 Pro External  /products/t-display-s3-pro-external  published=2025-11-28 updated=2026-09-07 type=Development Board
+   USD   34.05  avail=True  sku=H742                   T-Display S3 Pro External [H742]
+
+### T-Display S3 Shell  /products/t-display-s3-shell  published=2023-03-24 updated=2026-09-07 type=Accessories
+   USD    5.02  avail=True  sku=L929                   Only Black Shell [L929]
+   USD    5.02  avail=True  sku=L930                   Only Grey Shell [L930]
+   USD   19.96  avail=True  sku=K204                   S3 With Black Shell [K204]
+   USD   19.96  avail=True  sku=K206                   S3 With Grey Shell [K206]
+
+### T-Display TF Shied  /products/t-display-tf-shied  published=2023-02-09 updated=2026-09-07 type=Development Board
+   USD    2.51  avail=True  sku=H609                   Pin [H609]
+   USD    2.38  avail=True  sku=H610                   Female Pin [H610]
+
+### T4 S3  /products/t4-s3  published=2023-11-03 updated=2026-09-07 type=Development Board
+   USD   58.99  avail=True  sku=H711                   China [For Worldwide] / With Shell Soldered Female Pin [H711]
+   USD   60.23  avail=True  sku=H724                   China [For Worldwide] / With Shell Soldered Pin [H724]
+   USD   56.89  avail=True  sku=H678                   China [For Worldwide] / Basic [H678]
+   USD    1.10  avail=True  sku=H731                   China [For Worldwide] / Only Sheild [H731]
+   USD   63.49  avail=False sku=H711DE                 Germany [ For Europe only] / With Shell Soldered Female Pin [H711]
+   USD   63.49  avail=True  sku=H711US                 United States [For US only] / With Shell Soldered Female Pin [H711]
+
+--- all handles containing t4 ---
+t4 T4 ['21.15', '16.66']
+t4-s3 T4 S3 ['58.99', '60.23', '56.89', '1.10', '63.49', '63.49']

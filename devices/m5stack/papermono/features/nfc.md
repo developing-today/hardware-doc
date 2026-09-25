@@ -172,7 +172,8 @@ updates — which on an e-paper device is not optional. See
 | **Board** | **Not fitted on the PaperMono-Lite.** NFC + LoRa is the entire USD 10 SKU delta |
 | **Board** | The NFC sub-board is powered from `3V3_L2` and enabled via I²C. **No I²C, no NFC** |
 | **Board** | Sheet 1 of the NFC schematic is unpublished — matching network and antenna undocumented (§1) |
-| **Board** | **No certification of any kind is published**, including for the 13.56 MHz emitter |
+| **Board** | **Certified 2026-09-20 correction.** The 13.56 MHz emitter has its own grant under **FCC ID `2AN3WM5PAPERMONO`** — equipment class **DXX**, Part 15 Low Power Communication Device Transmitter, granted 2026-08-12. Measured field **66.65 dBµV/m at 3 m = −28.55 dBm (0.0014 mW) EIRP**, against a SAR-exclusion threshold of 443 mW — excluded by five orders of magnitude. It is a near-field reader, not an emitter of any consequence at distance. [`../certification.md` §4](../certification.md#4--rf-exposure-and-sar) |
+| **Board** | The NFC antenna is a **separate FPC daughterboard** carrying a printed loop and its own reader IC, bonded into the upper part of the rear housing, silkscreened `Paper_Mono_NFC V0.2 M5STACK`. The FCC internal photographs show it clearly; **the reader IC's part number is not legible at 200 ppi** — the ST logo is unmistakable, the `ST25R3916` marking is not confirmed |
 | **Framework** | Vendor uses **polling**, `using_irq = false`. The GPIO6 interrupt path is **unexercised by any vendor code** |
 | **Framework** | Card emulation is exposed (`cfg.emulation`) but **set false everywhere** in vendor code and never demonstrated |
 | **Observed** | **Nothing** (§8) |

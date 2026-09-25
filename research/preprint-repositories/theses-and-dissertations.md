@@ -2375,7 +2375,7 @@ Not applied here — this pass wrote only its own file — but flagged for whoev
 ## 14. Sources
 
 All retrieved **2026-09-04** unless another date is stated. Raw probe output is under
-[`../../scratch/preprint-repositories/theses/`](../../scratch/preprint-repositories/theses/).
+[`../../archive/research/preprint-repositories/theses/`](../../archive/research/preprint-repositories/theses/).
 "Chrome 131" = the rung-2 user agent from [`AGENTS.md`](../../AGENTS.md).
 
 **Aggregation layer (§2)**

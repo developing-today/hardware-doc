@@ -117,4 +117,4 @@ Records: [v1.0](../../../devices/m5stack/cardputer-v1.0/README.md) ·
 [v1.1](../../../devices/m5stack/cardputer-v1.1/README.md) ·
 [ADV](../../../devices/m5stack/cardputer-adv/README.md)
 
-*Added 2026-09-07 from `scratch/m5stack-cardputer/index-fragments.md` §3.6.*
+*Added 2026-09-07 from `archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md` §3.6.*

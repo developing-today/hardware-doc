@@ -137,7 +137,7 @@ unbroken.
 
 This is the [method's own warning](../../../.agents/skills/hardware-device-research/SKILL.md)
 about trusting a text layer, landing **three times** on one document. The corrected census
-is produced by [`scratch/m5stack-papermono/tools/census.py`](../../../scratch/m5stack-papermono/tools/census.py),
+is produced by [`archive/devices/m5stack/papermono/artifacts/research-scratch/tools/census.py`](../../../archive/devices/m5stack/papermono/artifacts/research-scratch/tools/census.py),
 which repairs both defects and prints the gap analysis below. **[SCH-M]**
 
 ---
@@ -340,7 +340,7 @@ established. **[INF]**
 | `R45` | 100 kΩ | `Q5` gate pull-up to `VBAT_L0` **[SCH-V]** |
 
 > ⚠ **`R17` = 15 kΩ resolves an open question in the
-> [IP2315 record](../../../components/injoinic/ip2315/README.md#4-2--the-ntc-and-ichgset-network).**
+> [IP2315 record](../../../components/injoinic/ip2315/README.md#42--unresolved-which-resistor-lands-on-ichgset).**
 > That record could not tell from the text layer which of `R17`/`R18` reached
 > `ICHGSET`. Rendering the block at 200 dpi settles it: **`R17` is on `ICHGSET`,
 > `R18` is on `LED3` and is not fitted.** The conflict the record raises stands
@@ -653,6 +653,24 @@ LMD4737T261-AC02 · RS-C1415MBAR.
 | [`100K-RNTC` thermistor](../../../components/generic/100k-rntc-thermistor/README.md) | 1 | `R15` sheet 2 |
 | [1150 mAh Li-ion cell](../../../components/generic/papermono-1150mah-liion-cell/README.md) | 1 | at `J2` sheet 2 |
 
+> **Sourcing note on `J6` / `J1` (added 2026-09-20).** The Panasonic A4S datasheet is served
+> by distributors in **three different revisions**, and the two 2013-era mirrors do **not**
+> contain the part numbers on this board: they omit the `D` package suffix entirely, and the
+> oldest prints the socket as `AXE512124` rather than `AXE512127` because Panasonic later
+> renumbered the surface-treatment digit `4` → `7`. `AXE512127D` and `AXE612124D` appear only
+> in the Digi-Key copy (`ACCTB7E 201602-T`). A BOM cross-check against a Mouser or Future
+> mirror will therefore report these two lines as unknown parts — that is a documentation
+> artefact, not a BOM error.
+>
+> The `D` suffix is **tape pitch only** (4 mm embossed, 15,000 pc/reel); the connectors are
+> otherwise the non-`D` parts. The stack's **0.8 mm mated height** is fixed by the *header*
+> `AXE612124D`, not by the socket, which covers 0.8 and 1.0 mm.
+>
+> Full three-mirror comparison, per-page revision footers and the ordering-key decode:
+> [**`components/panasonic/a4s-series-datasheet-revisions.md`**](../../../components/panasonic/a4s-series-datasheet-revisions.md).
+> The two older mirrors are retained at
+> [`components/panasonic/axe512127d/artifacts/`](../../../components/panasonic/axe512127d/artifacts/).
+
 ---
 
 ## 11. ⚠ Conflict raised by this pass — the NTC does not measure the cell
@@ -699,7 +717,7 @@ and the [thermistor record](../../../components/generic/100k-rntc-thermistor/REA
 ## 12. Reproducing this census
 
 ```bash
-cd scratch/m5stack-papermono
+cd archive/devices/m5stack/papermono/artifacts
 nix-shell -p poppler-utils --run '
   for n in 1 2 3 4 5 6; do
     pdftotext -bbox -f $n -l $n \

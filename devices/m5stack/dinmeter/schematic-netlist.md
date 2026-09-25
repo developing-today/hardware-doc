@@ -6,7 +6,7 @@
 
 **New file.** It does not replace `pinouts-and-buses.md`. Corrections to existing claims are
 appended there and listed in
-[`scratch/schematic-tracing/corrections-requiring-review.md`](../../../scratch/schematic-tracing/corrections-requiring-review.md).
+[`guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md`](../../../guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md).
 
 Applies equally to **DinMeter v1.1**: `K134-V11_DIN_Meter_v1.0_2025_11_25_17_15_58-schematic.pdf`
 extracts to the same 873 words and the same 26 `NL` tokens.

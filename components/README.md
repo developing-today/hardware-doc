@@ -13,12 +13,13 @@ Every manufacturer-specific record links back to its **[vendor sourcing guide](.
 | NXP Semiconductors | [vendors/nxp](../vendors/nxp/README.md) | [PCAL6416A](nxp/pcal6416a/README.md) · [PCF85063A](nxp/pcf85063a/README.md) |
 | E Ink Holdings | [vendors/e-ink](../vendors/e-ink/README.md) | [ED052TC4 / ED052TC2](e-ink/ed052tc4/README.md) — ⚠ no public panel datasheets |
 | Winbond | [vendors/winbond](../vendors/winbond/README.md) | [W25Q128JVPIQ](winbond/w25q128jv/README.md) |
-| Sitronix | [vendors/sitronix](../vendors/sitronix/README.md) | [ST77916](sitronix/st77916/README.md) · [ST7789VW](sitronix/st7789vw/README.md) · [ST7701S](sitronix/st7701s/README.md) |
+| Sitronix | [vendors/sitronix](../vendors/sitronix/README.md) | [ST77916](sitronix/st77916/README.md) · [ST7789VW](sitronix/st7789vw/README.md) · [ST7701S](sitronix/st7701s/README.md) · [ST7567A](sitronix/st7567a/README.md) · [ST7567S](sitronix/st7567s/README.md) — ⚠ **`A` and `S` are different parts**, see [the difference table](sitronix/st7567s/README.md) |
 | **Jadard Technology** | [vendors/jadard](../vendors/jadard/README.md) | [JD9365](jadard/jd9365/README.md) — ⚠ datasheet omits the paged manufacturer registers |
 | **Fitipower Integrated Technology** | [vendors/fitipower](../vendors/fitipower/README.md) | [EK79007AD](fitipower/ek79007ad/README.md) · [EK73217BCGA](fitipower/ek73217bcga/README.md) — a source-driver + gate-driver **pair** |
 | **Ilitek (ILI Technology)** | [vendors/ilitek](../vendors/ilitek/README.md) | [ILI9881C](ilitek/ili9881c/README.md) — ⚠ **not** "ILI9981C", which does not exist |
 | Hynitron | [vendors/hynitron](../vendors/hynitron/README.md) | [CST816D](hynitron/cst816d/README.md) |
-| WCH (Nanjing Qinheng) | [vendors/wch](../vendors/wch/README.md) | [CH445P](wch/ch445p/README.md) · [CH340C](wch/ch340c/README.md) · [CH340X USB-UART bridge](wch/ch340x/README.md) |
+| WCH (Nanjing Qinheng) | [vendors/wch](../vendors/wch/README.md) | [CH445P](wch/ch445p/README.md) · [CH340C](wch/ch340c/README.md) · [CH340X USB-UART bridge](wch/ch340x/README.md) — ⚠ **the `CH` prefix is not exclusive to WCH**; see [CH13620](chip-wealth-technology/ch13620/README.md) |
+| **Chip Wealth Technology** (芯颖科技) | — ⚠ **no guide; gap recorded** | [CH13620](chip-wealth-technology/ch13620/README.md) — AMOLED driver. Manufacturer recovered from the **cover logo**; the name appears nowhere in the document text |
 | MEMSensing | [vendors/memsensing](../vendors/memsensing/README.md) | [MSM261D4030H1CPM](memsensing/msm261d4030h1cpm/README.md) |
 | SGMicro | [vendors/sgmicro](../vendors/sgmicro/README.md) | [SGM2036-3.3](sgmicro/sgm2036-3.3/README.md) · [SGM40567](sgmicro/sgm40567/README.md) · [SGM6029](sgmicro/sgm6029/README.md) |
 | Alpha & Omega Semiconductor | [vendors/alpha-and-omega-semiconductor](../vendors/alpha-and-omega-semiconductor/README.md) | [AO3400A](alpha-and-omega-semiconductor/ao3400a/README.md) |
@@ -31,7 +32,8 @@ Every manufacturer-specific record links back to its **[vendor sourcing guide](.
 | **Joulwatt Technology** | — | [JW5712](joulwatt/jw5712/README.md) — ⚠ the public datasheet is a 4-page image-only scan |
 | **Puya Semiconductor** | — | [PY32L020F15U6](puya/py32l020f15u6/README.md) — the silicon behind M5Stack's M5PM1 and M5IOE1 |
 | **XMC (Wuhan Xinxin)** | — | [XM25UH128DHIQT](xmc/xm25uh128dhiqt/README.md) |
-| **FocalTech Systems** | — | [FT6336G](focaltech/ft6336g/README.md) — ⚠ datasheet omits the I²C address and the register map |
+| **FocalTech Systems** | — ⚠ **no guide; gap recorded** ([why](focaltech/ft5436/README.md#manufacturer)) | [FT6336G](focaltech/ft6336g/README.md) · [FT5436](focaltech/ft5436/README.md) · [FT3267](focaltech/ft3267/README.md) · [FT3168](focaltech/ft3168/README.md) — ⚠ **every FocalTech datasheet here omits the I²C address and the register map**; FocalTech does not serve its own documents, so all copies are third-party mirrors that block, stamp or misname |
+| **Solomon Systech** | [vendors/solomon-systech](../vendors/solomon-systech/README.md) | [SSD1677](solomon-systech/ssd1677/README.md) · [SSD1680](solomon-systech/ssd1680/README.md) · [SSD1681](solomon-systech/ssd1681/README.md) · [SSD1683](solomon-systech/ssd1683/README.md) · [SSD7317](solomon-systech/ssd7317/README.md) — ⚠ **only the SSD1677 is fitted on a device here**; the rest are reference-only. ⚠ **Mirror-sourced PDFs from this vendor arrive misnamed** — verify by first-page text, never by filename ([why](../vendors/solomon-systech/README.md#2--retrieval-finding--solomon-systech-pdfs-arrive-misnamed-verify-by-first-page-text)) |
 | *unresolved / generic* | — | everything under `generic/`, below |
 
 ## All records
@@ -115,7 +117,34 @@ Also display-related: [Sitronix ST77916](sitronix/st77916/README.md) (QSPI, 360�
 | [Texas Instruments BQ25895](texas-instruments/bq25895/README.md) | single-cell Li-ion switch-mode charger — NVDC power path, ADC telemetry, 3.1 A boost (OTG). Tanmatsu `U15` |
 | [Texas Instruments TPS63020](texas-instruments/tps63020/README.md) | single-inductor buck-boost, 4 A switches — holds output as input crosses it. Tanmatsu `U17` |
 | [WCH CH32V203C8T6](wch/ch32v203c8t6/README.md) | 32-bit RISC-V microcontroller, LQFP-48 — always-on management coprocessor |
+| [WCH CH32V003](wch/ch32v003/README.md) | ultra-low-cost 32-bit RISC-V MCU, **RV32EC** (no hardware multiply/divide), 48 MHz, 16 KB flash / 2 KB SRAM, QFN-20, **one-wire SDI debug**. `konsool-zero` `U19` (added 2026-09-20) |
+| [WCH CH32F2x / CH32V2x / CH32V3x family RM](wch/ch32f2x-ch32v2x-ch32v3x/README.md) | family **reference-manual** record (V2.1, 595 pp.) — the register authority for the **CH32V203C8T6**; QingKe V4B/V4C/V4F core comparison, density classes, three low-power modes. **No part fitted** (added 2026-09-20) |
+| [STMicroelectronics STM32WB55xx / STM32WB35xx](stmicroelectronics/stm32wb55xx/README.md) | dual-core wireless MCU, Cortex-M4F + M0+, BLE 5.4 / 802.15.4. ⚠ **Not fitted on any board here** — reference material; record exists to correct an earlier mis-attribution (added 2026-09-20) |
 | [WCH CH334R](wch/ch334r/README.md) | 4-port USB 2.0 high-speed hub controller, QSOP-16. Tanmatsu `U5` |
+| [**Solomon Systech SSD1680**](solomon-systech/ssd1680/README.md) | 176 × 296 e-paper driver + controller, Rev 0.14 — **the family's decodable reference command set**. ⚠ **reference-only, not fitted on any device here** — *added 2026-09-20* |
+| [**Solomon Systech SSD1681**](solomon-systech/ssd1681/README.md) | 200 × 200 e-paper driver + controller, Rev 0.13 — ⚠ its datasheet **carries the SSD1680's RAM-window defaults**, which are wrong for this part. Reference-only — *added 2026-09-20* |
+| [**Solomon Systech SSD1683**](solomon-systech/ssd1683/README.md) | 400 × 300 e-paper driver + controller, Rev 1.0 — ⚠ **227-byte LUT and 8-bit temperature**; not a scaled SSD1680. PDF `Title` says `SSD1780`. Reference-only — *added 2026-09-20* |
+| [**Solomon Systech SSD7317**](solomon-systech/ssd7317/README.md) | ⚠ **not e-paper** — 128 × 96 OLED/PLED driver with **integrated in-cell touch controller** and a 16-bit CPU running **host-downloaded firmware**. Acquired by mistake; artifact is a **4-document bundle** and an **OCR'd scan**. Reference-only — *added 2026-09-20* |
+| [Sitronix ST7567A](sitronix/st7567a/README.md) | **132 × 65 monochrome dot-matrix LCD controller/driver**, COG — 8080/6800 parallel, 4-line SPI, 3-line SPI **and I²C** (`0x3C`–`0x3F`), on-die booster with **no external flying capacitors**. ⚠ **no fitment claimed** — *added 2026-09-20* |
+| [Chip Wealth Technology CH13620](chip-wealth-technology/ch13620/README.md) | **368 RGB × 448 LTPS AMOLED single-chip driver**, SPI / Dual-SPI / Quad-SPI, whole AMOLED power tree on-die (4 charge pumps + 6 LDOs). ⚠ manufacturer identified **from the cover logo**; ⚠ **no fitment claimed** — *added 2026-09-20* |
+| [**Sitronix ST7567S**](sitronix/st7567s/README.md) | **132 × 65 monochrome dot-matrix LCD controller/driver**, COG — the **`S`** of the family. Same five interfaces and same I²C addresses as the `A`, but **no extension command set, no Display Setting Mode, no N-line inversion, no High Power Mode** (its `TSEL` pad is a **tie-low test pad**), 4 duty ratios not 6, and `VDD2/3` bottoming at **2.4 V not 2.0 V**. ⚠ **`A` and `S` are not interchangeable — see [§2](sitronix/st7567s/README.md)**. ⚠ **no fitment claimed** — *added 2026-09-20* |
+| [**FocalTech FT5436**](focaltech/ft5436/README.md) | **mutual-capacitance** touch controller, **16 TX + 25 RX = 41 channels, 10 fingers**, ≤ 5.5″, I²C ≤ 400 kHz, QFN-56L. ⚠ datasheet is **V1.0 "1st Preliminary"** and omits the I²C address and register map; ⚠ `INT` is **bidirectional** and the document contradicts itself about it; ⚠ **no fitment claimed** — *added 2026-09-20* |
+| [**FocalTech FT3267**](focaltech/ft3267/README.md) | **self-capacitance** touch controller for wearables, **22 combined sensor/driver channels**, ≤ 1.4″, single-layer multi-touch (LCST), 5 V sensor drive from an internal charge pump, QFN-32L. ⚠ datasheet is **V0.1** with **no revision history**, omits the I²C address, register map **and the touch-point count**; ⚠ **no fitment claimed** — *added 2026-09-20* |
+
+> **All five rows above came out of one Crystalfontz URL that lies.** They were fetched as
+> `…/controllers/UltraChip/UC8179/512/`, `/513/`, `/515/`, `/516/` and `/518/` — **none** is a
+> UC8179 document, and the path segments naming the vendor and part are
+> decorative. The full id→part measurement, including four ids that return
+> **HTML under a `.pdf` name**, is in
+> [`ai-crawler-site-access-table.md`](../ai-crawler-site-access-table.md#appended-2026-09-20--crystalfontz-numeric-id-probe-measured)
+> and [`archive/devices/xteink/shared-artifacts/research-scratch/datasheets/cfprobe/README.md`](../archive/devices/xteink/shared-artifacts/research-scratch/datasheets/cfprobe/README.md).
+> **Anything from that host must be identified by content before it is filed.**
+>
+> ⚠ **That host also stamps page 1 with a raster banner that `pdftotext` cannot see** — a
+> 1700 × 105 image (8 936 B) plus a 2 601 B soft mask, present on four of the five PDFs. A
+> Crystalfontz copy therefore **never hash-matches** the vendor's original even when the content is
+> identical, so a hash mismatch against another mirror is **not** evidence of a different revision.
+> Measured 2026-09-20; full write-up in [FT5436 §10](focaltech/ft5436/README.md).
 
 ---
 
@@ -438,7 +467,9 @@ register**, so charge state must come from a separate GPIO.
 | **SGM2578** | [`sgmicro/sgm2578`](sgmicro/sgm2578/README.md) | Load switch, Stamp-S3 backlight rail. ⚠ Schematic-only |
 | [`unidentified/m5stack-dinmeter/rotary-encoder`](unidentified/m5stack-dinmeter/rotary-encoder/README.md) | — | **The orange knob.** No part number in the schematic or on either product page. Quadrature GPIO41/40 + switch GPIO42 on a 7-pad connector `J5` |
 | [`unidentified/m5stack-dinmeter/buzzer`](unidentified/m5stack-dinmeter/buzzer/README.md) | — | `LS1` carries no part number or value. Magnetic (flyback diode fitted), passive, GPIO3 via an SS8050 |
-| [`unidentified/m5stack-stamp-s3a/dcdc-u4`](unidentified/m5stack-stamp-s3a/dcdc-u4/README.md) | — | The Stamp-S3A's regulator. 8 balls, `IOUT: 0~0.6A`, external 2.2 µH inductor. ⚠ **A later pass identifies this as a [JoulWatt JW5712](joulwatt/jw5712/README.md)** — see [`scratch/index-merge/corrections-requiring-review.md`](../scratch/index-merge/corrections-requiring-review.md) |
+| **DB2EK-2.54-2P** | [`dorabo/db2ek-2.54-2p`](dorabo/db2ek-2.54-2p/README.md) | `J1`, the 6–36 V DC screw terminal. **5 A**, 26–20 AWG, **M1.6 screws @ 0.1 N·m**. ⚠ Drawing shows the **plug only**; the PCB header is undocumented. *added 2026-09-20* |
+| **1.25WT-2P** | [`generic/1.25wt-2p-battery-connector`](generic/1.25wt-2p-battery-connector/README.md) | `J2`, the battery socket. ⚠ **Unattributed drawing with no electrical ratings at all** — no current, voltage or temperature figure exists for the fitted part. *added 2026-09-20* |
+| [`unidentified/m5stack-stamp-s3a/dcdc-u4`](unidentified/m5stack-stamp-s3a/dcdc-u4/README.md) | — | The Stamp-S3A's regulator. 8 balls, `IOUT: 0~0.6A`, external 2.2 µH inductor. ⚠ **A later pass identifies this as a [JoulWatt JW5712](joulwatt/jw5712/README.md)** — see [`research/passes/index-merge/corrections-requiring-review.md`](../research/passes/index-merge/corrections-requiring-review.md) |
 
 ### M5Stack Cardputer family — *added 2026-09-04*
 
@@ -448,8 +479,8 @@ register**, so charge state must come from a separate GPIO.
 | [74HC138](generic/74hc138/README.md) | generic logic | 3-to-8 decoder used as a keyboard column driver | Cardputer v1.0, v1.1 |
 | [ESP32-S3FN8](espressif/esp32-s3fn8/README.md) | Espressif | ESP32-S3 with 8 MB in-package flash and **no PSRAM** | Stamp-S3 / Stamp-S3A, all ESP32 Cardputers |
 | [MSM381A3729H9BP](memsensing/msm381a3729h9bp/README.md) | MEMSensing | analog MEMS microphone | Cardputer ADV |
-| [SPM1423HM4H-B](knowles/spm1423hm4h-b/README.md) | Knowles | PDM MEMS microphone | Cardputer v1.0, v1.1 |
-| [NS4168](nsiway/ns4168/README.md) | NSIWAY | I²S-input class-D amplifier | Cardputer v1.0, v1.1 |
+| [SPM1423HM4H-B](knowles/spm1423hm4h-b/README.md) | Knowles Acoustics | PDM MEMS microphone. **Datasheet Rev A filed and mined 2026-09-20.** ⚠ Designator on the Cardputer is **`U5`, not `M1`**; f<sub>clock</sub> band **1.0–3.25 MHz**; polarity **inverted**; `SELECT` tied low → **falling-edge** data | Cardputer v1.0, v1.1 |
+| [NS4168](nsiway/ns4168/README.md) | ⚠ **attribution unresolved** — the only datasheet held carries a *distributor's* logo and never says "NSIWAY" | I²S-input class-D amplifier. **Manual V0.9 (CN) filed and mined 2026-09-20.** ⚠ `CTRL` is a **real control interface** (channel/shutdown/11-step HPF) and the Cardputer straps it to V<sub>DD</sub> — right channel, **no shutdown**, HPF unprogrammable | Cardputer v1.0, v1.1 |
 | [WS2812](worldsemi/ws2812/README.md) | Worldsemi | addressable RGB LED | Stamp-S3, Stamp-S3A |
 | [CN809](consonance/cn809/README.md) | Consonance (*inferred*) | voltage supervisor / reset generator | all Cardputer mainboards |
 | [SY8089](silergy/sy8089/README.md) | Silergy | 2 A synchronous buck, the 3.3 V rail | all Cardputer mainboards |
@@ -549,10 +580,10 @@ check: `espressif/esp32-s3r8` · `winbond/w25q128jv` · `hynitron/cst816d` · `s
 `lite-on/ltr-553als-01` · `analog-devices/max98357a`.
 
 > **Merge note, 2026-09-07.** The LilyGO T-Display-S3 fragment
-> (`scratch/lilygo-t-display-s3/index-fragments.md`, SHA-256 `2f3acf08…`) was still being
+> (`archive/devices/lilygo/t-display-s3-shared/artifacts/research-scratch/index-fragments.md`, SHA-256 `2f3acf08…`) was still being
 > written when this index was updated. The rows above are as that fragment stood at 06:23;
 > re-diff it before treating this section as final. See
-> [`scratch/index-merge/README.md`](../scratch/index-merge/README.md).
+> [`research/passes/index-merge/README.md`](../research/passes/index-merge/README.md).
 
 ### One pre-existing defect, reported not repaired
 
@@ -561,7 +592,7 @@ That record **now exists** (created by the T-Display-S3 pass on 2026-09-07), so 
 resolve — but they were broken when the Xteink pass reported them on 2026-09-04, and
 [`nxp/pcf85063a/README.md`](nxp/pcf85063a/README.md) still flags the directory as
 *"Artifacts-only directory; no record page yet"*. Both are logged in
-[`scratch/index-merge/corrections-requiring-review.md`](../scratch/index-merge/corrections-requiring-review.md).
+[`research/passes/index-merge/corrections-requiring-review.md`](../research/passes/index-merge/corrections-requiring-review.md).
 
 ## Round-two component work *(added 2026-09-11)*
 
@@ -607,10 +638,10 @@ them, and they are the stable landing place for a search on the unknown string.
 | [`unidentified/xteink-x3-x4`](unidentified/xteink-x3-x4/README.md) | extended by the Xteink round-two pass | — |
 
 ⚠ **The `dcdc-u4` row in the seven-pass section above carries a `⚠` pointing at
-[`corrections-requiring-review.md`](../scratch/index-merge/corrections-requiring-review.md).**
+[`corrections-requiring-review.md`](../research/passes/index-merge/corrections-requiring-review.md).**
 It is now **adjudicated**: the part is `JW5712`, the schematic PNG was re-fetched and
 hash-matched, and two sessions agree independently — the certification/market pass in
-[`corrections-adjudicated.md` §1](../scratch/index-merge/corrections-adjudicated.md) and the
+[`corrections-adjudicated.md` §1](../research/passes/index-merge/corrections-adjudicated.md) and the
 schematic-tracing pass from the sheet text. The original row is unchanged.
 
 [`joulwatt/jw5712`](joulwatt/jw5712/README.md) accordingly deserves **three** *Used by* rows —
@@ -642,7 +673,173 @@ round-two pass for a different board.
 - ⚠ [`nanjing-top-power/tp4065`](nanjing-top-power/tp4065/README.md) — **the schematic symbol is
   5-pin, not SOP-8.** If that record states or implies SOP-8 it needs a dated correction. **Not
   applied** — outside every round-two session's scope. Flagged in
-  [`corrections-requiring-review.md`](../scratch/index-merge/corrections-requiring-review.md).
+  [`corrections-requiring-review.md`](../research/passes/index-merge/corrections-requiring-review.md).
 - [`silergy/sy8089`](silergy/sy8089/README.md) — no datasheet retained. Its feedback reference is
   now **derived** as 0.6 V from the Cardputer ADV divider. **That is inference, not primary
   evidence**, and the record says so.
+
+---
+
+## Solomon Systech display controllers — four new records *(added 2026-09-20)*
+
+Five Solomon Systech PDFs had been sitting in
+[`archive/components/solomon-systech/shared-artifacts/epaper-controller-research-2026-09-11/`](../archive/components/solomon-systech/shared-artifacts/epaper-controller-research-2026-09-11/README.md)
+since a 2026-09-11 e-paper pass. This pass identified each by first-page text, filed them, and
+wrote records. **A new [`vendors/solomon-systech`](../vendors/solomon-systech/README.md) sourcing
+guide was created** to carry the retrieval findings.
+
+### New records — all reference-only
+
+| Record | What it is | Why it was kept |
+|---|---|---|
+| [`solomon-systech/ssd1680`](solomon-systech/ssd1680/README.md) | 176 × 296 EPD controller, Rev 0.14, Jun 2019 | **The family's reference command set.** Documents `0x0C` Booster Soft-start with a full bit table — the command the SSD1677's datasheet leaves opaque |
+| [`solomon-systech/ssd1681`](solomon-systech/ssd1681/README.md) | 200 × 200 EPD controller, Rev 0.13, Jun 2019 | Same `0x0C` table; the "familiar 153-byte LUT" confirmed from primary source |
+| [`solomon-systech/ssd1683`](solomon-systech/ssd1683/README.md) | 400 × 300 EPD controller, Rev 1.0, Jan 2021 | Same `0x0C` table; corrects a secondary-source claim in the PaperMono record |
+| [`solomon-systech/ssd7317`](solomon-systech/ssd7317/README.md) | ⚠ **OLED + in-cell touch, not e-paper** | Acquired by mistake. The mistake is the finding |
+
+**None of the four is fitted on any device documented here, and each record says so plainly in its
+§2.** All three EPD parts are, however, **already cited by
+[`devices/m5stack/papermono/gaps-and-conflicts.md`](../devices/m5stack/papermono/gaps-and-conflicts.md)**,
+which used them to decode the SSD1677's booster command. This pass filed the documents that record
+was already relying on.
+
+### Five findings worth surfacing at index level
+
+**1 — ⚠ "SSD16xx" is not one command set, and assuming it is will cost you a panel.**
+`0x32` writes **105 bytes** on the SSD1677, **153** on the SSD1680/1681 and **227** on the SSD1683.
+The waveform engine is **40 / 48 / 32** phases respectively. **The SSD1677 addresses RAM X in
+*pixels*; every other family member addresses it in *bytes*.** The SSD1683 uses **8-bit** temperature
+values where the others use **12-bit**. A LUT, a windowing routine and a temperature routine are all
+non-portable across this family. [Comparison table](../vendors/solomon-systech/README.md#5--ssd16xx-is-not-one-command-set).
+
+**2 — ⚠ Two of five files were misnamed, and the mechanism is silent.**
+`ssd1680.pdf` was an **SSD7317**; `ssd1677.pdf` was an **SSD1681**. Crystalfontz serves controller
+datasheets at `/controllers/<Vendor>/<Part>/<id>/` where **only the trailing id selects a document** —
+so a wrong id returns a different part with HTTP 200, valid `%PDF` magic and a plausible size.
+**Magic-byte validation does not catch this.** Neither does `pdfinfo Title`: the SSD1683's `Title`
+says **`SSD1780`**, a part that does not exist. The rule, and a one-command check, are in
+[`vendors/solomon-systech` §2](../vendors/solomon-systech/README.md#2--retrieval-finding--solomon-systech-pdfs-arrive-misnamed-verify-by-first-page-text).
+
+**3 — A five-year-old page-count mystery in the SSD1677 record is resolved.**
+[SSD1677 §7-C8](solomon-systech/ssd1677/README.md#7-caveats-errata-and-conflicts) noted 46 PDF pages
+against footers numbering `n/47` and could not say which. A footer census now shows PDF page 1 →
+footer 1, PDF page 2 → footer **3**: exactly one page was dropped and it is **printed page 2**. In
+all four sibling documents, printed page 2 is the **IC revision-history table**. That is why that
+record could only call Rev 1.0 *"the first and, as far as this pass established, only public
+revision"* — **the page that would have listed the revisions was cut out**, and it is missing from
+**both** copies now held, so the loss is upstream of both.
+
+**4 — An open SSD1677 question now has a much better answer.**
+[SSD1677 §7-C5](solomon-systech/ssd1677/README.md#7-caveats-errata-and-conflicts) flagged that two
+independent vendors write the *undocumented* deep-sleep parameter `0x10` `{0x01}`, and guessed at
+"loose decoding or a shared typo". **On the SSD1680, SSD1681 and SSD1683, `01` is documented: Deep
+Sleep Mode 1, the RAM-retaining variant**, with its own current specification. The SSD1683 even
+prints `{0x03}` as a literal in its published flow. Still `inferred` for the SSD1677 — and cheaply
+testable on hardware.
+
+**5 — One "datasheet" turned out to be four documents.**
+The SSD7317 file is **87 pages**: a 37-page datasheet (Rev 1.3, Oct 2020), an **SPI Software Porting
+User Guide** (Rev 1.0, Apr 2019), an **I²C Software Porting User Guide** (Rev 1.1, Aug 2019) and 24
+pages of appendices — three revisions, nothing in the filename or metadata to say so. The two
+porting guides are the **only** description of that part's mandatory firmware-download protocol and
+were not indexed anywhere else this pass could find. A footer census detects this automatically:
+**if the total page count changes mid-file, you have a bundle.**
+
+### One correction to an existing record
+
+[`ultrachip/uc8279`](ultrachip/uc8279/README.md) records a 2026-09-11 Crystalfontz document-id probe
+that reported finding *"SSD1780"* among ids 512–523. **There is no SSD1780.** Crystalfontz's own
+catalogue entry for id 514 is `{"name":"SSD1683","version":"1.0"}` — the probe was reading the PDF's
+stale `Title` metadata rather than the catalogue name. Verified live 2026-09-20. **That record's
+actual conclusion — that no UC8279 datasheet was found — is unaffected and stands**, so no edit was
+made to it; the correction is recorded
+[here](solomon-systech/ssd1683/README.md#-the-ssd1780-metadata-and-a-correction-to-an-existing-record)
+and in the vendor guide.
+
+---
+
+## Audio parts and connectors mined out of scratch — *(added 2026-09-20)*
+
+Five device-adjacent PDFs had been sitting unfiled in `archive/devices/m5stack/shared-artifacts/cardputer/`,
+`archive/devices/m5stack/dinmeter/artifacts/` and `scratch/tanmatsu/`. Each was identified by first-page text or by
+a rendered page, filed, and mined. **Two records already existed and had explicitly recorded the
+datasheet as "fetched into scratch, not committed"; both are now extended and, in two places,
+corrected.** Two records are new. The fifth PDF is a device artifact and is covered in the
+Tanmatsu record.
+
+### Two new records
+
+| Record | What it is | Manufacturer | Used by |
+|---|---|---|---|
+| [`dorabo/db2ek-2.54-2p`](dorabo/db2ek-2.54-2p/README.md) | 2.54 mm **pluggable screw-terminal plug**, 2-pole green, slotted. 5 A; **M1.6 screws at 0.1 N·m**; 26–20 AWG; PA66/UL94V-0; −40…+105 °C | **Ningbo Dorabo Electric** (`DORABO`) — read from the drawing's title block | DinMeter K134 / K134-V11 `J1`, the 6–36 V DC input |
+| [`generic/1.25wt-2p-battery-connector`](generic/1.25wt-2p-battery-connector/README.md) | 1.25 mm **horizontal SMT wire-to-board header**, 2-pole. JST-GH-family geometry | ⚠ **none — the drawing is unattributed**, hence `generic/` | DinMeter K134 / K134-V11 `J2`, the Li-ion battery socket |
+
+### Two records extended, with corrections
+
+| Record | Datasheet now held | What changed |
+|---|---|---|
+| [`knowles/spm1423hm4h-b`](knowles/spm1423hm4h-b/README.md) | Rev A, 2012-02-16, 11 pp., 1 272 831 B `85ecd7d7…` | Full electrical table transcribed from page renders. ⚠ **Designator corrected `M1` → `U5`** |
+| [`nsiway/ns4168`](nsiway/ns4168/README.md) | User Manual **V0.9**, March 2015, 15 pp., **Chinese only**, 829 468 B `479e75a1…` | ⚠ **"no control interface" was wrong** — `CTRL` does channel select, shutdown *and* an 11-step high-pass filter. ⚠ **Manufacturer attribution now in doubt** |
+
+### Six findings worth surfacing at index level
+
+**1 — ⚠ The NS4168 *does* have a control interface, and the Cardputer strapped it shut.**
+The previous record said the part had *"no control interface: everything is fixed by hardware"*.
+Pin 1 `CTRL` actually multiplexes three functions by DC level and by a one-wire pulse train:
+**≤ 0.4 V shutdown · 0.9–1.15 V left channel · 1.5 V–V<sub>DD</sub> right channel**, plus
+**11 selectable high-pass corners (20 Hz … 6.6 kHz)** clocked in as 1–12 rising edges after a
+> 100 µs low preamble. On the Cardputer v1.0/v1.1, `CTRL` is **wired straight to the part's own
+`VDD`**. So that board plays the **right** I²S channel, **cannot ever shut the amplifier down**
+(its quiescent current is unremovable in firmware), and **runs at whatever high-pass corner the
+silicon powers up with — which the datasheet never states.**
+
+**2 — ⚠ The NS4168 has an automatic gain limiter you cannot switch off.**
+The "防失真 (NCN)" function detects output clipping and pulls the amplifier's own gain back by up
+to **−10 dB**, with an attack of **10 ms** and a **release of 1.1 s**. There is no pin and no
+register to disable it. Any perceived "pumping" or slow loudness recovery on a Cardputer is this,
+not the driver — and it means **raising M5Unified's `magnification` past clipping makes the board
+quieter, not louder.**
+
+**3 — ⚠ A PDM microphone's clock has a floor as well as a ceiling, and the Cardputer shares that
+clock with the speaker.** The SPM1423HM4H-B specifies **f<sub>clock</sub> = 1.0 – 3.25 MHz**, and
+its state diagram defines only `Active` (> 1 MHz) and `Sleep` (< 1 kHz) — **the 1 kHz … 1 MHz band
+is undefined**. On the Cardputer the mic's `CLK` **is** the speaker's `LRCLK` (G43), so whenever
+the speaker runs, the microphone's clock sits in that undefined band. "One direction at a time" on
+this board is a property of the **parts**, not just of M5Unified. Also: **polarity is inverted**
+(increasing SPL → *decreasing* density of 1s), and **`SELECT` selects a clock edge** — tied low on
+the Cardputer, so data is valid after the **falling** edge.
+
+**4 — ⚠ Two vendor mirrors turned out to be aggregator re-wraps, and one of them obscures the
+manufacturer entirely.** Both M5Stack-hosted audio datasheets carry
+`Title: DATASHEET SEARCH SITE | WWW.ALLDATASHEET.COM` and
+`Author: Provided By ALLDATASHEET.COM` in their PDF metadata — so the chain is
+**chip maker → ALLDATASHEET → M5Stack → here**, two hops, not one. Worse, the NS4168 document's
+**cover logo is 深圳市永阜康科技有限公司 / Shenzhen Yongfukang Technology — a distributor** — and
+**the string "NSIWAY" appears nowhere in its 15 pages.** This repository files the part at
+`components/nsiway/ns4168/`. **That attribution is not supported by the only document we hold.**
+The directory was *not* renamed (several records link it, and one aggregator copy is not grounds
+for trading a documented uncertainty for an undocumented one), but the record now says so
+plainly. Compare [`chip-wealth-technology/ch13620`](chip-wealth-technology/ch13620/README.md),
+where the cover logo *did* resolve the maker; here it resolves only the reseller.
+This extends [`vendors/m5stack`](../vendors/m5stack/README.md) §5.5's warning: **M5Stack's
+third-party datasheet mirrors are sometimes not mirrors of the manufacturer at all.**
+
+**5 — ⚠ "No text layer" does not mean "image-only scan", and the difference matters.**
+[`devices/m5stack/dinmeter/sources.md`](../devices/m5stack/dinmeter/sources.md) S-27 recorded the
+`1.25WT-2P` drawing as *"image-only scan"*. It is a **vector CAD export** (`ODA PDF Export`,
+7086 × 5011 pt) that renders perfectly at **60 dpi**; `pdftotext` returns **zero** lines because
+the annotations are stroked geometry rather than glyphs. A zero-byte text extraction is a signal
+to *render*, not to give up. Row corrected.
+
+**6 — ⚠ A vendor's filename is not an ordering code.** M5Stack serves the terminal drawing as
+`DB2EK-2.54-2P-GN-S.pdf`, but the vendor's own decode block on the sheet reads
+`DB2EK — pitch — poles — colour(1–9) — S/P`, where green is **`1`**, not `GN`. The orderable
+part is **`DB2EK-2.54-02P-1-S`**. Related: the drawing shows the **plug half only** — the mating
+PCB header is undocumented anywhere in this repository, which is the piece a board designer
+actually needs.
+
+### Manufacturers added
+
+| Manufacturer | Sourcing guide | Parts here |
+|---|---|---|
+| **Ningbo Dorabo Electric** (宁波地博电气有限公司) | — ⚠ **no guide; gap recorded.** Only copy held came via M5Stack's bucket; Dorabo's own site was not reached | [DB2EK-2.54-2P](dorabo/db2ek-2.54-2p/README.md) |

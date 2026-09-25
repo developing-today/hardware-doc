@@ -940,7 +940,7 @@ All probes 2026-09-02 unless noted. UA = default `curl` unless "Chrome 131" is s
 ## 8. Sources
 
 All retrieved **2026-09-02** unless stated. Raw probe output is under
-[`../../scratch/preprint-repositories/oa-fulltext/`](../../scratch/preprint-repositories/oa-fulltext/).
+[`../../archive/research/preprint-repositories/oa-fulltext/`](../../archive/research/preprint-repositories/oa-fulltext/).
 
 - **S1** `https://unpaywall.org/`, `/products/api`, `/products/data-feed`, `/faq` — all HTTP 200,
   all exactly 1,421 bytes. Supports: SPA-shell trap; corpus size NOT-VERIFIED. [WEB]

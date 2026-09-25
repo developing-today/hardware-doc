@@ -5,7 +5,7 @@
 · **Tool:** poppler 26.06.0.
 
 **New file.** Corrections to existing claims are appended to `pinouts-and-buses.md` and listed in
-[`scratch/schematic-tracing/corrections-requiring-review.md`](../../../scratch/schematic-tracing/corrections-requiring-review.md).
+[`guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md`](../../../guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md).
 
 ## 0. Traceability
 

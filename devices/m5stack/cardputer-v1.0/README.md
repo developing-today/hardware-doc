@@ -73,6 +73,32 @@ Same as the v1.1 except the module: [`m5stack/stamp-s3`](../../../components/m5s
 (v0.2) instead of `stamp-s3a`, and [`sgmicro/sgm2578`](../../../components/sgmicro/sgm2578/README.md)
 in place of the AW35122FDR, and [`murata/mun3cad01-sc`](../../../components/murata/mun3cad01-sc/README.md) — a `µPOL` power module — in place of the JW5712 buck.
 
+### Audio parts — datasheets filed 2026-09-20
+
+The mainboard schematic is **byte-identical to the v1.1's** (`6016c1fe…`), so everything below
+applies to this board unchanged. Both datasheets M5Stack links for the audio chain are now held
+and mined:
+
+| Part | Designator | Record | Artifact |
+|---|---|---|---|
+| **SPM1423HM4H-B** PDM mic | **`U5`** ⚠ *not `M1`* — `M1` is the **Stamp module footprint** | [`knowles/spm1423hm4h-b`](../../../components/knowles/spm1423hm4h-b/README.md) | [`…/artifacts/spm1423hm4h-b-datasheet-rev-a-m5stack-mirror.pdf`](../../../components/knowles/spm1423hm4h-b/artifacts/spm1423hm4h-b-datasheet-rev-a-m5stack-mirror.pdf) — 1 272 831 B, `85ecd7d7…` |
+| **NS4168** I²S class-D amp | **`U6`** | [`nsiway/ns4168`](../../../components/nsiway/ns4168/README.md) | [`…/artifacts/ns4168-user-manual-v0.9-cn-m5stack-mirror.pdf`](../../../components/nsiway/ns4168/artifacts/ns4168-user-manual-v0.9-cn-m5stack-mirror.pdf) — 829 468 B, `479e75a1…` |
+
+Board-specific findings, read from a 400 dpi render of `Sch_M5Cardputer.pdf`:
+
+- **Mic `SELECT` → `GND`.** Default `Data_L`: data is driven **after the falling `CLK` edge**
+  and tri-stated after the rising edge. Fixed in hardware.
+- **Amp `CTRL` → its own `VDD`** (+3.3 V behind ferrite `FB1`, decoupled `C15`/`C16`/`C17`).
+  Consequences: the speaker takes the **right** I²S channel; **shutdown is unreachable**; the
+  input high-pass corner **cannot be programmed and its power-on default is undocumented**.
+- **33 Ω series resistors** on all five audio lines: `R16` (mic `DAT`), `R17` (mic `CLK`),
+  `R23` (`LRCLK`), `R24` (`BCLK`), `R25` (`SDATA`).
+- Output ferrites `FB2`/`FB3` 1000 Ω/MB with `C19`/`C20` 1 nF, and `R26` 0 Ω star-tying `DGND`
+  to `GND` — the board implements the NS4168 datasheet's §9.7 EMI advice verbatim.
+- ⚠ M5Stack's **"1 W into 8 Ω"** claim has **no support in the NS4168 datasheet**, which gives
+  2.5 W at 5 V / 4 Ω and 1.2 W at 3.6 V / 4 Ω and no 8 Ω figure — and this board supplies the
+  part at **3.3 V**. Left as an unresolved conflict, not arbitrated.
+
 ## Development
 
 Identical toolchain and procedure to the v1.1 and ADV — same PlatformIO profile, same

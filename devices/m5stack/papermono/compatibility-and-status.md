@@ -24,10 +24,35 @@ firsthand) · **inferred** · **absent** (searched for, not found).
 | KEY/RGB sub-board | 2026-04-14 | title block | — |
 | NFC sub-board **V0.2** | 2026-07-28 | title block, marked **sheet 2/2** | Sheet 1 unpublished |
 
-**There is exactly one hardware revision.** No regional variants were found, and **no
-FCC/CE/TELEC identifier appears anywhere on M5Stack's site** — `/en/certification`
-returns HTTP 200 with zero matches for both `PaperMono` and `C153`. That is a **verified
-negative**, not a failed search.
+**There is exactly one hardware revision**, and the FCC filing confirms it
+(`Multiple Model(s) No.: N/A`). No regional variants were found.
+
+> **Corrected 2026-09-20.** This section previously concluded that **no
+> FCC/CE/TELEC identifier exists**, on the strength of `/en/certification`
+> returning zero matches for `PaperMono` and `C153`. The zero matches are real;
+> the conclusion was wrong. The board holds **FCC ID `2AN3WM5PAPERMONO`**
+> (granted 2026-08-12) and carries a Japanese MIC number `Ⓡ 211-260514` on its
+> label artwork. See [`certification.md`](certification.md).
+>
+> Two things that belong in a compatibility record specifically:
+>
+> - **Wi-Fi and BLE cannot transmit simultaneously** — declared in the SAR report
+>   (p. 29) as a not-simultaneous transmitter combination. `official-claim`.
+> - **`certification.md` §10 opens a new conflict, C26**: the FCC label exhibit
+>   says the microSD power rail is enabled by `IOE_G13`; the schematic says
+>   `PYG14`. Treat both pins as unsafe to repurpose until someone probes it.
+>   `untested`.
+
+**As-built hardware identifiers** recovered from the FCC internal photographs
+(2026-09-20), which are the first physical-hardware evidence in this record:
+
+| Item | Value | Status |
+|---|---|---|
+| Main PCB silkscreen | **`V0.6`**, date code `251222` (2025-12-22) | read from photograph |
+| Hardware / software version, as filed with the FCC | `V1.0` / `V1.0` | **conflicts with the V0.6 silkscreen** |
+| NFC FPC | rev **`V0.2`** | matches the schematic's NFC sheet |
+| LoRa antenna FPC | **`Paper Mono V3.0`** | matches the `RSY-E8131` antenna spec's own V3.0 |
+| EUT serial tested | `3MFY-1` | SAR report p. 5 |
 
 ## 2. SKU variants
 

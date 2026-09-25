@@ -184,6 +184,7 @@ M5Stack publishes KiCad support in `m5stack/M5_Hardware` (HEAD `a240115c94b19ecf
 |---|---:|---|---|---|---|---|
 | [`artifacts/Sch_M5StampS3_v0.2.pdf`](artifacts/Sch_M5StampS3_v0.2.pdf) | 348 884 | `6d92e1aef6577838` | **Primary evidence.** Altium-published schematic, board rev v0.2 | unknown | unknown | repository |
 | [`artifacts/Sch_M5StampS3_v0.2.plaintext-layout.txt`](artifacts/Sch_M5StampS3_v0.2.plaintext-layout.txt) | 7 646 | `7139bba1dc9404cd` | derived: sheet text as positioned rows | derived work of ↑ | — | repository |
+| [`artifacts/Sch_M5StampS3_v0.2.parsed.txt`](artifacts/Sch_M5StampS3_v0.2.parsed.txt) | 17 847 | `3b65bc0c4e182bf5` | derived: **the full Altium marker-layer census** — 54 `CO` designators, 229 `PI` pin instances, 50 `NL` net labels with coordinates. This is the census the S3-vs-S3A designator diff was computed from. Promoted from scratch 2026-09-20 | derived work of ↑ | — | repository |
 | [`artifacts/Stamp-S3-SMD.kicad_mod`](artifacts/Stamp-S3-SMD.kicad_mod) | 364 492 | `2435abbd80d39803` | KiCad SMD footprint | unknown (`M5_Hardware` has no `LICENSE`) | unknown | repository |
 | [`artifacts/Stamp-S3-DIP.kicad_mod`](artifacts/Stamp-S3-DIP.kicad_mod) | 365 014 | `1e1a32ffa34603d5` | KiCad DIP footprint | unknown | unknown | repository |
 | [`artifacts/Stamp-S3.stl`](artifacts/Stamp-S3.stl) | 158 484 | `f72c1af2d42930fc` | mechanical model | unknown | unknown | repository |
@@ -254,4 +255,4 @@ because this module feeds the WS2812 from the always-on `VDD_3V3`. The Stamp-S3A
 switched `BL_3V3` rail, buying sleep current (0.26 µA → 0.15 µA) at the cost of that
 independence.
 
-*Added 2026-09-07 from `scratch/m5stack-cardputer/index-fragments.md` §3.10.*
+*Added 2026-09-07 from `archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md` §3.10.*

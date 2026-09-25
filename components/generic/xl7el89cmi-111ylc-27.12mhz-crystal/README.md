@@ -254,7 +254,7 @@ repository yet.
    ```
 
    `executed-success`, 2026-09-01. Helper:
-   [`scratch/m5stack-papermono/tools/lcsc_lookup.sh`](../../../scratch/m5stack-papermono/tools/lcsc_lookup.sh).
+   [`archive/devices/m5stack/papermono/artifacts/research-scratch/tools/lcsc_lookup.sh`](../../../archive/devices/m5stack/papermono/artifacts/research-scratch/tools/lcsc_lookup.sh).
 
 Both belong in
 [`ai-crawler-site-access-table.md`](../../../ai-crawler-site-access-table.md).

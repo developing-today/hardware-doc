@@ -10,7 +10,7 @@ Per-session reports carry the detail and are authoritative for their own subject
 [M5Stack Cardputer](VERIFICATION-m5stack-cardputer.md) ·
 [LilyGO T-Display K230](VERIFICATION-lilygo-t-display-k230.md).
 The index merge and its parked corrections are in
-[`scratch/index-merge/README.md`](scratch/index-merge/README.md).
+[`research/passes/index-merge/README.md`](research/passes/index-merge/README.md).
 
 ---
 
@@ -61,7 +61,7 @@ while a separate session worked on the PaperMono and `software/` trees.
   18 minutes later.
 - Where a session found another session's record to be **wrong**, it did not overwrite it. It
   added a dated note beneath the original line, leaving the original visible, and filed the
-  item in [`scratch/index-merge/corrections-requiring-review.md`](scratch/index-merge/corrections-requiring-review.md)
+  item in [`research/passes/index-merge/corrections-requiring-review.md`](research/passes/index-merge/corrections-requiring-review.md)
   for a human to adjudicate. **Six corrections are parked there and none has been applied.**
 
 ## 5. The one repository defect fixed in passing
@@ -105,11 +105,11 @@ on the same date. Where round two refutes round one, a dated correction is added
 sentence stays visible. **A verification report that quietly rewrites itself is worthless.**
 
 Per-session detail: [`VERIFICATION-xteink-round2.md`](VERIFICATION-xteink-round2.md) ·
-[`scratch/schematic-tracing/README.md`](scratch/schematic-tracing/README.md) ·
-[`scratch/market-and-certification/README.md`](scratch/market-and-certification/README.md).
+[`archive/guides/reverse-engineering/artifacts/schematic-tracing-2026-09-07/README.md`](archive/guides/reverse-engineering/artifacts/schematic-tracing-2026-09-07/README.md) ·
+[`archive/guides/research/artifacts/certification-and-market-2026-09-11/README.md`](archive/guides/research/artifacts/certification-and-market-2026-09-11/README.md).
 The round-two merge, its deferrals and its corrections:
-[`scratch/index-merge/deferred-round2.md`](scratch/index-merge/deferred-round2.md) ·
-[`scratch/index-merge/corrections-requiring-review.md`](scratch/index-merge/corrections-requiring-review.md).
+[`research/passes/index-merge/deferred-round2.md`](research/passes/index-merge/deferred-round2.md) ·
+[`research/passes/index-merge/corrections-requiring-review.md`](research/passes/index-merge/corrections-requiring-review.md).
 
 ## R1. ⚠ §6 is wrong about Xteink certification — corrected, not rewritten
 
@@ -184,7 +184,7 @@ closed — and it could not have known, because it had no grantee code to enumer
 ## R4. Schematic net-tracing — 291 PDFs assessed
 
 Every `artifacts/**/*.pdf` in the repository — **291 files** — was assessed for traceability.
-Per-file verdicts: [`scratch/schematic-tracing/traceability-census.md`](scratch/schematic-tracing/traceability-census.md).
+Per-file verdicts: [`guides/reverse-engineering/schematic-pdf-traceability-census.md`](guides/reverse-engineering/schematic-pdf-traceability-census.md).
 
 **The enabling finding: Altium exports embed invisible `CO` / `PI` / `NL` marker tokens at item
 coordinates** — component outlines, pins and net labels — so a net list is recoverable from the
@@ -249,7 +249,7 @@ redistribution **`allowed`** — correcting the `unknown` recorded earlier.
 ## R7. Machine-checked results — re-run, not copied
 
 Every figure below was measured on **2026-09-11** by
-[`scratch/index-merge/verify-round2.py`](scratch/index-merge/verify-round2.py). Round one's
+[`research/passes/index-merge/verify-round2.py`](research/passes/index-merge/verify-round2.py). Round one's
 numbers are **not** reused.
 
 | Check | Round one (2026-09-07) | **Round two (2026-09-11)** |
@@ -307,7 +307,7 @@ added* and counted only the links it could reach; round two checked the whole tr
 - **PaperMono was untouched in both rounds.** Its certification claims are now known to be stale
   (`2AN3WM5PAPERMONO` exists, granted 2025-07-09), its richest-in-repository schematic is
   untraced, and 11 of its FCC exhibits sit in scratch with no placeholder. All parked in
-  [`deferred-round2.md`](scratch/index-merge/deferred-round2.md) §1.
+  [`deferred-round2.md`](research/passes/index-merge/deferred-round2.md) §1.
 - **§6's remaining bullets stand**: no net-level tracing was attempted for most of the LilyGO
   family, and `components/canaan/k230`'s toolchain routes are still all `inferred`.
 

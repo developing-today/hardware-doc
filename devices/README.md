@@ -99,8 +99,20 @@ Retrieved **2026-09-01**. Two SKUs of **one board**, launched together on 2026-0
 
 | Board | SKU | Price | Distinguishing feature | Sources |
 |---|---|---|---|---|
-| [PaperMono](m5stack/papermono/README.md) | **C153** | USD 65.00 | Grey case, **NFC (ST25R3916) + LoRa (Stamp LoRa-1262)** | [sources](m5stack/papermono/sources.md) · [research log](m5stack/papermono/research-log.md) · [commands](m5stack/papermono/commands.md) |
+| [PaperMono](m5stack/papermono/README.md) | **C153** · FCC **`2AN3WM5PAPERMONO`** | USD 65.00 | Grey case, **NFC (ST25R3916) + LoRa (Stamp LoRa-1262)** | [**certification**](m5stack/papermono/certification.md) · [sources](m5stack/papermono/sources.md) · [research log](m5stack/papermono/research-log.md) · [commands](m5stack/papermono/commands.md) |
 | [PaperMono-Lite](m5stack/papermono-lite/README.md) | **C153-Lite** / `C153-LITE` | USD 55.00 | White case, **no NFC, no LoRa**; 72.4 g vs 74.7 g. Everything else identical, battery included | shares the PaperMono's manifests |
+
+> **Certification, 2026-09-20.** The PaperMono record previously said in seven
+> places that no certification of any kind existed for this board. **It is
+> certified** — FCC ID **`2AN3WM5PAPERMONO`**, two grants issued 2026-08-12 — and
+> M5Stack simply publishes nothing about it. The filing's eleven exhibits have
+> been mined into [`certification.md`](m5stack/papermono/certification.md):
+> certified bands and conducted power per mode, the antenna's measured gain
+> (**−5 dBi** at 910 MHz, 15.9 % efficient), SAR at **0 mm on all six faces**,
+> and **the only public PCB photographs of this board**. Two things a builder
+> needs: **US LoRa is 903.0–914.9 MHz only**, and **Wi-Fi and BLE cannot transmit
+> simultaneously**. M5Stack also filed its **full architecture diagram as the FCC
+> label**, which is a second primary source for the pin map.
 
 A 3.97″ 480 × 800 frontlit touch e-paper handheld on an ESP32-S3R8. Best understood as **a battery-first low-power platform that happens to have a display**, not an e-paper board that happens to have a battery: it has five hardware power states and can wake on RTC alarm, motion, touch or keys **with the application processor unpowered**. The full record: [`papermono/`](m5stack/papermono/README.md), with [pinouts and buses](m5stack/papermono/pinouts-and-buses.md), [power architecture](m5stack/papermono/power-architecture.md) and [gaps and conflicts](m5stack/papermono/gaps-and-conflicts.md).
 
@@ -221,7 +233,7 @@ X4 Light. The original finding confused *"no mark visible in a product photo"* w
 Per-device detail and the positive/negative controls that make it evidence:
 `xteink/<record>/certification-and-compliance.md`. Corrections are appended beneath every stale
 claim and listed in
-[`scratch/index-merge/corrections-requiring-review.md`](../scratch/index-merge/corrections-requiring-review.md).
+[`research/passes/index-merge/corrections-requiring-review.md`](../research/passes/index-merge/corrections-requiring-review.md).
 
 One consequence worth surfacing at index level: the `2BTR9-XTEINKX4` filing's **Internal Photos
 were never withheld**, which makes them the **first public teardown of the Xteink X4** —
@@ -271,6 +283,18 @@ Notable for **openness rather than volume**: the full KiCad design is published 
 
 ---
 
+## Flipper Devices
+
+- [Flipper Devices Flipper Zero](flipper-devices/flipper-zero/README.md) — ⚠ **artifact-preservation stub, not a researched device record.** *Added 2026-09-20.*
+
+Created solely to give six **Flipper Devices Inc.** schematic sheets (iButton, NFC, Power, Power and vibro, RFID, Sub-1 GHz CC1101) and seven teardown photographs a correctly-classified home. They were vendored as prior art into [`badgeteam/konsool-zero`](nicolai-electronics/tanmatsu/expansion-boards.md) — a Tanmatsu add-on — and a SHA-256 sweep confirmed they existed in exactly one place, inside a scratch clone.
+
+**No product, pricing, firmware, community or component research has been done.** The sections a full device record requires are *absent, not empty*. What the sheets were mined for is narrow and stated in the record: they establish that konsool-zero copied the Flipper's sub-GHz and 125 kHz analog chains almost part-for-part, changing only the CC1101 reference (26 MHz crystal → 27 MHz oscillator) and the MCU (STM32WB55 → CH32V003F4U6) — which is also how a fabricated "STM32WB55CC on konsool-zero" claim got into this repository and was later refuted.
+
+If you research the Flipper Zero properly, start from those artifacts and replace the stub.
+
+---
+
 ## Two new per-record file types — *added 2026-09-11*
 
 Round two of the 2026-09-04 sweep added two kinds of page to device records across the tree.
@@ -290,7 +314,7 @@ and [`dinmeter`](m5stack/dinmeter/driver-vs-document-audit.md) (`M5DinMeter` @ `
 `NL` marker tokens at item coordinates — component outlines, pins and net labels — so a net can
 be reconstructed by geometry from the PDF text layer alone. **291 schematic PDFs in this
 repository were assessed**; the per-file verdict is in
-[`scratch/schematic-tracing/traceability-census.md`](../scratch/schematic-tracing/traceability-census.md).
+[`guides/reverse-engineering/schematic-pdf-traceability-census.md`](../guides/reverse-engineering/schematic-pdf-traceability-census.md).
 Two traps that census found, both worth checking before concluding a design is undocumented:
 
 - ⚠ **KiCad and EAGLE exports frequently outline their text to vector paths.** `pdftotext` then

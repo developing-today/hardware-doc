@@ -343,7 +343,7 @@ rootfs. BSP v0.2.4 added an SD-expansion step for cards larger than the flashed 
 that the extra space was unused. Changing the boot medium away from SD is the board's **one
 confirmed bricking path**.
 
-*Source: `scratch/lilygo-k230/index-fragments.md` §F4.*
+*Source: `archive/devices/lilygo/t-display-k230/artifacts/research-scratch/index-fragments.md` §F4.*
 
 ## Related pages
 

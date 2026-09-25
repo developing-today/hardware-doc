@@ -466,7 +466,7 @@
       "disposition": "not-downloaded",
       "repo_state": "not-downloaded",
       "reacquisition": "automatic",
-      "reason": "URLs are in scratch/xteink/vendor/products-p1.json under products[].images[].src .",
+      "reason": "URLs are in vendors/xteink/artifacts/store-snapshots/2026-09-04/products-p1.json under products[].images[].src .",
       "notes": "CAPTURE BEFORE DELISTING. The X4's vendor imagery was lost when that product was delisted before this research began."
     }
   ]

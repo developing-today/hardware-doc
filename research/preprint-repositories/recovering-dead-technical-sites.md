@@ -18,9 +18,9 @@
   (§ Vendor documentation portals, § Electronics distributors).
 - **Evidence labels:** [API] [WEB] [DOC] [LIT] [COM] [INF] [NOT-VERIFIED] — see the
   [index](README.md#evidence-and-method).
-- **Raw probe output:** [`../../scratch/preprint-repositories/bulk-archives/probe-log-2026-09-02.txt`](../../scratch/preprint-repositories/bulk-archives/probe-log-2026-09-02.txt)
+- **Raw probe output:** [`../../archive/research/preprint-repositories/bulk-archives/probe-log-2026-09-02.txt`](../../archive/research/preprint-repositories/bulk-archives/probe-log-2026-09-02.txt)
   and `waybackratelimit.txt` in the same directory; re-verification logs in
-  [`../../scratch/preprint-repositories/dead-sites/`](../../scratch/preprint-repositories/dead-sites/)
+  [`../../archive/research/preprint-repositories/dead-sites/`](../../archive/research/preprint-repositories/dead-sites/)
   (`VERIFY-SUMMARY.md` plus `verify-01`…`verify-13`).
 
 > **Two corrections to this repository's own guidance are recorded here.** The
@@ -1017,7 +1017,7 @@ Retrieval date **2026-09-02** for all of the following unless stated.
 - **S2** `https://archive.org/wayback/available?url=…` → 200, 246 B (positive) / 77 B (`{}`, negative).
   Host-independence during throttling. [API]
 - **S3** Wayback rate-limit experiment (runs A–E), full log in
-  [`../../scratch/preprint-repositories/bulk-archives/waybackratelimit.txt`](../../scratch/preprint-repositories/bulk-archives/waybackratelimit.txt).
+  [`../../archive/research/preprint-repositories/bulk-archives/waybackratelimit.txt`](../../archive/research/preprint-repositories/bulk-archives/waybackratelimit.txt).
   429 body, `x-rl: 0`, TCP refusal, 60-s recovery, 8-UA rotation. [WEB]
 - **S4** `https://web.archive.org/web/20190213111131{,id_}/http://hpl.hp.com:80/techreports/Compaq-DEC/`
   → 16,004 B vs 13,237 B. [WEB]
@@ -1082,7 +1082,7 @@ Retrieval date **2026-09-02** for all of the following unless stated.
   Espressif WROVER `if_` recovery), § Electronics distributors (LCSC filename provenance,
   `digi-electronics.com` AI-generated errors). Prior work, dated 2026-08-21/24.
 - **S25** **Independent re-verification pass, 2026-09-04.** Logs in
-  [`../../scratch/preprint-repositories/dead-sites/`](../../scratch/preprint-repositories/dead-sites/)
+  [`../../archive/research/preprint-repositories/dead-sites/`](../../archive/research/preprint-repositories/dead-sites/)
   (`VERIFY-SUMMARY.md`, `verify-01`…`verify-13`). **Reproduced byte-for-byte:**
   `wayback/available` 200/246 B and negative control 200/77 B; CDX success 200/3,444 B, negative
   control `[]`/3 B, "Temporarily Offline" 503/11,832 B; bitsavers `Wget`→403/283 B,

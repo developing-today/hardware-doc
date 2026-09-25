@@ -92,4 +92,4 @@ resolved.
 - **The schematic sketch has not been read in detail.** It is held here and could
   resolve the GPIO0/GPIO20 dual-assignment conflict. Cheapest open action.
 - Vendor product imagery not archived (the listing is live; URLs are in
-  `scratch/xteink/vendor/products-p1.json`).
+  `vendors/xteink/artifacts/store-snapshots/2026-09-04/products-p1.json`).

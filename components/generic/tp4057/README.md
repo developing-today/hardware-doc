@@ -88,6 +88,6 @@ Records: [v1.0](../../../devices/m5stack/cardputer-v1.0/README.md) ·
 ⚠ **Note the disagreement with the DinMeter entry above**, which cites the same part with
 `R_PROG = 3.3 kΩ` and a vendor-stated **100 mA**. Both figures are recorded as their sources
 give them; they are not reconciled here. Logged in
-[`scratch/index-merge/corrections-requiring-review.md`](../../../scratch/index-merge/corrections-requiring-review.md).
+[`research/passes/index-merge/corrections-requiring-review.md`](../../../research/passes/index-merge/corrections-requiring-review.md).
 
-*Added 2026-09-07 from `scratch/m5stack-cardputer/index-fragments.md` §3.7.*
+*Added 2026-09-07 from `archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md` §3.7.*

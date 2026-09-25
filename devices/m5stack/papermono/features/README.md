@@ -58,7 +58,10 @@ Three guides are short because the evidence is thin, and say so rather than padd
   is a documented gap, confirmed by full-text search, not a retrieval failure. Tracked
   in [`../coverage.md`](../coverage.md) and `gaps-and-conflicts.md` G4.
 - [`lora.md`](lora.md) — **regional band configuration is undocumented.** One wideband
-  868–923 MHz SKU, no per-region variant, no certification, no module datasheet.
+  868–923 MHz SKU, no per-region variant, no module datasheet. **Certification found
+  2026-09-20**: FCC ID `2AN3WM5PAPERMONO` authorises **903.0–914.9 MHz** in the US at
+  **11.5 dBm** conducted, with a **−5 dBi** antenna. The vendor firmware's hard-coded
+  868.0 MHz is outside that grant. See [`../certification.md`](../certification.md).
 - [`nfc.md`](nfc.md) — **no evidence exists about which card types were actually
   tested.** The library exposes four technology layers; nobody has reported results.
 

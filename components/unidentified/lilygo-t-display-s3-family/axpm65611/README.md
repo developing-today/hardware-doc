@@ -138,7 +138,7 @@ identity is not. Nothing above should be read as identifying the part.
 must not be deleted:* `components/unidentified/lilygo-t-display-s3-family/axpm65611/` stays as
 the canonical home until a manufacturer is established, at which point
 `components/<manufacturer>/<part>/` should be created and this record should link forward to it.
-Recorded in [`scratch/schematic-tracing/index-fragments.md`](../../../../scratch/schematic-tracing/index-fragments.md).
+Recorded in [`archive/guides/reverse-engineering/artifacts/schematic-tracing-2026-09-07/index-fragments.md`](../../../../archive/guides/reverse-engineering/artifacts/schematic-tracing-2026-09-07/index-fragments.md).
 
 ### String B — the `TP4065` / `65b311` conflict is **resolved**. The schematic never said SOP-8.
 

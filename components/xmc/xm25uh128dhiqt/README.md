@@ -269,9 +269,9 @@ Plain `curl` with a Chrome 131 User-Agent; no fallback needed, no login. Note th
 |---|---|---|---|---|---|---|---|---|---|
 | D1 | XM25UH128D datasheet | Wuhan Xinxin Semiconductor Manufacturing Co., Ltd. (XMC) | primary | datasheet | <https://www.xmcwh.com/uploads/1045/XM25UH128D_Ver1.2.pdf> | 2026-09-01 | **Rev1.2**, 2025-06-12, 98 pp, 3 730 929 B | Ordering-code decode incl. **QE = 1 default**, JEDEC ID, all limits in §2, pin functions, status-register bit list, timing | `artifacts/xm25uh128d-datasheet-ver1.2.pdf` |
 | S1 | `PaperMono_SCH_V0.6.2_20260522.pdf` | M5Stack | primary | schematic | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | V0.6.2, 6 sheets | The §4.1 pin/net table — **all four data lines routed**, `R39` = 22 Ω, `VDD_NOR` ← `VDD_SPI` | `devices/m5stack/papermono/artifacts/schematic/PaperMono_SCH_V0.6.2_20260522.pdf` |
-| S2 | PaperMono product page — PlatformIO configuration | M5Stack | primary | official page | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | — | `board_build.arduino.memory_type = qio_opi` | `scratch/m5stack-papermono/docs/pages/en-core-PaperMono.html` |
-| S3 | `C153-PaperMono-UserDemo-v1.2.bin` — ESP image headers and partition table | M5Stack | primary | firmware | M5Burner API, firmware id `2089640807996628993` | 2026-09-01 | v1.2, built 2026-08-06, `app_version c78f6c5-dirty`, IDF v5.5.1; 2 868 208 B, SHA-256 `72c290bc2ffa216041b276660277369bd17ecef92315e367d98bb2c96c8428fa` | `flash_mode: DIO` in both headers; the 15 MiB single-`factory` partition table | `scratch/m5stack-papermono/docs/firmware/` |
-| S4 | `M5PaperMono-UserDemo/sdkconfig.defaults`, `partitions.csv` | M5Stack | primary | repository | <https://github.com/m5stack/M5PaperMono-UserDemo> | 2026-09-01 | `main` @ `c1099107271d31a0678d661a896e2b04dbb331ea`, MIT | **No** `CONFIG_ESPTOOLPY_FLASHMODE_*` is set — the DIO header is an IDF default, not a decision | `scratch/m5stack-papermono/repos/M5PaperMono-UserDemo/` |
+| S2 | PaperMono product page — PlatformIO configuration | M5Stack | primary | official page | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | — | `board_build.arduino.memory_type = qio_opi` | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/pages/en-core-PaperMono.html` |
+| S3 | `C153-PaperMono-UserDemo-v1.2.bin` — ESP image headers and partition table | M5Stack | primary | firmware | M5Burner API, firmware id `2089640807996628993` | 2026-09-01 | v1.2, built 2026-08-06, `app_version c78f6c5-dirty`, IDF v5.5.1; 2 868 208 B, SHA-256 `72c290bc2ffa216041b276660277369bd17ecef92315e367d98bb2c96c8428fa` | `flash_mode: DIO` in both headers; the 15 MiB single-`factory` partition table | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/firmware/` |
+| S4 | `M5PaperMono-UserDemo/sdkconfig.defaults`, `partitions.csv` | M5Stack | primary | repository | <https://github.com/m5stack/M5PaperMono-UserDemo> | 2026-09-01 | `main` @ `c1099107271d31a0678d661a896e2b04dbb331ea`, MIT | **No** `CONFIG_ESPTOOLPY_FLASHMODE_*` is set — the DIO header is an IDF default, not a decision | `archive/devices/m5stack/papermono/artifacts/source-snapshots/M5PaperMono-UserDemo/` |
 
 **Local artifacts**
 
@@ -280,3 +280,34 @@ Plain `curl` with a Chrome 131 User-Agent; no fallback needed, no login. Note th
 | `artifacts/xm25uh128d-datasheet-ver1.2.pdf` | 3 730 929 | `a6f683599543c81d36dff7f3a20dc6f5f637e9cac6554fa87873abaf2126c014` | 98 |
 
 **Method note.** D1 validated as `%PDF`, 98 pages, text layer intact. The §5 resolution combines three independent `executed-success` observations — the schematic netlist, the datasheet's ordering table, and the firmware image header — rather than preferring one source over another.
+
+## FCC internal photographs — confirmation of the fitted part (2026-09-20)
+
+The PaperMono's FCC filing (`2AN3WM5PAPERMONO`) includes an internal-photograph
+exhibit, retained at
+[`devices/m5stack/papermono/artifacts/certification/`](../../../devices/m5stack/papermono/artifacts/certification/README.md).
+It is the first physical-hardware evidence for this part.
+
+**The `UH` is confirmed on the package.** Page 3 shows an SOP-8 beside the
+ESP32-S3 marked with the **XMC** logo and, read at 16× magnification:
+
+```
+XMC
+25UH128DHIG  15
+P4J71900  2529K
+```
+
+| Field | Reading | Status |
+|---|---|---|
+| Manufacturer | **XMC** logo | **legible** |
+| Family | **`25UH…`** | **legible** — this rules out the `XM25QH` family a casual reading might assume |
+| Density | **`128`** = 128 Mbit = **16 MB** | **legible**, matches M5Stack's specification |
+| Suffix | `DHI` then one further character | **the final character is not resolvable** — so `…DHIQT` versus `…DHIG` is **not** settled by the photograph |
+| Lot / date | `P4J71900`, `2529K` | legible, not interpreted |
+
+The record's part number `XM25UH128DHIQT` comes from the schematic and is not
+contradicted; the photograph confirms the family, voltage class and density but
+**cannot confirm the `QT` package/grade suffix**. Recorded as partially legible
+rather than treated as a full reading.
+
+Extraction: [`certification.md` §6](../../../devices/m5stack/papermono/certification.md#6--what-the-internal-photographs-show).

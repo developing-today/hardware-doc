@@ -256,7 +256,7 @@ a row below contradicts one above, the row below is the correction and the reaso
 trace with coordinates: [`schematic-netlist.md`](schematic-netlist.md). Method:
 [`guides/reverse-engineering/tracing-nets-from-schematic-pdfs.md`](../../../guides/reverse-engineering/tracing-nets-from-schematic-pdfs.md).
 All corrections are indexed in
-[`scratch/schematic-tracing/corrections-requiring-review.md`](../../../scratch/schematic-tracing/corrections-requiring-review.md).
+[`guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md`](../../../guides/reverse-engineering/schematic-tracing-corrections-2026-09-07.md).
 
 ## Grove / `PORT.CUSTOM` (`J2`, `HY-2.0_IIC`) — now established from the sheet
 

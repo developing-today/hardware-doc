@@ -165,22 +165,50 @@ server), `crosspoint-tools`, `escape-hatch` (400-byte SD-card recovery flasher),
 
 ## Open questions
 
-- **No commit SHA pinned.** Identity here is by branch. A later pass should pin
-  `develop`'s HEAD before citing specific code.
-- **The plugin system is not covered by this record.** A prior analysis reported
-  it lives on unmerged feature branches rather than `develop`, is
-  browser-JavaScript plus JSON manifests with **no code running on the MCU**, and
-  therefore **cannot reach GPIO/I²C/SPI at all**. That has direct bearing on
-  whether NFC/LoRa could ever be a plugin — but it is `reported-working` from
-  that pass and **was not re-verified here**. Treat as unconfirmed.
-- Binary size, flash/RAM usage and build time for any environment: unmeasured here.
-- Whether the `papermono` envs have been run on real hardware by anyone: **unknown**.
+Three of the four questions raised in the 2026-09-04 pass were **closed on
+2026-09-20** by promoting the source-level analysis that this record had been
+citing second-hand. It is now in the tree:
+
+- ~~**No commit SHA pinned.**~~ **Closed.** `develop` HEAD is
+  **`e6139861a2a8c634aa18c333b7e214ee51a9965c`** (2026-09-01). All code citations in
+  [`architecture.md`](architecture.md) resolve against it.
+- ~~**The plugin system is not covered by this record.**~~ **Closed, and confirmed.**
+  [`plugins/firmware-plugin-internals.md`](plugins/firmware-plugin-internals.md) is
+  that prior analysis, now present with file-and-line citations. It holds: `develop`
+  contains **zero** plugin files; the implementation lives on two unmerged branches;
+  plugins are browser JavaScript plus declarative JSON; **no plugin code executes on
+  the MCU**; a grep for `digitalWrite|pinMode|Wire\.|SPI\.|ledcWrite|analogRead`
+  across every plugin-path file returns **zero matches**. So **NFC or LoRa cannot be
+  a plugin** — it needs a fork or an upstream feature.
+- ~~**Binary size, flash/RAM usage and build time: unmeasured.**~~ **Closed —
+  measured** (`executed-success`). `pio run -e papermono` succeeded in 287.76 s:
+  `firmware.bin` **5 364 128 B**, flash **81.8 %** full, RAM 32.4 %, and **IRAM
+  100.0 % exhausted**. See [`architecture.md` §9](architecture.md#9-build-system--verified).
+  The `default` (ESP32-C3) env was started and **abandoned before completion**, so
+  there are still **no C3 figures** — and the C3 is the tightest target.
+- **Whether the `papermono` envs have been run on real hardware by anyone: still
+  unknown.** Everything above is compile-and-CI evidence.
   See [`papermono/projects-and-community.md`](../../../devices/m5stack/papermono/projects-and-community.md).
+
+Newly opened by that promotion:
+
+- **Flash and IRAM headroom is a live constraint, not a note.** 81.8 % flash and
+  100 % IRAM on the S3 target means a new device or feature may simply not fit.
+- **The web server has no authentication at all**, on `develop` as well as the
+  plugin branches — see
+  [`plugins/firmware-plugin-internals.md` §5](plugins/firmware-plugin-internals.md#5-sandboxing-and-permissions--the-honest-assessment).
 
 ## See also
 
 - **Target hardware:** [Xteink X3](../../../devices/xteink/x3/README.md) · [X4](../../../devices/xteink/x4/README.md) · [X4 Pro](../../../devices/xteink/x4-pro/README.md) · [X4 Classic](../../../devices/xteink/x4-classic/README.md) · [S4](../../../devices/xteink/s4/README.md) · [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md)
 
+- [**Architecture**](architecture.md) — the module map, runtime and task model, EPUB
+  pipeline, partition table, dependency pins, and the **measured** `papermono` build
+  (flash 81.8 %, IRAM 100 %, 173/173 host tests passing)
+- [**Firmware plugin internals**](plugins/firmware-plugin-internals.md) — the device
+  side of the plugin system: the ten endpoints, their caps, and the unconfined write path
+- [**Porting a device**](../../ecosystems/crosspoint-freeink/porting-a-device.md) — what a new board costs in each repository
+- [**Source snapshots**](source-snapshots/README.md) — including a fork that **no longer exists upstream**
 - [FreeInk SDK](../../frameworks/freeink-sdk/README.md) — the framework beneath it
 - [CrossPlay](../crossplay/README.md) · [`forks/`](forks/) — fork records
 - [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md) — a supported target

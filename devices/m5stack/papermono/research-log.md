@@ -70,9 +70,9 @@ Two honest caveats about that ladder:
   own sites — it is stated: `docs.m5stack.com`, `shop.m5stack.com` and
   `burner.m5stack.com` all served 200 to the **first** request.
 
-Helpers: [`scratch/m5stack-papermono/docs/_tools/fetch.sh`](../../../scratch/m5stack-papermono/docs/_tools/fetch.sh)
+Helpers: [`archive/devices/m5stack/papermono/artifacts/research-scratch/docs/_tools/fetch.sh`](../../../archive/devices/m5stack/papermono/artifacts/research-scratch/docs/_tools/fetch.sh)
 (single-UA, records status/bytes/sha256/date to a `.meta` sidecar) and
-`scratch/m5stack-papermono/market/_raw/fetch.sh` (rotates the ladder and prints
+`archive/devices/m5stack/papermono/artifacts/research-scratch/market/_raw/fetch.sh` (rotates the ladder and prints
 the status of every rung).
 
 ## Pass 1 — vendor documentation (`docs.m5stack.com`)

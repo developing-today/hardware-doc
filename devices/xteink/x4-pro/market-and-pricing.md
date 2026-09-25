@@ -97,11 +97,11 @@ catalogue enumerated: **25 products**. Currency USD as served. Condition: new, g
 **USD 99.00 observed 2026-09-11 independently confirms USD 99.00 observed 2026-09-04** from the
 same endpoint — two observations, one week apart, identical. That settles claim 2 of correction
 #4 in
-[`scratch/index-merge/corrections-requiring-review.md`](../../../scratch/index-merge/corrections-requiring-review.md).
+[`research/passes/index-merge/corrections-requiring-review.md`](../../../research/passes/index-merge/corrections-requiring-review.md).
 
 ⚠ The PaperMono record's assertion that *"the XTEINK X4 Pro … was never priced"* is **wrong on
 both dates**. That record is owned by a live session and was **not edited**; the item is parked in
-[`scratch/index-merge/deferred-round2.md`](../../../scratch/index-merge/deferred-round2.md).
+[`research/passes/index-merge/deferred-round2.md`](../../../research/passes/index-merge/deferred-round2.md).
 
 ### Family context as of 2026-09-11
 

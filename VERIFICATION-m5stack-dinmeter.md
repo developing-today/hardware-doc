@@ -161,7 +161,7 @@ held. **Not re-added**; the additional URL is recorded in the source table inste
 **Not edited** (as instructed): `README.md`, `devices/README.md`, `components/README.md`,
 `vendors/README.md`, `artifact-manifest.md`, `software/README.md`, `guides/markets/*`,
 `devices/m5stack/papermono*`. Proposed additions are staged as ready-to-paste Markdown in
-[`scratch/m5stack-dinmeter/index-fragments.md`](scratch/m5stack-dinmeter/index-fragments.md).
+[`archive/devices/m5stack/dinmeter/artifacts/research-scratch/index-fragments.md`](archive/devices/m5stack/dinmeter/artifacts/research-scratch/index-fragments.md).
 
 **Two files additively edited**, each after confirming `find <file> -mmin -30` returned empty
 immediately beforehand:
@@ -242,4 +242,4 @@ hardware was in hand, so nothing here is a measurement.
 *Report generated 2026-09-04 as part of the DinMeter research pass. Bulk archive:
 `archive/devices/m5stack/dinmeter{,-v1.1}/` and `archive/components/m5stack/stamp-s3/`.
 Working store and proposed index additions:
-[`scratch/m5stack-dinmeter/`](scratch/m5stack-dinmeter/README.md).*
+[`archive/devices/m5stack/dinmeter/artifacts/`](archive/devices/m5stack/dinmeter/artifacts/research-scratch/README.md).*

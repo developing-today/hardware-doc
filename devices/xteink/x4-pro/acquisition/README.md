@@ -24,7 +24,7 @@ git -C freeink-sdk checkout 24003795381a6c23630a26472ae3b06550333e71
 | `xteink_app_update_x4pro_7.4.4_20260827_133901.xota` | **`blocked`** | Named in the FreeInk SDK docs; **no download URL found**. The `.xota` container appears encrypted — the SDK refers to *"the decrypted"* app and the mechanism is undocumented |
 | Vendor OTA feed response | **`manual`** | `http://gotaserver.xteink.com/api/check-update` — endpoint recovered from the **X4** dump. **Not queried.** Request format unknown |
 | Any teardown or PCB photograph | **`lost`** | None exists. Would close **seven** separate unknowns at once — see [`gaps-and-conflicts.md`](../gaps-and-conflicts.md) |
-| Vendor product imagery | **`automatic`** | Listing is **live**; URLs are in `scratch/xteink/vendor/products-p1.json` under `products[].images[].src`. **Capture before delisting** — the X4's imagery was lost exactly that way |
+| Vendor product imagery | **`automatic`** | Listing is **live**; URLs are in `vendors/xteink/artifacts/store-snapshots/2026-09-04/products-p1.json` under `products[].images[].src`. **Capture before delisting** — the X4's imagery was lost exactly that way |
 | FCC / CE / SRRC filing | **`blocked`** | No ID known, and the community reports Xteink devices **carry no external regulatory marking** — regulatory text is placed in software instead |
 
 ## Why nothing was downloaded
@@ -86,4 +86,4 @@ The absence was never re-searched in 2026-09-04 because **no FCC ID was known an
 
 Full record, with controls: [`certification-and-compliance.md`](../certification-and-compliance.md).
 
-Listed in [`scratch/index-merge/corrections-requiring-review.md`](../../../../scratch/index-merge/corrections-requiring-review.md).
+Listed in [`research/passes/index-merge/corrections-requiring-review.md`](../../../../research/passes/index-merge/corrections-requiring-review.md).

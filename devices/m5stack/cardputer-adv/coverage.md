@@ -42,7 +42,7 @@
 | `texas-instruments/tca8418` · `generic/74hc138` · `espressif/esp32-s3fn8` · `memsensing/msm381a3729h9bp` · `knowles/spm1423hm4h-b` · `nsiway/ns4168` · `worldsemi/ws2812` · `consonance/cn809` · `silergy/sy8089` · `unidentified/cardputer/lp3218dt1g` | `everest-semiconductor/es8311` · `nsiway/ns4150b` · `bosch-sensortec/bmi270` · `awinic/aw35122` · `joulwatt/jw5712` · `generic/micro-sd-sdmmc` · `generic/3.5mm-audio-output` · `generic/charger-power-path` | `m5stack/stamp-s3` · `m5stack/stamp-s3a` · `sitronix/st7789v2` · `silergy/sy7088` · `sgmicro/sgm2578` · `generic/tp4057` · `unidentified/m5stack-stamp-s3a/dcdc-u4` |
 
 *Used By* additions for the middle and right columns are staged in
-[`scratch/m5stack-cardputer/index-fragments.md`](../../../scratch/m5stack-cardputer/index-fragments.md).
+[`archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md`](../../../archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md).
 
 ## Uncovered
 

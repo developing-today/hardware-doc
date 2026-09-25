@@ -277,9 +277,9 @@ Sourcing notes gathered this session, worth recording because they cost time:
 | ID | Title | Publisher | Class | Medium | URL | Retrieved | Version | Establishes | Local path |
 |---|---|---|---|---|---|---|---|---|---|
 | D1 | IP2315 数据手册 (datasheet, Chinese) | Injoinic Corp. | primary (via credible mirror) | datasheet | <https://dl.radxa.com/rock3/docs/hw/datasheet/IP2315-datasheet-cn-V1.0.pdf> | 2026-09-01 | **V1.0**, © 2018, 16 pp, 1 217 455 B | Pin table, I²C address `0xEA`/`0xEB`, LED/SCL/SDA multiplexing, VBAT pull-up requirement, NACK bus-lockup warning, `ICHGSET`/`NTC` tables, QFN32 package | `artifacts/ip2315-datasheet-v1.0-cn-radxa-mirror.pdf` |
-| D2 | PaperMono product page (charger hazard note) | M5Stack | primary | official page | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | — | The `PYG11_PWM3` gating rule and the bus-stability warning, verbatim | `scratch/m5stack-papermono/docs/pages/en-core-PaperMono.html` |
+| D2 | PaperMono product page (charger hazard note) | M5Stack | primary | official page | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | — | The `PYG11_PWM3` gating rule and the bus-stability warning, verbatim | `archive/devices/m5stack/papermono/artifacts/research-scratch/docs/pages/en-core-PaperMono.html` |
 | S1 | `PaperMono_SCH_V0.6.2_20260522.pdf` | M5Stack | primary | schematic | linked from D2 | 2026-09-01 | V0.6.2, 2026-05-22, 6 sheets | Every net and value in §4 and §5 | `devices/m5stack/papermono/artifacts/schematic/PaperMono_SCH_V0.6.2_20260522.pdf` |
-| S2 | `M5Unified/src/utility/Power_Class.cpp` | M5Stack | primary | repository | <https://github.com/m5stack/M5Unified> | 2026-09-01 | `master` @ `8530f537…`, MIT | The 64-attempt scan loop, connect/disconnect discipline, address `0x75` | `scratch/m5stack-papermono/repos/M5Unified/` |
+| S2 | `M5Unified/src/utility/Power_Class.cpp` | M5Stack | primary | repository | <https://github.com/m5stack/M5Unified> | 2026-09-01 | `master` @ `8530f537…`, MIT | The 64-attempt scan loop, connect/disconnect discipline, address `0x75` | `archive/devices/m5stack/papermono/artifacts/source-snapshots/M5Unified/` |
 
 **Local artifacts**
 
@@ -288,3 +288,37 @@ Sourcing notes gathered this session, worth recording because they cost time:
 | `artifacts/ip2315-datasheet-v1.0-cn-radxa-mirror.pdf` | 1 217 455 | `412742b36aa816722cc2830420bf660faf214c84acec60f9763ab3ea782951e1` | 16 |
 
 **Method note.** D1 was fetched with `curl` and a Chrome 131 User-Agent, validated as `%PDF` (16 pages), and read via `pdftotext`. LCSC's PDF host was tried first and rejected for serving HTML under a `.pdf` URL with HTTP 200 — see [Manufacturer](#manufacturer).
+
+## FCC internal photographs and label exhibit (2026-09-20)
+
+The PaperMono's FCC filing (`2AN3WM5PAPERMONO`) contributes two things to this
+record. Exhibits retained at
+[`devices/m5stack/papermono/artifacts/certification/`](../../../devices/m5stack/papermono/artifacts/certification/README.md).
+
+**1 — The part is confirmed on hardware.** Internal photos p. 4 show a QFN
+marked **`IP2315`** / `0Y21.1CA` with the Injoinic logo, beside the USB-C
+connector and the microSD socket, in the position sheet 2 assigns to `U1`.
+First physical-hardware evidence for this part on this board.
+
+**2 — A charge-current figure now exists, and it is a third one.**
+[C18](../../../devices/m5stack/papermono/gaps-and-conflicts.md#c18--ip2315-charge-current-cannot-be-read-from-the-datasheet-table)
+records that `ICHGSET` = 15 kΩ is not a tabulated value in the Injoinic
+datasheet, so the programmed charge current cannot be derived, and that
+schematic sheet 1's `充电电流 0.5C` (≈ 575 mA for the 1150 mAh cell) is the only
+statement of intent.
+
+**M5Stack's FCC label exhibit states `CHG CURRENT = 500 mA` outright.**
+
+| Source | Charge current |
+|---|---|
+| Schematic sheet 1 annotation | `0.5C` ≈ **575 mA** |
+| FCC label exhibit | **500 mA** |
+| IP2315 datasheet at `ICHGSET` = 15 kΩ | **not tabulated** |
+
+Two M5Stack documents, two figures, **neither a measurement**. C18 changes from
+an absence of evidence to a conflict between vendor statements and remains
+**unresolved**. For practical purposes: about 500 mA. A bench measurement of
+charge current at 15 kΩ would close it in minutes.
+
+The same label exhibit independently confirms the **`AW32901`** on the USB input
+and the `IP2315` → `VBAT` topology this record describes.

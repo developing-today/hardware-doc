@@ -1299,7 +1299,7 @@ Named so the next pass knows they were considered:
 
 Primary evidence for this record is machine-readable and was retrieved on 2026-09-02 and
 re-verified on 2026-09-04. Raw output is under
-[`../../scratch/preprint-repositories/missing-servers/`](../../scratch/preprint-repositories/missing-servers/).
+[`../../archive/research/preprint-repositories/missing-servers/`](../../archive/research/preprint-repositories/missing-servers/).
 
 | # | URL | Retrieved | Supports |
 |---|---|---|---|

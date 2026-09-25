@@ -286,5 +286,17 @@ say so.
 
 ### See also
 
-- [`scratch/schematic-tracing/`](../../scratch/schematic-tracing/README.md) — the tools
-  (`trace.py`, `render.py`, `netlist.py`) and the per-file traceability census.
+- [`schematic-pdf-traceability-census.md`](schematic-pdf-traceability-census.md) — the per-file
+  verdict for every schematic PDF in the repository, including the negative results.
+- [`schematic-tracing-corrections-2026-09-07.md`](schematic-tracing-corrections-2026-09-07.md) —
+  every correction and resolution that pass appended to a pre-existing record.
+- The tools, promoted into `tools/` on 2026-09-20:
+  [`altium_pdf_trace.py`](../../tools/altium_pdf_trace.py) (proximity/row/column queries — the
+  `trace.py` used in §7 above), [`altium_pdf_reflow.py`](../../tools/altium_pdf_reflow.py)
+  (readable row re-flow) and [`altium_pdf_bind_nets.py`](../../tools/altium_pdf_bind_nets.py)
+  (pin→net-label binding by geometry).
+
+> Until 2026-09-20 this section pointed at `scratch/schematic-tracing/` for all of the above.
+> The worked examples in §7 invoke `trace.py`, so the guide depended on a file that existed only
+> in scratch. The tools and the census now live in the repository; scratch retains only the
+> derived `pdftotext` output, which is regenerable.

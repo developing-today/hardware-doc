@@ -91,7 +91,7 @@ power off. Third-party projects disable the single-click reset — see
 Driving the microphone or holding button B during reset perturbs the straps. The vendor
 firmware does not appear to guard against this. `inferred` from the pin map,
 `not-tested`. The factory firmware does explicitly release the mic pins before
-reconfiguring them — see [`microphone.md` §2](microphone.md#-2-both-microphone-pins-are-esp32-s3-strapping-pins).
+reconfiguring them — see [`microphone.md` §2](microphone.md#2--both-microphone-pins-are-esp32-s3-strapping-pins).
 
 ## 5. Serial console and USB CDC
 

@@ -159,6 +159,29 @@ policy on prices.
 | [DRV2605](../../components/texas-instruments/drv2605/README.md) | Haptic driver, non-`L` variant | *None* — reference/disambiguation record |
 | [PCM5100A](../../components/texas-instruments/pcm5100a/README.md) | Stereo audio DAC, no control bus | [Waveshare ESP32-S3-Knob-Touch-LCD-1.8](../../devices/waveshare/esp32-s3-knob-touch-lcd-1.8/README.md) |
 | [TLV62569DBVT](../../components/texas-instruments/tlv62569dbvt/README.md) | 3.3 V synchronous buck | [Waveshare ESP32-S3-Knob-Touch-LCD-1.8](../../devices/waveshare/esp32-s3-knob-touch-lcd-1.8/README.md) |
+| [CC1101](../../components/texas-instruments/cc1101/README.md) | Sub-1 GHz RF transceiver, QFN-20. Register/state-machine traps decoded 2026-09-20 | [M5Stack Cap CC1101](../../devices/m5stack/cap-cc1101/README.md) `U3`; `badgeteam/konsool-zero` `U1` |
+
+### ⚠ Addendum: two downloads of one TI revision will not hash the same
+
+Refining [Revision pinning](#revision-pinning) with a measured 2026-09-20 result. Two independently
+acquired copies of the CC1101 datasheet, both `SWRS061I`, had **different sizes, different SHA-256
+and different page counts (107 vs 112)** — yet their **datasheet bodies were byte-identical**
+(`pdftotext -layout`, 5 927 lines each, zero `diff` lines).
+
+The difference is entirely TI's auto-appended **Package Option Addendum** and **Package Materials
+Information**, which TI **regenerates at download time**. Practical consequences:
+
+- **A differing hash on a TI datasheet is not, by itself, evidence of a revision change.** Compare
+  the literature number and revision letter in the footer first, then diff the body.
+- **Do not deduplicate TI datasheets by hash alone** — you will keep re-downloading.
+- The appendix is not noise: between the two copies, the recommended **solder-paste coverage under
+  the QFN exposed pad changed from 69 % to 78 %** and the land-pattern drawing number changed
+  (`4226714/A` 04/2021 → `4219027/A` 03/2025), plus new die-revision orderables (`.A`, `.B`, `G4`).
+  **For land patterns, stencils and ordering, always use the most recent download**, even at an
+  unchanged revision letter.
+
+Worked example with both files and the full delta:
+[`components/texas-instruments/cc1101` §13](../../components/texas-instruments/cc1101/README.md).
 
 No device in this repository is manufactured by TI.
 

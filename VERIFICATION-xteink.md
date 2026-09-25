@@ -78,7 +78,7 @@ Two broken links were found and fixed during verification
 contains only an `artifacts/` directory. That file belongs to a concurrent
 session; the breakage predates this work and repairing another session's prose was
 out of scope. **Reported, not repaired** — see
-`scratch/xteink/index-fragments.md`.
+`archive/devices/xteink/shared-artifacts/research-scratch/index-fragments.md`.
 
 ## 4. JSON
 
@@ -154,7 +154,7 @@ Xteink device.
   as a device on which *"You cannot put your own application on it."* That is
   incorrect — see `x4-pro/comparisons-and-recommendations.md`. The correction is
   recorded in the Xteink tree and, because `devices/m5stack/**` is owned by
-  another session, is **proposed** in `scratch/xteink/index-fragments.md` rather
+  another session, is **proposed** in `archive/devices/xteink/shared-artifacts/research-scratch/index-fragments.md` rather
   than edited in place.
 
 ## 10. Shared files
@@ -164,7 +164,7 @@ Xteink device.
 `components/README.md`, `vendors/README.md`, `artifact-manifest.md`,
 `software/README.md`, `guides/markets/*` and `devices/m5stack/**` carry **no
 modification from this session**. Proposed additions to them are staged as
-ready-to-paste Markdown in `scratch/xteink/index-fragments.md`.
+ready-to-paste Markdown in `archive/devices/xteink/shared-artifacts/research-scratch/index-fragments.md`.
 
 Five **existing** component records were **appended to** (Used By sections only,
 no existing text altered), each after confirming `find <file> -mmin -30` was
@@ -282,4 +282,4 @@ The controls that make these findings meaningful, and the limits that remain:
   with passing controls, which is the strongest form this evidence takes.
 
 Every correction above is listed in
-[`scratch/index-merge/corrections-requiring-review.md`](scratch/index-merge/corrections-requiring-review.md).
+[`research/passes/index-merge/corrections-requiring-review.md`](research/passes/index-merge/corrections-requiring-review.md).

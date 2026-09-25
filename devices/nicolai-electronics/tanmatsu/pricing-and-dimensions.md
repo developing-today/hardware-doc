@@ -83,16 +83,29 @@ Computed with [`tools/step_bbox.py`](tools/step_bbox.py), which reads `CARTESIAN
 
 | Model | X | Y | Z | Points |
 |---|---:|---:|---:|---:|
-| `tanmatsu.step` (mainboard) | **114.90 mm** | **142.40 mm** | 27.13 mm | 131,475 |
-| `frontpanel.step` | **114.90 mm** | **129.94 mm** | 1.63 mm | 45,987 |
+| [`tanmatsu.step`](artifacts/mechanical/tanmatsu.step.ARCHIVED.md) (mainboard) | **114.90 mm** | **142.40 mm** | 27.13 mm | 131,475 |
+| [`frontpanel.step`](artifacts/mechanical/frontpanel.step.ARCHIVED.md) | **114.90 mm** | **129.94 mm** | 1.63 mm | 45,987 |
 
 > ⚠ **Method caveat:** this bounds *control points*. For spline surfaces the true surface can sit slightly inside the hull, and the Z extents include components on both board faces. Treat as approximate; **never** as a tolerance.
 
-Reproduce:
+> **Both models were archived on 2026-09-20** — these measurements are the reason they were mined
+> first. The linked placeholders carry SHA-256, size, upstream commit and recovery URLs, so the
+> numbers above remain reproducible from a clone that has no archive.
+
+Reproduce — against the archived copy if you hold the archive, or against a fresh clone:
 
 ```bash
-python3 tools/step_bbox.py scratch/tanmatsu/sources/tanmatsu-mechanical/tanmatsu.step
+# with the archive present (the in-repo path is a symlink into it)
+python3 tools/step_bbox.py devices/nicolai-electronics/tanmatsu/artifacts/mechanical/tanmatsu.step
+
+# without it
+git clone https://github.com/Nicolai-Electronics/tanmatsu-mechanical
+git -C tanmatsu-mechanical checkout c623cd548c9cafb95773624fe775001984449a89
+python3 tools/step_bbox.py tanmatsu-mechanical/tanmatsu.step
 ```
+
+Originally executed 2026-08-24 against `scratch/tanmatsu/sources/tanmatsu-mechanical/tanmatsu.step`,
+which still holds a byte-identical copy.
 
 ### What the measurements show
 

@@ -98,7 +98,7 @@ jack. Nothing on this board makes a sound without it.
 
 Analysis: [`devices/m5stack/cardputer-adv/features/audio.md` §6](../../../devices/m5stack/cardputer-adv/features/audio.md).
 
-*Added 2026-09-07 from `scratch/m5stack-cardputer/index-fragments.md` §3.1.*
+*Added 2026-09-07 from `archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md` §3.1.*
 
 ## See also
 

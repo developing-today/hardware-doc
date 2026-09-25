@@ -12,7 +12,7 @@ committed. No shared index file was edited.
 | `components/{raydium,goodix,galaxycore,realtek×2,nordic-semiconductor×2,texas-instruments,semtech,analog-devices,asair,lontium,xlsemi,unidentified}/` | 15 component READMEs |
 | `vendors/canaan/README.md` | 1 |
 | `guides/nixos/riscv-and-vendor-sdk-toolchains.md` | 1 (**new file**; `guides/nixos/README.md` unmodified) |
-| `scratch/lilygo-k230/` | working files + `README.md`, `index-fragments.md`, `vendor-guide-additions.md` |
+| `archive/devices/lilygo/t-display-k230/artifacts/` | working files + `README.md`, `index-fragments.md`, `vendor-guide-additions.md` |
 
 ## 2. Checks run and results
 
@@ -27,7 +27,7 @@ committed. No shared index file was edited.
 | 7 | **Duplicate-hash detection** | **0 duplicate groups** across all new artifacts and media |
 | 8 | **JSON schema validity** | `media/manifest.json`, `examples/catalog.json`, `acquisition/manifest.json` all parse |
 | 9 | **Filenames portable ASCII** | Yes, no exceptions |
-| 10 | **Failed downloads not retained under misleading extensions** | Two 404 responses saved as `.html`; correct. Recorded in `scratch/lilygo-k230/README.md`. |
+| 10 | **Failed downloads not retained under misleading extensions** | Two 404 responses saved as `.html`; correct. Recorded in `archive/devices/lilygo/t-display-k230/artifacts/research-scratch/README.md`. |
 | 11 | **Bidirectional device ↔ component links** | Every component record cited by the device has a **Used By** entry naming the device; every component in the key-spec table links out. Four `Used By` rows for **pre-existing** records were **not applied** (see §4) and are parked in `index-fragments.md`. |
 | 12 | **Every URL has a retrieval date** | Yes — all `2026-09-04` unless a document date is given |
 | 13 | **Every source row has class + medium + date** | Yes, `sources.md` |
@@ -65,10 +65,10 @@ Per this session's constraints, and confirmed with `find <file> -mmin -30`:
 | `components/espressif/esp32-s3r8/README.md` | same **and** the claim is unverified (`GC-2`) — no Used-By added on purpose |
 | `components/generic/micro-sd-sdmmc/README.md` | quiet, but batched with the others for a single reviewed paste |
 | `README.md`, `devices/README.md`, `components/README.md`, `vendors/README.md`, `software/README.md`, `artifact-manifest.md`, `guides/markets/*`, `devices/m5stack/**`, `guides/nixos/README.md` | out of scope for this session |
-| `vendors/lilygo/README.md` | **did not exist**; a sibling session documenting T-Display-S3 may own it. Findings parked in `scratch/lilygo-k230/vendor-guide-additions.md`. |
+| `vendors/lilygo/README.md` | **did not exist**; a sibling session documenting T-Display-S3 may own it. Findings parked in `archive/devices/lilygo/t-display-k230/artifacts/research-scratch/vendor-guide-additions.md`. |
 
 All additions for these are ready to paste in
-[`scratch/lilygo-k230/index-fragments.md`](scratch/lilygo-k230/index-fragments.md).
+[`archive/devices/lilygo/t-display-k230/artifacts/research-scratch/index-fragments.md`](archive/devices/lilygo/t-display-k230/artifacts/research-scratch/index-fragments.md).
 
 ## 5. Open gaps
 

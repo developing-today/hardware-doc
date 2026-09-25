@@ -191,7 +191,7 @@ Boards affected: [Cardputer v1.1](../../../devices/m5stack/cardputer-v1.1/README
 [Cardputer v1.0](../../../devices/m5stack/cardputer-v1.0/README.md), which is therefore the only
 Cardputer whose RGB LED is independent of the backlight.
 
-*Added 2026-09-07 from `scratch/m5stack-cardputer/index-fragments.md` §3.4.*
+*Added 2026-09-07 from `archive/devices/m5stack/shared-artifacts/cardputer/research-scratch/index-fragments.md` §3.4.*
 
 ## 5. Drivers and libraries
 
@@ -257,8 +257,8 @@ ioe1.digitalWrite(M5IOE1_PIN_12, HIGH);    // enable the microphone rail
 | D1 | AW3512 / AW35122 datasheet | Awinic | primary | datasheet | `https://www.awinic.com/en/download?file=doc/20230609wm/b56e7f1e-10ba-4096-aa95-2339ccbad7cc.pdf&fileName=DS_AW35122_EN_V1.0` | 2026-09-01 | **V1.0**, July 2019, 18 pp, 1 329 728 B | Pin definition, R<sub>DS(on)</sub> table, absolute maxima, the AW3512/AW35122 `EN` pull-down difference | `artifacts/aw3512-aw35122-datasheet-en-v1.0.pdf` |
 | D2 | AW35122FDR product page | Awinic | primary | official page | <https://www.awinic.com/en/productDetail/AW35122FDR> | 2026-09-01 | — | Category, `FCDFN 1X1-4L` package, t<sub>R</sub> 165 µs, active-high enable, output discharge, no reverse-current block | — |
 | S1 | `PaperMono_SCH_V0.6.2_20260522.pdf` | M5Stack | primary | schematic | <https://docs.m5stack.com/en/core/PaperMono> | 2026-09-01 | V0.6.2, 6 sheets | Every instance, rail and enable net in §4 | `devices/m5stack/papermono/artifacts/schematic/PaperMono_SCH_V0.6.2_20260522.pdf` |
-| S2 | `M5PaperMono-UserDemo` HAL — `hal_tf_card.cpp`, `hal_mic.cpp`, `hal_board.cpp`, `app_sleep_wake.cpp` | M5Stack | primary | repository | <https://github.com/m5stack/M5PaperMono-UserDemo> | 2026-09-01 | `main` @ `c1099107271d31a0678d661a896e2b04dbb331ea`, MIT | The M5IOE1 pin assignments in §4.1 | `scratch/m5stack-papermono/repos/M5PaperMono-UserDemo/` |
-| S3 | `M5IOE1/src/M5IOE1.h` | M5Stack | primary | repository | <https://github.com/m5stack/M5IOE1> | 2026-09-01 | `main` @ `846eec7d05e25c09013be2acdb8804487f48a62e`, MIT | The 1-based label / 0-based enum trap in §5 | `scratch/m5stack-papermono/repos/M5IOE1/` |
+| S2 | `M5PaperMono-UserDemo` HAL — `hal_tf_card.cpp`, `hal_mic.cpp`, `hal_board.cpp`, `app_sleep_wake.cpp` | M5Stack | primary | repository | <https://github.com/m5stack/M5PaperMono-UserDemo> | 2026-09-01 | `main` @ `c1099107271d31a0678d661a896e2b04dbb331ea`, MIT | The M5IOE1 pin assignments in §4.1 | `archive/devices/m5stack/papermono/artifacts/source-snapshots/M5PaperMono-UserDemo/` |
+| S3 | `M5IOE1/src/M5IOE1.h` | M5Stack | primary | repository | <https://github.com/m5stack/M5IOE1> | 2026-09-01 | `main` @ `846eec7d05e25c09013be2acdb8804487f48a62e`, MIT | The 1-based label / 0-based enum trap in §5 | `archive/devices/m5stack/papermono/artifacts/source-snapshots/M5IOE1/` |
 
 **Local artifacts**
 

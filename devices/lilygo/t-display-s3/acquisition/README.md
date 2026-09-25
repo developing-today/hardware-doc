@@ -85,7 +85,7 @@ Never trust a file extension — LilyGO's CDN and GitHub redirects have both bee
 HTML for missing paths.
 
 ```bash
-python3 scratch/lilygo-t-display-s3/magic.py <files...>   # magic bytes, size, SHA-256
+python3 archive/devices/lilygo/t-display-s3-shared/artifacts/research-scratch/magic.py <files...>   # magic bytes, size, SHA-256
 ```
 
 `file(1)` was **not available** on the host used for this pass, which is why a replacement

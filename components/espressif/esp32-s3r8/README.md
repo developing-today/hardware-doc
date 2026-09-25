@@ -150,6 +150,21 @@ Full pin map: [pinouts-and-buses.md](../../../devices/seeed-studio/xiao-esp32s3-
 
 ### M5Stack PaperMono (SKU C153)
 
+> **FCC internal photographs — 2026-09-20.** The PaperMono's FCC filing
+> (`2AN3WM5PAPERMONO`) includes an internal-photograph exhibit, now retained at
+> [`devices/m5stack/papermono/artifacts/certification/`](../../../devices/m5stack/papermono/artifacts/certification/README.md).
+> It is the first physical-hardware evidence for this part on this board.
+>
+> **Confirmed.** The die is legible in the exhibit (p. 3), marked
+> `ESP32-S3` / `392025` / `R8MRK714000` / `FC00MCJ114` beneath the Espressif
+> logo, in a **56-pin QFN** — corroborating "bare package, not a module" from a
+> source other than the schematic. `R8` appears in the lot string, consistent
+> with the R8 variant, though the marking format does not spell out `ESP32-S3R8`.
+> A 4-pad crystal and the SOP-8 XMC flash sit immediately beside it, as the
+> schematic predicts.
+>
+> Extraction: [`certification.md` §6](../../../devices/m5stack/papermono/certification.md#6--what-the-internal-photographs-show).
+
 *Added 2026-09-01.* Fitted as **`U12`**, bare package, on schematic sheet 3 (`MCU_Core`) of the [M5Stack PaperMono](../../../devices/m5stack/papermono/README.md) and its Lite sibling. Paired with an external **16 MB [XMC XM25UH128DHIQT](../../xmc/xm25uh128dhiqt/README.md)** NOR flash and a **[40 MHz crystal](../../generic/cn4040m000157a530001-40mhz-crystal/README.md)** (`X1`, reached through `L7` = 24 nH). Evidence is the published schematic PDF and M5Stack's own source; no hardware was available.
 
 **On this board the ESP32-S3 does not control its own power.** Two [Puya PY32L020F15U6](../../puya/py32l020f15u6/README.md) coprocessors running M5Stack firmware — the [M5PM1](../../m5stack/m5pm1/README.md) (I²C `0x6E`) and the [M5IOE1](../../m5stack/m5ioe1/README.md) (I²C `0x4F`) — own the rails, the power button, the `BOOT` strap, the display frontlight and every `L3B` peripheral rail. The S3 is a peripheral of its own power system.

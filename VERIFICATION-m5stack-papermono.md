@@ -112,7 +112,7 @@ Honest gaps in this pass, not oversights discovered later:
 - ~~Third-party repository citations are unpinned~~ — **fixed 2026-09-01**:
   43 of 43 repositories resolved and pinned to a full commit SHA in
   `examples/catalog.json`. None were gone, private or archived.
-- **`scratch/m5stack-papermono/` is uncommitted** at the time of writing: raw
+- **`archive/devices/m5stack/papermono/artifacts/` is uncommitted** at the time of writing: raw
   page captures, 200 dpi sheet renders, panel-manual page images, per-designator
   pin tables and the three subagent FINDINGS files. It belongs in the archive
   repository.
