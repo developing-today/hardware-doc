@@ -49,8 +49,18 @@ Two symlinks are **tracked**, both committed in **relative** form:
 
 | Link | Committed target | Points at |
 |---|---|---|
-| `archive` (this repo) | `../repo-archive` | the bulk-artifact archive |
+| `archive` (this repo) | `../repo-archive/hardware-doc` | this repo's subtree of the bulk-artifact archive |
+| `scratch` (this repo) | `../repo-archive/scratch/hardware-doc` | this repo's subtree of the archive's scratch area |
 | `doc/hardware` (consuming repo) | `../../hardware-doc` | this repo |
+
+⚠ Both archive links end in **`hardware-doc` — the name of this repository**, not at the archive
+root. `repo-archive` serves *any* sibling repo and namespaces everything by source repo name, so
+the general form is `../repo-archive/<reponame>` and `../repo-archive/scratch/<reponame>`.
+
+The practical consequence: `archive/components/…` resolves to
+`repo-archive/hardware-doc/components/…`, so a path written `archive/hardware-doc/…` repeats the
+segment and **will not resolve**. It fails silently in Markdown — the link simply points at
+nothing.
 
 Relative is right for the normal sibling layout and keeps every clone identical to
 `HEAD`. It breaks only where `../..` does not reach the target — most often a linked

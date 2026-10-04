@@ -57,10 +57,14 @@ When the archive is present locally it is reachable at **`./archive/`** — a tr
 into the `../repo-archive` repository. That gives `*.ARCHIVED.md` placeholders a stable in-repo
 path to point at.
 
-⚠ The symlink resolves to **`../repo-archive/hardware-doc`**, one level deeper than the archive
-repository root, because the archive namespaces its contents by source repo. So `archive/components/…`
-maps to `repo-archive/hardware-doc/components/…`, and a link written `archive/hardware-doc/…`
-will **not** resolve.
+⚠ It resolves to **`../repo-archive/hardware-doc`** — the subdirectory named after **this
+repository** — not to the archive root. `repo-archive` serves any sibling repo and namespaces
+everything by source repo name, so the general form is `../repo-archive/<reponame>`; `scratch`
+follows the same rule at `../repo-archive/scratch/<reponame>`.
+
+So `archive/components/…` maps to `repo-archive/hardware-doc/components/…`, and a link written
+`archive/hardware-doc/…` repeats the segment and **will not resolve** — silently, since a Markdown
+link to a missing path just points at nothing.
 
 Both tracked symlinks in this project (`archive` here, `doc/hardware` in a consuming repo)
 are committed **relative**, and `hardware-doc-init.sh` swaps in an **absolute** path only
