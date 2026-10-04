@@ -15,6 +15,23 @@
 
 Directory index: [`archive/guides/lora/artifacts/README.md`](../../archive/guides/lora/artifacts/README.md).
 
+## ⚠ Two of the pass's documents are **not** in the archive — they were promoted
+
+The 2026-09-20 bulk-archive audit moved the pass's two authored ledgers into this directory,
+because [`SKILL.md` § 3](../../.agents/skills/hardware-device-research/SKILL.md) requires both to
+exist **as repository documents** and they were reachable only through the archive:
+
+| Now in the repository | Bytes | What it is |
+|---|---:|---|
+| [`guides/lora/commands.md`](commands.md) | 14,292 | The command ledger — every acquisition, extraction and probe command with `executed-success` / `executed-failed` / `inferred` / `not-tested` status, tool versions and failure output. Includes the one-request recipe for the 1,984-entry Semtech document catalogue |
+| [`guides/lora/research-log.md`](research-log.md) | 10,925 | The search ledger — every query, host, depth, status and outcome, including the Salesforce dead ends and the UA that finally worked |
+
+Both archive copies are retained with a `.SUPERSEDED.md` sidecar. A third authored file,
+`index-fragments.md`, was **left in the archive** deliberately: it is a paste-ready work order and
+its content has since been applied to `components/README.md`, `vendors/README.md`,
+`guides/hardware/README.md` and `guides/README.md` — verified 2026-09-20. It is now provenance,
+not instruction.
+
 ## What the pass produced, all of it in the repository
 
 The question was *"what is the 4th generation LoRa chip?"*. The answer, from primary evidence:

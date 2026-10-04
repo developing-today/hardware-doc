@@ -11,8 +11,9 @@
 
 | Property | Value | Evidence |
 |---|---|---|
-| Manufacturer | **ZhongKeWei / 中科微电子** (Zhongke Microelectronics) | `inferred` from the module lineage |
-| Part | **`AT6668`** | M5Stack writes the module/chip pairing as **`ATGM336H-6N@AT6668`** on three separate product pages |
+| Manufacturer | **杭州中科微电子有限公司** — *Hangzhou Zhongke Microelectronics Co., Ltd.*, `http://www.hzzkw.com` | **established 2026-09-20** from the ATGM336H-6N user manual V1.1 cover and footers (previously `inferred`, and previously mis-stated as Chengdu) |
+| Part | **`AT6668`** | M5Stack writes the module/chip pairing as **`ATGM336H-6N@AT6668`** on three separate product pages; **independently confirmed 2026-09-20** by the manufacturer's own manual, §1.1 ("中科微第六代多系统 GNSS SOC 单芯片 AT6668") and §5.2 (type code `6N` = "采用 AT6668 硬件平台的导航模块") |
+| Generation | **6th-generation** Zhongke multi-system GNSS SoC | ATGM336H-6N manual §1.1 |
 | Role | Multi-constellation GNSS receiver SoC | vendor |
 | Constellations | GPS, QZSS, BDS (B1I + B1C), GALILEO E1, GLONASS R1, SBAS | vendor |
 | Channels | 50 | vendor |
@@ -61,10 +62,24 @@ On all three the chipset speaks **UART at 115200 8N1** and nothing else is expos
 
 | # | Issue |
 |---|---|
-| 1 | **No AT6668 chip datasheet located.** Constellation, channel and sensitivity figures here are *module-level* claims from M5Stack |
+| 1 | **No AT6668 chip datasheet located.** Constellation, channel and sensitivity figures here are *module-level* claims. ⚠ **The chip datasheet is known to exist** — 《AT6668 芯片数据手册》 is listed as reference document 4 on p. 17 of the ATGM336H-6N manual (2026-09-20). No URL is known |
 | 2 | The CASIC specification is a **multi-vendor** document covering a family of receivers — not every message it defines is necessarily implemented by the AT6668 |
 | 3 | The archived specification's **language and revision were not checked** (see the placeholder). CASIC documentation commonly circulates in Chinese with partial English translations |
 | 4 | Whether the AT6668 differs materially from the AT6558 / AT6558R used in older ATGM336H variants was **not investigated** |
+| 5 | **The module manual confirms a Flash is present and that the vendor intends customers to reconfigure the update rate through it** (ATGM336H-6N manual §1.9), but **does not state whether CASIC config writes persist**. Unresolved — see the [module record §7](../atgm336h-6n/README.md) |
+
+## 4.1 Note on §2, added 2026-09-20
+
+The table in §2 remains correct, and mining the module manual **strengthened** it: the manual
+documents **no** configuration command of any kind and explicitly defers output protocol
+(§1.8), A-GNSS (§1.6) and firmware upgrade (§1.10) to three separate Zhongke documents. The
+claim that "everything beyond *read NMEA* goes through CASIC" is therefore confirmed by the
+manufacturer's own structure, not merely inferred from M5Stack's library.
+
+**One exception worth knowing:** the module emits **antenna-status `$GPTXT` sentences**
+(`ANTENNA OK` / `OPEN` / `SHORT`) as plain NMEA without any CASIC involvement. That is the
+only module-level status available to a generic parser. See
+[the module record §4.1](../atgm336h-6n/README.md).
 
 ## 5. Local artifacts
 

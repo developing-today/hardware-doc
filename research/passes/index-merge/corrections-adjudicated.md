@@ -363,5 +363,5 @@ do-not-edit list.
 
 One addition to that list, found by this pass: **`VERIFICATION-sweep-2026-09-04.md` §6's
 certification bullet is now known to be wrong**, not merely weak. See
-[`archive/guides/research/artifacts/certification-and-market-2026-09-11/xteink-certification-and-pricing.md`](../../../archive/guides/research/artifacts/certification-and-market-2026-09-11/xteink-certification-and-pricing.md) §1. *(Was `scratch/market-and-certification/…`; relocated 2026-09-20.)*
+[`devices/xteink/certification-and-pricing.md`](../../../devices/xteink/certification-and-pricing.md) §1. *(Was `scratch/market-and-certification/…`; relocated 2026-09-20.)*
 That file is on the do-not-edit list too, so it is flagged here rather than annotated in place.

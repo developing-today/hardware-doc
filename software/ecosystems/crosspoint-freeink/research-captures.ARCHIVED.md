@@ -14,7 +14,7 @@ GitHub API captures, fork listings, search transcripts, and partial file extract
 | `research-captures/raw/` | 14 | 407 194 | 8 GitHub REST API repository captures; CrossPlay's README across 4 branches; a 289 KB commit log |
 | `research-captures/forks/` | 2 | 761 613 | `cpr_forks.ndjson`, `crossink_forks.ndjson` — behind [`fork-network.md`](fork-network.md) |
 | `research-captures/search/` | 2 | 15 295 | GitHub code and name search transcripts |
-| `research-captures/partial-extracts/` | 22 | 214 748 | Pre-clone single-file pulls from `cpr`, `crossplay`, `crosspoint`, `fisdk` |
+| `research-captures/partial-extracts/` | 22 | 214 746 | Pre-clone single-file pulls from `cpr`, `crossplay`, `crosspoint`, `fisdk` |
 | `research-captures/repos-meta/` | 2 | 952 | `crossplay-head.json`, `crossplay-repo.json` |
 | `research-captures/SCRATCH-README-eink-software-2026-09-20.md` | 1 | 17 280 | The subject's original working record, moved verbatim |
 

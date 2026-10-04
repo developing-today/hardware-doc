@@ -52,7 +52,7 @@ What survives in the archive is the harvest *record*, and it is worth having:
 | `fcc/harvest.py`, `harvest-*.json` | ⚠ `MAX_TEST_REPORTS = 1` — for PaperMono this picked an antenna datasheet and **skipped the four reports carrying the actual radio measurements**, including the LoRa duty cycle |
 | `fcc/grantee-*.html`, `srch-*.html` | The grantee-code enumeration that surfaced the **X4 Light**, a device Xteink has never announced |
 | `logs/ua-matrix.txt`, `logs/fcc-controls.txt` | See below |
-| `xteink-certification-and-pricing.md` | Authored findings held outside `devices/xteink/` because a sibling agent owned that tree on 2026-09-11 |
+| ~~`xteink-certification-and-pricing.md`~~ **promoted 2026-09-20** | Authored findings held outside `devices/xteink/` because a sibling agent owned that tree on 2026-09-11. **Now in the repository at [`devices/xteink/certification-and-pricing.md`](../../devices/xteink/certification-and-pricing.md)** — 34 repository records cited it through an `archive/…` path, which a cloner cannot resolve. All 34 were repointed. The archive copy stays, with a `.SUPERSEDED.md` sidecar |
 
 ### The single most reusable thing in it: the inverted Cloudflare block
 

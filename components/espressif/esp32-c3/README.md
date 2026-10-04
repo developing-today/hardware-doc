@@ -150,6 +150,32 @@ validated and retained.**
 | Covers | `ESP32-C3`, `ESP32-C3FN4` (**End of life**), `ESP32-C3FH4` |
 | Redistribution status | `unknown` — Espressif datasheets carry no explicit redistribution grant |
 | Disposition | `repository`, **unstaged** |
+| Known byte-identical copy | `archive/devices/xteink/shared-artifacts/research-scratch/datasheets/esp32-c3-datasheet-en.pdf` — see below |
+
+### A second copy exists in the archive, and it is the same bytes — *checked 2026-09-20*
+
+The XTEInk research-scratch tree archived on 2026-09-20 contains
+`datasheets/esp32-c3-datasheet-en.pdf`, which **no repository record cited**. It is the
+original fetch that produced the file above — the copy here was renamed to carry its version.
+
+```
+833fc000b4b3c3d39c496fcbd597fed5806956503ce7390b19cc8ae82f19f968  archive/devices/xteink/shared-artifacts/research-scratch/datasheets/esp32-c3-datasheet-en.pdf
+833fc000b4b3c3d39c496fcbd597fed5806956503ce7390b19cc8ae82f19f968  components/espressif/esp32-c3/artifacts/esp32-c3-datasheet-en-v2.4.pdf
+```
+
+**Identical SHA-256, identical 900,158 bytes — a duplicate, not a second revision.** Per the
+repository's near-duplicate policy, one copy is kept and the other is recorded rather than
+stored twice. Nothing was re-mined from it and nothing is missing from this record as a result.
+
+It was **not moved** into `artifacts/`: it is already covered by the directory-level placeholder
+at [`devices/xteink/shared-artifacts/README.md`](../../../devices/xteink/shared-artifacts/README.md),
+whose locale-pinned tree digest `43841e95…` and 505-file / 269,581,091-byte manifest would be
+invalidated by removing a file from that tree. The archived copy's correct home is where it is.
+
+**This closes the "uncited document" gap**: the archive filename `esp32-c3-datasheet-en.pdf` now
+appears in a repository record. The warning in §4 above about three ESP32-S3 datasheets having
+three different hashes is exactly why this was hashed before any work was done — here the
+precedent did *not* repeat.
 
 **Text-layer validated** against the rendered cover: *"ESP32-C3 Series /
 Datasheet Version 2.4 / Ultra-Low-Power SoC with RISC-V Single-Core CPU /

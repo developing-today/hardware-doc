@@ -428,7 +428,7 @@ Where two passes reached the same manufacturer the entry below is merged.
 | **Worldsemi** | — | [WS2812](worldsemi/ws2812/README.md) — addressable RGB LED |
 | **Consonance** *(inferred)* | — | [CN809](consonance/cn809/README.md) — voltage supervisor / reset generator |
 | **NSIWAY** | — | [NS4168](nsiway/ns4168/README.md) — I²S-input class-D amplifier |
-| **ZhongKeWei** | — | [ATGM336H-6N](zhongkewei/atgm336h-6n/README.md) · [AT6668](zhongkewei/at6668/README.md) — GNSS module and the chipset inside it |
+| **Hangzhou Zhongke Microelectronics** (ZhongKeWei, 中科微) | [zhongkewei/](../vendors/zhongkewei/README.md) | [ATGM336H-6N](zhongkewei/atgm336h-6n/README.md) · [AT6668](zhongkewei/at6668/README.md) — GNSS module and the chipset inside it |
 | **Infineon** | — | [BGS13SN8](infineon/bgs13sn8/README.md) — SP3T RF switch |
 | **Ebyte** | — | [E220 series](ebyte/e220-400t22s/README.md) — LLCC68 **UART modem** modules |
 
@@ -492,7 +492,7 @@ register**, so charge state must come from a separate GPIO.
 |---|---|
 | [Texas Instruments CC1101](texas-instruments/cc1101/README.md) | Sub-1 GHz FSK/OOK transceiver, QFN-20. Datasheet held (M5Stack mirror) |
 | [ST STM32WLE5](stmicroelectronics/stm32wle5/README.md) | Cortex-M4 + Semtech sub-GHz radio on one die; used as an AT-command LoRaWAN modem |
-| [ZhongKeWei ATGM336H-6N](zhongkewei/atgm336h-6n/README.md) | 18-pad multi-constellation GNSS module. Datasheet held (M5Stack mirror) |
+| [ZhongKeWei ATGM336H-6N](zhongkewei/atgm336h-6n/README.md) | 18-pad multi-constellation GNSS module. **User manual V1.1 (zh) held and mined 2026-09-20** — full pinout, four sensitivity grades, antenna detection, power, reflow |
 | [ZhongKeWei AT6668](zhongkewei/at6668/README.md) | The chipset inside the ATGM336H; CASIC binary protocol (spec archived) |
 | [Diodes PI4IOE5V6408](diodes-incorporated/pi4ioe5v6408/README.md) | I²C GPIO expander @ 0x43 — controls the RF switch on three M5Stack LoRa products |
 | [Analog Devices MAX2659](analog-devices/max2659/README.md) | GNSS low-noise amplifier |

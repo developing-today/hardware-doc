@@ -377,7 +377,73 @@ standard "IMPORTANT NOTICE AND DISCLAIMER"; note it states *"Other reproduction 
 these resources is prohibited"* — recorded as metadata, not adjudicated). Disposition:
 **repository, unstaged.**
 
-## 14. Additional sources · *added 2026-09-20*
+## 14. Third mirror checked — no third revision exists · *added 2026-09-20*
+
+A later pass was asked to file a third copy, from
+`devices/m5stack/shared-artifacts/lora-expansions/research-scratch/artifacts/CC1101_Datasheet-m5stack-mirror.pdf`,
+as a second-source check. **It was not filed, because it is not a second source: it is
+byte-identical to the copy this record already holds.**
+
+| | Scratch copy (*the "third" mirror*) | `cc1101-datasheet-m5stack-mirror.pdf` | `…-swrs061i-2023-addendum-konsool-zero-mirror.pdf` |
+|---|---|---|---|
+| Revision | `SWRS061I` | `SWRS061I` | `SWRS061I` |
+| Pages | **112** | **112** | **107** |
+| Bytes | 2 718 663 | 2 718 663 | 2 572 666 |
+| **SHA-256** | **`0c5cdadd06a9f8de6776dda8c8fb29c5029baa2838413335270e223e55a4e169`** | **`0c5cdadd…` (same)** | `61efc50fdf7a18f258a6f326dac8acca168bd006cccca426103aa99d7e491a3d` |
+| PDF `CreationDate` | 2025-07-20 03:20:00 CDT | 2025-07-20 03:20:00 CDT | 2023-09-17 01:05:22 CDT |
+| Header magic | `%PDF-1.4` | `%PDF-1.4` | `%PDF-1.4` |
+
+**There are two distinct CC1101 PDFs in this repository, not three.** The scratch file is
+residue of the same 2026-09-04 M5Stack fetch that produced the filed copy; the 2026-09-20
+scratch drain archived it rather than moving it, so both now exist. It has **not been
+deleted** — it remains at
+`archive/devices/m5stack/shared-artifacts/lora-expansions/research-scratch/artifacts/CC1101_Datasheet-m5stack-mirror.pdf`
+as scratch residue. No placeholder is owed for it, because the bytes it holds are present in
+the repository under this component.
+
+### Body identity independently re-verified
+
+§13's byte-identity claim was **re-derived from scratch**, not taken on trust
+(`executed-success`, 2026-09-20):
+
+```
+pdftotext -layout on both files; truncate each at line 5927
+  (the body's own last marker, "SWRS061I … Page 98 of 98" — line 5927 in both)
+sha256sum of both truncated extractions:
+  bc53d2a4b85ec6520a1000aea6374f82523b5bf934d36125359f76008a739b8e   (2025 copy)
+  bc53d2a4b85ec6520a1000aea6374f82523b5bf934d36125359f76008a739b8e   (2023 copy)
+diff → zero differences
+```
+
+Appendix tails after the body marker: **699 lines** (2025) vs **398 lines** (2023) — the
+entire 5-page, 145 997-byte delta. **§13's conclusion stands, confirmed by a second
+independent derivation.**
+
+### Correction: a metadata detail in §13
+
+§13 attributes the PDF metadata `Author "Texas Instruments, Incorporated [SWRS061,I"` and
+`Creator "Microsoft® Word 2010"` to the konsool-zero copy as evidence it is an unmodified TI
+export. **Both copies carry exactly those strings**, along with `Producer "iText 2.1.7 by
+1T3XT"` and `Title "CC1101 Low-Power Sub-1 GHz RF Transceiver datasheet (Rev. I)"`. The
+observation is correct but not distinguishing — it establishes both files are unmodified TI
+exports, which strengthens rather than weakens the finding.
+
+**Minor note:** `pdfinfo` reports `PDF version: 1.6` for all three files while the file
+header magic reads `%PDF-1.4`. This is normal for iText-rewritten TI documents (the trailer
+declares the higher version); §9 and §13 record the header value. Not a discrepancy of
+substance.
+
+### What this establishes about TI mirrors
+
+Three independently-sourced copies of `SWRS061I` have now been examined — **M5Stack's CDN
+(twice, same bytes) and `badgeteam/konsool-zero`'s vendored `docs/` folder**. They differ
+**only** in TI's download-time-regenerated appendix. The working rule stands: for any
+*technical* question about the CC1101, any copy serves; for **land patterns, stencils or
+orderable part numbers**, use the 2025 copy (§13).
+
+---
+
+## 15. Additional sources · *added 2026-09-20*
 
 | ID | Title | Publisher | Class | Medium | URL / path | Retrieved | Version / date | Establishes |
 |---|---|---|---|---|---|---|---|---|
@@ -385,3 +451,4 @@ these resources is prohibited"* — recorded as metadata, not adjudicated). Disp
 | T-7 | `badgeteam/konsool-zero` KiCad design @ `0f0b964` | Badge.Team | primary | repository (schematic) | `scratch/tanmatsu/sources/konsool-zero/sub-ghz-radio.kicad_sch` | 2026-09-20 | single commit, 2025-03-22, no stated licence | §7 fitment `U1 = CC1101RGPR`, `U2` 27 MHz |
 | T-8 | Flipper Zero **Sub-1 GHz CC1101** schematic | **Flipper Devices Inc.** | primary (third-party) | schematic PDF | `scratch/tanmatsu/sources/konsool-zero/docs/Sub-1 GHz CC1101 schematic.pdf` | 2026-09-20 | undated | §7 — prior art; independently names `CC1101RGPR` |
 | T-9 | CC1101 Errata Notes `SWRZ020` | Texas Instruments | primary | errata | `https://www.ti.com/lit/er/swrz020b/swrz020b.pdf` | — | — | ⚠ **not retrieved.** Referenced by §11.2; a known gap |
+| T-10 | CC1101 datasheet, M5Stack scratch copy | Texas Instruments, mirrored by M5Stack | authorized mirror | datasheet | `archive/devices/m5stack/shared-artifacts/lora-expansions/research-scratch/artifacts/CC1101_Datasheet-m5stack-mirror.pdf` | 2026-09-04, compared 2026-09-20 | `SWRS061I`, appendix 2025-07-20, 112 pp | §14 — byte-identical duplicate of the filed M5Stack mirror; **no third revision exists** |

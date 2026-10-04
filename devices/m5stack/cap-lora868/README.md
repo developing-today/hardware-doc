@@ -40,7 +40,7 @@ Vendor specification, where it differs from or adds to the successor:
 | HY2.0-4P Grove | **No** | **Yes** |
 | Weight | 30.0 g | 22.1 g |
 | Size | 84.0 × 24.0 × 15.2 mm | identical |
-| GNSS | `ATGM336H-6N @ AT6668`, UART 115200 8N1, 50 ch, <1.5 m CEP50, 10 Hz, NMEA 0183 4.1 | identical |
+| GNSS | [`ATGM336H-6N`](../../../components/zhongkewei/atgm336h-6n/README.md) @ [`AT6668`](../../../components/zhongkewei/at6668/README.md), UART **115200 8N1 (the module's own factory default)**, 50 ch, <1.5 m CEP50, **1 Hz default / 10 Hz max**, NMEA 0183 4.1 | identical |
 | Antenna | rubber duck 3 dBi, 108 × 9.3 mm | identical |
 
 The comparison table is M5Stack's own, published on the U214 page.

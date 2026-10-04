@@ -55,7 +55,7 @@ Host specs are the ADV's. The kit adds:
 | Modulations | FSK / GFSK / MSK / LoRa / OOK |
 | LoRa operating current | DC 5 V @ 163.4 mA |
 | Antenna | RP-SMA (female), 108 × 9.3 mm, 3 dBi |
-| GNSS module | **ATGM336H-6N @ AT6668** |
+| GNSS module | **[ATGM336H-6N](../../../components/zhongkewei/atgm336h-6n/README.md) @ [AT6668](../../../components/zhongkewei/at6668/README.md)** — via the bundled Cap LoRa-1262 |
 | GNSS interface | UART, **115200 8N1** |
 | Constellations | GPS / QZSS / BD2 / BD3 / GAL / GLO, 50 channels |
 | GNSS accuracy | < 1.5 m CEP50, up to 10 Hz |

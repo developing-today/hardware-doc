@@ -173,3 +173,12 @@ the NFC projects are archived at
 `m5stack/M5PaperMono-UserDemo` @ `c109910`, and **`m5stack/M5Unit-NFC` @ `93745b5`**
 — the last so the unpatched defective source is preserved alongside the patch
 that fixes it.
+
+Full provenance for those four clones — remotes, full HEADs, commit counts, licences, byte and
+file counts, tree digests and reacquisition status — is in that directory's own index,
+[`archive/software/ecosystems/crosspoint-freeink/nfc-source-snapshots/README.md`](../../../archive/software/ecosystems/crosspoint-freeink/nfc-source-snapshots/README.md)
+(written 2026-09-20). Two things it records that matter here: **`ciniml/paper_name_plate` has no
+`LICENSE` file** — all-rights-reserved by default, so it is held as a research artifact and must
+not be vendored from — and **neither it nor `Corvelis/m5-touch-card` has been bundled or
+Wayback-submitted**, which is the profile of the one repository in this corpus that has already
+disappeared.

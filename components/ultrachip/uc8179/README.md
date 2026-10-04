@@ -145,3 +145,88 @@ UltraChip. It does **not** carry UC8253 or UC8279.
 [X4 Pro](../../../devices/xteink/x4-pro/README.md) ·
 [X4 Classic](../../../devices/xteink/x4-classic/README.md) — all three as one of
 three batch-dependent controller options.
+
+---
+
+## Archive copy, and the "UC8179C" naming trap — audited 2026-09-20
+
+### The archived copy is a byte-identical duplicate of the retained artifact
+
+The Xteink research scratch batch holds a second copy of this document under a
+different filename. It had never been cited by any record. It is **not** a second
+revision and **not** a second source — it is the same bytes.
+
+| | Retained artifact | Archived copy |
+|---|---|---|
+| Path | `artifacts/uc8179c-c-datasheet-rev0.6-2019-11-26-crystalfontz-mirror.pdf` | `archive/devices/xteink/shared-artifacts/research-scratch/datasheets/uc8179c-datasheet-v0.6-crystalfontz.pdf` |
+| **SHA-256** | `bf1dcef76e0d02a5683814e5f2b525bb7079e57509bf9a0754235b24fa587f50` | **identical** |
+| **Bytes** | 1,202,516 | **identical** |
+| Pages | 81 | 81 |
+
+Verified 2026-09-20 by `sha256sum` **and** by `cmp` over the full files —
+`executed-success`. Both are the same Crystalfontz fetch (id `517`); the archived
+one is the working copy the acquiring pass downloaded, the retained one is the
+copy it promoted. **Disposition: left in place.** Moving it would strip a file out
+of a scratch tree whose relocation is certified by a recorded, locale-pinned tree
+digest (`43841e95f52e…`, 505 files), and would create no copy that does not
+already exist at the canonical component path. See
+[`README.ARCHIVE.md`](../../../archive/devices/xteink/shared-artifacts/research-scratch/README.ARCHIVE.md),
+which already flagged this file as a chip document whose home is
+`components/ultrachip/uc8179/artifacts/` — it is now there, so that task is closed.
+
+> ⚠ **The "Crystalfontz raster banner" caveat does not apply to this file.**
+> Crystalfontz is known to stamp a raster banner onto page 1 of some mirrored
+> datasheets, which defeats text-based comparison and prevents a hash match.
+> **This document has no image on page 1 at all**: `pdfimages -list -f 1 -l 1`
+> returns zero rows, and the first raster object in the file is the block diagram
+> on **p. 4**. 1,118 image objects exist across 81 pages, none on the cover.
+> `executed-success`, 2026-09-20.
+
+### ⚠ There is no part called "UC8179C". The part is UC8179
+
+Both filenames above, and this record's own artifact name, contain a `c` that
+looks like a part-number suffix. It is not one. Checked against the document
+itself before any merge or variant record was considered:
+
+| Evidence | Page | Reading |
+|---|---|---|
+| **Ordering information — the only part numbers in the document** | **p. 5** | `UC8179cGAC-U0X3-3` and `UC8179cGAC-U0X3-4`, differing only by 3″ vs 4″ waffle tray. **No `UC8179C` orderable exists** |
+| Product heading and introduction | **p. 3** | *"**UC8179** — All-in-one driver IC with Timing Controller…"*, *"The **UC8179** is an all-in-one driver…"* — unsuffixed throughout |
+| Cover block | **p. 1** | *"**IC Version: c_C**"* on its own line, separate from the title. `c_C` is a **field**, not part of the name |
+| Running footer, all 81 pages | p. 1–81 | `UC8179c_C0.6 (for_TFT_Module_Use_Only)` — i.e. part `UC8179`, IC version `c_C`, datasheet revision `0.6` |
+| PDF metadata `Title` | — | `03-DTS-1664  UC8179c_Ｃ0.6 for__TFT_Module_Use_only` (full-width `Ｃ`) — **this string is where the filename "uc8179c" came from** |
+
+**Corroborated by the sibling part.** [UC8253](../uc8253/README.md) uses the
+identical convention: cover *"IC Version: **c_A**"*, orderables
+`UC8253cGAA-L0P3-3` / `-L0X3-3` / `-L0P3-4` / `-L0X3-4` (p. 5). `c_<letter>` is
+UltraChip's house IC-version field across the family, and the `c` in `cGAC` /
+`cGAA` is part of the orderable suffix, not of the product name.
+
+**Conclusion:** UC8179C is **not** a distinct part from UC8179. No separate record
+and no variant section is warranted; this record already covers it, and
+`components/ultrachip/uc8179/` is the correct home. What *is* real is the **IC
+version `c_C`**, which this record already states.
+
+This is the second UltraChip mis-identification trap caught in this directory —
+the first was `datasheet-viewer.php?id=478` serving the **GOODiX GT911 programming
+guide** under a `UC8179` path (see *"How it was found"* above). Both have the same
+root cause: **an UltraChip document's filename or URL is not evidence of its
+part.** Read the ordering table.
+
+### Three corrections to this record, from the same reading
+
+1. **This is an engineering-sample document.** The cover (p. 1) reads
+   ***"ES Specifications"*** — Engineering Sample — immediately left of
+   *"IC Version: c_C"*. The record above did not say so. Treat the register
+   defaults accordingly; this is provisional silicon documentation, in the same
+   class as the SSD1680's *"Product Preview"*.
+2. **The document contradicts itself on its own date by one day.** Cover:
+   *"Datasheet Revision: 0.6 … **November 26, 2019**"*. Revision history (p. 81):
+   *"0.6 — First release — **Nov. 25, 2019**"*. Immaterial, but it is the only
+   revision-history entry in the file: **0.6 is the first and only release**, so
+   there is no earlier revision to look for.
+3. **Maximum geometry is 800 × 600, not "800 × 480".** Feature highlights (p. 3):
+   *"Up to **800 source x 600 gate** resolution + 1 border + 1 VCOM"*, 1 bit
+   white/black + 1 bit red per pixel. The `800×480` in this record's title is the
+   **Xteink panel's** resolution, not the controller's limit. Supply `2.3–3.6 V`;
+   OTP **6 KB** for LUTs and settings; package **COG**; bump pitch 13 µm (p. 3).

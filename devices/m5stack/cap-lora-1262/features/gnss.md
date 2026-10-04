@@ -14,13 +14,27 @@ J1 ceramic patch (ANT1818-04, 18x18x4 mm)
    ▼
 U1 MAX2659 LNA  (VCC +3.3V, SHDN tied, C6 100nF / C7 33nF)
    │ C5 470 pF
-   ▼  pin 11 ANT
+   ▼  pin 11 RF_IN
 M2 ATGM336H-6N  ── AT6668 chipset inside ── VBAT ◀── BT1 backup cell
-   │ pin 2 TXD ──▶ Cap-Bus 1 ──▶ host G15   (host RX)
-   │ pin 3 RXD ◀── Cap-Bus 2 ◀── host G13   (host TX)
-   │ VCC  ◀── FB2/FB3 120 Ω/MB ◀── VDD_3V3
-   └ SDA/SCL (16/17), 1PPS (4), NRST (9), ON/OFF (5): NOT ROUTED to the host
+   │ pin 2 TXD0 ──▶ Cap-Bus 1 ──▶ host G15   (host RX)
+   │ pin 3 RXD0 ◀── Cap-Bus 2 ◀── host G13   (host TX)
+   │ VCC (8) ◀── FB3 120 Ω/MB ◀── VDD_3V3
+   │ VCC_RF (14) ── ⚠ direction disputed, see below
+   └ pads 16/17, 1PPS (4), nRESET (9), ON/OFF (5): NOT ROUTED to the host
 ```
+
+> ⚠ **Pin-naming conflict, logged 2026-09-20.** M5Stack's schematic symbol and the
+> manufacturer's manual disagree on three pins. The manufacturer calls pins 2/3 **`TXD0`/
+> `RXD0`** (the *main* UART; M5Stack's symbol says `TXD1`/`RXD1` — misleading but harmless,
+> the host is on the main port). More substantively, the manufacturer assigns pads **16/17 to
+> an auxiliary UART (`RXD1`/`TXD1`)**, while M5Stack's symbol labels them **`SDA`/`SCL`**;
+> and the manufacturer defines pin **14 `VCC_RF` as a power *output*** (+3.3 V for antenna
+> bias, internally inductor-coupled to `RF_IN`), whereas this board's symbol draws it as a
+> supply input fed from `VDD_3V3` through `FB2`. Neither conflict affects host-side firmware,
+> because none of those pins reach the Cap-Bus — but **the schematic was not re-traced to
+> settle the `VCC_RF` direction** (`not-tested`), and this file previously asserted both
+> directions in different paragraphs. Details:
+> [`components/zhongkewei/atgm336h-6n` §3.1](../../../../components/zhongkewei/atgm336h-6n/README.md).
 
 | Element | Part | Record |
 |---|---|---|
@@ -30,10 +44,18 @@ M2 ATGM336H-6N  ── AT6668 chipset inside ── VBAT ◀── BT1 backup ce
 | Patch antenna | `ANT1818-04` (18 × 18 × 4 mm) | [`components/generic/gnss-ceramic-patch-antenna`](../../../../components/generic/gnss-ceramic-patch-antenna/README.md) |
 
 **The LNA is the notable design choice.** Most ATGM336H breakouts hang a passive patch
-straight off `ANT`. This board puts a **MAX2659 (≈ +20 dB gain, sub-1 dB NF)** in front of
-it, powered from `VCC_RF` through a ferrite. That is what buys the −162 dBm tracking figure
-in the specification table, and it means the GNSS front end draws current even when the
-receiver is idle — `SHDN` is tied, so the host cannot switch the LNA off.
+straight off `RF_IN`. This board puts a **MAX2659 (≈ +20 dB gain, sub-1 dB NF)** in front of
+it, and it means the GNSS front end draws current even when the receiver is idle — `SHDN` is
+tied, so the host cannot switch the LNA off.
+
+> ⚠ **Corrected 2026-09-20.** This paragraph previously said the LNA *"is what buys the
+> −162 dBm tracking figure in the specification table."* **That is refuted.** −162 dBm
+> tracking is the **module's own published specification** with no external LNA
+> (manufacturer's user manual V1.1 §2.6, p. 11 — now mined; see
+> [`components/zhongkewei/atgm336h-6n` §2](../../../../components/zhongkewei/atgm336h-6n/README.md)).
+> M5Stack is quoting the manufacturer's module figure verbatim. What the LNA actually buys on
+> this board is **recovery of the loss between the patch and the module** and a system noise
+> figure set at the antenna — a real benefit, but not the source of the −162 dBm number.
 
 ## 2. Capability, as published
 
@@ -42,18 +64,30 @@ receiver is idle — `SHDN` is tied, so the host cannot switch the LNA off.
 | Constellations | GPS · QZSS · BDS (BD2 + BD3) · GALILEO · GLONASS |
 | Bands | BDS **B1I + B1C** · GPS/QZSS/SBAS **L1** · GALILEO **E1** · GLONASS **R1** |
 | Channels | 50 |
-| Accuracy | **< 1.5 m CEP50** |
-| Update rate | up to **10 Hz** |
-| Sensitivity | tracking **−162 dBm** · acquisition −160 dBm · cold start −148 dBm |
-| TTFF | cold **23 s** · hot **1 s** |
+| Accuracy | **< 1.5 m CEP50** · velocity **< 0.1 m/s (1σ)** |
+| Update rate | **1 Hz default**, 10 Hz maximum |
+| Sensitivity | tracking **−162 dBm** · reacquisition −160 dBm · hot-start acquisition −156 dBm · cold-start acquisition −148 dBm |
+| TTFF | cold **≤ 23 s** · hot **≤ 1 s** · reacquisition **≤ 1 s** |
 | Protocol | **NMEA 0183 4.1** on the wire; **CASIC binary** for configuration |
 | UART | **115200 bps, 8N1** |
 
-> ⚠ **115200, not 9600.** The ATGM336H's own factory default in most other products is
-> 9600 bps. M5Stack ships this Cap configured at 115200 and both the vendor example and
-> Meshtastic's `GPS_BAUDRATE` assume it. If you autobaud, include 9600 in the sweep anyway —
-> nothing in the documentation says the setting is stored in the module's flash rather than
-> applied by firmware.
+> ✅ **115200 *is* the factory default — corrected 2026-09-20.** This note previously warned
+> that *"the ATGM336H's own factory default in most other products is 9600 bps"* and advised
+> including 9600 in an autobaud sweep. **Refuted by the manufacturer's manual V1.1**, which
+> gives **115200 bps** both in the §1.2 variant table (for both orderable parts) and in the
+> §2.6 specification table (*"波特率默认115200bps,8个数据位,无校验,1个停止位"*). M5Stack is
+> shipping the module at its own default and is not reconfiguring it. Autobaud is
+> unnecessary.
+
+> ⚠ **Update rate defaults to 1 Hz, not 10 Hz.** 10 Hz is the ceiling and must be commanded
+> over CASIC. The previous "up to 10 Hz" wording invited the wrong assumption.
+
+> ⚠ **`$GPTXT,01,01,01,ANTENNA OPEN*25` may be emitted continuously on this board, and would
+> not indicate a fault.** The module reports antenna-port state as plain NMEA, and reports
+> *open* permanently whenever it is driving a passive antenna. This board has a passive patch
+> behind a MAX2659. Whether the LNA's quiescent draw clears the module's **2.5 mA**
+> open-detection threshold is **unknown** — no MAX2659 datasheet is held, so its supply
+> current is not established. Do not alarm on this string without testing. `not-tested`.
 
 Multi-band (B1I+B1C, E1, L1, R1) does **not** mean dual-frequency: these are all the same
 ~1.56–1.61 GHz L1 neighbourhood, which is why one 18 mm patch and one LNA suffice. Do not

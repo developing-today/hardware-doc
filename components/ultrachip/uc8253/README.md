@@ -137,3 +137,55 @@ document family. **They are different parts and different documents**; the share
 `0.6` is a coincidence of UltraChip's numbering, not a common revision.
 
 **Used by:** [Xteink X3](../../../devices/xteink/x3/README.md).
+
+---
+
+## Archive copy — byte-identical duplicate, audited 2026-09-20
+
+The Xteink research scratch batch holds a second copy of this document, which no
+record had cited. It is **the same bytes**, not a second source and not a second
+revision — despite the differing filename and the Elecrow provenance being shared.
+
+| | Retained artifact | Archived copy |
+|---|---|---|
+| Path | `artifacts/uc8253c-a-datasheet-rev0.6-2020-10-13-elecrow-mirror.pdf` | `archive/devices/xteink/shared-artifacts/research-scratch/datasheets/uc8253-datasheet-elecrow.pdf` |
+| **SHA-256** | `bee25538177b8cc6f67c1ffe696d8fd09bda7842b42e021fb9bd41a3da91c125` | **identical** |
+| **Bytes** | 1,294,916 | **identical** |
+| Pages | 75 | 75 |
+
+Verified 2026-09-20 with `sha256sum` and a full-file `cmp` — `executed-success`.
+Both came from the same Elecrow URL already recorded above; the archived file is
+the acquiring pass's working copy, the retained one is the copy it promoted.
+**Left in place**, because the canonical copy already sits at the component path
+and because extracting it would break the recorded locale-pinned tree digest
+(`43841e95f52e…`) that certifies that scratch relocation. The archive's own
+[`README.ARCHIVE.md`](../../../archive/devices/xteink/shared-artifacts/research-scratch/README.ARCHIVE.md)
+had already listed it as a chip document belonging under
+`components/ultrachip/uc8253/artifacts/`; it is there, so that item is closed.
+
+### The `c_A` suffix is an IC-version field, not part of the part number
+
+Established from **p. 5, Ordering information** — the only part numbers the
+document contains:
+
+`UC8253cGAA-L0P3-3` · `UC8253cGAA-L0X3-3` · `UC8253cGAA-L0P3-4` ·
+`UC8253cGAA-L0X3-4` — all four 300 µm wafer thickness, differing only by tray
+size (3″/4″) and the `P`/`X` field.
+
+The cover (p. 1) carries *"**IC Version: c_A**"* as a separate field from the
+title, and the footer on all 75 pages reads `UC8253c_A0.6 (for TFT_module_Use_Only)`.
+So the product is **UC8253**; `c_A` is its IC version; `cGAA` is an orderable
+suffix. **There is no part called "UC8253A" or "UC8253C".**
+
+This matters beyond this record: it is the corroborating case that settles the
+same question for [UC8179](../uc8179/README.md), whose filenames read `uc8179c`
+purely because the PDF's metadata title is `UC8179c_Ｃ0.6`. See
+[`../uc8179/README.md`](../uc8179/README.md#-there-is-no-part-called-uc8179c-the-part-is-uc8179).
+
+### One correction: this is an engineering-sample document
+
+The cover (p. 1) reads ***"ES Specifications"*** — Engineering Sample — directly
+left of *"IC Version: c_A"*. The record above did not note it. The same marking
+appears on the UC8179 datasheet, so it is an UltraChip house convention rather
+than a statement about this part's maturity specifically; either way, register
+defaults in an ES document are provisional.

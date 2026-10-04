@@ -1,6 +1,6 @@
 # Certification and compliance — x3
 
-Compiled **2026-09-11** by the round-2 index merge, from the certification pass's findings in [`archive/guides/research/artifacts/certification-and-market-2026-09-11/xteink-certification-and-pricing.md`](../../../archive/guides/research/artifacts/certification-and-market-2026-09-11/xteink-certification-and-pricing.md). Method and URL templates: [`guides/research/finding-certification-records.md`](../../../guides/research/finding-certification-records.md).
+Compiled **2026-09-11** by the round-2 index merge, from the certification pass's findings in [`devices/xteink/certification-and-pricing.md`](../../../devices/xteink/certification-and-pricing.md). Method and URL templates: [`guides/research/finding-certification-records.md`](../../../guides/research/finding-certification-records.md).
 
 > **Evidence status.** Everything here is `executed-success` **retrieval** of public regulatory records. **Nothing was verified against a physical device**, no board was inspected, and no label was read off real hardware.
 
