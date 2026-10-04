@@ -11,7 +11,7 @@ archive would have committed 1.8 GB while discarding 3.7 GB — including 1.9 GB
 that have nothing to do with git history — in a commit that looked complete.
 
 Each repository is therefore preserved as a **single-file git bundle** in
-[`archive/hardware-doc/_repo-bundles/`](archive/hardware-doc/_repo-bundles/README.md), and every
+[`archive/_repo-bundles/`](archive/_repo-bundles/README.md), and every
 source directory is listed in `repo-archive/.gitignore` so none can become a gitlink. Embedded-repo
 warnings went from 80 to 0.
 
@@ -20,7 +20,7 @@ warnings went from 80 to 0.
 ## Restoring one
 
 ```bash
-git clone archive/hardware-doc/_repo-bundles/<owner>__<repo>.bundle <dir>
+git clone archive/_repo-bundles/<owner>__<repo>.bundle <dir>
 ```
 
 That yields the full repository: all refs, all history, working tree at HEAD. The clone lands on
@@ -93,7 +93,7 @@ tree, so no gitlink exists to recover. One real gap is recorded rather than smoo
 
 Bundles preserve **committed history only**. Scanning all 80 repos found six with uncommitted
 state; four fragments exist in no git object and are kept in
-[`_repo-bundles/local-state/`](archive/hardware-doc/_repo-bundles/local-state/README.md) — notably
+[`_repo-bundles/local-state/`](archive/_repo-bundles/local-state/README.md) — notably
 a 70-line `platformio.ini` pinning `JPEGDEC` to a specific commit, and a local patch to
 `JPEGDEC`'s `src/jpeg.inl`.
 
