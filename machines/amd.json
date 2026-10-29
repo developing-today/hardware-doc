@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "hostname": "amd",
+  "collected_at": "2026-10-29T15:48:31Z",
+  "collected_by": "machines/collect-inventory.py",
+  "system": {
+    "vendor": "Framework",
+    "product_name": "Laptop 13 (AMD Ryzen 7040Series)",
+    "product_version": "A7",
+    "serial_number": null,
+    "board": {
+      "vendor": "Framework",
+      "name": "FRANMDCP07",
+      "version": "A7"
+    },
+    "bios": {
+      "vendor": "INSYDE Corp.",
+      "version": "03.18",
+      "release_date": "01/08/2026"
+    },
+    "bmc": null
+  },
+  "cpu": {
+    "model": "AMD Ryzen 7 7840U w/ Radeon  780M Graphics",
+    "vendor": "AuthenticAMD",
+    "architecture": "x86_64",
+    "sockets": 1,
+    "cores": 8,
+    "threads": 16
+  },
+  "memory": {
+    "total_bytes": 132752572416,
+    "slots_total": null,
+    "slots_used": null,
+    "ecc": null,
+    "modules": []
+  },
+  "drives": [
+    {
+      "device": "/dev/nvme0n1",
+      "model": "Samsung SSD 990 PRO 4TB",
+      "serial_number": "S7KGNU0X603846F",
+      "capacity_bytes": 4000787030016,
+      "interface": "nvme",
+      "firmware_version": null,
+      "smart": null
+    }
+  ],
+  "nics": [
+    {
+      "name": "wlp1s0",
+      "model": "MEDIATEK Corp. MT7922 802.11ax PCI Express Wireless Network Adapter",
+      "mac_address": "44:fa:66:08:b6:5d",
+      "speed_mbps": null,
+      "ports": 1,
+      "medium": "wireless"
+    }
+  ],
+  "gpus": [
+    {
+      "model": "Advanced Micro Devices, Inc. [AMD/ATI] Phoenix1 (rev c4)",
+      "vendor": null,
+      "integrated": null
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "nics[wlp1s0].speed_mbps",
+      "reason": "link speed not exposed via sysfs for this interface (wireless or driver does not report it)"
+    },
+    {
+      "field": "gpus[].integrated",
+      "reason": "integration (discrete vs APU/iGPU) is not reported by lspci; confirm manually if it matters"
+    },
+    {
+      "field": "system.serial_number",
+      "reason": "/sys/class/dmi/id/product_serial is not readable by an unprivileged user on this machine"
+    },
+    {
+      "field": "system.bmc",
+      "reason": "no BMC present or discoverable from the OS on this machine; record the KVM address manually for managed servers"
+    },
+    {
+      "field": "memory.slots_total/memory.slots_used/memory.ecc/memory.modules",
+      "reason": "dmidecode requires root on this machine and passwordless sudo is not available; only the total from /proc/meminfo could be read"
+    },
+    {
+      "field": "drives[/dev/nvme0n1].firmware_version/smart",
+      "reason": "smartctl requires root on this machine and passwordless sudo is not available"
+    }
+  ]
+}
