@@ -1,0 +1,446 @@
+{
+  "$id": "https://github.com/developing-today/hardware-doc/machines/inventory-record.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "One machine's hardware inventory record for developing-today/hardware-doc. Produced by machines/collect-inventory.py or filled from machines/inventory-record-template.md. Any field that could not be read is null (or an empty list) and MUST be explained by an entry in `unknowns` naming the field path and the reason.",
+  "properties": {
+    "collected_at": {
+      "type": "string",
+      "description": "UTC ISO-8601 timestamp of the collection run."
+    },
+    "collected_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cpu": {
+      "additionalProperties": true,
+      "properties": {
+        "architecture": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cores": {
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sockets": {
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "threads": {
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "vendor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "model"
+      ],
+      "type": "object"
+    },
+    "drives": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "capacity_bytes": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "device": {
+            "type": "string"
+          },
+          "firmware_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "interface": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "model": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "serial_number": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "smart": {
+            "additionalProperties": true,
+            "properties": {
+              "health": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "percentage_used": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "power_on_hours": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            },
+            "type": [
+              "object",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "device",
+          "model"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "gpus": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "integrated": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "model": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "vendor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "hostname": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "memory": {
+      "additionalProperties": true,
+      "properties": {
+        "ecc": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "modules": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "locator": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "manufacturer": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "part_number": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "serial_number": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "size_bytes": {
+                "minimum": 0,
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "speed_mts": {
+                "minimum": 0,
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "type": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "slots_total": {
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "slots_used": {
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "total_bytes": {
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "total_bytes"
+      ],
+      "type": "object"
+    },
+    "nics": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "mac_address": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "medium": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "model": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "ports": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "speed_mbps": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "system": {
+      "additionalProperties": true,
+      "properties": {
+        "bios": {
+          "additionalProperties": true,
+          "properties": {
+            "release_date": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "vendor": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "version": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "bmc": {
+          "additionalProperties": true,
+          "properties": {
+            "firmware_version": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "kvm_address": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "board": {
+          "additionalProperties": true,
+          "properties": {
+            "name": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "vendor": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "version": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "product_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "product_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "serial_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "vendor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "vendor",
+        "product_name"
+      ],
+      "type": "object"
+    },
+    "unknowns": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "field",
+          "reason"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "hostname",
+    "collected_at",
+    "system",
+    "cpu",
+    "memory",
+    "drives",
+    "nics",
+    "gpus",
+    "unknowns"
+  ],
+  "title": "Hardware inventory record",
+  "type": "object"
+}
